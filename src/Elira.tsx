@@ -1,4 +1,5 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unused-vars*/
+/* eslint-disable @typescript-eslint/ban-ts-comment*/
 /*
  * So, imagetools.
  * Normally, when you import an image, it'll just give you a url as a string.
