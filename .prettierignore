@@ -1,2 +1,7 @@
 # Ignore built files
 dist
+
+# Ignore npm stuff
+node_modules
+package.json
+package-lock.json
