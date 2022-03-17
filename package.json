@@ -5,7 +5,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "standard --fix 'src/**/*.{js,jsx,ts,tsx}'"
+    "lint": "standard --fix 'src/**/*.{js,jsx,ts,tsx}'",
+		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
   },
   "dependencies": {
     "clsx": "^1.1.1",
