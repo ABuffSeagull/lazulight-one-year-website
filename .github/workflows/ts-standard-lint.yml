@@ -14,4 +14,4 @@ jobs:
       with:
         node-version: lts/*
     - run: npm ci
-    - run: npx ts-standard
+    - run: npm test
