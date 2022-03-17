@@ -1,31 +1,35 @@
 {
-  "name": "foobar",
-  "version": "0.0.0",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "lint": "standard --fix 'src/**/*.{js,jsx,ts,tsx}'"
-  },
-  "dependencies": {
-    "clsx": "^1.1.1",
-    "modern-normalize": "^1.1.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "sass": "^1.49.7",
-    "wouter": "^2.8.0-alpha.2"
-  },
-  "devDependencies": {
-    "@types/react": "^17.0.33",
-    "@types/react-dom": "^17.0.10",
-    "@vitejs/plugin-react": "^1.0.7",
-    "standard": "^16.0.4",
-    "typescript": "^4.4.4",
-    "vite": "^2.7.2",
-    "vite-imagetools": "^4.0.3",
-    "vite-plugin-checker": "^0.3.4"
-  },
-  "standard": {
-      "ignore": ["src/images.d.ts"]
-  }
+	"name": "foobar",
+	"version": "0.0.0",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview",
+		"lint": "standard --fix 'src/**/*.{js,jsx,ts,tsx}'",
+		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
+	},
+	"dependencies": {
+		"clsx": "^1.1.1",
+		"modern-normalize": "^1.1.0",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"sass": "^1.49.7",
+		"wouter": "^2.8.0-alpha.2"
+	},
+	"devDependencies": {
+		"@types/react": "^17.0.33",
+		"@types/react-dom": "^17.0.10",
+		"@vitejs/plugin-react": "^1.0.7",
+		"prettier": "^2.6.0",
+		"standard": "^16.0.4",
+		"typescript": "^4.4.4",
+		"vite": "^2.7.2",
+		"vite-imagetools": "^4.0.3",
+		"vite-plugin-checker": "^0.3.4"
+	},
+	"standard": {
+		"ignore": [
+			"src/images.d.ts"
+		]
+	}
 }
