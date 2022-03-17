@@ -28,6 +28,8 @@ jobs:
         with:
           node-version: lts/*
 
+      - run: npm install
+      
       - name: ESLint
         run: npx eslint .
         
