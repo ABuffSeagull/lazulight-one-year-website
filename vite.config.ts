@@ -6,5 +6,5 @@ import checker from "vite-plugin-checker";
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [react(), imagetools(), checker({ typescript: true })],
-	base: '/lazulight-one-year-website-1/'
+	base: '/lazulight-one-year-website/'
 });
