@@ -14,7 +14,19 @@ interface Fanart {
   artUrl: string
 }
 
-function TalentLayout (props: any): JSX.Element {
+interface Props {
+  name: string
+  messages: Message[]
+  fanarts: Fanart[]
+  portrait: string
+  quote: string
+  info: string
+  youtube: string
+  twitter: string
+  discord: string
+}
+
+function TalentLayout (props: Props): JSX.Element {
   const firstName = props.name.split(' ')[0]
   const [showAllMessages, setShowAllMessages] = React.useState(false)
   const [showAllFanart, setShowAllFanart] = React.useState(false)
