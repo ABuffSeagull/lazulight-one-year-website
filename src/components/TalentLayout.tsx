@@ -1,6 +1,10 @@
 import React from 'react'
 import './TalentLayout.scss'
 
+// TODO(abuffseagull) 2022-03-17: need to remove this
+// Probably just generate some random ids on the messages at load time
+/* eslint-disable react/jsx-key */
+
 interface Message {
   name: string
   twitter: string

@@ -1,4 +1,5 @@
-/* eslint-disable no-unused-vars */
+// TODO(abuffseagull) 2022-03-17: probably move this to a README
+/* eslint-disable no-unused-vars, @typescript-eslint/no-unused-vars */
 /*
  * So, imagetools.
  * Normally, when you import an image, it'll just give you a url as a string.
