@@ -2,7 +2,7 @@ import React from 'react'
 import TalentLayout from '../components/TalentLayout'
 import PomuImage from '../assets/liver-image/pomu-placeholder.png'
 
-function Pomu () {
+function Pomu (): JSX.Element {
   const quote = "I'm Pomu!"
   const info = 'Placeholder info for Pomu!'
   const youtubeLink = 'https://www.youtube.com/channel/UCP4nMSTdwU1KqYWu3UH5DHQ'

@@ -14,25 +14,25 @@ interface Fanart {
   artUrl: string
 }
 
-function TalentLayout (props: any) {
+function TalentLayout (props: any): JSX.Element {
   const firstName = props.name.split(' ')[0]
   const [showAllMessages, setShowAllMessages] = React.useState(false)
   const [showAllFanart, setShowAllFanart] = React.useState(false)
 
-  const renderMessageColumns = () => {
+  const renderMessageColumns = (): Message[][] => {
     const result: Message[][] = [[], [], []]
 
-    props.messages.map((message: any, i: number) => {
+    props.messages.forEach((message: any, i: number): void => {
       result[i % 3].push(message)
     })
 
     return result
   }
 
-  const renderArtColumns = () => {
+  const renderArtColumns = (): Message[][] => {
     const result: Fanart[][] = [[], [], []]
 
-    props.fanarts.map((message: any, i: number) => {
+    props.fanarts.forEach((message: any, i: number): void => {
       result[i % 3].push(message)
     })
 

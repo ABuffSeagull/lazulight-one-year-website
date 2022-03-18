@@ -4,7 +4,7 @@ import Elira from './pages/Elira'
 import Finana from './pages/Finana'
 import Pomu from './pages/Pomu'
 
-export default function App () {
+export default function App (): JSX.Element {
   return (
     <div className={classes.container}>
       <nav>

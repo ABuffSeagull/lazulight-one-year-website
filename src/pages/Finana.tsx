@@ -2,7 +2,7 @@ import React from 'react'
 import TalentLayout from '../components/TalentLayout'
 import FinanaImage from '../assets/liver-image/finana-placeholder.png'
 
-function Finana () {
+function Finana (): JSX.Element {
   const name = 'Finana Ryugu'
   const quote = 'Egg'
   const info = 'Placeholder info for Finana!'

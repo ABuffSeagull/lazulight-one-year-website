@@ -34,7 +34,7 @@ import EliraImage from '../assets/liver-image/elira-placeholder.png'
 // The order is literally just to make this destructing easier, honestly
 const [fallback, ...sources] = sheeshPogBased
 
-export default function Elira () {
+export default function Elira (): JSX.Element {
   const name = 'Elira Pendora'
   const quote = 'Sheee-eeesh!'
   const info = 'Placeholder info for Elira!'
