@@ -2,6 +2,7 @@ name: ts-standard
 
 on:
   push:
+    branches: [main]
   pull_request:
 
 jobs:
