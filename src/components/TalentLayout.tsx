@@ -45,7 +45,7 @@ function TalentLayout (props: Props): JSX.Element {
     return result
   }
 
-  const renderArtColumns = (): Message[][] => {
+  const renderArtColumns = (): Fanart[][] => {
     const result: Fanart[][] = [[], [], []]
 
     props.fanarts.forEach((message: any, i: number): void => {

@@ -5,7 +5,7 @@
 		"dev": "vite",
 		"build": "tsc && vite build",
 		"preview": "vite preview",
-		"lint": "ts-standard --fix src/**/*.{js,jsx,ts,tsx}",
+		"lint": "ts-standard --fix src/**/*.{js,jsx,ts,tsx} && tsc --noEmit",
 		"test": "ts-standard src/**/*.{js,jsx,ts,tsx}",
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
 	},
