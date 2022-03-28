@@ -20,6 +20,7 @@ interface Fanart {
 
 interface Props {
   name: string
+  corner: string
   messages: Message[]
   fanarts: Fanart[]
   portrait: string
@@ -77,7 +78,7 @@ function TalentLayout (props: Props): JSX.Element {
           <div className='talent-animation-container'>{/* animated decorations goes here */}</div>
         </div>
       </div>
-      <div className='fan-submissions-container'>
+      <div className='fan-submissions-container'> 
         <h3 className={`${firstName.toLowerCase()}-border`}>Messages To {firstName}</h3>
         <div className='fan-submissions-box' style={{ maxHeight: `${showAllMessages ? '100%' : '50rem'}` }}>
           {!showAllMessages && <div className='fan-submissions-box-fade' />}
@@ -88,6 +89,7 @@ function TalentLayout (props: Props): JSX.Element {
                   <h4>
                     {message.name} ({message.twitter})
                   </h4>
+                  <img className={`fan-submissions-corner`} src = {props.corner} />
                   <p>{message.text}</p>
                 </div>
               ))}
@@ -113,11 +115,14 @@ function TalentLayout (props: Props): JSX.Element {
             <div className='fan-submissions-column'>
               {column.map((fanart) => (
                 <div className={`fan-submissions-fanart ${firstName.toLowerCase()}-border`}>
+                  
                   <h4>
                     {fanart.name} ({fanart.twitter})
                   </h4>
+                  <img className={"fan-submissions-corner2"}src = {props.corner} />
                   <p>{fanart.text}</p>
-                  <img src={fanart.artUrl} alt='' />
+                  <img className={"fan-submissions-fanarti"} src={fanart.artUrl} alt='' />
+                  
                 </div>
               ))}
             </div>

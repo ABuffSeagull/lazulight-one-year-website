@@ -1,6 +1,9 @@
 import React from 'react'
 import TalentLayout from '../components/TalentLayout'
 import FinanaImage from '../assets/liver-image/finana-placeholder.png'
+import FinanaFrame from '../assets/Frames/Finana-Liver-Frame.png'
+import corner from "../assets/Finana-Message-Frame.png"
+import background2 from "../components/Backgrounds/FinanaBackground"
 
 function Finana (): JSX.Element {
   const name = 'Finana Ryugu'
@@ -117,6 +120,7 @@ function Finana (): JSX.Element {
     <div>
       <TalentLayout
         name={name}
+        corner={corner}
         portrait={FinanaImage}
         quote={quote}
         info={info}
@@ -126,6 +130,7 @@ function Finana (): JSX.Element {
         messages={messages}
         fanarts={fanarts}
       />
+      <img className="talent-finanaframe"src={FinanaFrame}/>
     </div>
   )
 }
