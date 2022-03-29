@@ -119,7 +119,7 @@ function TalentLayout (props: Props): JSX.Element {
                   <h4>
                     {fanart.name} ({fanart.twitter})
                   </h4>
-                  <img className={"fan-submissions-corner2"}src = {props.corner} />
+                  <img className={"fan-submissions-corner"}src = {props.corner} />
                   <p>{fanart.text}</p>
                   <img className={"fan-submissions-fanarti"} src={fanart.artUrl} alt='' />
                   

@@ -3,7 +3,6 @@ import TalentLayout from '../components/TalentLayout'
 import FinanaImage from '../assets/liver-image/finana-placeholder.png'
 import FinanaFrame from '../assets/Frames/Finana-Liver-Frame.png'
 import corner from "../assets/Finana-Message-Frame.png"
-import background2 from "../components/Backgrounds/FinanaBackground"
 
 function Finana (): JSX.Element {
   const name = 'Finana Ryugu'
