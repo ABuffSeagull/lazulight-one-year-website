@@ -119,6 +119,7 @@ function Finana (): JSX.Element {
     <div>
       <TalentLayout
         name={name}
+        frame = {FinanaFrame}
         corner={corner}
         portrait={FinanaImage}
         quote={quote}
@@ -129,7 +130,6 @@ function Finana (): JSX.Element {
         messages={messages}
         fanarts={fanarts}
       />
-      <img className="talent-finanaframe"src={FinanaFrame}/>
     </div>
   )
 }

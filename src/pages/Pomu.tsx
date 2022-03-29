@@ -118,7 +118,8 @@ function Pomu (): JSX.Element {
     <div>
       <TalentLayout
         name='Pomu Rainpuff'
-        corner = {Corner}
+        corner={Corner}
+        frame = {PomuFrame}
         portrait={PomuImage}
         quote={quote}
         info={info}
@@ -128,7 +129,6 @@ function Pomu (): JSX.Element {
         messages={messages}
         fanarts={fanarts}
       />
-      <img className="talent-pomuframe"src={PomuFrame}/>
     </div>
   )
 }

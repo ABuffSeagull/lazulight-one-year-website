@@ -32,8 +32,8 @@ import multipleData from '../sheesh-pog-based.png?format=avif;webp;png&meta'
 import sheeshPogBased from '../sheesh-pog-based.png?format=png;avif;webp&imagetools&meta'
 import TalentLayout from '../components/TalentLayout'
 import EliraImage from '../assets/liver-image/elira-placeholder.png'
-import corner from '../assets/Frames/Elira-LiverCorner.png'
-import EliraFrame from '../assets/Frames/Pomu-LiverCorner.png'
+import corner from '../assets/Elira-MsgCorner.png'
+import EliraFrame from '../assets/Frames/Elira-LiverCorner.png'
 // The order is literally just to make this destructing easier, honestly
 
 
@@ -152,8 +152,11 @@ export default function Elira (): JSX.Element {
 
   return (
     <div>
+
       <TalentLayout
+        
         name={name}
+        frame = {EliraFrame}
         corner = {corner}
         portrait={EliraImage}
         quote={quote}
@@ -164,7 +167,7 @@ export default function Elira (): JSX.Element {
         messages={messages}
         fanarts={fanarts}
       />
-      <img className="talent-eliraframe"src={EliraFrame}/>
+    
     </div>
   )
 }

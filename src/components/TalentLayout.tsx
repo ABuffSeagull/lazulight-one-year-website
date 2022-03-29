@@ -20,6 +20,7 @@ interface Fanart {
 
 interface Props {
   name: string
+  frame: string
   corner: string
   messages: Message[]
   fanarts: Fanart[]
@@ -67,6 +68,7 @@ function TalentLayout (props: Props): JSX.Element {
         </div>
         <div className='talent-info-container'>
           <div className={`talent-text-container ${firstName.toLowerCase()}-border`}>
+           <img className="talent-liverframe"src={props.frame}/>
             <h2>{props.name}</h2>
             <p>{props.info}</p>
             <div className='talent-links-container'>
