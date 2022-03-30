@@ -3,7 +3,7 @@
  * So, imagetools.
  * Normally, when you import an image, it'll just give you a url as a string.
  */
-// import normal from '../sheesh-pog-based.png'
+import normal from '../sheesh-pog-based.png'
 /*
  * You can just run the image through no problem just by specifying a format
  * as a query parameter to get some good compression
@@ -27,4 +27,13 @@
  */
 import sheeshPogBased from '../sheesh-pog-based.png?format=png;avif;webp&imagetools&meta'
 // The order is literally just to make this destructing easier, honestly
-const [fallback, ...sources] = sheeshPogBased
+import Image from '../components/Image'
+
+export default function ImageExample (): JSX.Element {
+  return (
+    <>
+      <Image src={normal} height='300px' />
+      <Image src={sheeshPogBased} height='300px' />
+    </>
+  )
+}
