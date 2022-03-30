@@ -1,6 +1,7 @@
 interface ImageToolProps {
   src: metadata[] | string
   className?: string
+  alt?: string
   width?: string
   height?: string
 }
@@ -8,7 +9,7 @@ interface ImageToolProps {
 export default function Image (props: ImageToolProps): JSX.Element {
   if (typeof props.src === 'string') {
     return (
-      <img src={props.src} width={props.width} height={props.height} />
+      <img src={props.src} width={props.width} height={props.height} alt={props.alt} />
     )
   } else {
     const [fallback, ...sources] = props.src
@@ -25,6 +26,7 @@ export default function Image (props: ImageToolProps): JSX.Element {
           src={fallback.src}
           width={props.width}
           height={props.height}
+          alt={props.alt}
         />
       </picture>
     )

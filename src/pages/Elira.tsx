@@ -1,5 +1,5 @@
 import TalentLayout from '../components/TalentLayout'
-import EliraImage from '../assets/liver-image/elira-placeholder.png'
+import EliraImage from '../assets/liver-image/elira-placeholder.png?format=png;avif;webp&imagetools&meta'
 
 export default function Elira (): JSX.Element {
   const name = 'Elira Pendora'

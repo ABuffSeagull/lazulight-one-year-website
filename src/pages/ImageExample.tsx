@@ -32,7 +32,9 @@ import Image from '../components/Image'
 export default function ImageExample (): JSX.Element {
   return (
     <>
+      {/* Works with normal images */}
       <Image src={normal} height='300px' />
+      {/* Works with imagetools too! */}
       <Image src={sheeshPogBased} height='300px' />
     </>
   )

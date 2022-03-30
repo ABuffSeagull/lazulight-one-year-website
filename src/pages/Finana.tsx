@@ -1,6 +1,6 @@
 import React from 'react'
 import TalentLayout from '../components/TalentLayout'
-import FinanaImage from '../assets/liver-image/finana-placeholder.png'
+import FinanaImage from '../assets/liver-image/finana-placeholder.png?format=png;avif;webp&imagetools&meta'
 
 function Finana (): JSX.Element {
   const name = 'Finana Ryugu'
