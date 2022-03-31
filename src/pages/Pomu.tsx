@@ -1,6 +1,6 @@
 import React from 'react'
 import TalentLayout from '../components/TalentLayout'
-import PomuImage from '../assets/liver-image/pomu-placeholder.png'
+import PomuImage from '../assets/liver-image/pomu-placeholder.png?format=png;avif;webp&imagetools&meta'
 
 function Pomu (): JSX.Element {
   const quote = "I'm Pomu!"
