@@ -91,7 +91,7 @@
 	}
 
 
-	&-liverframe {
+	&-pomuframe {
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -100,6 +100,28 @@
 		z-index: 1;
 		overflow: visible;	
 	}
+
+	&-finanaframe {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 10%;
+		transform: translate(-30px,25px);
+		z-index: 1;
+		overflow: visible;	
+	}
+
+	&-eliraframe {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 10%;
+		transform: translate(-10px, 10px);
+		z-index: 1;
+		overflow: visible;	
+	}
+
+
 }
 
 .fan-submissions {
@@ -174,15 +196,7 @@
 		}
 	}
 
-	&-corner {
-		position: absolute;
-		top: 0;
-		right: 0;
-		height: 90px;
-		transform: translate(20px, -20px);
-		z-index: 1;
-		overflow: visible;
-	}
+
 
 	&-message,
 	&-fanart {
@@ -199,8 +213,20 @@
 	}
 
 	&-fanarti {
+			
 		width: 100%;
 		padding: 5%;
+			
+	}
+
+	&-corner {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 90px;
+		transform: translate(20px, -20px);
+		z-index: 1;
+		overflow: visible;
 	}
 
 }

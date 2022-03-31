@@ -1,5 +1,6 @@
 import React from 'react'
 import './TalentLayout.scss'
+import Image from './Image'
 
 // TODO(abuffseagull) 2022-03-17: need to remove this
 // Probably just generate some random ids on the messages at load time
@@ -24,7 +25,7 @@ interface Props {
   corner: string
   messages: Message[]
   fanarts: Fanart[]
-  portrait: string
+  portrait: string | metadata[] 
   quote: string
   info: string
   youtube: string
@@ -34,6 +35,7 @@ interface Props {
 
 function TalentLayout (props: Props): JSX.Element {
   const firstName = props.name.split(' ')[0]
+  const firstNameLower = firstName.toLowerCase()
   const [showAllMessages, setShowAllMessages] = React.useState(false)
   const [showAllFanart, setShowAllFanart] = React.useState(false)
 
@@ -61,14 +63,14 @@ function TalentLayout (props: Props): JSX.Element {
     <div className='talent-layout-container'>
       <div className='talent-profile-container'>
         <div className='talent-picture-box'>
-          <img src={props.portrait} />
+          <Image src={props.portrait} />
           <div className='talent-quote'>
             <span>{props.quote}</span>
           </div>
         </div>
         <div className='talent-info-container'>
-          <div className={`talent-text-container ${firstName.toLowerCase()}-border`}>
-           <img className="talent-liverframe"src={props.frame}/>
+          <div className={`talent-text-container ${firstNameLower}-border`}>
+            <Image className={`talent-${firstNameLower}frame`} src={props.frame}/>
             <h2>{props.name}</h2>
             <p>{props.info}</p>
             <div className='talent-links-container'>
@@ -81,17 +83,17 @@ function TalentLayout (props: Props): JSX.Element {
         </div>
       </div>
       <div className='fan-submissions-container'> 
-        <h3 className={`${firstName.toLowerCase()}-border`}>Messages To {firstName}</h3>
+        <h3 className={`${firstNameLower}-border`}>Messages To {firstName}</h3>
         <div className='fan-submissions-box' style={{ maxHeight: `${showAllMessages ? '100%' : '50rem'}` }}>
           {!showAllMessages && <div className='fan-submissions-box-fade' />}
           {renderMessageColumns().map((column) => (
             <div className='fan-submissions-column'>
               {column.map((message) => (
-                <div className={`fan-submissions-message ${firstName.toLowerCase()}-border`}>
+                <div className={`fan-submissions-message ${firstNameLower}-border`}>
                   <h4>
                     {message.name} ({message.twitter})
                   </h4>
-                  <img className={`fan-submissions-corner`} src = {props.corner} />
+                  <Image className={`fan-submissions-corner`} src = {props.corner} />
                   <p>{message.text}</p>
                 </div>
               ))}
@@ -102,7 +104,7 @@ function TalentLayout (props: Props): JSX.Element {
               onClick={() => {
                 setShowAllMessages(true)
               }}
-              className={`${firstName.toLowerCase()}-border`}
+              className={`${firstNameLower}-border`}
             >
               view all
             </button>
@@ -110,20 +112,20 @@ function TalentLayout (props: Props): JSX.Element {
         </div>
       </div>
       <div className='fan-submissions-container'>
-        <h3 className={`${firstName.toLowerCase()}-border`}>Art For {firstName}</h3>
+        <h3 className={`${firstNameLower}-border`}>Art For {firstName}</h3>
         <div className='fan-submissions-box' style={{ maxHeight: `${showAllFanart ? '100%' : '50rem'}` }}>
           {!showAllFanart && <div className='fan-submissions-box-fade' />}
           {renderArtColumns().map((column) => (
             <div className='fan-submissions-column'>
               {column.map((fanart) => (
-                <div className={`fan-submissions-fanart ${firstName.toLowerCase()}-border`}>
+                <div className={`fan-submissions-fanart ${firstNameLower}-border`}>
                   
                   <h4>
                     {fanart.name} ({fanart.twitter})
                   </h4>
-                  <img className={"fan-submissions-corner"}src = {props.corner} />
+                  <Image className={"fan-submissions-corner"} src = {props.corner} />
                   <p>{fanart.text}</p>
-                  <img className={"fan-submissions-fanarti"} src={fanart.artUrl} alt='' />
+                  <Image className='fan-submissions-fanarti' src={fanart.artUrl} alt='' />
                   
                 </div>
               ))}
@@ -134,7 +136,7 @@ function TalentLayout (props: Props): JSX.Element {
               onClick={() => {
                 setShowAllFanart(true)
               }}
-              className={`${firstName.toLowerCase()}-border`}
+              className={`${firstNameLower}-border`}
             >
               view all
             </button>
