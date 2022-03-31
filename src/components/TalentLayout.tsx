@@ -1,5 +1,6 @@
 import React from 'react'
 import './TalentLayout.scss'
+import Image from './Image'
 
 // TODO(abuffseagull) 2022-03-17: need to remove this
 // Probably just generate some random ids on the messages at load time
@@ -22,7 +23,7 @@ interface Props {
   name: string
   messages: Message[]
   fanarts: Fanart[]
-  portrait: string
+  portrait: string | metadata[]
   quote: string
   info: string
   youtube: string
@@ -59,7 +60,7 @@ function TalentLayout (props: Props): JSX.Element {
     <div className='talent-layout-container'>
       <div className='talent-profile-container'>
         <div className='talent-picture-box'>
-          <img src={props.portrait} />
+          <Image src={props.portrait} />
           <div className='talent-quote'>
             <span>{props.quote}</span>
           </div>
@@ -117,7 +118,7 @@ function TalentLayout (props: Props): JSX.Element {
                     {fanart.name} ({fanart.twitter})
                   </h4>
                   <p>{fanart.text}</p>
-                  <img src={fanart.artUrl} alt='' />
+                  <Image src={fanart.artUrl} alt='' />
                 </div>
               ))}
             </div>
