@@ -25,7 +25,7 @@ interface Props {
   corner: string
   messages: Message[]
   fanarts: Fanart[]
-  portrait: string | metadata[] 
+  portrait: string | metadata[]
   quote: string
   info: string
   youtube: string
@@ -70,7 +70,7 @@ function TalentLayout (props: Props): JSX.Element {
         </div>
         <div className='talent-info-container'>
           <div className={`talent-text-container ${firstNameLower}-border`}>
-            <Image className={`talent-${firstNameLower}frame`} src={props.frame}/>
+            <Image className={`talent-${firstNameLower}frame`} src={props.frame} />
             <h2>{props.name}</h2>
             <p>{props.info}</p>
             <div className='talent-links-container'>
@@ -82,7 +82,7 @@ function TalentLayout (props: Props): JSX.Element {
           <div className='talent-animation-container'>{/* animated decorations goes here */}</div>
         </div>
       </div>
-      <div className='fan-submissions-container'> 
+      <div className='fan-submissions-container'>
         <h3 className={`${firstNameLower}-border`}>Messages To {firstName}</h3>
         <div className='fan-submissions-box' style={{ maxHeight: `${showAllMessages ? '100%' : '50rem'}` }}>
           {!showAllMessages && <div className='fan-submissions-box-fade' />}
@@ -93,7 +93,7 @@ function TalentLayout (props: Props): JSX.Element {
                   <h4>
                     {message.name} ({message.twitter})
                   </h4>
-                  <Image className={`fan-submissions-corner`} src = {props.corner} />
+                  <Image className='fan-submissions-corner' src={props.corner} />
                   <p>{message.text}</p>
                 </div>
               ))}
@@ -119,11 +119,11 @@ function TalentLayout (props: Props): JSX.Element {
             <div className='fan-submissions-column'>
               {column.map((fanart) => (
                 <div className={`fan-submissions-fanart ${firstNameLower}-border`}>
-                  
+
                   <h4>
                     {fanart.name} ({fanart.twitter})
                   </h4>
-                  <Image className={"fan-submissions-corner"} src = {props.corner} />
+                  <Image className='fan-submissions-corner' src={props.corner} />
                   <p>{fanart.text}</p>
                   <Image className='fan-submissions-fanarti' src={fanart.artUrl} alt='' />
                 </div>

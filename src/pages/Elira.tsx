@@ -128,10 +128,9 @@ export default function Elira (): JSX.Element {
     <div>
 
       <TalentLayout
-        
         name={name}
-        frame = {EliraFrame}
-        corner = {corner}
+        frame={EliraFrame}
+        corner={corner}
         portrait={EliraImage}
         quote={quote}
         info={info}
@@ -141,7 +140,7 @@ export default function Elira (): JSX.Element {
         messages={messages}
         fanarts={fanarts}
       />
-    
+
     </div>
   )
 }

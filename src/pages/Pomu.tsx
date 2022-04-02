@@ -1,7 +1,7 @@
 import React from 'react'
 import TalentLayout from '../components/TalentLayout'
 import PomuImage from '../assets/liver-image/pomu-placeholder.png?format=png;avif;webp&imagetools&meta'
-import Corner from "../assets/Pomu-MsgCorner.png"
+import Corner from '../assets/Pomu-MsgCorner.png'
 import PomuFrame from '../assets/Frames/Pomu-LiverCorner.png'
 
 function Pomu (): JSX.Element {
@@ -119,7 +119,7 @@ function Pomu (): JSX.Element {
       <TalentLayout
         name='Pomu Rainpuff'
         corner={Corner}
-        frame = {PomuFrame}
+        frame={PomuFrame}
         portrait={PomuImage}
         quote={quote}
         info={info}
