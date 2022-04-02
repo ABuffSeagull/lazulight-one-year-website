@@ -1,5 +1,7 @@
 import TalentLayout from '../components/TalentLayout'
 import EliraImage from '../assets/liver-image/elira-placeholder.png?format=png;avif;webp&imagetools&meta'
+import corner from '../assets/Elira-MsgCorner.png'
+import EliraFrame from '../assets/Frames/Elira-LiverCorner.png'
 
 export default function Elira (): JSX.Element {
   const name = 'Elira Pendora'
@@ -124,8 +126,11 @@ export default function Elira (): JSX.Element {
 
   return (
     <div>
+
       <TalentLayout
         name={name}
+        frame={EliraFrame}
+        corner={corner}
         portrait={EliraImage}
         quote={quote}
         info={info}
@@ -135,6 +140,7 @@ export default function Elira (): JSX.Element {
         messages={messages}
         fanarts={fanarts}
       />
+
     </div>
   )
 }
