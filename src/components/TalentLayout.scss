@@ -125,6 +125,9 @@
 }
 
 .fan-submissions {
+	// Message/Art column organisation loosely based off
+	//	https://codepen.io/slooo/pen/yLYZNKw
+	//	https://www.w3schools.com/css/css3_flexbox_responsive.asp
 	&-container {
 		position: relative;
 		width: 100%;
@@ -175,12 +178,12 @@
 			width: 100%;
 		}
 		&-faded {
-			max-height: 20rem;
-			overflow: hidden;
 			// Fade content of div to transparent:
 			//	https://makandracards.com/makandra/475887-letting-a-dom-element-fade-into-transparency
+			overflow: hidden;
+			max-height:                                                               20rem;
 			-webkit-mask-image: linear-gradient(to bottom, black 10rem, transparent 20rem);
-			mask-image: linear-gradient(to bottom, black 40rem, transparent 50rem);
+			mask-image:         linear-gradient(to bottom, black 10rem, transparent 20rem);
 		}
 	}
 
