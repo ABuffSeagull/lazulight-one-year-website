@@ -49,7 +49,7 @@ function TalentLayout (props: Props): JSX.Element {
 
   return (
     <div className='talent-layout-container'>
-      
+
       <div className='talent-profile-container'>
         <div className='talent-picture-box'>
           <Image src={props.portrait} />
@@ -71,7 +71,7 @@ function TalentLayout (props: Props): JSX.Element {
 
       <div className='fan-submissions-container'>
         <h3 className={`${firstNameLower}-border`}>Messages To {firstName}</h3>
-        <div className= {`${showAllMessages ? 'fan-submissions-box-expanded' : 'fan-submissions-box-faded'}`} >
+        <div className={`${showAllMessages ? 'fan-submissions-box-expanded' : 'fan-submissions-box-faded'}`}>
           <div className='fan-submissions-box'>
             {renderMessages().map((message) => (
               <div className='fan-submissions-submission'>
@@ -84,19 +84,19 @@ function TalentLayout (props: Props): JSX.Element {
             ))}
           </div>
         </div>
-          {!showAllMessages && (
-            <button
-              onClick={() => { setShowAllMessages(true) }}
-              className={`${firstNameLower}-border`}
-            >
-              view all
-            </button>
-          )}
+        {!showAllMessages && (
+          <button
+            onClick={() => { setShowAllMessages(true) }}
+            className={`${firstNameLower}-border`}
+          >
+            view all
+          </button>
+        )}
       </div>
 
       <div className='fan-submissions-container'>
         <h3 className={`${firstNameLower}-border`}>Art For {firstName}</h3>
-        <div className= {`${showAllFanart ? 'fan-submissions-box-expanded' : 'fan-submissions-box-faded'}`} >
+        <div className={`${showAllFanart ? 'fan-submissions-box-expanded' : 'fan-submissions-box-faded'}`}>
           <div className='fan-submissions-box'>
             {renderArt().map((fanart) => (
               <div className='fan-submissions-submission'>
@@ -107,9 +107,9 @@ function TalentLayout (props: Props): JSX.Element {
                   <Image className='fan-submissions-fanarti' src={fanart.artUrl} alt='' />
                 </div>
               </div>
-              ))}
-            </div>
+            ))}
           </div>
+        </div>
         {!showAllFanart && (
           <button
             onClick={() => { setShowAllFanart(true) }}
