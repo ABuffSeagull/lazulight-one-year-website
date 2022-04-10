@@ -33,24 +33,25 @@
 		}
 	}
 
-	&-quote {
-		position: absolute;
-		right: 10%;
-		top: 0;
-		transform: rotate(-5deg);
-		height: 15vw;
-		width: 15vw;
-		border-radius: 30rem;
-		background: rgba(221, 209, 209);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		box-shadow: 0px 0px 10px 10px rgba(221, 209, 209);
+	// NOTE (Brandon): Slight design change. Removed quote
+	//&-quote {
+	//	position: absolute;
+	//	right: 10%;
+	//	top: 0;
+	//	transform: rotate(-5deg);
+	//	height: 15vw;
+	//	width: 15vw;
+	//	border-radius: 30rem;
+	//	background: rgba(221, 209, 209);
+	//	display: flex;
+	//	justify-content: center;
+	//	align-items: center;
+	//	box-shadow: 0px 0px 10px 10px rgba(221, 209, 209);
 
-		span {
-			font-size: 2.5vw;
-		}
-	}
+	//	span {
+	//		font-size: 2.5vw;
+	//	}
+	//}
 
 	&-info-container {
 		display: flex;

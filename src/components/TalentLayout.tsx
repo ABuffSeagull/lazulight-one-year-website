@@ -26,7 +26,7 @@ interface Props {
   messages: Message[]
   fanarts: Fanart[]
   portrait: string | metadata[]
-  quote: string
+  quote: string // NOTE (Brandon): Slight design change. Removed quote
   info: string
   youtube: string
   twitter: string
@@ -53,9 +53,6 @@ function TalentLayout (props: Props): JSX.Element {
       <div className='talent-profile-container'>
         <div className='talent-picture-box'>
           <Image src={props.portrait} />
-          <div className='talent-quote'>
-            <span>{props.quote}</span>
-          </div>
         </div>
         <div className='talent-info-container'>
           <div className={`talent-text-container ${firstNameLower}-border`}>
