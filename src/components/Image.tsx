@@ -9,7 +9,7 @@ interface ImageToolProps {
 export default function Image (props: ImageToolProps): JSX.Element {
   if (typeof props.src === 'string') {
     return (
-      <img src={props.src} width={props.width} height={props.height} alt={props.alt} />
+      <img className={props.className} src={props.src} width={props.width} height={props.height} alt={props.alt} />
     )
   } else {
     const [fallback, ...sources] = props.src
