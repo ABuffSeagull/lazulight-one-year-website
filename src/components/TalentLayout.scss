@@ -33,24 +33,25 @@
 		}
 	}
 
-	&-quote {
-		position: absolute;
-		right: 10%;
-		top: 0;
-		transform: rotate(-5deg);
-		height: 15vw;
-		width: 15vw;
-		border-radius: 30rem;
-		background: rgba(221, 209, 209);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		box-shadow: 0px 0px 10px 10px rgba(221, 209, 209);
+	// NOTE (Brandon): Slight design change. Removed quote
+	//&-quote {
+	//	position: absolute;
+	//	right: 10%;
+	//	top: 0;
+	//	transform: rotate(-5deg);
+	//	height: 15vw;
+	//	width: 15vw;
+	//	border-radius: 30rem;
+	//	background: rgba(221, 209, 209);
+	//	display: flex;
+	//	justify-content: center;
+	//	align-items: center;
+	//	box-shadow: 0px 0px 10px 10px rgba(221, 209, 209);
 
-		span {
-			font-size: 2.5vw;
-		}
-	}
+	//	span {
+	//		font-size: 2.5vw;
+	//	}
+	//}
 
 	&-info-container {
 		display: flex;
@@ -125,50 +126,23 @@
 }
 
 .fan-submissions {
+	// Message/Art column organisation loosely based off
+	//	https://codepen.io/slooo/pen/yLYZNKw
+	//	https://www.w3schools.com/css/css3_flexbox_responsive.asp
 	&-container {
-		display: flex;
+		position: relative;
 		width: 100%;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		gap: 1rem;
-		margin-bottom: 5rem;
+		margin-bottom: 3rem;
 
 		h3 {
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 20px;
 			width: 75%;
 			text-align: center;
 			padding: 0.25rem 0;
 			border-radius: 7px;
 			background-color: $background-grey;
-		}
-	}
-
-	&-box {
-		display: flex;
-		padding-top: 2rem;
-		gap: 2rem;
-		width: 100%;
-		position: relative;
-		overflow-y: hidden;
-		padding-right: 1.5rem;
-
-		@media (max-width: $bpMobile) {
-			flex-direction: column;
-		}
-
-		&-fade {
-			position: absolute;
-			bottom: 0px;
-			display: block;
-			width: 100%;
-			max-height: 50rem;
-			height: 100%;
-			background-image: linear-gradient(
-				to bottom,
-				rgba(255, 255, 255, 0),
-				rgba(255, 255, 255, 0) 70%,
-				rgba(255, 255, 255, 1) 100%
-			);
 		}
 
 		button {
@@ -185,18 +159,47 @@
 		}
 	}
 
-	&-column {
-		display: flex;
-		flex-direction: column;
-		width: 33%;
-		gap: 2rem;
+	&-box {
+		position: relative;
+		column-count: 3;
+		-webkit-column-gap: 1em;
+		-moz-column-gap: 1em;
+		column-gap: 1em;
+		padding-left: 20px;
 
+		@media (max-width: $bpTablet) {
+			column-count: 2;
+		}
 		@media (max-width: $bpMobile) {
+			column-count: 1;
+		}
+
+		&-expanded {
+			max-height: 100%;
 			width: 100%;
+		}
+		&-faded {
+			// Fade content of div to transparent:
+			//	https://makandracards.com/makandra/475887-letting-a-dom-element-fade-into-transparency
+			overflow: hidden;
+			max-height:                                                               20rem;
+			-webkit-mask-image: linear-gradient(to bottom, black 10rem, transparent 20rem);
+			mask-image:         linear-gradient(to bottom, black 10rem, transparent 20rem);
 		}
 	}
 
-
+	&-submission {
+		position: relative;
+		  -webkit-column-break-inside: avoid;
+		page-break-inside: avoid;
+		break-inside: avoid;
+		margin-bottom: 1rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-top: 20px;
+		padding-right: 20px;
+	}
 
 	&-message,
 	&-fanart {
@@ -205,15 +208,16 @@
 		padding: 3px;
 		border-radius: 3px;
 		background-color: $background-grey;
-		overflow: visible;
 
 		h4 {
 			margin-bottom: 0.75rem;
+			word-wrap: break-word;
+			margin-top: 5px;
+			margin-right: 10px;
 		}
 	}
 
 	&-fanarti {
-			
 		width: 100%;
 		padding: 5%;
 			
@@ -221,12 +225,11 @@
 
 	&-corner {
 		position: absolute;
-		top: 0;
-		right: 0;
+		top: 0px;
+		right: 0px;
+		object-fit: scale-down;
 		height: 90px;
-		transform: translate(20px, -20px);
 		z-index: 1;
-		overflow: visible;
 	}
 
 }

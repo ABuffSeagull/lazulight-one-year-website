@@ -26,7 +26,7 @@ interface Props {
   messages: Message[]
   fanarts: Fanart[]
   portrait: string | metadata[]
-  quote: string
+  quote: string // NOTE (Brandon): Slight design change. Removed quote
   info: string
   youtube: string
   twitter: string
@@ -39,34 +39,20 @@ function TalentLayout (props: Props): JSX.Element {
   const [showAllMessages, setShowAllMessages] = React.useState(false)
   const [showAllFanart, setShowAllFanart] = React.useState(false)
 
-  const renderMessageColumns = (): Message[][] => {
-    const result: Message[][] = [[], [], []]
-
-    props.messages.forEach((message: any, i: number): void => {
-      result[i % 3].push(message)
-    })
-
-    return result
+  const renderMessages = (): Message[] => {
+    return props.messages
   }
 
-  const renderArtColumns = (): Fanart[][] => {
-    const result: Fanart[][] = [[], [], []]
-
-    props.fanarts.forEach((message: any, i: number): void => {
-      result[i % 3].push(message)
-    })
-
-    return result
+  const renderArt = (): Fanart[] => {
+    return props.fanarts
   }
 
   return (
     <div className='talent-layout-container'>
+
       <div className='talent-profile-container'>
         <div className='talent-picture-box'>
           <Image src={props.portrait} />
-          <div className='talent-quote'>
-            <span>{props.quote}</span>
-          </div>
         </div>
         <div className='talent-info-container'>
           <div className={`talent-text-container ${firstNameLower}-border`}>
@@ -79,70 +65,62 @@ function TalentLayout (props: Props): JSX.Element {
               <a href={props.discord}>Discord</a>
             </div>
           </div>
-          <div className='talent-animation-container'>{/* animated decorations goes here */}</div>
+          <div className='talent-animation-container'>TODO: animated decorations goes here</div>
         </div>
       </div>
+
       <div className='fan-submissions-container'>
         <h3 className={`${firstNameLower}-border`}>Messages To {firstName}</h3>
-        <div className='fan-submissions-box' style={{ maxHeight: `${showAllMessages ? '100%' : '50rem'}` }}>
-          {!showAllMessages && <div className='fan-submissions-box-fade' />}
-          {renderMessageColumns().map((column) => (
-            <div className='fan-submissions-column'>
-              {column.map((message) => (
+        <div className={`${showAllMessages ? 'fan-submissions-box-expanded' : 'fan-submissions-box-faded'}`}>
+          <div className='fan-submissions-box'>
+            {renderMessages().map((message) => (
+              <div className='fan-submissions-submission'>
+                <Image className='fan-submissions-corner' src={props.corner} />
                 <div className={`fan-submissions-message ${firstNameLower}-border`}>
-                  <h4>
-                    {message.name} ({message.twitter})
-                  </h4>
-                  <Image className='fan-submissions-corner' src={props.corner} />
+                  <h4>{message.name} ({message.twitter})</h4>
                   <p>{message.text}</p>
                 </div>
-              ))}
-            </div>
-          ))}
-          {!showAllMessages && (
-            <button
-              onClick={() => {
-                setShowAllMessages(true)
-              }}
-              className={`${firstNameLower}-border`}
-            >
-              view all
-            </button>
-          )}
+              </div>
+            ))}
+          </div>
         </div>
+        {!showAllMessages && (
+          <button
+            onClick={() => { setShowAllMessages(true) }}
+            className={`${firstNameLower}-border`}
+          >
+            view all
+          </button>
+        )}
       </div>
+
       <div className='fan-submissions-container'>
         <h3 className={`${firstNameLower}-border`}>Art For {firstName}</h3>
-        <div className='fan-submissions-box' style={{ maxHeight: `${showAllFanart ? '100%' : '50rem'}` }}>
-          {!showAllFanart && <div className='fan-submissions-box-fade' />}
-          {renderArtColumns().map((column) => (
-            <div className='fan-submissions-column'>
-              {column.map((fanart) => (
+        <div className={`${showAllFanart ? 'fan-submissions-box-expanded' : 'fan-submissions-box-faded'}`}>
+          <div className='fan-submissions-box'>
+            {renderArt().map((fanart) => (
+              <div className='fan-submissions-submission'>
+                <Image className='fan-submissions-corner' src={props.corner} />
                 <div className={`fan-submissions-fanart ${firstNameLower}-border`}>
-
-                  <h4>
-                    {fanart.name} ({fanart.twitter})
-                  </h4>
-                  <Image className='fan-submissions-corner' src={props.corner} />
+                  <h4>{fanart.name} ({fanart.twitter})</h4>
                   <p>{fanart.text}</p>
                   <Image className='fan-submissions-fanarti' src={fanart.artUrl} alt='' />
                 </div>
-              ))}
-            </div>
-          ))}
-          {!showAllFanart && (
-            <button
-              onClick={() => {
-                setShowAllFanart(true)
-              }}
-              className={`${firstNameLower}-border`}
-            >
-              view all
-            </button>
-          )}
+              </div>
+            ))}
+          </div>
         </div>
+        {!showAllFanart && (
+          <button
+            onClick={() => { setShowAllFanart(true) }}
+            className={`${firstNameLower}-border`}
+          >
+            view all
+          </button>
+        )}
       </div>
-      <div className='extra-info'>{/* For credits, disclaimers, etc. */}</div>
+
+      <div className='extra-info'>TODO: For credits, disclaimers, etc.</div>
     </div>
   )
 }
