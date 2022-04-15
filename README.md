@@ -8,6 +8,10 @@ Some helpful npm scripts:
 - `npm run lint` runs the linter and tries to fix things.
 - `npm run format` supposed to run `prettier` but is in kinda limbo-land since we're using `ts-standard` now, see [issue #7](https://github.com/ABuffSeagull/lazulight-one-year-website/issues/7) and [PR #11](https://github.com/ABuffSeagull/lazulight-one-year-website/pull/11).
 
+## Troubleshooting
+- Vite throws `Input file contains unsupported image format` and all the images are 1KB
+  - We store our media in Git LFS. If you don't have it, grab it from [here](https://git-lfs.github.com/) or from your favorite package manager. See [here](https://github.com/git-lfs/git-lfs/wiki/Installation) for more detailed install instructions. After that, run `git lfs install` to activate it. If you've already cloned the repo before you installed Git LFS, you'll need to manually pull the media from LFS with `git lfs pull`. After that, everything should Just Work&#x2122;.
+
 Some important links for this project:
 
 - [wouter](https://www.npmjs.com/package/wouter)
