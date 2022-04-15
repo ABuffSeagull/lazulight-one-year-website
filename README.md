@@ -1,4 +1,8 @@
-Uhhhhhhhhh, add some documentation or something here
+## Prerequisites
+Need to install git lfs ([link](https://github.com/git-lfs/git-lfs/wiki/Installation)):
+- If you cloned the repo before this is installed, run this command `git lfs pull`
+- If you managed to do everything right, the images in the assets folder should be showing when previewed
+
 ## BOOM documentation here
 Some helpful npm scripts:
 - `npm run dev` starts a local dev server with hot reloads so you can see your changes as soon as you save.
