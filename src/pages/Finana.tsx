@@ -6,7 +6,6 @@ import corner from '../assets/Corners/Finana-MsgCorner.webp'
 
 function Finana (): JSX.Element {
   const name = 'Finana Ryugu'
-  const quote = 'Egg'
   const info = [
     'Placeholder info for Finana!'
   ]
@@ -124,7 +123,6 @@ function Finana (): JSX.Element {
         frame={FinanaFrame}
         corner={corner}
         portrait={FinanaImage}
-        quote={quote}
         info={info}
         youtube={youtubeLink}
         twitter={twitterLink}

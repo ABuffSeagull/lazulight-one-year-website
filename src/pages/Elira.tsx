@@ -5,7 +5,6 @@ import corner from '../assets/Corners/Elira-MsgCorner.webp'
 
 export default function Elira (): JSX.Element {
   const name = 'Elira Pendora'
-  const quote = 'Sheee-eeesh!'
   const info = [
     'Placeholder info for Elira!',
     'test paragraph',
@@ -139,7 +138,6 @@ export default function Elira (): JSX.Element {
         frame={EliraFrame}
         corner={corner}
         portrait={EliraImage}
-        quote={quote}
         info={info}
         youtube={youtubeLink}
         twitter={twitterLink}

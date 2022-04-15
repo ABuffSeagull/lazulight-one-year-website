@@ -44,12 +44,17 @@
 
 	&-animation-container {
 		display: grid;
-		grid-template-columns: repeat(4, [col-start] 20% [col-end]);
-		grid-gap: calc( (100% - 4*20%)/3 );
+
+		$num-col: 4;
+		$col-width: calc(90% / $num-col);
+		grid-template-columns: repeat($num-col, [col-start] $col-width [col-end]);
+		grid-gap: calc( (100% - $num-col*$col-width)/($num-col - 1) );
 
 		@media (max-width: $bpTablet) {
-			grid-template-columns: repeat(3, [col-start] 30% [col-end]);
-			grid-gap: calc( (100% - 3*30%)/2 );
+			$num-col: 3;
+			$col-width: calc(90% / $num-col);
+			grid-template-columns: repeat($num-col, [col-start] $col-width [col-end]);
+			grid-gap: calc( (100% - $num-col*$col-width)/($num-col - 1) );
 		}
 
 		img {
@@ -77,24 +82,27 @@
 		height: 75%;
 	}
 	&-text-container-pomu {
-		padding-top: 8.5%;
-		padding-right: 8%;
+		$padding-lr: 7.5%;
+		padding-top: 8%;
+		padding-right: $padding-lr;
 		@media (max-width: $bpMobile) {
-			padding-left: 8%;
+			padding-left: $padding-lr;
 		}
 	}
 	&-text-container-finana {
+		$padding-lr: 4%;
 		padding-top: 4%;
-		padding-right: 4%;
+		padding-right: $padding-lr;
 		@media (max-width: $bpMobile) {
-			padding-left: 4%;
+			padding-left: $padding-lr;
 		}
 	}
 	&-text-container-elira {
+		$padding-lr: 7%;
 		padding-top: 8%;
-		padding-right: 7%;
+		padding-right: $padding-lr;
 		@media (max-width: $bpMobile) {
-			padding-left: 7%;
+			padding-left: $padding-lr;
 		}
 	}
 
@@ -195,16 +203,19 @@
 		&-faded {
 			// Fade content of div to transparent:
 			//	https://makandracards.com/makandra/475887-letting-a-dom-element-fade-into-transparency
+			$truncate-after: 20rem;
+			$fade-height: 5rem;
+			$fade-after: $truncate-after - $fade-height;
 			overflow: hidden;
-			max-height:                                                               20rem;
-			-webkit-mask-image: linear-gradient(to bottom, black 10rem, transparent 20rem);
-			mask-image:         linear-gradient(to bottom, black 10rem, transparent 20rem);
+			max-height: $truncate-after;
+			-webkit-mask-image: linear-gradient(to bottom, black $fade-after, transparent $truncate-after);
+			mask-image:         linear-gradient(to bottom, black $fade-after, transparent $truncate-after);
 		}
 	}
 
 	&-submission {
 		position: relative;
-		  -webkit-column-break-inside: avoid;
+		-webkit-column-break-inside: avoid;
 		page-break-inside: avoid;
 		break-inside: avoid;
 		margin-bottom: 1rem;
@@ -277,6 +288,7 @@
 		background-image: linear-gradient(to bottom, #83e5e6, #1c374a);
 	}
 	&-pomu {
+		// TODO - colours
 		background-image: linear-gradient(to bottom, #a7cde0, #292e65);
 	}
 }

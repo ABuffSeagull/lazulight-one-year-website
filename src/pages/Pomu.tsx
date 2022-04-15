@@ -5,7 +5,6 @@ import PomuFrame from '../assets/Corners/Pomu-LiverCorner.webp'
 import corner from '../assets/Corners/Pomu-MsgCorner.webp'
 
 function Pomu (): JSX.Element {
-  const quote = "I'm Pomu!"
   const info = [
     'Placeholder info for Pomu!'
   ]
@@ -123,7 +122,6 @@ function Pomu (): JSX.Element {
         corner={corner}
         frame={PomuFrame}
         portrait={PomuImage}
-        quote={quote}
         info={info}
         youtube={youtubeLink}
         twitter={twitterLink}

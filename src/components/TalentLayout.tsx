@@ -26,7 +26,6 @@ interface Props {
   messages: Message[]
   fanarts: Fanart[]
   portrait: string | metadata[]
-  quote: string // NOTE (Brandon): Slight design change. Removed quote
   info: string[]
   youtube: string
   twitter: string
@@ -130,6 +129,7 @@ function TalentLayout (props: Props): JSX.Element {
         )}
       </div>
 
+      {/* TODO: Move this to the root template so all pages get the it */}
       <div className='extra-info'>TODO: For credits, disclaimers, etc.</div>
     </div>
   )
