@@ -5,6 +5,16 @@
 	flex-flow: column nowrap;
 	justify-content: center;
 	align-items: center;
+
+	// NOTE (Brandon) Work-around to bug "Liver pages: magic horizontal scroll bar"
+	//   On the liver pages, there's a weird bug that sometimes causes a horizontal scroll bar
+	//   Hours later and I've given up on it.
+	//   This work around is sufficent (but I still hate it)
+	//   It's related to the images: both the frame corners and the animation
+	//   If you want to have a go at it
+	//       Comment out this line (of course, it's the work around)
+	//       Then start by commenting out all the images
+	overflow-x: clip;
 }
 
 .link {
