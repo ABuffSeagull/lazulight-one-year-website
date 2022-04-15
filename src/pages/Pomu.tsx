@@ -6,7 +6,9 @@ import corner from '../assets/Corners/Pomu-MsgCorner.webp'
 
 function Pomu (): JSX.Element {
   const quote = "I'm Pomu!"
-  const info = 'Placeholder info for Pomu!'
+  const info = [
+    'Placeholder info for Pomu!'
+  ]
   const youtubeLink = 'https://www.youtube.com/channel/UCP4nMSTdwU1KqYWu3UH5DHQ'
   const twitterLink = 'https://twitter.com/PomuRainpuff'
   const fanDiscordLink = ''

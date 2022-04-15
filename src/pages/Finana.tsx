@@ -7,7 +7,9 @@ import corner from '../assets/Corners/Finana-MsgCorner.webp'
 function Finana (): JSX.Element {
   const name = 'Finana Ryugu'
   const quote = 'Egg'
-  const info = 'Placeholder info for Finana!'
+  const info = [
+    'Placeholder info for Finana!'
+  ]
   const youtubeLink = 'https://www.youtube.com/c/FinanaRyugu-NIJISANJIEN'
   const twitterLink = 'https://twitter.com/FinanaRyugu'
   const fanDiscordLink = ''
