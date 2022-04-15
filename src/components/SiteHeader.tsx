@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "wouter";
 import Image from "./Image";
 import classes from "./SiteHeader.module.scss";
@@ -61,23 +61,37 @@ export default function SiteHeader() {
 		}
 	];
 
+	const [headerOpen, setHeaderOpen] = useState(false);
+
 	return (
-		<header className={classes.header}>
-			{navIcons.map((linkData) => (
-				<Link className={classes.navLink} to={linkData.path}>
-					<div className={classes.iconWrapper}>
-						<Image
-							className={[classes.icon, classes.defaultIcon].join(" ")}
-							src={linkData.icon}
-						/>
-						<Image
-							className={[classes.icon, classes.activeIcon].join(" ")}
-							src={linkData.iconActive}
-						/>
-					</div>
-					<span>{linkData.name}</span>
-				</Link>
-			))}
-		</header>
+		<>
+			<header
+				className={[classes.header, headerOpen ? classes.open : ""].join(
+					" "
+				)}
+			>
+				{navIcons.map((linkData) => (
+					<Link className={classes.navLink} to={linkData.path}>
+						<div className={classes.iconWrapper}>
+							<Image
+								className={[classes.icon, classes.defaultIcon].join(" ")}
+								src={linkData.icon}
+							/>
+							<Image
+								className={[classes.icon, classes.activeIcon].join(" ")}
+								src={linkData.iconActive}
+							/>
+						</div>
+						<span>{linkData.name}</span>
+					</Link>
+				))}
+			</header>
+			<button
+				className={classes.openHeader}
+				onClick={() => setHeaderOpen(!headerOpen)}
+			>
+				close
+			</button>
+		</>
 	);
 }
