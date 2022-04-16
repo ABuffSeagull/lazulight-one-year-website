@@ -5,8 +5,8 @@ import Elira from './pages/Elira'
 import Finana from './pages/Finana'
 import Pomu from './pages/Pomu'
 import Secret from './pages/Secret'
-import DCL from './pages/DCL'
-import VN from './pages/VN'
+import DiamondCityLights from './pages/DiamondCityLights'
+import VisualNovel from './pages/VisualNovel'
 import Art from './pages/Art'
 import Messages from './pages/Messages'
 import About from './pages/About'
@@ -26,8 +26,8 @@ export default function App (): JSX.Element {
         <Route path='/finana'><PageWrapper page='finana'><Finana /></PageWrapper></Route>
         <Route path='/pomu'><PageWrapper page='pomu'><Pomu /></PageWrapper></Route>
         <Route path='/project-secret'><PageWrapper page='secret'><Secret /></PageWrapper></Route>
-        <Route path='/project-dcl'><PageWrapper page='dcl'><DCL /></PageWrapper></Route>
-        <Route path='/project-vn'><PageWrapper page='vn'><VN /></PageWrapper></Route>
+        <Route path='/project-dcl'><PageWrapper page='dcl'><DiamondCityLights /></PageWrapper></Route>
+        <Route path='/project-vn'><PageWrapper page='vn'><VisualNovel /></PageWrapper></Route>
         <Route path='/all-art'><PageWrapper page='art'><Art /></PageWrapper></Route>
         <Route path='/all-messages'><PageWrapper page='messages'><Messages /></PageWrapper></Route>
         <Route path='/about'><PageWrapper page='about'><About /></PageWrapper></Route>
