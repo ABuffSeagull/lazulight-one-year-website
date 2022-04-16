@@ -21,7 +21,7 @@ import submissionsIconActive from '../assets/menu_icons/Menu-EliraTiara-Active.w
 import VNIconDefault from '../assets/menu_icons/Menu-FinanaCrown-Default.webp'
 import VNIconActive from '../assets/menu_icons/Menu-FinanaCrown-Active.webp'
 
-export default function SiteHeader () {
+export default function SiteHeader (): JSX.Element {
   const navIcons = [
     {
       name: 'Home',
@@ -65,13 +65,13 @@ export default function SiteHeader () {
 
   return (
     <>
-      <header
-        className={[classes.header, headerOpen ? classes.open : ''].join(
-				  ' '
-        )}
-      >
+      <header className={[classes.header, headerOpen ? classes.open : ''].join(' ')}>
         {navIcons.map((linkData) => (
-          <Link className={classes.navLink} to={linkData.path}>
+          <Link
+            key={linkData.name}
+            className={classes.navLink}
+            to={linkData.path}
+          >
             <div className={classes.iconWrapper}>
               <Image
                 className={[classes.icon, classes.defaultIcon].join(' ')}
