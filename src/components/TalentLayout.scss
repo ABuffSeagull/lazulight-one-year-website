@@ -2,61 +2,72 @@
 
 .talent {
 	&-layout-container {
-		width: 100vw;
+		width: 100%;
 		height: 100%;
-		padding: 5vw 5vw 15vw 5vw;
+		padding: 0vw 5vw 15vw 5vw;
 		position: relative;
 	}
 
 	&-profile-container {
 		display: flex;
+		align-items: flex-end;//center; // TODO: Adjust when text is added
 		width: 100%;
 		margin-bottom: 2rem;
 
 		@media (max-width: $bpMobile) {
 			flex-direction: column;
+			align-items: center;
 		}
 	}
 
 	&-picture-box {
 		position: relative;
-		width: 45vw;
-		padding: 1rem;
+		max-width: 25vw;
+		//height: calc(2360/1440*25vw); // picture aspect ratio = 2360/1440
+		margin-right: 5vw;
 
+		@media (max-width: $bpTablet) {
+			max-width: 40vw; // TODO: Adjust when text is added
+		}
 		@media (max-width: $bpMobile) {
-			width: 100%;
+			max-width: 100%; // Clear desktop mode directive
+			width: 80%;
+			height: 100%;
+			margin-right: 0;
 		}
 
 		img {
-			width: 85%;
-			height: 100%;
+			width: 100%;
+			object-fit: contain;
 		}
 	}
 
-	// NOTE (Brandon): Slight design change. Removed quote
-	//&-quote {
-	//	position: absolute;
-	//	right: 10%;
-	//	top: 0;
-	//	transform: rotate(-5deg);
-	//	height: 15vw;
-	//	width: 15vw;
-	//	border-radius: 30rem;
-	//	background: rgba(221, 209, 209);
-	//	display: flex;
-	//	justify-content: center;
-	//	align-items: center;
-	//	box-shadow: 0px 0px 10px 10px rgba(221, 209, 209);
+	&-animation-container {
+		display: grid;
 
-	//	span {
-	//		font-size: 2.5vw;
-	//	}
-	//}
+		$num-col: 4;
+		$col-width: calc(90% / $num-col);
+		grid-template-columns: repeat($num-col, [col-start] $col-width [col-end]);
+		grid-gap: calc( (100% - $num-col*$col-width)/($num-col - 1) );
+
+		@media (max-width: $bpTablet) {
+			$num-col: 3;
+			$col-width: calc(90% / $num-col);
+			grid-template-columns: repeat($num-col, [col-start] $col-width [col-end]);
+			grid-gap: calc( (100% - $num-col*$col-width)/($num-col - 1) );
+		}
+
+		img {
+			width: 100%;
+			object-fit: contain;
+		}
+	}
 
 	&-info-container {
 		display: flex;
 		flex-direction: column;
-		width: 55vw;
+		flex-grow: 10; // A big number to force fill the screen
+		height: 100%;
 
 		@media (max-width: $bpMobile) {
 			width: 100%;
@@ -64,23 +75,58 @@
 	}
 
 	&-text-container {
+		position: relative;
 		display: flex;
 		flex-direction: column;
-		padding: 1rem 5%;
 		width: 100%;
 		height: 75%;
+	}
+	&-text-container-pomu {
+		$padding-lr: 7.5%;
+		padding-top: 8%;
+		padding-right: $padding-lr;
+		@media (max-width: $bpMobile) {
+			padding-left: $padding-lr;
+		}
+	}
+	&-text-container-finana {
+		$padding-lr: 4%;
+		padding-top: 4%;
+		padding-right: $padding-lr;
+		@media (max-width: $bpMobile) {
+			padding-left: $padding-lr;
+		}
+	}
+	&-text-container-elira {
+		$padding-lr: 7%;
+		padding-top: 8%;
+		padding-right: $padding-lr;
+		@media (max-width: $bpMobile) {
+			padding-left: $padding-lr;
+		}
+	}
+
+	&-text-inner {
+		padding-top: 4%;    // Space for frame
+		padding-right: 10%; // Space for frame
+		padding-left: 1rem;
+		padding-bottom: 5%;
+		width: 100%;
+		height: 100%;
 		border-radius: 2.5vw;
 		background-color: $background-grey;
 
 		h2 {
 			font-size: 5vw;
-			text-align: center;
-			border-bottom: 2px solid black;
-			margin-bottom: 2rem;
+			text-align: left;
+			display: inline-block; // Cut underline length to text length
+			border-bottom: 2px solid currentColor;
+			line-height: 0.9;
+			margin-bottom: 1rem;
 		}
 
 		p {
-			font-size: clamp(0.75rem, 2vw, 1.25rem);
+			//font-size: clamp(0.75rem, 2vw, 1.25rem); // Too small I think?
 		}
 	}
 
@@ -91,38 +137,14 @@
 		padding: 0.5rem 0;
 	}
 
-
-	&-pomuframe {
+	&-corner {
 		position: absolute;
-		top: 0;
-		right: 0;
-		height: 10%;
-		transform: translate(-10px, 10px);
-		z-index: 1;
-		overflow: visible;	
+		top: 0px;
+		right: 0px;
+		object-fit: scale-down;
+		width: 38%;
+		z-index: 2;
 	}
-
-	&-finanaframe {
-		position: absolute;
-		top: 0;
-		right: 0;
-		height: 10%;
-		transform: translate(-30px,25px);
-		z-index: 1;
-		overflow: visible;	
-	}
-
-	&-eliraframe {
-		position: absolute;
-		top: 0;
-		right: 0;
-		height: 10%;
-		transform: translate(-10px, 10px);
-		z-index: 1;
-		overflow: visible;	
-	}
-
-
 }
 
 .fan-submissions {
@@ -147,7 +169,7 @@
 
 		button {
 			position: absolute;
-            z-index: 2;
+            z-index: 10;
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
@@ -181,16 +203,19 @@
 		&-faded {
 			// Fade content of div to transparent:
 			//	https://makandracards.com/makandra/475887-letting-a-dom-element-fade-into-transparency
+			$truncate-after: 20rem;
+			$fade-height: 5rem;
+			$fade-after: $truncate-after - $fade-height;
 			overflow: hidden;
-			max-height:                                                               20rem;
-			-webkit-mask-image: linear-gradient(to bottom, black 10rem, transparent 20rem);
-			mask-image:         linear-gradient(to bottom, black 10rem, transparent 20rem);
+			max-height: $truncate-after;
+			-webkit-mask-image: linear-gradient(to bottom, black $fade-after, transparent $truncate-after);
+			mask-image:         linear-gradient(to bottom, black $fade-after, transparent $truncate-after);
 		}
 	}
 
 	&-submission {
 		position: relative;
-		  -webkit-column-break-inside: avoid;
+		-webkit-column-break-inside: avoid;
 		page-break-inside: avoid;
 		break-inside: avoid;
 		margin-bottom: 1rem;
@@ -229,7 +254,8 @@
 		right: 0px;
 		object-fit: scale-down;
 		height: 90px;
-		z-index: 1;
+		width: 90px;
+		z-index: 2;
 	}
 
 }
@@ -246,11 +272,38 @@
 .pomu-border {
 	border: 3px solid $pomu-primary-color;
 }
-
 .finana-border {
 	border: 3px solid $finana-primary-color;
 }
-
 .elira-border {
 	border: 3px solid $elira-primary-color;
+}
+
+// Backgrounds
+// TODO: Move to root div
+.background-page {
+	&-elira {
+		background-image: linear-gradient(to bottom, #a7cde0, #292e65);
+	}
+	&-finana {
+		background-image: linear-gradient(to bottom, #83e5e6, #1c374a);
+	}
+	&-pomu {
+		// TODO - colours
+		background-image: linear-gradient(to bottom, #a7cde0, #292e65);
+	}
+}
+
+
+// Utility
+.hide-on-mobile {
+	@media (max-width: $bpMobile) {
+		display: none;
+	}
+}
+
+.hide-on-tablet {
+	@media (max-width: $bpTablet) {
+		display: none;
+	}
 }

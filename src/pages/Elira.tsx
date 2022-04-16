@@ -1,12 +1,18 @@
 import TalentLayout from '../components/TalentLayout'
-import EliraImage from '../assets/liver-image/elira-placeholder.png?format=png;avif;webp&imagetools&meta'
-import corner from '../assets/Elira-MsgCorner.png'
-import EliraFrame from '../assets/Frames/Elira-LiverCorner.png'
+import EliraImage from '../assets/Portraits/Elira-Portrait_cf50.webp?format=png;avif;webp&imagetools&meta'
+import EliraFrame from '../assets/Corners/Elira-LiverCorner.webp'
+import corner from '../assets/Corners/Elira-MsgCorner.webp'
 
 export default function Elira (): JSX.Element {
   const name = 'Elira Pendora'
-  const quote = 'Sheee-eeesh!'
-  const info = 'Placeholder info for Elira!'
+  const info = [
+    'Placeholder info for Elira!',
+    'test paragraph',
+    '',
+    'hey elira i\'m begging you i\'m on my knees here pleading please play minecraft with me tonight i am seriously begging here I am going to pass away please help minecraft is the only cure please elira',
+    '',
+    'hey elira i\'m begging you i\'m on my knees here pleading please play minecraft with me tonight i am seriously begging here I am going to pass away please help minecraft is the only cure please elira'
+  ]
   const youtubeLink =
     'https://www.youtube.com/channel/UCIeSUTOTkF9Hs7q3SGcO-Ow'
   const twitterLink = 'https://twitter.com/EliraPendora'
@@ -132,7 +138,6 @@ export default function Elira (): JSX.Element {
         frame={EliraFrame}
         corner={corner}
         portrait={EliraImage}
-        quote={quote}
         info={info}
         youtube={youtubeLink}
         twitter={twitterLink}

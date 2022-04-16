@@ -1,12 +1,13 @@
 import React from 'react'
 import TalentLayout from '../components/TalentLayout'
-import PomuImage from '../assets/liver-image/pomu-placeholder.png?format=png;avif;webp&imagetools&meta'
-import Corner from '../assets/Pomu-MsgCorner.png'
-import PomuFrame from '../assets/Frames/Pomu-LiverCorner.png'
+import PomuImage from '../assets/Portraits/Pomu-Portrait_cf50.webp?format=png;avif;webp&imagetools&meta'
+import PomuFrame from '../assets/Corners/Pomu-LiverCorner.webp'
+import corner from '../assets/Corners/Pomu-MsgCorner.webp'
 
 function Pomu (): JSX.Element {
-  const quote = "I'm Pomu!"
-  const info = 'Placeholder info for Pomu!'
+  const info = [
+    'Placeholder info for Pomu!'
+  ]
   const youtubeLink = 'https://www.youtube.com/channel/UCP4nMSTdwU1KqYWu3UH5DHQ'
   const twitterLink = 'https://twitter.com/PomuRainpuff'
   const fanDiscordLink = ''
@@ -118,10 +119,9 @@ function Pomu (): JSX.Element {
     <div>
       <TalentLayout
         name='Pomu Rainpuff'
-        corner={Corner}
+        corner={corner}
         frame={PomuFrame}
         portrait={PomuImage}
-        quote={quote}
         info={info}
         youtube={youtubeLink}
         twitter={twitterLink}

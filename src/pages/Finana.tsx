@@ -1,13 +1,14 @@
 import React from 'react'
 import TalentLayout from '../components/TalentLayout'
-import FinanaImage from '../assets/liver-image/finana-placeholder.png?format=png;avif;webp&imagetools&meta'
-import FinanaFrame from '../assets/Frames/Finana-Liver-Frame.png'
-import corner from '../assets/Finana-Message-Frame.png'
+import FinanaImage from '../assets/Portraits/Finana-Portrait_cf50.webp?format=png;avif;webp&imagetools&meta'
+import FinanaFrame from '../assets/Corners/Finana-LiverCorner.webp'
+import corner from '../assets/Corners/Finana-MsgCorner.webp'
 
 function Finana (): JSX.Element {
   const name = 'Finana Ryugu'
-  const quote = 'Egg'
-  const info = 'Placeholder info for Finana!'
+  const info = [
+    'Placeholder info for Finana!'
+  ]
   const youtubeLink = 'https://www.youtube.com/c/FinanaRyugu-NIJISANJIEN'
   const twitterLink = 'https://twitter.com/FinanaRyugu'
   const fanDiscordLink = ''
@@ -122,7 +123,6 @@ function Finana (): JSX.Element {
         frame={FinanaFrame}
         corner={corner}
         portrait={FinanaImage}
-        quote={quote}
         info={info}
         youtube={youtubeLink}
         twitter={twitterLink}
