@@ -280,22 +280,6 @@
 	border: 3px solid $elira-primary-color;
 }
 
-// Backgrounds
-// TODO: Move to root div
-.background-page {
-	&-elira {
-		background-image: linear-gradient(to bottom, #a7cde0, #292e65);
-	}
-	&-finana {
-		background-image: linear-gradient(to bottom, #83e5e6, #1c374a);
-	}
-	&-pomu {
-		// TODO - colours
-		background-image: linear-gradient(to bottom, #a7cde0, #292e65);
-	}
-}
-
-
 // Utility
 .hide-on-mobile {
 	@media (max-width: $bpMobile) {

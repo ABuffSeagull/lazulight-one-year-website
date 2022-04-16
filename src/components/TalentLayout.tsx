@@ -47,7 +47,7 @@ function TalentLayout (props: Props): JSX.Element {
   }
 
   return (
-    <div className={`talent-layout-container background-page-${firstNameLower}`}> {/* TODO: Move BG class to root div */}
+    <div className='talent-layout-container'>
 
       <div className='talent-profile-container'>
         <div className='talent-picture-box'>

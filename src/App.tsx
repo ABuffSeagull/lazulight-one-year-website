@@ -1,37 +1,38 @@
-import { Route, Switch, Link } from 'wouter'
-import classes from './App.module.scss'
+import { Route, Switch } from 'wouter'
+import { PageWrapper } from './components/PageWrapper'
+import Home from './pages/Home'
 import Elira from './pages/Elira'
 import Finana from './pages/Finana'
-import ImageExample from './pages/ImageExample'
 import Pomu from './pages/Pomu'
+import Secret from './pages/Secret'
+import DCL from './pages/DCL'
+import VN from './pages/VN'
+import Art from './pages/Art'
+import Messages from './pages/Messages'
+import About from './pages/About'
 
 export default function App (): JSX.Element {
   return (
-    <div className={classes.container}>
-      <nav>
-        <Link className={classes.link} to='/Finana'>
-          To Finana
-        </Link>
-        <Link className={classes.link} to='/Pomu'>
-          To Pomu
-        </Link>
-        <Link className={classes.link} to='/Elira'>
-          To Elira
-        </Link>
-      </nav>
+    <div>
+      {/* Notes: (Brandon)
+        This file switches the route and passes the name of the page to PageWrapper
+        Doing this allows everything in PageWrapper to dynamically change based on the value of 'page'
+        Because for some reason it wouldn't dynamically change based on 'location.pathname'
+
+        Content of PageWrapper: header, footer, background
+      */}
       <Switch>
-        <Route path='/Elira'>
-          <Elira />
-        </Route>
-        <Route path='/Finana'>
-          <Finana />
-        </Route>
-        <Route path='/Pomu'>
-          <Pomu />
-        </Route>
+        <Route path='/elira'><PageWrapper page='elira'><Elira /></PageWrapper></Route>
+        <Route path='/finana'><PageWrapper page='finana'><Finana /></PageWrapper></Route>
+        <Route path='/pomu'><PageWrapper page='pomu'><Pomu /></PageWrapper></Route>
+        <Route path='/project-secret'><PageWrapper page='secret'><Secret /></PageWrapper></Route>
+        <Route path='/project-dcl'><PageWrapper page='dcl'><DCL /></PageWrapper></Route>
+        <Route path='/project-vn'><PageWrapper page='vn'><VN /></PageWrapper></Route>
+        <Route path='/all-art'><PageWrapper page='art'><Art /></PageWrapper></Route>
+        <Route path='/all-messages'><PageWrapper page='messages'><Messages /></PageWrapper></Route>
+        <Route path='/about'><PageWrapper page='about'><About /></PageWrapper></Route>
         <Route>
-          <div>Whomst?</div>
-          <ImageExample />
+          <PageWrapper page='home'><Home /></PageWrapper>
         </Route>
       </Switch>
     </div>

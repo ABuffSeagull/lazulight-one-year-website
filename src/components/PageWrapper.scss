@@ -1,0 +1,50 @@
+@import "../variables.scss";
+
+.background-page {
+	&-elira {
+		background-image: linear-gradient(to bottom, #a7cde0, #292e65);
+	}
+	&-finana {
+		background-image:
+			linear-gradient(to bottom, #83e4e660, #1c374aa0), // Semitransparent overlay
+			url('../assets/BG/Finana-BG-Left_cf50.webp'), 
+			url('../assets/BG/Finana-BG-Right_cf50.webp'),
+			linear-gradient(to bottom, #83e5e6, #1c374a);
+		background-color: #83e5e6; // Backup in case the above fails
+
+		background-size: 100%, 10%, 10%, 100%;
+		background-position-x: center, left, right, center;
+		background-repeat: no-repeat, repeat-y, repeat-y, no-repeat;
+	}
+	&-pomu {
+		background-image: url('../assets/BG/Pomu-BG_cf50.webp');
+		background-color: #258E70; // Backup in case the image doesn't load I guess
+		background-repeat: repeat;
+		background-size: contain;
+	}
+
+	// TODO: Add remaining pages
+}
+
+// Temporary until replaced by full nav component
+.link {
+	display: inline-block;
+	padding: 0.5rem 1rem;
+	margin-left: 0.5rem;
+	background-color: hsl(114deg 15% 75% / 1);
+	border-radius: 0.75rem;
+	color: black;
+	text-align: center;
+	transition-property: color, background-color;
+	transition-duration: 250ms;
+	transition-timing-function: ease-out;
+
+	&:visited {
+		color: hsl(0deg 0% 0% / 0.7);
+	}
+
+	&:hover,
+	&:focus {
+		background-color: hsl(114deg 15% 50% / 1);
+	}
+}
