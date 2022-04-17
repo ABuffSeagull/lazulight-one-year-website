@@ -1,6 +1,8 @@
 import React from 'react'
 import './TalentLayout.scss'
 import Image from './Image'
+import MascotAnimation from './MascotAnimation'
+
 
 // TODO(abuffseagull) 2022-03-17: need to remove this
 // Probably just generate some random ids on the messages at load time
@@ -22,6 +24,7 @@ interface Fanart {
 interface Props {
   name: string
   frame: string
+  animation: string
   corner: string
   messages: Message[]
   fanarts: Fanart[]
@@ -31,6 +34,8 @@ interface Props {
   twitter: string
   discord: string
 }
+
+
 
 function TalentLayout (props: Props): JSX.Element {
   const firstName = props.name.split(' ')[0]
@@ -70,10 +75,10 @@ function TalentLayout (props: Props): JSX.Element {
           </div>
           <div className={`talent-animation-container talent-text-container-${firstNameLower}`}>
             {/* (Brandon): Number of images and class of last image is hardcoded into 'talent-animation-container' */}
-            <Image src='/src/sheesh-pog-based.png' />
-            <Image src='/src/sheesh-pog-based.png' />
-            <Image src='/src/sheesh-pog-based.png' />
-            <Image src='/src/sheesh-pog-based.png' className='hide-on-tablet' />
+            <MascotAnimation src={props.animation}/>
+            <MascotAnimation src={props.animation}/>
+            <MascotAnimation src={props.animation}/>
+            <MascotAnimation src={props.animation}/>
           </div>
         </div>
       </div>

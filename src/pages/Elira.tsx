@@ -2,6 +2,7 @@ import TalentLayout from '../components/TalentLayout'
 import EliraImage from '../assets/Portraits/Elira-Portrait_cf50.webp?format=png;avif;webp&imagetools&meta'
 import EliraFrame from '../assets/Corners/Elira-LiverCorner.webp'
 import corner from '../assets/Corners/Elira-MsgCorner.webp'
+import Weewa from '../assets/Animations/Elira-Animation_500px.gif'
 
 export default function Elira (): JSX.Element {
   const name = 'Elira Pendora'
@@ -137,6 +138,7 @@ export default function Elira (): JSX.Element {
         name={name}
         frame={EliraFrame}
         corner={corner}
+        animation={Weewa}
         portrait={EliraImage}
         info={info}
         youtube={youtubeLink}

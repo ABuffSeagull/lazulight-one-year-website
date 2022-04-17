@@ -3,6 +3,7 @@ import TalentLayout from '../components/TalentLayout'
 import PomuImage from '../assets/Portraits/Pomu-Portrait_cf50.webp?format=png;avif;webp&imagetools&meta'
 import PomuFrame from '../assets/Corners/Pomu-LiverCorner.webp'
 import corner from '../assets/Corners/Pomu-MsgCorner.webp'
+import Pomudachi from '../assets/Animations/Pomu-BelowLiver-Animation_500px.gif'
 
 function Pomu (): JSX.Element {
   const info = [
@@ -121,6 +122,7 @@ function Pomu (): JSX.Element {
         name='Pomu Rainpuff'
         corner={corner}
         frame={PomuFrame}
+        animation={Pomudachi}
         portrait={PomuImage}
         info={info}
         youtube={youtubeLink}
