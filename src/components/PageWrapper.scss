@@ -28,42 +28,106 @@
 }
 
 .page-bg-animation {
+	&-elira {
+		&-container {
+			height: 100%;
+			width: 100%;
+			position: relative;
+			overflow: hidden;
+		}
+		
+		$eliracloud-count: 16; // Must be greater than/equal to the number of clouds in the html
+		$eliracloud-height: 30%;
+		$eliracloud-duration-normal: 30;
+		@for $i from 1 through $eliracloud-count {
+			&-cloud:nth-child(#{$i}){
+				position: absolute;
+				z-index: 0;
+				animation-name: eliracloud#{$i};
+				animation-duration: $eliracloud-duration-normal + s;
+				animation-delay: random() * $eliracloud-duration-normal + s;
+				animation-timing-function: linear;
+				animation-iteration-count: infinite;
+				animation-direction: normal;
+				animation-fill-mode: none;
+				animation-play-state: running;
+				opacity: 0.5;
+				
+				height: $eliracloud-height;
+				object-fit: contain;
+				bottom: 40% + random()*60%; // Top half only
+
+				left:-50%; // Initialise: Force start off screen during delay of first iteration
+			}
+			@keyframes eliracloud#{$i} {
+				from { left: -50%; }
+				to   { left: 150%; }
+			}
+		}
+
+		$elirastar-count: 60; // Must be greater than/equal to the number of stars in the html
+		$elirastar-height: 2%;
+		$elirastar-duration-normal: 5;
+		@for $id from 1 through $elirastar-count {
+			&-star:nth-child(#{$id}){
+				position: absolute;
+				z-index: 0;
+				animation-name: elirastar#{$id};
+				animation-duration: $elirastar-duration-normal + s;
+				animation-delay: random() * $elirastar-duration-normal + s;
+				animation-timing-function: linear;
+				animation-iteration-count: infinite;
+				animation-direction: alternate;
+				animation-fill-mode: none;
+				animation-play-state: running;
+				
+				height: $elirastar-height;
+				object-fit: contain;
+				top: 50% + random()*50%; // Bottom half only
+				left: random()*100%;
+
+				opacity: 0; // Initialise: Force start off screen during delay of first iteration
+			}
+			@keyframes elirastar#{$id} {
+				from { opacity: 0; }
+				to   { opacity: 0.5; }
+			}
+		}
+	}
+
 	&-pomu {
 		&-container {
 			height: 100%;
 			width: 100%;
 			position: relative;
 			overflow: hidden;
-			//perspective-origin: 50% 50%;
 		}
 
-		$pomucoin-count: 60; // Must be greater than the number of pomuCoins in the html
+		$pomucoin-count: 60; // Must be greater than/equal to the number of pomuCoins in the html
 		$pomucoin-width: 5%;
-		$animation-duration-normal: 5;
-		$animation-duration-tablet: 10;
-		$animation-duration-mobile: 15; // Account for change in browser height (completely broken with the 'show all'...)
+		$pomucoin-duration-normal: 5;
+		$pomucoin-duration-tablet: 10;
+		$pomucoin-duration-mobile: 15; // Account for change in browser height (completely broken with the 'show all'...)
 		@for $i from 1 through $pomucoin-count {
-			&-element:nth-child(#{$i}){
+			&-coin:nth-child(#{$i}){
+				position: absolute;
+				z-index: 0;
 				animation-name: pomucoin#{$i};
-				animation-duration: $animation-duration-normal + s;
-				@media (max-width: $bpTablet) { animation-duration: $animation-duration-tablet + s; }
-				@media (max-width: $bpMobile) { animation-duration: $animation-duration-mobile + s; }
-				animation-delay: random() * $animation-duration-normal + s;
-				@media (max-width: $bpTablet) { animation-delay: random() * $animation-duration-tablet + s; }
-				@media (max-width: $bpMobile) { animation-delay:  random() * $animation-duration-mobile + s; }
+				animation-duration: $pomucoin-duration-normal + s;
+				@media (max-width: $bpTablet) { animation-duration: $pomucoin-duration-tablet + s; }
+				@media (max-width: $bpMobile) { animation-duration: $pomucoin-duration-mobile + s; }
+				animation-delay: random() * $pomucoin-duration-normal + s;
+				@media (max-width: $bpTablet) { animation-delay: random() * $pomucoin-duration-tablet + s; }
+				@media (max-width: $bpMobile) { animation-delay:  random() * $pomucoin-duration-mobile + s; }
 				animation-timing-function: linear;
 				animation-iteration-count: infinite;
 				animation-direction: normal;
 				animation-fill-mode: none;
 				animation-play-state: running;
-
-				position:absolute;
-				z-index: 0;
 				opacity: 0.2;
-				//transform-style: preserve-3d;
 				
 				width: $pomucoin-width;
-				height: $pomucoin-width;
+				object-fit: contain;
 				left: $pomucoin-width + random(100 - 2 * $pomucoin-width) * 1%;
 				transform: rotate(random(360)+deg);
 
