@@ -1,7 +1,9 @@
 import { Link } from 'wouter'
 import React from 'react'
 import './PageWrapper.scss'
-// import Image from './Image'
+import Image from './Image'
+import PomuCoinGold from '../assets/BG/Pomu-BG-PomuCoinGold.svg'
+import PomuCoinSilver from '../assets/BG/Pomu-BG-PomuCoinSilver.svg'
 
 interface Props {
   children: React.ReactNode
@@ -10,7 +12,13 @@ interface Props {
 
 export function PageWrapper (props: Props): JSX.Element {
   return (
-    <div className={`background-page-${props.page}`}>
+    <div className={`page-bg-static-${props.page} page-bg-animation-${props.page}-container`}>
+      {props.page === 'pomu' && (
+        <div>
+          {Array.from({ length: 30 }, i => <Image className='page-bg-animation-pomu-element' src={PomuCoinGold} />)}
+          {Array.from({ length: 30 }, i => <Image className='page-bg-animation-pomu-element' src={PomuCoinSilver} />)}
+        </div>
+      )}
 
       {/* TODO: Replace with actual menu */}
       <nav>

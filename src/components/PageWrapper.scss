@@ -1,8 +1,9 @@
 @import "../variables.scss";
 
-.background-page {
+.page-bg-static {
 	&-elira {
 		background-image: linear-gradient(to bottom, #a7cde0, #292e65);
+		background-color: #a7cde0; // Backup in case the image doesn't load
 	}
 	&-finana {
 		background-image:
@@ -10,7 +11,7 @@
 			url('../assets/BG/Finana-BG-Left_cf50.webp'), 
 			url('../assets/BG/Finana-BG-Right_cf50.webp'),
 			linear-gradient(to bottom, #83e5e6, #1c374a);
-		background-color: #83e5e6; // Backup in case the above fails
+		background-color: #83e5e6; // Backup in case the image doesn't load
 
 		background-size: 100%, 10%, 10%, 100%;
 		background-position-x: center, left, right, center;
@@ -18,9 +19,61 @@
 	}
 	&-pomu {
 		background-image: url('../assets/BG/Pomu-BG_cf50.webp');
-		background-color: #258E70; // Backup in case the image doesn't load I guess
-		background-repeat: repeat;
-		background-size: contain;
+		background-color: #258E70; // Backup in case the image doesn't load
+		background-repeat: repeat-y;
+		background-size: 100%;
+	}
+
+	// TODO: Add remaining pages
+}
+
+.page-bg-animation {
+	&-pomu {
+		&-container {
+			height: 100%;
+			width: 100%;
+			position: relative;
+			overflow: hidden;
+			//perspective-origin: 50% 50%;
+		}
+
+		$pomucoin-count: 60; // Must be greater than the number of pomuCoins in the html
+		$pomucoin-width: 5%;
+		$animation-duration-normal: 5;
+		$animation-duration-tablet: 10;
+		$animation-duration-mobile: 15; // Account for change in browser height (completely broken with the 'show all'...)
+		@for $i from 1 through $pomucoin-count {
+			&-element:nth-child(#{$i}){
+				animation-name: pomucoin#{$i};
+				animation-duration: $animation-duration-normal + s;
+				@media (max-width: $bpTablet) { animation-duration: $animation-duration-tablet + s; }
+				@media (max-width: $bpMobile) { animation-duration: $animation-duration-mobile + s; }
+				animation-delay: random() * $animation-duration-normal + s;
+				@media (max-width: $bpTablet) { animation-delay: random() * $animation-duration-tablet + s; }
+				@media (max-width: $bpMobile) { animation-delay:  random() * $animation-duration-mobile + s; }
+				animation-timing-function: linear;
+				animation-iteration-count: infinite;
+				animation-direction: normal;
+				animation-fill-mode: none;
+				animation-play-state: running;
+
+				position:absolute;
+				z-index: 0;
+				opacity: 0.2;
+				//transform-style: preserve-3d;
+				
+				width: $pomucoin-width;
+				height: $pomucoin-width;
+				left: $pomucoin-width + random(100 - 2 * $pomucoin-width) * 1%;
+				transform: rotate(random(360)+deg);
+
+				top:-20%; // Initialise: Force start off screen during delay of first iteration
+			}
+			@keyframes pomucoin#{$i} {
+				from { top:-20%; }
+				to   { top: 120%; }
+			}
+		}
 	}
 
 	// TODO: Add remaining pages
