@@ -10,6 +10,8 @@ import EliraStar1 from '../assets/BG/Elira-BG-Star1.webp'
 // import EliraStar2 from '../assets/BG/Elira-BG-Star2.webp' // Individual stars looks better I think
 import PomuCoinGold from '../assets/BG/Pomu-BG-PomuCoinGold.svg'
 import PomuCoinSilver from '../assets/BG/Pomu-BG-PomuCoinSilver.svg'
+import FinanaBubble1 from '../assets/BG/Finana-BG-Bubbles1.svg'
+import FinanaFish from '../assets/BG/Finana-BG-Fish.svg'
 
 interface Props {
   children: React.ReactNode
@@ -20,14 +22,16 @@ export function PageWrapper (props: Props): JSX.Element {
   // (Brandon) These constants must match values in class 'page-bg-animation-${props.page}-element'
   const eliraCloudCount: number = 4 * 4 // Should be multiple of 4
   const eliraStarCount: number = 60
-  const pomucoinCount: number = 2 * 30 // Should be multiple of 2
+  const pomuCoinCount: number = 2 * 30 // Should be multiple of 2
+  const finanaBubbleCount: number = 30
+  const finanaFishCount: number = 30
 
   return (
     <div className={`page-bg-static-${props.page} page-bg-animation-${props.page}-container`}>
       {props.page === 'pomu' && (
         <div>
-          {Array.from({ length: pomucoinCount / 2 }, i => <Image className='page-bg-animation-pomu-coin' src={PomuCoinGold} />)}
-          {Array.from({ length: pomucoinCount / 2 }, i => <Image className='page-bg-animation-pomu-coin' src={PomuCoinSilver} />)}
+          {Array.from({ length: pomuCoinCount / 2 }, i => <Image className='page-bg-animation-pomu-coin' src={PomuCoinGold} />)}
+          {Array.from({ length: pomuCoinCount / 2 }, i => <Image className='page-bg-animation-pomu-coin' src={PomuCoinSilver} />)}
         </div>
       )}
       {props.page === 'elira' && (
@@ -42,6 +46,13 @@ export function PageWrapper (props: Props): JSX.Element {
           <div>
             {Array.from({ length: eliraStarCount }, i => <Image className='page-bg-animation-elira-star' src={EliraStar1} />)}
           </div>
+        </div>
+      )}
+      {props.page === 'finana' && (
+        <div>
+          {/* Separate div's because of the nth-child selector */}
+          <div>{Array.from({ length: finanaBubbleCount }, i => <Image className='page-bg-animation-finana-bubble' src={FinanaBubble1} />)}</div>
+          <div>{Array.from({ length: finanaFishCount }, i => <Image className='page-bg-animation-finana-fish' src={FinanaFish} />)}</div>
         </div>
       )}
 
