@@ -75,10 +75,10 @@ function TalentLayout (props: Props): JSX.Element {
           </div>
           <div className={`talent-animation-container talent-text-container-${firstNameLower}`}>
             {/* (Brandon): Number of images and class of last image is hardcoded into 'talent-animation-container' */}
-            <MascotAnimation src={props.animation}/>
-            <MascotAnimation src={props.animation}/>
-            <MascotAnimation src={props.animation}/>
-            <MascotAnimation src={props.animation}/>
+            <MascotAnimation  src={props.animation}/>
+            <MascotAnimation  src={props.animation}/>
+            <MascotAnimation  src={props.animation}/>
+            <MascotAnimation  src={props.animation}/>
           </div>
         </div>
       </div>

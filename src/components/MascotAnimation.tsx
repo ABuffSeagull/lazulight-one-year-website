@@ -1,15 +1,33 @@
-// export default function MascotAnimation(,delay: string  )
-import Image from './Image'
+import React from "react"
+import { useEffect } from "react"
+import ReactPlayer from 'react-player'
+
 
 interface MascotProps {
-    src: metadata[] | string
+    src: string
     className?: string
-    delay?: string
-}
+    style?: string
+    delay?: number
+} 
 
 
-export default function MascotAnimation(props: MascotProps): JSX.Element{
 
-    return <Image src={props.src} className={props.className} />
+export default function MascotAnimation( props: MascotProps){
+
+
+    let mascot = <video muted loop src={props.src} />
+    
+    useEffect(() => {
+        console.log('test')
+        setTimeout(() => {
+          // video play
+        }, props.delay)
+      })
+
+
+
+    return  mascot
+   
+    
     
 }

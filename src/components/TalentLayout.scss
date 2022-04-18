@@ -1,5 +1,6 @@
 @import "../variables.scss";
 
+
 .talent {
 	&-layout-container {
 		width: 100%;
@@ -58,11 +59,15 @@
 			grid-gap: calc( (100% - $num-col*$col-width)/($num-col - 1) );
 		}
 
-		img {
+		video {
 			width: 100%;
 			object-fit: contain;
+			
 		}
+
+		
 	}
+	
 
 	&-info-container {
 		display: flex;
