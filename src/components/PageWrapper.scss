@@ -144,6 +144,10 @@
 }
 
 // Temporary until replaced by full nav component
+nav {
+	position: relative; // Animation interferes with z-index. This somehow fixes it (search 'stacking context')
+	z-index: 100;
+}
 .link {
 	display: inline-block;
 	padding: 0.5rem 1rem;
