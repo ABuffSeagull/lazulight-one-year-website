@@ -7,7 +7,6 @@ import EliraCloud2 from '../assets/BG/Elira-BG-Cloud2.webp'
 import EliraCloud3 from '../assets/BG/Elira-BG-Cloud3.webp'
 import EliraCloud4 from '../assets/BG/Elira-BG-Cloud4.webp'
 import EliraStar1 from '../assets/BG/Elira-BG-Star1.webp'
-// import EliraStar2 from '../assets/BG/Elira-BG-Star2.webp' // Individual stars looks better I think
 import PomuCoinGold from '../assets/BG/Pomu-BG-PomuCoinGold.svg'
 import PomuCoinSilver from '../assets/BG/Pomu-BG-PomuCoinSilver.svg'
 import FinanaBubble1 from '../assets/BG/Finana-BG-Bubbles1.svg'
@@ -26,35 +25,39 @@ export function PageWrapper (props: Props): JSX.Element {
   const finanaBubbleCount: number = 30
   const finanaFishCount: number = 30
 
+  const [AnimationOn, toggleAnimationState] = React.useState(true)
+
   return (
-    <div className={`page-bg-static-${props.page} page-bg-animation-${props.page}-container`}>
-      {props.page === 'pomu' && (
-        <div>
-          {Array.from({ length: pomuCoinCount / 2 }, i => <Image className='page-bg-animation-pomu-coin' src={PomuCoinGold} />)}
-          {Array.from({ length: pomuCoinCount / 2 }, i => <Image className='page-bg-animation-pomu-coin' src={PomuCoinSilver} />)}
-        </div>
-      )}
-      {props.page === 'elira' && (
-        <div>
-          {/* Separate div's because of the nth-child selector */}
+    <div className={`page-bg-static-${props.page} page-bg-animation-${props.page}`}>
+      <div className={`page-bg-animation-${props.page}-container ${AnimationOn ? `page-bg-animation-${props.page}-container-on` : `page-bg-animation-${props.page}-container-off`}`}>
+        {props.page === 'pomu' && (
           <div>
-            {Array.from({ length: eliraCloudCount / 4 }, i => <Image className='page-bg-animation-elira-cloud' src={EliraCloud1} />)}
-            {Array.from({ length: eliraCloudCount / 4 }, i => <Image className='page-bg-animation-elira-cloud' src={EliraCloud2} />)}
-            {Array.from({ length: eliraCloudCount / 4 }, i => <Image className='page-bg-animation-elira-cloud' src={EliraCloud3} />)}
-            {Array.from({ length: eliraCloudCount / 4 }, i => <Image className='page-bg-animation-elira-cloud' src={EliraCloud4} />)}
+            {Array.from({ length: pomuCoinCount / 2 }, i => <Image className='page-bg-animation-pomu-coin' src={PomuCoinGold} />)}
+            {Array.from({ length: pomuCoinCount / 2 }, i => <Image className='page-bg-animation-pomu-coin' src={PomuCoinSilver} />)}
           </div>
+        )}
+        {props.page === 'elira' && (
           <div>
-            {Array.from({ length: eliraStarCount }, i => <Image className='page-bg-animation-elira-star' src={EliraStar1} />)}
+            {/* Separate div's because of the nth-child selector */}
+            <div>
+              {Array.from({ length: eliraCloudCount / 4 }, i => <Image className='page-bg-animation-elira-cloud' src={EliraCloud1} />)}
+              {Array.from({ length: eliraCloudCount / 4 }, i => <Image className='page-bg-animation-elira-cloud' src={EliraCloud2} />)}
+              {Array.from({ length: eliraCloudCount / 4 }, i => <Image className='page-bg-animation-elira-cloud' src={EliraCloud3} />)}
+              {Array.from({ length: eliraCloudCount / 4 }, i => <Image className='page-bg-animation-elira-cloud' src={EliraCloud4} />)}
+            </div>
+            <div>
+              {Array.from({ length: eliraStarCount }, i => <Image className='page-bg-animation-elira-star' src={EliraStar1} />)}
+            </div>
           </div>
-        </div>
-      )}
-      {props.page === 'finana' && (
-        <div>
-          {/* Separate div's because of the nth-child selector */}
-          <div>{Array.from({ length: finanaBubbleCount }, i => <Image className='page-bg-animation-finana-bubble' src={FinanaBubble1} />)}</div>
-          <div>{Array.from({ length: finanaFishCount }, i => <Image className='page-bg-animation-finana-fish' src={FinanaFish} />)}</div>
-        </div>
-      )}
+        )}
+        {props.page === 'finana' && (
+          <div>
+            {/* Separate div's because of the nth-child selector */}
+            <div>{Array.from({ length: finanaBubbleCount }, i => <Image className='page-bg-animation-finana-bubble' src={FinanaBubble1} />)}</div>
+            <div>{Array.from({ length: finanaFishCount }, i => <Image className='page-bg-animation-finana-fish' src={FinanaFish} />)}</div>
+          </div>
+        )}
+      </div>
 
       {/* TODO: Replace with actual menu */}
       <nav>
@@ -67,6 +70,9 @@ export function PageWrapper (props: Props): JSX.Element {
         <Link className='link' to='/all-art'>Art</Link>
         <Link className='link' to='/all-messages'>Messages</Link>
         <Link className='link' to='/about'>About</Link>
+        <button onClick={() => { toggleAnimationState(state => !state) }} className='link'>
+          {AnimationOn ? 'Animation On' : 'Animation Off'}
+        </button>
       </nav>
 
       {/* This is the body of the page */}

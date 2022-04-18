@@ -28,65 +28,67 @@
 }
 
 .page-bg-animation {
-	&-elira {
-		&-container {
-			height: 100%;
-			width: 100%;
-			position: relative;
-			overflow: hidden;
+	// Animation notes:
+	//   animation-delay: Negative means start part way through. Use this to initialise each element randomly over the cycle
+	//   animation-duration: Would be better to use JS to adjust based on screen dimension...
+	//   For each element, specify 'width' or 'height', then 'object-fit' will scale the other dim
+
+	&-elira,
+	&-pomu,
+	&-finana {
+		// Container properties
+		height: 100%;
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+
+		// Properties common to all animations
+		&-container img {
+			position: absolute;
+			z-index: 0;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+			animation-fill-mode: none;
+			animation-play-state: running;
+			object-fit: contain;
 		}
-		
+		&-container-on img { animation-play-state: running; }
+		&-container-off img { animation-play-state: paused; }
+	}
+
+
+	&-elira {
 		$eliracloud-count: 16; // Must be greater than/equal to the number of clouds in the html
 		$eliracloud-height: 30%;
-		$eliracloud-duration-normal: 30;
+		$eliracloud-duration-min: 20;
+		$eliracloud-duration-extra: 40;
+		$elirastar-count: 60; // Must be greater than/equal to the number of stars in the html
+		$elirastar-height: 2%;
+		$elirastar-duration-normal: 5;
 		@for $i from 1 through $eliracloud-count {
 			&-cloud:nth-child(#{$i}){
-				position: absolute;
-				z-index: 0;
 				animation-name: eliracloud#{$i};
-				animation-duration: $eliracloud-duration-normal + s;
-				animation-delay: random() * $eliracloud-duration-normal + s;
-				animation-timing-function: linear;
-				animation-iteration-count: infinite;
+				animation-duration: random()*$eliracloud-duration-extra + $eliracloud-duration-min + s;
+				animation-delay: -1 * random() * $eliracloud-duration-min + s;
 				animation-direction: normal;
-				animation-fill-mode: none;
-				animation-play-state: running;
 				opacity: 0.5;
-				
 				height: $eliracloud-height;
-				object-fit: contain;
 				bottom: 40% + random()*60%; // Top half only
-
-				left:-50%; // Initialise: Force start off screen during delay of first iteration
 			}
 			@keyframes eliracloud#{$i} {
 				from { left: -50%; }
 				to   { left: 150%; }
 			}
 		}
-
-		$elirastar-count: 60; // Must be greater than/equal to the number of stars in the html
-		$elirastar-height: 2%;
-		$elirastar-duration-normal: 5;
 		@for $id from 1 through $elirastar-count {
 			&-star:nth-child(#{$id}){
-				position: absolute;
-				z-index: 0;
 				animation-name: elirastar#{$id};
 				animation-duration: $elirastar-duration-normal + s;
-				animation-delay: random() * $elirastar-duration-normal + s;
-				animation-timing-function: linear;
-				animation-iteration-count: infinite;
+				animation-delay: -1 * random() * $elirastar-duration-normal + s;
 				animation-direction: alternate;
-				animation-fill-mode: none;
-				animation-play-state: running;
-				
 				height: $elirastar-height;
-				object-fit: contain;
 				top: 50% + random()*50%; // Bottom half only
 				left: random()*100%;
-
-				opacity: 0; // Initialise: Force start off screen during delay of first iteration
 			}
 			@keyframes elirastar#{$id} {
 				from { opacity: 0; }
@@ -96,42 +98,25 @@
 	}
 
 	&-pomu {
-		&-container {
-			height: 100%;
-			width: 100%;
-			position: relative;
-			overflow: hidden;
-		}
-
 		$pomucoin-count: 60; // Must be greater than/equal to the number of pomuCoins in the html
 		$pomucoin-width: 5%;
 		$pomucoin-duration-normal: 5;
 		$pomucoin-duration-tablet: 10;
-		$pomucoin-duration-mobile: 15; // Account for change in browser height (completely broken with the 'show all'...)
+		$pomucoin-duration-mobile: 15;
 		@for $i from 1 through $pomucoin-count {
 			&-coin:nth-child(#{$i}){
-				position: absolute;
-				z-index: 0;
 				animation-name: pomucoin#{$i};
 				animation-duration: $pomucoin-duration-normal + s;
 				@media (max-width: $bpTablet) { animation-duration: $pomucoin-duration-tablet + s; }
 				@media (max-width: $bpMobile) { animation-duration: $pomucoin-duration-mobile + s; }
-				animation-delay: random() * $pomucoin-duration-normal + s;
-				@media (max-width: $bpTablet) { animation-delay: random() * $pomucoin-duration-tablet + s; }
-				@media (max-width: $bpMobile) { animation-delay:  random() * $pomucoin-duration-mobile + s; }
-				animation-timing-function: linear;
-				animation-iteration-count: infinite;
+				animation-delay: -1 * random() * $pomucoin-duration-normal + s;
+				@media (max-width: $bpTablet) { animation-delay: -1 * random() * $pomucoin-duration-tablet + s; }
+				@media (max-width: $bpMobile) { animation-delay: -1 * random() * $pomucoin-duration-mobile + s; }
 				animation-direction: normal;
-				animation-fill-mode: none;
-				animation-play-state: running;
 				opacity: 0.2;
-				
 				width: $pomucoin-width;
-				object-fit: contain;
 				left: $pomucoin-width + random(100 - 2 * $pomucoin-width) * 1%;
 				transform: rotate(random(360)+deg);
-
-				top:-20%; // Initialise: Force start off screen during delay of first iteration
 			}
 			@keyframes pomucoin#{$i} {
 				from { top:-20%; }
@@ -141,73 +126,43 @@
 	}
 
 	&-finana {
-		&-container {
-			height: 100%;
-			width: 100%;
-			position: relative;
-			overflow: hidden;
-		}
-
 		$finanafish-count: 30; // Must be greater than/equal to the number of fish in the html
 		$finanafish-height: 5%;
 		$finanafish-duration-min: 5;
 		$finanafish-duration-extra: 10;
+		$finanabubble-count: 60; // Must be greater than/equal to the number of finanabubbles in the html
+		$finanabubble-width: 5%;
+		$finanabubble-duration-normal: 5;
+		$finanabubble-duration-tablet: 10;
+		$finanabubble-duration-mobile: 15;
 		@for $i from 1 through $finanafish-count {
 			&-fish:nth-child(#{$i}){
-				position: absolute;
-				z-index: 0;
 				animation-name: finanafish#{$i};
 				animation-duration: $finanafish-duration-min + random()*$finanafish-duration-extra + s;
-				animation-delay: random() * $finanafish-duration-min + s;
-				animation-timing-function: linear;
-				animation-iteration-count: infinite;
+				animation-delay: -1 * random() * $finanafish-duration-min + s;
 				animation-direction: normal;
-				animation-fill-mode: none;
-				animation-play-state: running;
 				opacity: 0.5;
-				
 				height: $finanafish-height;
-				object-fit: contain;
-				bottom: 40% + random()*60%; // Top half only
 				bottom: random()*100%;
-
-				right:-50%; // Initialise: Force start off screen during delay of first iteration
 			}
 			@keyframes finanafish#{$i} {
 				from { right: -50%; }
 				to   { right: 150%; }
 			}
 		}
-	
-		$finanabubble-count: 60; // Must be greater than/equal to the number of finanabubbles in the html
-		$finanabubble-width: 5%;
-		$finanabubble-duration-normal: 5;
-		$finanabubble-duration-tablet: 10;
-		$finanabubble-duration-mobile: 15; // Account for change in browser height (completely broken with the 'show all'...)
 		@for $i from 1 through $finanabubble-count {
 			&-bubble:nth-child(#{$i}){
-				position: absolute;
-				z-index: 0;
 				animation-name: finanabubble#{$i};
 				animation-duration: $finanabubble-duration-normal + s;
 				@media (max-width: $bpTablet) { animation-duration: $finanabubble-duration-tablet + s; }
 				@media (max-width: $bpMobile) { animation-duration: $finanabubble-duration-mobile + s; }
-				animation-delay: random() * $finanabubble-duration-normal + s;
-				@media (max-width: $bpTablet) { animation-delay: random() * $finanabubble-duration-tablet + s; }
-				@media (max-width: $bpMobile) { animation-delay:  random() * $finanabubble-duration-mobile + s; }
-				animation-timing-function: linear;
-				animation-iteration-count: infinite;
+				animation-delay: -1 * random() * $finanabubble-duration-normal + s;
+				@media (max-width: $bpTablet) { animation-delay: -1 * random() * $finanabubble-duration-tablet + s; }
+				@media (max-width: $bpMobile) { animation-delay: -1 * random() * $finanabubble-duration-mobile + s; }
 				animation-direction: normal;
-				animation-fill-mode: none;
-				animation-play-state: running;
 				opacity: 0.6;
-				
 				width: $finanabubble-width;
-				object-fit: contain;
 				left: $finanabubble-width + random(100 - 2 * $finanabubble-width) * 1%;
-				transform: rotate(random(360)+deg);
-	
-				bottom:-20%; // Initialise: Force start off screen during delay of first iteration
 			}
 			@keyframes finanabubble#{$i} {
 				from { bottom: -20%; }
