@@ -1,10 +1,11 @@
-@import "../variables.scss";
+@use "../variables" as *;
 
 .page-bg-static {
   &-elira {
     background-image: linear-gradient(to bottom, #a7cde0, #292e65);
     background-color: #a7cde0; // Backup in case the image doesn't load
   }
+
   &-finana {
     background-image: linear-gradient(to bottom, #4dbbbd60, #1c374aa0),
       // Semitransparent overlay
@@ -12,11 +13,11 @@
       url("../assets/BG/Finana-BG-Right_cf50.webp"),
       linear-gradient(to bottom, #4dbbbd, #1c374a);
     background-color: #83e5e6; // Backup in case the image doesn't load
-
     background-size: 100%, 10%, 10%, 100%;
     background-position-x: center, left, right, center;
     background-repeat: no-repeat, repeat-y, repeat-y, no-repeat;
   }
+
   &-pomu {
     background-image: url("../assets/BG/Pomu-BG_cf50.webp");
     background-color: #258e70; // Backup in case the image doesn't load
@@ -52,9 +53,11 @@
       animation-play-state: running;
       object-fit: contain;
     }
+
     &-container-on img {
       animation-play-state: running;
     }
+
     &-container-off img {
       animation-play-state: paused;
     }
@@ -85,6 +88,7 @@
         from {
           left: -50%;
         }
+
         to {
           left: 150%;
         }
@@ -104,6 +108,7 @@
         from {
           opacity: 0;
         }
+
         to {
           opacity: 0.5;
         }
@@ -127,6 +132,7 @@
         @media (max-width: $bp-mobile) {
           animation-duration: $pomucoin-duration-mobile + s;
         }
+
         animation-delay: -1 * random() * $pomucoin-duration-normal + s;
         @media (max-width: $bp-tablet) {
           animation-delay: -1 * random() * $pomucoin-duration-tablet + s;
@@ -134,6 +140,7 @@
         @media (max-width: $bp-mobile) {
           animation-delay: -1 * random() * $pomucoin-duration-mobile + s;
         }
+
         animation-direction: normal;
         opacity: 0.2;
         width: $pomucoin-width;
@@ -144,6 +151,7 @@
         from {
           top: -20%;
         }
+
         to {
           top: 120%;
         }
@@ -178,6 +186,7 @@
         from {
           right: -50%;
         }
+
         to {
           right: 150%;
         }
@@ -193,6 +202,7 @@
         @media (max-width: $bp-mobile) {
           animation-duration: $finanabubble-duration-mobile + s;
         }
+
         animation-delay: -1 * random() * $finanabubble-duration-normal + s;
         @media (max-width: $bp-tablet) {
           animation-delay: -1 * random() * $finanabubble-duration-tablet + s;
@@ -200,6 +210,7 @@
         @media (max-width: $bp-mobile) {
           animation-delay: -1 * random() * $finanabubble-duration-mobile + s;
         }
+
         animation-direction: normal;
         opacity: 0.6;
         width: $finanabubble-width;
@@ -209,6 +220,7 @@
         from {
           bottom: -20%;
         }
+
         to {
           bottom: 120%;
         }
@@ -224,11 +236,12 @@ nav {
   position: relative; // Animation interferes with z-index. This somehow fixes it (search 'stacking context')
   z-index: 100;
 }
+
 .link {
   display: inline-block;
   padding: 0.5rem 1rem;
   margin-left: 0.5rem;
-  background-color: hsl(114deg 15% 75% / 1);
+  background-color: hsl(114deg 15% 75% / 100%);
   border-radius: 0.75rem;
   color: black;
   text-align: center;
@@ -237,11 +250,11 @@ nav {
   transition-timing-function: ease-out;
 
   &:visited {
-    color: hsl(0deg 0% 0% / 0.7);
+    color: hsl(0deg 0% 0% / 70%);
   }
 
   &:hover,
   &:focus {
-    background-color: hsl(114deg 15% 50% / 1);
+    background-color: hsl(114deg 15% 50% / 100%);
   }
 }

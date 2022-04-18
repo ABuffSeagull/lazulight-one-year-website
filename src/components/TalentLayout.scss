@@ -220,6 +220,7 @@
 
       overflow: hidden;
       max-height: $truncate-after;
+
       // (Brandon) Webkit version required for chrome
       -webkit-mask-image: linear-gradient(
         to bottom,
@@ -260,6 +261,7 @@
       margin-top: 5px;
       margin-right: 10px;
     }
+
     img {
       width: 100%;
       padding: 5%;
