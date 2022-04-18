@@ -1,202 +1,247 @@
 @import "../variables.scss";
 
 .page-bg-static {
-	&-elira {
-		background-image: linear-gradient(to bottom, #a7cde0, #292e65);
-		background-color: #a7cde0; // Backup in case the image doesn't load
-	}
-	&-finana {
-			background-image:
-				linear-gradient(to bottom, #4dbbbd60, #1c374aa0), // Semitransparent overlay
-				url('../assets/BG/Finana-BG-Left_cf50.webp'), 
-				url('../assets/BG/Finana-BG-Right_cf50.webp'),
-				linear-gradient(to bottom, #4dbbbd, #1c374a);
-		background-color: #83e5e6; // Backup in case the image doesn't load
+  &-elira {
+    background-image: linear-gradient(to bottom, #a7cde0, #292e65);
+    background-color: #a7cde0; // Backup in case the image doesn't load
+  }
+  &-finana {
+    background-image: linear-gradient(to bottom, #4dbbbd60, #1c374aa0),
+      // Semitransparent overlay
+      url("../assets/BG/Finana-BG-Left_cf50.webp"),
+      url("../assets/BG/Finana-BG-Right_cf50.webp"),
+      linear-gradient(to bottom, #4dbbbd, #1c374a);
+    background-color: #83e5e6; // Backup in case the image doesn't load
 
-		background-size: 100%, 10%, 10%, 100%;
-		background-position-x: center, left, right, center;
-		background-repeat: no-repeat, repeat-y, repeat-y, no-repeat;
-	}
-	&-pomu {
-		background-image: url('../assets/BG/Pomu-BG_cf50.webp');
-		background-color: #258E70; // Backup in case the image doesn't load
-		background-repeat: repeat-y;
-		background-size: 100%;
-	}
+    background-size: 100%, 10%, 10%, 100%;
+    background-position-x: center, left, right, center;
+    background-repeat: no-repeat, repeat-y, repeat-y, no-repeat;
+  }
+  &-pomu {
+    background-image: url("../assets/BG/Pomu-BG_cf50.webp");
+    background-color: #258e70; // Backup in case the image doesn't load
+    background-repeat: repeat-y;
+    background-size: 100%;
+  }
 
-	// TODO: Add remaining pages
+  // TODO: Add remaining pages
 }
 
 .page-bg-animation {
-	// Animation notes:
-	//   animation-delay: Negative means start part way through. Use this to initialise each element randomly over the cycle
-	//   animation-duration: Would be better to use JS to adjust based on screen dimension...
-	//   For each element, specify 'width' or 'height', then 'object-fit' will scale the other dim
+  // Animation notes:
+  //   animation-delay: Negative means start part way through. Use this to initialise each element randomly over the cycle
+  //   animation-duration: Would be better to use JS to adjust based on screen dimension...
+  //   For each element, specify 'width' or 'height', then 'object-fit' will scale the other dim
 
-	&-elira,
-	&-pomu,
-	&-finana {
-		// Container properties
-		height: 100%;
-		width: 100%;
-		position: relative;
-		overflow: hidden;
+  &-elira,
+  &-pomu,
+  &-finana {
+    // Container properties
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
 
-		// Properties common to all animations
-		&-container img {
-			position: absolute;
-			z-index: 0;
-			animation-timing-function: linear;
-			animation-iteration-count: infinite;
-			animation-fill-mode: none;
-			animation-play-state: running;
-			object-fit: contain;
-		}
-		&-container-on img { animation-play-state: running; }
-		&-container-off img { animation-play-state: paused; }
-	}
+    // Properties common to all animations
+    &-container img {
+      position: absolute;
+      z-index: 0;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-fill-mode: none;
+      animation-play-state: running;
+      object-fit: contain;
+    }
+    &-container-on img {
+      animation-play-state: running;
+    }
+    &-container-off img {
+      animation-play-state: paused;
+    }
+  }
 
+  &-elira {
+    $eliracloud-count: 16; // Must be greater than/equal to the number of clouds in the html
+    $eliracloud-height: 30%;
+    $eliracloud-duration-min: 20;
+    $eliracloud-duration-extra: 40;
+    $elirastar-count: 60; // Must be greater than/equal to the number of stars in the html
+    $elirastar-height: 2%;
+    $elirastar-duration-normal: 5;
+    @for $i from 1 through $eliracloud-count {
+      &-cloud:nth-child(#{$i}) {
+        animation-name: eliracloud#{$i};
+        animation-duration: random() *
+          $eliracloud-duration-extra +
+          $eliracloud-duration-min +
+          s;
+        animation-delay: -1 * random() * $eliracloud-duration-min + s;
+        animation-direction: normal;
+        opacity: 0.5;
+        height: $eliracloud-height;
+        bottom: 40% + random() * 60%; // Top half only
+      }
+      @keyframes eliracloud#{$i} {
+        from {
+          left: -50%;
+        }
+        to {
+          left: 150%;
+        }
+      }
+    }
+    @for $id from 1 through $elirastar-count {
+      &-star:nth-child(#{$id}) {
+        animation-name: elirastar#{$id};
+        animation-duration: $elirastar-duration-normal + s;
+        animation-delay: -1 * random() * $elirastar-duration-normal + s;
+        animation-direction: alternate;
+        height: $elirastar-height;
+        top: 50% + random() * 50%; // Bottom half only
+        left: random() * 100%;
+      }
+      @keyframes elirastar#{$id} {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
 
-	&-elira {
-		$eliracloud-count: 16; // Must be greater than/equal to the number of clouds in the html
-		$eliracloud-height: 30%;
-		$eliracloud-duration-min: 20;
-		$eliracloud-duration-extra: 40;
-		$elirastar-count: 60; // Must be greater than/equal to the number of stars in the html
-		$elirastar-height: 2%;
-		$elirastar-duration-normal: 5;
-		@for $i from 1 through $eliracloud-count {
-			&-cloud:nth-child(#{$i}){
-				animation-name: eliracloud#{$i};
-				animation-duration: random()*$eliracloud-duration-extra + $eliracloud-duration-min + s;
-				animation-delay: -1 * random() * $eliracloud-duration-min + s;
-				animation-direction: normal;
-				opacity: 0.5;
-				height: $eliracloud-height;
-				bottom: 40% + random()*60%; // Top half only
-			}
-			@keyframes eliracloud#{$i} {
-				from { left: -50%; }
-				to   { left: 150%; }
-			}
-		}
-		@for $id from 1 through $elirastar-count {
-			&-star:nth-child(#{$id}){
-				animation-name: elirastar#{$id};
-				animation-duration: $elirastar-duration-normal + s;
-				animation-delay: -1 * random() * $elirastar-duration-normal + s;
-				animation-direction: alternate;
-				height: $elirastar-height;
-				top: 50% + random()*50%; // Bottom half only
-				left: random()*100%;
-			}
-			@keyframes elirastar#{$id} {
-				from { opacity: 0; }
-				to   { opacity: 0.5; }
-			}
-		}
-	}
+  &-pomu {
+    $pomucoin-count: 60; // Must be greater than/equal to the number of pomuCoins in the html
+    $pomucoin-width: 5%;
+    $pomucoin-duration-normal: 5;
+    $pomucoin-duration-tablet: 10;
+    $pomucoin-duration-mobile: 15;
+    @for $i from 1 through $pomucoin-count {
+      &-coin:nth-child(#{$i}) {
+        animation-name: pomucoin#{$i};
+        animation-duration: $pomucoin-duration-normal + s;
+        @media (max-width: $bp-tablet) {
+          animation-duration: $pomucoin-duration-tablet + s;
+        }
+        @media (max-width: $bp-mobile) {
+          animation-duration: $pomucoin-duration-mobile + s;
+        }
+        animation-delay: -1 * random() * $pomucoin-duration-normal + s;
+        @media (max-width: $bp-tablet) {
+          animation-delay: -1 * random() * $pomucoin-duration-tablet + s;
+        }
+        @media (max-width: $bp-mobile) {
+          animation-delay: -1 * random() * $pomucoin-duration-mobile + s;
+        }
+        animation-direction: normal;
+        opacity: 0.2;
+        width: $pomucoin-width;
+        left: $pomucoin-width + random(100 - 2 * $pomucoin-width) * 1%;
+        transform: rotate(random(360) + deg);
+      }
+      @keyframes pomucoin#{$i} {
+        from {
+          top: -20%;
+        }
+        to {
+          top: 120%;
+        }
+      }
+    }
+  }
 
-	&-pomu {
-		$pomucoin-count: 60; // Must be greater than/equal to the number of pomuCoins in the html
-		$pomucoin-width: 5%;
-		$pomucoin-duration-normal: 5;
-		$pomucoin-duration-tablet: 10;
-		$pomucoin-duration-mobile: 15;
-		@for $i from 1 through $pomucoin-count {
-			&-coin:nth-child(#{$i}){
-				animation-name: pomucoin#{$i};
-				animation-duration: $pomucoin-duration-normal + s;
-				@media (max-width: $bp-tablet) { animation-duration: $pomucoin-duration-tablet + s; }
-				@media (max-width: $bp-mobile) { animation-duration: $pomucoin-duration-mobile + s; }
-				animation-delay: -1 * random() * $pomucoin-duration-normal + s;
-				@media (max-width: $bp-tablet) { animation-delay: -1 * random() * $pomucoin-duration-tablet + s; }
-				@media (max-width: $bp-mobile) { animation-delay: -1 * random() * $pomucoin-duration-mobile + s; }
-				animation-direction: normal;
-				opacity: 0.2;
-				width: $pomucoin-width;
-				left: $pomucoin-width + random(100 - 2 * $pomucoin-width) * 1%;
-				transform: rotate(random(360)+deg);
-			}
-			@keyframes pomucoin#{$i} {
-				from { top:-20%; }
-				to   { top: 120%; }
-			}
-		}
-	}
+  &-finana {
+    $finanafish-count: 30; // Must be greater than/equal to the number of fish in the html
+    $finanafish-height: 5%;
+    $finanafish-duration-min: 5;
+    $finanafish-duration-extra: 10;
+    $finanabubble-count: 60; // Must be greater than/equal to the number of finanabubbles in the html
+    $finanabubble-width: 5%;
+    $finanabubble-duration-normal: 5;
+    $finanabubble-duration-tablet: 10;
+    $finanabubble-duration-mobile: 15;
+    @for $i from 1 through $finanafish-count {
+      &-fish:nth-child(#{$i}) {
+        animation-name: finanafish#{$i};
+        animation-duration: $finanafish-duration-min +
+          random() *
+          $finanafish-duration-extra +
+          s;
+        animation-delay: -1 * random() * $finanafish-duration-min + s;
+        animation-direction: normal;
+        opacity: 0.5;
+        height: $finanafish-height;
+        bottom: random() * 100%;
+      }
+      @keyframes finanafish#{$i} {
+        from {
+          right: -50%;
+        }
+        to {
+          right: 150%;
+        }
+      }
+    }
+    @for $i from 1 through $finanabubble-count {
+      &-bubble:nth-child(#{$i}) {
+        animation-name: finanabubble#{$i};
+        animation-duration: $finanabubble-duration-normal + s;
+        @media (max-width: $bp-tablet) {
+          animation-duration: $finanabubble-duration-tablet + s;
+        }
+        @media (max-width: $bp-mobile) {
+          animation-duration: $finanabubble-duration-mobile + s;
+        }
+        animation-delay: -1 * random() * $finanabubble-duration-normal + s;
+        @media (max-width: $bp-tablet) {
+          animation-delay: -1 * random() * $finanabubble-duration-tablet + s;
+        }
+        @media (max-width: $bp-mobile) {
+          animation-delay: -1 * random() * $finanabubble-duration-mobile + s;
+        }
+        animation-direction: normal;
+        opacity: 0.6;
+        width: $finanabubble-width;
+        left: $finanabubble-width + random(100 - 2 * $finanabubble-width) * 1%;
+      }
+      @keyframes finanabubble#{$i} {
+        from {
+          bottom: -20%;
+        }
+        to {
+          bottom: 120%;
+        }
+      }
+    }
+  }
 
-	&-finana {
-		$finanafish-count: 30; // Must be greater than/equal to the number of fish in the html
-		$finanafish-height: 5%;
-		$finanafish-duration-min: 5;
-		$finanafish-duration-extra: 10;
-		$finanabubble-count: 60; // Must be greater than/equal to the number of finanabubbles in the html
-		$finanabubble-width: 5%;
-		$finanabubble-duration-normal: 5;
-		$finanabubble-duration-tablet: 10;
-		$finanabubble-duration-mobile: 15;
-		@for $i from 1 through $finanafish-count {
-			&-fish:nth-child(#{$i}){
-				animation-name: finanafish#{$i};
-				animation-duration: $finanafish-duration-min + random()*$finanafish-duration-extra + s;
-				animation-delay: -1 * random() * $finanafish-duration-min + s;
-				animation-direction: normal;
-				opacity: 0.5;
-				height: $finanafish-height;
-				bottom: random()*100%;
-			}
-			@keyframes finanafish#{$i} {
-				from { right: -50%; }
-				to   { right: 150%; }
-			}
-		}
-		@for $i from 1 through $finanabubble-count {
-			&-bubble:nth-child(#{$i}){
-				animation-name: finanabubble#{$i};
-				animation-duration: $finanabubble-duration-normal + s;
-				@media (max-width: $bp-tablet) { animation-duration: $finanabubble-duration-tablet + s; }
-				@media (max-width: $bp-mobile) { animation-duration: $finanabubble-duration-mobile + s; }
-				animation-delay: -1 * random() * $finanabubble-duration-normal + s;
-				@media (max-width: $bp-tablet) { animation-delay: -1 * random() * $finanabubble-duration-tablet + s; }
-				@media (max-width: $bp-mobile) { animation-delay: -1 * random() * $finanabubble-duration-mobile + s; }
-				animation-direction: normal;
-				opacity: 0.6;
-				width: $finanabubble-width;
-				left: $finanabubble-width + random(100 - 2 * $finanabubble-width) * 1%;
-			}
-			@keyframes finanabubble#{$i} {
-				from { bottom: -20%; }
-				to   { bottom: 120%; }
-			}
-		}
-	}
-
-	// TODO: Add remaining pages
+  // TODO: Add remaining pages
 }
 
 // Temporary until replaced by full nav component
 nav {
-	position: relative; // Animation interferes with z-index. This somehow fixes it (search 'stacking context')
-	z-index: 100;
+  position: relative; // Animation interferes with z-index. This somehow fixes it (search 'stacking context')
+  z-index: 100;
 }
 .link {
-	display: inline-block;
-	padding: 0.5rem 1rem;
-	margin-left: 0.5rem;
-	background-color: hsl(114deg 15% 75% / 1);
-	border-radius: 0.75rem;
-	color: black;
-	text-align: center;
-	transition-property: color, background-color;
-	transition-duration: 250ms;
-	transition-timing-function: ease-out;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  background-color: hsl(114deg 15% 75% / 1);
+  border-radius: 0.75rem;
+  color: black;
+  text-align: center;
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: ease-out;
 
-	&:visited {
-		color: hsl(0deg 0% 0% / 0.7);
-	}
+  &:visited {
+    color: hsl(0deg 0% 0% / 0.7);
+  }
 
-	&:hover,
-	&:focus {
-		background-color: hsl(114deg 15% 50% / 1);
-	}
+  &:hover,
+  &:focus {
+    background-color: hsl(114deg 15% 50% / 1);
+  }
 }

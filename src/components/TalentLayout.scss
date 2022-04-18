@@ -159,122 +159,122 @@
 }
 
 .fan-submissions {
-	// Message/Art column organisation loosely based off
-	//	https://codepen.io/slooo/pen/yLYZNKw
-	//	https://www.w3schools.com/css/css3_flexbox_responsive.asp
-	&-container {
-		position: relative;
-		width: 100%;
-		margin-bottom: 3rem;
+  // Message/Art column organisation loosely based off
+  //	https://codepen.io/slooo/pen/yLYZNKw
+  //	https://www.w3schools.com/css/css3_flexbox_responsive.asp
+  &-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 3rem;
 
-		h3 {
-			margin-left: auto;
-			margin-right: auto;
-			margin-bottom: 20px;
-			width: 75%;
-			text-align: center;
-			padding: 0.25rem 0;
-			border-radius: 7px;
-			background-color: $background-grey;
-		}
+    h3 {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 20px;
+      width: 75%;
+      text-align: center;
+      padding: 0.25rem 0;
+      border-radius: 7px;
+      background-color: $background-grey;
+    }
 
-		button {
-			position: absolute;
-            z-index: 10;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            cursor: pointer;
-            font-size: 1.25rem;
-            padding: 0.25rem 0.5rem;
-            background-color: $background-grey;
-            border-radius: 5px;
-		}
-	}
+    button {
+      position: absolute;
+      z-index: 10;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      cursor: pointer;
+      font-size: 1.25rem;
+      padding: 0.25rem 0.5rem;
+      background-color: $background-grey;
+      border-radius: 5px;
+    }
+  }
 
-	&-box {
-		position: relative;
-		column-count: 3;
-		column-gap: 1em;
-		padding-left: 20px;
+  &-box {
+    position: relative;
+    column-count: 3;
+    column-gap: 1em;
+    padding-left: 20px;
 
-		@media (max-width: $bp-tablet) {
-			column-count: 2;
-		}
+    @media (max-width: $bp-tablet) {
+      column-count: 2;
+    }
 
-		@media (max-width: $bp-mobile) {
-			column-count: 1;
-		}
+    @media (max-width: $bp-mobile) {
+      column-count: 1;
+    }
 
-		&-expanded {
-			max-height: 100%;
-			width: 100%;
-		}
+    &-expanded {
+      max-height: 100%;
+      width: 100%;
+    }
 
-		&-faded {
-			// Fade content of div to transparent:
-			//	https://makandracards.com/makandra/475887-letting-a-dom-element-fade-into-transparency
-			$truncate-after: 20rem;
-			$fade-height: 5rem;
-			$fade-after: $truncate-after - $fade-height;
+    &-faded {
+      // Fade content of div to transparent:
+      //	https://makandracards.com/makandra/475887-letting-a-dom-element-fade-into-transparency
+      $truncate-after: 20rem;
+      $fade-height: 5rem;
+      $fade-after: $truncate-after - $fade-height;
 
-			overflow: hidden;
-			max-height: $truncate-after;
+      overflow: hidden;
+      max-height: $truncate-after;
       // (Brandon) Webkit version required for chrome
-			-webkit-mask-image: linear-gradient(
+      -webkit-mask-image: linear-gradient(
         to bottom,
         black $fade-after,
         transparent $truncate-after
       );
-			mask-image: linear-gradient(
+      mask-image: linear-gradient(
         to bottom,
         black $fade-after,
         transparent $truncate-after
       );
-		}
-	}
+    }
+  }
 
-	&-submission {
-		position: relative;
-		-webkit-column-break-inside: avoid;
-		page-break-inside: avoid;
-		break-inside: avoid;
-		margin-bottom: 1rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding-top: 20px;
-		padding-right: 20px;
-	}
+  &-submission {
+    position: relative;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-right: 20px;
+  }
 
-	&-message {
-		position: relative;
-		width: 100%;
-		padding: 3px;
-		border-radius: 3px;
-		background-color: $background-grey;
+  &-message {
+    position: relative;
+    width: 100%;
+    padding: 3px;
+    border-radius: 3px;
+    background-color: $background-grey;
 
-		h4 {
-			margin-bottom: 0.75rem;
-			word-wrap: break-word;
-			margin-top: 5px;
-			margin-right: 10px;
-		}
-		img {
-			width: 100%;
-			padding: 5%;
-		}
-	}
+    h4 {
+      margin-bottom: 0.75rem;
+      word-wrap: break-word;
+      margin-top: 5px;
+      margin-right: 10px;
+    }
+    img {
+      width: 100%;
+      padding: 5%;
+    }
+  }
 
-	&-corner {
-		position: absolute;
-		top: 0;
-		right: 0;
-		object-fit: scale-down;
-		height: 90px;
-		width: 90px;
-		z-index: 2;
-	}
+  &-corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    object-fit: scale-down;
+    height: 90px;
+    width: 90px;
+    z-index: 2;
+  }
 }
 
 .extra-info {
