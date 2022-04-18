@@ -32,29 +32,40 @@ export function PageWrapper (props: Props): JSX.Element {
       <div className={`page-bg-animation-${props.page}-container ${AnimationOn ? `page-bg-animation-${props.page}-container-on` : `page-bg-animation-${props.page}-container-off`}`}>
         {props.page === 'pomu' && (
           <div>
-            {Array.from({ length: pomuCoinCount / 2 }, i => <Image className='page-bg-animation-pomu-coin' src={PomuCoinGold} />)}
-            {Array.from({ length: pomuCoinCount / 2 }, i => <Image className='page-bg-animation-pomu-coin' src={PomuCoinSilver} />)}
+            {Array.from({ length: pomuCoinCount / 2 }, (i: number) =>
+              <Image className='page-bg-animation-pomu-coin' src={PomuCoinGold} />)}
+            {Array.from({ length: pomuCoinCount / 2 }, (i: number) =>
+              <Image className='page-bg-animation-pomu-coin' src={PomuCoinSilver} />)}
           </div>
         )}
         {props.page === 'elira' && (
           <div>
             {/* Separate div's because of the nth-child selector */}
             <div>
-              {Array.from({ length: eliraCloudCount / 4 }, i => <Image className='page-bg-animation-elira-cloud' src={EliraCloud1} />)}
-              {Array.from({ length: eliraCloudCount / 4 }, i => <Image className='page-bg-animation-elira-cloud' src={EliraCloud2} />)}
-              {Array.from({ length: eliraCloudCount / 4 }, i => <Image className='page-bg-animation-elira-cloud' src={EliraCloud3} />)}
-              {Array.from({ length: eliraCloudCount / 4 }, i => <Image className='page-bg-animation-elira-cloud' src={EliraCloud4} />)}
+              {Array.from({ length: eliraCloudCount / 4 }, (i: number) =>
+                <Image className='page-bg-animation-elira-cloud' src={EliraCloud1} />)}
+              {Array.from({ length: eliraCloudCount / 4 }, (i: number) =>
+                <Image className='page-bg-animation-elira-cloud' src={EliraCloud2} />)}
+              {Array.from({ length: eliraCloudCount / 4 }, (i: number) =>
+                <Image className='page-bg-animation-elira-cloud' src={EliraCloud3} />)}
+              {Array.from({ length: eliraCloudCount / 4 }, (i: number) =>
+                <Image className='page-bg-animation-elira-cloud' src={EliraCloud4} />)}
             </div>
             <div>
-              {Array.from({ length: eliraStarCount }, i => <Image className='page-bg-animation-elira-star' src={EliraStar1} />)}
+              {Array.from({ length: eliraStarCount }, (i: number) =>
+                <Image className='page-bg-animation-elira-star' src={EliraStar1} />)}
             </div>
           </div>
         )}
         {props.page === 'finana' && (
           <div>
             {/* Separate div's because of the nth-child selector */}
-            <div>{Array.from({ length: finanaBubbleCount }, i => <Image className='page-bg-animation-finana-bubble' src={FinanaBubble1} />)}</div>
-            <div>{Array.from({ length: finanaFishCount }, i => <Image className='page-bg-animation-finana-fish' src={FinanaFish} />)}</div>
+            <div>{Array.from({ length: finanaBubbleCount }, (i: number) =>
+              <Image className='page-bg-animation-finana-bubble' src={FinanaBubble1} />)}
+            </div>
+            <div>{Array.from({ length: finanaFishCount }, (i: number) =>
+              <Image className='page-bg-animation-finana-fish' src={FinanaFish} />)}
+            </div>
           </div>
         )}
       </div>

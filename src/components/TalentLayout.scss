@@ -227,8 +227,7 @@
 		padding-right: 20px;
 	}
 
-	&-message,
-	&-fanart {
+	&-message {
 		position: relative;
 		width: 100%;
 		padding: 3px;
@@ -241,12 +240,10 @@
 			margin-top: 5px;
 			margin-right: 10px;
 		}
-	}
-
-	&-fanarti {
-		width: 100%;
-		padding: 5%;
-			
+		img {
+			width: 100%;
+			padding: 5%;
+		}
 	}
 
 	&-corner {

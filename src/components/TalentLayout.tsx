@@ -1,6 +1,7 @@
 import React from 'react'
 import './TalentLayout.scss'
 import Image from './Image'
+import MessageBoxesLayout from './MessageBoxesLayout'
 
 // TODO(abuffseagull) 2022-03-17: need to remove this
 // Probably just generate some random ids on the messages at load time
@@ -35,16 +36,6 @@ interface Props {
 function TalentLayout (props: Props): JSX.Element {
   const firstName = props.name.split(' ')[0]
   const firstNameLower = firstName.toLowerCase()
-  const [showAllMessages, setShowAllMessages] = React.useState(false)
-  const [showAllFanart, setShowAllFanart] = React.useState(false)
-
-  const renderMessages = (): Message[] => {
-    return props.messages
-  }
-
-  const renderArt = (): Fanart[] => {
-    return props.fanarts
-  }
 
   return (
     <div className='talent-layout-container'>
@@ -58,8 +49,8 @@ function TalentLayout (props: Props): JSX.Element {
             <Image className='talent-corner' src={props.frame} />
             <div className={`talent-text-inner ${firstNameLower}-border`}>
               <h2>{props.name}</h2>
-              {props.info.map(paragraph =>
-                <p>{paragraph}&nbsp;</p>
+              {props.info.map((paragraph, idx) =>
+                <p key={idx}>{paragraph}&nbsp;</p>
               )}
               <div className='talent-links-container'>
                 <a href={props.youtube}>{firstName}'s Youtube</a>
@@ -78,56 +69,29 @@ function TalentLayout (props: Props): JSX.Element {
         </div>
       </div>
 
-      <div className='fan-submissions-container'>
-        <h3 className={`${firstNameLower}-border`}>Messages To {firstName}</h3>
-        <div className={`${showAllMessages ? 'fan-submissions-box-expanded' : 'fan-submissions-box-faded'}`}>
-          <div className='fan-submissions-box'>
-            {renderMessages().map((message) => (
-              <div className='fan-submissions-submission'>
-                <Image className='fan-submissions-corner' src={props.corner} />
-                <div className={`fan-submissions-message ${firstNameLower}-border`}>
-                  <h4>{message.name} ({message.twitter})</h4>
-                  <p>{message.text}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        {!showAllMessages && (
-          <button
-            onClick={() => { setShowAllMessages(true) }}
-            className={`${firstNameLower}-border`}
-          >
-            view all
-          </button>
-        )}
-      </div>
+      {/* Messages */}
+      <MessageBoxesLayout
+        enableLazulight={false}
+        enableElira={firstNameLower === 'elira'}
+        enablePomu={firstNameLower === 'pomu'}
+        enableFinana={firstNameLower === 'finana'}
+        enableFolding
+        enableArt={false}
+        heading={`Messages To ${firstName}`}
+        page={firstNameLower}
+      />
 
-      <div className='fan-submissions-container'>
-        <h3 className={`${firstNameLower}-border`}>Art For {firstName}</h3>
-        <div className={`${showAllFanart ? 'fan-submissions-box-expanded' : 'fan-submissions-box-faded'}`}>
-          <div className='fan-submissions-box'>
-            {renderArt().map((fanart) => (
-              <div className='fan-submissions-submission'>
-                <Image className='fan-submissions-corner' src={props.corner} />
-                <div className={`fan-submissions-fanart ${firstNameLower}-border`}>
-                  <h4>{fanart.name} ({fanart.twitter})</h4>
-                  <p>{fanart.text}</p>
-                  <Image className='fan-submissions-fanarti' src={fanart.artUrl} alt='' />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        {!showAllFanart && (
-          <button
-            onClick={() => { setShowAllFanart(true) }}
-            className={`${firstNameLower}-border`}
-          >
-            view all
-          </button>
-        )}
-      </div>
+      {/* Art */}
+      <MessageBoxesLayout
+        enableLazulight={false}
+        enableElira={firstNameLower === 'elira'}
+        enablePomu={firstNameLower === 'pomu'}
+        enableFinana={firstNameLower === 'finana'}
+        enableFolding
+        enableArt
+        heading={`Art To ${firstName}`}
+        page={firstNameLower}
+      />
 
       {/* TODO: Move this to the root template so all pages get the it */}
       <div className='extra-info'>TODO: For credits, disclaimers, etc.</div>
