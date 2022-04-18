@@ -1,4 +1,5 @@
 @use "../variables" as *;
+@use "sass:math";
 
 .page-bg-static {
   &-elira {
@@ -30,7 +31,7 @@
 
 .page-bg-animation {
   // Animation notes:
-  //   animation-delay: Negative means start part way through. Use this to initialise each element randomly over the cycle
+  //   animation-delay: Negative means start part way through. Use this to initialise each element math.randomly over the cycle
   //   animation-duration: Would be better to use JS to adjust based on screen dimension...
   //   For each element, specify 'width' or 'height', then 'object-fit' will scale the other dim
 
@@ -74,15 +75,15 @@
     @for $i from 1 through $eliracloud-count {
       &-cloud:nth-child(#{$i}) {
         animation-name: eliracloud#{$i};
-        animation-duration: random() *
+        animation-duration: math.random() *
           $eliracloud-duration-extra +
           $eliracloud-duration-min +
           s;
-        animation-delay: -1 * random() * $eliracloud-duration-min + s;
+        animation-delay: -1 * math.random() * $eliracloud-duration-min + s;
         animation-direction: normal;
         opacity: 0.5;
         height: $eliracloud-height;
-        bottom: 40% + random() * 60%; // Top half only
+        bottom: 40% + math.random() * 60%; // Top half only
       }
       @keyframes eliracloud#{$i} {
         from {
@@ -98,11 +99,11 @@
       &-star:nth-child(#{$id}) {
         animation-name: elirastar#{$id};
         animation-duration: $elirastar-duration-normal + s;
-        animation-delay: -1 * random() * $elirastar-duration-normal + s;
+        animation-delay: -1 * math.random() * $elirastar-duration-normal + s;
         animation-direction: alternate;
         height: $elirastar-height;
-        top: 50% + random() * 50%; // Bottom half only
-        left: random() * 100%;
+        top: 50% + math.random() * 50%; // Bottom half only
+        left: math.random() * 100%;
       }
       @keyframes elirastar#{$id} {
         from {
@@ -133,19 +134,19 @@
           animation-duration: $pomucoin-duration-mobile + s;
         }
 
-        animation-delay: -1 * random() * $pomucoin-duration-normal + s;
+        animation-delay: -1 * math.random() * $pomucoin-duration-normal + s;
         @media (max-width: $bp-tablet) {
-          animation-delay: -1 * random() * $pomucoin-duration-tablet + s;
+          animation-delay: -1 * math.random() * $pomucoin-duration-tablet + s;
         }
         @media (max-width: $bp-mobile) {
-          animation-delay: -1 * random() * $pomucoin-duration-mobile + s;
+          animation-delay: -1 * math.random() * $pomucoin-duration-mobile + s;
         }
 
         animation-direction: normal;
         opacity: 0.2;
         width: $pomucoin-width;
-        left: $pomucoin-width + random(100 - 2 * $pomucoin-width) * 1%;
-        transform: rotate(random(360) + deg);
+        left: $pomucoin-width + math.random(100 - 2 * $pomucoin-width) * 1%;
+        transform: rotate(math.random(360) + deg);
       }
       @keyframes pomucoin#{$i} {
         from {
@@ -173,14 +174,14 @@
       &-fish:nth-child(#{$i}) {
         animation-name: finanafish#{$i};
         animation-duration: $finanafish-duration-min +
-          random() *
+          math.random() *
           $finanafish-duration-extra +
           s;
-        animation-delay: -1 * random() * $finanafish-duration-min + s;
+        animation-delay: -1 * math.random() * $finanafish-duration-min + s;
         animation-direction: normal;
         opacity: 0.5;
         height: $finanafish-height;
-        bottom: random() * 100%;
+        bottom: math.random() * 100%;
       }
       @keyframes finanafish#{$i} {
         from {
@@ -203,18 +204,22 @@
           animation-duration: $finanabubble-duration-mobile + s;
         }
 
-        animation-delay: -1 * random() * $finanabubble-duration-normal + s;
+        animation-delay: -1 * math.random() * $finanabubble-duration-normal + s;
         @media (max-width: $bp-tablet) {
-          animation-delay: -1 * random() * $finanabubble-duration-tablet + s;
+          animation-delay: -1 * math.random() * $finanabubble-duration-tablet +
+            s;
         }
         @media (max-width: $bp-mobile) {
-          animation-delay: -1 * random() * $finanabubble-duration-mobile + s;
+          animation-delay: -1 * math.random() * $finanabubble-duration-mobile +
+            s;
         }
 
         animation-direction: normal;
         opacity: 0.6;
         width: $finanabubble-width;
-        left: $finanabubble-width + random(100 - 2 * $finanabubble-width) * 1%;
+        left: $finanabubble-width +
+          math.random(100 - 2 * $finanabubble-width) *
+          1%;
       }
       @keyframes finanabubble#{$i} {
         from {
