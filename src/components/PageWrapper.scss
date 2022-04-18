@@ -107,11 +107,11 @@
 			&-coin:nth-child(#{$i}){
 				animation-name: pomucoin#{$i};
 				animation-duration: $pomucoin-duration-normal + s;
-				@media (max-width: $bpTablet) { animation-duration: $pomucoin-duration-tablet + s; }
-				@media (max-width: $bpMobile) { animation-duration: $pomucoin-duration-mobile + s; }
+				@media (max-width: $bp-tablet) { animation-duration: $pomucoin-duration-tablet + s; }
+				@media (max-width: $bp-mobile) { animation-duration: $pomucoin-duration-mobile + s; }
 				animation-delay: -1 * random() * $pomucoin-duration-normal + s;
-				@media (max-width: $bpTablet) { animation-delay: -1 * random() * $pomucoin-duration-tablet + s; }
-				@media (max-width: $bpMobile) { animation-delay: -1 * random() * $pomucoin-duration-mobile + s; }
+				@media (max-width: $bp-tablet) { animation-delay: -1 * random() * $pomucoin-duration-tablet + s; }
+				@media (max-width: $bp-mobile) { animation-delay: -1 * random() * $pomucoin-duration-mobile + s; }
 				animation-direction: normal;
 				opacity: 0.2;
 				width: $pomucoin-width;
@@ -154,11 +154,11 @@
 			&-bubble:nth-child(#{$i}){
 				animation-name: finanabubble#{$i};
 				animation-duration: $finanabubble-duration-normal + s;
-				@media (max-width: $bpTablet) { animation-duration: $finanabubble-duration-tablet + s; }
-				@media (max-width: $bpMobile) { animation-duration: $finanabubble-duration-mobile + s; }
+				@media (max-width: $bp-tablet) { animation-duration: $finanabubble-duration-tablet + s; }
+				@media (max-width: $bp-mobile) { animation-duration: $finanabubble-duration-mobile + s; }
 				animation-delay: -1 * random() * $finanabubble-duration-normal + s;
-				@media (max-width: $bpTablet) { animation-delay: -1 * random() * $finanabubble-duration-tablet + s; }
-				@media (max-width: $bpMobile) { animation-delay: -1 * random() * $finanabubble-duration-mobile + s; }
+				@media (max-width: $bp-tablet) { animation-delay: -1 * random() * $finanabubble-duration-tablet + s; }
+				@media (max-width: $bp-mobile) { animation-delay: -1 * random() * $finanabubble-duration-mobile + s; }
 				animation-direction: normal;
 				opacity: 0.6;
 				width: $finanabubble-width;
