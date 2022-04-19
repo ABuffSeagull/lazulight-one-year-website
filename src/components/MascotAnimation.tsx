@@ -12,8 +12,6 @@ interface MascotProps {
 
 
 export default function MascotAnimation( props: MascotProps): JSX.Element{
-    
-    
 
     useEffect(() => {
         setTimeout(() => {
@@ -23,7 +21,6 @@ export default function MascotAnimation( props: MascotProps): JSX.Element{
             }
         }, props.delay)
     })
-    
       return  <video ref={props.id} muted  src={props.src} />
     
 }
