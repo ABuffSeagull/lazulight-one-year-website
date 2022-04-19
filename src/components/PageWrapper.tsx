@@ -1,6 +1,7 @@
 import React from 'react'
 import './PageWrapper.scss'
 import SiteHeader from './SiteHeader'
+import SiteFooter from './SiteFooter'
 import Image from './Image'
 import EliraCloud1 from '../assets/BG/Elira-BG-Cloud1.webp'
 import EliraCloud2 from '../assets/BG/Elira-BG-Cloud2.webp'
@@ -90,7 +91,7 @@ export function PageWrapper (props: Props): JSX.Element {
       {/* This is the body of the page */}
       {props.children}
 
-      {/* TODO: Insert footer here */}
+      <SiteFooter />
 
       {/* Scripts for background animation */}
       {/* See source in: https://codepen.io/matthewyingtao/pen/mdqoZPg */}
