@@ -70,9 +70,9 @@ export function PageWrapper (props: Props): JSX.Element {
         )}
       </div>
 
-      {/* TODO: Replace with actual menu */}
+      {/* TODO: Find somewhere to put toggleAnimation button in menu */}
       <SiteHeader />
-      {/*<nav>
+      {/* <nav>
         <Link className='link' to='/finana'>Finana</Link>
         <Link className='link' to='/pomu'>Pomu</Link>
         <Link className='link' to='/elira'>Elira</Link>
@@ -82,10 +82,10 @@ export function PageWrapper (props: Props): JSX.Element {
         <Link className='link' to='/all-art'>Art</Link>
         <Link className='link' to='/all-messages'>Messages</Link>
         <Link className='link' to='/about'>About</Link>
-        <button onClick={() => { toggleAnimationState(state => !state) }} className='link'>
-          {AnimationOn ? 'Animation On' : 'Animation Off'}
-        </button>
-      </nav>*/}
+      </nav> */}
+      <button onClick={() => { toggleAnimationState(state => !state) }} className='link animation-toggle'>
+        {AnimationOn ? 'Animation On' : 'Animation Off'}
+      </button>
 
       {/* This is the body of the page */}
       {props.children}

@@ -220,13 +220,6 @@
 
       overflow: hidden;
       max-height: $truncate-after;
-
-      // (Brandon) Webkit version required for chrome
-      -webkit-mask-image: linear-gradient(
-        to bottom,
-        black $fade-after,
-        transparent $truncate-after
-      );
       mask-image: linear-gradient(
         to bottom,
         black $fade-after,

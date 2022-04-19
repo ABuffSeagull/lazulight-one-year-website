@@ -1,4 +1,4 @@
-/* stylelint-disable keyframes-name-pattern*/
+/* stylelint-disable keyframes-name-pattern */
 // See https://github.com/stylelint/stylelint/issues/5997
 @use "../variables" as *;
 @use "sass:math";
@@ -249,10 +249,10 @@
 }
 
 // Temporary until replaced by full nav component
-//nav {
-//  position: relative; // Animation interferes with z-index. This somehow fixes it (search 'stacking context')
-//  z-index: 100;
-//}
+.animation-toggle {
+  position: relative; // Animation interferes with z-index. This somehow fixes it (search 'stacking context')
+  z-index: 100;
+}
 
 .link {
   display: inline-block;
