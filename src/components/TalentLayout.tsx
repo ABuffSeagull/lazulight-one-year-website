@@ -3,7 +3,6 @@ import './TalentLayout.scss'
 import Image from './Image'
 import MascotAnimation from './MascotAnimation'
 
-
 // TODO(abuffseagull) 2022-03-17: need to remove this
 // Probably just generate some random ids on the messages at load time
 /* eslint-disable react/jsx-key */
@@ -34,8 +33,6 @@ interface Props {
   twitter: string
   discord: string
 }
-
-
 
 function TalentLayout (props: Props): JSX.Element {
   const firstName = props.name.split(' ')[0]
@@ -80,10 +77,10 @@ function TalentLayout (props: Props): JSX.Element {
           </div>
           <div className={`talent-animation-container talent-text-container-${firstNameLower}`}>
             {/* (Brandon): Number of images and class of last image is hardcoded into 'talent-animation-container' */}
-            <MascotAnimation id={vid0} delay={0}src={props.animation}/>
-            <MascotAnimation id={vid1} delay={50} src={props.animation}/>
-            <MascotAnimation id={vid2} delay={100} src={props.animation}/>
-            <MascotAnimation id={vid3} delay={150} src={props.animation}/>
+            <MascotAnimation id={vid0} delay={0} src={props.animation} />
+            <MascotAnimation id={vid1} delay={50} src={props.animation} />
+            <MascotAnimation id={vid2} delay={100} src={props.animation} />
+            <div className='hide-on-tablet'><MascotAnimation id={vid3} delay={150} src={props.animation} /></div>
           </div>
         </div>
       </div>
