@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import './TalentLayout.scss'
 import Image from './Image'
+import MascotAnimation from './MascotAnimation'
 
 // TODO(abuffseagull) 2022-03-17: need to remove this
 // Probably just generate some random ids on the messages at load time
@@ -22,6 +23,7 @@ interface Fanart {
 interface Props {
   name: string
   frame: string
+  animation: string
   corner: string
   messages: Message[]
   fanarts: Fanart[]
@@ -37,6 +39,11 @@ function TalentLayout (props: Props): JSX.Element {
   const firstNameLower = firstName.toLowerCase()
   const [showAllMessages, setShowAllMessages] = React.useState(false)
   const [showAllFanart, setShowAllFanart] = React.useState(false)
+
+  const vid0 = useRef<HTMLVideoElement>(null)
+  const vid1 = useRef<HTMLVideoElement>(null)
+  const vid2 = useRef<HTMLVideoElement>(null)
+  const vid3 = useRef<HTMLVideoElement>(null)
 
   const renderMessages = (): Message[] => {
     return props.messages
@@ -70,10 +77,10 @@ function TalentLayout (props: Props): JSX.Element {
           </div>
           <div className={`talent-animation-container talent-text-container-${firstNameLower}`}>
             {/* (Brandon): Number of images and class of last image is hardcoded into 'talent-animation-container' */}
-            <Image src='/src/sheesh-pog-based.png' />
-            <Image src='/src/sheesh-pog-based.png' />
-            <Image src='/src/sheesh-pog-based.png' />
-            <Image src='/src/sheesh-pog-based.png' className='hide-on-tablet' />
+            <MascotAnimation id={vid0} delay={0} src={props.animation} />
+            <MascotAnimation id={vid1} delay={50} src={props.animation} />
+            <MascotAnimation id={vid2} delay={100} src={props.animation} />
+            <div className='hide-on-tablet'><MascotAnimation id={vid3} delay={150} src={props.animation} /></div>
           </div>
         </div>
       </div>
