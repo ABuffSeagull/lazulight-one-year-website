@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Component, useRef } from "react"
 import { useEffect } from "react"
 import ReactPlayer from 'react-player'
 
@@ -8,26 +8,25 @@ interface MascotProps {
     className?: string
     style?: string
     delay?: number
+    id: React.RefObject<HTMLVideoElement>
 } 
 
 
 
-export default function MascotAnimation( props: MascotProps){
-
-
-    let mascot = <video muted loop src={props.src} />
+export default function MascotAnimation( props: MascotProps): JSX.Element{
     
+    
+
     useEffect(() => {
-        console.log('test')
         setTimeout(() => {
-          // video play
+            if (null !== props.id.current) {
+                props.id.current.setAttribute('loop', 'true')
+                props.id.current.play()
+            }
         }, props.delay)
-      })
-
-
-
-    return  mascot
-   
+    })
     
+
+      return  <video ref={props.id} muted  src={props.src} />
     
 }
