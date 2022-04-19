@@ -22,16 +22,16 @@ export default function SiteFooter (): JSX.Element {
   let footerBorder
   switch (firstNameLower) {
     case 'elira':
-      footerBorder = classes.eliraFooterBorder
+      footerBorder = classes['elira-footer-border']
       break
     case 'pomu':
-      footerBorder = classes.pomuFooterBorder
+      footerBorder = classes['pomu-footer-border']
       break
     case 'finana':
-      footerBorder = classes.finanaFooterBorder
+      footerBorder = classes['finana-footer-border']
       break
     default:
-      footerBorder = classes.defaultFooterBorder // TODO: define default footer border colour
+      footerBorder = classes['default-footer-border'] // TODO: define default footer border colour
   }
 
   return (
