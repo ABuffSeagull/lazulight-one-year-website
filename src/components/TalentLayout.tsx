@@ -99,9 +99,6 @@ function TalentLayout (props: Props): JSX.Element {
         heading={`Art To ${firstName}`}
         page={firstNameLower}
       />
-
-      {/* TODO: Move this to the root template so all pages get the it */}
-      <div className='extra-info'>TODO: For credits, disclaimers, etc.</div>
     </div>
   )
 }

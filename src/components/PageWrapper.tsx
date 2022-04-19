@@ -73,25 +73,16 @@ export function PageWrapper (props: Props): JSX.Element {
 
       {/* TODO: Find somewhere to put toggleAnimation button in menu */}
       <SiteHeader />
-      {/* <nav>
-        <Link className='link' to='/finana'>Finana</Link>
-        <Link className='link' to='/pomu'>Pomu</Link>
-        <Link className='link' to='/elira'>Elira</Link>
-        <Link className='link' to='/project-secret'>Secret</Link>
-        <Link className='link' to='/project-dcl'>DCL</Link>
-        <Link className='link' to='/project-vn'>VN</Link>
-        <Link className='link' to='/all-art'>Art</Link>
-        <Link className='link' to='/all-messages'>Messages</Link>
-        <Link className='link' to='/about'>About</Link>
-      </nav> */}
-      <button onClick={() => { toggleAnimationState(state => !state) }} className='link animation-toggle'>
+      <button onClick={() => { toggleAnimationState(state => !state) }} className='animation-toggle'>
         {AnimationOn ? 'Animation On' : 'Animation Off'}
       </button>
 
       {/* This is the body of the page */}
       {props.children}
 
-      <SiteFooter />
+      <SiteFooter
+        page={props.page}
+      />
 
       {/* Scripts for background animation */}
       {/* See source in: https://codepen.io/matthewyingtao/pen/mdqoZPg */}

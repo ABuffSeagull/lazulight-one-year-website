@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import Elira from './pages/Elira'
 import Finana from './pages/Finana'
 import Pomu from './pages/Pomu'
-import Secret from './pages/Secret'
+import Fnf from './pages/FNF'
 import DiamondCityLights from './pages/DiamondCityLights'
 import VisualNovel from './pages/VisualNovel'
 import Art from './pages/Art'
@@ -25,7 +25,7 @@ export default function App (): JSX.Element {
         <Route path='/elira'><PageWrapper page='elira'><Elira /></PageWrapper></Route>
         <Route path='/finana'><PageWrapper page='finana'><Finana /></PageWrapper></Route>
         <Route path='/pomu'><PageWrapper page='pomu'><Pomu /></PageWrapper></Route>
-        <Route path='/project-secret'><PageWrapper page='secret'><Secret /></PageWrapper></Route>
+        <Route path='/project-fnf'><PageWrapper page='fnf'><Fnf /></PageWrapper></Route>
         <Route path='/project-dcl'><PageWrapper page='dcl'><DiamondCityLights /></PageWrapper></Route>
         <Route path='/project-vn'><PageWrapper page='vn'><VisualNovel /></PageWrapper></Route>
         <Route path='/all-art'><PageWrapper page='art'><Art /></PageWrapper></Route>

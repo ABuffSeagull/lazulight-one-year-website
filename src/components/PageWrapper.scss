@@ -3,7 +3,6 @@
 @use "../variables" as *;
 @use "sass:math";
 
-// TODO: Merge .container into line: <div className={`page-bg-static-${props.page} page-bg-animation-${props.page}`}>
 .container {
   height: 100%;
   width: 100%;
@@ -55,8 +54,6 @@
   &-pomu,
   &-finana {
     // Container properties
-    height: 100%;
-    width: 100%;
     position: relative;
     overflow: hidden;
 
@@ -252,13 +249,11 @@
   // TODO: Add remaining pages
 }
 
-// Temporary until replaced by full nav component
+// TODO: Temporary until replaced by full nav component
 .animation-toggle {
-  position: relative; // Animation interferes with z-index. This somehow fixes it (search 'stacking context')
+  position: relative; // BG animation interferes with z-index. This somehow fixes it (search 'stacking context')
   z-index: 100;
-}
 
-.link {
   display: inline-block;
   padding: 0.5rem 1rem;
   margin-left: 0.5rem;
@@ -269,10 +264,6 @@
   transition-property: color, background-color;
   transition-duration: 250ms;
   transition-timing-function: ease-out;
-
-  &:visited {
-    color: hsl(0deg 0% 0% / 70%);
-  }
 
   &:hover,
   &:focus {
