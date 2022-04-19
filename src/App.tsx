@@ -1,5 +1,6 @@
 import { Route, Switch } from 'wouter'
 import classes from './App.module.scss'
+import SiteFooter from './components/SiteFooter'
 import SiteHeader from './components/SiteHeader'
 
 import Elira from './pages/Elira'
@@ -26,6 +27,7 @@ export default function App (): JSX.Element {
           <ImageExample />
         </Route>
       </Switch>
+      <SiteFooter />
     </div>
   )
 }

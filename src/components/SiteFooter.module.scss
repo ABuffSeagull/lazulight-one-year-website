@@ -1,0 +1,23 @@
+@use "../variables.scss" as *;
+
+.footer {
+  width: 100%;
+  padding: 5vw 10vw;
+  background-color: $background-grey;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  margin-top: auto;
+}
+
+.elira-footer-border {
+  border-top: 3px solid $elira-primary-color;
+}
+
+.pomu-footer-border {
+  border-top: 3px solid $pomu-primary-color;
+}
+
+.finana-footer-border {
+  border-top: 3px solid $finana-primary-color;
+}
