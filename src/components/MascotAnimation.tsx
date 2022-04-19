@@ -1,7 +1,5 @@
-import React, { Component, useRef } from "react"
+import React, { useRef } from "react"
 import { useEffect } from "react"
-import ReactPlayer from 'react-player'
-
 
 interface MascotProps {
     src: string
@@ -26,7 +24,6 @@ export default function MascotAnimation( props: MascotProps): JSX.Element{
         }, props.delay)
     })
     
-
       return  <video ref={props.id} muted  src={props.src} />
     
 }
