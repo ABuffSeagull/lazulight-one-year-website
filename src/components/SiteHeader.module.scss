@@ -1,78 +1,79 @@
-.openHeader {
-	display: none;
-	position: fixed;
-	top: 0;
-	right: 0;
-	z-index: 100;
+.open-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
 }
 
 .header {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1rem;
-	align-items: center;
-	justify-content: center;
-	padding: 1rem 2rem;
-	background-color: rgb(216, 216, 216);
-	border-bottom-left-radius: 1rem;
-	border-bottom-right-radius: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background-color: rgb(216 216 216);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 @media screen and (max-width: 768px) {
-	.openHeader {
-		display: block;
-	}
+  .open-header {
+    display: block;
+  }
 
-	.header {
-		position: fixed;
-		inset: 0;
-		transform: translateX(100%);
-		transition: transform 0.5s ease-in-out;
-		z-index: 99;
-	}
+  .header {
+    position: fixed;
+    inset: 0;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+    z-index: 99;
+  }
 
-	.header.open {
-		transform: translate(0);
-	}
+  .header.open {
+    transform: translate(0);
+  }
 }
 
-.navLink {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 0.5rem;
-	color: #2e2e2e;
-	text-decoration: none;
-
-	&:hover .defaultIcon {
-		opacity: 0;
-	}
-	&:hover .activeIcon {
-		opacity: 1;
-	}
-}
-
-.iconWrapper {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: rgb(255, 255, 255);
-	border-radius: 999px;
-	position: relative;
-	width: 5rem;
-	height: 5rem;
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(255 255 255);
+  border-radius: 999px;
+  position: relative;
+  width: 5rem;
+  height: 5rem;
 }
 
 .icon {
-	display: block;
-	position: absolute;
-	width: 4rem;
-	height: 4rem;
-	transition: opacity 150ms linear;
-	backface-visibility: hidden;
-	transform: translateZ(0) scale(1, 1);
+  display: block;
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  transition: opacity 150ms linear;
+  backface-visibility: hidden;
+  transform: translateZ(0) scale(1, 1);
 }
 
-.activeIcon {
-	opacity: 0;
+.active-icon {
+  opacity: 0;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: #2e2e2e;
+  text-decoration: none;
+
+  &:hover .default-icon {
+    opacity: 0;
+  }
+
+  &:hover .active-icon {
+    opacity: 1;
+  }
 }

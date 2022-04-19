@@ -69,16 +69,16 @@ export default function SiteHeader (): JSX.Element {
         {navIcons.map((linkData) => (
           <Link
             key={linkData.name}
-            className={classes.navLink}
+            className={classes['nav-link']}
             to={linkData.path}
           >
-            <div className={classes.iconWrapper}>
+            <div className={classes['icon-wrapper']}>
               <Image
-                className={[classes.icon, classes.defaultIcon].join(' ')}
+                className={[classes.icon, classes['default-icon']].join(' ')}
                 src={linkData.icon}
               />
               <Image
-                className={[classes.icon, classes.activeIcon].join(' ')}
+                className={[classes.icon, classes['active-icon']].join(' ')}
                 src={linkData.iconActive}
               />
             </div>
@@ -87,7 +87,7 @@ export default function SiteHeader (): JSX.Element {
         ))}
       </header>
       <button
-        className={classes.openHeader}
+        className={classes['open-header']}
         onClick={() => setHeaderOpen(!headerOpen)}
       >
         close
