@@ -10,10 +10,7 @@
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-
-  // TODO: Maybe use these - related to whitespace below footer
-  // min-height: 100vh;
-  // overflow: hidden;
+  min-height: 100vh;
 }
 
 .page-bg-static {
@@ -253,7 +250,6 @@
 .animation-toggle {
   position: relative; // BG animation interferes with z-index. This somehow fixes it (search 'stacking context')
   z-index: 100;
-
   display: inline-block;
   padding: 0.5rem 1rem;
   margin-left: 0.5rem;

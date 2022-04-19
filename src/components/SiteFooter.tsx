@@ -13,7 +13,7 @@ const footerText = [
 ]
 
 export default function SiteFooter (props: Props): JSX.Element {
-  let footerBorder = classes[`${props.page}-footer-border`]
+  const footerBorder = classes[`${props.page}-footer-border`]
 
   return (
     <>
