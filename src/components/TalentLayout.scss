@@ -62,7 +62,7 @@
       grid-gap: calc((100% - $num-col * $col-width) / ($num-col - 1));
     }
 
-    img {
+    video {
       width: 100%;
       object-fit: contain;
     }

@@ -3,6 +3,7 @@ import TalentLayout from '../components/TalentLayout'
 import FinanaImage from '../assets/Portraits/Finana-Portrait_cf50.webp?format=png;avif;webp&imagetools&meta'
 import FinanaFrame from '../assets/Corners/Finana-LiverCorner.webp'
 import corner from '../assets/Corners/Finana-MsgCorner.webp'
+import Ryuguard from '../assets/Animations/Finana-Animation_500px.webm'
 
 function Finana (): JSX.Element {
   const name = 'Finana Ryugu'
@@ -121,6 +122,7 @@ function Finana (): JSX.Element {
       <TalentLayout
         name={name}
         frame={FinanaFrame}
+        animation={Ryuguard}
         corner={corner}
         portrait={FinanaImage}
         info={info}

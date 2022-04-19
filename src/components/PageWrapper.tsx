@@ -1,6 +1,6 @@
-import { Link } from 'wouter'
 import React from 'react'
 import './PageWrapper.scss'
+import SiteHeader from './SiteHeader'
 import Image from './Image'
 import EliraCloud1 from '../assets/BG/Elira-BG-Cloud1.webp'
 import EliraCloud2 from '../assets/BG/Elira-BG-Cloud2.webp'
@@ -28,7 +28,7 @@ export function PageWrapper (props: Props): JSX.Element {
   const [AnimationOn, toggleAnimationState] = React.useState(true)
 
   return (
-    <div className={`page-bg-static-${props.page} page-bg-animation-${props.page}`}>
+    <div className={`container page-bg-static-${props.page} page-bg-animation-${props.page}`}>
       <div className={`page-bg-animation-${props.page}-container ${AnimationOn ? `page-bg-animation-${props.page}-container-on` : `page-bg-animation-${props.page}-container-off`}`}>
         {props.page === 'pomu' && (
           <div>
@@ -71,7 +71,8 @@ export function PageWrapper (props: Props): JSX.Element {
       </div>
 
       {/* TODO: Replace with actual menu */}
-      <nav>
+      <SiteHeader />
+      {/*<nav>
         <Link className='link' to='/finana'>Finana</Link>
         <Link className='link' to='/pomu'>Pomu</Link>
         <Link className='link' to='/elira'>Elira</Link>
@@ -84,7 +85,7 @@ export function PageWrapper (props: Props): JSX.Element {
         <button onClick={() => { toggleAnimationState(state => !state) }} className='link'>
           {AnimationOn ? 'Animation On' : 'Animation Off'}
         </button>
-      </nav>
+      </nav>*/}
 
       {/* This is the body of the page */}
       {props.children}
