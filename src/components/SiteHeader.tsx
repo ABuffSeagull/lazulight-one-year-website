@@ -3,23 +3,23 @@ import { Link } from 'wouter'
 import Image from './Image'
 import classes from './SiteHeader.module.scss'
 
-import finanaIconDefault from '../assets/menu_icons/Menu-Finana-Default.webp'
-import finanaIconActive from '../assets/menu_icons/Menu-Finana-Active.webp'
+import finanaIconDefault from '../assets/Menu/Menu-Finana-Default.webp'
+import finanaIconActive from '../assets/Menu/Menu-Finana-Active.webp'
 
-import pomuIconDefault from '../assets/menu_icons/Menu-Pomu-Default.webp'
-import pomuIconActive from '../assets/menu_icons/Menu-Pomu-Active.webp'
+import pomuIconDefault from '../assets/Menu/Menu-Pomu-Default.webp'
+import pomuIconActive from '../assets/Menu/Menu-Pomu-Active.webp'
 
-import eliraIconDefault from '../assets/menu_icons/Menu-Elira-Default.webp'
-import eliraIconActive from '../assets/menu_icons/Menu-Elira-Active.webp'
+import eliraIconDefault from '../assets/Menu/Menu-Elira-Default.webp'
+import eliraIconActive from '../assets/Menu/Menu-Elira-Active.webp'
 
-import projectsIconDefault from '../assets/menu_icons/Menu-Bow-Default.webp'
-import projectsIconActive from '../assets/menu_icons/Menu-Bow-Active.webp'
+import projectsIconDefault from '../assets/Menu/Menu-Bow-Default.webp'
+import projectsIconActive from '../assets/Menu/Menu-Bow-Active.webp'
 
-import submissionsIconDefault from '../assets/menu_icons/Menu-EliraTiara-Default.webp'
-import submissionsIconActive from '../assets/menu_icons/Menu-EliraTiara-Active.webp'
+import submissionsIconDefault from '../assets/Menu/Menu-EliraTiara-Default.webp'
+import submissionsIconActive from '../assets/Menu/Menu-EliraTiara-Active.webp'
 
-import VNIconDefault from '../assets/menu_icons/Menu-FinanaCrown-Default.webp'
-import VNIconActive from '../assets/menu_icons/Menu-FinanaCrown-Active.webp'
+import VNIconDefault from '../assets/Menu/Menu-FinanaCrown-Default.webp'
+import VNIconActive from '../assets/Menu/Menu-FinanaCrown-Active.webp'
 
 export default function SiteHeader (): JSX.Element {
   const navIcons = [
