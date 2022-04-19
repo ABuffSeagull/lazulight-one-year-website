@@ -1,301 +1,316 @@
-@import "../variables.scss";
+@use "../variables" as *;
 
 .talent {
-	&-layout-container {
-		width: 100%;
-		height: 100%;
-		padding: 0vw 5vw 15vw 5vw;
-		position: relative;
-	}
+  &-layout-container {
+    width: 100%;
+    height: 100%;
+    padding: 0 5vw 15vw;
+    position: relative;
+  }
 
-	&-profile-container {
-		display: flex;
-		align-items: flex-end;//center; // TODO: Adjust when text is added
-		width: 100%;
-		margin-bottom: 2rem;
+  &-profile-container {
+    display: flex;
+    align-items: flex-end; // center; // TODO: Adjust when text is added
+    width: 100%;
+    margin-bottom: 2rem;
 
-		@media (max-width: $bpMobile) {
-			flex-direction: column;
-			align-items: center;
-		}
-	}
+    @media (max-width: $bp-mobile) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 
-	&-picture-box {
-		position: relative;
-		max-width: 25vw;
-		//height: calc(2360/1440*25vw); // picture aspect ratio = 2360/1440
-		margin-right: 5vw;
+  &-picture-box {
+    position: relative;
+    max-width: 25vw;
 
-		@media (max-width: $bpTablet) {
-			max-width: 40vw; // TODO: Adjust when text is added
-		}
-		@media (max-width: $bpMobile) {
-			max-width: 100%; // Clear desktop mode directive
-			width: 80%;
-			height: 100%;
-			margin-right: 0;
-		}
+    // height: calc(2360/1440*25vw); // picture aspect ratio = 2360/1440
+    margin-right: 5vw;
 
-		img {
-			width: 100%;
-			height: auto;
-			object-fit: contain;
-		}
-	}
+    @media (max-width: $bp-tablet) {
+      max-width: 40vw; // TODO: Adjust when text is added
+    }
 
-	&-animation-container {
-		display: grid;
+    @media (max-width: $bp-mobile) {
+      max-width: 100%; // Clear desktop mode directive
+      width: 80%;
+      height: 100%;
+      margin-right: 0;
+    }
 
-		$num-col: 4;
-		$col-width: calc(90% / $num-col);
-		grid-template-columns: repeat($num-col, [col-start] $col-width [col-end]);
-		grid-gap: calc( (100% - $num-col*$col-width)/($num-col - 1) );
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
 
-		@media (max-width: $bpTablet) {
-			$num-col: 3;
-			$col-width: calc(90% / $num-col);
-			grid-template-columns: repeat($num-col, [col-start] $col-width [col-end]);
-			grid-gap: calc( (100% - $num-col*$col-width)/($num-col - 1) );
-		}
+  &-animation-container {
+    display: grid;
 
-		img {
-			width: 100%;
-			object-fit: contain;
-		}
-	}
+    $num-col: 4;
+    $col-width: calc(90% / $num-col);
 
-	&-info-container {
-		display: flex;
-		flex-direction: column;
-		flex-grow: 10; // A big number to force fill the screen
-		height: 100%;
+    grid-template-columns: repeat($num-col, [col-start] $col-width [col-end]);
+    grid-gap: calc((100% - $num-col * $col-width) / ($num-col - 1));
 
-		@media (max-width: $bpMobile) {
-			width: 100%;
-		}
-	}
+    @media (max-width: $bp-tablet) {
+      $num-col: 3;
+      $col-width: calc(90% / $num-col);
 
-	&-text-container {
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		height: 75%;
-	}
-	&-text-container-pomu {
-		$padding-lr: 7.5%;
-		padding-top: 8%;
-		padding-right: $padding-lr;
-		@media (max-width: $bpMobile) {
-			padding-left: $padding-lr;
-		}
-	}
-	&-text-container-finana {
-		$padding-lr: 4%;
-		padding-top: 4%;
-		padding-right: $padding-lr;
-		@media (max-width: $bpMobile) {
-			padding-left: $padding-lr;
-		}
-	}
-	&-text-container-elira {
-		$padding-lr: 7%;
-		padding-top: 8%;
-		padding-right: $padding-lr;
-		@media (max-width: $bpMobile) {
-			padding-left: $padding-lr;
-		}
-	}
+      grid-template-columns: repeat($num-col, [col-start] $col-width [col-end]);
+      grid-gap: calc((100% - $num-col * $col-width) / ($num-col - 1));
+    }
 
-	&-text-inner {
-		padding-top: 4%;    // Space for frame
-		padding-right: 10%; // Space for frame
-		padding-left: 1rem;
-		padding-bottom: 5%;
-		width: 100%;
-		height: 100%;
-		border-radius: 2.5vw;
-		background-color: $background-grey;
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
 
-		h2 {
-			font-size: 5vw;
-			text-align: left;
-			display: inline-block; // Cut underline length to text length
-			border-bottom: 2px solid currentColor;
-			line-height: 0.9;
-			margin-bottom: 1rem;
-		}
+  &-info-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 10; // A big number to force fill the screen
+    height: 100%;
 
-		p {
-			//font-size: clamp(0.75rem, 2vw, 1.25rem); // Too small I think?
-		}
-	}
+    @media (max-width: $bp-mobile) {
+      width: 100%;
+    }
+  }
 
-	&-links-container {
-		display: flex;
-		gap: 1rem;
-		margin-top: auto;
-		padding: 0.5rem 0;
-	}
+  &-text-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 75%;
+  }
 
-	&-corner {
-		position: absolute;
-		top: 0px;
-		right: 0px;
-		object-fit: scale-down;
-		width: 38%;
-		z-index: 2;
-	}
+  &-text-container-pomu {
+    $padding-lr: 7.5%;
+
+    padding-top: 8%;
+    padding-right: $padding-lr;
+
+    @media (max-width: $bp-mobile) {
+      padding-left: $padding-lr;
+    }
+  }
+
+  &-text-container-finana {
+    $padding-lr: 4%;
+
+    padding-top: 4%;
+    padding-right: $padding-lr;
+
+    @media (max-width: $bp-mobile) {
+      padding-left: $padding-lr;
+    }
+  }
+
+  &-text-container-elira {
+    $padding-lr: 7%;
+
+    padding-top: 8%;
+    padding-right: $padding-lr;
+
+    @media (max-width: $bp-mobile) {
+      padding-left: $padding-lr;
+    }
+  }
+
+  &-text-inner {
+    padding: 4% 10% /* Space for frame */ 5% 1rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 2.5vw;
+    background-color: $background-grey;
+
+    h2 {
+      font-size: 5vw;
+      text-align: left;
+      display: inline-block; // Cut underline length to text length
+      border-bottom: 2px solid currentcolor;
+      line-height: 0.9;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      // font-size: clamp(0.75rem, 2vw, 1.25rem); // Too small I think?
+    }
+  }
+
+  &-links-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+    padding: 0.5rem 0;
+  }
+
+  &-corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    object-fit: scale-down;
+    width: 38%;
+    z-index: 2;
+  }
 }
 
 .fan-submissions {
-	// Message/Art column organisation loosely based off
-	//	https://codepen.io/slooo/pen/yLYZNKw
-	//	https://www.w3schools.com/css/css3_flexbox_responsive.asp
-	&-container {
-		position: relative;
-		width: 100%;
-		margin-bottom: 3rem;
+  // Message/Art column organisation loosely based off
+  //	https://codepen.io/slooo/pen/yLYZNKw
+  //	https://www.w3schools.com/css/css3_flexbox_responsive.asp
+  &-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 3rem;
 
-		h3 {
-			margin-left: auto;
-			margin-right: auto;
-			margin-bottom: 20px;
-			width: 75%;
-			text-align: center;
-			padding: 0.25rem 0;
-			border-radius: 7px;
-			background-color: $background-grey;
-		}
+    h3 {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 20px;
+      width: 75%;
+      text-align: center;
+      padding: 0.25rem 0;
+      border-radius: 7px;
+      background-color: $background-grey;
+    }
 
-		button {
-			position: absolute;
-            z-index: 10;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            cursor: pointer;
-            font-size: 1.25rem;
-            padding: 0.25rem 0.5rem;
-            background-color: $background-grey;
-            border-radius: 5px;
-		}
-	}
+    button {
+      position: absolute;
+      z-index: 10;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      cursor: pointer;
+      font-size: 1.25rem;
+      padding: 0.25rem 0.5rem;
+      background-color: $background-grey;
+      border-radius: 5px;
+    }
+  }
 
-	&-box {
-		position: relative;
-		column-count: 3;
-		-webkit-column-gap: 1em;
-		-moz-column-gap: 1em;
-		column-gap: 1em;
-		padding-left: 20px;
+  &-box {
+    position: relative;
+    column-count: 3;
+    column-gap: 1em;
+    padding-left: 20px;
 
-		@media (max-width: $bpTablet) {
-			column-count: 2;
-		}
-		@media (max-width: $bpMobile) {
-			column-count: 1;
-		}
+    @media (max-width: $bp-tablet) {
+      column-count: 2;
+    }
 
-		&-expanded {
-			max-height: 100%;
-			width: 100%;
-		}
-		&-faded {
-			// Fade content of div to transparent:
-			//	https://makandracards.com/makandra/475887-letting-a-dom-element-fade-into-transparency
-			$truncate-after: 20rem;
-			$fade-height: 5rem;
-			$fade-after: $truncate-after - $fade-height;
-			overflow: hidden;
-			max-height: $truncate-after;
-			-webkit-mask-image: linear-gradient(to bottom, black $fade-after, transparent $truncate-after);
-			mask-image:         linear-gradient(to bottom, black $fade-after, transparent $truncate-after);
-		}
-	}
+    @media (max-width: $bp-mobile) {
+      column-count: 1;
+    }
 
-	&-submission {
-		position: relative;
-		-webkit-column-break-inside: avoid;
-		page-break-inside: avoid;
-		break-inside: avoid;
-		margin-bottom: 1rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding-top: 20px;
-		padding-right: 20px;
-	}
+    &-expanded {
+      max-height: 100%;
+      width: 100%;
+    }
 
-	&-message,
-	&-fanart {
-		position: relative;
-		width: 100%;
-		padding: 3px;
-		border-radius: 3px;
-		background-color: $background-grey;
+    &-faded {
+      // Fade content of div to transparent:
+      //	https://makandracards.com/makandra/475887-letting-a-dom-element-fade-into-transparency
+      $truncate-after: 20rem;
+      $fade-height: 5rem;
+      $fade-after: $truncate-after - $fade-height;
 
-		h4 {
-			margin-bottom: 0.75rem;
-			word-wrap: break-word;
-			margin-top: 5px;
-			margin-right: 10px;
-		}
-	}
+      overflow: hidden;
+      max-height: $truncate-after;
+      mask-image: linear-gradient(
+        to bottom,
+        black $fade-after,
+        transparent $truncate-after
+      );
+    }
+  }
 
-	&-fanarti {
-		width: 100%;
-		padding: 5%;
-			
-	}
+  &-submission {
+    position: relative;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-right: 20px;
+  }
 
-	&-corner {
-		position: absolute;
-		top: 0px;
-		right: 0px;
-		object-fit: scale-down;
-		height: 90px;
-		width: 90px;
-		z-index: 2;
-	}
+  &-message,
+  &-fanart {
+    position: relative;
+    width: 100%;
+    padding: 3px;
+    border-radius: 3px;
+    background-color: $background-grey;
 
+    h4 {
+      margin-bottom: 0.75rem;
+      word-wrap: break-word;
+      margin-top: 5px;
+      margin-right: 10px;
+    }
+  }
+
+  &-fanarti {
+    width: 100%;
+    padding: 5%;
+  }
+
+  &-corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    object-fit: scale-down;
+    height: 90px;
+    width: 90px;
+    z-index: 2;
+  }
 }
 
 .pomu-border {
-	border: 3px solid $pomu-primary-color;
+  border: 3px solid $pomu-primary-color;
 }
+
 .finana-border {
-	border: 3px solid $finana-primary-color;
+  border: 3px solid $finana-primary-color;
 }
+
 .elira-border {
-	border: 3px solid $elira-primary-color;
+  border: 3px solid $elira-primary-color;
 }
 
 // Backgrounds
 // TODO: Move to root div
 .background-page {
-	&-elira {
-		background-image: linear-gradient(to bottom, #a7cde0, #292e65);
-	}
-	&-finana {
-		background-image: linear-gradient(to bottom, #83e5e6, #1c374a);
-	}
-	&-pomu {
-		// TODO - colours
-		background-image: linear-gradient(to bottom, #a7cde0, #292e65);
-	}
-}
+  &-elira {
+    background-image: linear-gradient(to bottom, #a7cde0, #292e65);
+  }
 
+  &-finana {
+    background-image: linear-gradient(to bottom, #83e5e6, #1c374a);
+  }
+
+  &-pomu {
+    // TODO - colours
+    background-image: linear-gradient(to bottom, #a7cde0, #292e65);
+  }
+}
 
 // Utility
 .hide-on-mobile {
-	@media (max-width: $bpMobile) {
-		display: none;
-	}
+  @media (max-width: $bp-mobile) {
+    display: none;
+  }
 }
 
 .hide-on-tablet {
-	@media (max-width: $bpTablet) {
-		display: none;
-	}
+  @media (max-width: $bp-tablet) {
+    display: none;
+  }
 }
