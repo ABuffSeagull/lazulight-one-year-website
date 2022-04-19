@@ -13,7 +13,7 @@ export default function MascotAnimation (props: MascotProps): JSX.Element {
     setTimeout(() => {
       if (props.id.current !== null) {
         props.id.current.setAttribute('loop', 'true')
-        props.id.current.play()
+        void props.id.current.play()
       }
     }, props.delay)
   })
