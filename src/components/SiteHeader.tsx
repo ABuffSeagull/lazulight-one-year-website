@@ -65,29 +65,34 @@ export default function SiteHeader (): JSX.Element {
 
   return (
     <>
-      <header className={[classes.header, headerOpen ? classes.open : ''].join(' ')}>
-        {navIcons.map((linkData) => (
-          <Link
-            key={linkData.name}
-            className={classes['nav-link']}
-            to={linkData.path}
-            onClick={() => {
-              setHeaderOpen(!headerOpen)
-            }}
-          >
-            <div className={classes['icon-wrapper']}>
-              <Image
-                className={[classes.icon, classes['default-icon']].join(' ')}
-                src={linkData.icon}
-              />
-              <Image
-                className={[classes.icon, classes['active-icon']].join(' ')}
-                src={linkData.iconActive}
-              />
-            </div>
-            <span>{linkData.name}</span>
-          </Link>
-        ))}
+      <header
+        className={[classes.header, headerOpen ? classes.open : ''].join(' ')}
+      >
+        <nav className={classes.nav}>
+          {navIcons.map((linkData, i) => (
+            <Link
+              key={linkData.name}
+              className={classes['nav-link']}
+              to={linkData.path}
+              style={{ '--delay': `${50 * i}ms` } as any}
+              onClick={() => {
+                setHeaderOpen(!headerOpen)
+              }}
+            >
+              <div className={classes['icon-wrapper']}>
+                <Image
+                  className={[classes.icon, classes['default-icon']].join(' ')}
+                  src={linkData.icon}
+                />
+                <Image
+                  className={[classes.icon, classes['active-icon']].join(' ')}
+                  src={linkData.iconActive}
+                />
+              </div>
+              <span>{linkData.name}</span>
+            </Link>
+          ))}
+        </nav>
       </header>
       <button
         className={classes['open-header']}

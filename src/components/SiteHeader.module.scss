@@ -7,15 +7,21 @@
 }
 
 .header {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  z-index: 99;
   padding: 1rem 2rem;
   background-color: rgb(216 216 216);
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 768px) {
@@ -24,15 +30,33 @@
   }
 
   .header {
+    display: grid;
     position: fixed;
     inset: 0;
-    transform: translateX(100%);
-    transition: transform 0.5s ease-in-out;
-    z-index: 99;
+    border-radius: 0;
+    transition: opacity 250ms ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+
+    .nav-link {
+      opacity: 0;
+    }
   }
 
   .header.open {
-    transform: translate(0);
+    opacity: 1;
+    pointer-events: auto;
+
+    .nav-link {
+      animation: fade-up 250ms calc(var(--delay, 0ms) + 250ms) ease-in-out
+        forwards;
+    }
+  }
+
+  .nav {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
@@ -52,9 +76,7 @@
   position: absolute;
   width: 4rem;
   height: 4rem;
-  transition: opacity 150ms linear;
-  backface-visibility: hidden;
-  transform: translateZ(0) scale(1, 1);
+  transition: opacity 0ms linear;
 }
 
 .active-icon {
@@ -71,9 +93,22 @@
 
   &:hover .default-icon {
     opacity: 0;
+    transition: opacity 100ms linear;
   }
 
   &:hover .active-icon {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(-0.25rem);
     opacity: 1;
   }
 }
