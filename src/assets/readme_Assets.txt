@@ -69,7 +69,7 @@ Colours from DCL album cover
 Other colours I choose - feel free to adjust
 #ddd1d1 (80% opacity) Boxes in foreground
 
-#83e5e6 Finana BG gradient top
+#4dbbbd Finana BG gradient top (previously was #83e5e6, but too light for the BG fish & bubbles)
 #1c374a Finana BG gradient bot
 
 #a7cde0 Elira BG gradient top

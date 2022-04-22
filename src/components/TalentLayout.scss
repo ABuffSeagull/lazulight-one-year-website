@@ -241,8 +241,7 @@
     padding-right: 20px;
   }
 
-  &-message,
-  &-fanart {
+  &-message {
     position: relative;
     width: 100%;
     padding: 3px;
@@ -255,11 +254,11 @@
       margin-top: 5px;
       margin-right: 10px;
     }
-  }
 
-  &-fanarti {
-    width: 100%;
-    padding: 5%;
+    img {
+      width: 100%;
+      padding: 5%;
+    }
   }
 
   &-corner {
@@ -283,23 +282,6 @@
 
 .elira-border {
   border: 3px solid $elira-primary-color;
-}
-
-// Backgrounds
-// TODO: Move to root div
-.background-page {
-  &-elira {
-    background-image: linear-gradient(to bottom, #a7cde0, #292e65);
-  }
-
-  &-finana {
-    background-image: linear-gradient(to bottom, #83e5e6, #1c374a);
-  }
-
-  &-pomu {
-    // TODO - colours
-    background-image: linear-gradient(to bottom, #a7cde0, #292e65);
-  }
 }
 
 // Utility
