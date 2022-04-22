@@ -7,15 +7,19 @@
 }
 
 .header {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1rem;
-	align-items: center;
-	justify-content: center;
 	padding: 1rem 2rem;
 	background-color: rgb(216 216 216);
 	border-bottom-left-radius: 1rem;
 	border-bottom-right-radius: 1rem;
+}
+
+.nav {
+	display: flex;
+	flex-wrap: wrap;
+	margin: auto;
+	gap: 1rem;
+	align-items: center;
+	justify-content: center;
 }
 
 @media screen and (max-width: 768px) {
@@ -24,8 +28,10 @@
 	}
 
 	.header {
+		display: grid;
 		position: fixed;
 		inset: 0;
+		border-radius: 0;
 		transition: opacity 250ms ease-in-out;
 		z-index: 99;
 		opacity: 0;
@@ -44,6 +50,11 @@
 			animation: fadeUp 250ms calc(var(--delay, 0ms) + 250ms) ease-in-out
 				forwards;
 		}
+	}
+	.nav {
+		display: grid;
+		gap: 2rem;
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 }
 
