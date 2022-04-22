@@ -71,6 +71,9 @@ export default function SiteHeader (): JSX.Element {
             key={linkData.name}
             className={classes['nav-link']}
             to={linkData.path}
+            onClick={() => {
+              setHeaderOpen(!headerOpen)
+            }}
           >
             <div className={classes['icon-wrapper']}>
               <Image
