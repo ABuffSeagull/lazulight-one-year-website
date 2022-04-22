@@ -75,6 +75,9 @@ export default function SiteHeader (): JSX.Element {
               className={classes['nav-link']}
               to={linkData.path}
               style={{ '--delay': `${50 * i}ms` } as any}
+              onClick={() => {
+                setHeaderOpen(!headerOpen)
+              }}
             >
               <div className={classes['icon-wrapper']}>
                 <Image
