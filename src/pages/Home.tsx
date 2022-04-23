@@ -31,9 +31,7 @@ export default function Home (): JSX.Element {
     <div className='talent-layout-container'>
 
       {/* Opening Message */}
-      <div>
-
-      </div>
+      <div />
 
       {/* Links to liver pages */}
       <div className='home-liver-container'>
@@ -50,7 +48,6 @@ export default function Home (): JSX.Element {
         ))}
       </div>
 
-
       {/* Messages */}
       <MessageBoxesLayout
         enableLazulight
@@ -59,8 +56,8 @@ export default function Home (): JSX.Element {
         enableFinana={false}
         enableFolding
         enableArt={false}
-        heading={`Messages To Lazulight`}
-        page={`home`}
+        heading='Messages To Lazulight'
+        page='home'
       />
 
       {/* Art */}
@@ -71,8 +68,8 @@ export default function Home (): JSX.Element {
         enableFinana={false}
         enableFolding
         enableArt
-        heading={`Art To Lazulight`}
-        page={`home`}
+        heading='Art To Lazulight'
+        page='home'
       />
 
     </div>
