@@ -1,6 +1,11 @@
 $pomu-primary-color: #459aa4;
 $finana-primary-color: #1c374a;
 $elira-primary-color: #2b3166;
-$background-grey: rgb(221 209 209 / 80%);
+$background-grey: rgba(229, 229, 229, 0.8);
+$background-gradient: linear-gradient(
+  300deg,
+  rgba(204, 212, 230, 0.8),
+  rgba(229, 229, 229, 0.8)
+);
 $bp-tablet: 768px;
 $bp-mobile: 480px;
