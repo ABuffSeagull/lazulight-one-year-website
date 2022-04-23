@@ -1,4 +1,4 @@
-@use '../variables' as *;
+@use "../variables" as *;
 
 .talent {
   &-layout-container {
@@ -8,7 +8,7 @@
     width: 100%;
     max-width: 80rem;
     height: 100%;
-    padding: 0 1rem 6rem 1rem;
+    padding: 0 1rem 6rem;
     position: relative;
   }
 
@@ -161,19 +161,19 @@
     border-bottom-width: 2px;
     border-image: linear-gradient(
         to right,
-        rgba(0, 0, 0, 0),
+        rgb(0 0 0 / 0%),
         $pomu-primary-color 20%,
         $pomu-primary-color 80%,
-        rgba(0, 0, 0, 0)
+        rgb(0 0 0 / 0%)
       )
       1;
     border-style: solid;
     background: linear-gradient(
       to right,
-      rgba(0, 0, 0, 0),
+      rgb(0 0 0 / 0%),
       $background-grey 20%,
       $background-grey 80%,
-      rgba(0, 0, 0, 0)
+      rgb(0 0 0 / 0%)
     );
   }
 
