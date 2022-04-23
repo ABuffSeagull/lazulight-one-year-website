@@ -13,6 +13,18 @@
   min-height: 100vh;
 }
 
+.elira {
+  color: $elira-text-color;
+}
+
+.pomu {
+  color: $pomu-text-color;
+}
+
+.finana {
+  color: $finana-text-color;
+}
+
 .page-bg-static {
   &-elira {
     background-image: linear-gradient(to bottom, #a7cde0, #292e65);

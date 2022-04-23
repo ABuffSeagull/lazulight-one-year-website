@@ -43,6 +43,8 @@ function TalentLayout (props: Props): JSX.Element {
   const vid1 = useRef<HTMLVideoElement>(null)
   const vid2 = useRef<HTMLVideoElement>(null)
   const vid3 = useRef<HTMLVideoElement>(null)
+  const vid0v = useRef<HTMLVideoElement>(null)
+  const vid1v = useRef<HTMLVideoElement>(null)
 
   return (
     <div className='talent-layout-container'>
@@ -50,9 +52,12 @@ function TalentLayout (props: Props): JSX.Element {
       <div className='talent-profile-container'>
         <div className='talent-picture-box'>
           <Image src={props.portrait} />
+          {/* (Brandon): Number of images is hardcoded into 'talent-picture-box' */}
+          <MascotAnimation id={vid0v} delay={0} src={props.animation} />
+          <MascotAnimation id={vid1v} delay={100} src={props.animation} />
         </div>
         <div className='talent-info-container'>
-          <div className={`talent-text-container talent-text-container-${firstNameLower}`}>
+          <div className='talent-text-container'>
             <Image className='talent-corner' src={props.frame} />
             <div className={`talent-text-inner ${firstNameLower}-border`}>
               <h2>{props.name}</h2>
@@ -66,7 +71,7 @@ function TalentLayout (props: Props): JSX.Element {
               </div>
             </div>
           </div>
-          <div className={`talent-animation-container talent-text-container-${firstNameLower}`}>
+          <div className='talent-animation-container hide-on-tablet'>
             {/* (Brandon): Number of images and class of last image is hardcoded into 'talent-animation-container' */}
             <MascotAnimation id={vid0} delay={0} src={props.animation} />
             <MascotAnimation id={vid1} delay={50} src={props.animation} />

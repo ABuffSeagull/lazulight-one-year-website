@@ -30,7 +30,7 @@ export function PageWrapper (props: Props): JSX.Element {
 
   return (
     <div
-      className={`container page-bg-static-${props.page} page-bg-animation-${props.page}`}
+      className={`container ${props.page} page-bg-static-${props.page} page-bg-animation-${props.page}`}
     >
       {/* TODO: Find somewhere to put toggleAnimation button in menu */}
       <SiteHeader />
