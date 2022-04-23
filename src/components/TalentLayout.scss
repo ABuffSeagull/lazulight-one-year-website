@@ -179,8 +179,6 @@
   &-box {
     position: relative;
     column-count: 3;
-    column-gap: 1em;
-    padding-left: 20px;
 
     @media (max-width: $bp-tablet) {
       column-count: 2;
@@ -214,23 +212,18 @@
 
   &-submission {
     position: relative;
-    -webkit-column-break-inside: avoid;
-    page-break-inside: avoid;
     break-inside: avoid;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px;
-    padding-right: 20px;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   &-message {
     position: relative;
     width: 100%;
-    padding: 3px;
-    border-radius: 3px;
+    padding: 1rem;
     background-color: $background-grey;
+    border-radius: 0.5rem 0 0.5rem 0.5rem;
 
     h4 {
       margin-bottom: 0.75rem;
