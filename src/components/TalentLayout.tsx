@@ -8,26 +8,11 @@ import MascotAnimation from './MascotAnimation'
 // Probably just generate some random ids on the messages at load time
 /* eslint-disable react/jsx-key */
 
-interface Message {
-  name: string
-  twitter: string
-  text: string
-}
-
-interface Fanart {
-  name: string
-  twitter: string
-  text: string
-  artUrl: string
-}
-
 interface Props {
   name: string
   frame: string
   animation: string
   corner: string
-  messages: Message[]
-  fanarts: Fanart[]
   portrait: string | metadata[]
   info: string[]
   youtube: string

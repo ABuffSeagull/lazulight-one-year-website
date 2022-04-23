@@ -25,12 +25,15 @@ export default function App (): JSX.Element {
         <Route path='/elira'><PageWrapper page='elira'><Elira /></PageWrapper></Route>
         <Route path='/finana'><PageWrapper page='finana'><Finana /></PageWrapper></Route>
         <Route path='/pomu'><PageWrapper page='pomu'><Pomu /></PageWrapper></Route>
+
         <Route path='/project-fnf'><PageWrapper page='fnf'><Fnf /></PageWrapper></Route>
         <Route path='/project-dcl'><PageWrapper page='dcl'><DiamondCityLights /></PageWrapper></Route>
         <Route path='/project-vn'><PageWrapper page='vn'><VisualNovel /></PageWrapper></Route>
-        <Route path='/all-art'><PageWrapper page='art'><Art /></PageWrapper></Route>
-        <Route path='/all-messages'><PageWrapper page='messages'><Messages /></PageWrapper></Route>
-        <Route path='/about'><PageWrapper page='about'><About /></PageWrapper></Route>
+
+        {/* (Brandon) I intentionally give the following pages the incorrect 'page' variable - It's only used for styling */}
+        <Route path='/all-art'><PageWrapper page='finana'><Art page='finana' /></PageWrapper></Route>
+        <Route path='/all-messages'><PageWrapper page='elira'><Messages page='elira' /></PageWrapper></Route>
+        <Route path='/about'><PageWrapper page='pomu'><About page='pomu' /></PageWrapper></Route>
         <Route>
           <PageWrapper page='home'><Home /></PageWrapper>
         </Route>
