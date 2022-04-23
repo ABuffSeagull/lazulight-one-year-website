@@ -73,9 +73,8 @@
   &-info-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     flex-grow: 10; // A big number to force fill the screen
-    gap: 1rem;
+    gap: 3rem;
 
     @media (max-width: $bp-mobile) {
       width: 100%;
@@ -86,7 +85,6 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    margin-bottom: auto;
     width: 100%;
   }
 
