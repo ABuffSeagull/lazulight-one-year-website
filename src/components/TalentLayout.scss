@@ -161,8 +161,8 @@
     border-image: linear-gradient(
         to right,
         rgb(0 0 0 / 0%),
-        $pomu-primary-color 20%,
-        $pomu-primary-color 80%,
+        currentColor 20%,
+        currentColor 80%,
         rgb(0 0 0 / 0%)
       )
       1;
