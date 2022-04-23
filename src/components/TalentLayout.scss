@@ -1,4 +1,4 @@
-@use '../variables' as *;
+@use "../variables" as *;
 
 .talent {
   &-layout-container {
@@ -161,8 +161,8 @@
     border-image: linear-gradient(
         to right,
         rgb(0 0 0 / 0%),
-        currentColor 20%,
-        currentColor 80%,
+        currentcolor 20%,
+        currentcolor 80%,
         rgb(0 0 0 / 0%)
       )
       1;

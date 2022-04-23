@@ -1,7 +1,7 @@
 /* stylelint-disable keyframes-name-pattern */
 // See https://github.com/stylelint/stylelint/issues/5997
-@use '../variables' as *;
-@use 'sass:math';
+@use "../variables" as *;
+@use "sass:math";
 
 .container {
   height: 100%;
@@ -34,8 +34,8 @@
   &-finana {
     background-image: linear-gradient(to bottom, #4dbbbd60, #1c374aa0),
       // Semitransparent overlay
-      url('../assets/BG/Finana-BG-Left_cf50.webp'),
-      url('../assets/BG/Finana-BG-Right_cf50.webp'),
+      url("../assets/BG/Finana-BG-Left_cf50.webp"),
+      url("../assets/BG/Finana-BG-Right_cf50.webp"),
       linear-gradient(to bottom, #4dbbbd, #1c374a);
     background-color: #83e5e6; // Backup in case the image doesn't load
     background-size: 100%, 10%, 10%, 100%;
@@ -44,7 +44,7 @@
   }
 
   &-pomu {
-    background-image: url('../assets/BG/Pomu-BG_cf50.webp');
+    background-image: url("../assets/BG/Pomu-BG_cf50.webp");
     background-color: #258e70; // Backup in case the image doesn't load
     background-repeat: repeat-y;
     background-size: 100%;
