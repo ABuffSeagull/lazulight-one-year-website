@@ -16,7 +16,7 @@
     display: flex;
     width: 100%;
 
-    @media (max-width: $bp-mobile) {
+    @media (max-width: $bp-tablet) {
       flex-direction: column;
       align-items: center;
     }
@@ -25,25 +25,46 @@
   &-picture-box {
     position: relative;
     max-width: 25vw;
-
-    // height: calc(2360/1440*25vw); // picture aspect ratio = 2360/1440
     margin-right: 5vw;
+    margin-bottom: 0;
 
     @media (max-width: $bp-tablet) {
-      max-width: 40vw; // TODO: Adjust when text is added
-    }
-
-    @media (max-width: $bp-mobile) {
+      display: grid;
       max-width: 100%; // Clear desktop mode directive
       width: 80%;
-      height: 100%;
+      height: 80%;
       margin-right: 0;
+      margin-bottom: 2rem;
+      grid-template-columns: 60% 40%;
+      grid-template-rows: 50% 50%;
     }
 
-    img {
+    img,
+    picture {
       width: 100%;
       height: auto;
+      margin-right: 0;
       object-fit: contain;
+
+      @media (max-width: $bp-tablet) {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+      }
+    }
+
+    video {
+      display: none;
+
+      @media (max-width: $bp-tablet) {
+        display: block;
+        grid-column: 2 / 3;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
     }
   }
 
@@ -76,7 +97,7 @@
     flex-grow: 10; // A big number to force fill the screen
     gap: 3rem;
 
-    @media (max-width: $bp-mobile) {
+    @media (max-width: $bp-tablet) {
       width: 100%;
     }
   }
