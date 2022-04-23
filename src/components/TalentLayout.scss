@@ -1,4 +1,4 @@
-@use "../variables" as *;
+@use '../variables' as *;
 
 .talent {
   &-layout-container {
@@ -87,41 +87,8 @@
     height: 75%;
   }
 
-  &-text-container-pomu {
-    $padding-lr: 7.5%;
-
-    padding-top: 8%;
-    padding-right: $padding-lr;
-
-    @media (max-width: $bp-mobile) {
-      padding-left: $padding-lr;
-    }
-  }
-
-  &-text-container-finana {
-    $padding-lr: 4%;
-
-    padding-top: 4%;
-    padding-right: $padding-lr;
-
-    @media (max-width: $bp-mobile) {
-      padding-left: $padding-lr;
-    }
-  }
-
-  &-text-container-elira {
-    $padding-lr: 7%;
-
-    padding-top: 8%;
-    padding-right: $padding-lr;
-
-    @media (max-width: $bp-mobile) {
-      padding-left: $padding-lr;
-    }
-  }
-
   &-text-inner {
-    padding: 4% 10% /* Space for frame */ 5% 1rem;
+    padding: 2.5rem;
     width: 100%;
     height: 100%;
     border-radius: 2.5vw;
@@ -153,7 +120,8 @@
     top: 0;
     right: 0;
     object-fit: scale-down;
-    width: 38%;
+    width: 10rem;
+    transform: translate(1.5rem, -1.5rem);
     z-index: 2;
   }
 }
@@ -167,17 +135,6 @@
     width: 100%;
     margin-bottom: 3rem;
 
-    h3 {
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 20px;
-      width: 75%;
-      text-align: center;
-      padding: 0.25rem 0;
-      border-radius: 7px;
-      background-color: $background-grey;
-    }
-
     button {
       position: absolute;
       z-index: 10;
@@ -190,6 +147,31 @@
       background-color: $background-grey;
       border-radius: 5px;
     }
+  }
+
+  &-heading {
+    text-align: center;
+    width: 75%;
+    margin: auto;
+    padding: 1rem 0;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0),
+        $pomu-primary-color 20%,
+        $pomu-primary-color 80%,
+        rgba(0, 0, 0, 0)
+      )
+      1;
+    border-style: solid;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0),
+      $background-grey 20%,
+      $background-grey 80%,
+      rgba(0, 0, 0, 0)
+    );
   }
 
   &-box {
