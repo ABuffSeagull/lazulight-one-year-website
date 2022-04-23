@@ -2,9 +2,13 @@
 
 .talent {
   &-layout-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
     width: 100%;
+    max-width: 80rem;
     height: 100%;
-    padding: 0 5vw 15vw;
+    padding: 0 1rem 6rem 1rem;
     position: relative;
   }
 
@@ -12,7 +16,6 @@
     display: flex;
     align-items: flex-end; // center; // TODO: Adjust when text is added
     width: 100%;
-    margin-bottom: 2rem;
 
     @media (max-width: $bp-mobile) {
       flex-direction: column;
@@ -133,7 +136,6 @@
   &-container {
     position: relative;
     width: 100%;
-    margin-bottom: 3rem;
 
     button {
       position: absolute;
