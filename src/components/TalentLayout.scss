@@ -96,12 +96,10 @@
     background: $background-gradient;
 
     h2 {
-      font-size: 5vw;
-      text-align: left;
-      display: inline-block; // Cut underline length to text length
-      border-bottom: 2px solid currentcolor;
+      font-size: 4rem;
+      font-weight: 900;
       line-height: 0.9;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
     }
 
     p {
