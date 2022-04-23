@@ -14,7 +14,6 @@
 
   &-profile-container {
     display: flex;
-    align-items: flex-end; // center; // TODO: Adjust when text is added
     width: 100%;
 
     @media (max-width: $bp-mobile) {
@@ -74,8 +73,9 @@
   &-info-container {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     flex-grow: 10; // A big number to force fill the screen
-    height: 100%;
+    gap: 1rem;
 
     @media (max-width: $bp-mobile) {
       width: 100%;
@@ -86,8 +86,8 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    margin-bottom: auto;
     width: 100%;
-    height: 75%;
   }
 
   &-text-inner {
