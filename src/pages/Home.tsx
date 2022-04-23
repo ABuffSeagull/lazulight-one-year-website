@@ -31,7 +31,7 @@ export default function Home (): JSX.Element {
     <div className='talent-layout-container'>
 
       {/* Opening Message */}
-      <div />
+      <h1 className='home-heading'>Lazulight 1 Year<br />and Counting!</h1>
 
       {/* Links to liver pages */}
       <div className='home-liver-container'>
