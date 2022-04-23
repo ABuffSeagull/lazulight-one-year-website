@@ -30,7 +30,7 @@ export default function Messages (props: Props): JSX.Element {
 
       {/* Messages */}
       <MessageBoxesLayout
-        enableLazulight={false}
+        enableLazulight
         enableElira
         enablePomu
         enableFinana

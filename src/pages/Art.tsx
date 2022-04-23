@@ -30,7 +30,7 @@ export default function Art (props: Props): JSX.Element {
 
       {/* Art */}
       <MessageBoxesLayout
-        enableLazulight={false}
+        enableLazulight
         enableElira
         enablePomu
         enableFinana
