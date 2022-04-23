@@ -1,5 +1,7 @@
 @use "../variables" as *;
 
+$msg-corner-padding: 0.9rem;
+
 .talent {
   &-layout-container {
     display: flex;
@@ -96,6 +98,7 @@
     flex-direction: column;
     flex-grow: 10; // A big number to force fill the screen
     gap: 3rem;
+    margin-left: $msg-corner-padding;
 
     @media (max-width: $bp-tablet) {
       width: 100%;
@@ -107,6 +110,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding-right: 1rem;
   }
 
   &-text-inner {
@@ -121,10 +125,11 @@
       font-weight: 900;
       line-height: 0.9;
       margin-bottom: 2rem;
-    }
 
-    p {
-      // font-size: clamp(0.75rem, 2vw, 1.25rem); // Too small I think?
+      // Easy solution to make the min size width more permissive. May as well right
+      @media (max-width: $bp-mobile) {
+        font-size: clamp(2rem, 13vw, 4rem);
+      }
     }
   }
 
@@ -141,7 +146,7 @@
     right: 0;
     object-fit: scale-down;
     width: 10rem;
-    transform: translate(1.5rem, -1.5rem);
+    transform: translate(1.5rem - $msg-corner-padding, -1.5rem);
     z-index: 2;
   }
 }
@@ -201,6 +206,9 @@
     position: relative;
     column-count: 3;
 
+    // Add equal padding as to message corner to centre the message boxes
+    padding-left: $msg-corner-padding;
+
     @media (max-width: $bp-tablet) {
       column-count: 2;
     }
@@ -235,7 +243,7 @@
     position: relative;
     break-inside: avoid;
     padding-top: 1rem;
-    padding-right: 1rem;
+    padding-right: $msg-corner-padding;
     margin-bottom: 0.5rem;
   }
 
