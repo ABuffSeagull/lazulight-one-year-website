@@ -31,7 +31,7 @@ $talent-corner-padding-top: 33px;
   &-picture-box {
     position: relative;
     max-width: 25vw;
-    margin-right: 5vw;
+    margin-right: 4vw;
     margin-bottom: 0;
 
     @media (max-width: $bp-tablet) {
@@ -102,7 +102,6 @@ $talent-corner-padding-top: 33px;
     flex-direction: column;
     flex-grow: 10; // A big number to force fill the screen
     gap: 3rem;
-    margin-left: $msg-corner-padding-right;
 
     @media (max-width: $bp-tablet) {
       width: 100%;
@@ -115,6 +114,7 @@ $talent-corner-padding-top: 33px;
     flex-direction: column;
     width: 100%;
     padding-right: 1rem;
+    padding-left: 1rem;
   }
 
   &-text-inner {
@@ -150,9 +150,17 @@ $talent-corner-padding-top: 33px;
     right: 0;
     object-fit: scale-down;
     width: 10rem;
-    transform: translate(calc($talent-corner-padding-right - $msg-corner-padding-right), -$talent-corner-padding-top);
+    transform: translate(
+      calc($talent-corner-padding-right - $msg-corner-padding-right),
+      -$talent-corner-padding-top
+    );
     z-index: 2;
   }
+}
+
+.artboard-image {
+  width: 100%;
+  object-fit: contain;
 }
 
 .fan-submissions {
