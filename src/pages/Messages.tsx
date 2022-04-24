@@ -3,9 +3,9 @@ import '../components/TalentLayout.scss'
 import MessageBoxesLayout from '../components/MessageBoxesLayout'
 import MascotAnimation from '../components/MascotAnimation'
 import Weewa from '../assets/Animations/Elira-Animation_500px.webm'
-import RyuguardA from '../assets/Animations/Finana-Animation_500px.webm'
+import RyuguardA from '../assets/Animations/Finana-AnimationA_500px.webm'
 import RyuguardB from '../assets/Animations/Finana-AnimationB_500px.webm'
-import Pomudachi from '../assets/Animations/Pomu-Animation.webm'
+import Pomudachi from '../assets/Animations/Pomu-Animation_500px.webm'
 
 interface Props {
   page: string

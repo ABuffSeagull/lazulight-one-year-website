@@ -1,7 +1,7 @@
 import React from 'react'
 import './TalentLayout.scss'
 import Image from './Image'
-import LazulightCorner from '../assets/Corners/Lazulight-MsgCorner.webp' // TODO: Requires asset
+import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp' // TODO: Requires asset
 import FinanaCorner from '../assets/Corners/Finana-MsgCorner.webp'
 import EliraCorner from '../assets/Corners/Elira-MsgCorner.webp'
 import PomuCorner from '../assets/Corners/Pomu-MsgCorner.webp'
