@@ -26,9 +26,9 @@ export default function App (): JSX.Element {
         <Route path='/finana'><PageWrapper page='finana'><Finana /></PageWrapper></Route>
         <Route path='/pomu'><PageWrapper page='pomu'><Pomu /></PageWrapper></Route>
 
-        <Route path='/project-fnf'><PageWrapper page='fnf'><Fnf /></PageWrapper></Route>
-        <Route path='/project-dcl'><PageWrapper page='dcl'><DiamondCityLights /></PageWrapper></Route>
-        <Route path='/project-vn'><PageWrapper page='vn'><VisualNovel /></PageWrapper></Route>
+        <Route path='/project-fnf'><PageWrapper page='fnf'><Fnf page='fnf' /></PageWrapper></Route>
+        <Route path='/project-dcl'><PageWrapper page='dcl'><DiamondCityLights page='dcl' /></PageWrapper></Route>
+        <Route path='/project-vn'><PageWrapper page='vn'><VisualNovel page='vn' /></PageWrapper></Route>
 
         {/* (Brandon) I intentionally give the following pages the incorrect 'page' variable - It's only used for styling */}
         <Route path='/all-art'><PageWrapper page='finana'><Art page='finana' /></PageWrapper></Route>

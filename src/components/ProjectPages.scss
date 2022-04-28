@@ -1,0 +1,104 @@
+@use "../variables" as *;
+
+.credits {
+  // Grid control based off
+  // https://css-irl.info/controlling-leftover-grid-items/
+
+  &-text {
+    h3 {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    ul {
+      // Remove bullets
+      list-style-type: none;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+
+      // grid-auto-rows:
+      gap: 1rem;
+      flex: 1 1 auto;
+      padding: 1rem;
+      counter-reset: grid;
+    }
+
+    &-special-final li {
+      // Important to override the high specificity
+      grid-column: span 12 !important;
+    }
+
+    ul li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: clamp(1rem, 2.3vw, 1.5rem);
+      color: $background-grey;
+      background: $lazulight-primary-color;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      grid-column: span 4;
+
+      // Dealing with 2 orphan items
+      &:last-child:nth-child(3n - 1) {
+        grid-column-end: -3;
+      }
+
+      &:nth-last-child(2):nth-child(3n + 1) {
+        grid-column-end: 7;
+      }
+
+      // Dealing with single orphan
+      &:last-child:nth-child(3n - 2) {
+        grid-column-end: 9;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      a:visited {
+        color: inherit;
+      }
+
+      a:link {
+        color: inherit;
+      }
+    }
+
+    @media (max-width: $bp-tablet) {
+      ul li {
+        grid-column: span 6;
+
+        // Undo desktop selectors
+        &:last-child:nth-child(3n - 1) {
+          grid-column-end: auto;
+        }
+
+        &:nth-last-child(2):nth-child(3n + 1) {
+          grid-column-end: auto;
+        }
+
+        &:last-child:nth-child(3n - 2) {
+          grid-column-end: auto;
+        }
+
+        // Dealing with single orphan
+        &:last-child:nth-child(2n - 1) {
+          grid-column-end: 10;
+        }
+      }
+    }
+    @media (max-width: $bp-mobile) {
+      ul li {
+        grid-column: span 12;
+
+        // Undo tablet selector
+        &:last-child:nth-child(2n - 1) {
+          grid-column-end: auto;
+        }
+      }
+    }
+  }
+}
