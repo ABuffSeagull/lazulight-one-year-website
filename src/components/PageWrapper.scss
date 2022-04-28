@@ -50,6 +50,11 @@
     background-size: 100%;
   }
 
+  &-home {
+    background-image: linear-gradient(to bottom, #274454, #285455);
+    background-color: #274454; // Backup in case the image doesn't load
+  }
+
   // TODO: Add remaining pages
 }
 

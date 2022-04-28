@@ -21,47 +21,127 @@ import submissionsIconActive from '../assets/Menu/Menu-EliraTiara-Active.webp'
 import VNIconDefault from '../assets/Menu/Menu-FinanaCrown-Default.webp'
 import VNIconActive from '../assets/Menu/Menu-FinanaCrown-Active.webp'
 
+interface LinkData {
+  name: string
+  icon: string
+  iconActive: string
+  path: string
+  delay: number
+}
+
 export default function SiteHeader (): JSX.Element {
   const navIcons = [
     {
       name: 'Home',
       icon: projectsIconDefault,
       iconActive: projectsIconActive,
-      path: '/'
+      path: '/',
+      children: []
     },
     {
       name: 'Pomu',
       icon: pomuIconDefault,
       iconActive: pomuIconActive,
-      path: '/pomu'
+      path: '/pomu',
+      children: []
     },
     {
       name: 'Elira',
       icon: eliraIconDefault,
       iconActive: eliraIconActive,
-      path: '/elira'
+      path: '/elira',
+      children: []
     },
     {
       name: 'Finana',
       icon: finanaIconDefault,
       iconActive: finanaIconActive,
-      path: '/finana'
+      path: '/finana',
+      children: []
     },
     {
-      name: 'Submissions',
+      name: 'Projects',
       icon: submissionsIconDefault,
       iconActive: submissionsIconActive,
-      path: '/finana'
+      path: '/',
+      children:
+      [
+        {
+          name: 'DCL',
+          icon: submissionsIconDefault,
+          iconActive: submissionsIconActive,
+          path: '/project-dcl'
+        },
+        {
+          name: 'VN',
+          icon: submissionsIconDefault,
+          iconActive: submissionsIconActive,
+          path: '/project-vn'
+        },
+        {
+          name: 'FNF',
+          icon: submissionsIconDefault,
+          iconActive: submissionsIconActive,
+          path: '/project-fnf'
+        }
+      ]
     },
     {
-      name: 'VN',
+      name: 'Other',
       icon: VNIconDefault,
       iconActive: VNIconActive,
-      path: '/finana'
+      path: '/finana',
+      children:
+      [
+        {
+          name: 'All Messages',
+          icon: submissionsIconDefault,
+          iconActive: submissionsIconActive,
+          path: '/all-messages'
+        },
+        {
+          name: 'All Art',
+          icon: submissionsIconDefault,
+          iconActive: submissionsIconActive,
+          path: '/all-art'
+        },
+        {
+          name: 'About',
+          icon: submissionsIconDefault,
+          iconActive: submissionsIconActive,
+          path: '/about'
+        }
+      ]
     }
   ]
 
   const [headerOpen, setHeaderOpen] = useState(false)
+
+  function MenuItem (linkData: LinkData): JSX.Element {
+    return (
+      <Link
+        key={linkData.name}
+        className={classes['nav-link']}
+        to={linkData.path}
+        style={{ '--delay': `${50 * linkData.delay}ms` } as any}
+        onClick={() => {
+          setHeaderOpen(!headerOpen)
+        }}
+      >
+        <div className={classes['icon-wrapper']}>
+          <Image
+            className={[classes.icon, classes['default-icon']].join(' ')}
+            src={linkData.icon}
+          />
+          <Image
+            className={[classes.icon, classes['active-icon']].join(' ')}
+            src={linkData.iconActive}
+          />
+        </div>
+        <span>{linkData.name}</span>
+      </Link>
+    )
+  }
 
   return (
     <>
@@ -69,28 +149,31 @@ export default function SiteHeader (): JSX.Element {
         className={[classes.header, headerOpen ? classes.open : ''].join(' ')}
       >
         <nav className={classes.nav}>
-          {navIcons.map((linkData, i) => (
-            <Link
-              key={linkData.name}
-              className={classes['nav-link']}
-              to={linkData.path}
-              style={{ '--delay': `${50 * i}ms` } as any}
-              onClick={() => {
-                setHeaderOpen(!headerOpen)
-              }}
-            >
-              <div className={classes['icon-wrapper']}>
-                <Image
-                  className={[classes.icon, classes['default-icon']].join(' ')}
-                  src={linkData.icon}
-                />
-                <Image
-                  className={[classes.icon, classes['active-icon']].join(' ')}
-                  src={linkData.iconActive}
-                />
+          {navIcons.map((linkData, idx) => (
+            <div className={classes['menu-item']} key={idx}>
+              {/* Core menu */}
+              <MenuItem
+                name={linkData.name}
+                icon={linkData.icon}
+                iconActive={linkData.iconActive}
+                path={linkData.path}
+                delay={idx}
+              />
+              {/* Sub menu */}
+              <div className={classes['menu-sub']}>
+                {linkData.children.map((childLinkData, idx2) => (
+                  <div className={classes['menu-sub-item']} key={idx2}>
+                    <MenuItem
+                      name={childLinkData.name}
+                      icon={childLinkData.icon}
+                      iconActive={childLinkData.iconActive}
+                      path={childLinkData.path}
+                      delay={idx2}
+                    />
+                  </div>
+                ))}
               </div>
-              <span>{linkData.name}</span>
-            </Link>
+            </div>
           ))}
         </nav>
       </header>

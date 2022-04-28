@@ -112,3 +112,28 @@
     opacity: 1;
   }
 }
+
+.menu {
+  &-item {
+    position: relative;
+  }
+
+  &-sub {
+    display: none;
+  }
+
+  &-item:hover &-sub {
+    display: block;
+    position: absolute;
+    z-index: 99;
+
+    // padding: 1rem 2rem;
+    background-color: rgb(216 216 216);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}

@@ -8,26 +8,14 @@ import MascotAnimation from './MascotAnimation'
 // Probably just generate some random ids on the messages at load time
 /* eslint-disable react/jsx-key */
 
-interface Message {
-  name: string
-  twitter: string
-  text: string
-}
-
-interface Fanart {
-  name: string
-  twitter: string
-  text: string
-  artUrl: string
-}
-
 interface Props {
   name: string
+  artBoardHeading: string
+  artBoardText: string
+  artBoard: string
   frame: string
   animation: string
   corner: string
-  messages: Message[]
-  fanarts: Fanart[]
   portrait: string | metadata[]
   info: string[]
   youtube: string
@@ -78,6 +66,16 @@ function TalentLayout (props: Props): JSX.Element {
             <MascotAnimation id={vid2} delay={100} src={props.animation} />
             <div className='hide-on-tablet'><MascotAnimation id={vid3} delay={150} src={props.animation} /></div>
           </div>
+        </div>
+      </div>
+
+      {/* Art Board */}
+      <div className='talent-text-container'>
+        <Image className='talent-corner' src={props.corner} />
+        <div className={`talent-text-inner ${firstNameLower}-border`}>
+          <h3>{props.artBoardHeading}</h3>
+          <p>{props.artBoardText}</p>
+          <Image className='artboard-image' src={props.artBoard} />
         </div>
       </div>
 

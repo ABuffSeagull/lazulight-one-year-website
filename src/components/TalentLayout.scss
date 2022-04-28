@@ -1,6 +1,10 @@
 @use "../variables" as *;
 
-$msg-corner-padding: 0.9rem;
+// (Brandon) I re-exported the corners to all require the same spacing (relative to equal hight)
+$msg-corner-padding-right: 17px;
+$msg-corner-padding-top: 17px;
+$talent-corner-padding-right: 33px;
+$talent-corner-padding-top: 33px;
 
 .talent {
   &-layout-container {
@@ -27,7 +31,7 @@ $msg-corner-padding: 0.9rem;
   &-picture-box {
     position: relative;
     max-width: 25vw;
-    margin-right: 5vw;
+    margin-right: 4vw;
     margin-bottom: 0;
 
     @media (max-width: $bp-tablet) {
@@ -98,7 +102,6 @@ $msg-corner-padding: 0.9rem;
     flex-direction: column;
     flex-grow: 10; // A big number to force fill the screen
     gap: 3rem;
-    margin-left: $msg-corner-padding;
 
     @media (max-width: $bp-tablet) {
       width: 100%;
@@ -111,6 +114,7 @@ $msg-corner-padding: 0.9rem;
     flex-direction: column;
     width: 100%;
     padding-right: 1rem;
+    padding-left: 1rem;
   }
 
   &-text-inner {
@@ -146,9 +150,17 @@ $msg-corner-padding: 0.9rem;
     right: 0;
     object-fit: scale-down;
     width: 10rem;
-    transform: translate(1.5rem - $msg-corner-padding, -1.5rem);
+    transform: translate(
+      calc($talent-corner-padding-right - $msg-corner-padding-right),
+      -$talent-corner-padding-top
+    );
     z-index: 2;
   }
+}
+
+.artboard-image {
+  width: 100%;
+  object-fit: contain;
 }
 
 .fan-submissions {
@@ -207,7 +219,7 @@ $msg-corner-padding: 0.9rem;
     column-count: 3;
 
     // Add equal padding as to message corner to centre the message boxes
-    padding-left: $msg-corner-padding;
+    padding-left: $msg-corner-padding-right;
 
     @media (max-width: $bp-tablet) {
       column-count: 2;
@@ -242,8 +254,8 @@ $msg-corner-padding: 0.9rem;
   &-submission {
     position: relative;
     break-inside: avoid;
-    padding-top: 1rem;
-    padding-right: $msg-corner-padding;
+    padding-top: $msg-corner-padding-top;
+    padding-right: $msg-corner-padding-right;
     margin-bottom: 0.5rem;
   }
 
@@ -288,6 +300,10 @@ $msg-corner-padding: 0.9rem;
 
 .elira-border {
   border: 3px solid $elira-primary-color;
+}
+
+.lazulight-border {
+  border: 3px solid $lazulight-primary-color;
 }
 
 // Utility

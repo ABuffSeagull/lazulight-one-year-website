@@ -11,5 +11,6 @@ export default defineConfig({
 	checker({ typescript: true }),
 	viteCompression(), // Compress files with gzip
 	viteCompression({ algorithm: 'brotliCompress', ext: '.br' }) // Compress files with brotli
-	]
+	],
+	base: './', // Base public path when served in development or production
 });
