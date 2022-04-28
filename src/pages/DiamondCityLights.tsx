@@ -46,6 +46,10 @@ function DiamondCityLightsCredits (): JSX.Element {
       <ul>
         <li><a href='https://twitter.com/TCBNmusic'>Tachibana Music</a></li>
       </ul>
+      <h3>Instrumentals</h3>
+      <ul>
+        <li><a href='https://twitter.com/darylbarnes'>Daryl Barnes of UTAlive</a></li>
+      </ul>
       <h3>MV Director</h3>
       <ul>
         <li><a href='https://twitter.com/coldace_24'>Zephyr Monochrome</a></li>
