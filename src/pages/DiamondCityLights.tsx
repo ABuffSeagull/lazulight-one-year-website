@@ -56,7 +56,7 @@ function DiamondCityLightsCredits (): JSX.Element {
       </ul>
       <h3>Video Editors</h3>
       <ul>
-        <li><a href='https://twitter.com/PomuPowerCenter'>Pomu Power Collection Center</a></li>
+        <li><a href='https://twitter.com/PomuPowerCenter'>Pomu Power Distribution Center</a></li>
         <li><a href='https://twitter.com/peeboggs'>Pendora’s Box</a></li>
         <li>Rex</li>
       </ul>
