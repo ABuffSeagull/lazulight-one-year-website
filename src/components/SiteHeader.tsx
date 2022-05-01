@@ -128,7 +128,7 @@ export default function SiteHeader (): JSX.Element {
       name: 'Projects',
       icon: projectsIconDefault,
       iconActive: projectsIconActive,
-      path: '/',
+      path: '',
       desktopOnly: true,
       children:
       [
@@ -157,7 +157,7 @@ export default function SiteHeader (): JSX.Element {
       name: 'Other',
       icon: PomudachiDefault,
       iconActive: PomudachiActive,
-      path: '/finana',
+      path: '',
       desktopOnly: true,
       children:
       [
