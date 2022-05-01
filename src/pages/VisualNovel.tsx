@@ -12,6 +12,15 @@ import EliraFrame from '../assets/Corners/Elira-LiverCorner.webp'
 import PomuFrame from '../assets/Corners/Pomu-LiverCorner.webp'
 import FinanaFrame from '../assets/Corners/Finana-LiverCorner.webp'
 
+// Slide show dependencies
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import Slider from 'react-slick'
+
+// Slide show slides
+import VisualNovelLogo from '../assets/VN/lazulight_vn_logo_crop_cf50.webp'
+import Slide2 from '../assets/VN/bg_river_day_720p.jpg' // TODO: This is a placeholder for testing
+
 interface Props {
   page: string
 }
@@ -60,16 +69,50 @@ export default function VisualNovel (props: Props): JSX.Element {
     }
   ]
 
+  // See settings and examples at: https://react-slick.neostack.com/docs/api
+  const slideShowSettings = {
+    className: 'center',
+    dots: true,
+    focusOnSelect: true,
+    centerMode: true,
+    infinite: true,
+    centerPadding: '10%',
+    slidesToShow: 1,
+    speed: 500
+  }
+
   return (
     <div className='talent-layout-container'>
 
+      {/* Heading */}
+      <h1 className='project-heading'>LAZULIGHT:<br />By your Side</h1>
+
+      {/* Slide Show */}
       <div className='talent-text-container'>
         <Image className='talent-corner' src={LazulightCorner} />
         <div className={`talent-text-inner ${props.page}-border`}>
-          {/* TODO: just hard code in the content here. No need to spend more time on anything fancy */}
-          <h2>a</h2>
-          <h2>a</h2>
-          <p>TODO</p>
+          <Slider {...slideShowSettings}>
+            <div>
+              <Image src={VisualNovelLogo} className='slideshow-slide' />
+            </div>
+            <div>
+              <Image src={Slide2} className='slideshow-slide' />
+            </div>
+            <div>
+              <Image src={Slide2} className='slideshow-slide' />
+            </div>
+            <div>
+              <Image src={Slide2} className='slideshow-slide' />
+            </div>
+          </Slider>
+        </div>
+      </div>
+
+      {/* Description & Download */}
+      <div className='talent-text-container'>
+        <Image className='talent-corner' src={LazulightCorner} />
+        <div className={`talent-text-inner ${props.page}-border`}>
+          {/* TODO */}
         </div>
       </div>
 
