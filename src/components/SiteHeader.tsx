@@ -102,25 +102,25 @@ export default function SiteHeader (): JSX.Element {
     },
     {
       name: 'Messages',
-      icon: RyuguardDefault,
-      iconActive: RyuguardActive,
+      icon: PomudachiDefault,
+      iconActive: PomudachiActive,
       path: '/all-messages',
       children: [],
       mobileOnly: true
     },
     {
       name: 'Art',
-      icon: PomudachiDefault,
-      iconActive: PomudachiActive,
       path: '/all-art',
+      icon: WeewaDefault,
+      iconActive: WeewaActive,
       children: [],
       mobileOnly: true
     },
     {
       name: 'About',
-      icon: WeewaDefault,
-      iconActive: WeewaActive,
       path: '/about',
+      icon: RyuguardDefault,
+      iconActive: RyuguardActive,
       children: [],
       mobileOnly: true
     },
@@ -132,6 +132,13 @@ export default function SiteHeader (): JSX.Element {
       desktopOnly: true,
       children:
       [
+
+        {
+          name: 'FNF',
+          icon: projectsIconDefault,
+          iconActive: projectsIconActive,
+          path: '/project-fnf'
+        },
         {
           name: 'DCL',
           icon: EliraTiaraDefault,
@@ -143,12 +150,6 @@ export default function SiteHeader (): JSX.Element {
           icon: FinanaCrownDefault,
           iconActive: FinanaCrownActive,
           path: '/project-vn'
-        },
-        {
-          name: 'FNF',
-          icon: projectsIconDefault,
-          iconActive: projectsIconActive,
-          path: '/project-fnf'
         }
       ]
     },
@@ -162,20 +163,20 @@ export default function SiteHeader (): JSX.Element {
       [
         {
           name: 'All Messages',
-          icon: RyuguardDefault,
-          iconActive: RyuguardActive,
+          icon: PomudachiDefault,
+          iconActive: PomudachiActive,
           path: '/all-messages'
         },
         {
           name: 'All Art',
-          icon: PomudachiDefault,
-          iconActive: PomudachiActive,
+          icon: WeewaDefault,
+          iconActive: WeewaActive,
           path: '/all-art'
         },
         {
           name: 'About',
-          icon: WeewaDefault,
-          iconActive: WeewaActive,
+          icon: RyuguardDefault,
+          iconActive: RyuguardActive,
           path: '/about'
         }
       ]
