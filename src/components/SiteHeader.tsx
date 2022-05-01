@@ -24,8 +24,8 @@ import submissionsIconActive from '../assets/Menu/Menu-EliraTiara-Active.webp'
 import VNIconDefault from '../assets/Menu/Menu-FinanaCrown-Default.webp'
 import VNIconActive from '../assets/Menu/Menu-FinanaCrown-Active.webp'
 
-import Bars from "../assets/Menu/Bars.svg"
-import Cross from "../assets/Menu/Cross.svg"
+import Bars from "../assets/Menu/Menu-Mobile-Open.svg"
+import Cross from "../assets/Menu/Menu-Mobile-Close.svg"
 
 interface LinkData {
   name: string
@@ -129,22 +129,19 @@ export default function SiteHeader (): JSX.Element {
           name: 'DCL',
           icon: projectsIconDefault,
           iconActive: projectsIconActive,
-          path: '/project-dcl',
-  
+          path: '/project-dcl'
         },
         {
           name: 'VN',
           icon: projectsIconDefault,
           iconActive: projectsIconActive,
-          path: '/project-vn',
-  
+          path: '/project-vn'
         },
         {
           name: 'FNF',
           icon: projectsIconDefault,
           iconActive: projectsIconActive,
-          path: '/project-fnf',
-  
+          path: '/project-fnf'
         }
       ]
     },
@@ -160,19 +157,19 @@ export default function SiteHeader (): JSX.Element {
           name: 'All Messages',
           icon: submissionsIconDefault,
           iconActive: submissionsIconActive,
-          path: '/all-messages',
+          path: '/all-messages'
         },
         {
           name: 'All Art',
           icon: submissionsIconDefault,
           iconActive: submissionsIconActive,
-          path: '/all-art',
+          path: '/all-art'
         },
         {
           name: 'About',
           icon: submissionsIconDefault,
           iconActive: submissionsIconActive,
-          path: '/about',
+          path: '/about'
         }
       ]
     }
@@ -250,7 +247,7 @@ export default function SiteHeader (): JSX.Element {
         className={`${classes['open-header']} ${headerOpen && classes['open-header-close']}`}
         onClick={() => setHeaderOpen(!headerOpen)}
       >
-        <img src={!headerOpen ? Bars : Cross}></img>
+        <img src={!headerOpen ? Bars : Cross} />
       </button>
     </>
   )
