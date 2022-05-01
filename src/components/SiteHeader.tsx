@@ -33,8 +33,8 @@ import WeewaActive from '../assets/Menu/Menu-Weewa-Active.webp'
 import PomudachiDefault from '../assets/Menu/Menu-Pomudachi-Default.webp'
 import PomudachiActive from '../assets/Menu/Menu-Pomudachi-Active.webp'
 
-import Bars from "../assets/Menu/Menu-Mobile-Open.svg"
-import Cross from "../assets/Menu/Menu-Mobile-Close.svg"
+import Bars from '../assets/Menu/Menu-Mobile-Open.svg'
+import Cross from '../assets/Menu/Menu-Mobile-Close.svg'
 
 interface LinkData {
   name: string
@@ -46,8 +46,6 @@ interface LinkData {
   desktopOnly?: boolean
 }
 
-
-
 export default function SiteHeader (): JSX.Element {
   const navIcons = [
     {
@@ -55,28 +53,28 @@ export default function SiteHeader (): JSX.Element {
       icon: homeIconDefault,
       iconActive: homeIconActive,
       path: '/',
-      children: [],
+      children: []
     },
     {
       name: 'Pomu',
       icon: pomuIconDefault,
       iconActive: pomuIconActive,
       path: '/pomu',
-      children: [],
+      children: []
     },
     {
       name: 'Elira',
       icon: eliraIconDefault,
       iconActive: eliraIconActive,
       path: '/elira',
-      children: [],
+      children: []
     },
     {
       name: 'Finana',
       icon: finanaIconDefault,
       iconActive: finanaIconActive,
       path: '/finana',
-      children: [],
+      children: []
     },
     {
       name: 'FNF',
@@ -217,10 +215,11 @@ export default function SiteHeader (): JSX.Element {
       <header
         className={[classes.header, headerOpen ? classes.open : ''].join(' ')}
       >
-        
+
         <nav className={classes.nav}>
           {navIcons.map((linkData, idx) => (
-            <div className={`${classes['menu-item']} ${linkData.mobileOnly && classes[`nav-link-mobile-only`]} ${linkData.desktopOnly && classes[`nav-link-desktop-only`]}`} key={idx}>
+            // Explicit '=true' because 'nullable boolean'
+            <div className={`${classes['menu-item']} ${linkData.mobileOnly === true ? classes['nav-link-mobile-only'] : ''} ${linkData.desktopOnly === true ? classes['nav-link-desktop-only'] : ''}`} key={idx}>
               {/* Core menu */}
               <MenuItem
                 name={linkData.name}
@@ -250,10 +249,10 @@ export default function SiteHeader (): JSX.Element {
             </div>
           ))}
         </nav>
-       
+
       </header>
       <button
-        className={`${classes['open-header']} ${headerOpen && classes['open-header-close']}`}
+        className={`${classes['open-header']} ${headerOpen ? classes['open-header-close'] : ''}`}
         onClick={() => setHeaderOpen(!headerOpen)}
       >
         <img src={!headerOpen ? Bars : Cross} />

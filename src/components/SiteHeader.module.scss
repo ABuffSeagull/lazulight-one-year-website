@@ -4,11 +4,10 @@
   top: 1rem;
   right: 1rem;
   z-index: 100;
-  background: none;
+  background: #faf9f6;
   border: none;
   width: 3rem;
   height: 3rem;
-  background: #FAF9F6;
   border-radius: 10rem;
   align-items: center;
   justify-content: center;
@@ -26,7 +25,6 @@
       width: 1.75rem;
       height: 1.75rem;
     }
-   
   }
 }
 
@@ -34,12 +32,13 @@
   position: relative;
   z-index: 99;
   padding: 1rem 2rem;
-  background-color: #FAF9F6;
+  background-color: #faf9f6;
+
   // border-bottom-left-radius: 1rem;
   // border-bottom-right-radius: 1rem;
   width: 100%;
   margin-bottom: 1.5rem;
-  box-shadow: 8px 11px 13px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 8px 11px 13px 0 rgb(0 0 0 / 5%);
 }
 
 .nav {
@@ -87,7 +86,7 @@
   .nav {
     display: grid;
     gap: 1.5rem;
-   grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 
     & div:first-child {
       grid-column: 2;
@@ -108,7 +107,7 @@
   position: relative;
   width: 4rem;
   height: 4rem;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 .icon {
@@ -141,7 +140,7 @@
   }
 
   &:hover span {
-    color: #C9A36B
+    color: #c9a36b;
   }
 
   &:hover .icon-wrapper {
@@ -196,9 +195,9 @@
     z-index: 101;
 
     // padding: 1rem 2rem;
-    background-color: #FAF9F6;
-    border-radius: .5rem;
-    padding: .5rem 0;
+    background-color: #faf9f6;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
     box-shadow: 0 0 19px 0 rgb(123 113 130 / 8%);
 
     @media (max-width: 768px) {
