@@ -4,11 +4,62 @@ import '../components/ProjectPages.scss'
 import Image from '../components/Image'
 import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp'
 
+import EliraImage from '../assets/VN/elira school happy_cf50.webp'
+import PomuImage from '../assets/VN/pomu school happy_cf50.webp'
+import FinanaImage from '../assets/VN/finana school happy_cf50.webp'
+
+import EliraFrame from '../assets/Corners/Elira-LiverCorner.webp'
+import PomuFrame from '../assets/Corners/Pomu-LiverCorner.webp'
+import FinanaFrame from '../assets/Corners/Finana-LiverCorner.webp'
+
 interface Props {
   page: string
 }
 
+interface Character {
+  portrait: string
+  frame: string
+  firstNameLower: string
+  name: string
+  info: string[]
+}
+
 export default function VisualNovel (props: Props): JSX.Element {
+  const characters: Character[] = [
+    {
+      portrait: EliraImage,
+      frame: EliraFrame,
+      firstNameLower: 'elira',
+      name: 'Elira Pendora',
+      info: [
+        'A shy president that while commands respect from her classmates, finds herself in an awkward position without a club to join for the exact same reason',
+        'She loves playing the violin, but it seems she focused on the piano when she was little. What lead to the change? A simple change of heart? Or a deeper secret she’s trying to hide...'
+
+      ]
+    },
+    {
+      portrait: PomuImage,
+      frame: PomuFrame,
+      firstNameLower: 'pomu',
+      name: 'Pomu Rainpuff',
+      info: [
+        'A forest fairy with a true passion for cross country. She loves the feeling of the wind blowing through her hair while running or being in high places more than anything.',
+        'She’s always bubbly and energetic on the outside, but deep inside she’s also compassionate and thoughtful toward her friends. And once you get her nerding out about her interests, you’ll never be able to get her to stop.'
+      ]
+    },
+    {
+      portrait: FinanaImage,
+      frame: FinanaFrame,
+      firstNameLower: 'finana',
+      name: 'Finana Ryugu',
+      info: [
+        'A quiet student during the day but a fierce gamer at night, Finana Ryugu is the type of person who seems to always be living in her own world.',
+        'She’s usually soft spoken and can be a little… questionable sometimes, but she tries her best to express her feelings to everyone.',
+        'She loves teaching others about her interests, but what happens when she’s the one looking for help?'
+      ]
+    }
+  ]
+
   return (
     <div className='talent-layout-container'>
 
@@ -22,10 +73,30 @@ export default function VisualNovel (props: Props): JSX.Element {
         </div>
       </div>
 
+      {/* Character Profiles */}
+      {characters.map((character: Character, idx: number) => (
+        <div className='talent-profile-container' key={idx}>
+          <div className='talent-picture-box'>
+            <Image src={character.portrait} />
+          </div>
+          <div className='talent-info-container'>
+            <div className='talent-text-container'>
+              <Image className='talent-corner' src={character.frame} />
+              <div className={`talent-text-inner ${character.firstNameLower}-border`}>
+                <h2>{character.name}</h2>
+                {character.info.map((paragraph, idx2) =>
+                  <p key={idx2}>{paragraph}&nbsp;</p>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+
+      {/* Credits */}
       <div className='talent-text-container'>
         <Image className='talent-corner' src={LazulightCorner} />
         <div className={`talent-text-inner ${props.page}-border`}>
-          {/* TODO: just hard code in the content here. No need to spend more time on anything fancy */}
           <h2>Credits</h2>
           <VisualNovelCredits />
         </div>
