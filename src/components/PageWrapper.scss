@@ -266,20 +266,27 @@
 // TODO: Temporary until replaced by full nav component
 .animation-toggle {
   position: relative; // BG animation interferes with z-index. This somehow fixes it (search 'stacking context')
-  z-index: 100;
+  z-index: 50;
   display: inline-block;
   padding: 0.5rem 1rem;
-  margin-left: 0.5rem;
-  background-color: hsl(114deg 15% 75% / 100%);
-  border-radius: 0.75rem;
+  width: 9rem;
+  height: 3rem;
+  background-color: #fafafa;
+  border: 2px solid black;
+  border-radius: 5rem;
   color: black;
   text-align: center;
   transition-property: color, background-color;
   transition-duration: 250ms;
   transition-timing-function: ease-out;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
 
-  &:hover,
-  &:focus {
-    background-color: hsl(114deg 15% 50% / 100%);
+  &:hover {
+    background-color: #BFDFD7;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 1.5rem;
   }
 }
