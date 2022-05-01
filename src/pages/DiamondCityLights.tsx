@@ -42,7 +42,7 @@ function DiamondCityLightsCredits (): JSX.Element {
       <ul>
         <li><a href='https://twitter.com/HirokawaKiro'>Kiro</a></li>
       </ul>
-      <h3>Mixer</h3>
+      <h3>Sound Mixer</h3>
       <ul>
         <li><a href='https://twitter.com/TCBNmusic'>Tachibana Music</a></li>
       </ul>
@@ -110,7 +110,7 @@ function DiamondCityLightsCredits (): JSX.Element {
         <li><a href='https://twitter.com/jotamide'>Jotamide</a></li>
         <li><a href='https://twitter.com/CoughAMania'>Fonzie</a></li>
       </ul>
-      <h3>Chants</h3>
+      <h3>Mixes</h3>
       <ul>
         <li>root1overXcubed</li>
         <li>Splinterman</li>
