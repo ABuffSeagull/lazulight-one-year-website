@@ -55,6 +55,11 @@
     background-color: #274454; // Backup in case the image doesn't load
   }
 
+  &-vn {
+    background-image: linear-gradient(to bottom, #76c4f2, #00a1ea);
+    background-color: #76c4f2; // Backup in case the image doesn't load
+  }
+
   // TODO: Add remaining pages
 }
 
@@ -66,7 +71,8 @@
 
   &-elira,
   &-pomu,
-  &-finana {
+  &-finana,
+  &-vn {
     // Container properties
     position: relative;
     overflow: hidden;
@@ -255,6 +261,36 @@
 
         to {
           bottom: 120%;
+        }
+      }
+    }
+  }
+
+  &-vn {
+    $vn-cloud-count: 32; // Must be greater than/equal to the number of clouds in the html
+    $vn-cloud-height: 10%;
+    $vn-cloud-duration-min: 20;
+    $vn-cloud-duration-extra: 40;
+    @for $i from 1 through $vn-cloud-count {
+      &-cloud:nth-child(#{$i}) {
+        animation-name: vncloud#{$i};
+        animation-duration: math.random() *
+          $vn-cloud-duration-extra +
+          $vn-cloud-duration-min +
+          s;
+        animation-delay: -1 * math.random() * $vn-cloud-duration-min + s;
+        animation-direction: normal;
+        opacity: 0.5;
+        height: $vn-cloud-height;
+        bottom: math.random() * 100%;
+      }
+      @keyframes vncloud#{$i} {
+        from {
+          left: -50%;
+        }
+
+        to {
+          left: 150%;
         }
       }
     }

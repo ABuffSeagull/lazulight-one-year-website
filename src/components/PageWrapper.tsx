@@ -25,6 +25,7 @@ export function PageWrapper (props: Props): JSX.Element {
   const pomuCoinCount: number = 2 * 30 // Should be multiple of 2
   const finanaBubbleCount: number = 30
   const finanaFishCount: number = 30
+  const vnCloudCount: number = 8 * 4 // Should be multiple of 4
 
   const [AnimationOn, toggleAnimationState] = React.useState(true)
 
@@ -115,6 +116,34 @@ export function PageWrapper (props: Props): JSX.Element {
                 />
               ))}
             </div>
+          </div>
+        )}
+        {props.page === 'vn' && (
+          <div>
+            {Array.from({ length: vnCloudCount / 4 }, (i: number) => (
+              <Image
+                className='page-bg-animation-vn-cloud'
+                src={EliraCloud1}
+              />
+            ))}
+            {Array.from({ length: vnCloudCount / 4 }, (i: number) => (
+              <Image
+                className='page-bg-animation-vn-cloud'
+                src={EliraCloud2}
+              />
+            ))}
+            {Array.from({ length: vnCloudCount / 4 }, (i: number) => (
+              <Image
+                className='page-bg-animation-vn-cloud'
+                src={EliraCloud3}
+              />
+            ))}
+            {Array.from({ length: vnCloudCount / 4 }, (i: number) => (
+              <Image
+                className='page-bg-animation-vn-cloud'
+                src={EliraCloud4}
+              />
+            ))}
           </div>
         )}
       </div>
