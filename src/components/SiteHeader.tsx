@@ -3,6 +3,9 @@ import { Link } from 'wouter'
 import Image from './Image'
 import classes from './SiteHeader.module.scss'
 
+import homeIconDefault from '../assets/Menu/Menu-Diamond-Default.webp'
+import homeIconActive from '../assets/Menu/Menu-DiamondRainbow-Active_250px.gif'
+
 import finanaIconDefault from '../assets/Menu/Menu-Finana-Default.webp'
 import finanaIconActive from '../assets/Menu/Menu-Finana-Active.webp'
 
@@ -40,8 +43,8 @@ export default function SiteHeader (): JSX.Element {
   const navIcons = [
     {
       name: 'Home',
-      icon: projectsIconDefault,
-      iconActive: projectsIconActive,
+      icon: homeIconDefault,
+      iconActive: homeIconActive,
       path: '/',
       children: [],
     },
@@ -68,24 +71,24 @@ export default function SiteHeader (): JSX.Element {
     },
     {
       name: 'FNF',
-      icon: submissionsIconDefault,
-      iconActive: submissionsIconActive,
+      icon: projectsIconDefault,
+      iconActive: projectsIconDefault,
       path: '/project-fnf',
       children: [],
       mobileOnly: true
     },
     {
       name: 'DCL',
-      icon: submissionsIconDefault,
-      iconActive: submissionsIconActive,
+      icon: projectsIconDefault,
+      iconActive: projectsIconDefault,
       path: '/project-dcl',
       children: [],
       mobileOnly: true
     },
     {
       name: 'VN',
-      icon: submissionsIconDefault,
-      iconActive: submissionsIconActive,
+      icon: VNIconDefault,
+      iconActive: VNIconActive,
       path: '/project-vn',
       children: [],
       mobileOnly: true
@@ -116,30 +119,30 @@ export default function SiteHeader (): JSX.Element {
     },
     {
       name: 'Projects',
-      icon: submissionsIconDefault,
-      iconActive: submissionsIconActive,
+      icon: projectsIconDefault,
+      iconActive: projectsIconActive,
       path: '/',
       desktopOnly: true,
       children:
       [
         {
           name: 'DCL',
-          icon: submissionsIconDefault,
-          iconActive: submissionsIconActive,
+          icon: projectsIconDefault,
+          iconActive: projectsIconActive,
           path: '/project-dcl',
   
         },
         {
           name: 'VN',
-          icon: submissionsIconDefault,
-          iconActive: submissionsIconActive,
+          icon: projectsIconDefault,
+          iconActive: projectsIconActive,
           path: '/project-vn',
   
         },
         {
           name: 'FNF',
-          icon: submissionsIconDefault,
-          iconActive: submissionsIconActive,
+          icon: projectsIconDefault,
+          iconActive: projectsIconActive,
           path: '/project-fnf',
   
         }
@@ -147,8 +150,8 @@ export default function SiteHeader (): JSX.Element {
     },
     {
       name: 'Other',
-      icon: VNIconDefault,
-      iconActive: VNIconActive,
+      icon: submissionsIconDefault,
+      iconActive: submissionsIconDefault,
       path: '/finana',
       desktopOnly: true,
       children:
