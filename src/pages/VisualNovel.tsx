@@ -73,6 +73,7 @@ export default function VisualNovel (props: Props): JSX.Element {
   const slideShowSettings = {
     className: 'center',
     dots: true,
+    // adaptiveHeight: true,
     focusOnSelect: true,
     centerMode: true,
     infinite: true,
@@ -85,13 +86,15 @@ export default function VisualNovel (props: Props): JSX.Element {
     <div className='talent-layout-container'>
 
       {/* Heading */}
-      <h1 className='project-heading'>LAZULIGHT:<br />By your Side</h1>
+      {/* <h1 className='project-heading'>LAZULIGHT:<br />By your Side</h1> */}
+      <Image src={VisualNovelLogo} className='project-heading-image' />
 
       {/* Slide Show */}
       <div className='talent-text-container'>
         <Image className='talent-corner' src={LazulightCorner} />
         <div className={`talent-text-inner ${props.page}-border`}>
-          <Slider {...slideShowSettings}>
+          <h2>A LazuLight Visual Novel</h2>
+          <Slider {...slideShowSettings} className='slideshow-container'>
             <div>
               <Image src={VisualNovelLogo} className='slideshow-slide' />
             </div>
@@ -105,14 +108,12 @@ export default function VisualNovel (props: Props): JSX.Element {
               <Image src={Slide2} className='slideshow-slide' />
             </div>
           </Slider>
-        </div>
-      </div>
 
-      {/* Description & Download */}
-      <div className='talent-text-container'>
-        <Image className='talent-corner' src={LazulightCorner} />
-        <div className={`talent-text-inner ${props.page}-border`}>
-          {/* TODO */}
+          {/* Description & Download */}
+          <p>TODO. bufgweia nfgwaeung awergjn aerg aerg aerg saerg saerg aerg fweaf gaerg aerg aerg ae </p>
+          <p>TODO. bufgweia nfgwaeung awergjn aerg aerg aerg saerg saerg aerg rg aerg aerg aerg </p>
+          <p>TODO. bufgweia nfgwaeung awergjn aerg aerg aerg saerg saerg aerg </p>
+          <p>TODO. bufgweia nfgwaeung awergjn aerg aerg aerg saerg saerg aerg </p>
         </div>
       </div>
 

@@ -1,9 +1,32 @@
 @use "../variables" as *;
 
-.slideshow-slide {
-  width: 90%;
-  border: 3px solid $lazulight-primary-color;
-  object-fit: contain;
+.slideshow {
+  &-container {
+    $fade-left: 5%;
+    $fade-right: 100% - $fade-left;
+
+    padding-bottom: 2rem;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black $fade-left,
+      black $fade-right,
+      transparent
+    );
+
+    div {
+      display: flex;
+      margin: auto;
+    }
+  }
+
+  &-slide {
+    margin: auto;
+    width: 90%;
+    border: 3px solid $lazulight-primary-color;
+    object-fit: contain;
+    cursor: pointer;
+  }
 }
 
 .project-heading {
@@ -31,6 +54,11 @@
     $background-grey 80%,
     rgb(0 0 0 / 0%)
   );
+}
+
+.project-heading-image {
+  width: 100%;
+  margin: auto;
 }
 
 .credits {
