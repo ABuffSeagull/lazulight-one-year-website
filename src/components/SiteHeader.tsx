@@ -3,6 +3,9 @@ import { Link } from 'wouter'
 import Image from './Image'
 import classes from './SiteHeader.module.scss'
 
+import homeIconDefault from '../assets/Menu/Menu-Diamond-Default.webp'
+import homeIconActive from '../assets/Menu/Menu-DiamondRainbow-Active_250px.gif'
+
 import finanaIconDefault from '../assets/Menu/Menu-Finana-Default.webp'
 import finanaIconActive from '../assets/Menu/Menu-Finana-Active.webp'
 
@@ -15,11 +18,23 @@ import eliraIconActive from '../assets/Menu/Menu-Elira-Active.webp'
 import projectsIconDefault from '../assets/Menu/Menu-Bow-Default.webp'
 import projectsIconActive from '../assets/Menu/Menu-Bow-Active.webp'
 
-import submissionsIconDefault from '../assets/Menu/Menu-EliraTiara-Default.webp'
-import submissionsIconActive from '../assets/Menu/Menu-EliraTiara-Active.webp'
+import EliraTiaraDefault from '../assets/Menu/Menu-EliraTiara-Default.webp'
+import EliraTiaraActive from '../assets/Menu/Menu-EliraTiara-Active.webp'
 
-import VNIconDefault from '../assets/Menu/Menu-FinanaCrown-Default.webp'
-import VNIconActive from '../assets/Menu/Menu-FinanaCrown-Active.webp'
+import FinanaCrownDefault from '../assets/Menu/Menu-FinanaCrown-Default.webp'
+import FinanaCrownActive from '../assets/Menu/Menu-FinanaCrown-Active.webp'
+
+import RyuguardDefault from '../assets/Menu/Menu-Ryuguard-Default.webp'
+import RyuguardActive from '../assets/Menu/Menu-Ryuguard-Active.webp'
+
+import WeewaDefault from '../assets/Menu/Menu-Weewa-Default.webp'
+import WeewaActive from '../assets/Menu/Menu-Weewa-Active.webp'
+
+import PomudachiDefault from '../assets/Menu/Menu-Pomudachi-Default.webp'
+import PomudachiActive from '../assets/Menu/Menu-Pomudachi-Active.webp'
+
+import Bars from '../assets/Menu/Menu-Mobile-Open.svg'
+import Cross from '../assets/Menu/Menu-Mobile-Close.svg'
 
 interface LinkData {
   name: string
@@ -27,14 +42,16 @@ interface LinkData {
   iconActive: string
   path: string
   delay: number
+  mobileOnly?: boolean
+  desktopOnly?: boolean
 }
 
 export default function SiteHeader (): JSX.Element {
   const navIcons = [
     {
       name: 'Home',
-      icon: projectsIconDefault,
-      iconActive: projectsIconActive,
+      icon: homeIconDefault,
+      iconActive: homeIconActive,
       path: '/',
       children: []
     },
@@ -60,55 +77,106 @@ export default function SiteHeader (): JSX.Element {
       children: []
     },
     {
+      name: 'FNF',
+      icon: projectsIconDefault,
+      iconActive: projectsIconDefault,
+      path: '/project-fnf',
+      children: [],
+      mobileOnly: true
+    },
+    {
+      name: 'DCL',
+      icon: EliraTiaraDefault,
+      iconActive: EliraTiaraActive,
+      path: '/project-dcl',
+      children: [],
+      mobileOnly: true
+    },
+    {
+      name: 'VN',
+      icon: FinanaCrownDefault,
+      iconActive: FinanaCrownActive,
+      path: '/project-vn',
+      children: [],
+      mobileOnly: true
+    },
+    {
+      name: 'Messages',
+      icon: PomudachiDefault,
+      iconActive: PomudachiActive,
+      path: '/all-messages',
+      children: [],
+      mobileOnly: true
+    },
+    {
+      name: 'Art',
+      path: '/all-art',
+      icon: WeewaDefault,
+      iconActive: WeewaActive,
+      children: [],
+      mobileOnly: true
+    },
+    {
+      name: 'About',
+      path: '/about',
+      icon: RyuguardDefault,
+      iconActive: RyuguardActive,
+      children: [],
+      mobileOnly: true
+    },
+    {
       name: 'Projects',
-      icon: submissionsIconDefault,
-      iconActive: submissionsIconActive,
-      path: '/',
+      icon: projectsIconDefault,
+      iconActive: projectsIconActive,
+      path: '',
+      desktopOnly: true,
       children:
       [
+
+        {
+          name: 'FNF',
+          icon: projectsIconDefault,
+          iconActive: projectsIconActive,
+          path: '/project-fnf'
+        },
         {
           name: 'DCL',
-          icon: submissionsIconDefault,
-          iconActive: submissionsIconActive,
+          icon: EliraTiaraDefault,
+          iconActive: EliraTiaraActive,
           path: '/project-dcl'
         },
         {
           name: 'VN',
-          icon: submissionsIconDefault,
-          iconActive: submissionsIconActive,
+          icon: FinanaCrownDefault,
+          iconActive: FinanaCrownActive,
           path: '/project-vn'
-        },
-        {
-          name: 'FNF',
-          icon: submissionsIconDefault,
-          iconActive: submissionsIconActive,
-          path: '/project-fnf'
         }
       ]
     },
     {
       name: 'Other',
-      icon: VNIconDefault,
-      iconActive: VNIconActive,
-      path: '/finana',
+      icon: PomudachiDefault,
+      iconActive: PomudachiActive,
+      path: '',
+      desktopOnly: true,
       children:
       [
         {
           name: 'All Messages',
-          icon: submissionsIconDefault,
-          iconActive: submissionsIconActive,
+          icon: PomudachiDefault,
+          iconActive: PomudachiActive,
           path: '/all-messages'
         },
         {
           name: 'All Art',
-          icon: submissionsIconDefault,
-          iconActive: submissionsIconActive,
+          icon: WeewaDefault,
+          iconActive: WeewaActive,
           path: '/all-art'
         },
         {
           name: 'About',
-          icon: submissionsIconDefault,
-          iconActive: submissionsIconActive,
+          icon: RyuguardDefault,
+          iconActive: RyuguardActive,
           path: '/about'
         }
       ]
@@ -148,9 +216,11 @@ export default function SiteHeader (): JSX.Element {
       <header
         className={[classes.header, headerOpen ? classes.open : ''].join(' ')}
       >
+
         <nav className={classes.nav}>
           {navIcons.map((linkData, idx) => (
-            <div className={classes['menu-item']} key={idx}>
+            // Explicit '=true' because 'nullable boolean'
+            <div className={`${classes['menu-item']} ${linkData.mobileOnly === true ? classes['nav-link-mobile-only'] : ''} ${linkData.desktopOnly === true ? classes['nav-link-desktop-only'] : ''}`} key={idx}>
               {/* Core menu */}
               <MenuItem
                 name={linkData.name}
@@ -160,28 +230,33 @@ export default function SiteHeader (): JSX.Element {
                 delay={idx}
               />
               {/* Sub menu */}
-              <div className={classes['menu-sub']}>
-                {linkData.children.map((childLinkData, idx2) => (
-                  <div className={classes['menu-sub-item']} key={idx2}>
-                    <MenuItem
-                      name={childLinkData.name}
-                      icon={childLinkData.icon}
-                      iconActive={childLinkData.iconActive}
-                      path={childLinkData.path}
-                      delay={idx2}
-                    />
+              {
+                linkData.children.length > 0 && (
+                  <div className={classes['menu-sub']}>
+                    {linkData.children.map((childLinkData, idx2) => (
+                      <div className={classes['menu-sub-item']} key={idx2}>
+                        <MenuItem
+                          name={childLinkData.name}
+                          icon={childLinkData.icon}
+                          iconActive={childLinkData.iconActive}
+                          path={childLinkData.path}
+                          delay={idx2}
+                        />
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                )
+              }
             </div>
           ))}
         </nav>
+
       </header>
       <button
-        className={classes['open-header']}
+        className={`${classes['open-header']} ${headerOpen ? classes['open-header-close'] : ''}`}
         onClick={() => setHeaderOpen(!headerOpen)}
       >
-        close
+        <img src={!headerOpen ? Bars : Cross} />
       </button>
     </>
   )
