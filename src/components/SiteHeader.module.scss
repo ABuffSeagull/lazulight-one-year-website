@@ -1,32 +1,62 @@
 .open-header {
   display: none;
   position: fixed;
-  top: 0;
-  right: 0;
+  top: 1rem;
+  right: 1rem;
   z-index: 100;
+  background: #faf9f6;
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 10rem;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 19px 0 rgb(123 113 130 / 8%);
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &-close {
+    box-shadow: none;
+
+    img {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+  }
 }
 
 .header {
   position: relative;
   z-index: 99;
   padding: 1rem 2rem;
-  background-color: rgb(216 216 216);
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
+  background-color: #faf9f6;
+
+  // border-bottom-left-radius: 1rem;
+  // border-bottom-right-radius: 1rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  box-shadow: 8px 11px 13px 0 rgb(0 0 0 / 5%);
 }
 
 .nav {
   display: flex;
   flex-wrap: wrap;
   margin: auto;
-  gap: 1rem;
+  gap: 2rem;
   align-items: center;
   justify-content: center;
 }
 
+.nav-box-filling {
+  width: 8rem;
+}
+
 @media screen and (max-width: 768px) {
   .open-header {
-    display: block;
+    display: flex;
   }
 
   .header {
@@ -55,8 +85,16 @@
 
   .nav {
     display: grid;
-    gap: 2rem;
+    gap: 1.5rem;
     grid-template-columns: 1fr 1fr 1fr;
+
+    & div:first-child {
+      grid-column: 2;
+    }
+
+    & div:nth-child(2) {
+      grid-column: 1;
+    }
   }
 }
 
@@ -64,18 +102,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgb(255 255 255);
+  background: transparent;
   border-radius: 999px;
   position: relative;
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
+  transition: all 0.2s ease;
 }
 
 .icon {
   display: block;
   position: absolute;
-  width: 4rem;
-  height: 4rem;
+  width: 3.25rem;
+  height: 3.25rem;
   transition: opacity 0ms linear;
 }
 
@@ -99,6 +138,30 @@
   &:hover .active-icon {
     opacity: 1;
   }
+
+  &:hover span {
+    color: #c9a36b;
+  }
+
+  &:hover .icon-wrapper {
+    background: rgb(255 255 255);
+  }
+
+  &-mobile-only {
+    display: none;
+
+    @media (max-width: 768px) {
+      display: flex;
+    }
+  }
+
+  &-desktop-only {
+    display: flex;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
 }
 
 @keyframes fade-up {
@@ -120,17 +183,22 @@
 
   &-sub {
     display: none;
+    width: 10rem;
   }
 
   &-item:hover &-sub {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     position: absolute;
-    z-index: 99;
+    transform: translateX(-3rem) translateY(4rem);
+    z-index: 101;
 
     // padding: 1rem 2rem;
-    background-color: rgb(216 216 216);
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+    background-color: #faf9f6;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+    box-shadow: 0 0 19px 0 rgb(123 113 130 / 8%);
 
     @media (max-width: 768px) {
       display: none;
