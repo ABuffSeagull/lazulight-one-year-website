@@ -21,13 +21,20 @@ import submissionsIconActive from '../assets/Menu/Menu-EliraTiara-Active.webp'
 import VNIconDefault from '../assets/Menu/Menu-FinanaCrown-Default.webp'
 import VNIconActive from '../assets/Menu/Menu-FinanaCrown-Active.webp'
 
+import Bars from "../assets/Menu/Bars.svg"
+import Cross from "../assets/Menu/Cross.svg"
+
 interface LinkData {
   name: string
   icon: string
   iconActive: string
   path: string
   delay: number
+  mobileOnly?: boolean
+  desktopOnly?: boolean
 }
+
+
 
 export default function SiteHeader (): JSX.Element {
   const navIcons = [
@@ -36,53 +43,105 @@ export default function SiteHeader (): JSX.Element {
       icon: projectsIconDefault,
       iconActive: projectsIconActive,
       path: '/',
-      children: []
+      children: [],
     },
     {
       name: 'Pomu',
       icon: pomuIconDefault,
       iconActive: pomuIconActive,
       path: '/pomu',
-      children: []
+      children: [],
     },
     {
       name: 'Elira',
       icon: eliraIconDefault,
       iconActive: eliraIconActive,
       path: '/elira',
-      children: []
+      children: [],
     },
     {
       name: 'Finana',
       icon: finanaIconDefault,
       iconActive: finanaIconActive,
       path: '/finana',
-      children: []
+      children: [],
+    },
+    {
+      name: 'FNF',
+      icon: submissionsIconDefault,
+      iconActive: submissionsIconActive,
+      path: '/project-fnf',
+      children: [],
+      mobileOnly: true
+    },
+    {
+      name: 'DCL',
+      icon: submissionsIconDefault,
+      iconActive: submissionsIconActive,
+      path: '/project-dcl',
+      children: [],
+      mobileOnly: true
+    },
+    {
+      name: 'VN',
+      icon: submissionsIconDefault,
+      iconActive: submissionsIconActive,
+      path: '/project-vn',
+      children: [],
+      mobileOnly: true
+    },
+    {
+      name: 'Messages',
+      icon: submissionsIconDefault,
+      iconActive: submissionsIconActive,
+      path: '/all-messages',
+      children: [],
+      mobileOnly: true
+    },
+    {
+      name: 'Art',
+      icon: submissionsIconDefault,
+      iconActive: submissionsIconActive,
+      path: '/all-art',
+      children: [],
+      mobileOnly: true
+    },
+    {
+      name: 'About',
+      icon: submissionsIconDefault,
+      iconActive: submissionsIconActive,
+      path: '/about',
+      children: [],
+      mobileOnly: true
     },
     {
       name: 'Projects',
       icon: submissionsIconDefault,
       iconActive: submissionsIconActive,
       path: '/',
+      desktopOnly: true,
       children:
       [
         {
           name: 'DCL',
           icon: submissionsIconDefault,
           iconActive: submissionsIconActive,
-          path: '/project-dcl'
+          path: '/project-dcl',
+  
         },
         {
           name: 'VN',
           icon: submissionsIconDefault,
           iconActive: submissionsIconActive,
-          path: '/project-vn'
+          path: '/project-vn',
+  
         },
         {
           name: 'FNF',
           icon: submissionsIconDefault,
           iconActive: submissionsIconActive,
-          path: '/project-fnf'
+          path: '/project-fnf',
+  
         }
       ]
     },
@@ -91,25 +150,26 @@ export default function SiteHeader (): JSX.Element {
       icon: VNIconDefault,
       iconActive: VNIconActive,
       path: '/finana',
+      desktopOnly: true,
       children:
       [
         {
           name: 'All Messages',
           icon: submissionsIconDefault,
           iconActive: submissionsIconActive,
-          path: '/all-messages'
+          path: '/all-messages',
         },
         {
           name: 'All Art',
           icon: submissionsIconDefault,
           iconActive: submissionsIconActive,
-          path: '/all-art'
+          path: '/all-art',
         },
         {
           name: 'About',
           icon: submissionsIconDefault,
           iconActive: submissionsIconActive,
-          path: '/about'
+          path: '/about',
         }
       ]
     }
@@ -148,9 +208,10 @@ export default function SiteHeader (): JSX.Element {
       <header
         className={[classes.header, headerOpen ? classes.open : ''].join(' ')}
       >
+        
         <nav className={classes.nav}>
           {navIcons.map((linkData, idx) => (
-            <div className={classes['menu-item']} key={idx}>
+            <div className={`${classes['menu-item']} ${linkData.mobileOnly && classes[`nav-link-mobile-only`]} ${linkData.desktopOnly && classes[`nav-link-desktop-only`]}`} key={idx}>
               {/* Core menu */}
               <MenuItem
                 name={linkData.name}
@@ -160,28 +221,33 @@ export default function SiteHeader (): JSX.Element {
                 delay={idx}
               />
               {/* Sub menu */}
-              <div className={classes['menu-sub']}>
-                {linkData.children.map((childLinkData, idx2) => (
-                  <div className={classes['menu-sub-item']} key={idx2}>
-                    <MenuItem
-                      name={childLinkData.name}
-                      icon={childLinkData.icon}
-                      iconActive={childLinkData.iconActive}
-                      path={childLinkData.path}
-                      delay={idx2}
-                    />
+              {
+                linkData.children.length > 0 && (
+                  <div className={classes['menu-sub']}>
+                    {linkData.children.map((childLinkData, idx2) => (
+                      <div className={classes['menu-sub-item']} key={idx2}>
+                        <MenuItem
+                          name={childLinkData.name}
+                          icon={childLinkData.icon}
+                          iconActive={childLinkData.iconActive}
+                          path={childLinkData.path}
+                          delay={idx2}
+                        />
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                )
+              }
             </div>
           ))}
         </nav>
+       
       </header>
       <button
-        className={classes['open-header']}
+        className={`${classes['open-header']} ${headerOpen && classes['open-header-close']}`}
         onClick={() => setHeaderOpen(!headerOpen)}
       >
-        close
+        <img src={!headerOpen ? Bars : Cross}></img>
       </button>
     </>
   )
