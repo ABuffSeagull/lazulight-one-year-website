@@ -1,5 +1,66 @@
 @use "../variables" as *;
 
+.slideshow {
+  &-container {
+    $fade-left: 5%;
+    $fade-right: 100% - $fade-left;
+
+    padding-bottom: 2rem;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black $fade-left,
+      black $fade-right,
+      transparent
+    );
+
+    div {
+      display: flex;
+      margin: auto;
+    }
+  }
+
+  &-slide {
+    margin: auto;
+    width: 90%;
+    border: 3px solid $lazulight-primary-color;
+    object-fit: contain;
+    cursor: pointer;
+  }
+}
+
+.project-heading {
+  font-size: clamp(1rem, 5vw, 5rem);
+  text-align: center;
+  width: 75%;
+  margin: auto;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+  border-image: linear-gradient(
+      to right,
+      rgb(0 0 0 / 0%),
+      currentcolor 20%,
+      currentcolor 80%,
+      rgb(0 0 0 / 0%)
+    )
+    1;
+  border-style: solid;
+  background: linear-gradient(
+    to right,
+    rgb(0 0 0 / 0%),
+    $background-grey 20%,
+    $background-grey 80%,
+    rgb(0 0 0 / 0%)
+  );
+}
+
+.project-heading-image {
+  width: 100%;
+  margin: auto;
+}
+
 .credits {
   // Grid control based off
   // https://css-irl.info/controlling-leftover-grid-items/
@@ -10,13 +71,16 @@
       text-align: center;
     }
 
+    h4 {
+      font-size: clamp(1rem, 2.3vw, 1.5rem);
+      text-align: center;
+    }
+
     ul {
       // Remove bullets
       list-style-type: none;
       display: grid;
       grid-template-columns: repeat(12, 1fr);
-
-      // grid-auto-rows:
       gap: 1rem;
       flex: 1 1 auto;
       padding: 1rem;
@@ -29,15 +93,6 @@
     }
 
     ul li {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      font-size: clamp(1rem, 2.3vw, 1.5rem);
-      color: $background-grey;
-      background: $lazulight-primary-color;
-      border-radius: 0.5rem;
-      padding: 1rem;
       grid-column: span 4;
 
       // Dealing with 2 orphan items
@@ -100,5 +155,22 @@
         }
       }
     }
+
+    ul li p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: clamp(1rem, 2.3vw, 1.25rem);
+      color: $background-grey;
+      background: $lazulight-primary-color;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      height: 100%;
+    }
+
+    // ul li h4 {
+    // Attempt to put h4 inside li to compress the VN credits, but difficult to get working nice
+    // }
   }
 }
