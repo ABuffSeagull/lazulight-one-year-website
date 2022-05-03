@@ -4,7 +4,6 @@ import FinanaImage from '../assets/Portraits/Finana-Portrait_cf50.webp?format=pn
 import FinanaFrame from '../assets/Corners/Finana-LiverCorner.webp'
 import corner from '../assets/Corners/Finana-MsgCorner.webp'
 import Ryuguard from '../assets/Animations/Finana-AnimationA_500px.webm'
-import ArtBoard from '../assets/ArtBoards/Finana-ArtBoard.webp'
 
 function Finana (): JSX.Element {
   const name = 'Finana Ryugu'
@@ -21,7 +20,6 @@ function Finana (): JSX.Element {
         name={name}
         artBoardHeading='Community Ryuguard Collage'
         artBoardText='Love from Fincord'
-        artBoard={ArtBoard}
         frame={FinanaFrame}
         animation={Ryuguard}
         corner={corner}

@@ -4,7 +4,6 @@ import PomuImage from '../assets/Portraits/Pomu-Portrait_cf50.webp?format=png;av
 import PomuFrame from '../assets/Corners/Pomu-LiverCorner.webp'
 import corner from '../assets/Corners/Pomu-MsgCorner.webp'
 import Pomudachi from '../assets/Animations/Pomu-Animation_500px.webm'
-import ArtBoard from '../assets/ArtBoards/Pomu-ArtBoard.webp'
 
 function Pomu (): JSX.Element {
   const info = [
@@ -20,7 +19,6 @@ function Pomu (): JSX.Element {
         name='Pomu Rainpuff'
         artBoardHeading='Community Pomudachi Collage'
         artBoardText='Love from Pomucord'
-        artBoard={ArtBoard}
         corner={corner}
         frame={PomuFrame}
         animation={Pomudachi}

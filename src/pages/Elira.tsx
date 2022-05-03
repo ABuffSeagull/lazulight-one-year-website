@@ -3,7 +3,6 @@ import EliraImage from '../assets/Portraits/Elira-Portrait_cf50.webp?format=png;
 import EliraFrame from '../assets/Corners/Elira-LiverCorner.webp'
 import corner from '../assets/Corners/Elira-MsgCorner.webp'
 import Weewa from '../assets/Animations/Elira-Animation_500px.webm'
-import ArtBoard from '../assets/ArtBoards/Elira-ArtBoard.webp'
 
 export default function Elira (): JSX.Element {
   const name = 'Elira Pendora'
@@ -27,7 +26,6 @@ export default function Elira (): JSX.Element {
         name={name}
         artBoardHeading='Community Weewa Collage'
         artBoardText='Love from Eilcord'
-        artBoard={ArtBoard}
         frame={EliraFrame}
         corner={corner}
         animation={Weewa}
