@@ -61,10 +61,15 @@ export default function ArtBoardLayout (props: Props): JSX.Element {
     const Messages: MascotArtist[] = []
     messageListRaw.forEach((msg: MessageRaw): void => {
       if (
-        props.artBoard === ArtBoardEnum.lazulight ||
         (props.artBoard === ArtBoardEnum.elira && Boolean(msg.weewa)) ||
         (props.artBoard === ArtBoardEnum.pomu && Boolean(msg.pomudachi)) ||
-        (props.artBoard === ArtBoardEnum.finana && Boolean(msg.ryguard))
+        (props.artBoard === ArtBoardEnum.finana && Boolean(msg.ryguard)) ||
+        (props.artBoard === ArtBoardEnum.lazulight && (
+          Boolean(msg.weewa) ||
+          Boolean(msg.pomudachi) ||
+          Boolean(msg.ryguard)
+        )
+        )
       ) {
         Messages.push({
           name: msg.name,
@@ -113,7 +118,8 @@ export default function ArtBoardLayout (props: Props): JSX.Element {
         <h3>{props.heading}</h3>
         <p>{props.message}</p>
         <Image className='artboard-image' src={pageOptions.artBoard} />
-        <ul>
+        <ul className='artboard-credits'>
+          <li>Credits:</li>
           {renderMascotArtistCredits().map((artist, idx) => (
             <li key={idx}>{
             artist.soical_url === '' ? artist.name : (<a href={artist.soical_url}>{artist.name}</a>)
