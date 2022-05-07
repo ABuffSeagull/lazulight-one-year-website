@@ -115,7 +115,7 @@ export default function ArtBoardLayout (props: Props): JSX.Element {
     <div className='talent-text-container'>
       <Image className='talent-corner' src={pageOptions.corner} />
       <div className={`talent-text-inner ${pageOptions.borderStyle}-border`}>
-        <h3>{props.heading}</h3>
+        <h3 className='text-xl'>{props.heading}</h3>
         <p>{props.message}</p>
         <Image className='artboard-image' src={pageOptions.artBoard} />
         <ul className='artboard-credits'>
