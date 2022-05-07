@@ -18,7 +18,7 @@ import 'slick-carousel/slick/slick-theme.css'
 import Slider from 'react-slick'
 
 // Slide show slides
-import VisualNovelLogo from '../assets/VN/lazulight_vn_logo_crop_cf50.webp'
+import VisualNovelLogo from '../assets/VN/lazulight_vn_logo_cf50.webp'
 import Slide2 from '../assets/VN/bg_river_day_720p.jpg' // TODO: This is a placeholder for testing
 
 interface Props {
