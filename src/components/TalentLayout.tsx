@@ -36,7 +36,6 @@ function TalentLayout (props: Props): JSX.Element {
 
   return (
     <div className='talent-layout-container'>
-
       <div className='talent-profile-container'>
         <div className='talent-picture-box'>
           <Image src={props.portrait} />
@@ -49,9 +48,9 @@ function TalentLayout (props: Props): JSX.Element {
             <Image className='talent-corner' src={props.frame} />
             <div className={`talent-text-inner ${firstNameLower}-border`}>
               <h2>{props.name}</h2>
-              {props.info.map((paragraph, idx) =>
+              {props.info.map((paragraph, idx) => (
                 <p key={idx}>{paragraph}&nbsp;</p>
-              )}
+              ))}
               <div className='talent-links-container'>
                 <a href={props.youtube}>{firstName}'s Youtube</a>
                 <a href={props.twitter}>{firstName}'s Twitter</a>
@@ -64,7 +63,9 @@ function TalentLayout (props: Props): JSX.Element {
             <MascotAnimation id={vid0} delay={0} src={props.animation} />
             <MascotAnimation id={vid1} delay={50} src={props.animation} />
             <MascotAnimation id={vid2} delay={100} src={props.animation} />
-            <div className='hide-on-tablet'><MascotAnimation id={vid3} delay={150} src={props.animation} /></div>
+            <div className='hide-on-tablet'>
+              <MascotAnimation id={vid3} delay={150} src={props.animation} />
+            </div>
           </div>
         </div>
       </div>
@@ -73,7 +74,7 @@ function TalentLayout (props: Props): JSX.Element {
       <div className='talent-text-container'>
         <Image className='talent-corner' src={props.corner} />
         <div className={`talent-text-inner ${firstNameLower}-border`}>
-          <h3>{props.artBoardHeading}</h3>
+          <h3 className='text-xl'>{props.artBoardHeading}</h3>
           <p>{props.artBoardText}</p>
           <Image className='artboard-image' src={props.artBoard} />
         </div>

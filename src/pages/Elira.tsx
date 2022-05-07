@@ -10,10 +10,8 @@ export default function Elira (): JSX.Element {
   const info = [
     'Placeholder info for Elira!',
     'test paragraph',
-    '',
-    'hey elira i\'m begging you i\'m on my knees here pleading please play minecraft with me tonight i am seriously begging here I am going to pass away please help minecraft is the only cure please elira',
-    '',
-    'hey elira i\'m begging you i\'m on my knees here pleading please play minecraft with me tonight i am seriously begging here I am going to pass away please help minecraft is the only cure please elira'
+    "hey elira i'm begging you i'm on my knees here pleading please play minecraft with me tonight i am seriously begging here I am going to pass away please help minecraft is the only cure please elira",
+    "hey elira i'm begging you i'm on my knees here pleading please play minecraft with me tonight i am seriously begging here I am going to pass away please help minecraft is the only cure please elira"
   ]
   const youtubeLink =
     'https://www.youtube.com/channel/UCIeSUTOTkF9Hs7q3SGcO-Ow'
@@ -22,7 +20,6 @@ export default function Elira (): JSX.Element {
 
   return (
     <div>
-
       <TalentLayout
         name={name}
         artBoardHeading='Community Weewa Collage'
@@ -37,7 +34,6 @@ export default function Elira (): JSX.Element {
         twitter={twitterLink}
         discord={fanDiscordLink}
       />
-
     </div>
   )
 }

@@ -173,7 +173,7 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
               <div
                 className={`fan-submissions-message ${message.border}-border`}
               >
-                <h4>
+                <h4 className='text-lg'>
                   {message.soical_url === ''
                     ? (
                         message.name
