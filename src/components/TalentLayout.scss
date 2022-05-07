@@ -174,7 +174,7 @@ $talent-corner-padding-top: 33px;
     flex-direction: column;
     gap: 2rem;
 
-    button {
+    &-button {
       position: absolute;
       z-index: 10;
       bottom: 0;

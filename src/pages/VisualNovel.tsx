@@ -87,7 +87,7 @@ export default function VisualNovel (props: Props): JSX.Element {
 
       {/* Heading */}
       {/* <h1 className='project-heading'>LAZULIGHT:<br />By your Side</h1> */}
-      <Image src={VisualNovelLogo} className='project-heading-image' />
+      <Image src={VisualNovelLogo} className='project-heading-image' enableZoom />
 
       {/* Slide Show */}
       <div className='talent-text-container'>
@@ -121,7 +121,7 @@ export default function VisualNovel (props: Props): JSX.Element {
       {characters.map((character: Character, idx: number) => (
         <div className='talent-profile-container' key={idx}>
           <div className='talent-picture-box'>
-            <Image src={character.portrait} />
+            <Image src={character.portrait} enableZoom />
           </div>
           <div className='talent-info-container'>
             <div className='talent-text-container'>

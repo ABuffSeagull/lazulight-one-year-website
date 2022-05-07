@@ -38,7 +38,7 @@ function TalentLayout (props: Props): JSX.Element {
     <div className='talent-layout-container'>
       <div className='talent-profile-container'>
         <div className='talent-picture-box'>
-          <Image src={props.portrait} />
+          <Image src={props.portrait} enableZoom />
           {/* (Brandon): Number of images is hardcoded into 'talent-picture-box' */}
           <MascotAnimation id={vid0v} delay={0} src={props.animation} />
           <MascotAnimation id={vid1v} delay={100} src={props.animation} />
