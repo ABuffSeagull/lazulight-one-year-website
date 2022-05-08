@@ -8,7 +8,7 @@ function PomuCoin ({ color }: { color: 'gold' | 'silver' }): JSX.Element {
   // Heavy use of useRef to avoid Math.random() calls on every render
 
   const left = useRef(Math.random() * 100)
-  const delay = useRef(Math.random() * 7)
+  const delay = useRef(-1 * Math.random() * 7) // Negative delay starts animation mid cycle
   const rot = useRef(Math.random() * 360)
 
   const avgSpeed = 350 // average px / sec
