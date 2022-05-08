@@ -60,7 +60,16 @@
     background-color: #76c4f2; // Backup in case the image doesn't load
   }
 
-  // TODO: Add remaining pages
+  // TODO: These pages backgrounds
+  &-fnf {
+    background-image: linear-gradient(to bottom, #274454, #285455);
+    background-color: #274454; // Backup in case the image doesn't load
+  }
+
+  &-dcl {
+    background-image: linear-gradient(to bottom, #274454, #285455);
+    background-color: #274454; // Backup in case the image doesn't load
+  }
 }
 
 .page-bg-animation {
