@@ -1,7 +1,7 @@
 /* stylelint-disable keyframes-name-pattern */
 // See https://github.com/stylelint/stylelint/issues/5997
-@use "../variables" as *;
-@use "sass:math";
+@use '../variables' as *;
+@use 'sass:math';
 
 .container {
   height: 100%;
@@ -34,8 +34,8 @@
   &-finana {
     background-image: linear-gradient(to bottom, #4dbbbd60, #1c374aa0),
       // Semitransparent overlay
-      url("../assets/BG/Finana-BG-Left_cf50.webp"),
-      url("../assets/BG/Finana-BG-Right_cf50.webp"),
+      url('../assets/BG/Finana-BG-Left_cf50.webp'),
+      url('../assets/BG/Finana-BG-Right_cf50.webp'),
       linear-gradient(to bottom, #4dbbbd, #1c374a);
     background-color: #83e5e6; // Backup in case the image doesn't load
     background-size: 100%, 10%, 10%, 100%;
@@ -44,7 +44,7 @@
   }
 
   &-pomu {
-    background-image: url("../assets/BG/Pomu-BG_cf50.webp");
+    background-image: url('../assets/BG/Pomu-BG_cf50.webp');
     background-color: #258e70; // Backup in case the image doesn't load
     background-repeat: repeat-y;
     background-size: 100%;
@@ -151,45 +151,23 @@
   }
 
   &-pomu {
-    $pomucoin-count: 60; // Must be greater than/equal to the number of pomuCoins in the html
-    $pomucoin-width: 5%;
-    $pomucoin-duration-normal: 5;
-    $pomucoin-duration-tablet: 10;
-    $pomucoin-duration-mobile: 15;
-    @for $i from 1 through $pomucoin-count {
-      &-coin:nth-child(#{$i}) {
-        animation-name: pomucoin#{$i};
-        animation-duration: $pomucoin-duration-normal + s;
-        @media (max-width: $bp-tablet) {
-          animation-duration: $pomucoin-duration-tablet + s;
-        }
-        @media (max-width: $bp-mobile) {
-          animation-duration: $pomucoin-duration-mobile + s;
-        }
-
-        animation-delay: -1 * math.random() * $pomucoin-duration-normal + s;
-        @media (max-width: $bp-tablet) {
-          animation-delay: -1 * math.random() * $pomucoin-duration-tablet + s;
-        }
-        @media (max-width: $bp-mobile) {
-          animation-delay: -1 * math.random() * $pomucoin-duration-mobile + s;
-        }
-
-        animation-direction: normal;
-        opacity: 0.2;
-        width: $pomucoin-width;
-        left: $pomucoin-width + math.random(100 - 2 * $pomucoin-width) * 1%;
-        transform: rotate(math.random(360) + deg);
+    @keyframes pomuCoinFall {
+      from {
+        top: -20%;
       }
-      @keyframes pomucoin#{$i} {
-        from {
-          top: -20%;
-        }
-
-        to {
-          top: 120%;
-        }
+      to {
+        top: 100%;
       }
+    }
+
+    &-coin {
+      height: 4rem;
+      opacity: 0.2;
+      top: -20%;
+      animation-name: pomuCoinFall;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
     }
   }
 
