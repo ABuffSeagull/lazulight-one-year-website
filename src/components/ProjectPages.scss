@@ -30,35 +30,20 @@
 }
 
 .project-heading {
-  font-size: clamp(1rem, 5vw, 5rem);
+  font-size: clamp(1rem, 5vw, 4.5rem);
   text-align: center;
-  width: 75%;
-  margin: auto;
-  margin-top: 2rem;
-  padding: 1rem 0;
-  border-top-width: 2px;
-  border-bottom-width: 2px;
-  border-image: linear-gradient(
-      to right,
-      rgb(0 0 0 / 0%),
-      currentcolor 20%,
-      currentcolor 80%,
-      rgb(0 0 0 / 0%)
-    )
-    1;
-  border-style: solid;
-  background: linear-gradient(
-    to right,
-    rgb(0 0 0 / 0%),
-    $background-grey 20%,
-    $background-grey 80%,
-    rgb(0 0 0 / 0%)
-  );
-}
-
-.project-heading-image {
   width: 100%;
   margin: auto;
+
+  &-image {
+    width: 100%;
+    margin: auto;
+  }
+
+  &-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+  }
 }
 
 .credits {
