@@ -1,17 +1,25 @@
-interface ImageToolProps{
+// Zoom elements to fullscreen on click
+// DOC: https://github.com/rpearce/image-zoom
+import Zoom from 'react-medium-image-zoom'
+import 'react-medium-image-zoom/dist/styles.css'
+
+interface ImageToolProps {
   src: metadata[] | string
   sizes?: string
   className?: string
+  style?: React.CSSProperties
   alt?: string
   width?: string
   height?: string
+  enableZoom?: boolean
 }
 
 const formats = ['avif', 'heic', 'heif', 'webp', 'jpg', 'jpeg', 'png']
+
 export default function Picture (props: ImageToolProps): JSX.Element {
   if (typeof props.src === 'string') {
-    // I have to explicitly pass src to make TypeScript happy
-    return <img {...props} src={props.src} />
+    const imgElement = <img {...props} src={props.src} />
+    return wrapInZoom(imgElement, props.enableZoom)
   }
 
   const { src: metadata, ...passthroughProps } = props
@@ -28,24 +36,52 @@ export default function Picture (props: ImageToolProps): JSX.Element {
   }
 
   const formatEntries = Object.entries(groupedFormats)
-  formatEntries.sort(([firstFormat], [secondFormat]) => formats.indexOf(firstFormat) - formats.indexOf(secondFormat))
+  formatEntries.sort(
+    ([firstFormat], [secondFormat]) =>
+      formats.indexOf(firstFormat) - formats.indexOf(secondFormat)
+  )
 
   const sources = []
   for (const [format, metaArray] of formatEntries.slice(0, -1)) {
-    sources.push(<source key={format} type={`image/${format}`} srcSet={makeSrcSet(metaArray)} />)
+    sources.push(
+      <source
+        key={format}
+        type={`image/${format}`}
+        srcSet={makeSrcSet(metaArray)}
+      />
+    )
   }
 
   // If only typescript was smart
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const [, fallbackMetadata] = formatEntries[formatEntries.length - 1]!
-  return (
+
+  const pictureElement = (
     <picture className={passthroughProps.className ?? ''}>
       {sources}
-      <img width={maxWidth} height={maxHeight} srcSet={makeSrcSet(fallbackMetadata)} {...passthroughProps} />
+      <img
+        width={maxWidth}
+        height={maxHeight}
+        srcSet={makeSrcSet(fallbackMetadata)}
+        {...passthroughProps}
+      />
     </picture>
   )
+  return wrapInZoom(pictureElement, props.enableZoom)
 }
 
 function makeSrcSet (metadata: metadata[]): string {
   return metadata.map(({ src, width }) => `${src} ${width}w`).join(',')
+}
+
+function wrapInZoom (content: JSX.Element, enableZoom: Boolean | undefined): JSX.Element {
+  return (
+    (enableZoom != null)
+      ? (
+        <Zoom overlayBgColorEnd='rgba(45, 45, 45, 0.8)' overlayBgColorStart='rgba(45, 45, 45, 0)' zoomMargin={50}>
+          {content}
+        </Zoom>
+        )
+      : (content)
+  )
 }

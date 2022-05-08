@@ -12,6 +12,14 @@ body {
   font-family: Nunito, sans-serif;
 }
 
+// Need this on images using 'react-medium-image-zoom'
+// But it's useful to just use it on all images
+img,
+picture {
+  max-width: 100%;
+  height: auto;
+}
+
 .text-xl {
   font-size: 2rem;
   line-height: 1.1;
@@ -32,6 +40,8 @@ p {
   line-height: 1.5;
 }
 
-p + p {
+p + p,
+p + h3,
+p + h4 {
   margin-top: 0.75em;
 }

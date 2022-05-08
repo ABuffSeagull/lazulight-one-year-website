@@ -13,13 +13,18 @@ import PomuFrame from '../assets/Corners/Pomu-LiverCorner.webp'
 import FinanaFrame from '../assets/Corners/Finana-LiverCorner.webp'
 
 // Slide show dependencies
+// Doc: https://react-slick.neostack.com/docs/api
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Slider from 'react-slick'
 
 // Slide show slides
-import VisualNovelLogo from '../assets/VN/lazulight_vn_logo_crop_cf50.webp'
+import VisualNovelLogo from '../assets/VN/lazulight_vn_logo_cf50.webp'
 import Slide2 from '../assets/VN/bg_river_day_720p.jpg' // TODO: This is a placeholder for testing
+
+// Countdown timer
+// Doc: https://github.com/ndresx/react-countdown
+import Countdown, { CountdownRenderProps } from 'react-countdown'
 
 interface Props {
   page: string
@@ -69,7 +74,6 @@ export default function VisualNovel (props: Props): JSX.Element {
     }
   ]
 
-  // See settings and examples at: https://react-slick.neostack.com/docs/api
   const slideShowSettings = {
     className: 'center',
     dots: true,
@@ -82,18 +86,27 @@ export default function VisualNovel (props: Props): JSX.Element {
     speed: 500
   }
 
+  const countdownRenderer = ({ days, hours, minutes, seconds, completed }: CountdownRenderProps): JSX.Element => {
+    if (completed) {
+      return <span>Now/Soon</span>
+    }
+    // Render countdown
+    return <span>{days} days, {hours}h, {minutes}min, {seconds}s</span>
+  }
+
   return (
     <div className='talent-layout-container'>
 
       {/* Heading */}
-      {/* <h1 className='project-heading'>LAZULIGHT:<br />By your Side</h1> */}
-      <Image src={VisualNovelLogo} className='project-heading-image' />
+      <div className='project-heading-container'>
+        <h1 className='project-heading-text'>LAZULIGHT: By your Side</h1>
+        <Image src={VisualNovelLogo} className='project-heading-image' enableZoom />
+      </div>
 
       {/* Slide Show */}
       <div className='talent-text-container'>
         <Image className='talent-corner' src={LazulightCorner} />
         <div className={`talent-text-inner ${props.page}-border`}>
-          <h2>A LazuLight Visual Novel</h2>
           <Slider {...slideShowSettings} className='slideshow-container'>
             <div>
               <Image src={VisualNovelLogo} className='slideshow-slide' />
@@ -110,20 +123,37 @@ export default function VisualNovel (props: Props): JSX.Element {
           </Slider>
 
           {/* Description & Download */}
-          <p>TODO. bufgweia nfgwaeung awergjn aerg aerg aerg saerg saerg aerg fweaf gaerg aerg aerg ae </p>
-          <p>TODO. bufgweia nfgwaeung awergjn aerg aerg aerg saerg saerg aerg rg aerg aerg aerg </p>
-          <p>TODO. bufgweia nfgwaeung awergjn aerg aerg aerg saerg saerg aerg </p>
-          <p>TODO. bufgweia nfgwaeung awergjn aerg aerg aerg saerg saerg aerg </p>
+          <div className='project-description-container'>
+            <h3>A LazuLight Visual Novel</h3>
+            <p>Like a star pulled from the skies, a bird torn of its wings, you were bound to the Earth that day. You once ruled the skies, feeling the air rush through your hair as you flew between the clouds, clothes fluttering in the wind as you raced higher and higher. However, that's all in the past now, ever since the accident. </p>
+            <p>Now, completely opposite to what you once felt, the world is monotonous, gray, and dead. You find no meaning in life, as if frozen in time, now that your freedom was taken away from you. </p>
+            <p>However, that would all come to change with three fated encounters. The appearance of an old acquaintance from the track team, a reserved class president that seems to be hiding something, and a kindred soul seeking solace in the silence.</p>
+            <p>Faced with these new people who suddenly appeared in your life, you have to make the choice. Do you wallow in your failure in this monochrome prison, or do you take their hand and repaint this world?</p>
+            <p>By their side, the hands of the clock start ticking once more.</p>
+
+            <h3>Permissions &amp; Notice</h3>
+            <p>We give permission to Elira, Pomu, and Finana to play this game on stream. We declare that the game does not contain any copyrighted material other than the property of ANYCOLOR Inc. We declare that this game does not contain material that violates the YouTube Community Guidelines.</p>
+            <p>This is a work of fiction. Any similarity to real businesses, locations, and events is purely coincidental. The characters portrayed in this story are not intended to represent the views and opinions of the actual talents, Nijisanji, or ANYCOLOR Inc.</p>
+            <p>This is a fan-made game intended for the enjoyment of other fans and the talents in celebration of Lazulight's one year anniversary. The creators are in no way related to ANYCOLOR Inc, Nijisanji, or the talents present in this game. </p>
+
+            <h3>Download</h3>
+            <h4>Full Game</h4>
+            <p>Available: June 18, 10pm JST (<Countdown date='2022-06-18T22:00:00+09:00' renderer={countdownRenderer} />)</p>
+            <h4>Demo</h4>
+            {/* <a href='/downloads/vn' download > */}
+            <button className='project-download-button lazulight-border'>Download Demo</button>
+            {/* </a> */}
+          </div>
         </div>
       </div>
 
       {/* Character Profiles */}
       {characters.map((character: Character, idx: number) => (
-        <div className='talent-profile-container' key={idx}>
-          <div className='talent-picture-box'>
-            <Image src={character.portrait} />
+        <div className='vn-profile-container' key={idx}>
+          <div className={`vn-picture-box vn-picture-box-${character.firstNameLower}`}>
+            <Image src={character.portrait} enableZoom />
           </div>
-          <div className='talent-info-container'>
+          <div className='vn-info-container'>
             <div className='talent-text-container'>
               <Image className='talent-corner' src={character.frame} />
               <div className={`talent-text-inner ${character.firstNameLower}-border`}>
@@ -382,14 +412,14 @@ function VisualNovelCredits (): JSX.Element {
       <h4>Feedback</h4>
       <ul>
         <li><p><a href='https://twitter.com/gonxale0'>Gonxaleo</a></p></li>
-        <li><p><a href='https://twitter.com/feetman_69'>Feetman69</a></p></li>
+        <li><p><a href='https://twitter.com/Feet_man69'>Feetman69</a></p></li>
         <li><p><a href='https://twitter.com/JF__ND'>JFND</a></p></li>
         <li><p><a href='https://twitter.com/kanasquared'>kana²</a></p></li>
         <li><p>All VN Team Members</p></li>
       </ul>
       <h4>Feet Quality Inspector</h4>
       <ul>
-        <li><p><a href='https://twitter.com/feetman_69'>Feetman69</a></p></li>
+        <li><p><a href='https://twitter.com/Feet_man69'>Feetman69</a></p></li>
       </ul>
 
       <h3>Special Thanks To</h3>
