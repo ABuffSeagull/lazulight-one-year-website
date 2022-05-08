@@ -2,11 +2,19 @@
 @use "sass:math";
 
 .slideshow {
-  &-container {
+  // (Brandon) This fixes the slide vertical alignment
+  &-container div {
+    display: flex;
+    margin: auto;
+  }
+
+  // (Brandon) Using " > div" to catch the element inside of the <Slider>
+  // This excludes the buttons & dots from the mask
+  // However, I imagine this may break in future versions of <Slider>
+  &-container > div {
     $fade-left: 5%;
     $fade-right: 100% - $fade-left;
 
-    padding-bottom: 2rem;
     mask-image: linear-gradient(
       to right,
       transparent,
@@ -14,11 +22,6 @@
       black $fade-right,
       transparent
     );
-
-    div {
-      display: flex;
-      margin: auto;
-    }
   }
 
   &-slide {
@@ -57,6 +60,8 @@
   }
 
   &-description-container {
+    padding-top: 3rem;
+
     h3 {
       font-size: 1.5rem;
     }
