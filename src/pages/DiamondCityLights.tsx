@@ -12,13 +12,31 @@ export default function DiamondCityLights (props: Props): JSX.Element {
   return (
     <div className='talent-layout-container'>
 
+      {/* Heading */}
+      <div className='project-heading-container'>
+        <h1 className='project-heading-text'>Diamond City Lights Cover</h1>
+      </div>
+
       <div className='talent-text-container'>
         <Image className='talent-corner' src={LazulightCorner} />
         <div className={`talent-text-inner ${props.page}-border`}>
-          {/* TODO: just hard code in the content here. No need to spend more time on anything fancy */}
-          <h2>Diamond City Lights</h2>
-          <h2>Fan Cover Song</h2>
-          <p>TODO</p>
+          <div className='video-container'>
+            <iframe
+              src='https://www.youtube.com/embed/ZnP0cKNPE04' // TODO: Replace
+              title='YouTube video player'
+              frameBorder='0'
+              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+              allowFullScreen
+            />
+          </div>
+          {/* Description */}
+          <div className='project-description-container'>
+            <h3>A Fan Cover Song</h3>
+            <p>TODO</p>
+
+            <h3>Permissions &amp; Notice</h3>
+            <p>TODO</p>
+          </div>
         </div>
       </div>
 
