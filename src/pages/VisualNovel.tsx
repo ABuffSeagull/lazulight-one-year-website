@@ -13,6 +13,7 @@ import PomuFrame from '../assets/Corners/Pomu-LiverCorner.webp'
 import FinanaFrame from '../assets/Corners/Finana-LiverCorner.webp'
 
 // Slide show dependencies
+// Doc: https://react-slick.neostack.com/docs/api
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Slider from 'react-slick'
@@ -20,6 +21,10 @@ import Slider from 'react-slick'
 // Slide show slides
 import VisualNovelLogo from '../assets/VN/lazulight_vn_logo_cf50.webp'
 import Slide2 from '../assets/VN/bg_river_day_720p.jpg' // TODO: This is a placeholder for testing
+
+// Countdown timer
+// Doc: https://github.com/ndresx/react-countdown
+import Countdown, { CountdownRenderProps } from 'react-countdown'
 
 interface Props {
   page: string
@@ -69,7 +74,6 @@ export default function VisualNovel (props: Props): JSX.Element {
     }
   ]
 
-  // See settings and examples at: https://react-slick.neostack.com/docs/api
   const slideShowSettings = {
     className: 'center',
     dots: true,
@@ -80,6 +84,14 @@ export default function VisualNovel (props: Props): JSX.Element {
     centerPadding: '10%',
     slidesToShow: 1,
     speed: 500
+  }
+
+  const countdownRenderer = ({ days, hours, minutes, seconds, completed }: CountdownRenderProps) => {
+    if (completed) {
+      return <span>Now/Soon</span>
+    }
+    // Render countdown
+    return <span>{days} days, {hours}h, {minutes}min, {seconds}s</span>
   }
 
   return (
@@ -112,10 +124,13 @@ export default function VisualNovel (props: Props): JSX.Element {
           </Slider>
 
           {/* Description & Download */}
-          <p>TODO. bufgweia nfgwaeung awergjn aerg aerg aerg saerg saerg aerg fweaf gaerg aerg aerg ae </p>
-          <p>TODO. bufgweia nfgwaeung awergjn aerg aerg aerg saerg saerg aerg rg aerg aerg aerg </p>
-          <p>TODO. bufgweia nfgwaeung awergjn aerg aerg aerg saerg saerg aerg </p>
-          <p>TODO. bufgweia nfgwaeung awergjn aerg aerg aerg saerg saerg aerg </p>
+          <p>Like a star pulled from the skies, a bird torn of its wings, you were bound to the Earth that day. You once ruled the skies, feeling the air rush through your hair as you flew between the clouds, clothes fluttering in the wind as you raced higher and higher. However, that's all in the past now, ever since the accident. </p>
+          <p>Now, completely opposite to what you once felt, the world is monotonous, gray, and dead. You find no meaning in life, as if frozen in time, now that your freedom was taken away from you. </p>
+          <p>However, that would all come to change with three fated encounters. The appearance of an old acquaintance from the track team, a reserved class president that seems to be hiding something, and a kindred soul seeking solace in the silence.</p>
+          <p>Faced with these new people who suddenly appeared in your life, you have to make the choice. Do you wallow in your failure in this monochrome prison, or do you take their hand and repaint this world?</p>
+          <p>By their side, the hands of the clock start ticking once more.</p>
+          <p><Countdown date='2022-06-18T22:00:00+09:00' renderer={countdownRenderer} /></p>
+          <button>Download Game</button>
         </div>
       </div>
 
