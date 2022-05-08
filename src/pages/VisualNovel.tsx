@@ -382,14 +382,14 @@ function VisualNovelCredits (): JSX.Element {
       <h4>Feedback</h4>
       <ul>
         <li><p><a href='https://twitter.com/gonxale0'>Gonxaleo</a></p></li>
-        <li><p><a href='https://twitter.com/feetman_69'>Feetman69</a></p></li>
+        <li><p><a href='https://twitter.com/Feet_man69'>Feetman69</a></p></li>
         <li><p><a href='https://twitter.com/JF__ND'>JFND</a></p></li>
         <li><p><a href='https://twitter.com/kanasquared'>kana²</a></p></li>
         <li><p>All VN Team Members</p></li>
       </ul>
       <h4>Feet Quality Inspector</h4>
       <ul>
-        <li><p><a href='https://twitter.com/feetman_69'>Feetman69</a></p></li>
+        <li><p><a href='https://twitter.com/Feet_man69'>Feetman69</a></p></li>
       </ul>
 
       <h3>Special Thanks To</h3>
