@@ -109,10 +109,6 @@ export function PageWrapper (props: Props): JSX.Element {
       {props.children}
 
       <SiteFooter page={props.page} />
-
-      {/* Scripts for background animation */}
-      {/* See source in: https://codepen.io/matthewyingtao/pen/mdqoZPg */}
-      {/* {props.page == 'finana' && (<script type="text/javascript" src='/src/components/BGAnimationFinana.js' />)} */}
     </div>
   )
 }
