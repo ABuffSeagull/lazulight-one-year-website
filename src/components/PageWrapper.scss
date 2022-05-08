@@ -151,45 +151,24 @@
   }
 
   &-pomu {
-    $pomucoin-count: 60; // Must be greater than/equal to the number of pomuCoins in the html
-    $pomucoin-width: 5%;
-    $pomucoin-duration-normal: 5;
-    $pomucoin-duration-tablet: 10;
-    $pomucoin-duration-mobile: 15;
-    @for $i from 1 through $pomucoin-count {
-      &-coin:nth-child(#{$i}) {
-        animation-name: pomucoin#{$i};
-        animation-duration: $pomucoin-duration-normal + s;
-        @media (max-width: $bp-tablet) {
-          animation-duration: $pomucoin-duration-tablet + s;
-        }
-        @media (max-width: $bp-mobile) {
-          animation-duration: $pomucoin-duration-mobile + s;
-        }
-
-        animation-delay: -1 * math.random() * $pomucoin-duration-normal + s;
-        @media (max-width: $bp-tablet) {
-          animation-delay: -1 * math.random() * $pomucoin-duration-tablet + s;
-        }
-        @media (max-width: $bp-mobile) {
-          animation-delay: -1 * math.random() * $pomucoin-duration-mobile + s;
-        }
-
-        animation-direction: normal;
-        opacity: 0.2;
-        width: $pomucoin-width;
-        left: $pomucoin-width + math.random(100 - 2 * $pomucoin-width) * 1%;
-        transform: rotate(math.random(360) + deg);
+    @keyframes pomuCoinFall {
+      from {
+        top: -20%;
       }
-      @keyframes pomucoin#{$i} {
-        from {
-          top: -20%;
-        }
 
-        to {
-          top: 120%;
-        }
+      to {
+        top: 100%;
       }
+    }
+
+    &-coin {
+      height: 4rem;
+      opacity: 0.2;
+      top: -20%;
+      animation-name: pomuCoinFall;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
     }
   }
 
@@ -198,11 +177,6 @@
     $finanafish-height: 5%;
     $finanafish-duration-min: 5;
     $finanafish-duration-extra: 10;
-    $finanabubble-count: 60; // Must be greater than/equal to the number of finanabubbles in the html
-    $finanabubble-width: 5%;
-    $finanabubble-duration-normal: 5;
-    $finanabubble-duration-tablet: 10;
-    $finanabubble-duration-mobile: 15;
     @for $i from 1 through $finanafish-count {
       &-fish:nth-child(#{$i}) {
         animation-name: finanafish#{$i};
@@ -225,43 +199,25 @@
           right: 150%;
         }
       }
-    }
-    @for $i from 1 through $finanabubble-count {
-      &-bubble:nth-child(#{$i}) {
-        animation-name: finanabubble#{$i};
-        animation-duration: $finanabubble-duration-normal + s;
-        @media (max-width: $bp-tablet) {
-          animation-duration: $finanabubble-duration-tablet + s;
-        }
-        @media (max-width: $bp-mobile) {
-          animation-duration: $finanabubble-duration-mobile + s;
-        }
 
-        animation-delay: -1 * math.random() * $finanabubble-duration-normal + s;
-        @media (max-width: $bp-tablet) {
-          animation-delay: -1 * math.random() * $finanabubble-duration-tablet +
-            s;
-        }
-        @media (max-width: $bp-mobile) {
-          animation-delay: -1 * math.random() * $finanabubble-duration-mobile +
-            s;
-        }
-
-        animation-direction: normal;
-        opacity: 0.6;
-        width: $finanabubble-width;
-        left: $finanabubble-width +
-          math.random(100 - 2 * $finanabubble-width) *
-          1%;
-      }
-      @keyframes finanabubble#{$i} {
+      @keyframes bubbleRise {
         from {
           bottom: -20%;
         }
 
         to {
-          bottom: 120%;
+          bottom: 100%;
         }
+      }
+
+      &-bubble {
+        height: 4rem;
+        opacity: 0.6;
+        bottom: -20%;
+        animation-name: bubbleRise;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
       }
     }
   }

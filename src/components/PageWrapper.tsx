@@ -8,10 +8,8 @@ import EliraCloud2 from '../assets/BG/Elira-BG-Cloud2.webp'
 import EliraCloud3 from '../assets/BG/Elira-BG-Cloud3.webp'
 import EliraCloud4 from '../assets/BG/Elira-BG-Cloud4.webp'
 import EliraStar1 from '../assets/BG/Elira-BG-Star1.webp'
-import PomuCoinGold from '../assets/BG/Pomu-BG-PomuCoinGold.svg'
-import PomuCoinSilver from '../assets/BG/Pomu-BG-PomuCoinSilver.svg'
-import FinanaBubble1 from '../assets/BG/Finana-BG-Bubbles1.svg'
-import FinanaFish from '../assets/BG/Finana-BG-Fish.svg'
+import PomuBgAnimation from './PomuBgAnimation'
+import FinanaBgAnimation from './FinanaBgAnimation'
 
 interface Props {
   children: React.ReactNode
@@ -22,9 +20,6 @@ export function PageWrapper (props: Props): JSX.Element {
   // (Brandon) These constants must match values in class 'page-bg-animation-${props.page}-element'
   const eliraCloudCount: number = 4 * 4 // Should be multiple of 4
   const eliraStarCount: number = 60
-  const pomuCoinCount: number = 2 * 30 // Should be multiple of 2
-  const finanaBubbleCount: number = 30
-  const finanaFishCount: number = 30
   const vnCloudCount: number = 8 * 4 // Should be multiple of 4
 
   const [AnimationOn, toggleAnimationState] = React.useState(true)
@@ -42,22 +37,7 @@ export function PageWrapper (props: Props): JSX.Element {
             : `page-bg-animation-${props.page}-container-off`
         }`}
       >
-        {props.page === 'pomu' && (
-          <div>
-            {Array.from({ length: pomuCoinCount / 2 }, (i: number) => (
-              <Image
-                className='page-bg-animation-pomu-coin'
-                src={PomuCoinGold}
-              />
-            ))}
-            {Array.from({ length: pomuCoinCount / 2 }, (i: number) => (
-              <Image
-                className='page-bg-animation-pomu-coin'
-                src={PomuCoinSilver}
-              />
-            ))}
-          </div>
-        )}
+        {props.page === 'pomu' && <PomuBgAnimation />}
         {props.page === 'elira' && (
           <div>
             {/* Separate div's because of the nth-child selector */}
@@ -97,52 +77,20 @@ export function PageWrapper (props: Props): JSX.Element {
             </div>
           </div>
         )}
-        {props.page === 'finana' && (
-          <div>
-            {/* Separate div's because of the nth-child selector */}
-            <div>
-              {Array.from({ length: finanaBubbleCount }, (i: number) => (
-                <Image
-                  className='page-bg-animation-finana-bubble'
-                  src={FinanaBubble1}
-                />
-              ))}
-            </div>
-            <div>
-              {Array.from({ length: finanaFishCount }, (i: number) => (
-                <Image
-                  className='page-bg-animation-finana-fish'
-                  src={FinanaFish}
-                />
-              ))}
-            </div>
-          </div>
-        )}
+        {props.page === 'finana' && <FinanaBgAnimation />}
         {props.page === 'vn' && (
           <div>
             {Array.from({ length: vnCloudCount / 4 }, (i: number) => (
-              <Image
-                className='page-bg-animation-vn-cloud'
-                src={EliraCloud1}
-              />
+              <Image className='page-bg-animation-vn-cloud' src={EliraCloud1} />
             ))}
             {Array.from({ length: vnCloudCount / 4 }, (i: number) => (
-              <Image
-                className='page-bg-animation-vn-cloud'
-                src={EliraCloud2}
-              />
+              <Image className='page-bg-animation-vn-cloud' src={EliraCloud2} />
             ))}
             {Array.from({ length: vnCloudCount / 4 }, (i: number) => (
-              <Image
-                className='page-bg-animation-vn-cloud'
-                src={EliraCloud3}
-              />
+              <Image className='page-bg-animation-vn-cloud' src={EliraCloud3} />
             ))}
             {Array.from({ length: vnCloudCount / 4 }, (i: number) => (
-              <Image
-                className='page-bg-animation-vn-cloud'
-                src={EliraCloud4}
-              />
+              <Image className='page-bg-animation-vn-cloud' src={EliraCloud4} />
             ))}
           </div>
         )}
@@ -161,10 +109,6 @@ export function PageWrapper (props: Props): JSX.Element {
       {props.children}
 
       <SiteFooter page={props.page} />
-
-      {/* Scripts for background animation */}
-      {/* See source in: https://codepen.io/matthewyingtao/pen/mdqoZPg */}
-      {/* {props.page == 'finana' && (<script type="text/javascript" src='/src/components/BGAnimationFinana.js' />)} */}
     </div>
   )
 }

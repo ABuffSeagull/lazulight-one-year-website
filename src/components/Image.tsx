@@ -3,10 +3,11 @@
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 
-interface ImageToolProps{
+interface ImageToolProps {
   src: metadata[] | string
   sizes?: string
   className?: string
+  style?: React.CSSProperties
   alt?: string
   width?: string
   height?: string
@@ -35,11 +36,20 @@ export default function Picture (props: ImageToolProps): JSX.Element {
   }
 
   const formatEntries = Object.entries(groupedFormats)
-  formatEntries.sort(([firstFormat], [secondFormat]) => formats.indexOf(firstFormat) - formats.indexOf(secondFormat))
+  formatEntries.sort(
+    ([firstFormat], [secondFormat]) =>
+      formats.indexOf(firstFormat) - formats.indexOf(secondFormat)
+  )
 
   const sources = []
   for (const [format, metaArray] of formatEntries.slice(0, -1)) {
-    sources.push(<source key={format} type={`image/${format}`} srcSet={makeSrcSet(metaArray)} />)
+    sources.push(
+      <source
+        key={format}
+        type={`image/${format}`}
+        srcSet={makeSrcSet(metaArray)}
+      />
+    )
   }
 
   // If only typescript was smart
@@ -49,7 +59,12 @@ export default function Picture (props: ImageToolProps): JSX.Element {
   const pictureElement = (
     <picture className={passthroughProps.className ?? ''}>
       {sources}
-      <img width={maxWidth} height={maxHeight} srcSet={makeSrcSet(fallbackMetadata)} {...passthroughProps} />
+      <img
+        width={maxWidth}
+        height={maxHeight}
+        srcSet={makeSrcSet(fallbackMetadata)}
+        {...passthroughProps}
+      />
     </picture>
   )
   return wrapInZoom(pictureElement, props.enableZoom)
