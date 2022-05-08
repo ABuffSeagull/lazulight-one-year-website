@@ -188,6 +188,7 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
                     className='fan-submissions-fanarti'
                     src={message.art}
                     alt=''
+                    enableZoom
                   />
                 )}
               </div>
@@ -200,7 +201,7 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
           onClick={() => {
             setShowAllMessages(true)
           }}
-          className={`${props.page}-border`}
+          className={`${props.page}-border fan-submissions-container-button`}
         >
           view all
         </button>
