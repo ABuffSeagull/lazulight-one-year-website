@@ -40,7 +40,7 @@ function PomuCoin ({ color }: { color: 'gold' | 'silver' }): JSX.Element {
   )
 }
 
-export default function PomuBgAnimation () {
+export default function PomuBgAnimation (): JSX.Element {
   const pomuCoinCount: number = 60
 
   return (
