@@ -1,4 +1,5 @@
 @use "../variables" as *;
+@use "sass:math";
 
 .slideshow {
   &-container {
@@ -29,36 +30,102 @@
   }
 }
 
-.project-heading {
-  font-size: clamp(1rem, 5vw, 5rem);
-  text-align: center;
-  width: 75%;
-  margin: auto;
-  margin-top: 2rem;
-  padding: 1rem 0;
-  border-top-width: 2px;
-  border-bottom-width: 2px;
-  border-image: linear-gradient(
-      to right,
-      rgb(0 0 0 / 0%),
-      currentcolor 20%,
-      currentcolor 80%,
-      rgb(0 0 0 / 0%)
-    )
-    1;
-  border-style: solid;
-  background: linear-gradient(
-    to right,
-    rgb(0 0 0 / 0%),
-    $background-grey 20%,
-    $background-grey 80%,
-    rgb(0 0 0 / 0%)
-  );
+.project {
+  &-heading {
+    &-text {
+      font-size: clamp(1rem, 5vw, 4.5rem);
+      text-align: center;
+      width: 100%;
+      margin: auto;
+    }
+
+    &-image {
+      width: 100%;
+      margin: auto;
+    }
+
+    &-container {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+
+      @media (max-width: $bp-mobile) {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+  }
+
+  &-description-container {
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    h4 {
+      font-size: 1.1rem;
+    }
+  }
+
+  &-download-button {
+    cursor: pointer;
+    font-size: 1.25rem;
+    padding: 0.25rem 0.5rem;
+    background: $background-gradient;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+  }
 }
 
-.project-heading-image {
-  width: 100%;
-  margin: auto;
+.vn {
+  &-profile-container {
+    position: relative;
+    width: 100%;
+  }
+
+  &-picture-box {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 20%;
+    overflow-y: hidden;
+
+    @media (max-width: $bp-tablet) {
+      position: relative;
+      width: auto;
+      height: 40vh;
+    }
+
+    // This messes with the click to zoom function, but oh well
+    // It still kind of works
+    &-elira {
+      overflow: hidden;
+
+      picture,
+      img {
+        $elira-scale: 2.2;
+
+        min-width: 100% * $elira-scale;
+        height: auto;
+        transform: translateX(math.div(50%, $elira-scale) - 50%);
+      }
+    }
+  }
+
+  &-info-container {
+    width: 80%;
+    margin-left: 20%;
+
+    @media (max-width: $bp-tablet) {
+      margin: 0;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+  }
 }
 
 .credits {
