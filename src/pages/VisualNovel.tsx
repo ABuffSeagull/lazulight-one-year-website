@@ -121,11 +121,11 @@ export default function VisualNovel (props: Props): JSX.Element {
 
       {/* Character Profiles */}
       {characters.map((character: Character, idx: number) => (
-        <div className='talent-profile-container' key={idx}>
-          <div className='talent-picture-box'>
+        <div className='vn-profile-container' key={idx}>
+          <div className={`vn-picture-box vn-picture-box-${character.firstNameLower}`}>
             <Image src={character.portrait} enableZoom />
           </div>
-          <div className='talent-info-container'>
+          <div className='vn-info-container'>
             <div className='talent-text-container'>
               <Image className='talent-corner' src={character.frame} />
               <div className={`talent-text-inner ${character.firstNameLower}-border`}>
