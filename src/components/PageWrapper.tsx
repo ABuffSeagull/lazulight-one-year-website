@@ -8,9 +8,8 @@ import EliraCloud2 from '../assets/BG/Elira-BG-Cloud2.webp';
 import EliraCloud3 from '../assets/BG/Elira-BG-Cloud3.webp';
 import EliraCloud4 from '../assets/BG/Elira-BG-Cloud4.webp';
 import EliraStar1 from '../assets/BG/Elira-BG-Star1.webp';
-import FinanaBubble1 from '../assets/BG/Finana-BG-Bubbles1.svg';
-import FinanaFish from '../assets/BG/Finana-BG-Fish.svg';
 import PomuBgAnimation from './PomuBgAnimation';
+import FinanaBgAnimation from './FinanaBgAnimation';
 
 interface Props {
   children: React.ReactNode;
@@ -21,8 +20,6 @@ export function PageWrapper(props: Props): JSX.Element {
   // (Brandon) These constants must match values in class 'page-bg-animation-${props.page}-element'
   const eliraCloudCount: number = 4 * 4; // Should be multiple of 4
   const eliraStarCount: number = 60;
-  const finanaBubbleCount: number = 30;
-  const finanaFishCount: number = 30;
   const vnCloudCount: number = 8 * 4; // Should be multiple of 4
 
   const [AnimationOn, toggleAnimationState] = React.useState(true);
@@ -80,27 +77,7 @@ export function PageWrapper(props: Props): JSX.Element {
             </div>
           </div>
         )}
-        {props.page === 'finana' && (
-          <div>
-            {/* Separate div's because of the nth-child selector */}
-            <div>
-              {Array.from({ length: finanaBubbleCount }, (i: number) => (
-                <Image
-                  className="page-bg-animation-finana-bubble"
-                  src={FinanaBubble1}
-                />
-              ))}
-            </div>
-            <div>
-              {Array.from({ length: finanaFishCount }, (i: number) => (
-                <Image
-                  className="page-bg-animation-finana-fish"
-                  src={FinanaFish}
-                />
-              ))}
-            </div>
-          </div>
-        )}
+        {props.page === 'finana' && <FinanaBgAnimation />}
         {props.page === 'vn' && (
           <div>
             {Array.from({ length: vnCloudCount / 4 }, (i: number) => (

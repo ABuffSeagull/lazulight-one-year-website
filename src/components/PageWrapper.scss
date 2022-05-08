@@ -176,11 +176,6 @@
     $finanafish-height: 5%;
     $finanafish-duration-min: 5;
     $finanafish-duration-extra: 10;
-    $finanabubble-count: 60; // Must be greater than/equal to the number of finanabubbles in the html
-    $finanabubble-width: 5%;
-    $finanabubble-duration-normal: 5;
-    $finanabubble-duration-tablet: 10;
-    $finanabubble-duration-mobile: 15;
     @for $i from 1 through $finanafish-count {
       &-fish:nth-child(#{$i}) {
         animation-name: finanafish#{$i};
@@ -203,43 +198,24 @@
           right: 150%;
         }
       }
-    }
-    @for $i from 1 through $finanabubble-count {
-      &-bubble:nth-child(#{$i}) {
-        animation-name: finanabubble#{$i};
-        animation-duration: $finanabubble-duration-normal + s;
-        @media (max-width: $bp-tablet) {
-          animation-duration: $finanabubble-duration-tablet + s;
-        }
-        @media (max-width: $bp-mobile) {
-          animation-duration: $finanabubble-duration-mobile + s;
-        }
 
-        animation-delay: -1 * math.random() * $finanabubble-duration-normal + s;
-        @media (max-width: $bp-tablet) {
-          animation-delay: -1 * math.random() * $finanabubble-duration-tablet +
-            s;
-        }
-        @media (max-width: $bp-mobile) {
-          animation-delay: -1 * math.random() * $finanabubble-duration-mobile +
-            s;
-        }
-
-        animation-direction: normal;
-        opacity: 0.6;
-        width: $finanabubble-width;
-        left: $finanabubble-width +
-          math.random(100 - 2 * $finanabubble-width) *
-          1%;
-      }
-      @keyframes finanabubble#{$i} {
+      @keyframes bubbleRise {
         from {
           bottom: -20%;
         }
-
         to {
-          bottom: 120%;
+          bottom: 100%;
         }
+      }
+
+      &-bubble {
+        height: 4rem;
+        opacity: 0.6;
+        bottom: -20%;
+        animation-name: bubbleRise;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
       }
     }
   }
