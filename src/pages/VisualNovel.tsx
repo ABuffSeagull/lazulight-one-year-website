@@ -4,6 +4,7 @@ import '../components/ProjectPages.scss'
 import Image from '../components/Image'
 import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp'
 
+import VisualNovelLogo from '../assets/VN/lazulight_vn_logo_cf50.webp'
 import EliraImage from '../assets/VN/elira school happy_cf50.webp'
 import PomuImage from '../assets/VN/pomu school happy_cf50.webp'
 import FinanaImage from '../assets/VN/finana school happy_cf50.webp'
@@ -19,7 +20,6 @@ import 'slick-carousel/slick/slick-theme.css'
 import Slider from 'react-slick'
 
 // Slide show slides
-import VisualNovelLogo from '../assets/VN/lazulight_vn_logo_cf50.webp'
 import Slide2 from '../assets/VN/bg_river_day_720p.jpg' // TODO: This is a placeholder for testing
 
 // Countdown timer
@@ -108,8 +108,16 @@ export default function VisualNovel (props: Props): JSX.Element {
         <Image className='talent-corner' src={LazulightCorner} />
         <div className={`talent-text-inner ${props.page}-border`}>
           <Slider {...slideShowSettings} className='slideshow-container'>
-            <div>
-              <Image src={VisualNovelLogo} className='slideshow-slide' />
+            <div className='slideshow-slide'>
+              <div className='video-container'>
+                <iframe
+                  src='https://www.youtube.com/embed/ZnP0cKNPE04' // TODO: Replace
+                  title='YouTube video player'
+                  frameBorder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                  allowFullScreen
+                />
+              </div>
             </div>
             <div>
               <Image src={Slide2} className='slideshow-slide' />

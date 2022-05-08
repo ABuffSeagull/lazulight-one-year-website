@@ -47,6 +47,17 @@ export default function Fnf (props: Props): JSX.Element {
         <Image className='talent-corner' src={LazulightCorner} />
         <div className={`talent-text-inner ${props.page}-border`}>
           <Slider {...slideShowSettings} className='slideshow-container'>
+            <div className='slideshow-slide'>
+              <div className='video-container'>
+                <iframe
+                  src='https://www.youtube.com/embed/VB-J-fZgx0M' // TODO: Replace
+                  title='YouTube video player'
+                  frameBorder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                  allowFullScreen
+                />
+              </div>
+            </div>
             <div>
               <Image src={EliraSlide} className='slideshow-slide' />
             </div>
@@ -114,6 +125,9 @@ function LazunightFunkinCredits (): JSX.Element {
       <ul><li><p><a href='https://www.youtube.com/c/eivesohn'>Eivesohn</a></p></li></ul>
       <h3>Charter</h3>
       <ul><li><p><a href='https://twitter.com/TheCoolStalker'>CoolStalker</a></p></li></ul>
+      <h3>Special Thanks</h3>
+      <h3>Improving Chromatics</h3>
+      <ul><li><p><a href='https://twitter.com/GGalactigal'>GGalactigal</a></p></li></ul>
     </div>
   )
 }
