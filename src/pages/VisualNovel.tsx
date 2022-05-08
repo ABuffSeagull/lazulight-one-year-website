@@ -86,7 +86,7 @@ export default function VisualNovel (props: Props): JSX.Element {
     speed: 500
   }
 
-  const countdownRenderer = ({ days, hours, minutes, seconds, completed }: CountdownRenderProps) => {
+  const countdownRenderer = ({ days, hours, minutes, seconds, completed }: CountdownRenderProps): JSX.Element => {
     if (completed) {
       return <span>Now/Soon</span>
     }
@@ -99,7 +99,7 @@ export default function VisualNovel (props: Props): JSX.Element {
 
       {/* Heading */}
       <div className='project-heading-container'>
-        <h1 className='project-heading'>LAZULIGHT: By your Side</h1>
+        <h1 className='project-heading-text'>LAZULIGHT: By your Side</h1>
         <Image src={VisualNovelLogo} className='project-heading-image' enableZoom />
       </div>
 
@@ -107,7 +107,6 @@ export default function VisualNovel (props: Props): JSX.Element {
       <div className='talent-text-container'>
         <Image className='talent-corner' src={LazulightCorner} />
         <div className={`talent-text-inner ${props.page}-border`}>
-          <h2>A LazuLight Visual Novel</h2>
           <Slider {...slideShowSettings} className='slideshow-container'>
             <div>
               <Image src={VisualNovelLogo} className='slideshow-slide' />
@@ -124,13 +123,27 @@ export default function VisualNovel (props: Props): JSX.Element {
           </Slider>
 
           {/* Description & Download */}
-          <p>Like a star pulled from the skies, a bird torn of its wings, you were bound to the Earth that day. You once ruled the skies, feeling the air rush through your hair as you flew between the clouds, clothes fluttering in the wind as you raced higher and higher. However, that's all in the past now, ever since the accident. </p>
-          <p>Now, completely opposite to what you once felt, the world is monotonous, gray, and dead. You find no meaning in life, as if frozen in time, now that your freedom was taken away from you. </p>
-          <p>However, that would all come to change with three fated encounters. The appearance of an old acquaintance from the track team, a reserved class president that seems to be hiding something, and a kindred soul seeking solace in the silence.</p>
-          <p>Faced with these new people who suddenly appeared in your life, you have to make the choice. Do you wallow in your failure in this monochrome prison, or do you take their hand and repaint this world?</p>
-          <p>By their side, the hands of the clock start ticking once more.</p>
-          <p><Countdown date='2022-06-18T22:00:00+09:00' renderer={countdownRenderer} /></p>
-          <button>Download Game</button>
+          <div className='project-description-container'>
+            <h3>A LazuLight Visual Novel</h3>
+            <p>Like a star pulled from the skies, a bird torn of its wings, you were bound to the Earth that day. You once ruled the skies, feeling the air rush through your hair as you flew between the clouds, clothes fluttering in the wind as you raced higher and higher. However, that's all in the past now, ever since the accident. </p>
+            <p>Now, completely opposite to what you once felt, the world is monotonous, gray, and dead. You find no meaning in life, as if frozen in time, now that your freedom was taken away from you. </p>
+            <p>However, that would all come to change with three fated encounters. The appearance of an old acquaintance from the track team, a reserved class president that seems to be hiding something, and a kindred soul seeking solace in the silence.</p>
+            <p>Faced with these new people who suddenly appeared in your life, you have to make the choice. Do you wallow in your failure in this monochrome prison, or do you take their hand and repaint this world?</p>
+            <p>By their side, the hands of the clock start ticking once more.</p>
+
+            <h3>Permissions &amp; Notice</h3>
+            <p>We give permission to Elira, Pomu, and Finana to play this game on stream. We declare that the game does not contain any copyrighted material other than the property of ANYCOLOR Inc. We declare that this game does not contain material that violates the YouTube Community Guidelines.</p>
+            <p>This is a work of fiction. Any similarity to real businesses, locations, and events is purely coincidental. The characters portrayed in this story are not intended to represent the views and opinions of the actual talents, Nijisanji, or ANYCOLOR Inc.</p>
+            <p>This is a fan-made game intended for the enjoyment of other fans and the talents in celebration of Lazulight's one year anniversary. The creators are in no way related to ANYCOLOR Inc, Nijisanji, or the talents present in this game. </p>
+
+            <h3>Download</h3>
+            <h4>Full Game</h4>
+            <p>Available: June 18, 10pm JST (<Countdown date='2022-06-18T22:00:00+09:00' renderer={countdownRenderer} />)</p>
+            <h4>Demo</h4>
+            {/* <a href='/downloads/vn' download > */}
+            <button className='project-download-button lazulight-border'>Download Demo</button>
+            {/* </a> */}
+          </div>
         </div>
       </div>
 
