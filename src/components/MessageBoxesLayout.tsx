@@ -65,7 +65,7 @@ function filterMessage (
   const ArtIsAvailable: boolean = (artLiver !== '') || (artMascot !== '')
   return (
     enable &&
-    ((!enableArt && msg !== '' && ArtIsAvailable) || (enableArt && ArtIsAvailable))
+    ((!enableArt && msg !== '' && !ArtIsAvailable) || (enableArt && ArtIsAvailable))
   )
 }
 
