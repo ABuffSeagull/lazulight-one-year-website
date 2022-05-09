@@ -6,10 +6,10 @@ import FinanaCorner from '../assets/Corners/Finana-MsgCorner.webp'
 import EliraCorner from '../assets/Corners/Elira-MsgCorner.webp'
 import PomuCorner from '../assets/Corners/Pomu-MsgCorner.webp'
 
-import EliraArtBoard from '../assets/ArtBoards/Elira-ArtBoard.webp'
-import PomuArtBoard from '../assets/ArtBoards/Pomu-ArtBoard.webp'
-import FinanaArtBoard from '../assets/ArtBoards/Finana-ArtBoard.webp'
-import LazulightArtBoard from '../assets/ArtBoards/Lazulight-ArtBoard.webp'
+import EliraArtBoard from '../assets/ArtBoards/Weewas Collage 1080p.webp'
+import PomuArtBoard from '../assets/ArtBoards/Pomudachi Collage 1080p.webp'
+import FinanaArtBoard from '../assets/ArtBoards/Ryuguard Collage 1080p.webp'
+import LazulightArtBoard from '../assets/ArtBoards/Group Collage 2160 x 1920 Transparent.webp'
 
 import * as messageListImport from '../assets/messageList.json'
 
