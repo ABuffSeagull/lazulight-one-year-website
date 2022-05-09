@@ -57,14 +57,28 @@ function filterMessage (
   enable: boolean,
   enableArt: boolean,
   msg: string,
-  art: string
+  artLiver: string,
+  artMascot: string
 ): boolean {
   // Msg mode: only allow if user has not submitted art
   // Art mode: allow if user has submitted art
+  const ArtIsAvailable: boolean = (artLiver !== '') || (artMascot !== '')
   return (
     enable &&
-    ((!enableArt && msg !== '' && art === '') || (enableArt && art !== ''))
+    ((!enableArt && msg !== '' && ArtIsAvailable) || (enableArt && ArtIsAvailable))
   )
+}
+
+function chooseArt (
+  enableArt: boolean,
+  artLiver: string,
+  artMascot: string
+): string {
+  if (!enableArt) { return '' }
+  if (artLiver !== '') { return artLiver }
+  if (artMascot !== '') { return artMascot }
+  // Default for no art
+  return ''
 }
 
 export default function MessageBoxesLayout (props: Props): JSX.Element {
@@ -82,7 +96,8 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
           props.enableLazulight,
           props.enableArt,
           msg.msg_lazulight,
-          msg.art_lazulight
+          msg.art_lazulight,
+          ''
         )
       ) {
         Messages.push({
@@ -99,14 +114,15 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
           props.enableElira,
           props.enableArt,
           msg.msg_elira,
-          msg.art_elira
+          msg.art_elira,
+          msg.art_weewa
         )
       ) {
         Messages.push({
           name: msg.name,
           social_url: msg.social_url,
           msg: msg.msg_elira,
-          art: props.enableArt ? msg.art_elira : '',
+          art: chooseArt(props.enableArt, msg.art_elira, msg.art_weewa),
           corner: EliraCorner,
           border: 'elira'
         })
@@ -116,14 +132,15 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
           props.enablePomu,
           props.enableArt,
           msg.msg_pomu,
-          msg.art_pomu
+          msg.art_pomu,
+          msg.art_pomudachi
         )
       ) {
         Messages.push({
           name: msg.name,
           social_url: msg.social_url,
           msg: msg.msg_pomu,
-          art: props.enableArt ? msg.art_pomu : '',
+          art: chooseArt(props.enableArt, msg.art_pomu, msg.art_pomudachi),
           corner: PomuCorner,
           border: 'pomu'
         })
@@ -133,14 +150,15 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
           props.enableFinana,
           props.enableArt,
           msg.msg_finana,
-          msg.art_finana
+          msg.art_finana,
+          msg.art_ryuguard
         )
       ) {
         Messages.push({
           name: msg.name,
           social_url: msg.social_url,
           msg: msg.msg_finana,
-          art: props.enableArt ? msg.art_finana : '',
+          art: chooseArt(props.enableArt, msg.art_finana, msg.art_ryuguard),
           corner: FinanaCorner,
           border: 'finana'
         })
