@@ -9,22 +9,23 @@ import * as messageListImport from '../assets/messageList.json'
 
 interface MessageRaw {
   name: string
-  soical_handle: string
-  soical_url: string
-  msg_lazulight: string
-  msg_elira: string
-  msg_pomu: string
-  msg_finana: string
+  social_url: string
   art_lazulight: string
   art_elira: string
   art_pomu: string
   art_finana: string
+  msg_lazulight: string
+  msg_elira: string
+  msg_pomu: string
+  msg_finana: string
+  art_weewa: string
+  art_pomudachi: string
+  art_ryuguard: string
 }
 
 interface Message {
   name: string
-  soical_handle: string
-  soical_url: string
+  social_url: string
   msg: string
   art: string
   corner: string
@@ -86,8 +87,7 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
       ) {
         Messages.push({
           name: msg.name,
-          soical_handle: msg.soical_handle,
-          soical_url: msg.soical_url,
+          social_url: msg.social_url,
           msg: msg.msg_lazulight,
           art: props.enableArt ? msg.art_lazulight : '',
           corner: LazulightCorner,
@@ -104,8 +104,7 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
       ) {
         Messages.push({
           name: msg.name,
-          soical_handle: msg.soical_handle,
-          soical_url: msg.soical_url,
+          social_url: msg.social_url,
           msg: msg.msg_elira,
           art: props.enableArt ? msg.art_elira : '',
           corner: EliraCorner,
@@ -122,8 +121,7 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
       ) {
         Messages.push({
           name: msg.name,
-          soical_handle: msg.soical_handle,
-          soical_url: msg.soical_url,
+          social_url: msg.social_url,
           msg: msg.msg_pomu,
           art: props.enableArt ? msg.art_pomu : '',
           corner: PomuCorner,
@@ -140,8 +138,7 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
       ) {
         Messages.push({
           name: msg.name,
-          soical_handle: msg.soical_handle,
-          soical_url: msg.soical_url,
+          social_url: msg.social_url,
           msg: msg.msg_finana,
           art: props.enableArt ? msg.art_finana : '',
           corner: FinanaCorner,
@@ -174,12 +171,12 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
                 className={`fan-submissions-message ${message.border}-border`}
               >
                 <h4 className='text-lg'>
-                  {message.soical_url === ''
+                  {message.social_url === ''
                     ? (
                         message.name
                       )
                     : (
-                      <a href={message.soical_url}>{message.name}</a>
+                      <a href={message.social_url}>{message.name}</a>
                       )}
                 </h4>
                 {message.msg !== '' && <p>{message.msg}</p>}

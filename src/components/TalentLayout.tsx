@@ -3,6 +3,7 @@ import './TalentLayout.scss'
 import Image from './Image'
 import MessageBoxesLayout from './MessageBoxesLayout'
 import MascotAnimation from './MascotAnimation'
+import ArtBoardLayout, { ArtBoardEnum } from './ArtBoardLayout'
 
 // TODO(abuffseagull) 2022-03-17: need to remove this
 // Probably just generate some random ids on the messages at load time
@@ -12,7 +13,6 @@ interface Props {
   name: string
   artBoardHeading: string
   artBoardText: string
-  artBoard: string
   frame: string
   animation: string
   corner: string
@@ -33,6 +33,15 @@ function TalentLayout (props: Props): JSX.Element {
   const vid3 = useRef<HTMLVideoElement>(null)
   const vid0v = useRef<HTMLVideoElement>(null)
   const vid1v = useRef<HTMLVideoElement>(null)
+
+  // Switch art board
+  // Brandon somewhat regrets deciding to use enums here
+  const chooseArtBoard = (): ArtBoardEnum => {
+    if (firstNameLower === 'elira') { return ArtBoardEnum.elira }
+    if (firstNameLower === 'pomu') { return ArtBoardEnum.pomu }
+    if (firstNameLower === 'finana') { return ArtBoardEnum.finana }
+    return ArtBoardEnum.lazulight
+  }
 
   return (
     <div className='talent-layout-container'>
@@ -70,15 +79,11 @@ function TalentLayout (props: Props): JSX.Element {
         </div>
       </div>
 
-      {/* Art Board */}
-      <div className='talent-text-container'>
-        <Image className='talent-corner' src={props.corner} />
-        <div className={`talent-text-inner ${firstNameLower}-border`}>
-          <h3 className='text-xl'>{props.artBoardHeading}</h3>
-          <p>{props.artBoardText}</p>
-          <Image className='artboard-image' src={props.artBoard} />
-        </div>
-      </div>
+      <ArtBoardLayout
+        artBoard={chooseArtBoard()}
+        heading={props.artBoardHeading}
+        message={props.artBoardText}
+      />
 
       {/* Messages */}
       <MessageBoxesLayout
