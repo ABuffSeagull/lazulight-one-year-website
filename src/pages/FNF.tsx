@@ -38,7 +38,7 @@ export default function Fnf (props: Props): JSX.Element {
 
       {/* Heading */}
       <div className='project-heading-container'>
-        <h1 className='project-heading-text'>Lazunight Funkin</h1>
+        <h1 className='project-heading-text'>LazuNight Funkin</h1>
         <Image src={FNFLogo} className='project-heading-image' enableZoom />
       </div>
 
@@ -75,9 +75,9 @@ export default function Fnf (props: Props): JSX.Element {
             <p>Step into the shoes of Pomu, who, in celebration of LazuLight's upcoming first year anniversary, will be rehearsing for their grand concert with her friends Finana and Elira in the hopes of giving their fans the best performance possible!</p>
 
             <h3>Permissions &amp; Notice</h3>
-            <p>We give permission to Elira, Pomu, and Finana to play this game on stream. We declare that the game does not contain any copyrighted material other than the property of ANYCOLOR Inc. We declare that this game does not contain material that violates the YouTube Community Guidelines.</p>
+            <p>We give permission to all Nijisanji Livers to monetize playing this game by any means, including livestream and video publication. We declare that the game does not contain any copyrighted material other than that which is property of ANYCOLOR Inc. We declare that this game does not contain material that violates the YouTube Community Guidelines.</p>
             <p>This is a work of fiction. Any similarity to real businesses, locations, and events is purely coincidental. The characters portrayed in this story are not intended to represent the views and opinions of the actual talents, Nijisanji, or ANYCOLOR Inc.</p>
-            <p>This is a fan-made game intended for the enjoyment of other fans and the talents in celebration of Lazulight's one year anniversary. The creators are in no way related to ANYCOLOR Inc, Nijisanji, or the talents present in this game. </p>
+            <p>This is a fan-made game intended for the enjoyment of other fans and the talents in celebration of Lazulight's one year anniversary. The creators are in no way related to ANYCOLOR Inc, Nijisanji, or the talents portrayed in this game.</p>
 
             <h3>Download</h3>
             <h4>Full Game</h4>
