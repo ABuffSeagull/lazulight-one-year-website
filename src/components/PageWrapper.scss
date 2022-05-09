@@ -25,6 +25,23 @@
   color: $finana-text-color;
 }
 
+.home-collage {
+  position: relative;
+  width: 100%;
+  height: auto;
+
+  picture,
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.25;
+  }
+}
+
 .page-bg-static {
   &-elira {
     background-image: linear-gradient(to bottom, #a7cde0, #292e65);
