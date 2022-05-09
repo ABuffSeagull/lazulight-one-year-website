@@ -15,19 +15,18 @@ import * as messageListImport from '../assets/messageList.json'
 
 interface MessageRaw {
   name: string
-  soical_handle: string
-  soical_url: string
-  msg_lazulight: string
-  msg_elira: string
-  msg_pomu: string
-  msg_finana: string
+  social_url: string
   art_lazulight: string
   art_elira: string
   art_pomu: string
   art_finana: string
-  pomudachi: string
-  weewa: string
-  ryguard: string
+  msg_lazulight: string
+  msg_elira: string
+  msg_pomu: string
+  msg_finana: string
+  art_weewa: string
+  art_pomudachi: string
+  art_ryuguard: string
 }
 
 interface MascotArtist {
@@ -61,19 +60,19 @@ export default function ArtBoardLayout (props: Props): JSX.Element {
     const Messages: MascotArtist[] = []
     messageListRaw.forEach((msg: MessageRaw): void => {
       if (
-        (props.artBoard === ArtBoardEnum.elira && Boolean(msg.weewa)) ||
-        (props.artBoard === ArtBoardEnum.pomu && Boolean(msg.pomudachi)) ||
-        (props.artBoard === ArtBoardEnum.finana && Boolean(msg.ryguard)) ||
+        (props.artBoard === ArtBoardEnum.elira && Boolean(msg.art_weewa)) ||
+        (props.artBoard === ArtBoardEnum.pomu && Boolean(msg.art_pomudachi)) ||
+        (props.artBoard === ArtBoardEnum.finana && Boolean(msg.art_ryuguard)) ||
         (props.artBoard === ArtBoardEnum.lazulight && (
-          Boolean(msg.weewa) ||
-          Boolean(msg.pomudachi) ||
-          Boolean(msg.ryguard)
+          Boolean(msg.art_weewa) ||
+          Boolean(msg.art_pomudachi) ||
+          Boolean(msg.art_ryuguard)
         )
         )
       ) {
         Messages.push({
           name: msg.name,
-          soical_url: msg.soical_url
+          soical_url: msg.social_url
         })
       }
     })
