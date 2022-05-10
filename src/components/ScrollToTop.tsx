@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useLocation } from 'wouter'
 
 export default function ScrollToTop (): null {
