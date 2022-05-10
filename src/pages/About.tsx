@@ -14,9 +14,9 @@ export default function About (props: Props): JSX.Element {
       <div className='talent-text-container'>
         <Image className='talent-corner' src={LazulightCorner} />
         <div className={`talent-text-inner ${props.page}-border`}>
-          {/* TODO: just hard code in the content here. No need to spend more time on anything fancy */}
           <h2>About Nijisanji</h2>
-          <p>TODO</p>
+          <p>Founded in February 2018 and managed by ANYCOLOR Inc., Nijisanji is one of the most premier virtual liver agencies, boasting over 207 livers across a variety of platforms and languages, including Virtual Real, a joint venture between ANYCOLOR and Bilibili.</p>
+          <p>In May 2021 Nijisanji launched its English branch, comprising of livers Elira Pendora, Pomu Rainpuff, and Finana Ryugu. Since then, NijiEN has grown to include 20 livers, including 10 females and 10 males across five waves.</p>
         </div>
       </div>
 

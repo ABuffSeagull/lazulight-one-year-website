@@ -10,6 +10,7 @@ import EliraCloud4 from '../assets/BG/Elira-BG-Cloud4.webp'
 import EliraStar1 from '../assets/BG/Elira-BG-Star1.webp'
 import PomuBgAnimation from './PomuBgAnimation'
 import FinanaBgAnimation from './FinanaBgAnimation'
+import LazulightArtBoard from '../assets/ArtBoards/Group Collage 2160 x 1920 Transparent.webp'
 
 interface Props {
   children: React.ReactNode
@@ -25,11 +26,10 @@ export function PageWrapper (props: Props): JSX.Element {
   const [AnimationOn, toggleAnimationState] = React.useState(true)
 
   return (
-    <div
-      className={`container ${props.page} page-bg-static-${props.page} page-bg-animation-${props.page}`}
-    >
-      {/* TODO: Find somewhere to put toggleAnimation button in menu */}
+    <div className={`container ${props.page} page-bg-static-${props.page} page-bg-animation-${props.page}`}>
       <SiteHeader />
+
+      {/* Background */}
       <div
         className={`page-bg-animation-${props.page}-container ${
           AnimationOn
@@ -95,6 +95,12 @@ export function PageWrapper (props: Props): JSX.Element {
           </div>
         )}
       </div>
+
+      {props.page === 'home' && (
+        <div className='home-collage'>
+          <Image src={LazulightArtBoard} />
+        </div>
+      )}
 
       <button
         onClick={() => {

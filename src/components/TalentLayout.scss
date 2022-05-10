@@ -158,9 +158,31 @@ $talent-corner-padding-top: 33px;
   }
 }
 
-.artboard-image {
-  width: 100%;
-  object-fit: contain;
+.artboard {
+  &-image {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &-credits {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    li {
+      // Remove bullets & link underlines
+      list-style-type: none;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+
+    li:first-child {
+      font-weight: bold;
+    }
+  }
 }
 
 .fan-submissions {
@@ -271,6 +293,10 @@ $talent-corner-padding-top: 33px;
       word-wrap: break-word;
       margin-top: 5px;
       margin-right: 10px;
+    }
+
+    p {
+      word-wrap: break-word;
     }
 
     img {

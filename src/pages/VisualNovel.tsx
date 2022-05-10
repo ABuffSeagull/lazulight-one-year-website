@@ -4,6 +4,7 @@ import '../components/ProjectPages.scss'
 import Image from '../components/Image'
 import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp'
 
+import VisualNovelLogo from '../assets/VN/lazulight_vn_logo_cf50.webp'
 import EliraImage from '../assets/VN/elira school happy_cf50.webp'
 import PomuImage from '../assets/VN/pomu school happy_cf50.webp'
 import FinanaImage from '../assets/VN/finana school happy_cf50.webp'
@@ -19,7 +20,6 @@ import 'slick-carousel/slick/slick-theme.css'
 import Slider from 'react-slick'
 
 // Slide show slides
-import VisualNovelLogo from '../assets/VN/lazulight_vn_logo_cf50.webp'
 import Slide2 from '../assets/VN/bg_river_day_720p.jpg' // TODO: This is a placeholder for testing
 
 // Countdown timer
@@ -108,8 +108,16 @@ export default function VisualNovel (props: Props): JSX.Element {
         <Image className='talent-corner' src={LazulightCorner} />
         <div className={`talent-text-inner ${props.page}-border`}>
           <Slider {...slideShowSettings} className='slideshow-container'>
-            <div>
-              <Image src={VisualNovelLogo} className='slideshow-slide' />
+            <div className='slideshow-slide'>
+              <div className='video-container'>
+                <iframe
+                  src='https://www.youtube.com/embed/ZnP0cKNPE04' // TODO: Replace
+                  title='YouTube video player'
+                  frameBorder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                  allowFullScreen
+                />
+              </div>
             </div>
             <div>
               <Image src={Slide2} className='slideshow-slide' />
@@ -132,9 +140,9 @@ export default function VisualNovel (props: Props): JSX.Element {
             <p>By their side, the hands of the clock start ticking once more.</p>
 
             <h3>Permissions &amp; Notice</h3>
-            <p>We give permission to Elira, Pomu, and Finana to play this game on stream. We declare that the game does not contain any copyrighted material other than the property of ANYCOLOR Inc. We declare that this game does not contain material that violates the YouTube Community Guidelines.</p>
+            <p>We give permission to all Nijisanji Livers to monetize playing this game by any means, including livestream and video publication. We declare that the game does not contain any copyrighted material other than that which is property of ANYCOLOR Inc. We declare that this game does not contain material that violates the YouTube Community Guidelines.</p>
             <p>This is a work of fiction. Any similarity to real businesses, locations, and events is purely coincidental. The characters portrayed in this story are not intended to represent the views and opinions of the actual talents, Nijisanji, or ANYCOLOR Inc.</p>
-            <p>This is a fan-made game intended for the enjoyment of other fans and the talents in celebration of Lazulight's one year anniversary. The creators are in no way related to ANYCOLOR Inc, Nijisanji, or the talents present in this game. </p>
+            <p>This is a fan-made game intended for the enjoyment of other fans and the talents in celebration of LazuLight's one year anniversary. The creators are in no way related to ANYCOLOR Inc, Nijisanji, or the talents portrayed in this game.</p>
 
             <h3>Download</h3>
             <h4>Full Game</h4>
