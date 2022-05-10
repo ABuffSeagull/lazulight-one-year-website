@@ -29,20 +29,20 @@ export default function Home (): JSX.Element {
 
   return (
     <div className='talent-layout-container'>
-
       {/* Opening Message */}
-      <h1 className='home-heading'>LazuLight 1 Year<br />and Counting!</h1>
+      <h1 className='home-heading'>
+        LazuLight 1 Year
+        <br />
+        and Counting!
+      </h1>
 
       {/* Links to liver pages */}
       <div className='home-liver-container'>
         {navIcons.map((linkData, i) => (
-          <div
-            className='home-liver-liver'
-            key={`LiverLink${linkData.name}`}
-          >
-            <Image src={linkData.image} />
+          <div className='home-liver-liver' key={`LiverLink${linkData.name}`}>
             <Link to={linkData.path}>
-              <a><h3>{linkData.name}</h3></a>
+              <Image src={linkData.image} />
+              <h3>{linkData.name}</h3>
             </Link>
           </div>
         ))}
@@ -71,7 +71,6 @@ export default function Home (): JSX.Element {
         heading='Art To LazuLight'
         page='home'
       />
-
     </div>
   )
 }
