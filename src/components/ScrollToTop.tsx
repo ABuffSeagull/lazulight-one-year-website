@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
-import { useLocation } from 'wouter';
+import React, { useEffect } from 'react'
+import { useLocation } from 'wouter'
 
-export default function ScrollToTop(): null {
-  const [pathname] = useLocation();
+export default function ScrollToTop (): null {
+  const [pathname] = useLocation()
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [pathname]);
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [pathname])
 
-  return null;
+  return null
 }
