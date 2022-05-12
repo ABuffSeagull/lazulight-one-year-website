@@ -10,6 +10,7 @@ import EliraCloud4 from '../assets/BG/Elira-BG-Cloud4.webp'
 import EliraStar1 from '../assets/BG/Elira-BG-Star1.webp'
 import PomuBgAnimation from './PomuBgAnimation'
 import FinanaBgAnimation from './FinanaBgAnimation'
+import DclBgAnimation from './DclBgAnimation'
 import LazulightArtBoard from '../assets/ArtBoards/Group Collage 2160 x 1920 Transparent.webp'
 
 interface Props {
@@ -94,6 +95,7 @@ export function PageWrapper (props: Props): JSX.Element {
             ))}
           </div>
         )}
+        {props.page === 'dcl' && <DclBgAnimation />}
       </div>
 
       {props.page === 'home' && (
