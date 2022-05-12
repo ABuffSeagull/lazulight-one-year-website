@@ -32,7 +32,6 @@ export default function Art (props: Props): JSX.Element {
       <ArtBoardLayout
         artBoard={ArtBoardEnum.lazulight}
         heading='Community Collage'
-        message='Love from Pomucord, Fincord, and Elicord'
       />
 
       {/* Art */}

@@ -12,7 +12,6 @@ import ArtBoardLayout, { ArtBoardEnum } from './ArtBoardLayout'
 interface Props {
   name: string
   artBoardHeading: string
-  artBoardText: string
   frame: string
   animation: string
   corner: string
@@ -82,7 +81,6 @@ function TalentLayout (props: Props): JSX.Element {
       <ArtBoardLayout
         artBoard={chooseArtBoard()}
         heading={props.artBoardHeading}
-        message={props.artBoardText}
       />
 
       {/* Messages */}

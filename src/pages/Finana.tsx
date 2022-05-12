@@ -22,7 +22,6 @@ function Finana (): JSX.Element {
     <TalentLayout
       name={name}
       artBoardHeading='Community Ryuguard Collage'
-      artBoardText='Love from Fincord'
       frame={FinanaFrame}
       animation={Ryuguard}
       corner={corner}

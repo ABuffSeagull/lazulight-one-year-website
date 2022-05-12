@@ -21,7 +21,6 @@ function Pomu (): JSX.Element {
     <TalentLayout
       name='Pomu Rainpuff'
       artBoardHeading='Community Pomudachi Collage'
-      artBoardText='Love from Pomucord'
       corner={corner}
       frame={PomuFrame}
       animation={Pomudachi}

@@ -22,7 +22,6 @@ export default function Elira (): JSX.Element {
     <TalentLayout
       name={name}
       artBoardHeading='Community Weewa Collage'
-      artBoardText='Love from Eilcord'
       frame={EliraFrame}
       corner={corner}
       animation={Weewa}
