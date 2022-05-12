@@ -5,7 +5,7 @@
 		"dev": "vite",
 		"build": "tsc && vite build",
 		"preview": "vite preview",
-		"lint": "ts-standard --fix src && tsc --noEmit && prettier --write src/**/*.{css,scss,sass} && stylelint --fix src/**/*.{css,scss,sass}",
+		"lint": "ts-standard --fix src && tsc --noEmit && prettier --no-config --write src/**/*.{css,scss,sass} && stylelint --fix src/**/*.{css,scss,sass}",
 		"test": "ts-standard src && tsc --noEmit && prettier --check src/**/*.{css,scss,sass} && stylelint src/**/*.{css,scss,sass}"
 	},
 	"dependencies": {

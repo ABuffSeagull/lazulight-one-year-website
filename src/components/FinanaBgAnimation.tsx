@@ -4,7 +4,7 @@ import FinanaBubble1 from '../assets/BG/Finana-BG-Bubbles1.svg'
 import FinanaFish from '../assets/BG/Finana-BG-Fish.svg'
 import { useEffect, useRef, useState } from 'react'
 
-function Bubble (): JSX.Element {
+function Bubble ({ bodyHeight }: {bodyHeight: number}): JSX.Element {
   // Heavy use of useRef to avoid Math.random() calls on every render
 
   const left = useRef(Math.random() * 100)
@@ -14,27 +14,18 @@ function Bubble (): JSX.Element {
   const speed = useRef(avgSpeed * (0.7 + Math.random() * 0.6)) // speed with variation
   const scale = 1 / (speed.current / avgSpeed) // faster coins are "closer" to create depth
 
-  const [animationDuration, setAnimationDuration] = useState(0)
-
-  useEffect(() => {
-    const resizeObserver = new ResizeObserver((entries) => {
-      const bodyHeight = entries[0].target.clientHeight
-      setAnimationDuration(bodyHeight / speed.current)
-    })
-
-    resizeObserver.observe(document.body)
-  }, [])
+  const styles: Record<string, string | number> = {
+    left: `${left.current}%`,
+    animationDelay: `${delay.current}s`,
+    animationDuration: `${bodyHeight / speed.current}s`,
+    '--scale-factor': scale
+  }
 
   return (
     <Image
       className='page-bg-animation-finana-bubble'
       src={FinanaBubble1}
-      style={{
-        left: `${left.current}%`,
-        animationDuration: `${animationDuration}s`,
-        animationDelay: `${delay.current}s`,
-        transform: `scale(${scale})`
-      }}
+      style={styles}
     />
   )
 }
@@ -43,11 +34,26 @@ export default function FinanaBgAnimation (): JSX.Element {
   const finanaBubbleCount: number = 30
   const finanaFishCount: number = 30
 
+  const [bodyHeight, setBodyHeight] = useState(0)
+
+  useEffect(() => {
+    const resizeObserver = new ResizeObserver(([entry]) => {
+      setBodyHeight(entry.target.clientHeight)
+    })
+
+    resizeObserver.observe(document.body)
+    return () => resizeObserver.disconnect()
+  }, [])
+
+  const styles: Record<string, string> = {
+    '--page-height': `${bodyHeight}px`
+  }
+
   return (
     <>
-      <div>
+      <div style={styles}>
         {Array.from({ length: finanaBubbleCount }, (_el, i: number) => (
-          <Bubble />
+          <Bubble bodyHeight={bodyHeight} />
         ))}
       </div>
       <div>

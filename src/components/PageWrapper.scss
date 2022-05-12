@@ -146,11 +146,11 @@
       }
       @keyframes eliracloud#{$i} {
         from {
-          left: -50%;
+          transform: translateX(-125vw);
         }
 
         to {
-          left: 150%;
+          transform: translateX(50vw);
         }
       }
     }
@@ -179,18 +179,18 @@
   &-pomu {
     @keyframes pomuCoinFall {
       from {
-        top: -20%;
+        transform: translateY(0) rotate(var(--rotation)) scale(var(--scale));
       }
 
       to {
-        top: 100%;
+        transform: translateY(var(--body-height)) rotate(var(--rotation))
+          scale(var(--scale));
       }
     }
 
     &-coin {
       height: 4rem;
       opacity: 0.2;
-      top: -20%;
       animation-name: pomuCoinFall;
       animation-duration: 2s;
       animation-iteration-count: infinite;
@@ -214,34 +214,35 @@
         animation-direction: normal;
         opacity: 0.5;
         height: $finanafish-height;
+        left: 100px;
         bottom: math.random() * 100%;
       }
       @keyframes finanafish#{$i} {
         from {
-          right: -50%;
+          transform: translateX(100vw);
         }
 
         to {
-          right: 150%;
+          transform: translateX(0);
         }
       }
 
       @keyframes bubbleRise {
         from {
-          bottom: -20%;
+          transform: translateY(var(--page-height)) scale(var(--scale-factor));
         }
 
         to {
-          bottom: 100%;
+          transform: translateY(0) scale(var(--scale-factor));
         }
       }
 
       &-bubble {
+        top: -100px;
         height: 4rem;
         opacity: 0.6;
-        bottom: -20%;
         animation-name: bubbleRise;
-        animation-duration: 2s;
+        animation-duration: var(--animation-duration, 2s);
         animation-iteration-count: infinite;
         animation-timing-function: linear;
       }

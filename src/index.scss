@@ -45,3 +45,12 @@ p + h3,
 p + h4 {
   margin-top: 0.75em;
 }
+
+a {
+  color: inherit;
+  transition: color 75ms ease-out;
+
+  &:hover {
+    color: white;
+  }
+}
