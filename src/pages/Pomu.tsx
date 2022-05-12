@@ -18,21 +18,19 @@ function Pomu (): JSX.Element {
   const fanDiscordLink = ''
 
   return (
-    <div>
-      <TalentLayout
-        name='Pomu Rainpuff'
-        artBoardHeading='Community Pomudachi Collage'
-        artBoardText='Love from Pomucord'
-        corner={corner}
-        frame={PomuFrame}
-        animation={Pomudachi}
-        portrait={PomuImage}
-        info={info}
-        youtube={youtubeLink}
-        twitter={twitterLink}
-        discord={fanDiscordLink}
-      />
-    </div>
+    <TalentLayout
+      name='Pomu Rainpuff'
+      artBoardHeading='Community Pomudachi Collage'
+      artBoardText='Love from Pomucord'
+      corner={corner}
+      frame={PomuFrame}
+      animation={Pomudachi}
+      portrait={PomuImage}
+      info={info}
+      youtube={youtubeLink}
+      twitter={twitterLink}
+      discord={fanDiscordLink}
+    />
   )
 }
 

@@ -19,21 +19,19 @@ function Finana (): JSX.Element {
   const fanDiscordLink = ''
 
   return (
-    <div>
-      <TalentLayout
-        name={name}
-        artBoardHeading='Community Ryuguard Collage'
-        artBoardText='Love from Fincord'
-        frame={FinanaFrame}
-        animation={Ryuguard}
-        corner={corner}
-        portrait={FinanaImage}
-        info={info}
-        youtube={youtubeLink}
-        twitter={twitterLink}
-        discord={fanDiscordLink}
-      />
-    </div>
+    <TalentLayout
+      name={name}
+      artBoardHeading='Community Ryuguard Collage'
+      artBoardText='Love from Fincord'
+      frame={FinanaFrame}
+      animation={Ryuguard}
+      corner={corner}
+      portrait={FinanaImage}
+      info={info}
+      youtube={youtubeLink}
+      twitter={twitterLink}
+      discord={fanDiscordLink}
+    />
   )
 }
 

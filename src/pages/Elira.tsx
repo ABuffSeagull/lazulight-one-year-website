@@ -19,20 +19,18 @@ export default function Elira (): JSX.Element {
   const fanDiscordLink = ''
 
   return (
-    <div>
-      <TalentLayout
-        name={name}
-        artBoardHeading='Community Weewa Collage'
-        artBoardText='Love from Eilcord'
-        frame={EliraFrame}
-        corner={corner}
-        animation={Weewa}
-        portrait={EliraImage}
-        info={info}
-        youtube={youtubeLink}
-        twitter={twitterLink}
-        discord={fanDiscordLink}
-      />
-    </div>
+    <TalentLayout
+      name={name}
+      artBoardHeading='Community Weewa Collage'
+      artBoardText='Love from Eilcord'
+      frame={EliraFrame}
+      corner={corner}
+      animation={Weewa}
+      portrait={EliraImage}
+      info={info}
+      youtube={youtubeLink}
+      twitter={twitterLink}
+      discord={fanDiscordLink}
+    />
   )
 }
