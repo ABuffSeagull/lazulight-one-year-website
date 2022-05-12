@@ -213,12 +213,18 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
       </div>
       {!showAllMessages && (
         <button
-          onClick={() => {
-            setShowAllMessages(true)
-          }}
+          onClick={() => { setShowAllMessages(true) }}
           className={`${props.page}-border fan-submissions-container-button`}
         >
           view all
+        </button>
+      )}
+      {showAllMessages && (
+        <button
+          onClick={() => { setShowAllMessages(false) }}
+          className={`${props.page}-border fan-submissions-container-button fan-submissions-container-button-hide`}
+        >
+          Hide Section
         </button>
       )}
     </div>

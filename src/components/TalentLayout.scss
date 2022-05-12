@@ -207,6 +207,10 @@ $talent-corner-padding-top: 33px;
       padding: 0.25rem 0.5rem;
       background: $background-gradient;
       border-radius: 0.5rem;
+
+      &-hide {
+        bottom: -3rem;
+      }
     }
   }
 
