@@ -4,7 +4,7 @@ import PomuCoinGold from '../assets/BG/Pomu-BG-PomuCoinGold.svg'
 import PomuCoinSilver from '../assets/BG/Pomu-BG-PomuCoinSilver.svg'
 import { useEffect, useRef, useState } from 'react'
 
-function PomuCoin ({ color }: { color: 'gold' | 'silver' }): JSX.Element {
+function PomuCoin ({ color, bodyHeight }: { color: 'gold' | 'silver', bodyHeight: number }): JSX.Element {
   // Heavy use of useRef to avoid Math.random() calls on every render
 
   const left = useRef(Math.random() * 100)
@@ -15,27 +15,19 @@ function PomuCoin ({ color }: { color: 'gold' | 'silver' }): JSX.Element {
   const speed = useRef(avgSpeed * (0.7 + Math.random() * 0.6)) // speed with variation
   const scale = 1 / (speed.current / avgSpeed) // faster coins are "closer" to create depth
 
-  const [animationDuration, setAnimationDuration] = useState(0)
-
-  useEffect(() => {
-    const resizeObserver = new ResizeObserver((entries) => {
-      const bodyHeight = entries[0].target.clientHeight
-      setAnimationDuration(bodyHeight / speed.current)
-    })
-
-    resizeObserver.observe(document.body)
-  }, [])
+  const styles: Record<string, string | number> = {
+    left: `${left.current}%`,
+    animationDuration: `${bodyHeight / speed.current}s`,
+    animationDelay: `${delay.current}s`,
+    '--rotation': `${rot.current}deg`,
+    '--scale': scale
+  }
 
   return (
     <Image
       className='page-bg-animation-pomu-coin'
       src={color === 'gold' ? PomuCoinGold : PomuCoinSilver}
-      style={{
-        left: `${left.current}%`,
-        animationDuration: `${animationDuration}s`,
-        animationDelay: `${delay.current}s`,
-        transform: `rotate(${rot.current}deg) scale(${scale})`
-      }}
+      style={styles}
     />
   )
 }
@@ -43,11 +35,23 @@ function PomuCoin ({ color }: { color: 'gold' | 'silver' }): JSX.Element {
 export default function PomuBgAnimation (): JSX.Element {
   const pomuCoinCount: number = 60
 
+  const [bodyHeight, setBodyHeight] = useState(0)
+  useEffect(() => {
+    const resizeObserver = new ResizeObserver(([entry]) => {
+      setBodyHeight(entry.target.clientHeight)
+    })
+
+    resizeObserver.observe(document.body)
+    return () => resizeObserver.disconnect()
+  }, [])
+
+  const styles: Record<string, string> = { '--body-height': `${bodyHeight}px` }
+
   return (
-    <>
+    <div style={styles}>
       {Array.from({ length: pomuCoinCount }, (_el, i: number) => (
-        <PomuCoin key={i} color={i % 2 === 0 ? 'gold' : 'silver'} />
+        <PomuCoin key={i} color={i % 2 === 0 ? 'gold' : 'silver'} bodyHeight={bodyHeight} />
       ))}
-    </>
+    </div>
   )
 }
