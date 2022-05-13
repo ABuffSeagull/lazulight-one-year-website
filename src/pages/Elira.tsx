@@ -14,10 +14,11 @@ export default function Elira (): JSX.Element {
     'Descending from the sun, Elira traveled to Earth at some unspecified point in time before settling down and assimilating human culture. Despite her unknown age, Elira has demonstrated that she is hip and up to date with today’s memes and trends. Sheesh Pog Based indeed.',
     'Since her arrival on Earth, Elira has tested her FamElira of Weewas to their limits. Very quickly she made clear her dragon endurance as she pressed a button continuously for over eight hours, a feat she accomplished not once, not twice, but three times. And then on Halloween, minds broke and booties shook as Elira unveiled forbidden knowledge that would change the FamElira and the world at large forever. Now a single note of Diamond City Lights is enough to send any affected listener into a twerking frenzy.'
   ]
-  const youtubeLink =
-    'https://www.youtube.com/channel/UCIeSUTOTkF9Hs7q3SGcO-Ow'
-  const twitterLink = 'https://twitter.com/EliraPendora'
-  const fanDiscordLink = ''
+  const socials = {
+    youtube: 'https://www.youtube.com/channel/UCIeSUTOTkF9Hs7q3SGcO-Ow',
+    twitter: 'https://twitter.com/EliraPendora',
+    discord: ''
+  }
 
   return (
     <div>
@@ -29,9 +30,7 @@ export default function Elira (): JSX.Element {
         corner={corner}
         portrait={EliraImage}
         info={info}
-        youtube={youtubeLink}
-        twitter={twitterLink}
-        discord={fanDiscordLink}
+        socials={socials}
         mascot={delay => <MascotAnimation src={Weewa} delay={delay} />}
       />
     </div>

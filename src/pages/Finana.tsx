@@ -15,9 +15,11 @@ function Finana (): JSX.Element {
     'Surfacing from the sea, Finana heard of the advent of VTubers from her tropical fish companions and left her home to investigate. She has since learned a great deal above the ocean, such as what a solar is, and has also shared her own experience in keyboards as well as forbidden knowledge of egg-shaped objects and the way of the future.',
     'And beyond learning and teaching, Finana has found and diligently trained new ways to interact with her loyal Ryugards and Ryugals and the world at large. Though initially reserved about her voice, she stormed onto the scene with the debut of her first original song, Tsunami, proving that her singing is a natural disaster to our playlists and a blessing to our ears. She even donned a new outfit for the occasion, proudly showing us all that this Feesh has got drip.'
   ]
-  const youtubeLink = 'https://www.youtube.com/c/FinanaRyugu-NIJISANJIEN'
-  const twitterLink = 'https://twitter.com/FinanaRyugu'
-  const fanDiscordLink = ''
+  const socials = {
+    youtube: 'https://www.youtube.com/c/FinanaRyugu-NIJISANJIEN',
+    twitter: 'https://twitter.com/FinanaRyugu',
+    discord: ''
+  }
 
   return (
     <div>
@@ -29,9 +31,7 @@ function Finana (): JSX.Element {
         corner={corner}
         portrait={FinanaImage}
         info={info}
-        youtube={youtubeLink}
-        twitter={twitterLink}
-        discord={fanDiscordLink}
+        socials={socials}
         mascot={delay => <MascotAnimation src={Ryuguard} delay={delay} />}
       />
     </div>

@@ -17,9 +17,11 @@ interface Props {
   corner: string
   portrait: string | metadata[]
   info: string[]
-  youtube: string
-  twitter: string
-  discord: string
+  socials: {
+    youtube: string
+    twitter: string
+    discord: string
+  }
 }
 
 function TalentLayout (props: Props): JSX.Element {
@@ -52,9 +54,9 @@ function TalentLayout (props: Props): JSX.Element {
                 <p key={idx}>{paragraph}&nbsp;</p>
               ))}
               <div className='talent-links-container'>
-                <a href={props.youtube}>{firstName}'s Youtube</a>
-                <a href={props.twitter}>{firstName}'s Twitter</a>
-                <a href={props.discord}> Fan Discord</a>
+                <a href={props.socials.youtube}>{firstName}'s Youtube</a>
+                <a href={props.socials.twitter}>{firstName}'s Twitter</a>
+                <a href={props.socials.discord}> Fan Discord</a>
               </div>
             </div>
           </div>

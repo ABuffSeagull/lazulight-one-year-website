@@ -14,9 +14,11 @@ function Pomu (): JSX.Element {
     'Hailing from Virtual Neverland, Pomu is losing her magic powers because of a decline in the belief of fairies. She decided to become a VTuber after researching ways of restoring belief in fairies and is now determined to become the world’s strongest fairy and achieve world domination---er Pomufication.',
     'Along the way, Pomu and her Pomudachis have gotten involved in a fair share of mischief. Soon after debut it became apparent that the Pomufication was spreading as numerous alter egos made appearances, ranging from the elegantly mustachioed Da Pomky to the smooth-voiced and mysterious Pomura Inpuff. Despite threats of a mounting resistance, Pomu not only showcased her singing in two covers but also performed alongside well-known Touhou music artist beatmario. Pomufication is going global ₳₦Đ ⱤɆ₴ł₴₮₳₦₵Ɇ ł₴ ₣Ʉ₮łⱠɆ.'
   ]
-  const youtubeLink = 'https://www.youtube.com/channel/UCP4nMSTdwU1KqYWu3UH5DHQ'
-  const twitterLink = 'https://twitter.com/PomuRainpuff'
-  const fanDiscordLink = ''
+  const socials = {
+    youtube: 'https://www.youtube.com/channel/UCP4nMSTdwU1KqYWu3UH5DHQ',
+    twitter: 'https://twitter.com/PomuRainpuff',
+    discord: ''
+  }
 
   return (
     <div>
@@ -28,9 +30,7 @@ function Pomu (): JSX.Element {
         frame={PomuFrame}
         portrait={PomuImage}
         info={info}
-        youtube={youtubeLink}
-        twitter={twitterLink}
-        discord={fanDiscordLink}
+        socials={socials}
         mascot={delay => <MascotAnimation src={Pomudachi} delay={delay} />}
       />
     </div>
