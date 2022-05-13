@@ -1,4 +1,4 @@
-@use '../variables' as *;
+@use "../variables" as *;
 
 // (Brandon) I re-exported the corners to all require the same spacing (relative to equal hight)
 $msg-corner-padding-right: 17px;
@@ -160,7 +160,7 @@ $talent-corner-padding-top: 33px;
 
 .artboard {
   h3 {
-    margin: 2rem 0 1rem 0;
+    margin: 2rem 0 1rem;
   }
 
   &-image {
@@ -175,13 +175,15 @@ $talent-corner-padding-top: 33px;
 
     li {
       display: block;
+
       // Remove bullets & link underlines
       list-style-type: none;
       color: inherit;
       padding: 0.25rem 0.5rem;
       border: 1px solid $pomu-primary-color;
       border-radius: 0.5rem;
-      background: hsl(125, 0%, 100%);
+      background: hsl(125deg 0% 100%);
+
       span,
       a {
         display: inline-flex;
@@ -192,7 +194,7 @@ $talent-corner-padding-top: 33px;
 
       a:hover {
         text-decoration: underline;
-        color: currentColor;
+        color: currentcolor;
       }
     }
   }
@@ -332,21 +334,21 @@ $talent-corner-padding-top: 33px;
 .external-link-icon {
   height: 1rem;
   width: 1rem;
-  fill: currentColor;
+  fill: currentcolor;
   opacity: 0.8;
   display: block;
 }
 
 .pomu .artboard-credits li {
-  background: hsl(125, 40%, 92%);
+  background: hsl(125deg 40% 92%);
 }
 
 .elira .artboard-credits li {
-  background: hsl(219, 40%, 92%);
+  background: hsl(219deg 40% 92%);
 }
 
 .finana .artboard-credits li {
-  background: hsl(219, 40%, 92%);
+  background: hsl(219deg 40% 92%);
 }
 
 .pomu-border {

@@ -1,4 +1,4 @@
-@use '../variables' as *;
+@use "../variables" as *;
 
 .home {
   &-heading {
@@ -32,8 +32,8 @@
     width: 100%;
     line-height: 1.1;
     font-weight: 900;
-    color: rgb(182, 206, 225);
-    filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.5));
+    color: rgb(182 206 225);
+    filter: drop-shadow(0 0 0.5rem rgb(0 0 0 / 50%));
   }
 
   &-liver {
