@@ -30,11 +30,13 @@ export default function Home (): JSX.Element {
   return (
     <div className='talent-layout-container'>
       {/* Opening Message */}
-      <h1 className='home-heading'>
-        LazuLight 1 Year
-        <br />
-        and Counting!
-      </h1>
+      <div>
+        <h1 className='home-heading'>
+          <span>Lazu</span>
+          <span>Light</span> <span>1 Year</span>
+        </h1>
+        <h2 className='home-subheading'>and Counting!</h2>
+      </div>
 
       {/* Links to liver pages */}
       <div className='home-liver-container'>

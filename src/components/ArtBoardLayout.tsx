@@ -44,7 +44,7 @@ export enum ArtBoardEnum {
   lazulight,
   elira,
   pomu,
-  finana
+  finana,
 }
 
 interface Props {
@@ -62,12 +62,10 @@ export default function ArtBoardLayout (props: Props): JSX.Element {
         (props.artBoard === ArtBoardEnum.elira && Boolean(msg.art_weewa)) ||
         (props.artBoard === ArtBoardEnum.pomu && Boolean(msg.art_pomudachi)) ||
         (props.artBoard === ArtBoardEnum.finana && Boolean(msg.art_ryuguard)) ||
-        (props.artBoard === ArtBoardEnum.lazulight && (
-          Boolean(msg.art_weewa) ||
-          Boolean(msg.art_pomudachi) ||
-          Boolean(msg.art_ryuguard)
-        )
-        )
+        (props.artBoard === ArtBoardEnum.lazulight &&
+          (Boolean(msg.art_weewa) ||
+            Boolean(msg.art_pomudachi) ||
+            Boolean(msg.art_ryuguard)))
       ) {
         Messages.push({
           name: msg.name,
@@ -110,17 +108,37 @@ export default function ArtBoardLayout (props: Props): JSX.Element {
   const pageOptions: PageOptions = choosePageOptions()
 
   return (
-    <div className='talent-text-container'>
+    <div className='talent-text-container artboard'>
       <Image className='talent-corner' src={pageOptions.corner} />
       <div className={`talent-text-inner ${pageOptions.borderStyle}-border`}>
         <h3 className='text-xl'>{props.heading}</h3>
-        <Image className='artboard-image' src={pageOptions.artBoard} enableZoom />
+        <Image
+          className='artboard-image'
+          src={pageOptions.artBoard}
+          enableZoom
+        />
+        <h3>Credits:</h3>
         <ul className='artboard-credits'>
-          <li>Credits:</li>
           {renderMascotArtistCredits().map((artist, idx) => (
-            <li key={idx}>{
-            artist.soical_url === '' ? artist.name : (<a href={artist.soical_url}>{artist.name}</a>)
-          }
+            <li key={idx}>
+              {artist.soical_url === ''
+                ? (
+                  <span>{artist.name}</span>
+                  )
+                : (
+                  <a href={artist.soical_url}>
+                    {artist.name} {/* Twitter Icon */}
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      width='24'
+                      height='24'
+                      viewBox='0 0 24 24'
+                      className='external-link-icon'
+                    >
+                      <path d='M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z' />
+                    </svg>
+                  </a>
+                  )}
             </li>
           ))}
         </ul>
