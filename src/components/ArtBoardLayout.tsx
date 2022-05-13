@@ -50,7 +50,6 @@ export enum ArtBoardEnum {
 interface Props {
   artBoard: ArtBoardEnum
   heading: string
-  message: string
 }
 
 export default function ArtBoardLayout (props: Props): JSX.Element {
@@ -115,7 +114,6 @@ export default function ArtBoardLayout (props: Props): JSX.Element {
       <Image className='talent-corner' src={pageOptions.corner} />
       <div className={`talent-text-inner ${pageOptions.borderStyle}-border`}>
         <h3 className='text-xl'>{props.heading}</h3>
-        <p>{props.message}</p>
         <Image className='artboard-image' src={pageOptions.artBoard} enableZoom />
         <ul className='artboard-credits'>
           <li>Credits:</li>

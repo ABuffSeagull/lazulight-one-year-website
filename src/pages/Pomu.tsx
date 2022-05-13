@@ -15,24 +15,21 @@ function Pomu (): JSX.Element {
   ]
   const youtubeLink = 'https://www.youtube.com/channel/UCP4nMSTdwU1KqYWu3UH5DHQ'
   const twitterLink = 'https://twitter.com/PomuRainpuff'
-  const fanDiscordLink = ''
+  const fanDiscordLink = 'https://discord.gg/pomu'
 
   return (
-    <div>
-      <TalentLayout
-        name='Pomu Rainpuff'
-        artBoardHeading='Community Pomudachi Collage'
-        artBoardText='Love from Pomucord'
-        corner={corner}
-        frame={PomuFrame}
-        animation={Pomudachi}
-        portrait={PomuImage}
-        info={info}
-        youtube={youtubeLink}
-        twitter={twitterLink}
-        discord={fanDiscordLink}
-      />
-    </div>
+    <TalentLayout
+      name='Pomu Rainpuff'
+      artBoardHeading='Community Pomudachi Collage'
+      corner={corner}
+      frame={PomuFrame}
+      animation={Pomudachi}
+      portrait={PomuImage}
+      info={info}
+      youtube={youtubeLink}
+      twitter={twitterLink}
+      discord={fanDiscordLink}
+    />
   )
 }
 
