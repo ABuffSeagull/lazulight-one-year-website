@@ -1,5 +1,6 @@
 import React from 'react'
 import TalentLayout from '../components/TalentLayout'
+import MascotAnimation from '../components/MascotAnimation'
 import PomuImage from '../assets/Portraits/Pomu-Portrait_cf50.webp?format=png;avif;webp&imagetools&meta'
 import PomuFrame from '../assets/Corners/Pomu-LiverCorner.webp'
 import corner from '../assets/Corners/Pomu-MsgCorner.webp'
@@ -25,12 +26,12 @@ function Pomu (): JSX.Element {
         artBoardText='Love from Pomucord'
         corner={corner}
         frame={PomuFrame}
-        animation={Pomudachi}
         portrait={PomuImage}
         info={info}
         youtube={youtubeLink}
         twitter={twitterLink}
         discord={fanDiscordLink}
+        mascot={delay => <MascotAnimation src={Pomudachi} delay={delay} />}
       />
     </div>
   )

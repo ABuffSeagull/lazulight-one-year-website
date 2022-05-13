@@ -1,5 +1,6 @@
 import React from 'react'
 import TalentLayout from '../components/TalentLayout'
+import MascotAnimation from '../components/MascotAnimation'
 import FinanaImage from '../assets/Portraits/Finana-Portrait_cf50.webp?format=png;avif;webp&imagetools&meta'
 import FinanaFrame from '../assets/Corners/Finana-LiverCorner.webp'
 import corner from '../assets/Corners/Finana-MsgCorner.webp'
@@ -25,13 +26,13 @@ function Finana (): JSX.Element {
         artBoardHeading='Community Ryuguard Collage'
         artBoardText='Love from Fincord'
         frame={FinanaFrame}
-        animation={Ryuguard}
         corner={corner}
         portrait={FinanaImage}
         info={info}
         youtube={youtubeLink}
         twitter={twitterLink}
         discord={fanDiscordLink}
+        mascot={delay => <MascotAnimation src={Ryuguard} delay={delay} />}
       />
     </div>
   )

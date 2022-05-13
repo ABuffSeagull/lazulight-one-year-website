@@ -1,4 +1,5 @@
 import TalentLayout from '../components/TalentLayout'
+import MascotAnimation from '../components/MascotAnimation'
 import EliraImage from '../assets/Portraits/Elira-Portrait_cf50.webp?format=png;avif;webp&imagetools&meta'
 import EliraFrame from '../assets/Corners/Elira-LiverCorner.webp'
 import corner from '../assets/Corners/Elira-MsgCorner.webp'
@@ -26,12 +27,12 @@ export default function Elira (): JSX.Element {
         artBoardText='Love from Eilcord'
         frame={EliraFrame}
         corner={corner}
-        animation={Weewa}
         portrait={EliraImage}
         info={info}
         youtube={youtubeLink}
         twitter={twitterLink}
         discord={fanDiscordLink}
+        mascot={delay => <MascotAnimation src={Weewa} delay={delay} />}
       />
     </div>
   )
