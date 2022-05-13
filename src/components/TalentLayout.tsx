@@ -89,6 +89,7 @@ function TalentLayout (props: Props): JSX.Element {
         enableElira={firstNameLower === 'elira'}
         enablePomu={firstNameLower === 'pomu'}
         enableFinana={firstNameLower === 'finana'}
+        enableDcl={false}
         enableFolding
         enableArt={false}
         heading={`Messages To ${firstName}`}
@@ -101,6 +102,7 @@ function TalentLayout (props: Props): JSX.Element {
         enableElira={firstNameLower === 'elira'}
         enablePomu={firstNameLower === 'pomu'}
         enableFinana={firstNameLower === 'finana'}
+        enableDcl={false}
         enableFolding
         enableArt
         heading={`Art To ${firstName}`}

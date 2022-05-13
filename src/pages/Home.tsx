@@ -56,6 +56,7 @@ export default function Home (): JSX.Element {
         enableElira={false}
         enablePomu={false}
         enableFinana={false}
+        enableDcl={false}
         enableFolding
         enableArt={false}
         heading='Messages To LazuLight'
@@ -68,6 +69,7 @@ export default function Home (): JSX.Element {
         enableElira={false}
         enablePomu={false}
         enableFinana={false}
+        enableDcl={false}
         enableFolding
         enableArt
         heading='Art To LazuLight'

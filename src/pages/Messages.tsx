@@ -34,6 +34,7 @@ export default function Messages (props: Props): JSX.Element {
         enableElira
         enablePomu
         enableFinana
+        enableDcl
         enableFolding={false}
         enableArt={false}
         heading='All Fan Messages'

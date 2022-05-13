@@ -2,6 +2,7 @@ import React from 'react'
 import '../components/TalentLayout.scss'
 import '../components/ProjectPages.scss'
 import Image from '../components/Image'
+import MessageBoxesLayout from '../components/MessageBoxesLayout'
 import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp'
 import PomuImage from '../assets/Portraits/Pomu-Portrait_cf50.webp?format=png;avif;webp&imagetools&meta'
 
@@ -45,6 +46,19 @@ export default function DiamondCityLights (props: Props): JSX.Element {
           </div>
         </div>
       </div>
+
+      {/* Messages */}
+      <MessageBoxesLayout
+        enableLazulight={false}
+        enableElira={false}
+        enablePomu={false}
+        enableFinana={false}
+        enableDcl
+        enableFolding
+        enableArt={false}
+        heading='Messages from the DCL Team'
+        page='dcl'
+      />
 
       <div className='talent-text-container'>
         <Image className='talent-corner' src={LazulightCorner} />

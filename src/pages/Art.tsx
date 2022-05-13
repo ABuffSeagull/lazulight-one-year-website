@@ -40,6 +40,7 @@ export default function Art (props: Props): JSX.Element {
         enableElira
         enablePomu
         enableFinana
+        enableDcl={false}
         enableFolding={false}
         enableArt
         heading='All Fan Art'

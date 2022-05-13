@@ -20,7 +20,9 @@ import 'slick-carousel/slick/slick-theme.css'
 import Slider from 'react-slick'
 
 // Slide show slides
-import Slide2 from '../assets/VN/bg_river_day_720p.jpg' // TODO: This is a placeholder for testing
+import Slide1 from '../assets/VN/cg_elira_classroom_hair_tuck_watermark.webp'
+import Slide2 from '../assets/VN/cg_finana_rooftop_lunch_watermark.webp'
+import Slide3 from '../assets/VN/cg_pomu_pomusuke_ver1_watermark.webp'
 
 // Countdown timer
 // Doc: https://github.com/ndresx/react-countdown
@@ -111,7 +113,7 @@ export default function VisualNovel (props: Props): JSX.Element {
             <div className='slideshow-slide'>
               <div className='video-container'>
                 <iframe
-                  src='https://www.youtube.com/embed/ZnP0cKNPE04' // TODO: Replace
+                  src='https://www.youtube.com/embed/jsJJPGwZpn0'
                   title='YouTube video player'
                   frameBorder='0'
                   allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
@@ -120,13 +122,13 @@ export default function VisualNovel (props: Props): JSX.Element {
               </div>
             </div>
             <div>
-              <Image src={Slide2} className='slideshow-slide' />
+              <Image src={Slide1} className='slideshow-slide' />
             </div>
             <div>
               <Image src={Slide2} className='slideshow-slide' />
             </div>
             <div>
-              <Image src={Slide2} className='slideshow-slide' />
+              <Image src={Slide3} className='slideshow-slide' />
             </div>
           </Slider>
 
@@ -361,6 +363,7 @@ function VisualNovelCredits (): JSX.Element {
       <h4>Programming Team Leader</h4>
       <ul>
         <li><p>Usaruru</p></li>
+        <li><p><a href='https://twitter.com/tevilchicken'>tecnd</a></p></li>
       </ul>
       <h4>Programmers</h4>
       <ul>
@@ -395,6 +398,10 @@ function VisualNovelCredits (): JSX.Element {
       <ul>
         <li><p><a href='https://twitter.com/peeboggs'>Pendora’s Box</a> &nbsp;(Guitar)</p></li>
         <li><p><a href='https://twitter.com/HiiragiEmuri'>Hiiragi Emuri</a> &nbsp;(Violin)</p></li>
+      </ul>
+      <h4>Sound Effects</h4>
+      <ul>
+        <li><p><a href='https://freesound.org'>freesound.org under the CC0 license</a></p></li>
       </ul>
 
       <h3>Video Team</h3>
