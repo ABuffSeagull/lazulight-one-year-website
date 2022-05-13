@@ -27,6 +27,11 @@ export default function About (props: Props): JSX.Element {
           <p>This fan website showcases our thanks and congratulations to Elira, Pomu, and Finana (LazuLight) of Nijisanji EN on their first full year of streaming.</p>
           <p>Fans of LazuLight from across the world and from all walks of life joined together to create this expression of thanks. Every showcased message, art, music, game, and this website itself was created specifically for this purpose. This project is the culmination of over 4 months of efforts from artists, programmers, writers, and many others.</p>
           <p>The fruits of this labor include artwork, a cover of Diamond City Lights, a mod for Friday Night Funkin, and an entire visual novel. Thank you to the LazuLight fan discords, contributors, and all the fans for your hard work and support.</p>
+          <h3>Links</h3>
+          <p><a href='https://discord.gg/2434club'>Fan Discord for Nijisanji</a></p>
+          <p><a href='https://discord.gg/pomu'>Fan Discord for Pomu</a></p>
+          <p><a href='https://discord.gg/gWUFJS2JtF'>Fan Discord for Elira</a></p>
+          <p><a href='https://discord.gg/425bxuSsff'>Fan Discord for Finana</a></p>
         </div>
       </div>
 

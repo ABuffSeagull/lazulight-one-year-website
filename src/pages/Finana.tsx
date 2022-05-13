@@ -16,7 +16,7 @@ function Finana (): JSX.Element {
   ]
   const youtubeLink = 'https://www.youtube.com/c/FinanaRyugu-NIJISANJIEN'
   const twitterLink = 'https://twitter.com/FinanaRyugu'
-  const fanDiscordLink = ''
+  const fanDiscordLink = 'https://discord.gg/425bxuSsff'
 
   return (
     <TalentLayout

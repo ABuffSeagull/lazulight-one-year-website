@@ -16,7 +16,7 @@ export default function Elira (): JSX.Element {
   const youtubeLink =
     'https://www.youtube.com/channel/UCIeSUTOTkF9Hs7q3SGcO-Ow'
   const twitterLink = 'https://twitter.com/EliraPendora'
-  const fanDiscordLink = ''
+  const fanDiscordLink = 'https://discord.gg/gWUFJS2JtF'
 
   return (
     <TalentLayout

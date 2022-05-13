@@ -15,7 +15,7 @@ function Pomu (): JSX.Element {
   ]
   const youtubeLink = 'https://www.youtube.com/channel/UCP4nMSTdwU1KqYWu3UH5DHQ'
   const twitterLink = 'https://twitter.com/PomuRainpuff'
-  const fanDiscordLink = ''
+  const fanDiscordLink = 'https://discord.gg/pomu'
 
   return (
     <TalentLayout
