@@ -38,8 +38,8 @@ export default function Fnf (props: Props): JSX.Element {
 
       {/* Heading */}
       <div className='project-heading-container'>
-        <h1 className='project-heading-text'>LazuNight Funkin</h1>
         <Image src={FNFLogo} className='project-heading-image' enableZoom />
+        <h1 className='project-heading-text-fnf project-heading-text-bg'>LazuNight Funkin</h1>
       </div>
 
       {/* Slide Show */}

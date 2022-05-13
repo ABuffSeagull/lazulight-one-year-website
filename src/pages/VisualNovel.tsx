@@ -99,8 +99,8 @@ export default function VisualNovel (props: Props): JSX.Element {
 
       {/* Heading */}
       <div className='project-heading-container'>
-        <h1 className='project-heading-text'>LAZULIGHT: By your Side</h1>
         <Image src={VisualNovelLogo} className='project-heading-image' enableZoom />
+        <h1 className='project-heading-text-vn project-heading-text-bg'>LAZULIGHT:<br />By your Side</h1>
       </div>
 
       {/* Slide Show */}

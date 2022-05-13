@@ -3,6 +3,7 @@ import '../components/TalentLayout.scss'
 import '../components/ProjectPages.scss'
 import Image from '../components/Image'
 import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp'
+import PomuImage from '../assets/Portraits/Pomu-Portrait_cf50.webp?format=png;avif;webp&imagetools&meta'
 
 interface Props {
   page: string
@@ -14,7 +15,8 @@ export default function DiamondCityLights (props: Props): JSX.Element {
 
       {/* Heading */}
       <div className='project-heading-container'>
-        <h1 className='project-heading-text'>Diamond City Lights Cover</h1>
+        <Image src={PomuImage} className='project-heading-image' enableZoom />
+        <h1 className='project-heading-text-dcl project-heading-text-bg'>Diamond City<br />Lights Cover</h1>
       </div>
 
       <div className='talent-text-container'>

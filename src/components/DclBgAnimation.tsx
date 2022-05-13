@@ -34,7 +34,7 @@ function Cyalume ({ color, bodyHeight }: { color: 'elira' | 'pomu' | 'finana', b
 }
 
 export default function DclBgAnimation (): JSX.Element {
-  const cyalumeCount: number = 20
+  const cyalumeCount: number = 100
 
   const [bodyHeight, setBodyHeight] = useState(0)
   useEffect(() => {
