@@ -2,7 +2,6 @@ import React from 'react'
 import './TalentLayout.scss'
 import Image from './Image'
 import MessageBoxesLayout from './MessageBoxesLayout'
-import ArtBoardLayout, { ArtBoardEnum } from './ArtBoardLayout'
 
 // TODO(abuffseagull) 2022-03-17: need to remove this
 // Probably just generate some random ids on the messages at load time
@@ -10,10 +9,9 @@ import ArtBoardLayout, { ArtBoardEnum } from './ArtBoardLayout'
 
 interface Props {
   name: string
-  artBoardHeading: string
-  artBoardText: string
   frame: string
   mascot: (delay: number) => JSX.Element
+  artBoard: JSX.Element
   corner: string
   portrait: string | metadata[]
   info: string[]
@@ -27,15 +25,6 @@ interface Props {
 function TalentLayout (props: Props): JSX.Element {
   const firstName = props.name.split(' ')[0]
   const firstNameLower = firstName.toLowerCase()
-
-  // Switch art board
-  // Brandon somewhat regrets deciding to use enums here
-  const chooseArtBoard = (): ArtBoardEnum => {
-    if (firstNameLower === 'elira') { return ArtBoardEnum.elira }
-    if (firstNameLower === 'pomu') { return ArtBoardEnum.pomu }
-    if (firstNameLower === 'finana') { return ArtBoardEnum.finana }
-    return ArtBoardEnum.lazulight
-  }
 
   return (
     <div className='talent-layout-container'>
@@ -67,11 +56,7 @@ function TalentLayout (props: Props): JSX.Element {
         </div>
       </div>
 
-      <ArtBoardLayout
-        artBoard={chooseArtBoard()}
-        heading={props.artBoardHeading}
-        message={props.artBoardText}
-      />
+      {props.artBoard}
 
       {/* Messages */}
       <MessageBoxesLayout

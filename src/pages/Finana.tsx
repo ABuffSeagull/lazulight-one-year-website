@@ -1,5 +1,6 @@
 import React from 'react'
 import TalentLayout from '../components/TalentLayout'
+import ArtBoardLayout, { ArtBoardEnum } from '../components/ArtBoardLayout'
 import MascotAnimation from '../components/MascotAnimation'
 import FinanaImage from '../assets/Portraits/Finana-Portrait_cf50.webp?format=png;avif;webp&imagetools&meta'
 import FinanaFrame from '../assets/Corners/Finana-LiverCorner.webp'
@@ -25,8 +26,7 @@ function Finana (): JSX.Element {
     <div>
       <TalentLayout
         name={name}
-        artBoardHeading='Community Ryuguard Collage'
-        artBoardText='Love from Fincord'
+        artBoard={<ArtBoardLayout heading='Community Ryuguard Collage' message='Love from Fincord' artBoard={ArtBoardEnum.finana} />}
         frame={FinanaFrame}
         corner={corner}
         portrait={FinanaImage}

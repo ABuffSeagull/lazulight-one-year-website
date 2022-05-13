@@ -1,5 +1,6 @@
 import TalentLayout from '../components/TalentLayout'
 import MascotAnimation from '../components/MascotAnimation'
+import ArtBoardLayout, { ArtBoardEnum } from '../components/ArtBoardLayout'
 import EliraImage from '../assets/Portraits/Elira-Portrait_cf50.webp?format=png;avif;webp&imagetools&meta'
 import EliraFrame from '../assets/Corners/Elira-LiverCorner.webp'
 import corner from '../assets/Corners/Elira-MsgCorner.webp'
@@ -24,8 +25,7 @@ export default function Elira (): JSX.Element {
     <div>
       <TalentLayout
         name={name}
-        artBoardHeading='Community Weewa Collage'
-        artBoardText='Love from Eilcord'
+        artBoard={<ArtBoardLayout heading='Community Weewa Collage' message='Love from Elicord' artBoard={ArtBoardEnum.elira} />}
         frame={EliraFrame}
         corner={corner}
         portrait={EliraImage}

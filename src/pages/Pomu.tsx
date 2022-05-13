@@ -1,5 +1,6 @@
 import React from 'react'
 import TalentLayout from '../components/TalentLayout'
+import ArtBoardLayout, { ArtBoardEnum } from '../components/ArtBoardLayout'
 import MascotAnimation from '../components/MascotAnimation'
 import PomuImage from '../assets/Portraits/Pomu-Portrait_cf50.webp?format=png;avif;webp&imagetools&meta'
 import PomuFrame from '../assets/Corners/Pomu-LiverCorner.webp'
@@ -24,8 +25,7 @@ function Pomu (): JSX.Element {
     <div>
       <TalentLayout
         name='Pomu Rainpuff'
-        artBoardHeading='Community Pomudachi Collage'
-        artBoardText='Love from Pomucord'
+        artBoard={<ArtBoardLayout heading='Community Pomudachi Collage' message='Love from Pomucord' artBoard={ArtBoardEnum.pomu} />}
         corner={corner}
         frame={PomuFrame}
         portrait={PomuImage}
