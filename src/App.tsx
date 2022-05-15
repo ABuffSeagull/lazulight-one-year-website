@@ -40,7 +40,7 @@ export default function App (): JSX.Element {
         </Route>
         <Route path='/all-messages'>
           <PageWrapper page='elira' animation='on'>
-          <Messages page='elira'/>
+            <Messages page='elira' />
           </PageWrapper>
         </Route>
         <Route path='/project-dcl'>
