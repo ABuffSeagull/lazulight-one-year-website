@@ -1,34 +1,34 @@
-import React from 'react';
-import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp';
-import SusElira from '../assets/DCL/Elira_sus_small.png';
-import TwerkElira from '../assets/DCL/twerk_elira_t.gif';
-import TwerkFinana from '../assets/DCL/twerk_finana_t.gif';
-import TwerkPomu from '../assets/DCL/twerk_pomu_t.gif';
-import PomuImage from '../assets/Portraits/Pomu-Portrait_BJ_cf50.webp?format=png;avif;webp&imagetools&meta';
-import Image from '../components/Image';
-import MessageBoxesLayout from '../components/MessageBoxesLayout';
-import '../components/ProjectPages.scss';
-import '../components/TalentLayout.scss';
+import React from 'react'
+import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp'
+import SusElira from '../assets/DCL/Elira_sus_small.png'
+import TwerkElira from '../assets/DCL/twerk_elira_t.gif'
+import TwerkFinana from '../assets/DCL/twerk_finana_t.gif'
+import TwerkPomu from '../assets/DCL/twerk_pomu_t.gif'
+import PomuImage from '../assets/Portraits/Pomu-Portrait_BJ_cf50.webp?format=png;avif;webp&imagetools&meta'
+import Image from '../components/Image'
+import MessageBoxesLayout from '../components/MessageBoxesLayout'
+import '../components/ProjectPages.scss'
+import '../components/TalentLayout.scss'
 
 interface Props {
-  page: string;
+  page: string
 }
 
-export default function DiamondCityLights(props: Props): JSX.Element {
+export default function DiamondCityLights (props: Props): JSX.Element {
   return (
-    <div className="talent-layout-container">
+    <div className='talent-layout-container'>
       {/* Heading */}
-      <div className="project-heading-container">
-        <Image src={PomuImage} className="project-heading-image" enableZoom />
-        <h1 className="talent-title pomu">
+      <div className='project-heading-container'>
+        <Image src={PomuImage} className='project-heading-image' enableZoom />
+        <h1 className='talent-title pomu'>
           Diamond City
           <br />
           Lights Cover
         </h1>
       </div>
 
-      <div className="talent-text-container">
-        <Image className="talent-corner" src={LazulightCorner} />
+      <div className='talent-text-container'>
+        <Image className='talent-corner' src={LazulightCorner} />
         <div className={`talent-text-inner ${props.page}-border`}>
           <h2>COMING SOON</h2>
           {/* <div className='video-container'>
@@ -41,7 +41,7 @@ export default function DiamondCityLights(props: Props): JSX.Element {
             />
           </div> */}
           {/* Description */}
-          <div className="project-description-container">
+          <div className='project-description-container'>
             <h3>A Fan Cover Song</h3>
             <p>
               In celebration of Lazulight's first anniversary, fans from the
@@ -62,13 +62,13 @@ export default function DiamondCityLights(props: Props): JSX.Element {
               the song, this chant is commonly referred to as a ‘mix’. Mixing is
               associated with Japanese Idol concerts where the crowd mix to the
               performance. For further information, please refer to{' '}
-              <a href="https://www.youtube.com/watch?v=YuLfQC4LCdM">
+              <a href='https://www.youtube.com/watch?v=YuLfQC4LCdM'>
                 {' '}
                 【IDOL CALLS】Learning wotagei with Pomu Sensei!【NIJISANJI EN |
                 Pomu Rainpuff】
               </a>{' '}
               and{' '}
-              <a href="https://en.wikipedia.org/wiki/Wotagei">
+              <a href='https://en.wikipedia.org/wiki/Wotagei'>
                 the Wikipedia page on Wotagei
               </a>
               . IETTAIGA!
@@ -86,7 +86,7 @@ export default function DiamondCityLights(props: Props): JSX.Element {
 
       {/* Messages */}
       <MessageBoxesLayout
-        titleType="all"
+        titleType='all'
         enableLazulight={false}
         enableElira={false}
         enablePomu={false}
@@ -94,29 +94,29 @@ export default function DiamondCityLights(props: Props): JSX.Element {
         enableDcl
         enableFolding
         enableArt={false}
-        heading="Messages from the DCL Team"
-        page="dcl"
+        heading='Messages from the DCL Team'
+        page='dcl'
       />
 
-      <div className="talent-text-container">
-        <Image className="talent-corner" src={LazulightCorner} />
+      <div className='talent-text-container'>
+        <Image className='talent-corner' src={LazulightCorner} />
         <div className={`talent-text-inner ${props.page}-border`}>
           <h2>Credits</h2>
           <DiamondCityLightsCredits />
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-function DiamondCityLightsCredits(): JSX.Element {
+function DiamondCityLightsCredits (): JSX.Element {
   return (
-    <div className="credits-text">
+    <div className='credits-text'>
       <h3>Organizer &amp; Leader</h3>
       <ul>
         <li>
           <p>
-            <a href="https://twitter.com/HirokawaKiro">Kiro</a>
+            <a href='https://twitter.com/HirokawaKiro'>Kiro</a>
           </p>
         </li>
       </ul>
@@ -124,7 +124,7 @@ function DiamondCityLightsCredits(): JSX.Element {
       <ul>
         <li>
           <p>
-            <a href="https://twitter.com/TCBNmusic">Tachibana Music</a>
+            <a href='https://twitter.com/TCBNmusic'>Tachibana Music</a>
           </p>
         </li>
       </ul>
@@ -132,7 +132,7 @@ function DiamondCityLightsCredits(): JSX.Element {
       <ul>
         <li>
           <p>
-            <a href="https://twitter.com/darylbarnes">
+            <a href='https://twitter.com/darylbarnes'>
               Daryl Barnes of UTAlive
             </a>
           </p>
@@ -142,7 +142,7 @@ function DiamondCityLightsCredits(): JSX.Element {
       <ul>
         <li>
           <p>
-            <a href="https://twitter.com/coldace_24">Zephyr Monochrome</a>
+            <a href='https://twitter.com/coldace_24'>Zephyr Monochrome</a>
           </p>
         </li>
       </ul>
@@ -150,17 +150,17 @@ function DiamondCityLightsCredits(): JSX.Element {
       <ul>
         <li>
           <p>
-            <a href="https://twitter.com/PomuPowerCenter">
+            <a href='https://twitter.com/PomuPowerCenter'>
               Pomu Power Distribution Center
             </a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/peeboggs">Pendora’s Box</a>
+            <a href='https://twitter.com/peeboggs'>Pendora’s Box</a>
           </p>
-          <div className="dcl-twerk-container">
-            <Image className="dcl-twerk-gif" src={SusElira} />
+          <div className='dcl-twerk-container'>
+            <Image className='dcl-twerk-gif' src={SusElira} />
           </div>
         </li>
         <li>
@@ -171,12 +171,12 @@ function DiamondCityLightsCredits(): JSX.Element {
       <ul>
         <li>
           <p>
-            <a href="https://twitter.com/lemonostril">Lemon</a>
+            <a href='https://twitter.com/lemonostril'>Lemon</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/hyunicat">hyuni</a>
+            <a href='https://twitter.com/hyunicat'>hyuni</a>
           </p>
         </li>
       </ul>
@@ -184,37 +184,37 @@ function DiamondCityLightsCredits(): JSX.Element {
       <ul>
         <li>
           <p>
-            <a href="https://twitter.com/wizwaaz">wizwaaz</a>
+            <a href='https://twitter.com/wizwaaz'>wizwaaz</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/keekispecial">Keektang</a>
+            <a href='https://twitter.com/keekispecial'>Keektang</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/a1d8e2316745">Mini</a>
+            <a href='https://twitter.com/a1d8e2316745'>Mini</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/rem26_art">fyretruck</a>
+            <a href='https://twitter.com/rem26_art'>fyretruck</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/ajaniiiiiii">Ajani Akasakaspicy</a>
+            <a href='https://twitter.com/ajaniiiiiii'>Ajani Akasakaspicy</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/snowharasho">Squish</a>
+            <a href='https://twitter.com/snowharasho'>Squish</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/Arqodeon">arqo</a>
+            <a href='https://twitter.com/Arqodeon'>arqo</a>
           </p>
         </li>
       </ul>
@@ -222,7 +222,7 @@ function DiamondCityLightsCredits(): JSX.Element {
       <ul>
         <li>
           <p>
-            <a href="https://twitter.com/SonicFan53alt">SonicFan53</a>
+            <a href='https://twitter.com/SonicFan53alt'>SonicFan53</a>
           </p>
         </li>
       </ul>
@@ -236,42 +236,42 @@ function DiamondCityLightsCredits(): JSX.Element {
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/hyunicat">hyuni</a>
+            <a href='https://twitter.com/hyunicat'>hyuni</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/_kaerrie_">Kaerrie</a>
+            <a href='https://twitter.com/_kaerrie_'>Kaerrie</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/sinibladekat">thatmtrx</a>
+            <a href='https://twitter.com/sinibladekat'>thatmtrx</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/Icy_Meerkat">IcyMeerkat</a>
+            <a href='https://twitter.com/Icy_Meerkat'>IcyMeerkat</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/hikikneekomori">ottrbottl</a>
+            <a href='https://twitter.com/hikikneekomori'>ottrbottl</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/eia_vsinger">Eia Mhara</a>
+            <a href='https://twitter.com/eia_vsinger'>Eia Mhara</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/csenge_furi">Sen</a>
+            <a href='https://twitter.com/csenge_furi'>Sen</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/_arisamisaki_">jessica</a>
+            <a href='https://twitter.com/_arisamisaki_'>jessica</a>
           </p>
         </li>
       </ul>
@@ -285,42 +285,42 @@ function DiamondCityLightsCredits(): JSX.Element {
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/acidpiss_">Acid</a>
+            <a href='https://twitter.com/acidpiss_'>Acid</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/Phin86_">PhinAgain</a>
+            <a href='https://twitter.com/Phin86_'>PhinAgain</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/ACWalker20">AC Walker</a>
+            <a href='https://twitter.com/ACWalker20'>AC Walker</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/PastelSonico">PastelSonico</a>
+            <a href='https://twitter.com/PastelSonico'>PastelSonico</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/Soul_Jamelson">Soul Jam</a>
+            <a href='https://twitter.com/Soul_Jamelson'>Soul Jam</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/Kohibeats1">Kohibeats</a>
+            <a href='https://twitter.com/Kohibeats1'>Kohibeats</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/outhaleart">Outhale</a>
+            <a href='https://twitter.com/outhaleart'>Outhale</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/rocky_2d">rocky.</a>
+            <a href='https://twitter.com/rocky_2d'>rocky.</a>
           </p>
         </li>
       </ul>
@@ -340,32 +340,32 @@ function DiamondCityLightsCredits(): JSX.Element {
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/DrSuccessful_">DrSuccessful</a>
+            <a href='https://twitter.com/DrSuccessful_'>DrSuccessful</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/P1usJ">PlusJ</a>
+            <a href='https://twitter.com/P1usJ'>PlusJ</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/lemonostril">Lemon</a>
+            <a href='https://twitter.com/lemonostril'>Lemon</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/dead_ninja1">DeadNinja1</a>
+            <a href='https://twitter.com/dead_ninja1'>DeadNinja1</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/jotamide">Jotamide</a>
+            <a href='https://twitter.com/jotamide'>Jotamide</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/CoughAMania">Fonzie</a>
+            <a href='https://twitter.com/CoughAMania'>Fonzie</a>
           </p>
         </li>
       </ul>
@@ -418,156 +418,156 @@ function DiamondCityLightsCredits(): JSX.Element {
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/JF__ND">JFND</a>
+            <a href='https://twitter.com/JF__ND'>JFND</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/DrSuccessful_">DrSuccessful</a>
+            <a href='https://twitter.com/DrSuccessful_'>DrSuccessful</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/ErawanLH">Erawan</a>
+            <a href='https://twitter.com/ErawanLH'>Erawan</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/kid_poro">Poro</a>
+            <a href='https://twitter.com/kid_poro'>Poro</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/NoxShadow24904">NoxShadow</a>
+            <a href='https://twitter.com/NoxShadow24904'>NoxShadow</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/HirokawaKiro">Kiro</a>
+            <a href='https://twitter.com/HirokawaKiro'>Kiro</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/BrandonJohns96">Brandon Johns</a>
+            <a href='https://twitter.com/BrandonJohns96'>Brandon Johns</a>
           </p>
-          <div className="dcl-twerk-container">
-            <Image className="dcl-twerk-gif" src={TwerkPomu} />
+          <div className='dcl-twerk-container'>
+            <Image className='dcl-twerk-gif' src={TwerkPomu} />
           </div>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/_arisamisaki_">jessica</a>
+            <a href='https://twitter.com/_arisamisaki_'>jessica</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/KeZunjian">Kei_ZJ (Hanashi)</a>
+            <a href='https://twitter.com/KeZunjian'>Kei_ZJ (Hanashi)</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/third12_">third12</a>
+            <a href='https://twitter.com/third12_'>third12</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/wildnexus">wildnexus</a>
+            <a href='https://twitter.com/wildnexus'>wildnexus</a>
           </p>
-          <div className="dcl-twerk-container">
-            <Image className="dcl-twerk-gif" src={TwerkElira} />
+          <div className='dcl-twerk-container'>
+            <Image className='dcl-twerk-gif' src={TwerkElira} />
           </div>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/aletheia024">Aletheia</a>
+            <a href='https://twitter.com/aletheia024'>Aletheia</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/Ghirocks_Log">Ghirocks_Log</a>
+            <a href='https://twitter.com/Ghirocks_Log'>Ghirocks_Log</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/reiykhuu">Saeren</a>
+            <a href='https://twitter.com/reiykhuu'>Saeren</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/KakaTan91">KakaTan</a>
+            <a href='https://twitter.com/KakaTan91'>KakaTan</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/pumpurumpum2">Sleep</a>
+            <a href='https://twitter.com/pumpurumpum2'>Sleep</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/Icy_Meerkat">IcyMeerkat</a>
+            <a href='https://twitter.com/Icy_Meerkat'>IcyMeerkat</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/Phin86_">PhinAgain</a>
+            <a href='https://twitter.com/Phin86_'>PhinAgain</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/Roboticpaladin">Robotic Paladin</a>
+            <a href='https://twitter.com/Roboticpaladin'>Robotic Paladin</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/sinibladekat">thatmtrx</a>
+            <a href='https://twitter.com/sinibladekat'>thatmtrx</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/THEEBINNS">Binns</a>
+            <a href='https://twitter.com/THEEBINNS'>Binns</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/cyanara_o7">cyanara</a>
+            <a href='https://twitter.com/cyanara_o7'>cyanara</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/YukiBaskerville">Yuki Baskerville</a>
+            <a href='https://twitter.com/YukiBaskerville'>Yuki Baskerville</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/akaasianguy">akaasianguy</a>
+            <a href='https://twitter.com/akaasianguy'>akaasianguy</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/HiNu_Nova">NovaNazo</a>
+            <a href='https://twitter.com/HiNu_Nova'>NovaNazo</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/Bel_something">Belsomething</a>
+            <a href='https://twitter.com/Bel_something'>Belsomething</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/csenge_furi">Sen</a>
+            <a href='https://twitter.com/csenge_furi'>Sen</a>
           </p>
         </li>
         <li>
           <p>
-            <a href="https://twitter.com/rockyyy_dp">rocky.</a>
+            <a href='https://twitter.com/rockyyy_dp'>rocky.</a>
           </p>
         </li>
       </ul>
       <h3>Special Thanks to</h3>
-      <ul className="credits-text-special-final">
+      <ul className='credits-text-special-final'>
         <li>
           <p>
-            <a href="https://twitter.com/NoxShadow24904">NoxShadow</a>
+            <a href='https://twitter.com/NoxShadow24904'>NoxShadow</a>
           </p>
         </li>
         <li>
@@ -595,9 +595,9 @@ function DiamondCityLightsCredits(): JSX.Element {
           </p>
         </li>
       </ul>
-      <div className="dcl-twerk-container">
-        <Image className="dcl-twerk-gif" src={TwerkFinana} />
+      <div className='dcl-twerk-container'>
+        <Image className='dcl-twerk-gif' src={TwerkFinana} />
       </div>
     </div>
-  );
+  )
 }

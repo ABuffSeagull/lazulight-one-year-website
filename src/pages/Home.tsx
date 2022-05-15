@@ -1,47 +1,47 @@
-import React from 'react';
-import { Link } from 'wouter';
-import EliraImage from '../assets/Portraits/Elira-Portrait_cf50.webp?format=png;avif;webp&imagetools&meta';
-import FinanaImage from '../assets/Portraits/Finana-Portrait_cf50.webp?format=png;avif;webp&imagetools&meta';
-import PomuImage from '../assets/Portraits/Pomu-Portrait-WN_cf50.webp?format=png;avif;webp&imagetools&meta';
-import '../components/HomePage.scss';
-import Image from '../components/Image';
-import MessageBoxesLayout from '../components/MessageBoxesLayout';
-import '../components/TalentLayout.scss';
+import React from 'react'
+import { Link } from 'wouter'
+import EliraImage from '../assets/Portraits/Elira-Portrait_cf50.webp?format=png;avif;webp&imagetools&meta'
+import FinanaImage from '../assets/Portraits/Finana-Portrait_cf50.webp?format=png;avif;webp&imagetools&meta'
+import PomuImage from '../assets/Portraits/Pomu-Portrait-WN_cf50.webp?format=png;avif;webp&imagetools&meta'
+import '../components/HomePage.scss'
+import Image from '../components/Image'
+import MessageBoxesLayout from '../components/MessageBoxesLayout'
+import '../components/TalentLayout.scss'
 
-export default function Home(): JSX.Element {
+export default function Home (): JSX.Element {
   const navIcons = [
     {
       name: 'Elira',
       path: '/elira',
-      image: EliraImage,
+      image: EliraImage
     },
     {
       name: 'Finana',
       path: '/finana',
-      image: FinanaImage,
+      image: FinanaImage
     },
     {
       name: 'Pomu',
       path: '/pomu',
-      image: PomuImage,
-    },
-  ];
+      image: PomuImage
+    }
+  ]
 
   return (
-    <div className="talent-layout-container">
+    <div className='talent-layout-container'>
       {/* Opening Message */}
       <div>
-        <h1 className="home-heading">
+        <h1 className='home-heading'>
           <span>Lazu</span>
           <span>Light</span> <span>1 Year</span>
         </h1>
-        <h2 className="home-subheading">and Counting!</h2>
+        <h2 className='home-subheading'>and Counting!</h2>
       </div>
 
       {/* Links to liver pages */}
-      <div className="home-liver-container">
+      <div className='home-liver-container'>
         {navIcons.map((linkData, i) => (
-          <div className="home-liver-liver" key={`LiverLink${linkData.name}`}>
+          <div className='home-liver-liver' key={`LiverLink${linkData.name}`}>
             <Link to={linkData.path}>
               <Image src={linkData.image} />
               <h3
@@ -57,30 +57,30 @@ export default function Home(): JSX.Element {
       {/* Messages */}
       <MessageBoxesLayout
         enableLazulight
-        titleType="all"
+        titleType='all'
         enableElira={false}
         enablePomu={false}
         enableFinana={false}
         enableDcl={false}
         enableFolding
         enableArt={false}
-        heading="Messages To LazuLight"
-        page="home"
+        heading='Messages To LazuLight'
+        page='home'
       />
 
       {/* Art */}
       <MessageBoxesLayout
         enableLazulight
-        titleType="all"
+        titleType='all'
         enableElira={false}
         enablePomu={false}
         enableFinana={false}
         enableDcl={false}
         enableFolding
         enableArt
-        heading="Art To LazuLight"
-        page="home"
+        heading='Art To LazuLight'
+        page='home'
       />
     </div>
-  );
+  )
 }

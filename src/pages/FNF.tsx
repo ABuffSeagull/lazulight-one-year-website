@@ -1,27 +1,27 @@
-import React from 'react';
+import React from 'react'
 // Countdown timer
 // Doc: https://github.com/ndresx/react-countdown
-import Countdown, { CountdownRenderProps } from 'react-countdown';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick-theme.css';
+import Countdown, { CountdownRenderProps } from 'react-countdown'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick-theme.css'
 // Slide show dependencies
 // Doc: https://react-slick.neostack.com/docs/api
-import 'slick-carousel/slick/slick.css';
-import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp';
+import 'slick-carousel/slick/slick.css'
+import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp'
 // Slide show slides
-import EliraSlide from '../assets/FNF/Elira Collage_cf50.webp';
-import FinanaSlide from '../assets/FNF/Finana Collage_cf50.webp';
-import FNFLogo from '../assets/FNF/Lazunight Thumbnail.webp';
-import PomuSlide from '../assets/FNF/Pomu Collage_cf50.webp';
-import Image from '../components/Image';
-import '../components/ProjectPages.scss';
-import '../components/TalentLayout.scss';
+import EliraSlide from '../assets/FNF/Elira Collage_cf50.webp'
+import FinanaSlide from '../assets/FNF/Finana Collage_cf50.webp'
+import FNFLogo from '../assets/FNF/Lazunight Thumbnail.webp'
+import PomuSlide from '../assets/FNF/Pomu Collage_cf50.webp'
+import Image from '../components/Image'
+import '../components/ProjectPages.scss'
+import '../components/TalentLayout.scss'
 
 interface Props {
-  page: string;
+  page: string
 }
 
-export default function Fnf(props: Props): JSX.Element {
+export default function Fnf (props: Props): JSX.Element {
   const slideShowSettings = {
     className: 'center',
     dots: true,
@@ -31,39 +31,39 @@ export default function Fnf(props: Props): JSX.Element {
     infinite: true,
     centerPadding: '10%',
     slidesToShow: 1,
-    speed: 500,
-  };
+    speed: 500
+  }
 
   const countdownRenderer = ({
     days,
     hours,
     minutes,
     seconds,
-    completed,
+    completed
   }: CountdownRenderProps): JSX.Element => {
     if (completed) {
-      return <span>Hopefully Very Soon</span>;
+      return <span>Hopefully Very Soon</span>
     }
     // Render countdown
     return (
       <span>
         {days} days, {hours}h, {minutes}min, {seconds}s
       </span>
-    );
-  };
+    )
+  }
 
   return (
-    <div className="talent-layout-container">
+    <div className='talent-layout-container'>
       {/* Heading */}
-      <div className="project-heading-container">
-        <Image src={FNFLogo} className="project-heading-logo" enableZoom />
+      <div className='project-heading-container'>
+        <Image src={FNFLogo} className='project-heading-logo' enableZoom />
       </div>
 
       {/* Slide Show */}
-      <div className="talent-text-container">
-        <Image className="talent-corner" src={LazulightCorner} />
+      <div className='talent-text-container'>
+        <Image className='talent-corner' src={LazulightCorner} />
         <div className={`talent-text-inner ${props.page}-border`}>
-          <Slider {...slideShowSettings} className="slideshow-container">
+          <Slider {...slideShowSettings} className='slideshow-container'>
             {/* <div className='slideshow-slide'>
               <div className='video-container'>
                 <iframe
@@ -76,18 +76,18 @@ export default function Fnf(props: Props): JSX.Element {
               </div>
             </div> */}
             <div>
-              <Image src={EliraSlide} className="slideshow-slide" />
+              <Image src={EliraSlide} className='slideshow-slide' />
             </div>
             <div>
-              <Image src={PomuSlide} className="slideshow-slide" />
+              <Image src={PomuSlide} className='slideshow-slide' />
             </div>
             <div>
-              <Image src={FinanaSlide} className="slideshow-slide" />
+              <Image src={FinanaSlide} className='slideshow-slide' />
             </div>
           </Slider>
 
           {/* Description & Download */}
-          <div className="project-description-container">
+          <div className='project-description-container'>
             <h3>A LazuLight Friday Night Funkin' Mod</h3>
             <p>
               Step into the shoes of Pomu, who, in celebration of LazuLight's
@@ -123,7 +123,7 @@ export default function Fnf(props: Props): JSX.Element {
             <p>
               Available: June 1 (
               <Countdown
-                date="2022-06-01T00:00:00+00:00"
+                date='2022-06-01T00:00:00+00:00'
                 renderer={countdownRenderer}
               />
               )
@@ -135,24 +135,24 @@ export default function Fnf(props: Props): JSX.Element {
         </div>
       </div>
 
-      <div className="talent-text-container">
-        <Image className="talent-corner" src={LazulightCorner} />
+      <div className='talent-text-container'>
+        <Image className='talent-corner' src={LazulightCorner} />
         <div className={`talent-text-inner ${props.page}-border`}>
           <h2>Credits</h2>
           <LazunightFunkinCredits />
         </div>
       </div>
     </div>
-  );
+  )
 }
-function LazunightFunkinCredits(): JSX.Element {
+function LazunightFunkinCredits (): JSX.Element {
   return (
-    <div className="credits-text">
+    <div className='credits-text'>
       <h3>Director, UI Artist</h3>
       <ul>
         <li>
           <p>
-            <a href="https://www.youtube.com/c/CoZm0Plays">CoZm0</a>
+            <a href='https://www.youtube.com/c/CoZm0Plays'>CoZm0</a>
           </p>
         </li>
       </ul>
@@ -160,7 +160,7 @@ function LazunightFunkinCredits(): JSX.Element {
       <ul>
         <li>
           <p>
-            <a href="https://www.youtube.com/c/KVNK3VIN">KVN</a>
+            <a href='https://www.youtube.com/c/KVNK3VIN'>KVN</a>
           </p>
         </li>
       </ul>
@@ -168,7 +168,7 @@ function LazunightFunkinCredits(): JSX.Element {
       <ul>
         <li>
           <p>
-            <a href="https://twitter.com/That1PlantGuy">Plant Guy</a>
+            <a href='https://twitter.com/That1PlantGuy'>Plant Guy</a>
           </p>
         </li>
       </ul>
@@ -200,7 +200,7 @@ function LazunightFunkinCredits(): JSX.Element {
       <ul>
         <li>
           <p>
-            <a href="https://twitter.com/nobu_okt">Professor Nobu</a>
+            <a href='https://twitter.com/nobu_okt'>Professor Nobu</a>
           </p>
         </li>
       </ul>
@@ -208,7 +208,7 @@ function LazunightFunkinCredits(): JSX.Element {
       <ul>
         <li>
           <p>
-            <a href="https://www.youtube.com/channel/UCTmBhasnypdfoBUe3bpSb5g">
+            <a href='https://www.youtube.com/channel/UCTmBhasnypdfoBUe3bpSb5g'>
               Maarbble
             </a>
           </p>
@@ -218,7 +218,7 @@ function LazunightFunkinCredits(): JSX.Element {
       <ul>
         <li>
           <p>
-            <a href="https://www.youtube.com/c/eivesohn">Eivesohn</a>
+            <a href='https://www.youtube.com/c/eivesohn'>Eivesohn</a>
           </p>
         </li>
       </ul>
@@ -226,7 +226,7 @@ function LazunightFunkinCredits(): JSX.Element {
       <ul>
         <li>
           <p>
-            <a href="https://twitter.com/TheCoolStalker">CoolStalker</a>
+            <a href='https://twitter.com/TheCoolStalker'>CoolStalker</a>
           </p>
         </li>
       </ul>
@@ -235,10 +235,10 @@ function LazunightFunkinCredits(): JSX.Element {
       <ul>
         <li>
           <p>
-            <a href="https://twitter.com/GGalactigal">GGalactigal</a>
+            <a href='https://twitter.com/GGalactigal'>GGalactigal</a>
           </p>
         </li>
       </ul>
     </div>
-  );
+  )
 }
