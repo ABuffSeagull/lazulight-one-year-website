@@ -58,7 +58,7 @@ function WebTeamCredits (): JSX.Element {
       </ul>
       <h4>Leaders</h4>
       <ul>
-        <li><p>Sant</p></li>
+        <li><p><a href='https://twitter.com/kfpcalendar'>Sant268</a></p></li>
         <li><p><a href='https://twitter.com/NoxShadow24904'>NoxShadow</a></p></li>
         <li><p>ABuffSeagull</p></li>
         <li><p><a href='https://twitter.com/BrandonJohns96'>Brandon Johns</a></p></li>
