@@ -42,7 +42,7 @@ export default function App (): JSX.Element {
         {/* Removing comments will allow each page
         <Route path='/project-fnf'>
           <PageWrapper page='fnf' animation='on'>
-            <Fnf page='fnf'  />
+          <Messages page='all-messages'  />
           </PageWrapper>
         </Route>
 
