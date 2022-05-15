@@ -325,6 +325,7 @@
   transition-timing-function: ease-out;
   margin-bottom: 1.5rem;
   cursor: pointer;
+  visibility: visible;
 
   &:hover {
     background-color: #bfdfd7;
@@ -336,6 +337,6 @@
 }
 
 .animation-toggle-off {
-  display: none;
+  visibility: hidden;
   pointer-events: none;
 }
