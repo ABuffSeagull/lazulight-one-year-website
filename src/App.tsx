@@ -12,7 +12,7 @@ import Messages from './pages/Messages'
 import About from './pages/About'
 import ScrollToTop from './components/ScrollToTop'
 
-export default function App (): JSX.Element {
+export default function App(): JSX.Element {
   return (
     <>
       {/* Notes: (Brandon)
@@ -44,10 +44,10 @@ export default function App (): JSX.Element {
             <Messages page='elira' />
           </PageWrapper>
         </Route>
-        
+
         <Route path='/all-messages'>
           <PageWrapper page='fnf' animation='on'>
-          <Messages page='all-messages'  />
+            <Messages page='all-messages' />
           </PageWrapper>
         </Route>
 
@@ -55,7 +55,7 @@ export default function App (): JSX.Element {
           <PageWrapper page='dcl' animation='off'>
             <DiamondCityLights page='dcl' />
           </PageWrapper>
-        </Route> 
+        </Route>
 
         <Route path='/project-vn'>
           <PageWrapper page='vn' animation='on'>
