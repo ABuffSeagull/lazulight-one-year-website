@@ -41,12 +41,12 @@ export default function App (): JSX.Element {
         
         <Route path='/all-messages'>
           <PageWrapper page='fnf' animation='on'>
-            <Fnf page='fnf'  />
+            <Messages page='all-messages'  />
           </PageWrapper>
         </Route>
         <Route path='/all-messages'>
-          <PageWrapper page='dcl' animation='off'>
-            <DiamondCityLights page='dcl' />
+          <PageWrapper page='all-messages' animation='off'>
+            <DiamondCityLights page='all-messages' />
           </PageWrapper>
         </Route>
         <Route path='/project-vn'>
