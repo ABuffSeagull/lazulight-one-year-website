@@ -69,6 +69,7 @@
     transition: opacity 250ms ease-in-out;
     opacity: 0;
     pointer-events: none;
+    margin-bottom: 0;
 
     .nav-link {
       opacity: 0;
@@ -96,6 +97,18 @@
 
     & div:nth-child(2) {
       grid-column: 1;
+    }
+
+    @media (max-height: 450px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+      & div:first-child {
+        grid-column: auto;
+      }
+
+      & div:nth-child(2) {
+        grid-column: auto;
+      }
     }
   }
 }
