@@ -76,13 +76,13 @@ export default function Fnf (props: Props): JSX.Element {
               </div>
             </div>
             <div>
-              <Image src={EliraSlide} className='slideshow-slide' />
+              <Image src={EliraSlide} className='slideshow-slide' enableZoom />
             </div>
             <div>
-              <Image src={PomuSlide} className='slideshow-slide' />
+              <Image src={PomuSlide} className='slideshow-slide' enableZoom />
             </div>
             <div>
-              <Image src={FinanaSlide} className='slideshow-slide' />
+              <Image src={FinanaSlide} className='slideshow-slide' enableZoom />
             </div>
           </Slider>
 

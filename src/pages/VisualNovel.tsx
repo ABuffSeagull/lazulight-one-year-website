@@ -15,6 +15,9 @@ import PomuFrame from '../assets/Corners/Pomu-LiverCorner.webp'
 import Slide1 from '../assets/VN/cg_elira_classroom_hair_tuck_watermark.webp'
 import Slide2 from '../assets/VN/cg_finana_rooftop_lunch_watermark.webp'
 import Slide3 from '../assets/VN/cg_pomu_pomusuke_ver1_watermark.webp'
+import Slide4 from '../assets/VN/vn-screenshot1.webp'
+import Slide5 from '../assets/VN/vn-screenshot2.webp'
+
 import EliraImage from '../assets/VN/elira school happy_cf50.webp'
 import FinanaImage from '../assets/VN/finana school happy_cf50.webp'
 import VisualNovelLogo from '../assets/VN/lazulight_vn_logo_cf50.webp'
@@ -128,13 +131,19 @@ export default function VisualNovel (props: Props): JSX.Element {
               </div>
             </div>
             <div>
-              <Image src={Slide1} className='slideshow-slide' />
+              <Image src={Slide1} className='slideshow-slide' enableZoom />
             </div>
             <div>
-              <Image src={Slide2} className='slideshow-slide' />
+              <Image src={Slide2} className='slideshow-slide' enableZoom />
             </div>
             <div>
-              <Image src={Slide3} className='slideshow-slide' />
+              <Image src={Slide3} className='slideshow-slide' enableZoom />
+            </div>
+            <div>
+              <Image src={Slide4} className='slideshow-slide' enableZoom />
+            </div>
+            <div>
+              <Image src={Slide5} className='slideshow-slide' enableZoom />
             </div>
           </Slider>
 

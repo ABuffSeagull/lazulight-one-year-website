@@ -217,6 +217,11 @@ function DiamondCityLightsCredits (): JSX.Element {
             <a href='https://twitter.com/Arqodeon'>arqo</a>
           </p>
         </li>
+        <li>
+          <p>
+            <a href='https://twitter.com/TakezoMitsurugi'>Takezo</a>
+          </p>
+        </li>
       </ul>
       <h3>Credits BGM</h3>
       <ul>
