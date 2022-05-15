@@ -181,7 +181,7 @@
   &-pomu {
     @keyframes pomuCoinFall {
       from {
-        transform: translateY(0) rotate(var(--rotation)) scale(var(--scale));
+        transform: translateY(-20vh) rotate(var(--rotation)) scale(var(--scale));
       }
 
       to {
