@@ -120,7 +120,7 @@ function DiamondCityLightsCredits (): JSX.Element {
         <li><p><a href='https://twitter.com/snowharasho'>Squish</a></p></li>
         <li><p><a href='https://twitter.com/Arqodeon'>arqo</a></p></li>
       </ul>
-       <h3>Credits BGM</h3>
+      <h3>Credits BGM</h3>
       <ul>
         <li><p><a href='https://twitter.com/SonicFan53alt'>SonicFan53</a></p></li>
       </ul>
