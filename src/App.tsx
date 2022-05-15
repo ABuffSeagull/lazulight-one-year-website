@@ -41,7 +41,7 @@ export default function App (): JSX.Element {
 
         <Route path='/all-messages'>
           <PageWrapper page='elira' animation='on'>
-          <Messages page='elira'  />
+          <Messages page='elira'/>
           </PageWrapper>
         </Route>
 
@@ -50,7 +50,6 @@ export default function App (): JSX.Element {
             <DiamondCityLights page='dcl' />
           </PageWrapper>
         </Route> 
-
         <Route path='/project-vn'>
           <PageWrapper page='vn' animation='on'>
             <VisualNovel page='vn' />
