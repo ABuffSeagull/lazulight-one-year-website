@@ -5,6 +5,9 @@ import Image from '../components/Image'
 import MessageBoxesLayout from '../components/MessageBoxesLayout'
 import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp'
 import PomuImage from '../assets/Portraits/Pomu-Portrait_BJ_cf50.webp?format=png;avif;webp&imagetools&meta'
+import TwerkPomu from '../assets/DCL/twerk_pomu_t.gif'
+import TwerkElira from '../assets/DCL/twerk_elira_t.gif'
+import TwerkFinana from '../assets/DCL/twerk_finana_t.gif'
 
 interface Props {
   page: string
@@ -171,11 +174,15 @@ function DiamondCityLightsCredits (): JSX.Element {
         <li><p><a href='https://twitter.com/kid_poro'>Poro</a></p></li>
         <li><p><a href='https://twitter.com/NoxShadow24904'>NoxShadow</a></p></li>
         <li><p><a href='https://twitter.com/HirokawaKiro'>Kiro</a></p></li>
-        <li><p><a href='https://twitter.com/BrandonJohns96'>Brandon Johns</a></p></li>
+        <li><p><a href='https://twitter.com/BrandonJohns96'>Brandon Johns</a></p>
+          <div className='dcl-twerk-container'><Image className='dcl-twerk-gif' src={TwerkPomu} /></div>
+        </li>
         <li><p><a href='https://twitter.com/_arisamisaki_'>jessica</a></p></li>
         <li><p><a href='https://twitter.com/KeZunjian'>Kei_ZJ (Hanashi)</a></p></li>
         <li><p><a href='https://twitter.com/third12_'>third12</a></p></li>
-        <li><p><a href='https://twitter.com/wildnexus'>wildnexus</a></p></li>
+        <li><p><a href='https://twitter.com/wildnexus'>wildnexus</a></p>
+          <div className='dcl-twerk-container'><Image className='dcl-twerk-gif' src={TwerkElira} /></div>
+        </li>
         <li><p><a href='https://twitter.com/aletheia024'>Aletheia</a></p></li>
         <li><p><a href='https://twitter.com/Ghirocks_Log'>Ghirocks_Log</a></p></li>
         <li><p><a href='https://twitter.com/reiykhuu'>Saeren</a></p></li>
@@ -205,6 +212,7 @@ function DiamondCityLightsCredits (): JSX.Element {
         <li><p>Finanacord Discord Server</p></li>
         <li><p>And every member of the NijiEN community who helped us out, or showed their support for our project!</p></li>
       </ul>
+      <div className='dcl-twerk-container'><Image className='dcl-twerk-gif' src={TwerkFinana} /></div>
     </div>
   )
 }
