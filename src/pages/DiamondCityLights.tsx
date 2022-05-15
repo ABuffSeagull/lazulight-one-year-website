@@ -20,7 +20,7 @@ export default function DiamondCityLights(props: Props): JSX.Element {
       {/* Heading */}
       <div className="project-heading-container">
         <Image src={PomuImage} className="project-heading-image" enableZoom />
-        <h1 className="project-heading-text-dcl project-heading-text-bg">
+        <h1 className="talent-title pomu">
           Diamond City
           <br />
           Lights Cover
