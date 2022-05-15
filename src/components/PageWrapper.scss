@@ -1,7 +1,7 @@
 /* stylelint-disable keyframes-name-pattern */
 // See https://github.com/stylelint/stylelint/issues/5997
-@use "../variables" as *;
-@use "sass:math";
+@use '../variables' as *;
+@use 'sass:math';
 
 .container {
   height: 100%;
@@ -52,8 +52,8 @@
   &-finana {
     background-image: linear-gradient(to bottom, #4dbbbd60, #1c374aa0),
       // Semitransparent overlay
-      url("../assets/BG/Finana-BG-Left_cf50.webp"),
-      url("../assets/BG/Finana-BG-Right_cf50.webp"),
+      url('../assets/BG/Finana-BG-Left_cf50.webp'),
+      url('../assets/BG/Finana-BG-Right_cf50.webp'),
       linear-gradient(to bottom, #4dbbbd, #1c374a);
     background-color: #83e5e6; // Backup in case the image doesn't load
     background-size: 100%, 10%, 10%, 100%;
@@ -62,7 +62,7 @@
   }
 
   &-pomu {
-    background-image: url("../assets/BG/Pomu-BG_cf50.webp");
+    background-image: url('../assets/BG/Pomu-BG_cf50.webp');
     background-color: #258e70; // Backup in case the image doesn't load
     background-repeat: repeat-y;
     background-size: 100%;
@@ -80,8 +80,7 @@
 
   // TODO: These pages backgrounds
   &-fnf {
-    background-image: linear-gradient(to bottom, #274454, #285455);
-    background-color: #274454; // Backup in case the image doesn't load
+    background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='30' height='30' patternTransform='scale(3) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(15, 62%, 16%, 1)'/><path d='M0 22.5h30v15H0zm15-15h30v15H15m-30-15h30v15h-30zm15-15h30v15H0z'  stroke-width='1' stroke='hsla(15, 40%, 30%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
   }
 
   &-dcl {
