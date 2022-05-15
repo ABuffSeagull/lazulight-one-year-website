@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import Elira from './pages/Elira'
 import Finana from './pages/Finana'
 import Pomu from './pages/Pomu'
-import Fnf from './pages/FNF'
+// import Fnf from './pages/FNF'
 import DiamondCityLights from './pages/DiamondCityLights'
 import VisualNovel from './pages/VisualNovel'
 import Art from './pages/Art'
@@ -12,7 +12,7 @@ import Messages from './pages/Messages'
 import About from './pages/About'
 import ScrollToTop from './components/ScrollToTop'
 
-export default function App(): JSX.Element {
+export default function App (): JSX.Element {
   return (
     <>
       {/* Notes: (Brandon)
