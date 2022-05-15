@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import Elira from './pages/Elira'
 import Finana from './pages/Finana'
 import Pomu from './pages/Pomu'
-// import Fnf from './pages/FNF'
+import Fnf from './pages/FNF'
 import DiamondCityLights from './pages/DiamondCityLights'
 import VisualNovel from './pages/VisualNovel'
 import Art from './pages/Art'
@@ -38,13 +38,13 @@ export default function App (): JSX.Element {
             <Pomu />
           </PageWrapper>
         </Route>
-        <Route path='/all-messages'>
-          <PageWrapper page='elira' animation='on'>
-            <Messages page='elira' />
+        <Route path='/project-fnf'>
+          <PageWrapper page='fnf' animation='off'>
+            <Fnf page='fnf' />
           </PageWrapper>
         </Route>
         <Route path='/project-dcl'>
-          <PageWrapper page='dcl' animation='off'>
+          <PageWrapper page='dcl' animation='on'>
             <DiamondCityLights page='dcl' />
           </PageWrapper>
         </Route>
