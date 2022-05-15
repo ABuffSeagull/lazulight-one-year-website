@@ -81,9 +81,8 @@
   // TODO: These pages backgrounds
   &-fnf {
     // FNF Finana BG
-    background-image:
-      url('../assets/FNF/Finana_Dialog_box_transparent_inverted.webp'),
-      linear-gradient(to bottom, rgba(99,233,209,1), rgba(80,178,226,1));
+    background-image: url("../assets/FNF/Finana_Dialog_box_transparent_inverted.webp"),
+      linear-gradient(to bottom, rgb(99 233 209 / 100%), rgb(80 178 226 / 100%));
     background-color: #274454; // Backup in case the image doesn't load
   }
 
