@@ -2,8 +2,13 @@ import React from 'react'
 import '../components/TalentLayout.scss'
 import '../components/ProjectPages.scss'
 import Image from '../components/Image'
+import MessageBoxesLayout from '../components/MessageBoxesLayout'
 import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp'
-import PomuImage from '../assets/Portraits/Pomu-Portrait_cf50.webp?format=png;avif;webp&imagetools&meta'
+import PomuImage from '../assets/Portraits/Pomu-Portrait_BJ_cf50.webp?format=png;avif;webp&imagetools&meta'
+import TwerkPomu from '../assets/DCL/twerk_pomu_t.gif'
+import TwerkElira from '../assets/DCL/twerk_elira_t.gif'
+import TwerkFinana from '../assets/DCL/twerk_finana_t.gif'
+import SusElira from '../assets/DCL/Elira_sus_small.png'
 
 interface Props {
   page: string
@@ -22,15 +27,17 @@ export default function DiamondCityLights (props: Props): JSX.Element {
       <div className='talent-text-container'>
         <Image className='talent-corner' src={LazulightCorner} />
         <div className={`talent-text-inner ${props.page}-border`}>
-          <div className='video-container'>
+
+          <h2>COMING SOON</h2>
+          {/* <div className='video-container'>
             <iframe
-              src='https://www.youtube.com/embed/ZnP0cKNPE04' // TODO: Replace
+              src='https://www.youtube.com/embed/' // TODO: Replace
               title='YouTube video player'
               frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
               allowFullScreen
             />
-          </div>
+          </div> */}
           {/* Description */}
           <div className='project-description-container'>
             <h3>A Fan Cover Song</h3>
@@ -46,10 +53,22 @@ export default function DiamondCityLights (props: Props): JSX.Element {
         </div>
       </div>
 
+      {/* Messages */}
+      <MessageBoxesLayout
+        enableLazulight={false}
+        enableElira={false}
+        enablePomu={false}
+        enableFinana={false}
+        enableDcl
+        enableFolding
+        enableArt={false}
+        heading='Messages from the DCL Team'
+        page='dcl'
+      />
+
       <div className='talent-text-container'>
         <Image className='talent-corner' src={LazulightCorner} />
         <div className={`talent-text-inner ${props.page}-border`}>
-          {/* TODO: just hard code in the content here. No need to spend more time on anything fancy */}
           <h2>Credits</h2>
           <DiamondCityLightsCredits />
         </div>
@@ -81,7 +100,9 @@ function DiamondCityLightsCredits (): JSX.Element {
       <h3>Video Editors</h3>
       <ul>
         <li><p><a href='https://twitter.com/PomuPowerCenter'>Pomu Power Distribution Center</a></p></li>
-        <li><p><a href='https://twitter.com/peeboggs'>Pendora’s Box</a></p></li>
+        <li><p><a href='https://twitter.com/peeboggs'>Pendora’s Box</a></p>
+          <div className='dcl-twerk-container'><Image className='dcl-twerk-gif' src={SusElira} /></div>
+        </li>
         <li><p>Rex</p></li>
       </ul>
       <h3>Sprite Artists</h3>
@@ -94,6 +115,14 @@ function DiamondCityLightsCredits (): JSX.Element {
         <li><p><a href='https://twitter.com/wizwaaz'>wizwaaz</a></p></li>
         <li><p><a href='https://twitter.com/keekispecial'>Keektang</a></p></li>
         <li><p><a href='https://twitter.com/a1d8e2316745'>Mini</a></p></li>
+        <li><p><a href='https://twitter.com/rem26_art'>fyretruck</a></p></li>
+        <li><p><a href='https://twitter.com/ajaniiiiiii'>Ajani Akasakaspicy</a></p></li>
+        <li><p><a href='https://twitter.com/snowharasho'>Squish</a></p></li>
+        <li><p><a href='https://twitter.com/Arqodeon'>arqo</a></p></li>
+      </ul>
+      <h3>Credits BGM</h3>
+      <ul>
+        <li><p><a href='https://twitter.com/SonicFan53alt'>SonicFan53</a></p></li>
       </ul>
       <h3>Elira Vocalists</h3>
       <ul>
@@ -157,11 +186,15 @@ function DiamondCityLightsCredits (): JSX.Element {
         <li><p><a href='https://twitter.com/kid_poro'>Poro</a></p></li>
         <li><p><a href='https://twitter.com/NoxShadow24904'>NoxShadow</a></p></li>
         <li><p><a href='https://twitter.com/HirokawaKiro'>Kiro</a></p></li>
-        <li><p><a href='https://twitter.com/BrandonJohns96'>Brandon Johns</a></p></li>
+        <li><p><a href='https://twitter.com/BrandonJohns96'>Brandon Johns</a></p>
+          <div className='dcl-twerk-container'><Image className='dcl-twerk-gif' src={TwerkPomu} /></div>
+        </li>
         <li><p><a href='https://twitter.com/_arisamisaki_'>jessica</a></p></li>
         <li><p><a href='https://twitter.com/KeZunjian'>Kei_ZJ (Hanashi)</a></p></li>
         <li><p><a href='https://twitter.com/third12_'>third12</a></p></li>
-        <li><p><a href='https://twitter.com/wildnexus'>wildnexus</a></p></li>
+        <li><p><a href='https://twitter.com/wildnexus'>wildnexus</a></p>
+          <div className='dcl-twerk-container'><Image className='dcl-twerk-gif' src={TwerkElira} /></div>
+        </li>
         <li><p><a href='https://twitter.com/aletheia024'>Aletheia</a></p></li>
         <li><p><a href='https://twitter.com/Ghirocks_Log'>Ghirocks_Log</a></p></li>
         <li><p><a href='https://twitter.com/reiykhuu'>Saeren</a></p></li>
@@ -191,6 +224,7 @@ function DiamondCityLightsCredits (): JSX.Element {
         <li><p>Finanacord Discord Server</p></li>
         <li><p>And every member of the NijiEN community who helped us out, or showed their support for our project!</p></li>
       </ul>
+      <div className='dcl-twerk-container'><Image className='dcl-twerk-gif' src={TwerkFinana} /></div>
     </div>
   )
 }

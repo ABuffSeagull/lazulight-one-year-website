@@ -181,7 +181,7 @@
   &-pomu {
     @keyframes pomuCoinFall {
       from {
-        transform: translateY(0) rotate(var(--rotation)) scale(var(--scale));
+        transform: translateY(-20vh) rotate(var(--rotation)) scale(var(--scale));
       }
 
       to {
@@ -307,8 +307,7 @@
   // TODO: Add remaining pages
 }
 
-// TODO: Temporary until replaced by full nav component
-.animation-toggle {
+.animation-toggle-on {
   position: relative; // BG animation interferes with z-index. This somehow fixes it (search 'stacking context')
   z-index: 50;
   display: inline-block;
@@ -325,6 +324,7 @@
   transition-timing-function: ease-out;
   margin-bottom: 1.5rem;
   cursor: pointer;
+  visibility: visible;
 
   &:hover {
     background-color: #bfdfd7;
@@ -333,4 +333,9 @@
   @media (max-width: 768px) {
     margin-top: 1.5rem;
   }
+}
+
+.animation-toggle-off {
+  visibility: hidden;
+  pointer-events: none;
 }

@@ -16,6 +16,7 @@ interface Props {
   animation: string
   corner: string
   portrait: string | metadata[]
+  quote: string
   info: string[]
   youtube: string
   twitter: string
@@ -56,6 +57,7 @@ function TalentLayout (props: Props): JSX.Element {
             <Image className='talent-corner' src={props.frame} />
             <div className={`talent-text-inner ${firstNameLower}-border`}>
               <h2>{props.name}</h2>
+              <p><i>{props.quote}</i></p>
               {props.info.map((paragraph, idx) => (
                 <p key={idx}>{paragraph}&nbsp;</p>
               ))}
@@ -89,6 +91,7 @@ function TalentLayout (props: Props): JSX.Element {
         enableElira={firstNameLower === 'elira'}
         enablePomu={firstNameLower === 'pomu'}
         enableFinana={firstNameLower === 'finana'}
+        enableDcl={false}
         enableFolding
         enableArt={false}
         heading={`Messages To ${firstName}`}
@@ -101,6 +104,7 @@ function TalentLayout (props: Props): JSX.Element {
         enableElira={firstNameLower === 'elira'}
         enablePomu={firstNameLower === 'pomu'}
         enableFinana={firstNameLower === 'finana'}
+        enableDcl={false}
         enableFolding
         enableArt
         heading={`Art To ${firstName}`}

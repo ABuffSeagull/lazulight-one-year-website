@@ -6,7 +6,7 @@ import Image from '../components/Image'
 import MessageBoxesLayout from '../components/MessageBoxesLayout'
 import EliraImage from '../assets/Portraits/Elira-Portrait_cf50.webp?format=png;avif;webp&imagetools&meta'
 import FinanaImage from '../assets/Portraits/Finana-Portrait_cf50.webp?format=png;avif;webp&imagetools&meta'
-import PomuImage from '../assets/Portraits/Pomu-Portrait_cf50.webp?format=png;avif;webp&imagetools&meta'
+import PomuImage from '../assets/Portraits/Pomu-Portrait-WN_cf50.webp?format=png;avif;webp&imagetools&meta'
 
 export default function Home (): JSX.Element {
   const navIcons = [
@@ -56,6 +56,7 @@ export default function Home (): JSX.Element {
         enableElira={false}
         enablePomu={false}
         enableFinana={false}
+        enableDcl={false}
         enableFolding
         enableArt={false}
         heading='Messages To LazuLight'
@@ -68,6 +69,7 @@ export default function Home (): JSX.Element {
         enableElira={false}
         enablePomu={false}
         enableFinana={false}
+        enableDcl={false}
         enableFolding
         enableArt
         heading='Art To LazuLight'

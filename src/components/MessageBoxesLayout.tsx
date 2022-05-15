@@ -9,18 +9,19 @@ import * as messageListImport from '../assets/messageList.json'
 
 interface MessageRaw {
   name: string
-  social_url: string
-  art_lazulight: string
-  art_elira: string
-  art_pomu: string
-  art_finana: string
-  msg_lazulight: string
-  msg_elira: string
-  msg_pomu: string
-  msg_finana: string
-  art_weewa: string
-  art_pomudachi: string
-  art_ryuguard: string
+  social_url?: string
+  art_lazulight?: string
+  art_elira?: string
+  art_pomu?: string
+  art_finana?: string
+  msg_lazulight?: string
+  msg_elira?: string
+  msg_pomu?: string
+  msg_finana?: string
+  art_weewa?: string
+  art_pomudachi?: string
+  art_ryuguard?: string
+  msg_dcl?: string
 }
 
 interface Message {
@@ -37,6 +38,7 @@ interface Props {
   enableElira: boolean
   enablePomu: boolean
   enableFinana: boolean
+  enableDcl: boolean
   enableFolding: boolean
   enableArt: boolean
   heading: string
@@ -91,6 +93,21 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
   const renderMessages = (): Message[] => {
     const Messages: Message[] = []
     messageListRaw.forEach((msg: MessageRaw): void => {
+      // (Brandon): ForEach loop didn't work for some reason
+      if (msg.social_url === undefined) { msg.social_url = '' }
+      if (msg.art_lazulight === undefined) { msg.art_lazulight = '' }
+      if (msg.art_elira === undefined) { msg.art_elira = '' }
+      if (msg.art_pomu === undefined) { msg.art_pomu = '' }
+      if (msg.art_finana === undefined) { msg.art_finana = '' }
+      if (msg.msg_lazulight === undefined) { msg.msg_lazulight = '' }
+      if (msg.msg_elira === undefined) { msg.msg_elira = '' }
+      if (msg.msg_pomu === undefined) { msg.msg_pomu = '' }
+      if (msg.msg_finana === undefined) { msg.msg_finana = '' }
+      if (msg.art_weewa === undefined) { msg.art_weewa = '' }
+      if (msg.art_pomudachi === undefined) { msg.art_pomudachi = '' }
+      if (msg.art_ryuguard === undefined) { msg.art_ryuguard = '' }
+      if (msg.msg_dcl === undefined) { msg.msg_dcl = '' }
+
       if (
         filterMessage(
           props.enableLazulight,
@@ -161,6 +178,24 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
           art: chooseArt(props.enableArt, msg.art_finana, msg.art_ryuguard),
           corner: FinanaCorner,
           border: 'finana'
+        })
+      }
+      if (
+        filterMessage(
+          props.enableDcl,
+          props.enableArt,
+          msg.msg_dcl,
+          '',
+          ''
+        )
+      ) {
+        Messages.push({
+          name: msg.name,
+          social_url: msg.social_url,
+          msg: msg.msg_dcl,
+          art: '',
+          corner: LazulightCorner,
+          border: 'dcl'
         })
       }
     })
