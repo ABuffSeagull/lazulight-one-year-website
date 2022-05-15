@@ -38,14 +38,14 @@ export default function App (): JSX.Element {
             <Pomu />
           </PageWrapper>
         </Route>
-
-        <Route path='/project-fnf'>
-          <PageWrapper page='fnf' animation='off'>
-            <Fnf page='fnf' />
+        
+        <Route path='/all-messages'>
+          <PageWrapper page='fnf' animation='on'>
+            <Fnf page='fnf'  />
           </PageWrapper>
         </Route>
-        <Route path='/project-dcl'>
-          <PageWrapper page='dcl' animation='on'>
+        <Route path='/all-messages'>
+          <PageWrapper page='dcl' animation='off'>
             <DiamondCityLights page='dcl' />
           </PageWrapper>
         </Route>
