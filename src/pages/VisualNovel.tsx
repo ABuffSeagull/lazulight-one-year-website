@@ -90,7 +90,7 @@ export default function VisualNovel (props: Props): JSX.Element {
 
   const countdownRenderer = ({ days, hours, minutes, seconds, completed }: CountdownRenderProps): JSX.Element => {
     if (completed) {
-      return <span>Now/Soon</span>
+      return <span>Hopefully Very Soon</span>
     }
     // Render countdown
     return <span>{days} days, {hours}h, {minutes}min, {seconds}s</span>
@@ -150,9 +150,10 @@ export default function VisualNovel (props: Props): JSX.Element {
             <h4>Full Game</h4>
             <p>Available: June 18, 10pm JST (<Countdown date='2022-06-18T22:00:00+09:00' renderer={countdownRenderer} />)</p>
             <h4>Demo</h4>
-            {/* <a href='/downloads/vn' download > */}
-            <button className='project-download-button lazulight-border'>Download Demo</button>
-            {/* </a> */}
+            <p>COMING SOON</p>
+            {/* <a href='/downloads/vn' download >
+              <button className='project-download-button lazulight-border'>Download Demo</button>
+            </a> */}
           </div>
         </div>
       </div>

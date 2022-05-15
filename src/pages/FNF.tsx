@@ -16,6 +16,10 @@ import EliraSlide from '../assets/FNF/Elira Collage_cf50.webp'
 import PomuSlide from '../assets/FNF/Pomu Collage_cf50.webp'
 import FinanaSlide from '../assets/FNF/Finana Collage_cf50.webp'
 
+// Countdown timer
+// Doc: https://github.com/ndresx/react-countdown
+import Countdown, { CountdownRenderProps } from 'react-countdown'
+
 interface Props {
   page: string
 }
@@ -33,6 +37,14 @@ export default function Fnf (props: Props): JSX.Element {
     speed: 500
   }
 
+  const countdownRenderer = ({ days, hours, minutes, seconds, completed }: CountdownRenderProps): JSX.Element => {
+    if (completed) {
+      return <span>Hopefully Very Soon</span>
+    }
+    // Render countdown
+    return <span>{days} days, {hours}h, {minutes}min, {seconds}s</span>
+  }
+
   return (
     <div className='talent-layout-container'>
 
@@ -47,17 +59,17 @@ export default function Fnf (props: Props): JSX.Element {
         <Image className='talent-corner' src={LazulightCorner} />
         <div className={`talent-text-inner ${props.page}-border`}>
           <Slider {...slideShowSettings} className='slideshow-container'>
-            <div className='slideshow-slide'>
+            {/* <div className='slideshow-slide'>
               <div className='video-container'>
                 <iframe
-                  src='https://www.youtube.com/embed/VB-J-fZgx0M' // TODO: Replace
+                  src='https://www.youtube.com/embed/'
                   title='YouTube video player'
                   frameBorder='0'
                   allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
                   allowFullScreen
                 />
               </div>
-            </div>
+            </div> */}
             <div>
               <Image src={EliraSlide} className='slideshow-slide' />
             </div>
@@ -81,9 +93,10 @@ export default function Fnf (props: Props): JSX.Element {
 
             <h3>Download</h3>
             <h4>Full Game</h4>
-            {/* <a href='/downloads/vn' download > */}
-            <button className='project-download-button lazulight-border'>Download Game</button>
-            {/* </a> */}
+            <p>Available: June 1 (<Countdown date='2022-06-01T00:00:00+00:00' renderer={countdownRenderer} />)</p>
+            {/* <a href='/downloads/vn' download >
+              <button className='project-download-button lazulight-border'>Download Game</button>
+            </a> */}
           </div>
         </div>
       </div>
@@ -91,7 +104,6 @@ export default function Fnf (props: Props): JSX.Element {
       <div className='talent-text-container'>
         <Image className='talent-corner' src={LazulightCorner} />
         <div className={`talent-text-inner ${props.page}-border`}>
-          {/* TODO: just hard code in the content here. No need to spend more time on anything fancy */}
           <h2>Credits</h2>
           <LazunightFunkinCredits />
         </div>

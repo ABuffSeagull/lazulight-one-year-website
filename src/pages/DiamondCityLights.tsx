@@ -27,15 +27,17 @@ export default function DiamondCityLights (props: Props): JSX.Element {
       <div className='talent-text-container'>
         <Image className='talent-corner' src={LazulightCorner} />
         <div className={`talent-text-inner ${props.page}-border`}>
-          <div className='video-container'>
+
+          <h2>COMING SOON</h2>
+          {/* <div className='video-container'>
             <iframe
-              src='https://www.youtube.com/embed/ZnP0cKNPE04' // TODO: Replace
+              src='https://www.youtube.com/embed/' // TODO: Replace
               title='YouTube video player'
               frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
               allowFullScreen
             />
-          </div>
+          </div> */}
           {/* Description */}
           <div className='project-description-container'>
             <h3>A Fan Cover Song</h3>
@@ -67,7 +69,6 @@ export default function DiamondCityLights (props: Props): JSX.Element {
       <div className='talent-text-container'>
         <Image className='talent-corner' src={LazulightCorner} />
         <div className={`talent-text-inner ${props.page}-border`}>
-          {/* TODO: just hard code in the content here. No need to spend more time on anything fancy */}
           <h2>Credits</h2>
           <DiamondCityLightsCredits />
         </div>

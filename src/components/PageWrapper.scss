@@ -307,7 +307,6 @@
   // TODO: Add remaining pages
 }
 
-// TODO: Temporary until replaced by full nav component
 .animation-toggle-on {
   position: relative; // BG animation interferes with z-index. This somehow fixes it (search 'stacking context')
   z-index: 50;
