@@ -40,12 +40,6 @@ export default function App (): JSX.Element {
         </Route>
 
         <Route path='/all-messages'>
-          <PageWrapper page='elira' animation='on'>
-            <Messages page='elira' />
-          </PageWrapper>
-        </Route>
-        
-        <Route path='/all-messages'>
           <PageWrapper page='fnf' animation='on'>
           <Messages page='all-messages'  />
           </PageWrapper>
