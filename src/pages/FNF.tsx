@@ -64,17 +64,17 @@ export default function Fnf (props: Props): JSX.Element {
         <Image className='talent-corner' src={LazulightCorner} />
         <div className={`talent-text-inner ${props.page}-border`}>
           <Slider {...slideShowSettings} className='slideshow-container'>
-            {/* <div className='slideshow-slide'>
+            <div className='slideshow-slide'>
               <div className='video-container'>
                 <iframe
-                  src='https://www.youtube.com/embed/'
+                  src='https://www.youtube.com/embed/ffP4dpdmK18'
                   title='YouTube video player'
                   frameBorder='0'
                   allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
                   allowFullScreen
                 />
               </div>
-            </div> */}
+            </div>
             <div>
               <Image src={EliraSlide} className='slideshow-slide' />
             </div>
