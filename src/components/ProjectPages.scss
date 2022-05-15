@@ -1,5 +1,5 @@
-@use "../variables" as *;
-@use "sass:math";
+@use '../variables' as *;
+@use 'sass:math';
 
 .slideshow {
   // (Brandon) This fixes the slide vertical alignment
@@ -100,9 +100,18 @@
       margin: auto;
     }
 
+    &-logo {
+      width: 100%;
+      max-width: 80%;
+      margin: auto;
+      object-position: top;
+    }
+
     &-container {
       display: flex;
       gap: 2rem;
+      justify-content: center;
+      align-items: center;
       height: calc(100vh - 14rem); // Subtract height of menu elements
 
       @media (max-width: $bp-tablet) {
