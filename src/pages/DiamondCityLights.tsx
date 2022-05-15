@@ -114,6 +114,10 @@ function DiamondCityLightsCredits (): JSX.Element {
         <li><p><a href='https://twitter.com/wizwaaz'>wizwaaz</a></p></li>
         <li><p><a href='https://twitter.com/keekispecial'>Keektang</a></p></li>
         <li><p><a href='https://twitter.com/a1d8e2316745'>Mini</a></p></li>
+        <li><p><a href='https://twitter.com/rem26_art'>fyretruck</a></p></li>
+        <li><p><a href='https://twitter.com/ajaniiiiiii'>Ajani Akasakaspicy</a></p></li>
+        <li><p><a href='https://twitter.com/snowharasho'>Squish</a></p></li>
+        <li><p><a href='https://twitter.com/Arqodeon'>arqo</a></p></li>
       </ul>
       <h3>Elira Vocalists</h3>
       <ul>
