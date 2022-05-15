@@ -38,25 +38,16 @@ export default function App (): JSX.Element {
             <Pomu />
           </PageWrapper>
         </Route>
-
         <Route path='/all-messages'>
           <PageWrapper page='elira' animation='on'>
             <Messages page='elira' />
           </PageWrapper>
         </Route>
-
-        <Route path='/all-messages'>
-          <PageWrapper page='fnf' animation='on'>
-            <Messages page='all-messages' />
-          </PageWrapper>
-        </Route>
-
-        <Route path='/all-messages'>
+        <Route path='/project-dcl'>
           <PageWrapper page='dcl' animation='off'>
             <DiamondCityLights page='dcl' />
           </PageWrapper>
         </Route>
-
         <Route path='/project-vn'>
           <PageWrapper page='vn' animation='on'>
             <VisualNovel page='vn' />

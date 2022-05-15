@@ -30,16 +30,15 @@ export default function DiamondCityLights (props: Props): JSX.Element {
       <div className='talent-text-container'>
         <Image className='talent-corner' src={LazulightCorner} />
         <div className={`talent-text-inner ${props.page}-border`}>
-          <h2>COMING SOON</h2>
-          {/* <div className='video-container'>
+          <div className='video-container'>
             <iframe
-              src='https://www.youtube.com/embed/' // TODO: Replace
+              src='https://www.youtube.com/embed/QTHJ8jwKgQg'
               title='YouTube video player'
               frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
               allowFullScreen
             />
-          </div> */}
+          </div>
           {/* Description */}
           <div className='project-description-container'>
             <h3>A Fan Cover Song</h3>
