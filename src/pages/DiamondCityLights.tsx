@@ -4,7 +4,7 @@ import '../components/ProjectPages.scss'
 import Image from '../components/Image'
 import MessageBoxesLayout from '../components/MessageBoxesLayout'
 import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp'
-import PomuImage from '../assets/Portraits/Pomu-Portrait_cf50.webp?format=png;avif;webp&imagetools&meta'
+import PomuImage from '../assets/Portraits/Pomu-Portrait_BJ_cf50.webp?format=png;avif;webp&imagetools&meta'
 
 interface Props {
   page: string
