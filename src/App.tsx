@@ -24,55 +24,55 @@ export default function App (): JSX.Element {
       */}
       <Switch>
         <Route path='/elira'>
-          <PageWrapper page='elira'>
+          <PageWrapper page='elira' animation='on'>
             <Elira />
           </PageWrapper>
         </Route>
         <Route path='/finana'>
-          <PageWrapper page='finana'>
+          <PageWrapper page='finana' animation='on'>
             <Finana />
           </PageWrapper>
         </Route>
         <Route path='/pomu'>
-          <PageWrapper page='pomu'>
+          <PageWrapper page='pomu'animation='on'>
             <Pomu />
           </PageWrapper>
         </Route>
 
         <Route path='/project-fnf'>
-          <PageWrapper page='fnf'>
+          <PageWrapper page='fnf'animation='off'>
             <Fnf page='fnf' />
           </PageWrapper>
         </Route>
         <Route path='/project-dcl'>
-          <PageWrapper page='dcl'>
+          <PageWrapper page='dcl'animation='on'>
             <DiamondCityLights page='dcl' />
           </PageWrapper>
         </Route>
         <Route path='/project-vn'>
-          <PageWrapper page='vn'>
+          <PageWrapper page='vn' animation='on'>
             <VisualNovel page='vn' />
           </PageWrapper>
         </Route>
 
         {/* (Brandon) I intentionally give the following pages the incorrect 'page' variable - It's only used for styling */}
         <Route path='/all-art'>
-          <PageWrapper page='finana'>
+          <PageWrapper page='finana'animation='on'>
             <Art page='finana' />
           </PageWrapper>
         </Route>
         <Route path='/all-messages'>
-          <PageWrapper page='elira'>
+          <PageWrapper page='elira' animation='on'>
             <Messages page='elira' />
           </PageWrapper>
         </Route>
         <Route path='/about'>
-          <PageWrapper page='pomu'>
+          <PageWrapper page='pomu' animation='on'>
             <About page='pomu' />
           </PageWrapper>
         </Route>
         <Route>
-          <PageWrapper page='home'>
+          <PageWrapper page='home' animation='off'>
             <Home />
           </PageWrapper>
         </Route>
