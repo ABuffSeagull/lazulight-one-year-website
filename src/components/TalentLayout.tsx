@@ -1,9 +1,9 @@
 import React, { useRef } from 'react'
-import './TalentLayout.scss'
-import Image from './Image'
-import MessageBoxesLayout from './MessageBoxesLayout'
-import MascotAnimation from './MascotAnimation'
 import ArtBoardLayout, { ArtBoardEnum } from './ArtBoardLayout'
+import Image from './Image'
+import MascotAnimation from './MascotAnimation'
+import MessageBoxesLayout from './MessageBoxesLayout'
+import './TalentLayout.scss'
 
 // TODO(abuffseagull) 2022-03-17: need to remove this
 // Probably just generate some random ids on the messages at load time
@@ -37,9 +37,15 @@ function TalentLayout (props: Props): JSX.Element {
   // Switch art board
   // Brandon somewhat regrets deciding to use enums here
   const chooseArtBoard = (): ArtBoardEnum => {
-    if (firstNameLower === 'elira') { return ArtBoardEnum.elira }
-    if (firstNameLower === 'pomu') { return ArtBoardEnum.pomu }
-    if (firstNameLower === 'finana') { return ArtBoardEnum.finana }
+    if (firstNameLower === 'elira') {
+      return ArtBoardEnum.elira
+    }
+    if (firstNameLower === 'pomu') {
+      return ArtBoardEnum.pomu
+    }
+    if (firstNameLower === 'finana') {
+      return ArtBoardEnum.finana
+    }
     return ArtBoardEnum.lazulight
   }
 
@@ -57,7 +63,9 @@ function TalentLayout (props: Props): JSX.Element {
             <Image className='talent-corner' src={props.frame} />
             <div className={`talent-text-inner ${firstNameLower}-border`}>
               <h2>{props.name}</h2>
-              <p><i>{props.quote}</i></p>
+              <p>
+                <i>{props.quote}</i>
+              </p>
               {props.info.map((paragraph, idx) => (
                 <p key={idx}>{paragraph}&nbsp;</p>
               ))}
@@ -88,6 +96,7 @@ function TalentLayout (props: Props): JSX.Element {
       {/* Messages */}
       <MessageBoxesLayout
         enableLazulight={false}
+        titleType={firstNameLower}
         enableElira={firstNameLower === 'elira'}
         enablePomu={firstNameLower === 'pomu'}
         enableFinana={firstNameLower === 'finana'}
@@ -101,6 +110,7 @@ function TalentLayout (props: Props): JSX.Element {
       {/* Art */}
       <MessageBoxesLayout
         enableLazulight={false}
+        titleType={firstNameLower}
         enableElira={firstNameLower === 'elira'}
         enablePomu={firstNameLower === 'pomu'}
         enableFinana={firstNameLower === 'finana'}

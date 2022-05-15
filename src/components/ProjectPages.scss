@@ -56,53 +56,24 @@
 
 .project {
   &-heading {
-    &-text-dcl,
-    &-text-fnf {
-      font-size: clamp(2rem, 6vw, 5rem);
-      text-align: center;
-      width: 100%;
-      margin: auto;
-    }
-
-    &-text-vn {
-      font-size: clamp(2rem, 5vw, 5rem);
-      text-align: center;
-      width: 100%;
-      margin: auto;
-    }
-
-    &-text-bg {
-      // Based off '.home-heading'
-      padding: 1rem 0;
-      border-top-width: 2px;
-      border-bottom-width: 2px;
-      border-image: linear-gradient(
-          to right,
-          rgb(0 0 0 / 0%),
-          currentcolor 10%,
-          currentcolor 90%,
-          rgb(0 0 0 / 0%)
-        )
-        1;
-      border-style: solid;
-      background: linear-gradient(
-        to right,
-        rgb(0 0 0 / 0%),
-        $background-grey 10%,
-        $background-grey 90%,
-        rgb(0 0 0 / 0%)
-      );
-    }
-
     &-image {
       width: 100%;
       max-width: 100%;
       margin: auto;
     }
 
+    &-logo {
+      width: 100%;
+      max-width: 80%;
+      margin: auto;
+      object-position: top;
+    }
+
     &-container {
       display: flex;
       gap: 2rem;
+      justify-content: center;
+      align-items: center;
       height: calc(100vh - 14rem); // Subtract height of menu elements
 
       @media (max-width: $bp-tablet) {
@@ -112,6 +83,11 @@
       @media (max-width: $bp-mobile) {
         flex-direction: column;
         gap: 0;
+      }
+
+      h1 {
+        width: auto;
+        margin: 0 0 0 2rem;
       }
 
       img,
@@ -150,6 +126,11 @@
     background: $background-gradient;
     border-radius: 0.5rem;
     margin-top: 0.5rem;
+    margin-right: 1rem;
+
+    @media (max-width: 600px) {
+      margin-right: 0;
+    }
   }
 }
 
