@@ -34,18 +34,18 @@ export default function App (): JSX.Element {
           </PageWrapper>
         </Route>
         <Route path='/pomu'>
-          <PageWrapper page='pomu'animation='on'>
+          <PageWrapper page='pomu' animation='on'>
             <Pomu />
           </PageWrapper>
         </Route>
 
         <Route path='/project-fnf'>
-          <PageWrapper page='fnf'animation='off'>
+          <PageWrapper page='fnf' animation='off'>
             <Fnf page='fnf' />
           </PageWrapper>
         </Route>
         <Route path='/project-dcl'>
-          <PageWrapper page='dcl'animation='on'>
+          <PageWrapper page='dcl' animation='on'>
             <DiamondCityLights page='dcl' />
           </PageWrapper>
         </Route>
@@ -57,7 +57,7 @@ export default function App (): JSX.Element {
 
         {/* (Brandon) I intentionally give the following pages the incorrect 'page' variable - It's only used for styling */}
         <Route path='/all-art'>
-          <PageWrapper page='finana'animation='on'>
+          <PageWrapper page='finana' animation='on'>
             <Art page='finana' />
           </PageWrapper>
         </Route>

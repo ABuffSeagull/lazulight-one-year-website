@@ -14,10 +14,9 @@ import DclBgAnimation from './DclBgAnimation'
 import LazulightArtBoard from '../assets/ArtBoards/Group Collage 2160 x 1920 Transparent.webp'
 
 
-
 interface Props {
   children: React.ReactNode
-  page: string 
+  page: string
   animation: string
 }
 
