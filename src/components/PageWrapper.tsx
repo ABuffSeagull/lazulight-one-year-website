@@ -12,10 +12,10 @@ import PomuBgAnimation from './PomuBgAnimation'
 import FinanaBgAnimation from './FinanaBgAnimation'
 import DclBgAnimation from './DclBgAnimation'
 import LazulightArtBoard from '../assets/ArtBoards/Group Collage 2160 x 1920 Transparent.webp'
-
 interface Props {
   children: React.ReactNode
   page: string
+  animation: string
 }
 
 export function PageWrapper (props: Props): JSX.Element {
@@ -108,7 +108,7 @@ export function PageWrapper (props: Props): JSX.Element {
         onClick={() => {
           toggleAnimationState((state) => !state)
         }}
-        className='animation-toggle'
+        className={`animation-toggle-${props.animation}`}
       >
         {AnimationOn ? 'Animation On' : 'Animation Off'}
       </button>
