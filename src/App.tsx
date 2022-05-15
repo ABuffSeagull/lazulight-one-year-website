@@ -38,10 +38,10 @@ export default function App (): JSX.Element {
             <Pomu />
           </PageWrapper>
         </Route>
-        
+
         <Route path='/all-messages'>
           <PageWrapper page='fnf' animation='on'>
-            <Fnf page='fnf'  />
+            <Fnf page='fnf' />
           </PageWrapper>
         </Route>
         <Route path='/all-messages'>
