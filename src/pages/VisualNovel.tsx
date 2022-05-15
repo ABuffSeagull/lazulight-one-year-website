@@ -148,9 +148,13 @@ export default function VisualNovel (props: Props): JSX.Element {
             <h4>Full Game</h4>
             <p>Available: June 18, 10pm JST (<Countdown date='2022-06-18T22:00:00+09:00' renderer={countdownRenderer} />)</p>
             <h4>Demo</h4>
-            {/* <a href='/downloads/vn' download > */}
-            <button className='project-download-button lazulight-border'>Download Demo</button>
-            {/* </a> */}
+            <p>After downloading the file, please unzip the files, then run the exe to play.</p>
+            <a href='/downloads/LazulightVN-1.0-DEMO-pc.zip' download>
+              <button className='project-download-button lazulight-border'>Download for Windows</button>
+            </a>
+            <a href='/downloads/LazulightVN-1.0-DEMO-mac.zip' download>
+              <button className='project-download-button lazulight-border'>Download for Mac</button>
+            </a>
           </div>
         </div>
       </div>
