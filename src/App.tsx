@@ -45,7 +45,7 @@ export default function App (): JSX.Element {
           </PageWrapper>
         </Route>
 
-        <Route path='/all-messages'>
+        <Route path='/project-dcl'>
           <PageWrapper page='dcl' animation='off'>
             <DiamondCityLights page='dcl' />
           </PageWrapper>
