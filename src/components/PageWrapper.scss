@@ -80,7 +80,9 @@
 
   // TODO: These pages backgrounds
   &-fnf {
-    background-image: linear-gradient(to bottom, #274454, #285455);
+    // FNF Finana BG
+    background-image: url("../assets/FNF/Finana_Dialog_box_transparent_inverted.webp"),
+      linear-gradient(to bottom, rgb(99 233 209 / 100%), rgb(80 178 226 / 100%));
     background-color: #274454; // Backup in case the image doesn't load
   }
 
@@ -181,7 +183,7 @@
   &-pomu {
     @keyframes pomuCoinFall {
       from {
-        transform: translateY(0) rotate(var(--rotation)) scale(var(--scale));
+        transform: translateY(-20vh) rotate(var(--rotation)) scale(var(--scale));
       }
 
       to {
@@ -307,8 +309,7 @@
   // TODO: Add remaining pages
 }
 
-// TODO: Temporary until replaced by full nav component
-.animation-toggle {
+.animation-toggle-on {
   position: relative; // BG animation interferes with z-index. This somehow fixes it (search 'stacking context')
   z-index: 50;
   display: inline-block;
@@ -325,6 +326,7 @@
   transition-timing-function: ease-out;
   margin-bottom: 1.5rem;
   cursor: pointer;
+  visibility: visible;
 
   &:hover {
     background-color: #bfdfd7;
@@ -333,4 +335,9 @@
   @media (max-width: 768px) {
     margin-top: 1.5rem;
   }
+}
+
+.animation-toggle-off {
+  visibility: hidden;
+  pointer-events: none;
 }

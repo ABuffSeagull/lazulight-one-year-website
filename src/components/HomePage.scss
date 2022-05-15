@@ -1,6 +1,10 @@
 @use "../variables" as *;
 
 .home {
+  a {
+    text-decoration: none;
+  }
+
   &-heading {
     font-size: clamp(1rem, 7vw, 8rem);
     text-align: center;
@@ -49,35 +53,9 @@
       position: relative;
 
       h3 {
-        text-decoration: none;
-        color: #2e2e2e;
-        font-size: 2rem;
         text-align: center;
-        position: absolute;
-        bottom: 5%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 75%;
-        margin: auto;
-        padding: 1rem 0;
-        border-top-width: 2px;
-        border-bottom-width: 2px;
-        border-image: linear-gradient(
-            to right,
-            rgb(0 0 0 / 0%),
-            currentcolor 20%,
-            currentcolor 80%,
-            rgb(0 0 0 / 0%)
-          )
-          1;
-        border-style: solid;
-        background: linear-gradient(
-          to right,
-          rgb(0 0 0 / 0%),
-          $background-grey 20%,
-          $background-grey 80%,
-          rgb(0 0 0 / 0%)
-        );
+        margin: 0;
+        transform: translateY(-50%);
 
         @media (max-width: $bp-mobile) {
           font-size: 1rem;

@@ -1,26 +1,27 @@
 import React from 'react'
-import './TalentLayout.scss'
-import Image from './Image'
-import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp'
-import FinanaCorner from '../assets/Corners/Finana-MsgCorner.webp'
 import EliraCorner from '../assets/Corners/Elira-MsgCorner.webp'
+import FinanaCorner from '../assets/Corners/Finana-MsgCorner.webp'
+import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp'
 import PomuCorner from '../assets/Corners/Pomu-MsgCorner.webp'
 import * as messageListImport from '../assets/messageList.json'
+import Image from './Image'
+import './TalentLayout.scss'
 
 interface MessageRaw {
   name: string
-  social_url: string
-  art_lazulight: string
-  art_elira: string
-  art_pomu: string
-  art_finana: string
-  msg_lazulight: string
-  msg_elira: string
-  msg_pomu: string
-  msg_finana: string
-  art_weewa: string
-  art_pomudachi: string
-  art_ryuguard: string
+  social_url?: string
+  art_lazulight?: string
+  art_elira?: string
+  art_pomu?: string
+  art_finana?: string
+  msg_lazulight?: string
+  msg_elira?: string
+  msg_pomu?: string
+  msg_finana?: string
+  art_weewa?: string
+  art_pomudachi?: string
+  art_ryuguard?: string
+  msg_dcl?: string
 }
 
 interface Message {
@@ -33,10 +34,12 @@ interface Message {
 }
 
 interface Props {
+  titleType: string
   enableLazulight: boolean
   enableElira: boolean
   enablePomu: boolean
   enableFinana: boolean
+  enableDcl: boolean
   enableFolding: boolean
   enableArt: boolean
   heading: string
@@ -62,10 +65,11 @@ function filterMessage (
 ): boolean {
   // Msg mode: only allow if user has not submitted art
   // Art mode: allow if user has submitted art
-  const ArtIsAvailable: boolean = (artLiver !== '') || (artMascot !== '')
+  const ArtIsAvailable: boolean = artLiver !== '' || artMascot !== ''
   return (
     enable &&
-    ((!enableArt && msg !== '' && !ArtIsAvailable) || (enableArt && ArtIsAvailable))
+    ((!enableArt && msg !== '' && !ArtIsAvailable) ||
+      (enableArt && ArtIsAvailable))
   )
 }
 
@@ -74,9 +78,15 @@ function chooseArt (
   artLiver: string,
   artMascot: string
 ): string {
-  if (!enableArt) { return '' }
-  if (artLiver !== '') { return artLiver }
-  if (artMascot !== '') { return artMascot }
+  if (!enableArt) {
+    return ''
+  }
+  if (artLiver !== '') {
+    return artLiver
+  }
+  if (artMascot !== '') {
+    return artMascot
+  }
   // Default for no art
   return ''
 }
@@ -91,6 +101,47 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
   const renderMessages = (): Message[] => {
     const Messages: Message[] = []
     messageListRaw.forEach((msg: MessageRaw): void => {
+      // (Brandon): ForEach loop didn't work for some reason
+      if (msg.social_url === undefined) {
+        msg.social_url = ''
+      }
+      if (msg.art_lazulight === undefined) {
+        msg.art_lazulight = ''
+      }
+      if (msg.art_elira === undefined) {
+        msg.art_elira = ''
+      }
+      if (msg.art_pomu === undefined) {
+        msg.art_pomu = ''
+      }
+      if (msg.art_finana === undefined) {
+        msg.art_finana = ''
+      }
+      if (msg.msg_lazulight === undefined) {
+        msg.msg_lazulight = ''
+      }
+      if (msg.msg_elira === undefined) {
+        msg.msg_elira = ''
+      }
+      if (msg.msg_pomu === undefined) {
+        msg.msg_pomu = ''
+      }
+      if (msg.msg_finana === undefined) {
+        msg.msg_finana = ''
+      }
+      if (msg.art_weewa === undefined) {
+        msg.art_weewa = ''
+      }
+      if (msg.art_pomudachi === undefined) {
+        msg.art_pomudachi = ''
+      }
+      if (msg.art_ryuguard === undefined) {
+        msg.art_ryuguard = ''
+      }
+      if (msg.msg_dcl === undefined) {
+        msg.msg_dcl = ''
+      }
+
       if (
         filterMessage(
           props.enableLazulight,
@@ -163,6 +214,18 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
           border: 'finana'
         })
       }
+      if (
+        filterMessage(props.enableDcl, props.enableArt, msg.msg_dcl, '', '')
+      ) {
+        Messages.push({
+          name: msg.name,
+          social_url: msg.social_url,
+          msg: msg.msg_dcl,
+          art: '',
+          corner: LazulightCorner,
+          border: 'dcl'
+        })
+      }
     })
     shuffleMessages(Messages)
     return Messages
@@ -170,7 +233,7 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
 
   return (
     <div className='fan-submissions-container'>
-      <h3 className='fan-submissions-heading'>{props.heading}</h3>
+      <h3 className={`talent-title ${props.titleType}`}>{props.heading}</h3>
       <div
         className={`${
           showAllMessages
@@ -213,7 +276,9 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
       </div>
       {!showAllMessages && (
         <button
-          onClick={() => { setShowAllMessages(true) }}
+          onClick={() => {
+            setShowAllMessages(true)
+          }}
           className={`${props.page}-border fan-submissions-container-button`}
         >
           view all
@@ -221,7 +286,9 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
       )}
       {showAllMessages && (
         <button
-          onClick={() => { setShowAllMessages(false) }}
+          onClick={() => {
+            setShowAllMessages(false)
+          }}
           className={`${props.page}-border fan-submissions-container-button fan-submissions-container-button-hide`}
         >
           Hide Section
