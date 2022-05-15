@@ -39,16 +39,20 @@ export default function App (): JSX.Element {
           </PageWrapper>
         </Route>
         
-        <Route path='/all-messages'>
+        
+        {/* Removing comments will allow each page
+        <Route path='/project-fnf'>
           <PageWrapper page='fnf' animation='on'>
             <Fnf page='fnf'  />
           </PageWrapper>
         </Route>
-        <Route path='/all-messages'>
+        
+        <Route path='/project-dcl'>
           <PageWrapper page='dcl' animation='off'>
             <DiamondCityLights page='dcl' />
           </PageWrapper>
-        </Route>
+        </Route> */}
+
         <Route path='/project-vn'>
           <PageWrapper page='vn' animation='on'>
             <VisualNovel page='vn' />
