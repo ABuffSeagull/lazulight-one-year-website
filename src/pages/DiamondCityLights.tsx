@@ -8,6 +8,7 @@ import PomuImage from '../assets/Portraits/Pomu-Portrait_BJ_cf50.webp?format=png
 import TwerkPomu from '../assets/DCL/twerk_pomu_t.gif'
 import TwerkElira from '../assets/DCL/twerk_elira_t.gif'
 import TwerkFinana from '../assets/DCL/twerk_finana_t.gif'
+import SusElira from '../assets/DCL/Elira_sus_small.png'
 
 interface Props {
   page: string
@@ -98,7 +99,9 @@ function DiamondCityLightsCredits (): JSX.Element {
       <h3>Video Editors</h3>
       <ul>
         <li><p><a href='https://twitter.com/PomuPowerCenter'>Pomu Power Distribution Center</a></p></li>
-        <li><p><a href='https://twitter.com/peeboggs'>Pendora’s Box</a></p></li>
+        <li><p><a href='https://twitter.com/peeboggs'>Pendora’s Box</a></p>
+          <div className='dcl-twerk-container'><Image className='dcl-twerk-gif' src={SusElira} /></div>
+        </li>
         <li><p>Rex</p></li>
       </ul>
       <h3>Sprite Artists</h3>
