@@ -212,10 +212,13 @@ export default function VisualNovel (props: Props): JSX.Element {
               )
             </p>
             <h4>Demo</h4>
-            <p>COMING SOON</p>
-            {/* <a href='/downloads/vn' download >
-              <button className='project-download-button lazulight-border'>Download Demo</button>
-            </a> */}
+            <p>After downloading the file, please unzip the files, then run the exe to play.</p>
+            <a href='/downloads/LazulightVN-1.0-DEMO-pc.zip' download>
+              <button className='project-download-button lazulight-border'>Download for Windows</button>
+            </a>
+            <a href='/downloads/LazulightVN-1.0-DEMO-mac.zip' download>
+              <button className='project-download-button lazulight-border'>Download for Mac</button>
+            </a>
           </div>
         </div>
       </div>
