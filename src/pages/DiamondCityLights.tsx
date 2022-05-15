@@ -38,7 +38,7 @@ export default function DiamondCityLights (props: Props): JSX.Element {
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
               allowFullScreen
             />
-          </div> 
+          </div>
           {/* Description */}
           <div className='project-description-container'>
             <h3>A Fan Cover Song</h3>
