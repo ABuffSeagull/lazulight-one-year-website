@@ -6,8 +6,8 @@ import corner from '../assets/Corners/Pomu-MsgCorner.webp'
 import Pomudachi from '../assets/Animations/Pomu-Animation_500px.webm'
 
 function Pomu (): JSX.Element {
+  const quote = 'Biiig Pomu energy!'
   const info = [
-    'Biiig Pomu energy!',
     'Nickname(s): Pogmu, PP Fairy',
     'Pomu Rainpuff (ぽむ れいんぱふ) is a fairy who lives in a lush forest and is affiliated with NIJISANJI EN’s first wave “LazuLight”. Supple like a flower in the breeze, she is cheerful and optimistic.',
     'Hailing from Virtual Neverland, Pomu is losing her magic powers because of a decline in the belief of fairies. She decided to become a VTuber after researching ways of restoring belief in fairies and is now determined to become the world’s strongest fairy and achieve world domination---er Pomufication.',
@@ -25,6 +25,7 @@ function Pomu (): JSX.Element {
       frame={PomuFrame}
       animation={Pomudachi}
       portrait={PomuImage}
+      quote={quote}
       info={info}
       youtube={youtubeLink}
       twitter={twitterLink}

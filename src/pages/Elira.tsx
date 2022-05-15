@@ -6,8 +6,8 @@ import Weewa from '../assets/Animations/Elira-Animation_500px.webm'
 
 export default function Elira (): JSX.Element {
   const name = 'Elira Pendora'
+  const quote = 'Love at first light.'
   const info = [
-    'Love at first light.',
     'Nickname(s): Ewiwa, Eli, Sheesh Dragon',
     'Elira Pendora (エリーラ ペンドラ) is a solar sky dragon who comes from the heavens closest to the sun and is affiliated with NIJISANJI EN’s first wave “LazuLight”. She has the kindness and receptiveness that makes the light of a sunny day fall equally on all.',
     'Descending from the sun, Elira traveled to Earth at some unspecified point in time before settling down and assimilating human culture. Despite her unknown age, Elira has demonstrated that she is hip and up to date with today’s memes and trends. Sheesh Pog Based indeed.',
@@ -26,6 +26,7 @@ export default function Elira (): JSX.Element {
       corner={corner}
       animation={Weewa}
       portrait={EliraImage}
+      quote={quote}
       info={info}
       youtube={youtubeLink}
       twitter={twitterLink}
