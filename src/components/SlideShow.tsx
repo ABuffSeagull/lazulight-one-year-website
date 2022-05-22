@@ -1,11 +1,12 @@
 import React from 'react'
-import '../components/ProjectPages.scss'
 
 // Slide show dependencies
 // Doc: https://react-slick.neostack.com/docs/api
+// IMPORTANT: The order of imports matters here for the 'slideshow-prev' and 'slideshow-next' overrides
 import Slider, { CustomArrowProps } from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
+import './ProjectPages.scss'
 
 function SlideShowNextArrow (props: CustomArrowProps): JSX.Element {
   const { className, style, onClick } = props
