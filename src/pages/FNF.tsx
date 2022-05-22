@@ -55,8 +55,8 @@ export default function Fnf (props: Props): JSX.Element {
   return (
     <div className='talent-layout-container'>
       {/* Heading */}
-      <div className='project-heading-container'>
-        <Image src={FNFLogo} className='project-heading-logo' enableZoom />
+      <div className='project-heading-container-logo'>
+        <Image src={FNFLogo} enableZoom />
       </div>
 
       {/* Slide Show */}

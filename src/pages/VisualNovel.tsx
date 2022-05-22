@@ -106,12 +106,8 @@ export default function VisualNovel (props: Props): JSX.Element {
   return (
     <div className='talent-layout-container'>
       {/* Heading */}
-      <div className='project-heading-container'>
-        <Image
-          src={VisualNovelLogo}
-          className='project-heading-logo'
-          enableZoom
-        />
+      <div className='project-heading-container-logo'>
+        <Image src={VisualNovelLogo} enableZoom />
       </div>
 
       {/* Slide Show */}
