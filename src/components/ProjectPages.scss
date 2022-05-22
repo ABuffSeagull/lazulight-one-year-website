@@ -41,29 +41,32 @@
 .project {
   &-heading {
     // (Brandon)
-    // Image styles
-    // * Apply indirectly through the container for images using 'enableZoom=true'
+    // Image styles (when using 'enableZoom')
+    // * Apply styles indirectly through the container, not on 'img' or 'picture'
     // * Otherwise the style affects the zoomed condition
     // 'height' styles
     // *  Subtracts height of the menu elements to fill 1 full screen
     &-container-logo {
+      display: flex;
+      align-items: center;
+      width: auto;
       margin: auto;
+      object-fit: contain;
+      max-width: 80%;
+      height: calc(100vh - 14rem);
 
-      picture,
+      @media (max-width: $bp-tablet) {
+        height: calc(100vh - 6rem);
+      }
+
+      @media (max-aspect-ratio: 4/5) {
+        height: auto;
+      }
+
+      div,
       img {
-        width: auto;
-        margin: auto;
+        height: 100%;
         object-fit: contain;
-        max-width: 80%;
-        height: calc(100vh - 14rem);
-
-        @media (max-width: $bp-tablet) {
-          height: calc(100vh - 6rem);
-        }
-
-        @media (max-aspect-ratio: 4/5) {
-          height: auto;
-        }
       }
     }
 
@@ -159,18 +162,18 @@
       height: 40vh;
     }
 
-    // This messes with the click to zoom function, but oh well
-    // It still kind of works
     &-elira {
+      $elira-scale: 2.2;
+
       overflow: hidden;
+      width: 20% * $elira-scale;
+      max-width: none;
+      height: auto;
+      transform: translateX(math.div(50%, $elira-scale) - 50%);
 
-      picture,
-      img {
-        $elira-scale: 2.2;
-
-        min-width: 100% * $elira-scale;
-        height: auto;
-        transform: translateX(math.div(50%, $elira-scale) - 50%);
+      @media (max-width: $bp-tablet) {
+        width: 100% * $elira-scale;
+        height: 40vh;
       }
     }
   }
