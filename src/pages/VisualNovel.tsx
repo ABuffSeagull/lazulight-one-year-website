@@ -2,7 +2,7 @@ import React from 'react'
 // Countdown timer
 // Doc: https://github.com/ndresx/react-countdown
 import Countdown, { CountdownRenderProps } from 'react-countdown'
-import Slider from 'react-slick'
+import Slider, { CustomArrowProps } from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
 // Slide show dependencies
 // Doc: https://react-slick.neostack.com/docs/api
@@ -36,6 +36,32 @@ interface Character {
   firstNameLower: string
   name: string
   info: string[]
+}
+
+function SlideShowNextArrow (props: CustomArrowProps): JSX.Element {
+  const { className, style, onClick } = props
+  return (
+    <button
+      className={`slideshow-next ${className === undefined ? '' : className}`}
+      style={{ ...style }}
+      onClick={onClick}
+    >
+      Next
+    </button>
+  )
+}
+
+function SlideShowPrevArrow (props: CustomArrowProps): JSX.Element {
+  const { className, style, onClick } = props
+  return (
+    <button
+      className={`slideshow-prev ${className === undefined ? '' : className}`}
+      style={{ ...style }}
+      onClick={onClick}
+    >
+      Next
+    </button>
+  )
 }
 
 export default function VisualNovel (props: Props): JSX.Element {
@@ -82,7 +108,9 @@ export default function VisualNovel (props: Props): JSX.Element {
     infinite: true,
     centerPadding: '10%',
     slidesToShow: 1,
-    speed: 500
+    speed: 500,
+    nextArrow: <SlideShowNextArrow />,
+    prevArrow: <SlideShowPrevArrow />
   }
 
   const countdownRenderer = ({

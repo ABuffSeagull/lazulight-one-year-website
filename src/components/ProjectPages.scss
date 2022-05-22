@@ -17,6 +17,25 @@
     object-fit: contain;
     cursor: pointer;
   }
+
+  // Override the defaults for 'React Slick'
+  &-next,
+  &-prev {
+    z-index: 10;
+    width: auto;
+    height: auto;
+
+    &::before {
+      $shadow: 10px;
+
+      font-size: 50px;
+      color: black;
+
+      // Repeat shadow to make it stronger
+      text-shadow: 0 0 $shadow #fff, 0 0 $shadow #fff, 0 0 $shadow #fff,
+        0 0 $shadow #fff, 0 0 $shadow #fff;
+    }
+  }
 }
 
 // 'video-container' class from https://coolestguidesontheplanet.com/videodrome/youtube/
