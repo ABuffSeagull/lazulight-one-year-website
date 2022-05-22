@@ -2,16 +2,13 @@ import React from 'react'
 // Countdown timer
 // Doc: https://github.com/ndresx/react-countdown
 import Countdown, { CountdownRenderProps } from 'react-countdown'
-import Slider, { CustomArrowProps } from 'react-slick'
-import 'slick-carousel/slick/slick-theme.css'
-// Slide show dependencies
-// Doc: https://react-slick.neostack.com/docs/api
-import 'slick-carousel/slick/slick.css'
+
 import EliraFrame from '../assets/Corners/Elira-LiverCorner.webp'
 import FinanaFrame from '../assets/Corners/Finana-LiverCorner.webp'
 import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp'
 import PomuFrame from '../assets/Corners/Pomu-LiverCorner.webp'
-// Slide show slides
+
+import SlideShow from '../components/SlideShow'
 import Slide1 from '../assets/VN/cg_elira_classroom_hair_tuck_watermark.webp'
 import Slide2 from '../assets/VN/cg_finana_rooftop_lunch_watermark.webp'
 import Slide3 from '../assets/VN/cg_pomu_pomusuke_ver1_watermark.webp'
@@ -36,32 +33,6 @@ interface Character {
   firstNameLower: string
   name: string
   info: string[]
-}
-
-function SlideShowNextArrow (props: CustomArrowProps): JSX.Element {
-  const { className, style, onClick } = props
-  return (
-    <button
-      className={`slideshow-next ${className === undefined ? '' : className}`}
-      style={{ ...style }}
-      onClick={onClick}
-    >
-      Next
-    </button>
-  )
-}
-
-function SlideShowPrevArrow (props: CustomArrowProps): JSX.Element {
-  const { className, style, onClick } = props
-  return (
-    <button
-      className={`slideshow-prev ${className === undefined ? '' : className}`}
-      style={{ ...style }}
-      onClick={onClick}
-    >
-      Next
-    </button>
-  )
 }
 
 export default function VisualNovel (props: Props): JSX.Element {
@@ -99,20 +70,6 @@ export default function VisualNovel (props: Props): JSX.Element {
     }
   ]
 
-  const slideShowSettings = {
-    className: 'center',
-    dots: true,
-    // adaptiveHeight: true,
-    focusOnSelect: true,
-    centerMode: true,
-    infinite: true,
-    centerPadding: '10%',
-    slidesToShow: 1,
-    speed: 500,
-    nextArrow: <SlideShowNextArrow />,
-    prevArrow: <SlideShowPrevArrow />
-  }
-
   const countdownRenderer = ({
     days,
     hours,
@@ -142,7 +99,7 @@ export default function VisualNovel (props: Props): JSX.Element {
       <div className='talent-text-container'>
         <Image className='talent-corner' src={LazulightCorner} />
         <div className={`talent-text-inner ${props.page}-border`}>
-          <Slider {...slideShowSettings} className='slideshow-container'>
+          <SlideShow>
             <div className='slideshow-slide'>
               <div className='video-container'>
                 <iframe
@@ -169,7 +126,7 @@ export default function VisualNovel (props: Props): JSX.Element {
             <div>
               <Image src={Slide5} className='slideshow-slide' enableZoom />
             </div>
-          </Slider>
+          </SlideShow>
 
           {/* Description & Download */}
           <div className='project-description-container'>
