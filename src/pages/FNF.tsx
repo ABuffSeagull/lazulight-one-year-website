@@ -2,17 +2,15 @@ import React from 'react'
 // Countdown timer
 // Doc: https://github.com/ndresx/react-countdown
 import Countdown, { CountdownRenderProps } from 'react-countdown'
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick-theme.css'
-// Slide show dependencies
-// Doc: https://react-slick.neostack.com/docs/api
-import 'slick-carousel/slick/slick.css'
+
 import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp'
-// Slide show slides
+
+import SlideShow from '../components/SlideShow'
 import EliraSlide from '../assets/FNF/Elira Collage_cf50.webp'
 import FinanaSlide from '../assets/FNF/Finana Collage_cf50.webp'
 import FNFLogo from '../assets/FNF/Lazunight Thumbnail.webp'
 import PomuSlide from '../assets/FNF/Pomu Collage_cf50.webp'
+
 import Image from '../components/Image'
 import '../components/ProjectPages.scss'
 import '../components/TalentLayout.scss'
@@ -22,18 +20,6 @@ interface Props {
 }
 
 export default function Fnf (props: Props): JSX.Element {
-  const slideShowSettings = {
-    className: 'center',
-    dots: true,
-    // adaptiveHeight: true,
-    focusOnSelect: true,
-    centerMode: true,
-    infinite: true,
-    centerPadding: '10%',
-    slidesToShow: 1,
-    speed: 500
-  }
-
   const countdownRenderer = ({
     days,
     hours,
@@ -55,15 +41,15 @@ export default function Fnf (props: Props): JSX.Element {
   return (
     <div className='talent-layout-container'>
       {/* Heading */}
-      <div className='project-heading-container'>
-        <Image src={FNFLogo} className='project-heading-logo' enableZoom />
+      <div className='project-heading-container-logo'>
+        <Image src={FNFLogo} enableZoom />
       </div>
 
       {/* Slide Show */}
       <div className='talent-text-container'>
         <Image className='talent-corner' src={LazulightCorner} />
         <div className={`talent-text-inner ${props.page}-border`}>
-          <Slider {...slideShowSettings} className='slideshow-container'>
+          <SlideShow>
             <div className='slideshow-slide'>
               <div className='video-container'>
                 <iframe
@@ -84,7 +70,7 @@ export default function Fnf (props: Props): JSX.Element {
             <div>
               <Image src={FinanaSlide} className='slideshow-slide' enableZoom />
             </div>
-          </Slider>
+          </SlideShow>
 
           {/* Description & Download */}
           <div className='project-description-container'>

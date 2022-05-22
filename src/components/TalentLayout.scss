@@ -45,8 +45,10 @@ $talent-corner-padding-top: 33px;
       grid-template-rows: 50% 50%;
     }
 
+    // (Brandon) when using 'enableZoom', the element is wrapped in a div
     img,
-    picture {
+    picture,
+    div {
       width: 100%;
       height: auto;
       margin-right: 0;
