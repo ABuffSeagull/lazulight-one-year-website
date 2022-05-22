@@ -8,22 +8,6 @@
     margin: auto;
   }
 
-  // (Brandon) Using " > div" to catch the element inside of the <Slider>
-  // This excludes the buttons & dots from the mask
-  // However, I imagine this may break in future versions of <Slider>
-  &-container > div {
-    $fade-left: 5%;
-    $fade-right: 100% - $fade-left;
-
-    mask-image: linear-gradient(
-      to right,
-      transparent,
-      black $fade-left,
-      black $fade-right,
-      transparent
-    );
-  }
-
   &-slide {
     position: relative;
     margin: auto;
