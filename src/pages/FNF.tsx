@@ -150,7 +150,7 @@ function LazunightFunkinCredits (): JSX.Element {
           </p>
         </li>
       </ul>
-      <h3>Character Sprite Artist, Animator Supervisor</h3>
+      <h3>Character Sprite Artist, Main Menu Asset Artist, Animator Supervisor</h3>
       <ul>
         <li>
           <p>
@@ -158,7 +158,7 @@ function LazunightFunkinCredits (): JSX.Element {
           </p>
         </li>
       </ul>
-      <h3>Main Menu Artist</h3>
+      <h3>Main Menu BG Artist</h3>
       <ul>
         <li>
           <p>TIP</p>

@@ -163,7 +163,9 @@ function DiamondCityLightsCredits (): JSX.Element {
           </div>
         </li>
         <li>
-          <p>Rex</p>
+          <p>
+            <a href='https://twitter.com/Rexhernan22'>Rexhernan 22</a>
+          </p>
         </li>
       </ul>
       <h3>Sprite Artists</h3>
