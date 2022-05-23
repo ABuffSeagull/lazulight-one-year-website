@@ -286,6 +286,15 @@
       a:link {
         color: inherit;
       }
+
+      a:hover {
+        text-decoration: underline;
+        color: currentcolor;
+      }
+
+      a::after {
+        content: url("assets/externalLink.svg");
+      }
     }
 
     @media (max-width: $bp-tablet) {
