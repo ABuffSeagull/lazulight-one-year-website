@@ -196,7 +196,6 @@ $talent-corner-padding-top: 33px;
 
       a:hover {
         text-decoration: underline;
-        color: currentcolor;
       }
     }
   }
@@ -314,6 +313,18 @@ $talent-corner-padding-top: 33px;
       word-wrap: break-word;
       margin-top: 5px;
       margin-right: 10px;
+
+      // (Brandon) This will give external link indicators to the message boxes, but I'm not sure about the look...
+      // text-decoration: underline;
+      // a::after {
+      //  content: "";
+      //  padding-left: 1em;
+      //  background-color: currentcolor;
+      //  mask-image: url("assets/externalLink.svg");
+      //  mask-size: 0.6em;
+      //  mask-position: top;
+      //  mask-repeat: no-repeat;
+      // }
     }
 
     p {
