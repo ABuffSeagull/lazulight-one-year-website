@@ -279,21 +279,22 @@
         text-decoration: none;
       }
 
-      a:visited {
-        color: inherit;
-      }
-
-      a:link {
-        color: inherit;
-      }
-
       a:hover {
         text-decoration: underline;
-        color: currentcolor;
+
+        // color: currentcolor;
       }
 
       a::after {
-        content: url("assets/externalLink.svg");
+        // Thanks to this dude or I'd be dead getting this to work
+        // https://medium.com/front-end-weekly/text-wrapping-inline-pseudo-elements-8a12a9ba7498
+        content: "";
+        padding-left: 1em;
+        background-color: currentcolor;
+        mask-image: url("assets/externalLink.svg");
+        mask-size: 0.4em;
+        mask-position: top;
+        mask-repeat: no-repeat;
       }
     }
 
