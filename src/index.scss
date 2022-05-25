@@ -55,6 +55,19 @@ a {
   }
 }
 
+a.external-link-text {
+  // Append external link indicator symbol
+  &::after {
+    content: "";
+    padding-left: 1em;
+    background-color: currentcolor;
+    mask-image: url("assets/externalLink.svg");
+    mask-size: 0.6em;
+    mask-position: top;
+    mask-repeat: no-repeat;
+  }
+}
+
 .talent-title {
   font-size: clamp(1rem, 7vw, 5rem);
   text-align: center;

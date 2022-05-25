@@ -30,10 +30,10 @@ export default function About (props: Props): JSX.Element {
           <p>Fans of LazuLight from across the world and from all walks of life joined together to create this expression of thanks. Every showcased message, art, music, game, and this website itself was created specifically for this purpose. This project is the culmination of over 4 months of efforts from artists, programmers, writers, and many others.</p>
           <p>The fruits of this labor include artwork, a cover of Diamond City Lights, a mod for Friday Night Funkin, and an entire visual novel. Thank you to the LazuLight fan discords, contributors, and all the fans for your hard work and support.</p>
           <h3>Fan Discord Links</h3>
-          <p><a href='https://discord.gg/2434club'>Nijisanji EN Fanserver</a></p>
-          <p><a href='https://discord.gg/pomu'>Pomucord</a></p>
-          <p><a href='https://discord.gg/gWUFJS2JtF'>Elicord</a></p>
-          <p><a href='https://discord.gg/425bxuSsff'>Finana Finclub</a></p>
+          <p><a className='external-link-text' href='https://discord.gg/2434club'>Nijisanji EN Fanserver</a></p>
+          <p><a className='external-link-text' href='https://discord.gg/pomu'>Pomucord</a></p>
+          <p><a className='external-link-text' href='https://discord.gg/gWUFJS2JtF'>Elicord</a></p>
+          <p><a className='external-link-text' href='https://discord.gg/425bxuSsff'>Finana Finclub</a></p>
         </div>
       </div>
 

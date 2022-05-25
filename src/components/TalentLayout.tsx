@@ -70,9 +70,9 @@ function TalentLayout (props: Props): JSX.Element {
                 <p key={idx}>{paragraph}&nbsp;</p>
               ))}
               <div className='talent-links-container'>
-                <a href={props.youtube}>{firstName}'s Youtube</a>
-                <a href={props.twitter}>{firstName}'s Twitter</a>
-                <a href={props.discord}> Fan Discord</a>
+                <a className='external-link-text' href={props.youtube}>{firstName}'s Youtube</a>
+                <a className='external-link-text' href={props.twitter}>{firstName}'s Twitter</a>
+                <a className='external-link-text' href={props.discord}> Fan Discord</a>
               </div>
             </div>
           </div>
