@@ -3,7 +3,7 @@ import TalentLayout from '../components/TalentLayout'
 import PomuImage from '../assets/Portraits/Pomu-Portrait-WN_cf50.webp?format=png;avif;webp&imagetools&meta'
 import PomuFrame from '../assets/Corners/Pomu-LiverCorner.webp'
 import corner from '../assets/Corners/Pomu-MsgCorner.webp'
-import Pomudachi from '../assets/Animations/Pomu-Animation_500px.webm'
+import Pomudachi from '../assets/Animations/Pomu-Animation_500px.gif'
 
 function Pomu (): JSX.Element {
   const quote = 'Biiig Pomu energy!'

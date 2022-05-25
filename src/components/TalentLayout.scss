@@ -36,6 +36,8 @@ $talent-corner-padding-top: 33px;
 
     @media (max-width: $bp-tablet) {
       display: grid;
+      justify-items: center;
+      align-items: center;
       max-width: 100%; // Clear desktop mode directive
       width: 80%;
       height: 80%;
@@ -45,33 +47,33 @@ $talent-corner-padding-top: 33px;
       grid-template-rows: 50% 50%;
     }
 
-    // (Brandon) when using 'enableZoom', the element is wrapped in a div
-    img,
-    picture,
-    div {
+    &-liver {
       width: 100%;
       height: auto;
       margin-right: 0;
-      object-fit: contain;
 
       @media (max-width: $bp-tablet) {
         width: 100%;
         height: 100%;
-        object-fit: contain;
         grid-column: 1 / 2;
         grid-row: 1 / 3;
       }
+
+      // (Brandon) when using 'enableZoom', the element is wrapped in a div
+      div,
+      img,
+      picture {
+        width: 100%;
+        object-fit: contain;
+      }
     }
 
-    video {
+    &-mascot {
       display: none;
 
       @media (max-width: $bp-tablet) {
         display: block;
         grid-column: 2 / 3;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
       }
     }
   }
@@ -93,7 +95,9 @@ $talent-corner-padding-top: 33px;
       grid-gap: calc((100% - $num-col * $col-width) / ($num-col - 1));
     }
 
-    video {
+    picture,
+    img,
+    div {
       width: 100%;
       object-fit: contain;
     }
@@ -320,7 +324,7 @@ $talent-corner-padding-top: 33px;
       //  content: "";
       //  padding-left: 1em;
       //  background-color: currentcolor;
-      //  mask-image: url("/assets/externalLink.svg");
+      //  mask-image: url("../assets/externalLink.svg");
       //  mask-size: 0.6em;
       //  mask-position: top;
       //  mask-repeat: no-repeat;
