@@ -8,22 +8,6 @@
     margin: auto;
   }
 
-  // (Brandon) Using " > div" to catch the element inside of the <Slider>
-  // This excludes the buttons & dots from the mask
-  // However, I imagine this may break in future versions of <Slider>
-  &-container > div {
-    $fade-left: 5%;
-    $fade-right: 100% - $fade-left;
-
-    mask-image: linear-gradient(
-      to right,
-      transparent,
-      black $fade-left,
-      black $fade-right,
-      transparent
-    );
-  }
-
   &-slide {
     position: relative;
     margin: auto;
@@ -32,6 +16,25 @@
     // border: 3px solid $lazulight-primary-color;
     object-fit: contain;
     cursor: pointer;
+  }
+
+  // Override the defaults for 'React Slick'
+  &-next,
+  &-prev {
+    z-index: 10;
+    width: auto;
+    height: auto;
+
+    &::before {
+      $shadow: 10px;
+
+      font-size: 50px;
+      color: black;
+
+      // Repeat shadow to make it stronger
+      text-shadow: 0 0 $shadow #fff, 0 0 $shadow #fff, 0 0 $shadow #fff,
+        0 0 $shadow #fff, 0 0 $shadow #fff;
+    }
   }
 }
 
@@ -56,28 +59,45 @@
 
 .project {
   &-heading {
-    &-image {
-      width: 100%;
-      max-width: 100%;
+    // (Brandon)
+    // Image styles (when using 'enableZoom')
+    // * Apply styles indirectly through the container, not on 'img' or 'picture'
+    // * Otherwise the style affects the zoomed condition
+    // 'height' styles
+    // *  Subtracts height of the menu elements to fill 1 full screen
+    &-container-logo {
+      display: flex;
+      align-items: center;
+      width: auto;
       margin: auto;
-    }
-
-    &-logo {
-      width: 100%;
+      object-fit: contain;
       max-width: 80%;
-      margin: auto;
-      object-position: top;
+      height: calc(100vh - 14rem);
+
+      @media (max-width: $bp-tablet) {
+        height: calc(100vh - 6rem);
+      }
+
+      @media (max-aspect-ratio: 4/5) {
+        height: auto;
+      }
+
+      div,
+      img {
+        height: 100%;
+        object-fit: contain;
+      }
     }
 
-    &-container {
+    &-container-imagetext {
       display: flex;
       gap: 2rem;
       justify-content: center;
       align-items: center;
-      height: calc(100vh - 14rem); // Subtract height of menu elements
+      height: calc(100vh - 14rem);
 
       @media (max-width: $bp-tablet) {
-        height: calc(100vh - 6rem); // Subtract height of menu elements
+        height: calc(100vh - 6rem);
       }
 
       @media (max-width: $bp-mobile) {
@@ -88,13 +108,20 @@
       h1 {
         width: auto;
         margin: 0 0 0 2rem;
+
+        @media (max-width: $bp-mobile) {
+          margin: 1rem 0 0;
+          font-size: clamp(1.5rem, 12vw, 5rem);
+        }
       }
 
       img,
       picture {
         width: auto;
-        height: calc(100vh - 14rem);
+        margin: auto;
         object-fit: contain;
+        max-width: 100%;
+        height: calc(100vh - 14rem);
 
         @media (max-width: $bp-tablet) {
           height: calc(100vh - 6rem);
@@ -154,18 +181,18 @@
       height: 40vh;
     }
 
-    // This messes with the click to zoom function, but oh well
-    // It still kind of works
     &-elira {
+      $elira-scale: 2.2;
+
       overflow: hidden;
+      width: 20% * $elira-scale;
+      max-width: none;
+      height: auto;
+      transform: translateX(math.div(50%, $elira-scale) - 50%);
 
-      picture,
-      img {
-        $elira-scale: 2.2;
-
-        min-width: 100% * $elira-scale;
-        height: auto;
-        transform: translateX(math.div(50%, $elira-scale) - 50%);
+      @media (max-width: $bp-tablet) {
+        width: 100% * $elira-scale;
+        height: 40vh;
       }
     }
   }
@@ -252,12 +279,20 @@
         text-decoration: none;
       }
 
-      a:visited {
-        color: inherit;
+      a:hover {
+        text-decoration: underline;
       }
 
-      a:link {
-        color: inherit;
+      a::after {
+        // Thanks to this dude or I'd be dead getting this to work
+        // https://medium.com/front-end-weekly/text-wrapping-inline-pseudo-elements-8a12a9ba7498
+        content: "";
+        padding-left: 1em;
+        background-color: currentcolor;
+        mask-image: url("../assets/externalLink.svg");
+        mask-size: 0.4em;
+        mask-position: top;
+        mask-repeat: no-repeat;
       }
     }
 
