@@ -167,7 +167,9 @@ function LazunightFunkinCredits (): JSX.Element {
       <h3>Character Portrait Artist</h3>
       <ul>
         <li>
-          <p>cooper</p>
+          <p>
+            <a href='https://www.instagram.com/cooper.avc/'>cooper</a>
+          </p>
         </li>
       </ul>
       <h3>Character Portrait Designer</h3>
