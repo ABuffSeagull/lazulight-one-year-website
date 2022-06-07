@@ -1,8 +1,4 @@
 import React from 'react'
-// Countdown timer
-// Doc: https://github.com/ndresx/react-countdown
-import Countdown, { CountdownRenderProps } from 'react-countdown'
-
 import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp'
 
 import SlideShow from '../components/SlideShow'
@@ -20,24 +16,6 @@ interface Props {
 }
 
 export default function Fnf (props: Props): JSX.Element {
-  const countdownRenderer = ({
-    days,
-    hours,
-    minutes,
-    seconds,
-    completed
-  }: CountdownRenderProps): JSX.Element => {
-    if (completed) {
-      return <span>Hopefully Very Soon</span>
-    }
-    // Render countdown
-    return (
-      <span>
-        {days} days, {hours}h, {minutes}min, {seconds}s
-      </span>
-    )
-  }
-
   return (
     <div className='talent-layout-container'>
       {/* Heading */}
@@ -104,19 +82,20 @@ export default function Fnf (props: Props): JSX.Element {
               Nijisanji, or the talents portrayed in this game.
             </p>
 
-            <h3>Download</h3>
-            <h4>Full Game</h4>
-            <p>
-              Available: June 1 (
-              <Countdown
-                date='2022-06-01T00:00:00+00:00'
-                renderer={countdownRenderer}
-              />
-              )
-            </p>
-            {/* <a href='/downloads/vn' download >
-              <button className='project-download-button lazulight-border'>Download Game</button>
-            </a> */}
+            <h3>Minimum Requirements</h3>
+            <p>6GB RAM required, otherwise this game should run on anything (tested on a 10 year old laptop).</p>
+
+            <h3>Install / Uninstall</h3>
+            <p>No installation is required. First download the zip, then unzip the game files into any folder.</p>
+            <p>To play, run the file "LazuFunk.exe".</p>
+            <p>To remove the game, simply delete the game files.</p>
+
+            <h3>Download Game</h3>
+            <a href='/downloads/LazuFunk-5013a39.zip' download >
+              <button className='project-download-button lazulight-border'>Download for Windows (220MB)</button>
+            </a>
+            <p><a href=''>Mirror Download at GameBanana</a></p>
+            <p><a href=''>Mirror Download at Game Jolt</a></p>
           </div>
         </div>
       </div>
