@@ -98,7 +98,7 @@ export default function Fnf (props: Props): JSX.Element {
               <button className='project-download-button lazulight-border'>Mirror Download at GameBanana</button>
             </a><a href=' https://gamejolt.com/games/lazunight/723472'>
               <button className='project-download-button lazulight-border'>Mirror Download at GameJolt</button>
-              </a>
+            </a>
           </div>
         </div>
       </div>
