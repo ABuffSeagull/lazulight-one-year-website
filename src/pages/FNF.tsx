@@ -90,12 +90,15 @@ export default function Fnf (props: Props): JSX.Element {
             <p>To play, run the file "LazuFunk.exe".</p>
             <p>To remove the game, simply delete the game files.</p>
 
-            <h3>Download Game</h3>
+            <h3>Download Game (220MB) </h3>
             <a href='/downloads/LazuFunk-5013a39.zip' download >
-              <button className='project-download-button lazulight-border'>Download for Windows (220MB)</button>
+              <button className='project-download-button lazulight-border'>Download for Windows</button>
             </a>
-            <p><a href=''>Mirror Download at GameBanana</a></p>
-            <p><a href=''>Mirror Download at Game Jolt</a></p>
+            <a href='https://gamebanana.com/mods/382213' >
+              <button className='project-download-button lazulight-border'>Mirror Download at GameBanana</button>
+            </a><a href=' https://gamejolt.com/games/lazunight/723472' >
+              <button className='project-download-button lazulight-border'>Mirror Download at GameJolt</button>
+            </a>
           </div>
         </div>
       </div>
