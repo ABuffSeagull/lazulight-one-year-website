@@ -98,7 +98,7 @@ export default function Fnf (props: Props): JSX.Element {
               <button className='project-download-button lazulight-border'>Mirror Download at GameBanana</button>
             </a><a href=' https://gamejolt.com/games/lazunight/723472'>
               <button className='project-download-button lazulight-border'>Mirror Download at GameJolt</button>
-            </a>
+              </a>
           </div>
         </div>
       </div>
@@ -124,7 +124,15 @@ function LazunightFunkinCredits (): JSX.Element {
           </p>
         </li>
       </ul>
-      <h3>Animator, Programmer, Modder</h3>
+      <h3>Lead Programmer</h3>
+      <ul>
+        <li>
+          <p>
+            <a href='https://twitter.com/binpuki_?t=HlD5JgZx3QDUQbk7Ah9NrQ&s=09'>Binpuki</a>
+          </p>
+        </li>
+      </ul>
+      <h3>Animator, Programmer</h3>
       <ul>
         <li>
           <p>
@@ -143,14 +151,16 @@ function LazunightFunkinCredits (): JSX.Element {
       <h3>Main Menu BG Artist</h3>
       <ul>
         <li>
-          <p>TIP</p>
+          <p>
+            <a href=' https://twitter.com/flimsytipsy?s=21&t=9Vb1a0i3Hv1ZdhJ0WWT_SQ '>TIP</a>
+          </p>
         </li>
       </ul>
       <h3>Character Portrait Artist</h3>
       <ul>
         <li>
           <p>
-            <a href='https://www.instagram.com/cooper.avc/'>cooper</a>
+            <a href=':https://cooperisswagyoushuldfollow.carrd.co/'>cooper</a>
           </p>
         </li>
       </ul>
