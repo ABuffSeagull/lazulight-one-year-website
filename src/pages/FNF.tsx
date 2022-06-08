@@ -129,7 +129,7 @@ function LazunightFunkinCredits (): JSX.Element {
       <ul>
         <li>
           <p>
-            <a href='https://twitter.com/binpuki_?t=HlD5JgZx3QDUQbk7Ah9NrQ&s=09'>Binpuki</a>
+            <a href='https://twitter.com/binpuki_'>Binpuki</a>
           </p>
         </li>
       </ul>
@@ -153,7 +153,7 @@ function LazunightFunkinCredits (): JSX.Element {
       <ul>
         <li>
           <p>
-            <a href=' https://twitter.com/flimsytipsy?s=21&t=9Vb1a0i3Hv1ZdhJ0WWT_SQ '>TIP</a>
+            <a href='https://twitter.com/flimsytipsy'>TIP</a>
           </p>
         </li>
       </ul>
@@ -161,7 +161,7 @@ function LazunightFunkinCredits (): JSX.Element {
       <ul>
         <li>
           <p>
-            <a href=':https://cooperisswagyoushuldfollow.carrd.co/'>cooper</a>
+            <a href='https://cooperisswagyoushuldfollow.carrd.co/'>cooper</a>
           </p>
         </li>
       </ul>
