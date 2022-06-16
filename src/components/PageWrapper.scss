@@ -182,12 +182,13 @@
   &-pomu {
     @keyframes pomuCoinFall {
       from {
-        transform: translateY(-20vh) rotate(var(--rotation)) scale(var(--scale));
+        top: -20%;
+        transform: rotate(var(--rotation)) scale(var(--scale));
       }
 
       to {
-        transform: translateY(var(--body-height)) rotate(var(--rotation))
-          scale(var(--scale));
+        top: 100%;
+        transform: rotate(var(--rotation)) scale(var(--scale));
       }
     }
 
@@ -232,16 +233,17 @@
 
       @keyframes bubbleRise {
         from {
-          transform: translateY(var(--page-height)) scale(var(--scale-factor));
+          bottom: -20%;
+          transform: scale(var(--scale-factor));
         }
 
         to {
-          transform: translateY(0) scale(var(--scale-factor));
+          bottom: 100%;
+          transform: scale(var(--scale-factor));
         }
       }
 
       &-bubble {
-        top: -100px;
         height: 4rem;
         opacity: 0.6;
         animation-name: bubbleRise;
@@ -285,12 +287,13 @@
   &-dcl {
     @keyframes dlcCyalumeFall {
       from {
-        transform: translateY(0) rotate(var(--rotation)) scale(var(--scale));
+        top: -20%;
+        transform: rotate(var(--rotation)) scale(var(--scale));
       }
 
       to {
-        transform: translateY(var(--body-height)) rotate(var(--rotation))
-          scale(var(--scale));
+        top: 100%;
+        transform: rotate(var(--rotation)) scale(var(--scale));
       }
     }
 
