@@ -60,17 +60,7 @@ export default function DiamondCityLights (props: Props): JSX.Element {
               For those who are wondering about the chanting in the middle of
               the song, this chant is commonly referred to as a ‘mix’. Mixing is
               associated with Japanese Idol concerts where the crowd mix to the
-              performance. For further information, please refer to{' '}
-              <a href='https://www.youtube.com/watch?v=YuLfQC4LCdM'>
-                {' '}
-                【IDOL CALLS】Learning wotagei with Pomu Sensei!【NIJISANJI EN |
-                Pomu Rainpuff】
-              </a>{' '}
-              and{' '}
-              <a href='https://en.wikipedia.org/wiki/Wotagei'>
-                the Wikipedia page on Wotagei
-              </a>
-              . IETTAIGA!
+              performance. For further information, please refer to <a href='https://www.youtube.com/watch?v=YuLfQC4LCdM'>【IDOL CALLS】Learning wotagei with Pomu Sensei!【NIJISANJI EN | Pomu Rainpuff】</a> and the <a href='https://en.wikipedia.org/wiki/Wotagei'>Wikipedia page on Wotagei</a>. IETTAIGA!
             </p>
 
             <h3>Permissions &amp; Notice</h3>
@@ -79,6 +69,7 @@ export default function DiamondCityLights (props: Props): JSX.Element {
               We give permission to all Nijisanji Livers to monetize this cover
               by any means, including livestream and video publication.
             </p>
+            <p>If there are any concerns or enquiries, please contact us by email at <a href='mailto:lazuprojectsteam@lazulight.com'>lazuprojectsteam@lazulight.com</a>.</p>
           </div>
         </div>
       </div>

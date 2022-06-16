@@ -1,7 +1,4 @@
 import React from 'react'
-// Countdown timer
-// Doc: https://github.com/ndresx/react-countdown
-import Countdown, { CountdownRenderProps } from 'react-countdown'
 
 import EliraFrame from '../assets/Corners/Elira-LiverCorner.webp'
 import FinanaFrame from '../assets/Corners/Finana-LiverCorner.webp'
@@ -69,24 +66,6 @@ export default function VisualNovel (props: Props): JSX.Element {
       ]
     }
   ]
-
-  const countdownRenderer = ({
-    days,
-    hours,
-    minutes,
-    seconds,
-    completed
-  }: CountdownRenderProps): JSX.Element => {
-    if (completed) {
-      return <span>Hopefully Very Soon</span>
-    }
-    // Render countdown
-    return (
-      <span>
-        {days} days, {hours}h, {minutes}min, {seconds}s
-      </span>
-    )
-  }
 
   return (
     <div className='talent-layout-container'>
@@ -181,19 +160,22 @@ export default function VisualNovel (props: Props): JSX.Element {
               anniversary. The creators are in no way related to ANYCOLOR Inc,
               Nijisanji, or the talents portrayed in this game.
             </p>
+            <p>If there are any concerns or enquiries, please contact us by email at <a href='mailto:lazuprojectsteam@lazulight.com'>lazuprojectsteam@lazulight.com</a>.</p>
+
+            <h3>Install / Uninstall (Windows)</h3>
+            <p>No installation is required. First download the zip, then unzip the game files into any folder.</p>
+            <p>To play, run the file <code>LazulightVN.exe</code></p>
+            <p>To remove the game, simply delete the unzipped game files.</p>
+            <p>To fully remove the game (including save and settings data), additionally delete the folder <code>C:\Users\&lt;username&gt;\AppData\Roaming\RenPy\LazulightVN-1643777295</code> <br />This folder is automatically created when you run the game.</p>
+
+            <h3>Install / Uninstall (Mac)</h3>
+            <p>(Coming Soon)</p>
 
             <h3>Download</h3>
             <h4>Full Game</h4>
-            <p>
-              Available: June 18, 10pm JST (
-              <Countdown
-                date='2022-06-18T22:00:00+09:00'
-                renderer={countdownRenderer}
-              />
-              )
-            </p>
-            <h4>Demo</h4>
-            <p>After downloading the file, please unzip the files, then run the exe to play.</p>
+            <p><i>The full release has been delayed to July to make way for additional features to be added. Thank you for your understanding!</i></p>
+            <p>Available: July</p>
+            <h4>Demo (500MB Approx)</h4>
             <a href='/downloads/LazulightVN-1.0-DEMO-pc.zip' download>
               <button className='project-download-button lazulight-border'>Download for Windows</button>
             </a>
