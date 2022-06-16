@@ -97,3 +97,11 @@ a.external-link-text {
 .talent-title.contrast {
   filter: drop-shadow(0 0 0.5rem #552c52);
 }
+
+code {
+  display: inline-block;
+  font-family: monospace;
+  font-weight: bold;
+  hyphens: none;
+  word-break: break-all;
+}

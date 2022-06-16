@@ -81,14 +81,16 @@ export default function Fnf (props: Props): JSX.Element {
               anniversary. The creators are in no way related to ANYCOLOR Inc,
               Nijisanji, or the talents portrayed in this game.
             </p>
+            <p>If there are any concerns or enquiries, please contact us by email at <a href='mailto:lazuprojectsteam@lazulight.com'>lazuprojectsteam@lazulight.com</a>.</p>
 
             <h3>Minimum Requirements</h3>
             <p>6GB RAM required, otherwise this game should run on anything (tested on a 10 year old laptop).</p>
 
             <h3>Install / Uninstall</h3>
             <p>No installation is required. First download the zip, then unzip the game files into any folder.</p>
-            <p>To play, run the file "LazuFunk.exe".</p>
-            <p>To remove the game, simply delete the game files.</p>
+            <p>To play, run the file <code>LazuFunk.exe</code></p>
+            <p>To remove the game, simply delete the unzipped game files.</p>
+            <p>To remove save and settings data, delete the folder <code>C:\Users\&lt;username&gt;\AppData\Roaming\LazuFunk</code> <br />This folder is automatically created when you run the game.</p>
 
             <h3>Download for Windows (220MB)</h3>
             <a href='/downloads/LazuFunk-5013a39.zip' download>
