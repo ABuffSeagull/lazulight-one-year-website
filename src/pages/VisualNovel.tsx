@@ -166,10 +166,13 @@ export default function VisualNovel (props: Props): JSX.Element {
             <p>No installation is required. First download the zip, then unzip the game files into any folder.</p>
             <p>To play, run the file <code>LazulightVN.exe</code></p>
             <p>To remove the game, simply delete the unzipped game files.</p>
-            <p>To fully remove the game (including save and settings data), additionally delete the folder <code>C:\Users\&lt;username&gt;\AppData\Roaming\RenPy\LazulightVN-1643777295</code> <br />This folder is automatically created when you run the game.</p>
+            <p>To fully remove the game (including save and settings data), additionally delete the folder<br /><code>C:\Users\&lt;username&gt;\AppData\Roaming\RenPy\LazulightVN-1643777295</code> <br />This folder is automatically created when you run the game.</p>
 
             <h3>Install / Uninstall (Mac)</h3>
-            <p>(Coming Soon)</p>
+            <p>No installation is required. First download the zip, then unzip the game files into any folder.</p>
+            <p>To play, run the <code>LazulightVN</code> app.</p>
+            <p>To remove the game, simply delete the unzipped game files.</p>
+            <p>To fully remove the game (including save and settings data), additionally delete the folder<br /><code>~/Library/RenPy/LazulightVN-1643777295</code> <br />This folder is automatically created when you run the game.</p>
 
             <h3>Download</h3>
             <h4>Full Game</h4>
