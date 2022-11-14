@@ -162,29 +162,33 @@ export default function VisualNovel (props: Props): JSX.Element {
             </p>
             <p>If there are any concerns or enquiries, please contact us by email at <a href='mailto:lazuprojectsteam@lazulight.com'>lazuprojectsteam@lazulight.com</a>.</p>
 
-            <h3>Install / Uninstall (Windows)</h3>
+            <h3>Play Online</h3>
+            <a href='https://vn.lazulight.com/' target='_blank' rel='noopener noreferrer'>
+              <button className='project-download-button lazulight-border'>Play Online</button>
+            </a>
+
+            <p>Fully playable on desktop or phone.</p>
+            <p>Save data is retained between sessions. To retain save data, do not play in incognito mode, clear your browsing data, or change browser between sessions. You may wish to use the export/import save data feature in case of accidental data loss.</p>
+
+            <h3>Download (500MB Approx)</h3>
+            <a href='/downloads/LazulightVN-1.0-pc.zip' download>
+              <button className='project-download-button lazulight-border'>Download for Windows</button>
+            </a>
+            <a href='/downloads/LazulightVN-1.0-mac.zip' download>
+              <button className='project-download-button lazulight-border'>Download for Mac</button>
+            </a>
+
+            <h4>Install / Uninstall (Windows)</h4>
             <p>No installation is required. First download the zip, then unzip the game files into any folder.</p>
             <p>To play, run the file <code>LazulightVN.exe</code></p>
             <p>To remove the game, simply delete the unzipped game files.</p>
             <p>To fully remove the game (including save and settings data), additionally delete the folder<br /><code>C:\Users\&lt;username&gt;\AppData\Roaming\RenPy\LazulightVN-1643777295</code> <br />This folder is automatically created when you run the game.</p>
 
-            <h3>Install / Uninstall (Mac)</h3>
+            <h4>Install / Uninstall (Mac)</h4>
             <p>No installation is required. First download the zip, then unzip the game files into any folder.</p>
             <p>To play, run the <code>LazulightVN</code> app.</p>
             <p>To remove the game, simply delete the unzipped game files.</p>
             <p>To fully remove the game (including save and settings data), additionally delete the folder<br /><code>~/Library/RenPy/LazulightVN-1643777295</code> <br />This folder is automatically created when you run the game.</p>
-
-            <h3>Download</h3>
-            <h4>Full Game</h4>
-            <p><i>The full release has been delayed to July to make way for additional features to be added. Thank you for your understanding!</i></p>
-            <p>Available: July</p>
-            <h4>Demo (500MB Approx)</h4>
-            <a href='/downloads/LazulightVN-1.0-DEMO-pc.zip' download>
-              <button className='project-download-button lazulight-border'>Download for Windows</button>
-            </a>
-            <a href='/downloads/LazulightVN-1.0-DEMO-mac.zip' download>
-              <button className='project-download-button lazulight-border'>Download for Mac</button>
-            </a>
           </div>
         </div>
       </div>
