@@ -162,12 +162,15 @@ export default function VisualNovel (props: Props): JSX.Element {
             </p>
             <p>If there are any concerns or enquiries, please contact us by email at <a href='mailto:lazuprojectsteam@lazulight.com'>lazuprojectsteam@lazulight.com</a>.</p>
 
+            <h3>How to Play</h3>
+            <p>The full game is freely playable either online or by download. Click the buttons below to play.</p>
+            <p>For the best experience, we recommend to download the game. Otherwise, online players should preferably play on desktop.</p>
+
             <h3>Play Online</h3>
             <a href='https://vn.lazulight.com/' target='_blank' rel='noopener noreferrer'>
               <button className='project-download-button lazulight-border'>Play Online</button>
             </a>
-
-            <p>Fully playable on desktop or phone.</p>
+            <p>Playable on desktop or phone. Recommended browser: Google Chrome</p>
             <p>Save data is retained between sessions. To retain save data, do not play in incognito mode, clear your browsing data, or change browser between sessions. You may wish to use the export/import save data feature in case of accidental data loss.</p>
 
             <h3>Download (500MB Approx)</h3>
