@@ -1,5 +1,9 @@
 import React from 'react'
 
+// Countdown timer
+// Doc: https://github.com/ndresx/react-countdown
+import Countdown, { CountdownRenderProps } from 'react-countdown'
+
 import EliraFrame from '../assets/Corners/Elira-LiverCorner.webp'
 import FinanaFrame from '../assets/Corners/Finana-LiverCorner.webp'
 import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp'
@@ -66,6 +70,35 @@ export default function VisualNovel (props: Props): JSX.Element {
       ]
     }
   ]
+
+  const countdownRenderer = ({
+    days,
+    hours,
+    minutes,
+    seconds,
+    completed,
+    props
+  }: CountdownRenderProps): JSX.Element => {
+    if (completed) {
+      // Return the child of the <Countdown> element
+      // e.g.
+      // <Countdown date='...' renderer={countdownRenderer}>
+      //    Content here is passed to props.children
+      // </Countdown>
+      return <>{props.children}</>
+    }
+    // Render countdown
+    return (
+      <>
+        <p><b>Releases at 12:12PM on 12 December 2022 JST</b></p>
+        <button className='project-download-button lazulight-border'>
+          {days} days, {hours}h, {minutes}min, {seconds}s
+        </button>
+      </>
+    )
+  }
+
+  const releaseDate = '2022-12-12T12:12:00+09:00'
 
   return (
     <div className='talent-layout-container'>
@@ -167,19 +200,26 @@ export default function VisualNovel (props: Props): JSX.Element {
             <p>For the best experience, we recommend to download the game. Otherwise, online players should preferably play on desktop.</p>
 
             <h3>Play Online</h3>
-            <a href='https://vn.lazulight.com/' target='_blank' rel='noopener noreferrer'>
-              <button className='project-download-button lazulight-border'>Play Online</button>
-            </a>
+            <Countdown date={releaseDate} renderer={countdownRenderer}>
+              <a href='https://vn.lazulight.com/' target='_blank' rel='noopener noreferrer'>
+                <button className='project-download-button lazulight-border'>Play Online</button>
+              </a>
+            </Countdown>
+
             <p>Playable on desktop or phone. Recommended browser: Google Chrome</p>
             <p>Save data is retained between sessions. To retain save data, do not play in incognito mode, clear your browsing data, or change browser between sessions. You may wish to use the export/import save data feature in case of accidental data loss.</p>
 
             <h3>Download (500MB Approx)</h3>
-            <a href='/downloads/LazulightVN-1.0-pc.zip' download>
-              <button className='project-download-button lazulight-border'>Download for Windows</button>
-            </a>
-            <a href='/downloads/LazulightVN-1.0-mac.zip' download>
-              <button className='project-download-button lazulight-border'>Download for Mac</button>
-            </a>
+            <Countdown date={releaseDate} renderer={countdownRenderer}>
+              <>
+                <a href='/downloads/LazulightVN-1.0-pc.zip' download>
+                  <button className='project-download-button lazulight-border'>Download for Windows</button>
+                </a>
+                <a href='/downloads/LazulightVN-1.0-mac.zip' download>
+                  <button className='project-download-button lazulight-border'>Download for Mac</button>
+                </a>
+              </>
+            </Countdown>
 
             <h4>Install / Uninstall (Windows)</h4>
             <p>No installation is required. First download the zip, then unzip the game files into any folder.</p>
@@ -243,7 +283,7 @@ Formatting from Kiro's Credits document
       .. | ..
       freesound.org
     & to &amp;
-    Links with braces to
+    Links with parentheses to
       </a>{' '}&nbsp;(Keyboard sounds)
     ul for "Special Thanks To"
       <ul className='credits-text-special-final'>
