@@ -451,18 +451,18 @@ function VisualNovelCredits (): JSX.Element {
         <li><p><a href='https://www.youtube.com/crisuskeer'>Crisu</a></p></li>
         <li><p><a href='https://twitter.com/kanasquared'>kana²</a></p></li>
         <li><p><a href='https://twitter.com/Treebobber1'>SinSin</a></p></li>
-        <li><p><a href='https://twitter.com/tevilchicken'>tecnd</a></p></li>
+        <li><p><a href='https://twitter.com/_tecnd'>tecnd</a></p></li>
       </ul>
 
       <h3>Programming Team</h3>
-      <h4>Programming Team Leader</h4>
+      <h4>Programming Team Leaders</h4>
       <ul>
-        <li><p><a href='https://twitter.com/tevilchicken'>tecnd</a></p></li>
+        <li><p><a href='https://twitter.com/_tecnd'>tecnd</a></p></li>
         <li><p>Usaruru</p></li>
       </ul>
       <h4>Programmers</h4>
       <ul>
-        <li><p><a href='https://twitter.com/tevilchicken'>tecnd</a></p></li>
+        <li><p><a href='https://twitter.com/_tecnd'>tecnd</a></p></li>
         <li><p><a href='https://twitter.com/kanasquared'>kana²</a></p></li>
         <li><p><a href='https://twitter.com/BadScribbler'>BadScribbler</a></p></li>
         <li><p>mrj</p></li>
