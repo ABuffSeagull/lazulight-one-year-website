@@ -291,11 +291,18 @@ function VisualNovelCredits (): JSX.Element {
       <h4>Finana Route Writer</h4>
       <ul>
         <li><p><a href='https://twitter.com/keekispecial'>Keektang</a></p></li>
+      </ul>
+      <h4>Finana Route Assistant Writer</h4>
+      <ul>
         <li><p>The Holy Wooomy with 69 Nuggets of Toasted Squidies</p></li>
       </ul>
       <h4>??? Route Writer</h4>
       <ul>
         <li><p><a href='https://twitter.com/aikatsukin'>Akatsukin</a></p></li>
+      </ul>
+      <h4>Proofreading Lead</h4>
+      <ul>
+        <li><p><a href='https://twitter.com/JF__ND'>JFND</a></p></li>
       </ul>
       <h4>Proofreaders</h4>
       <ul>
@@ -329,8 +336,8 @@ function VisualNovelCredits (): JSX.Element {
       </ul>
       <h4>Finana Sprites</h4>
       <ul>
-        <li><p><a href='https://twitter.com/amechi_doki'>Amechi</a> &nbsp;(Lineart)</p></li>
-        <li><p><a href='https://twitter.com/Vitaminechan'>Vitaminechan</a>{' '}&nbsp;(Colouring)</p></li>
+        <li><p><span><a href='https://twitter.com/amechi_doki'>Amechi</a>{' '}&nbsp;(Lineart)</span></p></li>
+        <li><p><span><a href='https://twitter.com/Vitaminechan'>Vitaminechan</a>{' '}&nbsp;(Colouring)</span></p></li>
       </ul>
       <h4>Selen Sprites</h4>
       <ul>
@@ -388,6 +395,7 @@ function VisualNovelCredits (): JSX.Element {
         <li><p><a href='https://twitter.com/miuzhik_'>Michi</a></p></li>
         <li><p><a href='https://twitter.com/snowharasho'>Squish</a></p></li>
         <li><p><a href='https://twitter.com/wizwaaz'>wizwaaz</a></p></li>
+        <li><p><a href='https://www.instagram.com/bianneart'>Bianne</a></p></li>
       </ul>
       <h4>UI/Assets</h4>
       <ul>
@@ -398,14 +406,19 @@ function VisualNovelCredits (): JSX.Element {
         <li><p><a href='https://twitter.com/TakezoMitsurugi'>Takezo</a></p></li>
         <li><p>The Holy Wooomy with 69 Nuggets of Toasted Squidies</p></li>
         <li><p><a href='https://twitter.com/questipher'>questipher</a></p></li>
-        <li><p><a href='https://twitter.com/coldace_24'>Zephyr_Monochrome</a></p></li>
+        <li><p><a href='https://twitter.com/coldace_24'>Zephyr Monochrome</a></p></li>
+        <li><p><a href='https://twitter.com/tsukinaga_b'>tsukinaga</a></p></li>
+        <li><p><a href='https://www.youtube.com/crisuskeer'>Crisu</a></p></li>
+        <li><p><a href='https://twitter.com/kanasquared'>kana²</a></p></li>
+        <li><p><a href='https://twitter.com/Treebobber1'>SinSin</a></p></li>
+        <li><p><a href='https://twitter.com/tevilchicken'>tecnd</a></p></li>
       </ul>
 
       <h3>Programming Team</h3>
       <h4>Programming Team Leader</h4>
       <ul>
-        <li><p>Usaruru</p></li>
         <li><p><a href='https://twitter.com/tevilchicken'>tecnd</a></p></li>
+        <li><p>Usaruru</p></li>
       </ul>
       <h4>Programmers</h4>
       <ul>
@@ -415,6 +428,7 @@ function VisualNovelCredits (): JSX.Element {
         <li><p>mrj</p></li>
         <li><p><a href='https://twitter.com/Treebobber1'>SinSin</a></p></li>
         <li><p><a href='https://twitter.com/tsukinaga_b'>tsukinaga</a></p></li>
+        <li><p><a href='https://twitter.com/monkey2821920'>Austinx88</a></p></li>
       </ul>
       <h4>Visual Novel Engine</h4>
       <ul>
@@ -422,12 +436,9 @@ function VisualNovelCredits (): JSX.Element {
       </ul>
 
       <h3>BGM Team</h3>
-      <h4>BGM Team Leader</h4>
+      <h4>BGM Team Leaders</h4>
       <ul>
         <li><p><a href='https://twitter.com/HirokawaKiro'>Kiro</a></p></li>
-      </ul>
-      <h4>BGM Team Assistant Leader</h4>
-      <ul>
         <li><p><a href='https://twitter.com/itsbreeziness'>breeziness</a></p></li>
       </ul>
       <h4>Composers</h4>
@@ -438,14 +449,23 @@ function VisualNovelCredits (): JSX.Element {
       </ul>
       <h4>Instrumentalists</h4>
       <ul>
-        <li><p><a href='https://twitter.com/peeboggs'>Pendora’s Box</a>{' '}&nbsp;(Guitar)</p></li>
-        <li><p><a href='https://twitter.com/HiiragiEmuri'>Hiiragi Emuri</a>{' '}&nbsp;(Violin)</p></li>
+        <li><p><span><a href='https://twitter.com/peeboggs'>Pendora’s Box</a>{' '}&nbsp;(Guitar)</span></p></li>
+        <li><p><span><a href='https://twitter.com/HiiragiEmuri'>Hiiragi Emuri</a>{' '}&nbsp;(Violin)</span></p></li>
       </ul>
       <h4>Sound Effects</h4>
       <ul>
         <li><p><a href='https://freesound.org'>freesound.org under the CC0 license</a></p></li>
+        <li><p><span><a href='https://twitter.com/Tophrii'>Tophrii</a>{' '}&nbsp;(Keyboard sounds)</span></p></li>
       </ul>
-
+      <h4>Diamond City Lights (Song)</h4>
+      <ul>
+        <li><p>LazuLight (Vocals)</p></li>
+        <li><p>Mafumafu (Composer)</p></li>
+      </ul>
+      <h4>Diamond City Lights (Fan Instrumental)</h4>
+      <ul>
+        <li><p><a href='https://twitter.com/utalivepro'>Daryl Barnes of UTALIVE</a></p></li>
+      </ul>
       <h3>Video Team</h3>
       <h4>Video Team Leaders</h4>
       <ul>
@@ -454,9 +474,18 @@ function VisualNovelCredits (): JSX.Element {
       </ul>
       <h4>Video Editors</h4>
       <ul>
-        <li><p><a href='https://twitter.com/PomuPowerCenter'>PomuPower Distribution Center</a>{' '}&nbsp;(Opening Video)</p></li>
-        <li><p><a href='https://twitter.com/peeboggs'>Pendora’s Box</a>{' '}&nbsp;(Credits)</p></li>
+        <li><p><span><a href='https://twitter.com/PomuPowerCenter'>PomuPower Distribution Center</a>{' '}&nbsp;(Opening Video)</span></p></li>
+        <li><p><span><a href='https://twitter.com/peeboggs'>Pendora’s Box</a>{' '}&nbsp;(Credits)</span></p></li>
       </ul>
+      <h3>QA Team</h3>
+      <ul>
+        <li><p><a href='https://www.youtube.com/crisuskeer'>Crisu</a></p></li>
+        <li><p><a href='https://twitter.com/HirokawaKiro'>Kiro</a></p></li>
+        <li><p><a href='https://www.facebook.com/TPYMSYCSTE'>Thexty</a></p></li>
+        <li><p><a href='https://twitter.com/aikatsukin'>Akatsukin</a></p></li>
+        <li><p>Rundas9000</p></li>
+      </ul>
+
       <h3>Community Feedback</h3>
       <h4>Initial Scenario Ideas</h4>
       <ul>
@@ -466,7 +495,7 @@ function VisualNovelCredits (): JSX.Element {
         <li><p><a href='https://www.instagram.com/brainstorm_13201/'>ShittyDrawer’s Den</a></p></li>
         <li><p><a href='https://twitter.com/Kei_Shiromiya'>Kei Shiromiya</a></p></li>
       </ul>
-      <h4>Feedback</h4>
+      <h4>Additional Feedback</h4>
       <ul>
         <li><p><a href='https://twitter.com/gonxale0'>Gonxaleo</a></p></li>
         <li><p><a href='https://twitter.com/Feet_man69'>Feetman69</a></p></li>
@@ -478,7 +507,6 @@ function VisualNovelCredits (): JSX.Element {
       <ul>
         <li><p><a href='https://twitter.com/Feet_man69'>Feetman69</a></p></li>
       </ul>
-
       <h3>Special Thanks To</h3>
       <ul className='credits-text-special-final'>
         <li><p>LazuLight 1st Anniversary Website Team</p></li>
