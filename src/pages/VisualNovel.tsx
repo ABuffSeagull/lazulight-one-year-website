@@ -209,7 +209,7 @@ export default function VisualNovel (props: Props): JSX.Element {
             <p>Playable on desktop or phone. Recommended browser: Google Chrome</p>
             <p>Save data is retained between sessions. To retain save data, do not play in incognito mode, clear your browsing data, or change browser between sessions. You may wish to use the export/import save data feature in case of accidental data loss.</p>
 
-            <h3>Download (500MB Approx)</h3>
+            <h3>Download (1GB Approx)</h3>
             <Countdown date={releaseDate} renderer={countdownRenderer}>
               <>
                 <a href='/downloads/LazulightVN-1.0-pc.zip' download>
