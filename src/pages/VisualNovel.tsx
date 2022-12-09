@@ -172,8 +172,10 @@ export default function VisualNovel (props: Props): JSX.Element {
               By their side, the hands of the clock start ticking once more.
             </p>
 
-            <h3>Permissions &amp; Notice</h3>
+            <h3>Notice</h3>
+            <p><b>Content Warning:</b> Some routes contain certain horror and suggestive elements.</p>
             <p>
+              <b>Copyright &amp; Permissions: </b>
               We give permission to all Nijisanji Livers to monetize playing
               this game by any means, including livestream and video
               publication. We declare that the game does not contain any
@@ -182,6 +184,7 @@ export default function VisualNovel (props: Props): JSX.Element {
               violates the YouTube Community Guidelines.
             </p>
             <p>
+              <b>Disclaimer: </b>
               This is a work of fiction. Any similarity to real businesses,
               locations, and events is purely coincidental. The characters
               portrayed in this story are not intended to represent the views
@@ -218,6 +221,9 @@ export default function VisualNovel (props: Props): JSX.Element {
                 <a href='/downloads/LazulightVN-1.0-mac.zip' download>
                   <button className='project-download-button lazulight-border'>Download for Mac</button>
                 </a>
+                {/* <a href='https://example.com/' download>
+                  <button className='project-download-button lazulight-border'>Mirror Downloads</button>
+                </a> */}
               </>
             </Countdown>
 
