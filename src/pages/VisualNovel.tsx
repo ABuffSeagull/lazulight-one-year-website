@@ -90,7 +90,7 @@ export default function VisualNovel (props: Props): JSX.Element {
     // Render countdown
     return (
       <>
-        <p><b>Releases at 12:12PM on 12 December 2022 JST</b></p>
+        <p><b>Releases at 12:12PM on 12 December 2022 EST</b></p>
         <button className='project-download-button lazulight-border'>
           {days} days, {hours}h, {minutes}min, {seconds}s
         </button>
@@ -98,7 +98,7 @@ export default function VisualNovel (props: Props): JSX.Element {
     )
   }
 
-  const releaseDate = '2022-12-12T12:12:00+09:00'
+  const releaseDate = '2022-12-12T12:12:00-05:00'
 
   return (
     <div className='talent-layout-container'>
@@ -115,7 +115,7 @@ export default function VisualNovel (props: Props): JSX.Element {
             <div className='slideshow-slide'>
               <div className='video-container'>
                 <iframe
-                  src='https://www.youtube.com/embed/jsJJPGwZpn0'
+                  src='https://www.youtube.com/embed/qe7hVYakK0s'
                   title='YouTube video player'
                   frameBorder='0'
                   allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
@@ -172,8 +172,10 @@ export default function VisualNovel (props: Props): JSX.Element {
               By their side, the hands of the clock start ticking once more.
             </p>
 
-            <h3>Permissions &amp; Notice</h3>
+            <h3>Notice</h3>
+            <p><b>Content Warning:</b> Some routes contain certain horror and suggestive elements.</p>
             <p>
+              <b>Copyright &amp; Permissions: </b>
               We give permission to all Nijisanji Livers to monetize playing
               this game by any means, including livestream and video
               publication. We declare that the game does not contain any
@@ -182,6 +184,7 @@ export default function VisualNovel (props: Props): JSX.Element {
               violates the YouTube Community Guidelines.
             </p>
             <p>
+              <b>Disclaimer: </b>
               This is a work of fiction. Any similarity to real businesses,
               locations, and events is purely coincidental. The characters
               portrayed in this story are not intended to represent the views
@@ -212,12 +215,24 @@ export default function VisualNovel (props: Props): JSX.Element {
             <h3>Download (1GB Approx)</h3>
             <Countdown date={releaseDate} renderer={countdownRenderer}>
               <>
-                <a href='/downloads/LazulightVN-1.0-pc.zip' download>
+                <a href='https://drive.google.com/file/d/1wIT_jutfLV1GHa3CuNBekytnpx6p8OnW/view?usp=share_link' download>
                   <button className='project-download-button lazulight-border'>Download for Windows</button>
                 </a>
-                <a href='/downloads/LazulightVN-1.0-mac.zip' download>
+
+                <a href='https://drive.google.com/file/d/1A_BYcCXLZ1M7yGaB_TG65p02LYvf8Yzi/view?usp=share_link' download>
                   <button className='project-download-button lazulight-border'>Download for Mac</button>
                 </a>
+                <h3>
+                  <>
+                    <a href='/downloads/LazulightVN-1.0-pc.zip' download>
+                      <button className='project-download-button lazulight-border'>Download for Windows (Mirror) </button>
+                    </a>
+
+                    <a href='/downloads/LazulightVN-1.0-mac.zip' download>
+                      <button className='project-download-button lazulight-border'>Download for Mac (Mirror)</button>
+                    </a>
+                  </>
+                </h3>
               </>
             </Countdown>
 
@@ -459,6 +474,10 @@ function VisualNovelCredits (): JSX.Element {
       <ul>
         <li><p><a href='https://twitter.com/_tecnd'>tecnd</a></p></li>
         <li><p>Usaruru</p></li>
+      </ul>
+      <h4>Animation Director</h4>
+      <ul>
+        <li><p><a href='https://twitter.com/kanasquared'>kana²</a></p></li>
       </ul>
       <h4>Programmers</h4>
       <ul>

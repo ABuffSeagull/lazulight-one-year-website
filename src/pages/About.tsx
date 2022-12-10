@@ -78,7 +78,7 @@ function WebTeamCredits (): JSX.Element {
       <ul>
         <li><p>Matthew Tao</p></li>
         <li><p><a href='https://twitter.com/monkey2821920'>Austinx88</a></p></li>
-        <li><p><a href='https://twitter.com/tevilchicken'>tecnd</a></p></li>
+        <li><p><a href='https://twitter.com/_tecnd'>tecnd</a></p></li>
         <li><p><a href='https://twitter.com/kawaru_2601'>Yuki</a></p></li>
         <li><p>Kalesvol</p></li>
         <li><p><a href='https://twitter.com/Yahiko_Daichi'>YahikoDaichi</a></p></li>
