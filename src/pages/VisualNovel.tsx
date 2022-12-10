@@ -477,6 +477,10 @@ function VisualNovelCredits (): JSX.Element {
         <li><p><a href='https://twitter.com/_tecnd'>tecnd</a></p></li>
         <li><p>Usaruru</p></li>
       </ul>
+      <h4>Animation Director</h4>
+      <ul>
+        <li><p><a href='https://twitter.com/kanasquared'>kana²</a></p></li>
+      </ul>
       <h4>Programmers</h4>
       <ul>
         <li><p><a href='https://twitter.com/_tecnd'>tecnd</a></p></li>
