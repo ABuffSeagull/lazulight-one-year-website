@@ -61,7 +61,9 @@ a.external-link-text {
     content: "";
     padding-left: 1em;
     background-color: currentcolor;
-    mask-image: url("./assets/externalLink.svg");
+
+    /* tslint:disable-next-line:scss/double-slash-comment-whitespace-inside */
+    mask-image: url("/shared/externalLink.svg");
     mask-size: 0.6em;
     mask-position: top;
     mask-repeat: no-repeat;

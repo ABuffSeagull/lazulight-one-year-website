@@ -52,35 +52,35 @@ export default function SiteHeader (): JSX.Element {
       name: 'Home',
       icon: homeIconDefault,
       iconActive: homeIconActive,
-      path: '/',
+      path: '/anniversary1',
       children: []
     },
     {
       name: 'Pomu',
       icon: pomuIconDefault,
       iconActive: pomuIconActive,
-      path: '/pomu',
+      path: '/anniversary1/pomu',
       children: []
     },
     {
       name: 'Elira',
       icon: eliraIconDefault,
       iconActive: eliraIconActive,
-      path: '/elira',
+      path: '/anniversary1/elira',
       children: []
     },
     {
       name: 'Finana',
       icon: finanaIconDefault,
       iconActive: finanaIconActive,
-      path: '/finana',
+      path: '/anniversary1/finana',
       children: []
     },
     {
       name: 'FNF',
       icon: projectsIconDefault,
       iconActive: projectsIconDefault,
-      path: '/project-fnf',
+      path: '/anniversary1/project-fnf',
       children: [],
       mobileOnly: true
     },
@@ -88,7 +88,7 @@ export default function SiteHeader (): JSX.Element {
       name: 'DCL',
       icon: EliraTiaraDefault,
       iconActive: EliraTiaraActive,
-      path: '/project-dcl',
+      path: '/anniversary1/project-dcl',
       children: [],
       mobileOnly: true
     },
@@ -96,7 +96,7 @@ export default function SiteHeader (): JSX.Element {
       name: 'VN',
       icon: FinanaCrownDefault,
       iconActive: FinanaCrownActive,
-      path: '/project-vn',
+      path: '/anniversary1/project-vn',
       children: [],
       mobileOnly: true
     },
@@ -104,13 +104,13 @@ export default function SiteHeader (): JSX.Element {
       name: 'Messages',
       icon: PomudachiDefault,
       iconActive: PomudachiActive,
-      path: '/all-messages',
+      path: '/anniversary1/all-messages',
       children: [],
       mobileOnly: true
     },
     {
       name: 'Art',
-      path: '/all-art',
+      path: '/anniversary1/all-art',
       icon: WeewaDefault,
       iconActive: WeewaActive,
       children: [],
@@ -118,7 +118,7 @@ export default function SiteHeader (): JSX.Element {
     },
     {
       name: 'About',
-      path: '/about',
+      path: '/anniversary1/about',
       icon: RyuguardDefault,
       iconActive: RyuguardActive,
       children: [],
@@ -137,19 +137,19 @@ export default function SiteHeader (): JSX.Element {
           name: 'FNF',
           icon: projectsIconDefault,
           iconActive: projectsIconActive,
-          path: '/project-fnf'
+          path: '/anniversary1/project-fnf'
         },
         {
           name: 'DCL',
           icon: EliraTiaraDefault,
           iconActive: EliraTiaraActive,
-          path: '/project-dcl'
+          path: '/anniversary1/project-dcl'
         },
         {
           name: 'VN',
           icon: FinanaCrownDefault,
           iconActive: FinanaCrownActive,
-          path: '/project-vn'
+          path: '/anniversary1/project-vn'
         }
       ]
     },
@@ -165,19 +165,19 @@ export default function SiteHeader (): JSX.Element {
           name: 'All Messages',
           icon: PomudachiDefault,
           iconActive: PomudachiActive,
-          path: '/all-messages'
+          path: '/anniversary1/all-messages'
         },
         {
           name: 'All Art',
           icon: WeewaDefault,
           iconActive: WeewaActive,
-          path: '/all-art'
+          path: '/anniversary1/all-art'
         },
         {
           name: 'About',
           icon: RyuguardDefault,
           iconActive: RyuguardActive,
-          path: '/about'
+          path: '/anniversary1/about'
         }
       ]
     }

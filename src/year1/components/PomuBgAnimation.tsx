@@ -1,14 +1,15 @@
 import Image from './Image'
 
-import FinanaBubble1 from '../assets/BG/Finana-BG-Bubbles1.svg'
-import FinanaFish from '../assets/BG/Finana-BG-Fish.svg'
+import PomuCoinGold from '../assets/BG/Pomu-BG-PomuCoinGold.svg'
+import PomuCoinSilver from '../assets/BG/Pomu-BG-PomuCoinSilver.svg'
 import { useEffect, useRef, useState } from 'react'
 
-function Bubble ({ bodyHeight }: {bodyHeight: number}): JSX.Element {
+function PomuCoin ({ color, bodyHeight }: { color: 'gold' | 'silver', bodyHeight: number }): JSX.Element {
   // Heavy use of useRef to avoid Math.random() calls on every render
 
   const left = useRef(Math.random() * 100)
   const delay = useRef(-1 * Math.random() * 7) // Negative delay starts animation mid cycle
+  const rot = useRef(Math.random() * 360)
 
   const avgSpeed = 350 // average px / sec
   const speed = useRef(avgSpeed * (0.7 + Math.random() * 0.6)) // speed with variation
@@ -16,26 +17,25 @@ function Bubble ({ bodyHeight }: {bodyHeight: number}): JSX.Element {
 
   const styles: Record<string, string | number> = {
     left: `${left.current}%`,
-    animationDelay: `${delay.current}s`,
     animationDuration: `${bodyHeight / speed.current}s`,
-    '--scale-factor': scale
+    animationDelay: `${delay.current}s`,
+    '--rotation': `${rot.current}deg`,
+    '--scale': scale
   }
 
   return (
     <Image
-      className='page-bg-animation-finana-bubble'
-      src={FinanaBubble1}
+      className='page-bg-animation-pomu-coin'
+      src={color === 'gold' ? PomuCoinGold : PomuCoinSilver}
       style={styles}
     />
   )
 }
 
-export default function FinanaBgAnimation (): JSX.Element {
-  const finanaBubbleCount: number = 30
-  const finanaFishCount: number = 30
+export default function PomuBgAnimation (): JSX.Element {
+  const pomuCoinCount: number = 60
 
   const [bodyHeight, setBodyHeight] = useState(0)
-
   useEffect(() => {
     const resizeObserver = new ResizeObserver(([entry]) => {
       setBodyHeight(entry.target.clientHeight)
@@ -45,22 +45,13 @@ export default function FinanaBgAnimation (): JSX.Element {
     return () => resizeObserver.disconnect()
   }, [])
 
-  const styles: Record<string, string> = {
-    '--page-height': `${bodyHeight}px`
-  }
+  const styles: Record<string, string> = { '--body-height': `${bodyHeight}px` }
 
   return (
-    <>
-      <div style={styles}>
-        {Array.from({ length: finanaBubbleCount }, (_el, i: number) => (
-          <Bubble bodyHeight={bodyHeight} />
-        ))}
-      </div>
-      <div>
-        {Array.from({ length: finanaFishCount }, (_el, i: number) => (
-          <Image className='page-bg-animation-finana-fish' src={FinanaFish} />
-        ))}
-      </div>
-    </>
+    <div style={styles}>
+      {Array.from({ length: pomuCoinCount }, (_el, i: number) => (
+        <PomuCoin key={'pomCoin' + i.toString()} color={i % 2 === 0 ? 'gold' : 'silver'} bodyHeight={bodyHeight} />
+      ))}
+    </div>
   )
 }

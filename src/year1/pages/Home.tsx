@@ -12,17 +12,17 @@ export default function Home (): JSX.Element {
   const navIcons = [
     {
       name: 'Elira',
-      path: '/elira',
+      path: '/anniversary1/elira',
       image: EliraImage
     },
     {
       name: 'Finana',
-      path: '/finana',
+      path: '/anniversary1/finana',
       image: FinanaImage
     },
     {
       name: 'Pomu',
-      path: '/pomu',
+      path: '/anniversary1/pomu',
       image: PomuImage
     }
   ]

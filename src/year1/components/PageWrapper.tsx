@@ -43,37 +43,22 @@ export function PageWrapper (props: Props): JSX.Element {
           <div>
             {/* Separate div's because of the nth-child selector */}
             <div>
-              {Array.from({ length: eliraCloudCount / 4 }, (i: number) => (
-                <Image
-                  className='page-bg-animation-elira-cloud'
-                  src={EliraCloud1}
-                />
+              {Array.from({ length: eliraCloudCount / 4 }, (_el, i: number) => (
+                <Image key={'eliCloud1' + i.toString()} className='page-bg-animation-elira-cloud' src={EliraCloud1} />
               ))}
-              {Array.from({ length: eliraCloudCount / 4 }, (i: number) => (
-                <Image
-                  className='page-bg-animation-elira-cloud'
-                  src={EliraCloud2}
-                />
+              {Array.from({ length: eliraCloudCount / 4 }, (_el, i: number) => (
+                <Image key={'eliCloud2' + i.toString()} className='page-bg-animation-elira-cloud' src={EliraCloud2} />
               ))}
-              {Array.from({ length: eliraCloudCount / 4 }, (i: number) => (
-                <Image
-                  className='page-bg-animation-elira-cloud'
-                  src={EliraCloud3}
-                />
+              {Array.from({ length: eliraCloudCount / 4 }, (_el, i: number) => (
+                <Image key={'eliCloud3' + i.toString()} className='page-bg-animation-elira-cloud' src={EliraCloud3} />
               ))}
-              {Array.from({ length: eliraCloudCount / 4 }, (i: number) => (
-                <Image
-                  className='page-bg-animation-elira-cloud'
-                  src={EliraCloud4}
-                />
+              {Array.from({ length: eliraCloudCount / 4 }, (_el, i: number) => (
+                <Image key={'eliCloud4' + i.toString()} className='page-bg-animation-elira-cloud' src={EliraCloud4} />
               ))}
             </div>
             <div>
-              {Array.from({ length: eliraStarCount }, (i: number) => (
-                <Image
-                  className='page-bg-animation-elira-star'
-                  src={EliraStar1}
-                />
+              {Array.from({ length: eliraStarCount }, (_el, i: number) => (
+                <Image key={'eliStar' + i.toString()} className='page-bg-animation-elira-star' src={EliraStar1} />
               ))}
             </div>
           </div>
@@ -81,17 +66,17 @@ export function PageWrapper (props: Props): JSX.Element {
         {props.page === 'finana' && <FinanaBgAnimation />}
         {props.page === 'vn' && (
           <div>
-            {Array.from({ length: vnCloudCount / 4 }, (i: number) => (
-              <Image className='page-bg-animation-vn-cloud' src={EliraCloud1} />
+            {Array.from({ length: vnCloudCount / 4 }, (_el, i: number) => (
+              <Image key={'vnCloud1' + i.toString()} className='page-bg-animation-vn-cloud' src={EliraCloud1} />
             ))}
-            {Array.from({ length: vnCloudCount / 4 }, (i: number) => (
-              <Image className='page-bg-animation-vn-cloud' src={EliraCloud2} />
+            {Array.from({ length: vnCloudCount / 4 }, (_el, i: number) => (
+              <Image key={'vnCloud2' + i.toString()} className='page-bg-animation-vn-cloud' src={EliraCloud2} />
             ))}
-            {Array.from({ length: vnCloudCount / 4 }, (i: number) => (
-              <Image className='page-bg-animation-vn-cloud' src={EliraCloud3} />
+            {Array.from({ length: vnCloudCount / 4 }, (_el, i: number) => (
+              <Image key={'vnCloud3' + i.toString()} className='page-bg-animation-vn-cloud' src={EliraCloud3} />
             ))}
-            {Array.from({ length: vnCloudCount / 4 }, (i: number) => (
-              <Image className='page-bg-animation-vn-cloud' src={EliraCloud4} />
+            {Array.from({ length: vnCloudCount / 4 }, (_el, i: number) => (
+              <Image key={'vnCloud4' + i.toString()} className='page-bg-animation-vn-cloud' src={EliraCloud4} />
             ))}
           </div>
         )}
