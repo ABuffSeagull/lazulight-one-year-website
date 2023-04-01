@@ -18,11 +18,12 @@ const formats = ['avif', 'heic', 'heif', 'webp', 'jpg', 'jpeg', 'png']
 
 export default function Picture (props: ImageToolProps): JSX.Element {
   if (typeof props.src === 'string') {
-    const imgElement = <img {...props} src={props.src} />
+    const imgElement = <img className={props.className} src={props.src} alt={props.alt} />
     return wrapInZoom(imgElement, props.enableZoom)
   }
 
-  const { src: metadata, ...passthroughProps } = props
+  // React was sad that enableZoom was being passed to a DOM element, so it goes on the list to be removed from passthroughProps
+  const { src: metadata, enableZoom, ...passthroughProps } = props
   const groupedFormats: Record<string, metadata[]> = {}
   let maxWidth = 0
   let maxHeight = 0
