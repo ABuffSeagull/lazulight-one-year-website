@@ -104,493 +104,147 @@ function DiamondCityLightsCredits (): JSX.Element {
     <div className='credits-text'>
       <h3>Organizer &amp; Leader</h3>
       <ul>
-        <li>
-          <p>
-            <a href='https://twitter.com/HirokawaKiro'>Kiro</a>
-          </p>
-        </li>
+        <li><p><a href='https://twitter.com/HirokawaKiro'>Kiro</a></p></li>
       </ul>
       <h3>Sound Mixer</h3>
       <ul>
-        <li>
-          <p>
-            <a href='https://twitter.com/TCBNmusic'>Tachibana Music</a>
-          </p>
-        </li>
+        <li><p><a href='https://twitter.com/TCBNmusic'>Tachibana Music</a></p></li>
       </ul>
       <h3>Instrumentals</h3>
       <ul>
-        <li>
-          <p>
-            <a href='https://twitter.com/darylbarnes'>
-              Daryl Barnes of UTAlive
-            </a>
-          </p>
-        </li>
+        <li><p><a href='https://twitter.com/darylbarnes'>Daryl Barnes of UTAlive</a></p></li>
       </ul>
       <h3>MV Director</h3>
       <ul>
-        <li>
-          <p>
-            <a href='https://twitter.com/coldace_24'>Zephyr Monochrome</a>
-          </p>
-        </li>
+        <li><p><a href='https://twitter.com/coldace_24'>Zephyr Monochrome</a></p></li>
       </ul>
       <h3>Video Editors</h3>
       <ul>
-        <li>
-          <p>
-            <a href='https://twitter.com/PomuPowerCenter'>
-              Pomu Power Distribution Center
-            </a>
-          </p>
+        <li><p><a href='https://twitter.com/PomuPowerCenter'>Pomu Power Distribution Center</a></p></li>
+        <li><p><a href='https://twitter.com/peeboggs'>Pendora’s Box</a></p>
+          <div className='dcl-twerk-container'><Image className='dcl-twerk-gif' src={SusElira} /></div>
         </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/peeboggs'>Pendora’s Box</a>
-          </p>
-          <div className='dcl-twerk-container'>
-            <Image className='dcl-twerk-gif' src={SusElira} />
-          </div>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/Rexhernan22'>Rexhernan 22</a>
-          </p>
-        </li>
+        <li><p><a href='https://twitter.com/Rexhernan22'>Rexhernan 22</a></p></li>
       </ul>
       <h3>Sprite Artists</h3>
       <ul>
-        <li>
-          <p>
-            <a href='https://twitter.com/lemonostril'>Lemon</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/hyunicat'>hyuni</a>
-          </p>
-        </li>
+        <li><p><a href='https://twitter.com/lemonostril'>Lemon</a></p></li>
+        <li><p><a href='https://twitter.com/hyunicat'>hyuni</a></p></li>
       </ul>
       <h3>Video Assets</h3>
       <ul>
-        <li>
-          <p>
-            <a href='https://twitter.com/wizwaaz'>wizwaaz</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/keekispecial'>Keektang</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/a1d8e2316745'>Mini</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/rem26_art'>fyretruck</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/ajaniiiiiii'>Ajani Akasakaspicy</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/snowharasho'>Squish</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/Arqodeon'>arqo</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/TakezoMitsurugi'>Takezo</a>
-          </p>
-        </li>
+        <li><p><a href='https://twitter.com/wizwaaz'>wizwaaz</a></p></li>
+        <li><p><a href='https://twitter.com/keekispecial'>Keektang</a></p></li>
+        <li><p><a href='https://twitter.com/a1d8e2316745'>Mini</a></p></li>
+        <li><p><a href='https://twitter.com/rem26_art'>fyretruck</a></p></li>
+        <li><p><a href='https://twitter.com/ajaniiiiiii'>Ajani Akasakaspicy</a></p></li>
+        <li><p><a href='https://twitter.com/snowharasho'>Squish</a></p></li>
+        <li><p><a href='https://twitter.com/Arqodeon'>arqo</a></p></li>
+        <li><p><a href='https://twitter.com/TakezoMitsurugi'>Takezo</a></p></li>
       </ul>
       <h3>Credits BGM</h3>
       <ul>
-        <li>
-          <p>
-            <a href='https://twitter.com/SonicFan53alt'>SonicFan53</a>
-          </p>
-        </li>
+        <li><p><a href='https://twitter.com/SonicFan53alt'>SonicFan53</a></p></li>
       </ul>
       <h3>Elira Vocalists</h3>
       <ul>
-        <li>
-          <p>Tzu</p>
-        </li>
-        <li>
-          <p>Thunderwing</p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/hyunicat'>hyuni</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/_kaerrie_'>Kaerrie</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/sinibladekat'>thatmtrx</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/Icy_Meerkat'>IcyMeerkat</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/hikikneekomori'>ottrbottl</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/eia_vsinger'>Eia Mhara</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/csenge_furi'>Sen</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/_arisamisaki_'>jessica</a>
-          </p>
-        </li>
+        <li><p>Tzu</p></li>
+        <li><p>Thunderwing</p></li>
+        <li><p><a href='https://twitter.com/hyunicat'>hyuni</a></p></li>
+        <li><p><a href='https://twitter.com/_kaerrie_'>Kaerrie</a></p></li>
+        <li><p><a href='https://twitter.com/sinibladekat'>thatmtrx</a></p></li>
+        <li><p><a href='https://twitter.com/Icy_Meerkat'>IcyMeerkat</a></p></li>
+        <li><p><a href='https://twitter.com/hikikneekomori'>ottrbottl</a></p></li>
+        <li><p><a href='https://twitter.com/eia_vsinger'>Eia Mhara</a></p></li>
+        <li><p><a href='https://twitter.com/csenge_furi'>Sen</a></p></li>
+        <li><p><a href='https://twitter.com/_arisamisaki_'>jessica</a></p></li>
       </ul>
       <h3>Pomu Vocalists</h3>
       <ul>
-        <li>
-          <p>The Holy Wooomy with 69 Nuggets of Toasted Squidies</p>
-        </li>
-        <li>
-          <p>xchgeaxeax</p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/acidpiss_'>Acid</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/Phin86_'>PhinAgain</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/ACWalker20'>AC Walker</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/PastelSonico'>PastelSonico</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/Soul_Jamelson'>Soul Jam</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/Kohibeats1'>Kohibeats</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/outhaleart'>Outhale</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/rocky_2d'>rocky.</a>
-          </p>
-        </li>
+        <li><p>The Holy Wooomy with 69 Nuggets of Toasted Squidies</p></li>
+        <li><p>xchgeaxeax</p></li>
+        <li><p><a href='https://twitter.com/acidpiss_'>Acid</a></p></li>
+        <li><p><a href='https://twitter.com/Phin86_'>PhinAgain</a></p></li>
+        <li><p><a href='https://twitter.com/ACWalker20'>AC Walker</a></p></li>
+        <li><p><a href='https://twitter.com/PastelSonico'>PastelSonico</a></p></li>
+        <li><p><a href='https://twitter.com/Soul_Jamelson'>Soul Jam</a></p></li>
+        <li><p><a href='https://twitter.com/Kohibeats1'>Kohibeats</a></p></li>
+        <li><p><a href='https://twitter.com/outhaleart'>Outhale</a></p></li>
+        <li><p><a href='https://twitter.com/rocky_2d'>rocky.</a></p></li>
       </ul>
       <h3>Finana Vocalists</h3>
       <ul>
-        <li>
-          <p>mashirooo</p>
-        </li>
-        <li>
-          <p>Pink/ジン</p>
-        </li>
-        <li>
-          <p>Aibi</p>
-        </li>
-        <li>
-          <p>shushidesu</p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/DrSuccessful_'>DrSuccessful</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/P1usJ'>PlusJ</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/lemonostril'>Lemon</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/dead_ninja1'>DeadNinja1</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/jotamide'>Jotamide</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/CoughAMania'>Fonzie</a>
-          </p>
-        </li>
+        <li><p>mashirooo</p></li>
+        <li><p>Pink/ジン</p></li>
+        <li><p>Aibi</p></li>
+        <li><p>shushidesu</p></li>
+        <li><p><a href='https://twitter.com/DrSuccessful_'>DrSuccessful</a></p></li>
+        <li><p><a href='https://twitter.com/P1usJ'>PlusJ</a></p></li>
+        <li><p><a href='https://twitter.com/lemonostril'>Lemon</a></p></li>
+        <li><p><a href='https://twitter.com/dead_ninja1'>DeadNinja1</a></p></li>
+        <li><p><a href='https://twitter.com/jotamide'>Jotamide</a></p></li>
+        <li><p><a href='https://twitter.com/CoughAMania'>Fonzie</a></p></li>
       </ul>
       <h3>Mixes</h3>
       <ul>
-        <li>
-          <p>root1overXcubed</p>
+        <li><p>root1overXcubed</p></li>
+        <li><p>Splinterman</p></li>
+        <li><p>WildestDuck</p></li>
+        <li><p>KiluDoz</p></li>
+        <li><p>hafiezer</p></li>
+        <li><p>Akatsukin</p></li>
+        <li><p>Gay for pomu</p></li>
+        <li><p>Oh Deer</p></li>
+        <li><p>mashirooo</p></li>
+        <li><p>YamateRailgun</p></li>
+        <li><p>troosh</p></li>
+        <li><p>ChizuDesu</p></li>
+        <li><p>Yasusi</p></li>
+        <li><p>Remoam</p></li>
+        <li><p>Fero</p></li>
+        <li><p><a href='https://twitter.com/JF__ND'>JFND</a></p></li>
+        <li><p><a href='https://twitter.com/DrSuccessful_'>DrSuccessful</a></p></li>
+        <li><p><a href='https://twitter.com/ErawanLH'>Erawan</a></p></li>
+        <li><p><a href='https://twitter.com/kid_poro'>Poro</a></p></li>
+        <li><p><a href='https://twitter.com/NoxShadow24904'>NoxShadow</a></p></li>
+        <li><p><a href='https://twitter.com/HirokawaKiro'>Kiro</a></p></li>
+        <li><p><a href='https://twitter.com/BrandonJohns96'>Brandon Johns</a></p>
+          <div className='dcl-twerk-container'><Image className='dcl-twerk-gif' src={TwerkPomu} /></div>
         </li>
-        <li>
-          <p>Splinterman</p>
+        <li><p><a href='https://twitter.com/_arisamisaki_'>jessica</a></p></li>
+        <li><p><a href='https://twitter.com/KeZunjian'>Kei_ZJ (Hanashi)</a></p></li>
+        <li><p><a href='https://twitter.com/third12_'>third12</a></p></li>
+        <li><p><a href='https://twitter.com/wildnexus'>wildnexus</a></p>
+          <div className='dcl-twerk-container'><Image className='dcl-twerk-gif' src={TwerkElira} /></div>
         </li>
-        <li>
-          <p>WildestDuck</p>
-        </li>
-        <li>
-          <p>KiluDoz</p>
-        </li>
-        <li>
-          <p>hafiezer</p>
-        </li>
-        <li>
-          <p>Akatsukin</p>
-        </li>
-        <li>
-          <p>Gay for pomu</p>
-        </li>
-        <li>
-          <p>Oh Deer</p>
-        </li>
-        <li>
-          <p>mashirooo</p>
-        </li>
-        <li>
-          <p>YamateRailgun</p>
-        </li>
-        <li>
-          <p>troosh</p>
-        </li>
-        <li>
-          <p>ChizuDesu</p>
-        </li>
-        <li>
-          <p>Yasusi</p>
-        </li>
-        <li>
-          <p>Remoam</p>
-        </li>
-        <li>
-          <p>Fero</p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/JF__ND'>JFND</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/DrSuccessful_'>DrSuccessful</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/ErawanLH'>Erawan</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/kid_poro'>Poro</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/NoxShadow24904'>NoxShadow</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/HirokawaKiro'>Kiro</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/BrandonJohns96'>Brandon Johns</a>
-          </p>
-          <div className='dcl-twerk-container'>
-            <Image className='dcl-twerk-gif' src={TwerkPomu} />
-          </div>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/_arisamisaki_'>jessica</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/KeZunjian'>Kei_ZJ (Hanashi)</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/third12_'>third12</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/wildnexus'>wildnexus</a>
-          </p>
-          <div className='dcl-twerk-container'>
-            <Image className='dcl-twerk-gif' src={TwerkElira} />
-          </div>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/aletheia024'>Aletheia</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/Ghirocks_Log'>Ghirocks_Log</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/reiykhuu'>Saeren</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/KakaTan91'>KakaTan</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/pumpurumpum2'>Sleep</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/Icy_Meerkat'>IcyMeerkat</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/Phin86_'>PhinAgain</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/Roboticpaladin'>Robotic Paladin</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/sinibladekat'>thatmtrx</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/THEEBINNS'>Binns</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/cyanara_o7'>cyanara</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/YukiBaskerville'>Yuki Baskerville</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/akaasianguy'>akaasianguy</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/HiNu_Nova'>NovaNazo</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/Bel_something'>Belsomething</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/csenge_furi'>Sen</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href='https://twitter.com/rockyyy_dp'>rocky.</a>
-          </p>
-        </li>
+        <li><p><a href='https://twitter.com/aletheia024'>Aletheia</a></p></li>
+        <li><p><a href='https://twitter.com/Ghirocks_Log'>Ghirocks_Log</a></p></li>
+        <li><p><a href='https://twitter.com/reiykhuu'>Saeren</a></p></li>
+        <li><p><a href='https://twitter.com/KakaTan91'>KakaTan</a></p></li>
+        <li><p><a href='https://twitter.com/pumpurumpum2'>Sleep</a></p></li>
+        <li><p><a href='https://twitter.com/Icy_Meerkat'>IcyMeerkat</a></p></li>
+        <li><p><a href='https://twitter.com/Phin86_'>PhinAgain</a></p></li>
+        <li><p><a href='https://twitter.com/Roboticpaladin'>Robotic Paladin</a></p></li>
+        <li><p><a href='https://twitter.com/sinibladekat'>thatmtrx</a></p></li>
+        <li><p><a href='https://twitter.com/THEEBINNS'>Binns</a></p></li>
+        <li><p><a href='https://twitter.com/cyanara_o7'>cyanara</a></p></li>
+        <li><p><a href='https://twitter.com/YukiBaskerville'>Yuki Baskerville</a></p></li>
+        <li><p><a href='https://twitter.com/akaasianguy'>akaasianguy</a></p></li>
+        <li><p><a href='https://twitter.com/HiNu_Nova'>NovaNazo</a></p></li>
+        <li><p><a href='https://twitter.com/Bel_something'>Belsomething</a></p></li>
+        <li><p><a href='https://twitter.com/csenge_furi'>Sen</a></p></li>
+        <li><p><a href='https://twitter.com/rockyyy_dp'>rocky.</a></p></li>
       </ul>
       <h3>Special Thanks to</h3>
       <ul className='credits-text-special-final'>
-        <li>
-          <p>
-            <a href='https://twitter.com/NoxShadow24904'>NoxShadow</a>
-          </p>
-        </li>
-        <li>
-          <p>KB</p>
-        </li>
-        <li>
-          <p>LazuLight 1st Anniversary Website Team</p>
-        </li>
-        <li>
-          <p>Nijisanji EN Fan Discord Server</p>
-        </li>
-        <li>
-          <p>Elicord Discord Server</p>
-        </li>
-        <li>
-          <p>Pomucord Discord Server</p>
-        </li>
-        <li>
-          <p>Finanacord Discord Server</p>
-        </li>
-        <li>
-          <p>
-            And every member of the NijiEN community who helped us out, or
-            showed their support for our project!
-          </p>
-        </li>
+        <li><p><a href='https://twitter.com/NoxShadow24904'>NoxShadow</a></p></li>
+        <li><p>KB</p></li>
+        <li><p>LazuLight 1st Anniversary Website Team</p></li>
+        <li><p>Nijisanji EN Fan Discord Server</p></li>
+        <li><p>Elicord Discord Server</p></li>
+        <li><p>Pomucord Discord Server</p></li>
+        <li><p>Finanacord Discord Server</p></li>
+        <li><p>And every member of the NijiEN community who helped us out, or showed their support for our project!</p></li>
       </ul>
       <div className='dcl-twerk-container'>
         <Image className='dcl-twerk-gif' src={TwerkFinana} />

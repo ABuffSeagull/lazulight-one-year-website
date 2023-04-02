@@ -121,106 +121,56 @@ function LazunightFunkinCredits (): JSX.Element {
     <div className='credits-text'>
       <h3>Director, UI Artist</h3>
       <ul>
-        <li>
-          <p>
-            <a href='https://www.youtube.com/c/CoZm0Plays'>CoZm0</a>
-          </p>
-        </li>
+        <li><p><a href='https://www.youtube.com/c/CoZm0Plays'>CoZm0</a></p></li>
       </ul>
       <h3>Lead Programmer</h3>
       <ul>
-        <li>
-          <p>
-            <a href='https://twitter.com/binpuki_'>Binpuki</a>
-          </p>
-        </li>
+        <li><p><a href='https://twitter.com/binpuki_'>Binpuki</a></p></li>
       </ul>
       <h3>Animator, Programmer</h3>
       <ul>
-        <li>
-          <p>
-            <a href='https://www.youtube.com/c/KVNK3VIN'>KVN</a>
-          </p>
-        </li>
+        <li><p><a href='https://www.youtube.com/c/KVNK3VIN'>KVN</a></p></li>
       </ul>
       <h3>Character Sprite Artist, Main Menu Asset Artist, Animator Supervisor</h3>
       <ul>
-        <li>
-          <p>
-            <a href='https://twitter.com/That1PlantGuy'>Plant Guy</a>
-          </p>
-        </li>
+        <li><p><a href='https://twitter.com/That1PlantGuy'>Plant Guy</a></p></li>
       </ul>
       <h3>Main Menu BG Artist</h3>
       <ul>
-        <li>
-          <p>
-            <a href='https://twitter.com/flimsytipsy'>TIP</a>
-          </p>
-        </li>
+        <li><p><a href='https://twitter.com/flimsytipsy'>TIP</a></p></li>
       </ul>
       <h3>Character Portrait Artist</h3>
       <ul>
-        <li>
-          <p>
-            <a href='https://cooperisswagyoushuldfollow.carrd.co/'>cooper</a>
-          </p>
-        </li>
+        <li><p><a href='https://cooperisswagyoushuldfollow.carrd.co/'>cooper</a></p></li>
       </ul>
       <h3>Character Portrait Designer</h3>
       <ul>
-        <li>
-          <p>Agora</p>
-        </li>
+        <li><p>Agora</p></li>
       </ul>
       <h3>Background Artist</h3>
       <ul>
-        <li>
-          <p>Neyecole</p>
-        </li>
+        <li><p>Neyecole</p></li>
       </ul>
       <h3>Background Art Designer</h3>
       <ul>
-        <li>
-          <p>
-            <a href='https://twitter.com/nobu_okt'>Professor Nobu</a>
-          </p>
-        </li>
+        <li><p><a href='https://twitter.com/nobu_okt'>Professor Nobu</a></p></li>
       </ul>
       <h3>Musician</h3>
       <ul>
-        <li>
-          <p>
-            <a href='https://www.youtube.com/channel/UCTmBhasnypdfoBUe3bpSb5g'>
-              Maarbble
-            </a>
-          </p>
-        </li>
+        <li><p><a href='https://www.youtube.com/channel/UCTmBhasnypdfoBUe3bpSb5g'>Maarbble</a></p></li>
       </ul>
       <h3>Musician</h3>
       <ul>
-        <li>
-          <p>
-            <a href='https://www.youtube.com/c/eivesohn'>Eivesohn</a>
-          </p>
-        </li>
+        <li><p><a href='https://www.youtube.com/c/eivesohn'>Eivesohn</a></p></li>
       </ul>
       <h3>Charter</h3>
       <ul>
-        <li>
-          <p>
-            <a href='https://twitter.com/TheCoolStalker'>CoolStalker</a>
-          </p>
-        </li>
+        <li><p><a href='https://twitter.com/TheCoolStalker'>CoolStalker</a></p></li>
       </ul>
       <h3>Special Thanks</h3>
       <h3>Improving Chromatics</h3>
       <ul>
-        <li>
-          <p>
-            <a href='https://twitter.com/GGalactigal'>GGalactigal</a>
-          </p>
-        </li>
+        <li><p><a href='https://twitter.com/GGalactigal'>GGalactigal</a></p></li>
       </ul>
     </div>
   )
