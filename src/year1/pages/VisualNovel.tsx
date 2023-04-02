@@ -222,17 +222,15 @@ export default function VisualNovel (props: Props): JSX.Element {
                 <a href='https://drive.google.com/file/d/1A_BYcCXLZ1M7yGaB_TG65p02LYvf8Yzi/view?usp=share_link' download>
                   <button className='project-download-button lazulight-border'>Download for Mac</button>
                 </a>
-                <h3>
-                  <>
-                    <a href='/downloads/LazulightVN-1.0-pc.zip' download>
-                      <button className='project-download-button lazulight-border'>Download for Windows (Mirror) </button>
-                    </a>
+                <div>
+                  <a href='/downloads/LazulightVN-1.0-pc.zip' download>
+                    <button className='project-download-button lazulight-border'>Download for Windows (Mirror) </button>
+                  </a>
 
-                    <a href='/downloads/LazulightVN-1.0-mac.zip' download>
-                      <button className='project-download-button lazulight-border'>Download for Mac (Mirror)</button>
-                    </a>
-                  </>
-                </h3>
+                  <a href='/downloads/LazulightVN-1.0-mac.zip' download>
+                    <button className='project-download-button lazulight-border'>Download for Mac (Mirror)</button>
+                  </a>
+                </div>
               </>
             </Countdown>
 
