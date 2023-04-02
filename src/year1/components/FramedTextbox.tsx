@@ -1,19 +1,18 @@
 import Image from '../components/Image'
 import './TalentLayout.scss'
 
-interface Props {
+// Instead of an interface, this way allows using default values and such
+export default function FramedTextbox ({ children, corner, border, className = '' }: {
+  children: React.ReactNode
   corner: string
   border: string
-  children: React.ReactNode
   className?: string
-}
-
-export default function FramedTextbox (props: Props): JSX.Element {
+}): JSX.Element {
   return (
-    <div className={`talent-text-container ${props.className}`}>
-      <Image className='talent-corner' src={props.corner} />
-      <div className={`talent-text-inner ${props.border}-border`}>
-        {props.children}
+    <div className={`talent-text-container ${className}`}>
+      <Image className='talent-corner' src={corner} />
+      <div className={`talent-text-inner ${border}-border`}>
+        {children}
       </div>
     </div>
   )

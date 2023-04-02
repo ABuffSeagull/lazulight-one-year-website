@@ -67,31 +67,6 @@ $talent-corner-padding-top: 33px;
     }
   }
 
-  &-animation-container {
-    display: grid;
-
-    $num-col: 4;
-    $col-width: calc(90% / $num-col);
-
-    grid-template-columns: repeat($num-col, [col-start] $col-width [col-end]);
-    grid-gap: calc((100% - $num-col * $col-width) / ($num-col - 1));
-
-    @media (max-width: $bp-tablet) {
-      $num-col: 3;
-      $col-width: calc(90% / $num-col);
-
-      grid-template-columns: repeat($num-col, [col-start] $col-width [col-end]);
-      grid-gap: calc((100% - $num-col * $col-width) / ($num-col - 1));
-    }
-
-    picture,
-    img,
-    div {
-      width: 100%;
-      object-fit: contain;
-    }
-  }
-
   &-info-container {
     display: flex;
     flex-direction: column;
@@ -265,18 +240,6 @@ $talent-corner-padding-top: 33px;
       word-wrap: break-word;
       margin-top: 5px;
       margin-right: 10px;
-
-      // (Brandon) This will give external link indicators to the message boxes, but I'm not sure about the look...
-      // text-decoration: underline;
-      // a::after {
-      //  content: "";
-      //  padding-left: 1em;
-      //  background-color: currentcolor;
-      //  mask-image: url("../assets/externalLink.svg");
-      //  mask-size: 0.6em;
-      //  mask-position: top;
-      //  mask-repeat: no-repeat;
-      // }
     }
 
     p {
@@ -337,14 +300,8 @@ $talent-corner-padding-top: 33px;
 }
 
 // Utility
-.hide-on-mobile {
-  @media (max-width: $bp-mobile) {
-    display: none;
-  }
-}
-
 .hide-on-tablet {
   @media (max-width: $bp-tablet) {
-    display: none;
+    display: none !important;
   }
 }

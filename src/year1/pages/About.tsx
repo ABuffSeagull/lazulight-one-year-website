@@ -1,7 +1,6 @@
 import React from 'react'
 import '../components/TalentLayout.scss'
 import '../components/ProjectPages.scss'
-import Image from '../components/Image'
 import FramedTextbox from '../components/FramedTextbox'
 import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp'
 
@@ -18,7 +17,6 @@ export default function About (props: Props): JSX.Element {
         <p>In May 2021 Nijisanji launched its English branch, comprising of livers Elira Pendora, Pomu Rainpuff, and Finana Ryugu. Since then, NijiEN has grown to include 20 livers, including 10 females and 10 males across five waves.</p>
       </FramedTextbox>
 
-      
       <FramedTextbox corner={LazulightCorner} border={props.page}>
         <h2>About This site</h2>
         <p>This fan website showcases our thanks and congratulations to Elira, Pomu, and Finana (LazuLight) of Nijisanji EN on their first full year of streaming.</p>

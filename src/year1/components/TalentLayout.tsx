@@ -3,6 +3,7 @@ import ArtBoardLayout, { ArtBoardEnum } from './ArtBoardLayout'
 import FramedTextbox from './FramedTextbox'
 import Image from './Image'
 import MessageBoxesLayout from './MessageBoxesLayout'
+import RowOfGifs from './RowOfGifs'
 import './TalentLayout.scss'
 
 interface Props {
@@ -62,13 +63,13 @@ function TalentLayout (props: Props): JSX.Element {
               <a className='external-link-text' href={props.discord}> Fan Discord</a>
             </div>
           </FramedTextbox>
-          <div className='talent-animation-container hide-on-tablet'>
-            {/* (Brandon): Number of images is hardcoded into 'talent-animation-container' */}
-            <Image src={props.animation} enableZoom />
-            <Image src={props.animation} enableZoom />
-            <Image src={props.animation} enableZoom />
-            <Image src={props.animation} enableZoom />
-          </div>
+          <RowOfGifs
+            className='hide-on-tablet'
+            gif1={props.animation}
+            gif2={props.animation}
+            gif3={props.animation}
+            gif4={props.animation}
+          />
         </div>
       </div>
 
