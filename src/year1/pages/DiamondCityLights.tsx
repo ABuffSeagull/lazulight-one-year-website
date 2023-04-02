@@ -5,6 +5,7 @@ import TwerkElira from '../assets/DCL/twerk_elira_t.gif'
 import TwerkFinana from '../assets/DCL/twerk_finana_t.gif'
 import TwerkPomu from '../assets/DCL/twerk_pomu_t.gif'
 import PomuImage from '../assets/Portraits/Pomu-Portrait_BJ_cf50.webp?format=png;avif;webp&imagetools&meta'
+import FramedTextbox from '../components/FramedTextbox'
 import Image from '../components/Image'
 import MessageBoxesLayout from '../components/MessageBoxesLayout'
 import '../components/ProjectPages.scss'
@@ -27,52 +28,49 @@ export default function DiamondCityLights (props: Props): JSX.Element {
         </h1>
       </div>
 
-      <div className='talent-text-container'>
-        <Image className='talent-corner' src={LazulightCorner} />
-        <div className={`talent-text-inner ${props.page}-border`}>
-          <div className='video-container'>
-            <iframe
-              src='https://www.youtube.com/embed/QTHJ8jwKgQg'
-              title='YouTube video player'
-              frameBorder='0'
-              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-              allowFullScreen
-            />
-          </div>
-          {/* Description */}
-          <div className='project-description-container'>
-            <h3>A Fan Cover Song</h3>
-            <p>
-              In celebration of Lazulight's first anniversary, fans from the
-              LazuLight Fan Discord servers have come together to sing and make
-              music, covering Lazulight's famous, twerkable, banger of a song,
-              Diamond City Lights.
-            </p>
-            <p>
-              We'd like to thank Finana, Pomu, and Elira for being a big
-              inspiration to all of us, and for being a great source of joy and
-              happiness. We also thank everyone who has worked hard to complete
-              this project. It is your passion and effort that made all of this
-              possible. Thank you.
-            </p>
-            <h3>Calls/Mix/Chants:</h3>
-            <p>
-              For those who are wondering about the chanting in the middle of
-              the song, this chant is commonly referred to as a ‘mix’. Mixing is
-              associated with Japanese Idol concerts where the crowd mix to the
-              performance. For further information, please refer to <a href='https://www.youtube.com/watch?v=YuLfQC4LCdM'>【IDOL CALLS】Learning wotagei with Pomu Sensei!【NIJISANJI EN | Pomu Rainpuff】</a> and the <a href='https://en.wikipedia.org/wiki/Wotagei'>Wikipedia page on Wotagei</a>. IETTAIGA!
-            </p>
-
-            <h3>Permissions &amp; Notice</h3>
-            <p>Diamond City Lights is the property of ANYCOLOR Inc.</p>
-            <p>
-              We give permission to all Nijisanji Livers to monetize this cover
-              by any means, including livestream and video publication.
-            </p>
-            <p>If there are any concerns or enquiries, please contact us by email at <a href='mailto:lazuprojectsteam@lazulight.com'>lazuprojectsteam@lazulight.com</a>.</p>
-          </div>
+      <FramedTextbox corner={LazulightCorner} border={props.page}>
+        <div className='video-container'>
+          <iframe
+            src='https://www.youtube.com/embed/QTHJ8jwKgQg'
+            title='YouTube video player'
+            frameBorder='0'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+            allowFullScreen
+          />
         </div>
-      </div>
+        {/* Description */}
+        <div className='project-description-container'>
+          <h3>A Fan Cover Song</h3>
+          <p>
+            In celebration of Lazulight's first anniversary, fans from the
+            LazuLight Fan Discord servers have come together to sing and make
+            music, covering Lazulight's famous, twerkable, banger of a song,
+            Diamond City Lights.
+          </p>
+          <p>
+            We'd like to thank Finana, Pomu, and Elira for being a big
+            inspiration to all of us, and for being a great source of joy and
+            happiness. We also thank everyone who has worked hard to complete
+            this project. It is your passion and effort that made all of this
+            possible. Thank you.
+          </p>
+          <h3>Calls/Mix/Chants:</h3>
+          <p>
+            For those who are wondering about the chanting in the middle of
+            the song, this chant is commonly referred to as a ‘mix’. Mixing is
+            associated with Japanese Idol concerts where the crowd mix to the
+            performance. For further information, please refer to <a href='https://www.youtube.com/watch?v=YuLfQC4LCdM'>【IDOL CALLS】Learning wotagei with Pomu Sensei!【NIJISANJI EN | Pomu Rainpuff】</a> and the <a href='https://en.wikipedia.org/wiki/Wotagei'>Wikipedia page on Wotagei</a>. IETTAIGA!
+          </p>
+
+          <h3>Permissions &amp; Notice</h3>
+          <p>Diamond City Lights is the property of ANYCOLOR Inc.</p>
+          <p>
+            We give permission to all Nijisanji Livers to monetize this cover
+            by any means, including livestream and video publication.
+          </p>
+          <p>If there are any concerns or enquiries, please contact us by email at <a href='mailto:lazuprojectsteam@lazulight.com'>lazuprojectsteam@lazulight.com</a>.</p>
+        </div>
+      </FramedTextbox>
 
       {/* Messages */}
       <MessageBoxesLayout
@@ -88,13 +86,10 @@ export default function DiamondCityLights (props: Props): JSX.Element {
         page='dcl'
       />
 
-      <div className='talent-text-container'>
-        <Image className='talent-corner' src={LazulightCorner} />
-        <div className={`talent-text-inner ${props.page}-border`}>
-          <h2>Credits</h2>
-          <DiamondCityLightsCredits />
-        </div>
-      </div>
+      <FramedTextbox corner={LazulightCorner} border={props.page}>
+        <h2>Credits</h2>
+        <DiamondCityLightsCredits />
+      </FramedTextbox>
     </div>
   )
 }

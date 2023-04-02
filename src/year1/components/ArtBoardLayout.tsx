@@ -1,5 +1,7 @@
 import React from 'react'
 import './TalentLayout.scss'
+import './ArtBoardLayout.scss'
+import FramedTextbox from './FramedTextbox'
 import Image from './Image'
 import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp'
 import FinanaCorner from '../assets/Corners/Finana-MsgCorner.webp'
@@ -31,7 +33,7 @@ interface MessageRaw {
 
 interface MascotArtist {
   name: string
-  soical_url: string
+  social_url: string
 }
 
 interface PageOptions {
@@ -69,7 +71,7 @@ export default function ArtBoardLayout (props: Props): JSX.Element {
       ) {
         Messages.push({
           name: msg.name,
-          soical_url: msg.social_url
+          social_url: msg.social_url
         })
       }
     })
@@ -108,41 +110,38 @@ export default function ArtBoardLayout (props: Props): JSX.Element {
   const pageOptions: PageOptions = choosePageOptions()
 
   return (
-    <div className='talent-text-container artboard'>
-      <Image className='talent-corner' src={pageOptions.corner} />
-      <div className={`talent-text-inner ${pageOptions.borderStyle}-border`}>
-        <h3 className='text-xl'>{props.heading}</h3>
-        <Image
-          className='artboard-image'
-          src={pageOptions.artBoard}
-          enableZoom
-        />
-        <h3>Credits:</h3>
-        <ul className='artboard-credits'>
-          {renderMascotArtistCredits().map((artist, idx) => (
-            <li key={idx}>
-              {artist.soical_url === ''
-                ? (
-                  <span>{artist.name}</span>
-                  )
-                : (
-                  <a href={artist.soical_url}>
-                    {artist.name} {/* Twitter Icon */}
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      width='24'
-                      height='24'
-                      viewBox='0 0 24 24'
-                      className='external-link-icon'
-                    >
-                      <path d='M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z' />
-                    </svg>
-                  </a>
-                  )}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
+    <FramedTextbox corner={pageOptions.corner} border={pageOptions.borderStyle} className='artboard'>
+      <h3 className='text-xl'>{props.heading}</h3>
+      <Image
+        className='artboard-image'
+        src={pageOptions.artBoard}
+        enableZoom
+      />
+      <h3>Credits:</h3>
+      <ul className='artboard-credits'>
+        {renderMascotArtistCredits().map((artist, idx) => (
+          <li key={idx}>
+            {artist.social_url === ''
+              ? (
+                <span>{artist.name}</span>
+                )
+              : (
+                <a href={artist.social_url}>
+                  {artist.name} {/* Twitter Icon */}
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='24'
+                    height='24'
+                    viewBox='0 0 24 24'
+                    className='external-link-icon'
+                  >
+                    <path d='M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z' />
+                  </svg>
+                </a>
+                )}
+          </li>
+        ))}
+      </ul>
+    </FramedTextbox>
   )
 }

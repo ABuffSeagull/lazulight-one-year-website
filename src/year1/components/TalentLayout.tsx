@@ -1,5 +1,6 @@
 import React from 'react'
 import ArtBoardLayout, { ArtBoardEnum } from './ArtBoardLayout'
+import FramedTextbox from './FramedTextbox'
 import Image from './Image'
 import MessageBoxesLayout from './MessageBoxesLayout'
 import './TalentLayout.scss'
@@ -47,23 +48,20 @@ function TalentLayout (props: Props): JSX.Element {
           <div className='talent-picture-box-mascot'><Image src={props.animation} enableZoom /></div>
         </div>
         <div className='talent-info-container'>
-          <div className='talent-text-container'>
-            <Image className='talent-corner' src={props.frame} />
-            <div className={`talent-text-inner ${firstNameLower}-border`}>
-              <h2>{props.name}</h2>
-              <p>
-                <i>{props.quote}</i>
-              </p>
-              {props.info.map((paragraph, idx) => (
-                <p key={idx}>{paragraph}&nbsp;</p>
-              ))}
-              <div className='talent-links-container'>
-                <a className='external-link-text' href={props.youtube}>{firstName}'s Youtube</a>
-                <a className='external-link-text' href={props.twitter}>{firstName}'s Twitter</a>
-                <a className='external-link-text' href={props.discord}> Fan Discord</a>
-              </div>
+          <FramedTextbox corner={props.frame} border={firstNameLower}>
+            <h2>{props.name}</h2>
+            <p>
+              <i>{props.quote}</i>
+            </p>
+            {props.info.map((paragraph, idx) => (
+              <p key={idx}>{paragraph}&nbsp;</p>
+            ))}
+            <div className='talent-links-container'>
+              <a className='external-link-text' href={props.youtube}>{firstName}'s Youtube</a>
+              <a className='external-link-text' href={props.twitter}>{firstName}'s Twitter</a>
+              <a className='external-link-text' href={props.discord}> Fan Discord</a>
             </div>
-          </div>
+          </FramedTextbox>
           <div className='talent-animation-container hide-on-tablet'>
             {/* (Brandon): Number of images is hardcoded into 'talent-animation-container' */}
             <Image src={props.animation} enableZoom />

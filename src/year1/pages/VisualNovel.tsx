@@ -23,6 +23,7 @@ import PomuImage from '../assets/VN/pomu school happy_cf50.webp'
 import Image from '../components/Image'
 import '../components/ProjectPages.scss'
 import '../components/TalentLayout.scss'
+import FramedTextbox from '../components/FramedTextbox'
 
 interface Props {
   page: string
@@ -108,146 +109,143 @@ export default function VisualNovel (props: Props): JSX.Element {
       </div>
 
       {/* Slide Show */}
-      <div className='talent-text-container'>
-        <Image className='talent-corner' src={LazulightCorner} />
-        <div className={`talent-text-inner ${props.page}-border`}>
-          <SlideShow>
-            <div className='slideshow-slide'>
-              <div className='video-container'>
-                <iframe
-                  src='https://www.youtube.com/embed/qe7hVYakK0s'
-                  title='YouTube video player'
-                  frameBorder='0'
-                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-                  allowFullScreen
-                />
-              </div>
+      <FramedTextbox corner={LazulightCorner} border={props.page}>
+        <SlideShow>
+          <div className='slideshow-slide'>
+            <div className='video-container'>
+              <iframe
+                src='https://www.youtube.com/embed/qe7hVYakK0s'
+                title='YouTube video player'
+                frameBorder='0'
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                allowFullScreen
+              />
             </div>
-            <div>
-              <Image src={Slide1} className='slideshow-slide' enableZoom />
-            </div>
-            <div>
-              <Image src={Slide2} className='slideshow-slide' enableZoom />
-            </div>
-            <div>
-              <Image src={Slide3} className='slideshow-slide' enableZoom />
-            </div>
-            <div>
-              <Image src={Slide4} className='slideshow-slide' enableZoom />
-            </div>
-            <div>
-              <Image src={Slide5} className='slideshow-slide' enableZoom />
-            </div>
-          </SlideShow>
-
-          {/* Description & Download */}
-          <div className='project-description-container'>
-            <h3>A LazuLight Visual Novel</h3>
-            <p>
-              Like a star pulled from the skies, a bird torn of its wings, you
-              were bound to the Earth that day. You once ruled the skies,
-              feeling the air rush through your hair as you flew between the
-              clouds, clothes fluttering in the wind as you raced higher and
-              higher. However, that's all in the past now, ever since the
-              accident.{' '}
-            </p>
-            <p>
-              Now, completely opposite to what you once felt, the world is
-              monotonous, gray, and dead. You find no meaning in life, as if
-              frozen in time, now that your freedom was taken away from you.{' '}
-            </p>
-            <p>
-              However, that would all come to change with three fated
-              encounters. The appearance of an old acquaintance from the track
-              team, a reserved class president that seems to be hiding
-              something, and a kindred soul seeking solace in the silence.
-            </p>
-            <p>
-              Faced with these new people who suddenly appeared in your life,
-              you have to make the choice. Do you wallow in your failure in this
-              monochrome prison, or do you take their hand and repaint this
-              world?
-            </p>
-            <p>
-              By their side, the hands of the clock start ticking once more.
-            </p>
-
-            <h3>Notice</h3>
-            <p><b>Content Warning:</b> Some routes contain certain horror and suggestive elements.</p>
-            <p>
-              <b>Copyright &amp; Permissions: </b>
-              We give permission to all Nijisanji Livers to monetize playing
-              this game by any means, including livestream and video
-              publication. We declare that the game does not contain any
-              copyrighted material other than that which is property of ANYCOLOR
-              Inc. We declare that this game does not contain any material that
-              violates the YouTube Community Guidelines.
-            </p>
-            <p>
-              <b>Disclaimer: </b>
-              This is a work of fiction. Any similarity to real businesses,
-              locations, and events is purely coincidental. The characters
-              portrayed in this story are not intended to represent the views
-              and opinions of the actual talents, Nijisanji, or ANYCOLOR Inc.
-            </p>
-            <p>
-              This is a fan-made game intended for the enjoyment of other fans
-              and the talents in celebration of LazuLight's one year
-              anniversary. The creators are in no way related to ANYCOLOR Inc,
-              Nijisanji, or the talents portrayed in this game.
-            </p>
-            <p>If there are any concerns or enquiries, please contact us by email at <a href='mailto:lazuprojectsteam@lazulight.com'>lazuprojectsteam@lazulight.com</a>.</p>
-
-            <h3>How to Play</h3>
-            <p>The full game is freely playable either online or by download. Click the buttons below to play.</p>
-            <p>For the best experience, we recommend to download the game. Otherwise, online players should preferably play on desktop.</p>
-
-            <h3>Play Online</h3>
-            <Countdown date={releaseDate} renderer={countdownRenderer}>
-              <a href='https://vn.lazulight.com/' target='_blank' rel='noopener noreferrer'>
-                <button className='project-download-button lazulight-border'>Play Online</button>
-              </a>
-            </Countdown>
-
-            <p>Playable on desktop or phone. Recommended browser: Google Chrome</p>
-            <p>Save data is retained between sessions. To retain save data, do not play in incognito mode, clear your browsing data, or change browser between sessions. You may wish to use the export/import save data feature in case of accidental data loss.</p>
-
-            <h3>Download (1GB Approx)</h3>
-            <Countdown date={releaseDate} renderer={countdownRenderer}>
-              <>
-                <a href='https://drive.google.com/file/d/1wIT_jutfLV1GHa3CuNBekytnpx6p8OnW/view?usp=share_link' download>
-                  <button className='project-download-button lazulight-border'>Download for Windows</button>
-                </a>
-
-                <a href='https://drive.google.com/file/d/1A_BYcCXLZ1M7yGaB_TG65p02LYvf8Yzi/view?usp=share_link' download>
-                  <button className='project-download-button lazulight-border'>Download for Mac</button>
-                </a>
-                <div>
-                  <a href='/downloads/LazulightVN-1.0-pc.zip' download>
-                    <button className='project-download-button lazulight-border'>Download for Windows (Mirror) </button>
-                  </a>
-
-                  <a href='/downloads/LazulightVN-1.0-mac.zip' download>
-                    <button className='project-download-button lazulight-border'>Download for Mac (Mirror)</button>
-                  </a>
-                </div>
-              </>
-            </Countdown>
-
-            <h4>Install / Uninstall (Windows)</h4>
-            <p>No installation is required. First download the zip, then unzip the game files into any folder.</p>
-            <p>To play, run the file <code>LazulightVN.exe</code></p>
-            <p>To remove the game, simply delete the unzipped game files.</p>
-            <p>To fully remove the game (including save and settings data), additionally delete the folder<br /><code>C:\Users\&lt;username&gt;\AppData\Roaming\RenPy\LazulightVN-1643777295</code> <br />This folder is automatically created when you run the game.</p>
-
-            <h4>Install / Uninstall (Mac)</h4>
-            <p>No installation is required. First download the zip, then unzip the game files into any folder.</p>
-            <p>To play, run the <code>LazulightVN</code> app.</p>
-            <p>To remove the game, simply delete the unzipped game files.</p>
-            <p>To fully remove the game (including save and settings data), additionally delete the folder<br /><code>~/Library/RenPy/LazulightVN-1643777295</code> <br />This folder is automatically created when you run the game.</p>
           </div>
+          <div>
+            <Image src={Slide1} className='slideshow-slide' enableZoom />
+          </div>
+          <div>
+            <Image src={Slide2} className='slideshow-slide' enableZoom />
+          </div>
+          <div>
+            <Image src={Slide3} className='slideshow-slide' enableZoom />
+          </div>
+          <div>
+            <Image src={Slide4} className='slideshow-slide' enableZoom />
+          </div>
+          <div>
+            <Image src={Slide5} className='slideshow-slide' enableZoom />
+          </div>
+        </SlideShow>
+
+        {/* Description & Download */}
+        <div className='project-description-container'>
+          <h3>A LazuLight Visual Novel</h3>
+          <p>
+            Like a star pulled from the skies, a bird torn of its wings, you
+            were bound to the Earth that day. You once ruled the skies,
+            feeling the air rush through your hair as you flew between the
+            clouds, clothes fluttering in the wind as you raced higher and
+            higher. However, that's all in the past now, ever since the
+            accident.{' '}
+          </p>
+          <p>
+            Now, completely opposite to what you once felt, the world is
+            monotonous, gray, and dead. You find no meaning in life, as if
+            frozen in time, now that your freedom was taken away from you.{' '}
+          </p>
+          <p>
+            However, that would all come to change with three fated
+            encounters. The appearance of an old acquaintance from the track
+            team, a reserved class president that seems to be hiding
+            something, and a kindred soul seeking solace in the silence.
+          </p>
+          <p>
+            Faced with these new people who suddenly appeared in your life,
+            you have to make the choice. Do you wallow in your failure in this
+            monochrome prison, or do you take their hand and repaint this
+            world?
+          </p>
+          <p>
+            By their side, the hands of the clock start ticking once more.
+          </p>
+
+          <h3>Notice</h3>
+          <p><b>Content Warning:</b> Some routes contain certain horror and suggestive elements.</p>
+          <p>
+            <b>Copyright &amp; Permissions: </b>
+            We give permission to all Nijisanji Livers to monetize playing
+            this game by any means, including livestream and video
+            publication. We declare that the game does not contain any
+            copyrighted material other than that which is property of ANYCOLOR
+            Inc. We declare that this game does not contain any material that
+            violates the YouTube Community Guidelines.
+          </p>
+          <p>
+            <b>Disclaimer: </b>
+            This is a work of fiction. Any similarity to real businesses,
+            locations, and events is purely coincidental. The characters
+            portrayed in this story are not intended to represent the views
+            and opinions of the actual talents, Nijisanji, or ANYCOLOR Inc.
+          </p>
+          <p>
+            This is a fan-made game intended for the enjoyment of other fans
+            and the talents in celebration of LazuLight's one year
+            anniversary. The creators are in no way related to ANYCOLOR Inc,
+            Nijisanji, or the talents portrayed in this game.
+          </p>
+          <p>If there are any concerns or enquiries, please contact us by email at <a href='mailto:lazuprojectsteam@lazulight.com'>lazuprojectsteam@lazulight.com</a>.</p>
+
+          <h3>How to Play</h3>
+          <p>The full game is freely playable either online or by download. Click the buttons below to play.</p>
+          <p>For the best experience, we recommend to download the game. Otherwise, online players should preferably play on desktop.</p>
+
+          <h3>Play Online</h3>
+          <Countdown date={releaseDate} renderer={countdownRenderer}>
+            <a href='https://vn.lazulight.com/' target='_blank' rel='noopener noreferrer'>
+              <button className='project-download-button lazulight-border'>Play Online</button>
+            </a>
+          </Countdown>
+
+          <p>Playable on desktop or phone. Recommended browser: Google Chrome</p>
+          <p>Save data is retained between sessions. To retain save data, do not play in incognito mode, clear your browsing data, or change browser between sessions. You may wish to use the export/import save data feature in case of accidental data loss.</p>
+
+          <h3>Download (1GB Approx)</h3>
+          <Countdown date={releaseDate} renderer={countdownRenderer}>
+            <>
+              <a href='https://drive.google.com/file/d/1wIT_jutfLV1GHa3CuNBekytnpx6p8OnW/view?usp=share_link' download>
+                <button className='project-download-button lazulight-border'>Download for Windows</button>
+              </a>
+
+              <a href='https://drive.google.com/file/d/1A_BYcCXLZ1M7yGaB_TG65p02LYvf8Yzi/view?usp=share_link' download>
+                <button className='project-download-button lazulight-border'>Download for Mac</button>
+              </a>
+              <div>
+                <a href='/downloads/LazulightVN-1.0-pc.zip' download>
+                  <button className='project-download-button lazulight-border'>Download for Windows (Mirror) </button>
+                </a>
+
+                <a href='/downloads/LazulightVN-1.0-mac.zip' download>
+                  <button className='project-download-button lazulight-border'>Download for Mac (Mirror)</button>
+                </a>
+              </div>
+            </>
+          </Countdown>
+
+          <h4>Install / Uninstall (Windows)</h4>
+          <p>No installation is required. First download the zip, then unzip the game files into any folder.</p>
+          <p>To play, run the file <code>LazulightVN.exe</code></p>
+          <p>To remove the game, simply delete the unzipped game files.</p>
+          <p>To fully remove the game (including save and settings data), additionally delete the folder<br /><code>C:\Users\&lt;username&gt;\AppData\Roaming\RenPy\LazulightVN-1643777295</code> <br />This folder is automatically created when you run the game.</p>
+
+          <h4>Install / Uninstall (Mac)</h4>
+          <p>No installation is required. First download the zip, then unzip the game files into any folder.</p>
+          <p>To play, run the <code>LazulightVN</code> app.</p>
+          <p>To remove the game, simply delete the unzipped game files.</p>
+          <p>To fully remove the game (including save and settings data), additionally delete the folder<br /><code>~/Library/RenPy/LazulightVN-1643777295</code> <br />This folder is automatically created when you run the game.</p>
         </div>
-      </div>
+      </FramedTextbox>
 
       {/* Character Profiles */}
       {characters.map((character: Character, idx: number) => (
@@ -258,29 +256,21 @@ export default function VisualNovel (props: Props): JSX.Element {
             <Image src={character.portrait} enableZoom />
           </div>
           <div className='vn-info-container'>
-            <div className='talent-text-container'>
-              <Image className='talent-corner' src={character.frame} />
-              <div
-                className={`talent-text-inner ${character.firstNameLower}-border`}
-              >
-                <h2>{character.name}</h2>
-                {character.info.map((paragraph, idx2) => (
-                  <p key={idx2}>{paragraph}&nbsp;</p>
-                ))}
-              </div>
-            </div>
+            <FramedTextbox corner={character.frame} border={character.firstNameLower}>
+              <h2>{character.name}</h2>
+              {character.info.map((paragraph, idx2) => (
+                <p key={idx2}>{paragraph}&nbsp;</p>
+              ))}
+            </FramedTextbox>
           </div>
         </div>
       ))}
 
       {/* Credits */}
-      <div className='talent-text-container'>
-        <Image className='talent-corner' src={LazulightCorner} />
-        <div className={`talent-text-inner ${props.page}-border`}>
-          <h2>Credits</h2>
-          <VisualNovelCredits />
-        </div>
-      </div>
+      <FramedTextbox corner={LazulightCorner} border={props.page}>
+        <h2>Credits</h2>
+        <VisualNovelCredits />
+      </FramedTextbox>
     </div>
   )
 }

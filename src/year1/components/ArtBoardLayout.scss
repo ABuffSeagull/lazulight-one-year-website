@@ -1,0 +1,42 @@
+@use "../variables" as *;
+
+.artboard {
+  h3 {
+    margin: 2rem 0 1rem;
+  }
+  
+  &-image {
+    width: 100%;
+    object-fit: contain;
+  }
+  
+  &-credits {
+    display: flex;
+    gap: 0.5rem 0.75rem;
+    flex-wrap: wrap;
+  
+    li {
+    display: block;
+  
+    // Remove bullets & link underlines
+    list-style-type: none;
+    color: inherit;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid $pomu-primary-color;
+    border-radius: 0.5rem;
+    background: hsl(125deg 0% 100%);
+  
+    span,
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      text-decoration: none;
+    }
+  
+    a:hover {
+      text-decoration: underline;
+    }
+    }
+  }
+}

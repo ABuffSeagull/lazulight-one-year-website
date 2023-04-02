@@ -1,4 +1,5 @@
 import React from 'react'
+import FramedTextbox from '../components/FramedTextbox'
 import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp'
 
 import SlideShow from '../components/SlideShow'
@@ -24,95 +25,89 @@ export default function Fnf (props: Props): JSX.Element {
       </div>
 
       {/* Slide Show */}
-      <div className='talent-text-container'>
-        <Image className='talent-corner' src={LazulightCorner} />
-        <div className={`talent-text-inner ${props.page}-border`}>
-          <SlideShow>
-            <div className='slideshow-slide'>
-              <div className='video-container'>
-                <iframe
-                  src='https://www.youtube.com/embed/ffP4dpdmK18'
-                  title='YouTube video player'
-                  frameBorder='0'
-                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-                  allowFullScreen
-                />
-              </div>
+      <FramedTextbox corner={LazulightCorner} border={props.page}>
+        <SlideShow>
+          <div className='slideshow-slide'>
+            <div className='video-container'>
+              <iframe
+                src='https://www.youtube.com/embed/ffP4dpdmK18'
+                title='YouTube video player'
+                frameBorder='0'
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                allowFullScreen
+              />
             </div>
-            <div>
-              <Image src={EliraSlide} className='slideshow-slide' enableZoom />
-            </div>
-            <div>
-              <Image src={PomuSlide} className='slideshow-slide' enableZoom />
-            </div>
-            <div>
-              <Image src={FinanaSlide} className='slideshow-slide' enableZoom />
-            </div>
-          </SlideShow>
-
-          {/* Description & Download */}
-          <div className='project-description-container'>
-            <h3>A LazuLight Friday Night Funkin' Mod</h3>
-            <p>
-              Step into the shoes of Pomu, who, in celebration of LazuLight's
-              upcoming first year anniversary, will be rehearsing for their
-              grand concert with her friends Finana and Elira in the hopes of
-              giving their fans the best performance possible!
-            </p>
-
-            <h3>Permissions &amp; Notice</h3>
-            <p>
-              We give permission to all Nijisanji Livers to monetize playing
-              this game by any means, including livestream and video
-              publication. We declare that the game does not contain any
-              copyrighted material other than that which is property of ANYCOLOR
-              Inc. We declare that this game does not contain any material that
-              violates the YouTube Community Guidelines.
-            </p>
-            <p>
-              This is a work of fiction. Any similarity to real businesses,
-              locations, and events is purely coincidental. The characters
-              portrayed in this story are not intended to represent the views
-              and opinions of the actual talents, Nijisanji, or ANYCOLOR Inc.
-            </p>
-            <p>
-              This is a fan-made game intended for the enjoyment of other fans
-              and the talents in celebration of LazuLight's one year
-              anniversary. The creators are in no way related to ANYCOLOR Inc,
-              Nijisanji, or the talents portrayed in this game.
-            </p>
-            <p>If there are any concerns or enquiries, please contact us by email at <a href='mailto:lazuprojectsteam@lazulight.com'>lazuprojectsteam@lazulight.com</a>.</p>
-
-            <h3>Minimum Requirements</h3>
-            <p>6GB RAM required, otherwise this game should run on anything (tested on a 10 year old laptop).</p>
-
-            <h3>Install / Uninstall</h3>
-            <p>No installation is required. First download the zip, then unzip the game files into any folder.</p>
-            <p>To play, run the file <code>LazuFunk.exe</code></p>
-            <p>To remove the game, simply delete the unzipped game files.</p>
-            <p>To remove save and settings data, delete the folder <code>C:\Users\&lt;username&gt;\AppData\Roaming\LazuFunk</code> <br />This folder is automatically created when you run the game.</p>
-
-            <h3>Download for Windows (220MB)</h3>
-            <a href='/downloads/LazuFunk-5013a39.zip' download>
-              <button className='project-download-button lazulight-border'>Download Game</button>
-            </a>
-            <a href='https://gamebanana.com/mods/382213'>
-              <button className='project-download-button lazulight-border'>Mirror Download at GameBanana</button>
-            </a>
-            <a href=' https://gamejolt.com/games/lazunight/723472'>
-              <button className='project-download-button lazulight-border'>Mirror Download at GameJolt</button>
-            </a>
           </div>
-        </div>
-      </div>
+          <div>
+            <Image src={EliraSlide} className='slideshow-slide' enableZoom />
+          </div>
+          <div>
+            <Image src={PomuSlide} className='slideshow-slide' enableZoom />
+          </div>
+          <div>
+            <Image src={FinanaSlide} className='slideshow-slide' enableZoom />
+          </div>
+        </SlideShow>
 
-      <div className='talent-text-container'>
-        <Image className='talent-corner' src={LazulightCorner} />
-        <div className={`talent-text-inner ${props.page}-border`}>
-          <h2>Credits</h2>
-          <LazunightFunkinCredits />
+        {/* Description & Download */}
+        <div className='project-description-container'>
+          <h3>A LazuLight Friday Night Funkin' Mod</h3>
+          <p>
+            Step into the shoes of Pomu, who, in celebration of LazuLight's
+            upcoming first year anniversary, will be rehearsing for their
+            grand concert with her friends Finana and Elira in the hopes of
+            giving their fans the best performance possible!
+          </p>
+
+          <h3>Permissions &amp; Notice</h3>
+          <p>
+            We give permission to all Nijisanji Livers to monetize playing
+            this game by any means, including livestream and video
+            publication. We declare that the game does not contain any
+            copyrighted material other than that which is property of ANYCOLOR
+            Inc. We declare that this game does not contain any material that
+            violates the YouTube Community Guidelines.
+          </p>
+          <p>
+            This is a work of fiction. Any similarity to real businesses,
+            locations, and events is purely coincidental. The characters
+            portrayed in this story are not intended to represent the views
+            and opinions of the actual talents, Nijisanji, or ANYCOLOR Inc.
+          </p>
+          <p>
+            This is a fan-made game intended for the enjoyment of other fans
+            and the talents in celebration of LazuLight's one year
+            anniversary. The creators are in no way related to ANYCOLOR Inc,
+            Nijisanji, or the talents portrayed in this game.
+          </p>
+          <p>If there are any concerns or enquiries, please contact us by email at <a href='mailto:lazuprojectsteam@lazulight.com'>lazuprojectsteam@lazulight.com</a>.</p>
+
+          <h3>Minimum Requirements</h3>
+          <p>6GB RAM required, otherwise this game should run on anything (tested on a 10 year old laptop).</p>
+
+          <h3>Install / Uninstall</h3>
+          <p>No installation is required. First download the zip, then unzip the game files into any folder.</p>
+          <p>To play, run the file <code>LazuFunk.exe</code></p>
+          <p>To remove the game, simply delete the unzipped game files.</p>
+          <p>To remove save and settings data, delete the folder <code>C:\Users\&lt;username&gt;\AppData\Roaming\LazuFunk</code> <br />This folder is automatically created when you run the game.</p>
+
+          <h3>Download for Windows (220MB)</h3>
+          <a href='/downloads/LazuFunk-5013a39.zip' download>
+            <button className='project-download-button lazulight-border'>Download Game</button>
+          </a>
+          <a href='https://gamebanana.com/mods/382213'>
+            <button className='project-download-button lazulight-border'>Mirror Download at GameBanana</button>
+          </a>
+          <a href=' https://gamejolt.com/games/lazunight/723472'>
+            <button className='project-download-button lazulight-border'>Mirror Download at GameJolt</button>
+          </a>
         </div>
-      </div>
+      </FramedTextbox>
+
+      <FramedTextbox corner={LazulightCorner} border={props.page}>
+        <h2>Credits</h2>
+        <LazunightFunkinCredits />
+      </FramedTextbox>
     </div>
   )
 }
