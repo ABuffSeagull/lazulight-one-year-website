@@ -11,7 +11,7 @@ interface Props {
 
 export default function About (props: Props): JSX.Element {
   return (
-    <div className='talent-layout-container'>
+    <>
       <FramedTextbox corner={LazulightCorner} border={props.page}>
         <h2>About Nijisanji</h2>
         <p>Founded in February 2018 and managed by ANYCOLOR Inc., Nijisanji is one of the most premier virtual liver agencies, boasting over 207 livers across a variety of platforms and languages, including VirtualReal, a joint venture between ANYCOLOR and Bilibili.</p>
@@ -35,7 +35,7 @@ export default function About (props: Props): JSX.Element {
         <h2>Website Team Credits</h2>
         <WebTeamCredits />
       </FramedTextbox>
-    </div>
+    </>
   )
 }
 function WebTeamCredits (): JSX.Element {

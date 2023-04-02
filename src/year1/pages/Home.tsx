@@ -28,7 +28,7 @@ export default function Home (): JSX.Element {
   ]
 
   return (
-    <div className='talent-layout-container'>
+    <>
       {/* Opening Message */}
       <div>
         <h1 className='home-heading'>
@@ -81,6 +81,6 @@ export default function Home (): JSX.Element {
         heading='Art To LazuLight'
         page='home'
       />
-    </div>
+    </>
   )
 }

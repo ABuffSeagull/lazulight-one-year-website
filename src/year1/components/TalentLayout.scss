@@ -7,17 +7,6 @@ $talent-corner-padding-right: 33px;
 $talent-corner-padding-top: 33px;
 
 .talent {
-  &-layout-container {
-    display: flex;
-    flex-direction: column;
-    gap: 6rem;
-    width: 100%;
-    max-width: 80rem;
-    height: 100%;
-    padding: 0 1rem 6rem;
-    position: relative;
-  }
-
   &-profile-container {
     display: flex;
     width: 100%;

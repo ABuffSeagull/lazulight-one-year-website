@@ -39,7 +39,7 @@ function TalentLayout (props: Props): JSX.Element {
   }
 
   return (
-    <div className='talent-layout-container'>
+    <>
       <div className='talent-profile-container'>
         <div className='talent-picture-box'>
           <div className='talent-picture-box-liver'><Image src={props.portrait} enableZoom /></div>
@@ -104,7 +104,7 @@ function TalentLayout (props: Props): JSX.Element {
         heading={`Art To ${firstName}`}
         page={firstNameLower}
       />
-    </div>
+    </>
   )
 }
 

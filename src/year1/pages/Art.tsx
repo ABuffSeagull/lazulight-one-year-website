@@ -14,7 +14,7 @@ interface Props {
 
 export default function Art (props: Props): JSX.Element {
   return (
-    <div className='talent-layout-container'>
+    <>
       <div className='talent-animation-container'>
         {/* (Brandon): Number of images and class of last image is hardcoded into 'talent-animation-container' */}
         <Image src={Weewa} enableZoom />
@@ -43,6 +43,6 @@ export default function Art (props: Props): JSX.Element {
         heading='All Fan Art'
         page={props.page}
       />
-    </div>
+    </>
   )
 }

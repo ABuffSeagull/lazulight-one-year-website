@@ -102,7 +102,7 @@ export default function VisualNovel (props: Props): JSX.Element {
   const releaseDate = '2022-12-12T12:12:00-05:00'
 
   return (
-    <div className='talent-layout-container'>
+    <>
       {/* Heading */}
       <div className='project-heading-container-logo'>
         <Image src={VisualNovelLogo} enableZoom />
@@ -271,7 +271,7 @@ export default function VisualNovel (props: Props): JSX.Element {
         <h2>Credits</h2>
         <VisualNovelCredits />
       </FramedTextbox>
-    </div>
+    </>
   )
 }
 

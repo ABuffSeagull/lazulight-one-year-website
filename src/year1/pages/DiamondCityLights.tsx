@@ -17,7 +17,7 @@ interface Props {
 
 export default function DiamondCityLights (props: Props): JSX.Element {
   return (
-    <div className='talent-layout-container'>
+    <>
       {/* Heading */}
       <div className='project-heading-container-imagetext'>
         <Image src={PomuImage} enableZoom />
@@ -90,7 +90,7 @@ export default function DiamondCityLights (props: Props): JSX.Element {
         <h2>Credits</h2>
         <DiamondCityLightsCredits />
       </FramedTextbox>
-    </div>
+    </>
   )
 }
 

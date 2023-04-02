@@ -18,7 +18,7 @@ interface Props {
 
 export default function Fnf (props: Props): JSX.Element {
   return (
-    <div className='talent-layout-container'>
+    <>
       {/* Heading */}
       <div className='project-heading-container-logo'>
         <Image src={FNFLogo} enableZoom />
@@ -108,7 +108,7 @@ export default function Fnf (props: Props): JSX.Element {
         <h2>Credits</h2>
         <LazunightFunkinCredits />
       </FramedTextbox>
-    </div>
+    </>
   )
 }
 function LazunightFunkinCredits (): JSX.Element {

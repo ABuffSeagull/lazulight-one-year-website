@@ -99,7 +99,9 @@ export function PageWrapper (props: Props): JSX.Element {
       </button>
 
       {/* This is the body of the page */}
-      {props.children}
+      <div className='container-inner'>
+        {props.children}
+      </div>
 
       <SiteFooter page={props.page} />
     </div>
