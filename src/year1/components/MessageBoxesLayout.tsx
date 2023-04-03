@@ -33,19 +33,6 @@ interface Message {
   border: string
 }
 
-interface Props {
-  titleType: string
-  enableLazulight: boolean
-  enableElira: boolean
-  enablePomu: boolean
-  enableFinana: boolean
-  enableDcl: boolean
-  enableFolding: boolean
-  enableArt: boolean
-  heading: string
-  page: string
-}
-
 // Shuffle algorithm: https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
 // Implemented by Ilya Kantor: https://javascript.info/task/shuffle https://javascript.info/terms
 function shuffleMessages (array: Message[]): boolean {
@@ -91,9 +78,31 @@ function chooseArt (
   return ''
 }
 
-export default function MessageBoxesLayout (props: Props): JSX.Element {
+export default function MessageBoxesLayout ({
+  titleType,
+  heading,
+  page,
+  enableLazulight = false,
+  enableElira = false,
+  enablePomu = false,
+  enableFinana = false,
+  enableDcl = false,
+  enableFolding = false,
+  enableArt = false
+}: {
+  titleType: string
+  heading: string
+  page: string
+  enableLazulight?: boolean
+  enableElira?: boolean
+  enablePomu?: boolean
+  enableFinana?: boolean
+  enableDcl?: boolean
+  enableFolding?: boolean
+  enableArt?: boolean
+}): JSX.Element {
   const [showAllMessages, setShowAllMessages] = React.useState(
-    !props.enableFolding
+    !enableFolding
   )
   const messageListRaw = messageListImport.all as MessageRaw[]
 
@@ -144,8 +153,8 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
 
       if (
         filterMessage(
-          props.enableLazulight,
-          props.enableArt,
+          enableLazulight,
+          enableArt,
           msg.msg_lazulight,
           msg.art_lazulight,
           ''
@@ -155,15 +164,15 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
           name: msg.name,
           social_url: msg.social_url,
           msg: msg.msg_lazulight,
-          art: props.enableArt ? msg.art_lazulight : '',
+          art: enableArt ? msg.art_lazulight : '',
           corner: LazulightCorner,
           border: 'lazulight'
         })
       }
       if (
         filterMessage(
-          props.enableElira,
-          props.enableArt,
+          enableElira,
+          enableArt,
           msg.msg_elira,
           msg.art_elira,
           msg.art_weewa
@@ -173,15 +182,15 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
           name: msg.name,
           social_url: msg.social_url,
           msg: msg.msg_elira,
-          art: chooseArt(props.enableArt, msg.art_elira, msg.art_weewa),
+          art: chooseArt(enableArt, msg.art_elira, msg.art_weewa),
           corner: EliraCorner,
           border: 'elira'
         })
       }
       if (
         filterMessage(
-          props.enablePomu,
-          props.enableArt,
+          enablePomu,
+          enableArt,
           msg.msg_pomu,
           msg.art_pomu,
           msg.art_pomudachi
@@ -191,15 +200,15 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
           name: msg.name,
           social_url: msg.social_url,
           msg: msg.msg_pomu,
-          art: chooseArt(props.enableArt, msg.art_pomu, msg.art_pomudachi),
+          art: chooseArt(enableArt, msg.art_pomu, msg.art_pomudachi),
           corner: PomuCorner,
           border: 'pomu'
         })
       }
       if (
         filterMessage(
-          props.enableFinana,
-          props.enableArt,
+          enableFinana,
+          enableArt,
           msg.msg_finana,
           msg.art_finana,
           msg.art_ryuguard
@@ -209,13 +218,13 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
           name: msg.name,
           social_url: msg.social_url,
           msg: msg.msg_finana,
-          art: chooseArt(props.enableArt, msg.art_finana, msg.art_ryuguard),
+          art: chooseArt(enableArt, msg.art_finana, msg.art_ryuguard),
           corner: FinanaCorner,
           border: 'finana'
         })
       }
       if (
-        filterMessage(props.enableDcl, props.enableArt, msg.msg_dcl, '', '')
+        filterMessage(enableDcl, enableArt, msg.msg_dcl, '', '')
       ) {
         Messages.push({
           name: msg.name,
@@ -233,7 +242,7 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
 
   return (
     <div className='fan-submissions-container'>
-      <h3 className={`talent-title ${props.titleType}`}>{props.heading}</h3>
+      <h3 className={`talent-title ${titleType}`}>{heading}</h3>
       <div
         className={`${
           showAllMessages
@@ -279,7 +288,7 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
           onClick={() => {
             setShowAllMessages(true)
           }}
-          className={`${props.page}-border fan-submissions-container-button`}
+          className={`${page}-border fan-submissions-container-button`}
         >
           view all
         </button>
@@ -289,7 +298,7 @@ export default function MessageBoxesLayout (props: Props): JSX.Element {
           onClick={() => {
             setShowAllMessages(false)
           }}
-          className={`${props.page}-border fan-submissions-container-button fan-submissions-container-button-hide`}
+          className={`${page}-border fan-submissions-container-button fan-submissions-container-button-hide`}
         >
           Hide Section
         </button>
