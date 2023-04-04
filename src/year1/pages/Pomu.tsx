@@ -6,6 +6,8 @@ import Pomudachi from '../assets/Animations/Pomu-Animation_500px.gif'
 import ArtBoardLayout, { ArtBoardEnum } from '../components/ArtBoardLayout'
 import MessageBoxesLayout from '../components/MessageBoxesLayout'
 import TalentProfile from '../components/TalentProfile'
+import ImportMessages from '../components/ImportMessages'
+import MessageBoxesWithCorners from '../components/MessageBoxesWithCorners'
 
 function Pomu (): JSX.Element {
   const firstName = 'Pomu'
@@ -38,19 +40,20 @@ function Pomu (): JSX.Element {
         titleType={firstNameLower}
         heading={`Messages To ${firstName}`}
         page={firstNameLower}
-        enablePomu
         enableFolding
-      />
+      >
+        <MessageBoxesWithCorners messages={ImportMessages({ enablePomu: true })} />
+      </MessageBoxesLayout>
 
       {/* Art */}
       <MessageBoxesLayout
         titleType={firstNameLower}
         heading={`Art To ${firstName}`}
         page={firstNameLower}
-        enablePomu
         enableFolding
-        enableArt
-      />
+      >
+        <MessageBoxesWithCorners messages={ImportMessages({ enablePomu: true, enableArt: true })} />
+      </MessageBoxesLayout>
     </>
   )
 }

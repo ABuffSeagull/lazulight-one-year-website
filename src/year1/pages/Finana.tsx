@@ -6,6 +6,8 @@ import Ryuguard from '../assets/Animations/Finana-AnimationA_500px.gif'
 import ArtBoardLayout, { ArtBoardEnum } from '../components/ArtBoardLayout'
 import MessageBoxesLayout from '../components/MessageBoxesLayout'
 import TalentProfile from '../components/TalentProfile'
+import ImportMessages from '../components/ImportMessages'
+import MessageBoxesWithCorners from '../components/MessageBoxesWithCorners'
 
 export default function Finana (): JSX.Element {
   const firstName = 'Finana'
@@ -38,19 +40,20 @@ export default function Finana (): JSX.Element {
         titleType={firstNameLower}
         heading={`Messages To ${firstName}`}
         page={firstNameLower}
-        enableFinana
         enableFolding
-      />
+      >
+        <MessageBoxesWithCorners messages={ImportMessages({ enableFinana: true })} />
+      </MessageBoxesLayout>
 
       {/* Art */}
       <MessageBoxesLayout
         titleType={firstNameLower}
         heading={`Art To ${firstName}`}
         page={firstNameLower}
-        enableFinana
         enableFolding
-        enableArt
-      />
+      >
+        <MessageBoxesWithCorners messages={ImportMessages({ enableFinana: true, enableArt: true })} />
+      </MessageBoxesLayout>
     </>
   )
 }

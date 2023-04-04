@@ -7,7 +7,9 @@ import TwerkPomu from '../assets/DCL/twerk_pomu_t.gif'
 import PomuImage from '../assets/Portraits/Pomu-Portrait_BJ_cf50.webp?format=png;avif;webp&imagetools&meta'
 import FramedTextbox from '../components/FramedTextbox'
 import Image from '../components/Image'
+import ImportMessages from '../components/ImportMessages'
 import MessageBoxesLayout from '../components/MessageBoxesLayout'
+import MessageBoxesWithCorners from '../components/MessageBoxesWithCorners'
 import '../components/ProjectPages.scss'
 import '../components/TalentLayout.scss'
 
@@ -75,16 +77,12 @@ export default function DiamondCityLights (props: Props): JSX.Element {
       {/* Messages */}
       <MessageBoxesLayout
         titleType='all'
-        enableLazulight={false}
-        enableElira={false}
-        enablePomu={false}
-        enableFinana={false}
-        enableDcl
-        enableFolding
-        enableArt={false}
         heading='Messages from the DCL Team'
         page='dcl'
-      />
+        enableFolding
+      >
+        <MessageBoxesWithCorners messages={ImportMessages({ enableDcl: true })} />
+      </MessageBoxesLayout>
 
       <FramedTextbox corner={LazulightCorner} border={props.page}>
         <h2>Credits</h2>

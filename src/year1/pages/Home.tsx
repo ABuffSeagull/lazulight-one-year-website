@@ -5,7 +5,9 @@ import FinanaImage from '../assets/Portraits/Finana-Portrait_cf50.webp?format=pn
 import PomuImage from '../assets/Portraits/Pomu-Portrait-WN_cf50.webp?format=png;avif;webp&imagetools&meta'
 import '../components/HomePage.scss'
 import Image from '../components/Image'
+import ImportMessages from '../components/ImportMessages'
 import MessageBoxesLayout from '../components/MessageBoxesLayout'
+import MessageBoxesWithCorners from '../components/MessageBoxesWithCorners'
 import '../components/TalentLayout.scss'
 
 export default function Home (): JSX.Element {
@@ -56,31 +58,23 @@ export default function Home (): JSX.Element {
 
       {/* Messages */}
       <MessageBoxesLayout
-        enableLazulight
         titleType='all'
-        enableElira={false}
-        enablePomu={false}
-        enableFinana={false}
-        enableDcl={false}
-        enableFolding
-        enableArt={false}
         heading='Messages To LazuLight'
         page='home'
-      />
+        enableFolding
+      >
+        <MessageBoxesWithCorners messages={ImportMessages({ enableLazulight: true })} />
+      </MessageBoxesLayout>
 
       {/* Art */}
       <MessageBoxesLayout
-        enableLazulight
         titleType='all'
-        enableElira={false}
-        enablePomu={false}
-        enableFinana={false}
-        enableDcl={false}
-        enableFolding
-        enableArt
         heading='Art To LazuLight'
         page='home'
-      />
+        enableFolding
+      >
+        <MessageBoxesWithCorners messages={ImportMessages({ enableLazulight: true, enableArt: true })} />
+      </MessageBoxesLayout>
     </>
   )
 }

@@ -6,6 +6,8 @@ import Weewa from '../assets/Animations/Elira-Animation_500px.gif'
 import ArtBoardLayout, { ArtBoardEnum } from '../components/ArtBoardLayout'
 import MessageBoxesLayout from '../components/MessageBoxesLayout'
 import TalentProfile from '../components/TalentProfile'
+import ImportMessages from '../components/ImportMessages'
+import MessageBoxesWithCorners from '../components/MessageBoxesWithCorners'
 
 export default function Elira (): JSX.Element {
   const firstName = 'Elira'
@@ -38,19 +40,20 @@ export default function Elira (): JSX.Element {
         titleType={firstNameLower}
         heading={`Messages To ${firstName}`}
         page={firstNameLower}
-        enableElira
         enableFolding
-      />
+      >
+        <MessageBoxesWithCorners messages={ImportMessages({ enableElira: true })} />
+      </MessageBoxesLayout>
 
       {/* Art */}
       <MessageBoxesLayout
         titleType={firstNameLower}
         heading={`Art To ${firstName}`}
         page={firstNameLower}
-        enableElira
         enableFolding
-        enableArt
-      />
+      >
+        <MessageBoxesWithCorners messages={ImportMessages({ enableElira: true, enableArt: true })} />
+      </MessageBoxesLayout>
     </>
   )
 }
