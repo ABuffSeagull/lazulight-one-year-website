@@ -46,89 +46,89 @@ export default function App (): JSX.Element {
         <Route path='/about'> <Redirect to='/anniversary1/about' /> </Route>
 
         <Route path='/anniversary1/elira'>
-          <Year1PageWrapper page='elira' animation='on'>
+          <Year1PageWrapper page='elira' animatedBackground>
             <Year1Elira />
           </Year1PageWrapper>
         </Route>
         <Route path='/anniversary1/finana'>
-          <Year1PageWrapper page='finana' animation='on'>
+          <Year1PageWrapper page='finana' animatedBackground>
             <Year1Finana />
           </Year1PageWrapper>
         </Route>
         <Route path='/anniversary1/pomu'>
-          <Year1PageWrapper page='pomu' animation='on'>
+          <Year1PageWrapper page='pomu' animatedBackground>
             <Year1Pomu />
           </Year1PageWrapper>
         </Route>
         <Route path='/anniversary1/project-fnf'>
-          <Year1PageWrapper page='fnf' animation='off'>
+          <Year1PageWrapper page='fnf'>
             <Year1Fnf page='fnf' />
           </Year1PageWrapper>
         </Route>
         <Route path='/anniversary1/project-dcl'>
-          <Year1PageWrapper page='dcl' animation='on'>
+          <Year1PageWrapper page='dcl' animatedBackground>
             <Year1DiamondCityLights page='dcl' />
           </Year1PageWrapper>
         </Route>
         <Route path='/anniversary1/project-vn'>
-          <Year1PageWrapper page='vn' animation='on'>
+          <Year1PageWrapper page='vn' animatedBackground>
             <Year1VisualNovel page='vn' />
           </Year1PageWrapper>
         </Route>
         {/* (Brandon) I intentionally give the following pages the incorrect 'page' variable - It's only used for styling */}
         <Route path='/anniversary1/all-art'>
-          <Year1PageWrapper page='finana' animation='on'>
+          <Year1PageWrapper page='finana' animatedBackground>
             <Year1Art page='finana' />
           </Year1PageWrapper>
         </Route>
         <Route path='/anniversary1/all-messages'>
-          <Year1PageWrapper page='elira' animation='on'>
+          <Year1PageWrapper page='elira' animatedBackground>
             <Year1Messages page='elira' />
           </Year1PageWrapper>
         </Route>
         <Route path='/anniversary1/about'>
-          <Year1PageWrapper page='pomu' animation='on'>
+          <Year1PageWrapper page='pomu' animatedBackground>
             <Year1About page='pomu' />
           </Year1PageWrapper>
         </Route>
         <Route path='/anniversary1'>
-          <Year1PageWrapper page='home' animation='off'>
+          <Year1PageWrapper page='home'>
             <Year1Home />
           </Year1PageWrapper>
         </Route>
 
         <Route path='/anniversary2/elira'>
-          <Year2PageWrapper page='elira' animation='on'>
+          <Year2PageWrapper page='elira'>
             <Year2Elira />
           </Year2PageWrapper>
         </Route>
         <Route path='/anniversary2/finana'>
-          <Year2PageWrapper page='finana' animation='on'>
+          <Year2PageWrapper page='finana'>
             <Year2Finana />
           </Year2PageWrapper>
         </Route>
         <Route path='/anniversary2/pomu'>
-          <Year2PageWrapper page='pomu' animation='on'>
+          <Year2PageWrapper page='pomu'>
             <Year2Pomu />
           </Year2PageWrapper>
         </Route>
         <Route path='/anniversary2/project-doujin'>
-          <Year2PageWrapper page='doujin' animation='off'>
+          <Year2PageWrapper page='doujin'>
             <Year2Doujin />
           </Year2PageWrapper>
         </Route>
         <Route path='/anniversary2/project-song'>
-          <Year2PageWrapper page='song' animation='on'>
+          <Year2PageWrapper page='song'>
             <Year2Song />
           </Year2PageWrapper>
         </Route>
         <Route path='/anniversary2/about'>
-          <Year2PageWrapper page='about' animation='on'>
+          <Year2PageWrapper page='about'>
             <Year2About />
           </Year2PageWrapper>
         </Route>
         <Route path='/anniversary2'>
-          <Year2PageWrapper page='home' animation='off'>
+          <Year2PageWrapper page='home'>
             <Year2Home />
           </Year2PageWrapper>
         </Route>

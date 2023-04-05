@@ -30,7 +30,7 @@ function Bubble ({ bodyHeight }: {bodyHeight: number}): JSX.Element {
   )
 }
 
-export default function FinanaBgAnimation (): JSX.Element {
+export default function BgAnimationFinana (): JSX.Element {
   const finanaBubbleCount: number = 30
   const finanaFishCount: number = 30
 

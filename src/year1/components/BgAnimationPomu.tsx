@@ -1,20 +1,19 @@
 import Image from './Image'
 
-import CyalumeElira from '../assets/BG/DCL-BG-CyalumeE.webp'
-import CyalumePomu from '../assets/BG/DCL-BG-CyalumeP.webp'
-import CyalumeFinana from '../assets/BG/DCL-BG-CyalumeF.webp'
+import PomuCoinGold from '../assets/BG/Pomu-BG-PomuCoinGold.svg'
+import PomuCoinSilver from '../assets/BG/Pomu-BG-PomuCoinSilver.svg'
 import { useEffect, useRef, useState } from 'react'
 
-function Cyalume ({ color, bodyHeight }: { color: 'elira' | 'pomu' | 'finana', bodyHeight: number }): JSX.Element {
+function PomuCoin ({ color, bodyHeight }: { color: 'gold' | 'silver', bodyHeight: number }): JSX.Element {
   // Heavy use of useRef to avoid Math.random() calls on every render
 
   const left = useRef(Math.random() * 100)
-  const delay = useRef(-1 * Math.random() * 50) // Negative delay starts animation mid cycle
+  const delay = useRef(-1 * Math.random() * 7) // Negative delay starts animation mid cycle
   const rot = useRef(Math.random() * 360)
 
-  const avgSpeed = 200 // average px / sec
+  const avgSpeed = 350 // average px / sec
   const speed = useRef(avgSpeed * (0.7 + Math.random() * 0.6)) // speed with variation
-  const scale = 1 / (speed.current / avgSpeed) // faster cyalume are "closer" to create depth
+  const scale = 1 / (speed.current / avgSpeed) // faster coins are "closer" to create depth
 
   const styles: Record<string, string | number> = {
     left: `${left.current}%`,
@@ -26,15 +25,15 @@ function Cyalume ({ color, bodyHeight }: { color: 'elira' | 'pomu' | 'finana', b
 
   return (
     <Image
-      className='page-bg-animation-dcl-cyalume'
-      src={color === 'elira' ? CyalumeElira : (color === 'pomu' ? CyalumePomu : CyalumeFinana)}
+      className='page-bg-animation-pomu-coin'
+      src={color === 'gold' ? PomuCoinGold : PomuCoinSilver}
       style={styles}
     />
   )
 }
 
-export default function DclBgAnimation (): JSX.Element {
-  const cyalumeCount: number = 100
+export default function BgAnimationPomu (): JSX.Element {
+  const pomuCoinCount: number = 60
 
   const [bodyHeight, setBodyHeight] = useState(0)
   useEffect(() => {
@@ -50,8 +49,8 @@ export default function DclBgAnimation (): JSX.Element {
 
   return (
     <div style={styles}>
-      {Array.from({ length: cyalumeCount }, (_el, i: number) => (
-        <Cyalume key={'dclCyalume' + i.toString()} color={i % 3 === 0 ? 'elira' : (i % 3 === 1 ? 'pomu' : 'finana')} bodyHeight={bodyHeight} />
+      {Array.from({ length: pomuCoinCount }, (_el, i: number) => (
+        <PomuCoin key={'pomCoin' + i.toString()} color={i % 2 === 0 ? 'gold' : 'silver'} bodyHeight={bodyHeight} />
       ))}
     </div>
   )

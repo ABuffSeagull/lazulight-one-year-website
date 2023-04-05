@@ -1,12 +1,12 @@
 import React from 'react'
 
-interface Props {
+export function PageWrapper ({
+  children,
+  page
+}: {
   children: React.ReactNode
   page: string
-  animation: string
-}
-
-export function PageWrapper (props: Props): JSX.Element {
+}): JSX.Element {
   return (
     <div />
   )

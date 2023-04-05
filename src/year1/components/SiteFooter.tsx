@@ -1,11 +1,11 @@
 import classes from './SiteFooter.module.scss'
 
-interface Props {
-  page: string
-}
-
-export default function SiteFooter (props: Props): JSX.Element {
-  const footerBorder = classes[`${props.page}-footer-border`]
+export default function SiteFooter ({
+  page
+}: {
+  page: string // 'elira' | 'pomu' | 'finana'
+}): JSX.Element {
+  const footerBorder = classes[`${page}-footer-border`]
 
   return (
     <>

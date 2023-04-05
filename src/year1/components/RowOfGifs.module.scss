@@ -1,6 +1,6 @@
 @use "../variables" as *;
 
-.row-of-gifs {
+.container {
   display: grid;
 
   $num-col: 4;

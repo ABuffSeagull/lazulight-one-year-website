@@ -1,5 +1,5 @@
 import Image from '../components/Image'
-import './RowOfGifs.scss'
+import rog from './RowOfGifs.module.scss'
 
 export default function RowOfGifs ({ gif1, gif2, gif3, gif4, className = '' }: {
   gif1: string
@@ -9,7 +9,7 @@ export default function RowOfGifs ({ gif1, gif2, gif3, gif4, className = '' }: {
   className?: string
 }): JSX.Element {
   return (
-    <div className={`row-of-gifs ${className}`}>
+    <div className={`${rog.container} ${className}`}>
       {/* (Brandon): Number of images is hardcoded into 'row-of-gifs' */}
       <Image src={gif1} enableZoom />
       <Image src={gif2} enableZoom />
