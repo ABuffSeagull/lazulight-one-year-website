@@ -18,7 +18,7 @@ const formats = ['avif', 'heic', 'heif', 'webp', 'jpg', 'jpeg', 'png']
 
 export default function Picture (props: ImageToolProps): JSX.Element {
   if (typeof props.src === 'string') {
-    const imgElement = <img className={props.className} src={props.src} alt={props.alt} />
+    const imgElement = <img className={props.className} style={props.style} width={props.width} height={props.height} src={props.src} alt={props.alt} />
     return wrapInZoom(imgElement, props.enableZoom)
   }
 
