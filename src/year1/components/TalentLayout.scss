@@ -1,0 +1,307 @@
+@use "../variables" as *;
+
+// (Brandon) I re-exported the corners to all require the same spacing (relative to equal hight)
+$msg-corner-padding-right: 17px;
+$msg-corner-padding-top: 17px;
+$talent-corner-padding-right: 33px;
+$talent-corner-padding-top: 33px;
+
+.talent {
+  &-profile-container {
+    display: flex;
+    width: 100%;
+
+    @media (max-width: $bp-tablet) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &-picture-box {
+    position: relative;
+    max-width: 25vw;
+    margin-right: 4vw;
+    margin-bottom: 0;
+
+    @media (max-width: $bp-tablet) {
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      max-width: 100%; // Clear desktop mode directive
+      width: 80%;
+      height: 80%;
+      margin-right: 0;
+      margin-bottom: 2rem;
+      grid-template-columns: 60% 40%;
+      grid-template-rows: 50% 50%;
+    }
+
+    &-liver {
+      width: 100%;
+      height: auto;
+      margin-right: 0;
+
+      @media (max-width: $bp-tablet) {
+        width: 100%;
+        height: 100%;
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+      }
+
+      // (Brandon) when using 'enableZoom', the element is wrapped in a div
+      div,
+      img,
+      picture {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+
+    &-mascot {
+      display: none;
+
+      @media (max-width: $bp-tablet) {
+        display: block;
+        grid-column: 2 / 3;
+      }
+    }
+  }
+
+  &-info-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 10; // A big number to force fill the screen
+    gap: 3rem;
+
+    @media (max-width: $bp-tablet) {
+      width: 100%;
+    }
+  }
+
+  &-text-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  &-text-inner {
+    padding: 2.5rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem 0 1rem 1rem;
+    background: $background-gradient;
+
+    h2 {
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 0.9;
+      margin-bottom: 2rem;
+
+      // Easy solution to make the min size width more permissive. May as well right
+      @media (max-width: $bp-mobile) {
+        font-size: clamp(2rem, 13vw, 4rem);
+      }
+    }
+  }
+
+  &-links-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+    padding: 0.5rem 0;
+  }
+
+  &-corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    object-fit: scale-down;
+    width: 10rem;
+    transform: translate(
+      calc($talent-corner-padding-right - $msg-corner-padding-right),
+      -$talent-corner-padding-top
+    );
+    z-index: 2;
+  }
+}
+
+.fan-submissions {
+  // Message/Art column organisation loosely based off
+  //	https://codepen.io/slooo/pen/yLYZNKw
+  //	https://www.w3schools.com/css/css3_flexbox_responsive.asp
+  &-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &-button {
+      position: absolute;
+      z-index: 10;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      cursor: pointer;
+      font-size: 1.25rem;
+      padding: 0.25rem 0.5rem;
+      background: $background-gradient;
+      border-radius: 0.5rem;
+
+      &-hide {
+        bottom: -3rem;
+      }
+    }
+  }
+
+  &-heading {
+    font-size: 2rem;
+    text-align: center;
+    width: 75%;
+    margin: auto;
+    padding: 1rem 0;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-image: linear-gradient(
+        to right,
+        rgb(0 0 0 / 0%),
+        currentcolor 20%,
+        currentcolor 80%,
+        rgb(0 0 0 / 0%)
+      )
+      1;
+    border-style: solid;
+    background: linear-gradient(
+      to right,
+      rgb(0 0 0 / 0%),
+      $background-grey 20%,
+      $background-grey 80%,
+      rgb(0 0 0 / 0%)
+    );
+  }
+
+  &-box {
+    position: relative;
+    column-count: 3;
+
+    // Add equal padding as to message corner to centre the message boxes
+    padding-left: $msg-corner-padding-right;
+
+    @media (max-width: $bp-tablet) {
+      column-count: 2;
+    }
+
+    @media (max-width: $bp-mobile) {
+      column-count: 1;
+    }
+
+    &-expanded {
+      max-height: 100%;
+      width: 100%;
+    }
+
+    &-faded {
+      // Fade content of div to transparent:
+      //	https://makandracards.com/makandra/475887-letting-a-dom-element-fade-into-transparency
+      $truncate-after: 20rem;
+      $fade-height: 5rem;
+      $fade-after: $truncate-after - $fade-height;
+
+      overflow: hidden;
+      max-height: $truncate-after;
+      mask-image: linear-gradient(
+        to bottom,
+        black $fade-after,
+        transparent $truncate-after
+      );
+    }
+  }
+
+  &-submission {
+    position: relative;
+    break-inside: avoid;
+    padding-top: $msg-corner-padding-top;
+    padding-right: $msg-corner-padding-right;
+    margin-bottom: 0.5rem;
+  }
+
+  &-message {
+    position: relative;
+    width: 100%;
+    padding: 1rem;
+    background: $background-gradient;
+    border-radius: 0.5rem 0 0.5rem 0.5rem;
+
+    h4 {
+      margin-bottom: 0.75rem;
+      word-wrap: break-word;
+      margin-top: 5px;
+      margin-right: 10px;
+    }
+
+    p {
+      word-wrap: break-word;
+    }
+
+    img {
+      width: 100%;
+      padding: 5%;
+    }
+  }
+
+  &-corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    object-fit: scale-down;
+    height: 90px;
+    width: 90px;
+    z-index: 2;
+  }
+}
+
+.external-link-icon {
+  height: 1rem;
+  width: 1rem;
+  fill: currentcolor;
+  opacity: 0.8;
+  display: block;
+}
+
+.pomu .artboard-credits li {
+  background: hsl(125deg 40% 92%);
+}
+
+.elira .artboard-credits li {
+  background: hsl(219deg 40% 92%);
+}
+
+.finana .artboard-credits li {
+  background: hsl(219deg 40% 92%);
+}
+
+.pomu-border {
+  border: 3px solid $pomu-primary-color;
+}
+
+.finana-border {
+  border: 3px solid $finana-primary-color;
+}
+
+.elira-border {
+  border: 3px solid $elira-primary-color;
+}
+
+.lazulight-border {
+  border: 3px solid $lazulight-primary-color;
+}
+
+// Utility
+.hide-on-tablet {
+  @media (max-width: $bp-tablet) {
+    display: none !important;
+  }
+}

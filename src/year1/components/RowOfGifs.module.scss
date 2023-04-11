@@ -1,0 +1,30 @@
+@use "../variables" as *;
+
+.container {
+  display: grid;
+
+  $num-col: 4;
+  $col-width: calc(90% / $num-col);
+
+  grid-template-columns: repeat($num-col, [col-start] $col-width [col-end]);
+  grid-gap: calc((100% - $num-col * $col-width) / ($num-col - 1));
+
+  @media (max-width: $bp-tablet) {
+    $num-col: 3;
+    $col-width: calc(90% / $num-col);
+
+    grid-template-columns: repeat($num-col, [col-start] $col-width [col-end]);
+    grid-gap: calc((100% - $num-col * $col-width) / ($num-col - 1));
+
+    & > *:nth-child(4) {
+      display: none;
+    }
+  }
+
+  picture,
+  img,
+  div {
+    width: 100%;
+    object-fit: contain;
+  }
+}

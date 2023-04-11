@@ -1,16 +1,27 @@
-import { Route, Switch } from 'wouter'
-import { PageWrapper } from './components/PageWrapper'
-import Home from './pages/Home'
-import Elira from './pages/Elira'
-import Finana from './pages/Finana'
-import Pomu from './pages/Pomu'
-import Fnf from './pages/FNF'
-import DiamondCityLights from './pages/DiamondCityLights'
-import VisualNovel from './pages/VisualNovel'
-import Art from './pages/Art'
-import Messages from './pages/Messages'
-import About from './pages/About'
-import ScrollToTop from './components/ScrollToTop'
+import { Route, Redirect, Switch } from 'wouter'
+import LandingHome from './landing/pages/Home'
+import ScrollToTop from './shared/components/ScrollToTop'
+
+import { PageWrapper as Year1PageWrapper } from './year1/components/PageWrapper'
+import Year1Home from './year1/pages/Home'
+import Year1Elira from './year1/pages/Elira'
+import Year1Finana from './year1/pages/Finana'
+import Year1Pomu from './year1/pages/Pomu'
+import Year1Fnf from './year1/pages/FNF'
+import Year1DiamondCityLights from './year1/pages/DiamondCityLights'
+import Year1VisualNovel from './year1/pages/VisualNovel'
+import Year1Art from './year1/pages/Art'
+import Year1Messages from './year1/pages/Messages'
+import Year1About from './year1/pages/About'
+
+import { PageWrapper as Year2PageWrapper } from './year2/components/PageWrapper'
+import Year2Home from './year2/pages/Home'
+import Year2Elira from './year2/pages/Elira'
+import Year2Finana from './year2/pages/Finana'
+import Year2Pomu from './year2/pages/Pomu'
+import Year2Doujin from './year2/pages/Doujin'
+import Year2Song from './year2/pages/Song'
+import Year2About from './year2/pages/About'
 
 export default function App (): JSX.Element {
   return (
@@ -23,57 +34,115 @@ export default function App (): JSX.Element {
         Content of PageWrapper: header, footer, background
       */}
       <Switch>
-        <Route path='/elira'>
-          <PageWrapper page='elira' animation='on'>
-            <Elira />
-          </PageWrapper>
+        {/* Redirect the pages of the first anniversary version of the site */}
+        <Route path='/elira'> <Redirect to='/anniversary1/elira' /> </Route>
+        <Route path='/finana'> <Redirect to='/anniversary1/finana' /> </Route>
+        <Route path='/pomu'> <Redirect to='/anniversary1/pomu' /> </Route>
+        <Route path='/project-fnf'> <Redirect to='/anniversary1/project-fnf' /> </Route>
+        <Route path='/project-dcl'> <Redirect to='/anniversary1/project-dcl' /> </Route>
+        <Route path='/project-vn'> <Redirect to='/anniversary1/project-vn' /> </Route>
+        <Route path='/all-art'> <Redirect to='/anniversary1/all-art' /> </Route>
+        <Route path='/all-messages'> <Redirect to='/anniversary1/all-messages' /> </Route>
+        <Route path='/about'> <Redirect to='/anniversary1/about' /> </Route>
+
+        {/*
+          TODO: Some uses of the page variable for (fnf,dcl,vn,home) refer to non-existent classes
+          e.g. fnf-border does not exist resulting in the element missing the border
+        */}
+        <Route path='/anniversary1/elira'>
+          <Year1PageWrapper page='elira' animatedBackground>
+            <Year1Elira />
+          </Year1PageWrapper>
         </Route>
-        <Route path='/finana'>
-          <PageWrapper page='finana' animation='on'>
-            <Finana />
-          </PageWrapper>
+        <Route path='/anniversary1/finana'>
+          <Year1PageWrapper page='finana' animatedBackground>
+            <Year1Finana />
+          </Year1PageWrapper>
         </Route>
-        <Route path='/pomu'>
-          <PageWrapper page='pomu' animation='on'>
-            <Pomu />
-          </PageWrapper>
+        <Route path='/anniversary1/pomu'>
+          <Year1PageWrapper page='pomu' animatedBackground>
+            <Year1Pomu />
+          </Year1PageWrapper>
         </Route>
-        <Route path='/project-fnf'>
-          <PageWrapper page='fnf' animation='off'>
-            <Fnf page='fnf' />
-          </PageWrapper>
+        <Route path='/anniversary1/project-fnf'>
+          <Year1PageWrapper page='fnf'>
+            <Year1Fnf page='fnf' />
+          </Year1PageWrapper>
         </Route>
-        <Route path='/project-dcl'>
-          <PageWrapper page='dcl' animation='on'>
-            <DiamondCityLights page='dcl' />
-          </PageWrapper>
+        <Route path='/anniversary1/project-dcl'>
+          <Year1PageWrapper page='dcl' animatedBackground>
+            <Year1DiamondCityLights page='dcl' />
+          </Year1PageWrapper>
         </Route>
-        <Route path='/project-vn'>
-          <PageWrapper page='vn' animation='on'>
-            <VisualNovel page='vn' />
-          </PageWrapper>
+        <Route path='/anniversary1/project-vn'>
+          <Year1PageWrapper page='vn' animatedBackground>
+            <Year1VisualNovel page='vn' />
+          </Year1PageWrapper>
+        </Route>
+        {/*
+          TODO:
+          I intentionally give the following pages the incorrect 'page' variable - It's only used for styling
+          This should really be changed
+        */}
+        <Route path='/anniversary1/all-art'>
+          <Year1PageWrapper page='finana' animatedBackground>
+            <Year1Art page='finana' />
+          </Year1PageWrapper>
+        </Route>
+        <Route path='/anniversary1/all-messages'>
+          <Year1PageWrapper page='elira' animatedBackground>
+            <Year1Messages page='elira' />
+          </Year1PageWrapper>
+        </Route>
+        <Route path='/anniversary1/about'>
+          <Year1PageWrapper page='pomu' animatedBackground>
+            <Year1About page='pomu' />
+          </Year1PageWrapper>
+        </Route>
+        <Route path='/anniversary1'>
+          <Year1PageWrapper page='home'>
+            <Year1Home />
+          </Year1PageWrapper>
         </Route>
 
-        {/* (Brandon) I intentionally give the following pages the incorrect 'page' variable - It's only used for styling */}
-        <Route path='/all-art'>
-          <PageWrapper page='finana' animation='on'>
-            <Art page='finana' />
-          </PageWrapper>
+        <Route path='/anniversary2/elira'>
+          <Year2PageWrapper page='elira'>
+            <Year2Elira />
+          </Year2PageWrapper>
         </Route>
-        <Route path='/all-messages'>
-          <PageWrapper page='elira' animation='on'>
-            <Messages page='elira' />
-          </PageWrapper>
+        <Route path='/anniversary2/finana'>
+          <Year2PageWrapper page='finana'>
+            <Year2Finana />
+          </Year2PageWrapper>
         </Route>
-        <Route path='/about'>
-          <PageWrapper page='pomu' animation='on'>
-            <About page='pomu' />
-          </PageWrapper>
+        <Route path='/anniversary2/pomu'>
+          <Year2PageWrapper page='pomu'>
+            <Year2Pomu />
+          </Year2PageWrapper>
         </Route>
+        <Route path='/anniversary2/project-doujin'>
+          <Year2PageWrapper page='doujin'>
+            <Year2Doujin />
+          </Year2PageWrapper>
+        </Route>
+        <Route path='/anniversary2/project-song'>
+          <Year2PageWrapper page='song'>
+            <Year2Song />
+          </Year2PageWrapper>
+        </Route>
+        <Route path='/anniversary2/about'>
+          <Year2PageWrapper page='about'>
+            <Year2About />
+          </Year2PageWrapper>
+        </Route>
+        <Route path='/anniversary2'>
+          <Year2PageWrapper page='home'>
+            <Year2Home />
+          </Year2PageWrapper>
+        </Route>
+
         <Route>
-          <PageWrapper page='home' animation='off'>
-            <Home />
-          </PageWrapper>
+          <LandingHome />
         </Route>
       </Switch>
       {/* Runs a function to scroll to top after route change */}
