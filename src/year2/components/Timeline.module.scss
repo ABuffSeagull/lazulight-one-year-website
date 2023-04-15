@@ -1,0 +1,123 @@
+.timelineRoot {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  position: relative;
+
+  --trunk-width: 8px;
+  --dot-diameter: 16px;
+  --date-width: 8rem;
+}
+
+.timelineRoot::before {
+  content: " ";
+  width: var(--trunk-width);
+  background: grey;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - var(--trunk-width) / 2);
+}
+
+.timelineItems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  position: relative;
+  // Item overlap
+  // margin-top: -1rem;
+}
+
+.messageRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .itemTitle {
+    max-width: calc(100% - var(--date-width));
+  }
+
+  .itemDate {
+    flex-shrink: 0;
+    text-align: center;
+    width: var(--date-width);
+    display: flex;
+    flex-direction: column;
+    height: calc(2rem + 4px);
+    margin-top: calc(-2rem);
+
+    .date {
+      height: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .stem {
+      height: 4px;
+      // Needs a bit of overlap with the circle for a clean connection
+      width: calc(100% + 4px);
+      background: grey;
+    }
+  }
+
+  .contentBox {
+    border: 1px solid black;
+    max-width: calc(100% - var(--date-width));
+  }
+}
+
+.messageRow::before {
+  // Timeline dot
+  content: " ";
+  flex-shrink: 0;
+  border-radius: 100%;
+  background: white;
+  border: 4px solid grey;
+  width: var(--dot-diameter);
+  height: var(--dot-diameter);
+
+  align-self: center;
+}
+
+.item:nth-child(2n) {
+  // Items pointing right
+  transform: translateX(50%);
+
+  .messageRow {
+    flex-direction: row;
+    &::before {
+      margin-left: calc(-0.5 * var(--dot-diameter));
+    }
+    .stem {
+      margin-left: -4px;
+    }
+  }
+
+  .itemTitle {
+    text-align: right;
+    margin-left: var(--date-width);
+  }
+}
+
+.item:nth-child(2n + 1) {
+  // Items pointing left
+  transform: translateX(-50%);
+
+  .messageRow {
+    flex-direction: row-reverse;
+    &::before {
+      margin-right: calc(-0.5 * var(--dot-diameter));
+    }
+  }
+
+  .itemTitle {
+    align-self: flex-start;
+  }
+}
