@@ -106,37 +106,37 @@ export default function App (): JSX.Element {
         </Route>
 
         <Route path='/anniversary2/elira'>
-          <Year2PageWrapper page='elira'>
+          <Year2PageWrapper pageTheme='elira'>
             <Year2Elira />
           </Year2PageWrapper>
         </Route>
         <Route path='/anniversary2/finana'>
-          <Year2PageWrapper page='finana'>
+          <Year2PageWrapper pageTheme='finana'>
             <Year2Finana />
           </Year2PageWrapper>
         </Route>
         <Route path='/anniversary2/pomu'>
-          <Year2PageWrapper page='pomu'>
+          <Year2PageWrapper pageTheme='pomu'>
             <Year2Pomu />
           </Year2PageWrapper>
         </Route>
         <Route path='/anniversary2/project-doujin'>
-          <Year2PageWrapper page='doujin'>
+          <Year2PageWrapper pageTheme='doujin'>
             <Year2Doujin />
           </Year2PageWrapper>
         </Route>
         <Route path='/anniversary2/project-song'>
-          <Year2PageWrapper page='song'>
+          <Year2PageWrapper pageTheme='song'>
             <Year2Song />
           </Year2PageWrapper>
         </Route>
         <Route path='/anniversary2/about'>
-          <Year2PageWrapper page='about'>
+          <Year2PageWrapper pageTheme='about'>
             <Year2About />
           </Year2PageWrapper>
         </Route>
         <Route path='/anniversary2'>
-          <Year2PageWrapper page='home'>
+          <Year2PageWrapper pageTheme='home'>
             <Year2Home />
           </Year2PageWrapper>
         </Route>
