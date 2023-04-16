@@ -3,6 +3,8 @@ import { Link } from 'wouter'
 import Image from './Image'
 import classes from './SiteHeader.module.scss'
 
+import landingIconDefault from '../../shared/assets/menu/Menu-Logo.png'
+
 import homeIconDefault from '../assets/Menu/Menu-Diamond-Default.webp'
 import homeIconActive from '../assets/Menu/Menu-DiamondRainbow-Active_250px.gif'
 
@@ -48,6 +50,13 @@ interface LinkData {
 
 export default function SiteHeader (): JSX.Element {
   const navIcons = [
+    {
+      name: 'Main',
+      icon: landingIconDefault,
+      iconActive: landingIconDefault,
+      path: '/',
+      children: []
+    },
     {
       name: 'Home',
       icon: homeIconDefault,
