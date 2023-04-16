@@ -2,62 +2,94 @@ import React from "react";
 
 import classes from "./Timeline.module.scss";
 
-export function Timeline() {
+type MemoryCommon = {
+  title: string;
+  member: "elira" | "finana" | "pomu";
+  date: Date;
+  submitterName: string;
+  submitterSocialUrl?: string;
+};
+
+type YouTubeMemory = MemoryCommon & {
+  type: "youtube";
+  videoId: string;
+};
+
+type TwitterMemory = MemoryCommon & {
+  type: "twitter";
+  tweetUrl: string;
+};
+
+type MessageMemory = MemoryCommon & {
+  type: "message";
+  imgUrl?: string;
+  message: string;
+};
+
+type Memory = YouTubeMemory | TwitterMemory | MessageMemory;
+
+type TimelineProps = {
+  // Memories are ASSUMED TO BE IN ORDER by date
+  memories: Memory[];
+};
+
+export function Timeline({ memories }: TimelineProps) {
   return (
     <div className={classes.timelineRoot}>
       <ul className={classes.timelineItems}>
-        <TimelineItem
-          title="What if I became Pomu but I had a really really really really really really really long title that wrapped around to a second line"
-          date={new Date(2023, 3, 1)}
-        >
-          I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu!
-          I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu!
-          I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu!
-          I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu!
-        </TimelineItem>
-        <TimelineItem title="2nd Anniversary" date={new Date(2023, 4, 15)}>
-          Happy Lazulight 2nd anniversary!
-        </TimelineItem>
-        <TimelineItem title="Another thing" date={new Date(2023, 6, 1)}>
-          Hi! This is a really tall message!
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          Bye!
-        </TimelineItem>
+        {memories.map((memory, i) => (
+          <TimelineItem key={i} memory={memory} />
+        ))}
       </ul>
     </div>
   );
 }
 
 type TimelineItemProps = {
-  title: string;
-  submitter?: {
-    name: string;
-    socialLink?: string;
-  };
-  date: Date;
+  memory: Memory;
 };
 
-function TimelineItem({
-  date,
-  title,
-  children,
-}: React.PropsWithChildren<TimelineItemProps>) {
+function TimelineItem({ memory }: TimelineItemProps) {
   return (
-    <li className={classes.item}>
-      <div className={classes.itemTitle}>{title}</div>
+    <li
+      className={
+        memory.type === "youtube" || memory.type === "twitter"
+          ? `${classes.item} ${classes.withEmbed} hi`
+          : classes.item
+      }
+      style={
+        {
+          "--stem-color": `${
+            memory.member === "elira"
+              ? "#fd83f2"
+              : memory.member === "finana"
+              ? "#a8f7f4"
+              : "#ffd889"
+          }`,
+        } as React.CSSProperties
+      }
+    >
+      <div className={classes.itemTitle}>
+        {memory.title} &bull;{" "}
+        {memory.submitterSocialUrl ? (
+          <a href={memory.submitterSocialUrl}>{memory.submitterName}</a>
+        ) : (
+          memory.submitterName
+        )}
+      </div>
       <div className={classes.messageRow}>
         <div className={classes.itemDate}>
-          <div className={classes.date}>{formatDate(date)}</div>
-          <div className={classes.stem}></div>
+          <div className={classes.date}>{formatDate(memory.date)}</div>
         </div>
-        <div className={classes.contentBox}>{children}</div>
+        <div className={classes.contentBox}>
+          {memory.type === "youtube" ? (
+            <YouTubeMemory memory={memory} />
+          ) : memory.type === "twitter" ? (
+            <TwitterMemory memory={memory} />
+          ) : (
+            <MessageMemory memory={memory} />
+          )}
+        </div>
       </div>
     </li>
   );
@@ -80,4 +112,46 @@ function formatDate(date: Date) {
       "Dec",
     ][date.getMonth()]
   } ${date.getFullYear()}`;
+}
+
+/*
+===========================================
+Components for rendering different memories
+===========================================
+*/
+
+function MessageMemory({ memory }: { memory: MessageMemory }) {
+  return (
+    <>
+      {memory.imgUrl && <img src={memory.imgUrl} />}
+      {memory.message.split("\n").map((line, i) => (
+        <p key={i}>{line}</p>
+      ))}
+    </>
+  );
+}
+
+function YouTubeMemory({ memory }: { memory: YouTubeMemory }) {
+  // TODO: dynamic sizing based on available screen width?
+  return (
+    <div className={classes.youtubeContainer}>
+      <iframe
+        className={classes.youtubeEmbed}
+        src={`https://www.youtube.com/embed/${memory.videoId}`}
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+      ></iframe>
+    </div>
+  );
+}
+
+function TwitterMemory({ memory }: { memory: TwitterMemory }) {
+  // Defaults to approximately min width (250px) because there's no preview content.
+  return (
+    <blockquote className="twitter-tweet">
+      <a href={memory.tweetUrl}></a>
+    </blockquote>
+  );
 }

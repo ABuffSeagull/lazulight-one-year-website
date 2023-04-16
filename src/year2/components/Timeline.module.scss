@@ -7,6 +7,11 @@
   --trunk-width: 8px;
   --dot-diameter: 16px;
   --date-width: 8rem;
+  --stem-height: 4px;
+  --max-content-width: 600px;
+  --mobile-padding: 10px;
+
+  --stem-color: grey;
 }
 
 .timelineRoot::before {
@@ -16,7 +21,8 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  left: calc(50% - var(--trunk-width) / 2);
+  // Appear below all other content
+  z-index: -100;
 }
 
 .timelineItems {
@@ -28,20 +34,23 @@
 .item {
   display: flex;
   flex-direction: column;
-  max-width: 50%;
-  position: relative;
+  justify-content: flex-start;
+  max-width: calc(min(var(--max-content-width) + var(--date-width), 50%));
+
   // Item overlap
-  // margin-top: -1rem;
+  // This isn't safe if we have very short one-line messages, but that probably won't happen?
+  // We can revisit it when we have the finalized timeline content.
+  // margin-top: -5rem;
+}
+
+.itemTitle {
+  max-width: calc(min(var(--max-content-width), 100% - var(--date-width)));
 }
 
 .messageRow {
   display: flex;
   flex-direction: row;
   align-items: center;
-
-  .itemTitle {
-    max-width: calc(100% - var(--date-width));
-  }
 
   .itemDate {
     flex-shrink: 0;
@@ -50,7 +59,7 @@
     display: flex;
     flex-direction: column;
     height: calc(2rem + 4px);
-    margin-top: calc(-2rem);
+    margin-top: calc(-2rem + 0.5 * var(--stem-height));
 
     .date {
       height: 2rem;
@@ -59,18 +68,28 @@
       justify-content: flex-end;
     }
 
-    .stem {
-      height: 4px;
+    &::after {
+      content: " ";
+      height: var(--stem-height);
       // Needs a bit of overlap with the circle for a clean connection
       width: calc(100% + 4px);
-      background: grey;
+      background: var(--stem-color);
     }
   }
 
   .contentBox {
-    border: 1px solid black;
-    max-width: calc(100% - var(--date-width));
+    border: var(--stem-height) solid var(--stem-color);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    max-width: calc(min(var(--max-content-width), 100% - var(--date-width)));
+    overflow: auto;
   }
+}
+
+// YouTube videos don't have an inherent width (they'll default to the minimum possible width).
+// Similar for Twitter embeds. So for those items we'll give a hint to be as wide as possible
+.item.withEmbed .contentBox {
+  width: var(--max-content-width);
 }
 
 .messageRow::before {
@@ -79,45 +98,162 @@
   flex-shrink: 0;
   border-radius: 100%;
   background: white;
-  border: 4px solid grey;
+  border: 4px solid var(--stem-color);
   width: var(--dot-diameter);
   height: var(--dot-diameter);
 
   align-self: center;
 }
 
-.item:nth-child(2n) {
-  // Items pointing right
-  transform: translateX(50%);
+@media (max-width: 1200px) {
+  .timelineRoot {
+    padding: var(--mobile-padding);
+  }
 
-  .messageRow {
-    flex-direction: row;
-    &::before {
-      margin-left: calc(-0.5 * var(--dot-diameter));
+  // Left-align trunk
+  .timelineRoot::before {
+    left: calc(var(--mobile-padding) - var(--trunk-width) / 2);
+  }
+
+  .timelineItems {
+    align-items: flex-start;
+  }
+
+  // All items point right
+  .item {
+    max-width: 100%;
+    .messageRow {
+      flex-direction: row;
+
+      &::before {
+        margin-left: calc(-0.5 * var(--dot-diameter));
+      }
+
+      .itemDate::after {
+        margin-left: -4px;
+      }
     }
-    .stem {
-      margin-left: -4px;
+
+    .itemTitle {
+      text-align: right;
+      margin-left: var(--date-width);
+      word-break: break-word;
+      hyphens: auto;
     }
   }
 
-  .itemTitle {
-    text-align: right;
-    margin-left: var(--date-width);
+  .item + .item {
+    margin-top: 20px;
   }
 }
 
-.item:nth-child(2n + 1) {
-  // Items pointing left
-  transform: translateX(-50%);
+@media (min-width: 1200px) {
+  // Center trunk
+  .timelineRoot::before {
+    left: calc(50% - var(--trunk-width) / 2);
+  }
 
-  .messageRow {
-    flex-direction: row-reverse;
-    &::before {
-      margin-right: calc(-0.5 * var(--dot-diameter));
+  // Make alternating timeline items point left/right
+  .item:nth-child(2n) {
+    // Items pointing right
+    transform: translateX(50%);
+
+    .messageRow {
+      flex-direction: row;
+
+      &::before {
+        margin-left: calc(-0.5 * var(--dot-diameter));
+      }
+
+      .itemDate::after {
+        margin-left: -4px;
+      }
+    }
+
+    .itemTitle {
+      text-align: right;
+      margin-left: var(--date-width);
+      margin-right: 0.5rem;
     }
   }
 
-  .itemTitle {
-    align-self: flex-start;
+  .item:nth-child(2n + 1) {
+    // Items pointing left
+    transform: translateX(-50%);
+
+    .messageRow {
+      flex-direction: row-reverse;
+      &::before {
+        margin-right: calc(-0.5 * var(--dot-diameter));
+      }
+    }
+
+    .itemTitle {
+      margin-right: var(--date-width);
+      margin-left: 0.5rem;
+    }
   }
+}
+
+/*
+================
+Embedded content
+================
+*/
+
+// Modified from
+// https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/css-for-embedded-tweets
+// We don't currently use this as it requires every tweet to be published using publish.twitter.com
+// Instead we use an empty blockquote and let the twitter embed script fill it.
+:global {
+  blockquote.twitter-tweet {
+    display: inline-block;
+    font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 16px;
+    border-color: #eee #ddd #bbb;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    // box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    margin: 10px 5px;
+    padding: 0 16px 16px 16px;
+    max-width: 468px;
+  }
+
+  blockquote.twitter-tweet p {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 20px;
+  }
+
+  blockquote.twitter-tweet a {
+    color: inherit;
+    font-weight: normal;
+    text-decoration: none;
+    outline: 0 none;
+  }
+
+  blockquote.twitter-tweet a:hover,
+  blockquote.twitter-tweet a:focus {
+    text-decoration: underline;
+  }
+}
+
+.youtubeContainer {
+  position: relative;
+  min-width: 300px;
+  width: 100%;
+  max-width: var(--max-content-width);
+  aspect-ratio: 16 / 9;
+}
+
+.youtubeEmbed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
