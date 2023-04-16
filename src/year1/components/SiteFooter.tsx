@@ -6,11 +6,9 @@ export default function SiteFooter ({
 }: {
   theme: Y1LazuType | Y1LiverType
 }): JSX.Element {
-  const footerBorder = classes[`${theme}-footer-border`]
-
   return (
     <>
-      <footer className={`${classes.footer} ${footerBorder}`}>
+      <footer className={`${classes.footer} ${classes[`${theme}-footer-border`]}`}>
         <h4>About this website</h4>
         <p>This fan website showcases our thanks and congratulations to LazuLight of Nijisanji EN on their first full year of streaming. Every showcased message, art, music, and game was created specifically for this anniversary event.</p>
         <h4>Thanks:</h4>

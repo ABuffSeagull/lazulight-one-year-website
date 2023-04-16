@@ -1,5 +1,5 @@
 import React from 'react'
-import './PageWrapper.scss'
+import classes from './PageWrapper.module.scss'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import Image from './Image'
@@ -24,15 +24,16 @@ export function PageWrapper ({
 
   return (
     // For many of these "${pageTheme}-something", no class exists. e.g. if there is no bg animation
-    <div className={`container ${pageTheme} page-bg-static-${pageTheme} page-bg-animation-${pageTheme}`}>
+    // But there are not needed on those pages
+    <div className={`${classes.container} ${classes[pageTheme]} ${classes[`page-bg-static-${pageTheme}`]} ${classes[`page-bg-animation-${pageTheme}`]}`}>
       <SiteHeader />
 
       {/* Background */}
       <div
-        className={`page-bg-animation-${pageTheme}-container ${
+        className={`${classes[`page-bg-animation-${pageTheme}-container`]} ${
           AnimationOn
-            ? `page-bg-animation-${pageTheme}-container-on`
-            : `page-bg-animation-${pageTheme}-container-off`
+            ? `${classes[`page-bg-animation-${pageTheme}-container-on`]}`
+            : `${classes[`page-bg-animation-${pageTheme}-container-off`]}`
         }`}
       >
         {pageTheme === 'pomu' && <BgAnimationPomu />}
@@ -43,19 +44,19 @@ export function PageWrapper ({
       </div>
 
       {pageTheme === 'home' && (
-        <div className='home-collage'>
+        <div className={classes['home-collage']}>
           <Image src={LazulightArtBoard} />
         </div>
       )}
 
       {animatedBackground && (
-        <button onClick={() => { toggleAnimationState((state) => !state) }} className='animation-toggle-on'>
+        <button onClick={() => { toggleAnimationState((state) => !state) }} className={classes['animation-toggle-on']}>
           {AnimationOn ? 'Animation On' : 'Animation Off'}
         </button>
       )}
 
       {/* This is the body of the page */}
-      <div className='container-inner'>
+      <div className={classes['container-inner']}>
         {children}
       </div>
 
