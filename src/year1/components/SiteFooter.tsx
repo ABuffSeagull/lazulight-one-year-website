@@ -1,11 +1,12 @@
+import { Y1LazuType, Y1LiverType } from './PageTypes'
 import classes from './SiteFooter.module.scss'
 
 export default function SiteFooter ({
-  page
+  theme = 'lazulight'
 }: {
-  page: string // 'elira' | 'pomu' | 'finana'
+  theme: Y1LazuType | Y1LiverType
 }): JSX.Element {
-  const footerBorder = classes[`${page}-footer-border`]
+  const footerBorder = classes[`${theme}-footer-border`]
 
   return (
     <>

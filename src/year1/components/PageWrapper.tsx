@@ -9,38 +9,40 @@ import BgAnimationElira from './BgAnimationElira'
 import BgAnimationDcl from './BgAnimationDcl'
 import BgAnimationVn from './BgAnimationVn'
 import LazulightArtBoard from '../assets/ArtBoards/Group Collage 2160 x 1920 Transparent.webp'
+import { Y1HomeType, Y1LiverType, Y1ProjectType, isY1LiverType } from './PageTypes'
 
 export function PageWrapper ({
   children,
-  page,
+  pageTheme,
   animatedBackground = false
 }: {
   children: React.ReactNode
-  page: string
+  pageTheme: Y1HomeType | Y1LiverType | Y1ProjectType
   animatedBackground?: boolean
 }): JSX.Element {
   const [AnimationOn, toggleAnimationState] = React.useState(true)
 
   return (
-    <div className={`container ${page} page-bg-static-${page} page-bg-animation-${page}`}>
+    // For many of these "${pageTheme}-something", no class exists. e.g. if there is no bg animation
+    <div className={`container ${pageTheme} page-bg-static-${pageTheme} page-bg-animation-${pageTheme}`}>
       <SiteHeader />
 
       {/* Background */}
       <div
-        className={`page-bg-animation-${page}-container ${
+        className={`page-bg-animation-${pageTheme}-container ${
           AnimationOn
-            ? `page-bg-animation-${page}-container-on`
-            : `page-bg-animation-${page}-container-off`
+            ? `page-bg-animation-${pageTheme}-container-on`
+            : `page-bg-animation-${pageTheme}-container-off`
         }`}
       >
-        {page === 'pomu' && <BgAnimationPomu />}
-        {page === 'elira' && <BgAnimationElira />}
-        {page === 'finana' && <BgAnimationFinana />}
-        {page === 'vn' && <BgAnimationVn />}
-        {page === 'dcl' && <BgAnimationDcl />}
+        {pageTheme === 'pomu' && <BgAnimationPomu />}
+        {pageTheme === 'elira' && <BgAnimationElira />}
+        {pageTheme === 'finana' && <BgAnimationFinana />}
+        {pageTheme === 'vn' && <BgAnimationVn />}
+        {pageTheme === 'dcl' && <BgAnimationDcl />}
       </div>
 
-      {page === 'home' && (
+      {pageTheme === 'home' && (
         <div className='home-collage'>
           <Image src={LazulightArtBoard} />
         </div>
@@ -57,7 +59,7 @@ export function PageWrapper ({
         {children}
       </div>
 
-      <SiteFooter page={page} />
+      <SiteFooter theme={isY1LiverType(pageTheme) ? pageTheme as Y1LiverType : 'lazulight'} />
     </div>
   )
 }
