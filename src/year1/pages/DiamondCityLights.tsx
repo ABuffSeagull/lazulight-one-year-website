@@ -71,7 +71,7 @@ export default function DiamondCityLights (props: Props): JSX.Element {
             We give permission to all Nijisanji Livers to monetize this cover
             by any means, including livestream and video publication.
           </p>
-          <p>If there are any concerns or enquiries, please contact us by email at <a href='mailto:lazuprojectsteam@lazulight.com'>lazuprojectsteam@lazulight.com</a>.</p>
+          <p>If there are any concerns or enquiries, please contact us by email at <a href='mailto:lazuprojectsteam@gmail.com'>lazuprojectsteam@gmail.com</a>.</p>
         </div>
       </FramedTextbox>
 
