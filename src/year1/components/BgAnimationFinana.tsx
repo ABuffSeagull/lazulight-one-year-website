@@ -1,4 +1,5 @@
 import Image from './Image'
+import pw from './PageWrapper.module.scss'
 
 import FinanaBubble1 from '../assets/BG/Finana-BG-Bubbles1.svg'
 import FinanaFish from '../assets/BG/Finana-BG-Fish.svg'
@@ -23,7 +24,7 @@ function Bubble ({ bodyHeight }: {bodyHeight: number}): JSX.Element {
 
   return (
     <Image
-      className='page-bg-animation-finana-bubble'
+      className={pw['page-bg-animation-finana-bubble']}
       src={FinanaBubble1}
       style={styles}
     />
@@ -58,7 +59,7 @@ export default function BgAnimationFinana (): JSX.Element {
       </div>
       <div>
         {Array.from({ length: finanaFishCount }, (_el, i: number) => (
-          <Image key={'finFish' + i.toString()} className='page-bg-animation-finana-fish' src={FinanaFish} />
+          <Image key={'finFish' + i.toString()} className={pw['page-bg-animation-finana-fish']} src={FinanaFish} />
         ))}
       </div>
     </>

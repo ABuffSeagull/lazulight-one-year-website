@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from './Image'
+import pw from './PageWrapper.module.scss'
 import EliraCloud1 from '../assets/BG/Elira-BG-Cloud1.webp'
 import EliraCloud2 from '../assets/BG/Elira-BG-Cloud2.webp'
 import EliraCloud3 from '../assets/BG/Elira-BG-Cloud3.webp'
@@ -12,16 +13,16 @@ export default function BgAnimationVn (): JSX.Element {
   return (
     <div>
       {Array.from({ length: vnCloudCount / 4 }, (_el, i: number) => (
-        <Image key={'vnCloud1' + i.toString()} className='page-bg-animation-vn-cloud' src={EliraCloud1} />
+        <Image key={'vnCloud1' + i.toString()} className={pw['page-bg-animation-vn-cloud']} src={EliraCloud1} />
       ))}
       {Array.from({ length: vnCloudCount / 4 }, (_el, i: number) => (
-        <Image key={'vnCloud2' + i.toString()} className='page-bg-animation-vn-cloud' src={EliraCloud2} />
+        <Image key={'vnCloud2' + i.toString()} className={pw['page-bg-animation-vn-cloud']} src={EliraCloud2} />
       ))}
       {Array.from({ length: vnCloudCount / 4 }, (_el, i: number) => (
-        <Image key={'vnCloud3' + i.toString()} className='page-bg-animation-vn-cloud' src={EliraCloud3} />
+        <Image key={'vnCloud3' + i.toString()} className={pw['page-bg-animation-vn-cloud']} src={EliraCloud3} />
       ))}
       {Array.from({ length: vnCloudCount / 4 }, (_el, i: number) => (
-        <Image key={'vnCloud4' + i.toString()} className='page-bg-animation-vn-cloud' src={EliraCloud4} />
+        <Image key={'vnCloud4' + i.toString()} className={pw['page-bg-animation-vn-cloud']} src={EliraCloud4} />
       ))}
     </div>
   )

@@ -1,6 +1,6 @@
 import React from 'react'
 import './TalentLayout.scss'
-import './ArtBoardLayout.scss'
+import ab from './ArtBoardLayout.module.scss'
 import FramedTextbox from './FramedTextbox'
 import Image from './Image'
 import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp'
@@ -14,6 +14,7 @@ import FinanaArtBoard from '../assets/ArtBoards/Ryuguard Collage 1080p.webp'
 import LazulightArtBoard from '../assets/ArtBoards/Group Collage 2160 x 1920 Transparent.webp'
 
 import * as messageListImport from '../assets/messageList.json'
+import { Y1LazuType, Y1LiverType } from './PageTypes'
 
 interface MessageRaw {
   name: string
@@ -42,29 +43,23 @@ interface PageOptions {
   artBoard: string
 }
 
-export enum ArtBoardEnum {
-  lazulight,
-  elira,
-  pomu,
-  finana,
-}
-
-interface Props {
-  artBoard: ArtBoardEnum
+export default function ArtBoardLayout ({
+  artBoard,
+  heading
+}: {
+  artBoard: Y1LazuType | Y1LiverType
   heading: string
-}
-
-export default function ArtBoardLayout (props: Props): JSX.Element {
+}): JSX.Element {
   // Extract all messages from JSON file, filter by enabled type, format, then output
   const renderMascotArtistCredits = (): MascotArtist[] => {
     const messageListRaw = messageListImport.all as MessageRaw[]
     const Messages: MascotArtist[] = []
     messageListRaw.forEach((msg: MessageRaw): void => {
       if (
-        (props.artBoard === ArtBoardEnum.elira && Boolean(msg.art_weewa)) ||
-        (props.artBoard === ArtBoardEnum.pomu && Boolean(msg.art_pomudachi)) ||
-        (props.artBoard === ArtBoardEnum.finana && Boolean(msg.art_ryuguard)) ||
-        (props.artBoard === ArtBoardEnum.lazulight &&
+        (artBoard === 'elira' && Boolean(msg.art_weewa)) ||
+        (artBoard === 'pomu' && Boolean(msg.art_pomudachi)) ||
+        (artBoard === 'finana' && Boolean(msg.art_ryuguard)) ||
+        (artBoard === 'lazulight' &&
           (Boolean(msg.art_weewa) ||
             Boolean(msg.art_pomudachi) ||
             Boolean(msg.art_ryuguard)))
@@ -80,21 +75,21 @@ export default function ArtBoardLayout (props: Props): JSX.Element {
 
   // Switch other parameters
   const choosePageOptions = (): PageOptions => {
-    if (props.artBoard === ArtBoardEnum.elira) {
+    if (artBoard === 'elira') {
       return {
         corner: EliraCorner,
         borderStyle: 'elira',
         artBoard: EliraArtBoard
       }
     }
-    if (props.artBoard === ArtBoardEnum.pomu) {
+    if (artBoard === 'pomu') {
       return {
         corner: PomuCorner,
         borderStyle: 'pomu',
         artBoard: PomuArtBoard
       }
     }
-    if (props.artBoard === ArtBoardEnum.finana) {
+    if (artBoard === 'finana') {
       return {
         corner: FinanaCorner,
         borderStyle: 'finana',
@@ -110,15 +105,15 @@ export default function ArtBoardLayout (props: Props): JSX.Element {
   const pageOptions: PageOptions = choosePageOptions()
 
   return (
-    <FramedTextbox corner={pageOptions.corner} border={pageOptions.borderStyle} className='artboard'>
-      <h3 className='text-xl'>{props.heading}</h3>
+    <FramedTextbox corner={pageOptions.corner} border={pageOptions.borderStyle} className={ab.artboard}>
+      <h3 className='text-xl'>{heading}</h3>
       <Image
-        className='artboard-image'
+        className={ab['artboard-image']}
         src={pageOptions.artBoard}
         enableZoom
       />
       <h3>Credits:</h3>
-      <ul className='artboard-credits'>
+      <ul className={`${ab['artboard-credits']} ${ab[`artboard-credits-${artBoard}`]}`}>
         {renderMascotArtistCredits().map((artist, idx) => (
           <li key={idx}>
             {artist.social_url === ''

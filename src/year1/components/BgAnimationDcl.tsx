@@ -1,4 +1,5 @@
 import Image from './Image'
+import pw from './PageWrapper.module.scss'
 
 import CyalumeElira from '../assets/BG/DCL-BG-CyalumeE.webp'
 import CyalumePomu from '../assets/BG/DCL-BG-CyalumeP.webp'
@@ -26,7 +27,7 @@ function Cyalume ({ color, bodyHeight }: { color: 'elira' | 'pomu' | 'finana', b
 
   return (
     <Image
-      className='page-bg-animation-dcl-cyalume'
+      className={pw['page-bg-animation-dcl-cyalume']}
       src={color === 'elira' ? CyalumeElira : (color === 'pomu' ? CyalumePomu : CyalumeFinana)}
       style={styles}
     />
