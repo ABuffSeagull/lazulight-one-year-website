@@ -1,4 +1,5 @@
 import React from 'react'
+import tp from '../components/TalentProfile.module.scss'
 import './TalentLayout.scss'
 
 export default function MessageBoxesLayout ({
@@ -20,7 +21,7 @@ export default function MessageBoxesLayout ({
 
   return (
     <div className='fan-submissions-container'>
-      <h3 className={`talent-title ${titleType}`}>{heading}</h3>
+      <h3 className={`${tp['talent-title']} ${tp[`talent-title-${titleType}`]}`}>{heading}</h3>
       <div className={`${showAllMessages ? 'fan-submissions-box-expanded' : 'fan-submissions-box-faded'}`}>
         <div className='fan-submissions-box'>
           {children}

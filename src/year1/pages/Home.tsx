@@ -8,6 +8,7 @@ import ImportMessages from '../components/ImportMessages'
 import MessageBoxesLayout from '../components/MessageBoxesLayout'
 import MessageBoxesWithCorners from '../components/MessageBoxesWithCorners'
 import hp from '../components/HomePage.module.scss'
+import tp from '../components/TalentProfile.module.scss'
 import '../components/TalentLayout.scss'
 
 export default function Home (): JSX.Element {
@@ -47,7 +48,7 @@ export default function Home (): JSX.Element {
             <Link to={linkData.path}>
               <Image src={linkData.image} />
               <h3
-                className={`talent-title ${linkData.name.toLowerCase()} contrast`}
+                className={`${tp['talent-title']}  ${tp[`talent-title-${linkData.name.toLowerCase()}`]} ${tp['talent-title-contrast']}`}
               >
                 {linkData.name}
               </h3>

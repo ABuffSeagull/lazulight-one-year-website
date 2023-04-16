@@ -10,6 +10,7 @@ import Image from '../components/Image'
 import ImportMessages from '../components/ImportMessages'
 import MessageBoxesLayout from '../components/MessageBoxesLayout'
 import MessageBoxesWithCorners from '../components/MessageBoxesWithCorners'
+import tp from '../components/TalentProfile.module.scss'
 import '../components/ProjectPages.scss'
 import '../components/TalentLayout.scss'
 
@@ -23,7 +24,7 @@ export default function DiamondCityLights (props: Props): JSX.Element {
       {/* Heading */}
       <div className='project-heading-container-imagetext'>
         <Image src={PomuImage} enableZoom />
-        <h1 className='talent-title pomu'>
+        <h1 className={`${tp['talent-title']} ${tp['talent-title-pomu']}`}>
           Diamond City
           <br />
           Lights Cover
