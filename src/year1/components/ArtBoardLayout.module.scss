@@ -38,5 +38,18 @@
         text-decoration: underline;
       }
     }
+
+    &-pomu li {
+      background: hsl(125deg 40% 92%);
+    }
+
+    &-elira li {
+      background: hsl(219deg 40% 92%);
+    }
+
+    &-finana li,
+    &-lazulight li {
+      background: hsl(219deg 40% 92%);
+    }
   }
 }

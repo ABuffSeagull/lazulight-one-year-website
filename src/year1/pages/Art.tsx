@@ -1,5 +1,5 @@
 import React from 'react'
-import ArtBoardLayout, { ArtBoardEnum } from '../components/ArtBoardLayout'
+import ArtBoardLayout from '../components/ArtBoardLayout'
 import MessageBoxesLayout from '../components/MessageBoxesLayout'
 
 import RowOfGifs from '../components/RowOfGifs'
@@ -25,7 +25,7 @@ export default function Art (props: Props): JSX.Element {
       />
 
       <ArtBoardLayout
-        artBoard={ArtBoardEnum.lazulight}
+        artBoard='lazulight'
         heading='Community Collage'
       />
 

@@ -3,7 +3,7 @@ import EliraImage from '../assets/Portraits/Elira-Portrait_cf50.webp?format=png;
 import EliraFrame from '../assets/Corners/Elira-LiverCorner.webp'
 import Weewa from '../assets/Animations/Elira-Animation_500px.gif'
 
-import ArtBoardLayout, { ArtBoardEnum } from '../components/ArtBoardLayout'
+import ArtBoardLayout from '../components/ArtBoardLayout'
 import MessageBoxesLayout from '../components/MessageBoxesLayout'
 import TalentProfile from '../components/TalentProfile'
 import ImportMessages from '../components/ImportMessages'
@@ -31,7 +31,7 @@ export default function Elira (): JSX.Element {
       </TalentProfile>
 
       <ArtBoardLayout
-        artBoard={ArtBoardEnum.elira}
+        artBoard='elira'
         heading='Community Weewa Collage'
       />
 

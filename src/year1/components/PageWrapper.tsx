@@ -1,5 +1,5 @@
 import React from 'react'
-import './PageWrapper.scss'
+import pw from './PageWrapper.module.scss'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import Image from './Image'
@@ -9,55 +9,58 @@ import BgAnimationElira from './BgAnimationElira'
 import BgAnimationDcl from './BgAnimationDcl'
 import BgAnimationVn from './BgAnimationVn'
 import LazulightArtBoard from '../assets/ArtBoards/Group Collage 2160 x 1920 Transparent.webp'
+import { Y1HomeType, Y1LiverType, Y1ProjectType, isY1LiverType } from './PageTypes'
 
 export function PageWrapper ({
   children,
-  page,
+  pageTheme,
   animatedBackground = false
 }: {
   children: React.ReactNode
-  page: string
+  pageTheme: Y1HomeType | Y1LiverType | Y1ProjectType
   animatedBackground?: boolean
 }): JSX.Element {
   const [AnimationOn, toggleAnimationState] = React.useState(true)
 
   return (
-    <div className={`container ${page} page-bg-static-${page} page-bg-animation-${page}`}>
+    // For many of these "${pageTheme}-something", no class exists. e.g. if there is no bg animation
+    // But there are not needed on those pages
+    <div className={`${pw.container} ${pw[pageTheme]} ${pw[`page-bg-static-${pageTheme}`]} ${pw[`page-bg-animation-${pageTheme}`]}`}>
       <SiteHeader />
 
       {/* Background */}
       <div
-        className={`page-bg-animation-${page}-container ${
+        className={`${pw[`page-bg-animation-${pageTheme}-container`]} ${
           AnimationOn
-            ? `page-bg-animation-${page}-container-on`
-            : `page-bg-animation-${page}-container-off`
+            ? `${pw[`page-bg-animation-${pageTheme}-container-on`]}`
+            : `${pw[`page-bg-animation-${pageTheme}-container-off`]}`
         }`}
       >
-        {page === 'pomu' && <BgAnimationPomu />}
-        {page === 'elira' && <BgAnimationElira />}
-        {page === 'finana' && <BgAnimationFinana />}
-        {page === 'vn' && <BgAnimationVn />}
-        {page === 'dcl' && <BgAnimationDcl />}
+        {pageTheme === 'pomu' && <BgAnimationPomu />}
+        {pageTheme === 'elira' && <BgAnimationElira />}
+        {pageTheme === 'finana' && <BgAnimationFinana />}
+        {pageTheme === 'vn' && <BgAnimationVn />}
+        {pageTheme === 'dcl' && <BgAnimationDcl />}
       </div>
 
-      {page === 'home' && (
-        <div className='home-collage'>
+      {pageTheme === 'home' && (
+        <div className={pw['home-collage']}>
           <Image src={LazulightArtBoard} />
         </div>
       )}
 
       {animatedBackground && (
-        <button onClick={() => { toggleAnimationState((state) => !state) }} className='animation-toggle-on'>
+        <button onClick={() => { toggleAnimationState((state) => !state) }} className={pw['animation-toggle-on']}>
           {AnimationOn ? 'Animation On' : 'Animation Off'}
         </button>
       )}
 
       {/* This is the body of the page */}
-      <div className='container-inner'>
+      <div className={pw['container-inner']}>
         {children}
       </div>
 
-      <SiteFooter page={page} />
+      <SiteFooter theme={isY1LiverType(pageTheme) ? pageTheme as Y1LiverType : 'lazulight'} />
     </div>
   )
 }
