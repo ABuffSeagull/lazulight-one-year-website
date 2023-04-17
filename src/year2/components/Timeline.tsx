@@ -34,9 +34,13 @@ interface TimelineProps {
 }
 
 export function Timeline ({ memories }: TimelineProps): JSX.Element {
+  const [itemHeights, setItemHeights] = React.useState(
+    {} as { [key: number]: number }
+  )
+
   return (
-    <div className={classes.timelineRoot}>
-      <ul className={classes.timelineItems}>
+    <div className={classes['timeline-root']}>
+      <ul className={classes['timeline-items']}>
         {memories.map((memory, i) => (
           <TimelineItem key={i} memory={memory} />
         ))}
@@ -64,12 +68,12 @@ function TimelineItem ({ memory }: TimelineItemProps): JSX.Element {
     <li
       className={
         memory.type === 'youtube' || memory.type === 'twitter'
-          ? `${classes.item} ${classes.withEmbed} hi`
+          ? `${classes.item} ${classes['with-embed']} hi`
           : classes.item
       }
       style={itemStyle}
     >
-      <div className={classes.itemTitle}>
+      <div className={classes['item-title']}>
         {memory.title} &bull;{' '}
         {memory.submitterSocialUrl !== undefined &&
         memory.submitterSocialUrl !== ''
@@ -80,11 +84,11 @@ function TimelineItem ({ memory }: TimelineItemProps): JSX.Element {
               memory.submitterName
             )}
       </div>
-      <div className={classes.messageRow}>
-        <div className={classes.itemDate}>
+      <div className={classes['message-row']}>
+        <div className={classes['item-date']}>
           <div className={classes.date}>{formatDate(memory.date)}</div>
         </div>
-        <div className={classes.contentBox}>
+        <div className={classes['content-box']}>
           {memory.type === 'youtube'
             ? (
               <YouTubeMemory memory={memory} />
@@ -143,9 +147,9 @@ function MessageMemory ({ memory }: { memory: MessageMemoryType }): JSX.Element 
 function YouTubeMemory ({ memory }: { memory: YouTubeMemoryType }): JSX.Element {
   // TODO: dynamic sizing based on available screen width?
   return (
-    <div className={classes.youtubeContainer}>
+    <div className={classes['youtube-container']}>
       <iframe
-        className={classes.youtubeEmbed}
+        className={classes['youtube-embed']}
         src={`https://www.youtube.com/embed/${memory.videoId}`}
         title='YouTube video player'
         frameBorder='0'
