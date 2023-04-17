@@ -50,6 +50,16 @@ interface TimelineItemProps {
 }
 
 function TimelineItem ({ memory }: TimelineItemProps): JSX.Element {
+  const itemStyle: React.CSSProperties = {
+    '--stem-color': `${
+      {
+        elira: '#fd83f2',
+        finana: '#a8f7f4',
+        pomu: '#ffd889'
+      }[memory.member]
+    }`
+  } as any
+
   return (
     <li
       className={
@@ -57,21 +67,12 @@ function TimelineItem ({ memory }: TimelineItemProps): JSX.Element {
           ? `${classes.item} ${classes.withEmbed} hi`
           : classes.item
       }
-      style={
-        {
-          '--stem-color': `${
-            memory.member === 'elira'
-              ? '#fd83f2'
-              : memory.member === 'finana'
-              ? '#a8f7f4'
-              : '#ffd889'
-          }`
-        } as React.CSSProperties
-      }
+      style={itemStyle}
     >
       <div className={classes.itemTitle}>
         {memory.title} &bull;{' '}
-        {memory.submitterSocialUrl !== undefined && memory.submitterSocialUrl !== ''
+        {memory.submitterSocialUrl !== undefined &&
+        memory.submitterSocialUrl !== ''
           ? (
             <a href={memory.submitterSocialUrl}>{memory.submitterName}</a>
             )
@@ -129,7 +130,9 @@ Components for rendering different memories
 function MessageMemory ({ memory }: { memory: MessageMemoryType }): JSX.Element {
   return (
     <>
-      {memory.imgUrl !== undefined && memory.imgUrl !== '' && <img src={memory.imgUrl} />}
+      {memory.imgUrl !== undefined && memory.imgUrl !== '' && (
+        <img src={memory.imgUrl} />
+      )}
       {memory.message.split('\n').map((line, i) => (
         <p key={i}>{line}</p>
       ))}
