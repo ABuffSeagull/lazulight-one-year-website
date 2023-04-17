@@ -3,7 +3,7 @@ import PomuImage from '../assets/Portraits/Pomu-Portrait-WN_cf50.webp?format=png
 import PomuFrame from '../assets/Corners/Pomu-LiverCorner.webp'
 import Pomudachi from '../assets/Animations/Pomu-Animation_500px.gif'
 
-import ArtBoardLayout, { ArtBoardEnum } from '../components/ArtBoardLayout'
+import ArtBoardLayout from '../components/ArtBoardLayout'
 import MessageBoxesLayout from '../components/MessageBoxesLayout'
 import TalentProfile from '../components/TalentProfile'
 import ImportMessages from '../components/ImportMessages'
@@ -31,7 +31,7 @@ function Pomu (): JSX.Element {
       </TalentProfile>
 
       <ArtBoardLayout
-        artBoard={ArtBoardEnum.pomu}
+        artBoard='pomu'
         heading='Community Pomudachi Collage'
       />
 

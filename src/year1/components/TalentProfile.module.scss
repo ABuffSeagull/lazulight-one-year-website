@@ -1,0 +1,29 @@
+.talent-title {
+  font-size: clamp(1rem, 7vw, 5rem);
+  text-align: center;
+  width: 100%;
+  margin-top: 2rem;
+  line-height: 1;
+  font-weight: 900;
+  color: hsl(207deg 42% 80%);
+  filter: drop-shadow(0 0 0.5rem hsl(210deg 9% 13%));
+
+  &-pomu {
+    color: #ffd889;
+    filter: drop-shadow(0 0 0.5rem #a6a550);
+  }
+
+  &-finana {
+    color: #a8f7f4;
+    filter: drop-shadow(0 0 0.5rem #609795);
+  }
+
+  &-elira {
+    color: #fd83f3;
+    filter: drop-shadow(0 0 0.5rem #eb60df);
+  }
+
+  &-contrast {
+    filter: drop-shadow(0 0 0.5rem #552c52);
+  }
+}

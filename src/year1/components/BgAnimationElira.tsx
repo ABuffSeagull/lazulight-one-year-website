@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from './Image'
+import pw from './PageWrapper.module.scss'
 import EliraCloud1 from '../assets/BG/Elira-BG-Cloud1.webp'
 import EliraCloud2 from '../assets/BG/Elira-BG-Cloud2.webp'
 import EliraCloud3 from '../assets/BG/Elira-BG-Cloud3.webp'
@@ -16,21 +17,21 @@ export default function BgAnimationElira (): JSX.Element {
       {/* Separate div's because of the nth-child selector */}
       <div>
         {Array.from({ length: eliraCloudCount / 4 }, (_el, i: number) => (
-          <Image key={'eliCloud1' + i.toString()} className='page-bg-animation-elira-cloud' src={EliraCloud1} />
+          <Image key={'eliCloud1' + i.toString()} className={pw['page-bg-animation-elira-cloud']} src={EliraCloud1} />
         ))}
         {Array.from({ length: eliraCloudCount / 4 }, (_el, i: number) => (
-          <Image key={'eliCloud2' + i.toString()} className='page-bg-animation-elira-cloud' src={EliraCloud2} />
+          <Image key={'eliCloud2' + i.toString()} className={pw['page-bg-animation-elira-cloud']} src={EliraCloud2} />
         ))}
         {Array.from({ length: eliraCloudCount / 4 }, (_el, i: number) => (
-          <Image key={'eliCloud3' + i.toString()} className='page-bg-animation-elira-cloud' src={EliraCloud3} />
+          <Image key={'eliCloud3' + i.toString()} className={pw['page-bg-animation-elira-cloud']} src={EliraCloud3} />
         ))}
         {Array.from({ length: eliraCloudCount / 4 }, (_el, i: number) => (
-          <Image key={'eliCloud4' + i.toString()} className='page-bg-animation-elira-cloud' src={EliraCloud4} />
+          <Image key={'eliCloud4' + i.toString()} className={pw['page-bg-animation-elira-cloud']} src={EliraCloud4} />
         ))}
       </div>
       <div>
         {Array.from({ length: eliraStarCount }, (_el, i: number) => (
-          <Image key={'eliStar' + i.toString()} className='page-bg-animation-elira-star' src={EliraStar1} />
+          <Image key={'eliStar' + i.toString()} className={pw['page-bg-animation-elira-star']} src={EliraStar1} />
         ))}
       </div>
     </div>

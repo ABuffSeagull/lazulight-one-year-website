@@ -1,10 +1,6 @@
 @use "../variables" as *;
 
 .home {
-  a {
-    text-decoration: none;
-  }
-
   &-heading {
     font-size: clamp(1rem, 7vw, 8rem);
     text-align: center;
@@ -47,6 +43,10 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 2rem;
+
+      a {
+        text-decoration: none;
+      }
     }
 
     &-liver {
@@ -74,8 +74,4 @@
       }
     }
   }
-}
-
-.year {
-  color: #ffb700;
 }

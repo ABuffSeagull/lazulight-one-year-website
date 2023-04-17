@@ -3,7 +3,7 @@ import FinanaImage from '../assets/Portraits/Finana-Portrait_cf50.webp?format=pn
 import FinanaFrame from '../assets/Corners/Finana-LiverCorner.webp'
 import Ryuguard from '../assets/Animations/Finana-AnimationA_500px.gif'
 
-import ArtBoardLayout, { ArtBoardEnum } from '../components/ArtBoardLayout'
+import ArtBoardLayout from '../components/ArtBoardLayout'
 import MessageBoxesLayout from '../components/MessageBoxesLayout'
 import TalentProfile from '../components/TalentProfile'
 import ImportMessages from '../components/ImportMessages'
@@ -31,7 +31,7 @@ export default function Finana (): JSX.Element {
       </TalentProfile>
 
       <ArtBoardLayout
-        artBoard={ArtBoardEnum.finana}
+        artBoard='finana'
         heading='Community Ryuguard Collage'
       />
 

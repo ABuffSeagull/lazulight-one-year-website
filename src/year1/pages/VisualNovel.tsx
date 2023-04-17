@@ -195,7 +195,7 @@ export default function VisualNovel (props: Props): JSX.Element {
             anniversary. The creators are in no way related to ANYCOLOR Inc,
             Nijisanji, or the talents portrayed in this game.
           </p>
-          <p>If there are any concerns or enquiries, please contact us by email at <a href='mailto:lazuprojectsteam@lazulight.com'>lazuprojectsteam@lazulight.com</a>.</p>
+          <p>If there are any concerns or enquiries, please contact us by email at <a href='mailto:lazuprojectsteam@gmail.com'>lazuprojectsteam@gmail.com</a>.</p>
 
           <h3>How to Play</h3>
           <p>The full game is freely playable either online or by download. Click the buttons below to play.</p>

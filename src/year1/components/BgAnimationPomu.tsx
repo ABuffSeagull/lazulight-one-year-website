@@ -1,4 +1,5 @@
 import Image from './Image'
+import pw from './PageWrapper.module.scss'
 
 import PomuCoinGold from '../assets/BG/Pomu-BG-PomuCoinGold.svg'
 import PomuCoinSilver from '../assets/BG/Pomu-BG-PomuCoinSilver.svg'
@@ -25,7 +26,7 @@ function PomuCoin ({ color, bodyHeight }: { color: 'gold' | 'silver', bodyHeight
 
   return (
     <Image
-      className='page-bg-animation-pomu-coin'
+      className={pw['page-bg-animation-pomu-coin']}
       src={color === 'gold' ? PomuCoinGold : PomuCoinSilver}
       style={styles}
     />

@@ -50,93 +50,93 @@ export default function App (): JSX.Element {
           e.g. fnf-border does not exist resulting in the element missing the border
         */}
         <Route path='/anniversary1/elira'>
-          <Year1PageWrapper page='elira' animatedBackground>
+          <Year1PageWrapper pageTheme='elira' animatedBackground>
             <Year1Elira />
           </Year1PageWrapper>
         </Route>
         <Route path='/anniversary1/finana'>
-          <Year1PageWrapper page='finana' animatedBackground>
+          <Year1PageWrapper pageTheme='finana' animatedBackground>
             <Year1Finana />
           </Year1PageWrapper>
         </Route>
         <Route path='/anniversary1/pomu'>
-          <Year1PageWrapper page='pomu' animatedBackground>
+          <Year1PageWrapper pageTheme='pomu' animatedBackground>
             <Year1Pomu />
           </Year1PageWrapper>
         </Route>
         <Route path='/anniversary1/project-fnf'>
-          <Year1PageWrapper page='fnf'>
+          <Year1PageWrapper pageTheme='fnf'>
             <Year1Fnf page='fnf' />
           </Year1PageWrapper>
         </Route>
         <Route path='/anniversary1/project-dcl'>
-          <Year1PageWrapper page='dcl' animatedBackground>
+          <Year1PageWrapper pageTheme='dcl' animatedBackground>
             <Year1DiamondCityLights page='dcl' />
           </Year1PageWrapper>
         </Route>
         <Route path='/anniversary1/project-vn'>
-          <Year1PageWrapper page='vn' animatedBackground>
+          <Year1PageWrapper pageTheme='vn' animatedBackground>
             <Year1VisualNovel page='vn' />
           </Year1PageWrapper>
         </Route>
         {/*
           TODO:
           I intentionally give the following pages the incorrect 'page' variable - It's only used for styling
-          This should really be changed
+          This should really be changed (half way there now!)
         */}
         <Route path='/anniversary1/all-art'>
-          <Year1PageWrapper page='finana' animatedBackground>
+          <Year1PageWrapper pageTheme='finana' animatedBackground>
             <Year1Art page='finana' />
           </Year1PageWrapper>
         </Route>
         <Route path='/anniversary1/all-messages'>
-          <Year1PageWrapper page='elira' animatedBackground>
+          <Year1PageWrapper pageTheme='elira' animatedBackground>
             <Year1Messages page='elira' />
           </Year1PageWrapper>
         </Route>
         <Route path='/anniversary1/about'>
-          <Year1PageWrapper page='pomu' animatedBackground>
+          <Year1PageWrapper pageTheme='pomu' animatedBackground>
             <Year1About page='pomu' />
           </Year1PageWrapper>
         </Route>
         <Route path='/anniversary1'>
-          <Year1PageWrapper page='home'>
+          <Year1PageWrapper pageTheme='home'>
             <Year1Home />
           </Year1PageWrapper>
         </Route>
 
         <Route path='/anniversary2/elira'>
-          <Year2PageWrapper page='elira'>
+          <Year2PageWrapper pageTheme='elira'>
             <Year2Elira />
           </Year2PageWrapper>
         </Route>
         <Route path='/anniversary2/finana'>
-          <Year2PageWrapper page='finana'>
+          <Year2PageWrapper pageTheme='finana'>
             <Year2Finana />
           </Year2PageWrapper>
         </Route>
         <Route path='/anniversary2/pomu'>
-          <Year2PageWrapper page='pomu'>
+          <Year2PageWrapper pageTheme='pomu'>
             <Year2Pomu />
           </Year2PageWrapper>
         </Route>
         <Route path='/anniversary2/project-doujin'>
-          <Year2PageWrapper page='doujin'>
+          <Year2PageWrapper pageTheme='doujin'>
             <Year2Doujin />
           </Year2PageWrapper>
         </Route>
         <Route path='/anniversary2/project-song'>
-          <Year2PageWrapper page='song'>
+          <Year2PageWrapper pageTheme='song'>
             <Year2Song />
           </Year2PageWrapper>
         </Route>
         <Route path='/anniversary2/about'>
-          <Year2PageWrapper page='about'>
+          <Year2PageWrapper pageTheme='about'>
             <Year2About />
           </Year2PageWrapper>
         </Route>
         <Route path='/anniversary2'>
-          <Year2PageWrapper page='home'>
+          <Year2PageWrapper pageTheme='home'>
             <Year2Home />
           </Year2PageWrapper>
         </Route>
