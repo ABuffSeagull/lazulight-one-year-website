@@ -141,38 +141,31 @@ export default function VisualNovel (props: Props): JSX.Element {
 
         {/* Description & Download */}
         <div className='project-description-container'>
-          <h3>A LazuLight Visual Novel</h3>
+        <h3>Story</h3>
+          <p>Like a star pulled from the skies, a bird torn of its wings, you were bound to the Earth that day. You once ruled the skies, feeling the air rush through your hair as you flew between the clouds, clothes fluttering in the wind as you raced higher and higher. However, that's all in the past now, ever since the accident.</p>
+          <p>Now, completely opposite to what you once felt, the world is monotonous, gray, and dead. You find no meaning in life, as if frozen in time, now that your freedom was taken away from you.</p>
+          <p> However, that would all come to change with three fated encounters. The appearance of an old acquaintance from the track team, a reserved class president that seems to be hiding something, and a kindred soul seeking solace in the silence.</p>
+          <p>Faced with these new people who suddenly appeared in your life, you have to make the choice. Do you wallow in your failure in this monochrome prison, or do you take their hand and repaint this world?</p>
+          <p>By their side, the hands of the clock start ticking once more.</p>
+
+          <h3>Content</h3>
+          <p>“Lazulight: By Your Side” is an English fan-made visual novel for Lazulight. Despite being made by fans, the length, scope, and quality of the story, design, and art showcase the tremendous amount of effort devoted to the project, culminating in a full-length game that we are proud of as volunteer developers.</p>
+          <p>Not only is the game comprised of over 96000 words (for reference “The Hobbit” by J. R. R. Tolkien has only 95000 words), the game also features custom-made sprites for all the Lazulight talents and other Nijisanji livers who are present, along with over 50 backgrounds and over 30 unique CGs to accompany them. In addition to the art, there are also over 50 individually composed BGMs that play throughout the visual novel to round out the experience.</p>
+          <p>The game is around 7 hours in length with the estimated duration for each section of the game broken down below. Note that the length can vary depending on the reading speed of the player and the pace at which the player decides to play the game.</p>
           <p>
-            Like a star pulled from the skies, a bird torn of its wings, you
-            were bound to the Earth that day. You once ruled the skies,
-            feeling the air rush through your hair as you flew between the
-            clouds, clothes fluttering in the wind as you raced higher and
-            higher. However, that's all in the past now, ever since the
-            accident.{' '}
+            <ul>
+              <li className="vn-route-list-item">Common route: 1 hour</li>
+              <li className="vn-route-list-item">Pomu route: 1 hour 30 minutes</li>
+              <li className="vn-route-list-item">Elira route: 2 hours</li>
+              <li className="vn-route-list-item">Finana route: 2 hours 15 minutes</li>
+              <li className="vn-route-list-item">??? route: 30 minutes</li>
+            </ul>
           </p>
-          <p>
-            Now, completely opposite to what you once felt, the world is
-            monotonous, gray, and dead. You find no meaning in life, as if
-            frozen in time, now that your freedom was taken away from you.{' '}
-          </p>
-          <p>
-            However, that would all come to change with three fated
-            encounters. The appearance of an old acquaintance from the track
-            team, a reserved class president that seems to be hiding
-            something, and a kindred soul seeking solace in the silence.
-          </p>
-          <p>
-            Faced with these new people who suddenly appeared in your life,
-            you have to make the choice. Do you wallow in your failure in this
-            monochrome prison, or do you take their hand and repaint this
-            world?
-          </p>
-          <p>
-            By their side, the hands of the clock start ticking once more.
-          </p>
+          <p>The game features multiple endings, good and bad, depending on choices made during the game. Reaching a good ending unlocks the gallery to view all the art assets seen so far (along with additional art!) and the music room to replay all the BGMs</p>
+          <p>The downloadable version and the web version are identical in content with the sole exception that the videos and music room for the web redirect to videos on YouTube instead due to software limitations. As RenPyWeb is still in beta, the web version may be less stable than the desktop version, so we recommend playing the desktop version for the best experience.</p>
+          <p><b>Content Warning:</b> Some routes contain certain horror and suggestive elements.</p>
 
           <h3>Notice</h3>
-          <p><b>Content Warning:</b> Some routes contain certain horror and suggestive elements.</p>
           <p>
             <b>Copyright &amp; Permissions: </b>
             We give permission to all Nijisanji Livers to monetize playing
@@ -210,6 +203,7 @@ export default function VisualNovel (props: Props): JSX.Element {
 
           <p>Playable on desktop or phone. Recommended browser: Google Chrome</p>
           <p>Save data is retained between sessions. To retain save data, do not play in incognito mode, clear your browsing data, or change browser between sessions. You may wish to use the export/import save data feature in case of accidental data loss.</p>
+          <p><b>Version 1.1:</b> Fixed a crash that would happen when entering the Music Room.</p>
 
           <h3>Download (1GB Approx)</h3>
           <Countdown date={releaseDate} renderer={countdownRenderer}>
@@ -223,7 +217,7 @@ export default function VisualNovel (props: Props): JSX.Element {
               </a>
               <div>
                 <a href='/downloads/LazulightVN-1.0-pc.zip' download>
-                  <button className='project-download-button lazulight-border'>Download for Windows (Mirror) </button>
+                  <button className='project-download-button lazulight-border'>Download for Windows (Mirror)</button>
                 </a>
 
                 <a href='/downloads/LazulightVN-1.0-mac.zip' download>
@@ -479,7 +473,7 @@ function VisualNovelCredits (): JSX.Element {
       </ul>
       <h4>Visual Novel Engine</h4>
       <ul>
-        <li><p>Ren’Py</p></li>
+        <li><p><a href="https://www.renpy.org/">Ren’Py</a></p></li>
       </ul>
 
       <h3>BGM Team</h3>
