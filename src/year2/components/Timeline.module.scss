@@ -10,7 +10,6 @@
   --stem-height: 4px;
   --max-content-width: 600px;
   --mobile-padding: 10px;
-
   --stem-color: grey;
 }
 
@@ -21,6 +20,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
+
   // Appear below all other content
   z-index: -100;
 }
@@ -42,6 +42,7 @@
 // This isn't safe if we have very short one-line messages, but that probably won't happen?
 // We can revisit it when we have the finalized timeline content.
 // ==============================================================
+
 /*
 .item {
   min-height: 8rem;
@@ -51,6 +52,7 @@
   margin-top: -5rem !important;
 }
 */
+
 // ==============================================================
 
 .item-title {
@@ -135,6 +137,7 @@
   // All items point right
   .item {
     max-width: 100%;
+
     .message-row {
       flex-direction: row;
 
@@ -199,6 +202,7 @@
 
     .message-row {
       flex-direction: row-reverse;
+
       &::before {
         margin-right: calc(-0.5 * var(--dot-diameter));
       }
@@ -217,45 +221,8 @@ Embedded content
 ================
 */
 
-// Modified from
+// If we end up going with embedded HTML for tweets, use this for styling
 // https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/css-for-embedded-tweets
-// We don't currently use this as it requires every tweet to be published using publish.twitter.com
-// Instead we use an empty blockquote and let the twitter embed script fill it.
-:global {
-  blockquote.twitter-tweet {
-    display: inline-block;
-    font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 16px;
-    border-color: #eee #ddd #bbb;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    // box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-    margin: 10px 5px;
-    padding: 0 16px 16px 16px;
-    max-width: 468px;
-  }
-
-  blockquote.twitter-tweet p {
-    font-size: 16px;
-    font-weight: normal;
-    line-height: 20px;
-  }
-
-  blockquote.twitter-tweet a {
-    color: inherit;
-    font-weight: normal;
-    text-decoration: none;
-    outline: 0 none;
-  }
-
-  blockquote.twitter-tweet a:hover,
-  blockquote.twitter-tweet a:focus {
-    text-decoration: underline;
-  }
-}
 
 .youtube-container {
   position: relative;
