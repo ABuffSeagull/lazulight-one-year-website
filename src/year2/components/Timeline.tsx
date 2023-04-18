@@ -34,15 +34,38 @@ interface TimelineProps {
 }
 
 export function Timeline ({ memories }: TimelineProps): JSX.Element {
-  const [itemHeights, setItemHeights] = React.useState(
-    {} as { [key: number]: number }
-  )
+  const [itemHeights, setItemHeights] = React.useState<{
+    [key: number]: number
+  }>({})
 
   return (
     <div className={classes['timeline-root']}>
       <ul className={classes['timeline-items']}>
         {memories.map((memory, i) => (
-          <TimelineItem key={i} memory={memory} />
+          <TimelineItem
+            key={i}
+            ref={(node) => {
+              if (node != null) {
+                new ResizeObserver(([entry]) => {
+                  console.log('resize')
+                  setItemHeights((itemHeights) => {
+                    console.log(entry.borderBoxSize)
+                    const newHeight = entry.borderBoxSize[0].blockSize
+                    if (newHeight !== itemHeights[i]) {
+                      return {
+                        ...itemHeights,
+                        [i]: newHeight
+                      }
+                    } else {
+                      return itemHeights
+                    }
+                  })
+                }).observe(node)
+              }
+            }}
+            verticalOffset={(itemHeights[i - 1] ?? 0) / 3}
+            memory={memory}
+          />
         ))}
       </ul>
     </div>
@@ -51,60 +74,65 @@ export function Timeline ({ memories }: TimelineProps): JSX.Element {
 
 interface TimelineItemProps {
   memory: MemoryType
+  verticalOffset: number
 }
 
-function TimelineItem ({ memory }: TimelineItemProps): JSX.Element {
-  const itemStyle: React.CSSProperties = {
-    '--stem-color': `${
-      {
-        elira: '#fd83f2',
-        finana: '#a8f7f4',
-        pomu: '#ffd889'
-      }[memory.member]
-    }`
-  } as any
+const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
+  ({ memory, verticalOffset }, ref): JSX.Element => {
+    const itemStyle: React.CSSProperties = {
+      '--stem-color': `${
+        {
+          elira: '#fd83f2',
+          finana: '#a8f7f4',
+          pomu: '#ffd889'
+        }[memory.member]
+      }`,
+      marginTop: `-${verticalOffset}px`
+    } as any
 
-  return (
-    <li
-      className={
-        memory.type === 'youtube' || memory.type === 'twitter'
-          ? `${classes.item} ${classes['with-embed']} hi`
-          : classes.item
-      }
-      style={itemStyle}
-    >
-      <div className={classes['item-title']}>
-        {memory.title} &bull;{' '}
-        {memory.submitterSocialUrl !== undefined &&
-        memory.submitterSocialUrl !== ''
-          ? (
-            <a href={memory.submitterSocialUrl}>{memory.submitterName}</a>
-            )
-          : (
-              memory.submitterName
-            )}
-      </div>
-      <div className={classes['message-row']}>
-        <div className={classes['item-date']}>
-          <div className={classes.date}>{formatDate(memory.date)}</div>
-        </div>
-        <div className={classes['content-box']}>
-          {memory.type === 'youtube'
+    return (
+      <li
+        ref={ref}
+        className={
+          memory.type === 'youtube' || memory.type === 'twitter'
+            ? `${classes.item} ${classes['with-embed']} hi`
+            : classes.item
+        }
+        style={itemStyle}
+      >
+        <div className={classes['item-title']}>
+          {memory.title} &bull;{' '}
+          {memory.submitterSocialUrl !== undefined &&
+          memory.submitterSocialUrl !== ''
             ? (
-              <YouTubeMemory memory={memory} />
+              <a href={memory.submitterSocialUrl}>{memory.submitterName}</a>
               )
-            : memory.type === 'twitter'
-              ? (
-                <TwitterMemory memory={memory} />
-                )
-              : (
-                <MessageMemory memory={memory} />
-                )}
+            : (
+                memory.submitterName
+              )}
         </div>
-      </div>
-    </li>
-  )
-}
+        <div className={classes['message-row']}>
+          <div className={classes['item-date']}>
+            <div className={classes.date}>{formatDate(memory.date)}</div>
+          </div>
+          <div className={classes['content-box']}>
+            {memory.type === 'youtube'
+              ? (
+                <YouTubeMemory memory={memory} />
+                )
+              : memory.type === 'twitter'
+                ? (
+                  <TwitterMemory memory={memory} />
+                  )
+                : (
+                  <MessageMemory memory={memory} />
+                  )}
+          </div>
+        </div>
+      </li>
+    )
+  }
+)
 
 function formatDate (date: Date): string {
   return `${
