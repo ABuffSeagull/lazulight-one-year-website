@@ -62,8 +62,7 @@
 
   &-finana {
     background-image: linear-gradient(to bottom, #4dbbbd60, #1c374aa0),
-      // Semitransparent overlay
-      url("../assets/BG/Finana-BG-Left_cf50.webp"),
+      /* Semitransparent overlay */ url("../assets/BG/Finana-BG-Left_cf50.webp"),
       url("../assets/BG/Finana-BG-Right_cf50.webp"),
       linear-gradient(to bottom, #4dbbbd, #1c374a);
     background-color: #83e5e6; // Backup in case the image doesn't load
@@ -145,6 +144,7 @@
     $elirastar-count: 60; // Must be greater than/equal to the number of stars in the html
     $elirastar-height: 2%;
     $elirastar-duration-normal: 5;
+
     @for $i from 1 through $eliracloud-count {
       &-cloud:nth-child(#{$i}) {
         animation-name: eliracloud#{$i};
@@ -158,6 +158,7 @@
         height: $eliracloud-height;
         bottom: 40% + math.random() * 60%; // Top half only
       }
+
       @keyframes eliracloud#{$i} {
         from {
           transform: translateX(-125vw);
@@ -168,6 +169,7 @@
         }
       }
     }
+
     @for $id from 1 through $elirastar-count {
       &-star:nth-child(#{$id}) {
         animation-name: elirastar#{$id};
@@ -178,6 +180,7 @@
         top: 50% + math.random() * 50%; // Bottom half only
         left: math.random() * 100%;
       }
+
       @keyframes elirastar#{$id} {
         from {
           opacity: 0;
@@ -218,6 +221,7 @@
     $finanafish-height: 5%;
     $finanafish-duration-min: 5;
     $finanafish-duration-extra: 10;
+
     @for $i from 1 through $finanafish-count {
       &-fish:nth-child(#{$i}) {
         animation-name: finanafish#{$i};
@@ -232,6 +236,7 @@
         left: 100px;
         bottom: math.random() * 100%;
       }
+
       @keyframes finanafish#{$i} {
         from {
           transform: translateX(100vw);
@@ -270,6 +275,7 @@
     $vn-cloud-height: 10%;
     $vn-cloud-duration-min: 20;
     $vn-cloud-duration-extra: 40;
+
     @for $i from 1 through $vn-cloud-count {
       &-cloud:nth-child(#{$i}) {
         animation-name: vncloud#{$i};
@@ -283,6 +289,7 @@
         height: $vn-cloud-height;
         bottom: math.random() * 100%;
       }
+
       @keyframes vncloud#{$i} {
         from {
           left: -50%;
@@ -345,7 +352,7 @@
     background-color: #bfdfd7;
   }
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     margin-top: 1.5rem;
   }
 }
