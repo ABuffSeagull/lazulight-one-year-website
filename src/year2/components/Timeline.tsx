@@ -47,9 +47,9 @@ export function Timeline ({ memories }: TimelineProps): JSX.Element {
             ref={(node) => {
               if (node != null) {
                 new ResizeObserver(([entry]) => {
-                  console.log('resize')
+                  // console.log('resize')
                   setItemHeights((itemHeights) => {
-                    console.log(entry.borderBoxSize)
+                    // console.log(entry.borderBoxSize)
                     const newHeight = entry.borderBoxSize[0].blockSize
                     if (newHeight !== itemHeights[i]) {
                       return {
