@@ -5,7 +5,7 @@ import FinanaBubble1 from '../assets/BG/Finana-BG-Bubbles1.svg'
 import FinanaFish from '../assets/BG/Finana-BG-Fish.svg'
 import { useEffect, useRef, useState } from 'react'
 
-function Bubble ({ bodyHeight }: {bodyHeight: number}): JSX.Element {
+function Bubble ({ bodyHeight }: { bodyHeight: number }): JSX.Element {
   // Heavy use of useRef to avoid Math.random() calls on every render
 
   const left = useRef(Math.random() * 100)

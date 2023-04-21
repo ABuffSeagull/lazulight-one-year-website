@@ -78,7 +78,7 @@
         height: calc(100vh - 6rem);
       }
 
-      @media (max-aspect-ratio: 4/5) {
+      @media (aspect-ratio <= 4/5) {
         height: auto;
       }
 
@@ -163,7 +163,7 @@
     color: inherit;
     transition: color 75ms ease-out;
 
-    @media (max-width: 600px) {
+    @media (width <= 600px) {
       margin-right: 0;
     }
 
@@ -333,6 +333,7 @@
         }
       }
     }
+
     @media (max-width: $bp-mobile) {
       ul li {
         grid-column: span 12;

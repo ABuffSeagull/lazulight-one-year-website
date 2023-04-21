@@ -56,7 +56,7 @@
   width: 8rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (width <= 768px) {
   .open-header {
     display: flex;
   }
@@ -144,7 +144,7 @@
   &-mobile-only {
     display: none;
 
-    @media (max-width: 768px) {
+    @media (width <= 768px) {
       display: flex;
     }
   }
@@ -152,7 +152,7 @@
   &-desktop-only {
     display: flex;
 
-    @media (max-width: 768px) {
+    @media (width <= 768px) {
       display: none;
     }
   }
@@ -195,7 +195,7 @@
 
     // box-shadow: 0 0 19px 0 rgb(123 113 130 / 8%);
 
-    @media (max-width: 768px) {
+    @media (width <= 768px) {
       display: none;
     }
   }
