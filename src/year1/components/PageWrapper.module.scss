@@ -62,7 +62,7 @@
 
   &-finana {
     background-image: linear-gradient(to bottom, #4dbbbd60, #1c374aa0),
-      // Semitransparent overlay
+      /* Semitransparent overlay*/
       url("../assets/BG/Finana-BG-Left_cf50.webp"),
       url("../assets/BG/Finana-BG-Right_cf50.webp"),
       linear-gradient(to bottom, #4dbbbd, #1c374a);
@@ -345,7 +345,7 @@
     background-color: #bfdfd7;
   }
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     margin-top: 1.5rem;
   }
 }

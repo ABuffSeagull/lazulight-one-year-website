@@ -120,7 +120,7 @@
   align-self: center;
 }
 
-@media (max-width: 1200px) {
+@media (width <= 1200px) {
   .timeline-root {
     padding: var(--mobile-padding);
   }
@@ -166,7 +166,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (width >= 1200px) {
   // Center trunk
   .timeline-root::before {
     left: calc(50% - var(--trunk-width) / 2);
