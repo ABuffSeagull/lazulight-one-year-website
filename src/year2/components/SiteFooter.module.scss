@@ -1,9 +1,9 @@
-@use "../../year1/variables.scss" as *;
+@use "../variables.scss" as *;
 
 .footer {
   width: 100%;
   padding: 5vw 10vw;
-  background-color: $background-grey;
+  background-color: $box-background;
   position: relative;
   bottom: 0;
   left: 0;
