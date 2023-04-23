@@ -1,0 +1,36 @@
+// (Brandon) This fixes the slide vertical alignment
+.container div {
+  display: flex;
+  margin: auto;
+}
+
+.slide {
+  position: relative;
+  margin: auto;
+  width: 90%;
+
+  // border: 3px solid $lazulight-primary-color;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+// Override the defaults for 'React Slick'
+// Since we're overriding the style of something we can't control, let give it high precedence with !important
+.next,
+.prev {
+  z-index: 10 !important;
+  width: auto !important;
+  height: auto !important;
+
+  &::before {
+    // Don't accidentally give the variable !important...
+    $shadow: 10px;
+
+    font-size: 50px !important;
+    color: black !important;
+
+    // Repeat shadow to make it stronger
+    text-shadow: 0 0 $shadow #fff, 0 0 $shadow #fff, 0 0 $shadow #fff,
+      0 0 $shadow #fff, 0 0 $shadow #fff !important;
+  }
+}

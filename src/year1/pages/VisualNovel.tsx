@@ -21,7 +21,11 @@ import FinanaImage from '../assets/VN/finana school happy_cf50.webp'
 import VisualNovelLogo from '../assets/VN/lazulight_vn_logo_cf50.webp'
 import PomuImage from '../assets/VN/pomu school happy_cf50.webp'
 import Image from '../components/Image'
-import '../components/ProjectPages.scss'
+import classesCredits from '../components/Credits.module.scss'
+import classesSlideShow from '../components/SlideShow.module.scss'
+import classesVideo from '../components/Video.module.scss'
+import classesVn from '../components/ProjectVn.module.scss'
+import classesP from '../components/ProjectPages.module.scss'
 import '../components/TalentLayout.scss'
 import FramedTextbox from '../components/FramedTextbox'
 
@@ -92,7 +96,7 @@ export default function VisualNovel (props: Props): JSX.Element {
     return (
       <>
         <p><b>Releases at 12:12PM on 12 December 2022 EST</b></p>
-        <button className='project-download-button lazulight-border'>
+        <button className={`${classesP['download-button']} lazulight-border`}>
           {days} days, {hours}h, {minutes}min, {seconds}s
         </button>
       </>
@@ -104,15 +108,15 @@ export default function VisualNovel (props: Props): JSX.Element {
   return (
     <>
       {/* Heading */}
-      <div className='project-heading-container-logo'>
+      <div className={classesP['heading-container-logo']}>
         <Image src={VisualNovelLogo} enableZoom />
       </div>
 
       {/* Slide Show */}
       <FramedTextbox corner={LazulightCorner} border={props.page}>
         <SlideShow>
-          <div className='slideshow-slide'>
-            <div className='video-container'>
+          <div className={classesSlideShow.slide}>
+            <div className={classesVideo.container}>
               <iframe
                 src='https://www.youtube.com/embed/qe7hVYakK0s'
                 title='YouTube video player'
@@ -123,24 +127,24 @@ export default function VisualNovel (props: Props): JSX.Element {
             </div>
           </div>
           <div>
-            <Image src={Slide1} className='slideshow-slide' enableZoom />
+            <Image src={Slide1} className={classesSlideShow.slide} enableZoom />
           </div>
           <div>
-            <Image src={Slide2} className='slideshow-slide' enableZoom />
+            <Image src={Slide2} className={classesSlideShow.slide} enableZoom />
           </div>
           <div>
-            <Image src={Slide3} className='slideshow-slide' enableZoom />
+            <Image src={Slide3} className={classesSlideShow.slide} enableZoom />
           </div>
           <div>
-            <Image src={Slide4} className='slideshow-slide' enableZoom />
+            <Image src={Slide4} className={classesSlideShow.slide} enableZoom />
           </div>
           <div>
-            <Image src={Slide5} className='slideshow-slide' enableZoom />
+            <Image src={Slide5} className={classesSlideShow.slide} enableZoom />
           </div>
         </SlideShow>
 
         {/* Description & Download */}
-        <div className='project-description-container'>
+        <div className={classesP['description-container']}>
           <h3>Story</h3>
           <p>Like a star pulled from the skies, a bird torn of its wings, you were bound to the Earth that day. You once ruled the skies, feeling the air rush through your hair as you flew between the clouds, clothes fluttering in the wind as you raced higher and higher. However, that's all in the past now, ever since the accident.</p>
           <p>Now, completely opposite to what you once felt, the world is monotonous, gray, and dead. You find no meaning in life, as if frozen in time, now that your freedom was taken away from you.</p>
@@ -154,11 +158,11 @@ export default function VisualNovel (props: Props): JSX.Element {
           <p>The game is around 7 hours in length with the estimated duration for each section of the game broken down below. Note that the length can vary depending on the reading speed of the player and the pace at which the player decides to play the game.</p>
           <p>
             <ul>
-              <li className='vn-route-list-item'>Common route: 1 hour</li>
-              <li className='vn-route-list-item'>Pomu route: 1 hour 30 minutes</li>
-              <li className='vn-route-list-item'>Elira route: 2 hours</li>
-              <li className='vn-route-list-item'>Finana route: 2 hours 15 minutes</li>
-              <li className='vn-route-list-item'>??? route: 30 minutes</li>
+              <li className={classesVn['route-list-item']}>Common route: 1 hour</li>
+              <li className={classesVn['route-list-item']}>Pomu route: 1 hour 30 minutes</li>
+              <li className={classesVn['route-list-item']}>Elira route: 2 hours</li>
+              <li className={classesVn['route-list-item']}>Finana route: 2 hours 15 minutes</li>
+              <li className={classesVn['route-list-item']}>??? route: 30 minutes</li>
             </ul>
           </p>
           <p>The game features multiple endings, good and bad, depending on choices made during the game. Reaching a good ending unlocks the gallery to view all the art assets seen so far (along with additional art!) and the music room to replay all the BGMs</p>
@@ -197,7 +201,7 @@ export default function VisualNovel (props: Props): JSX.Element {
           <h3>Play Online</h3>
           <Countdown date={releaseDate} renderer={countdownRenderer}>
             <a href='https://vn.lazulight.com/' target='_blank' rel='noopener noreferrer'>
-              <button className='project-download-button lazulight-border'>Play Online</button>
+              <button className={`${classesP['download-button']} lazulight-border`}>Play Online</button>
             </a>
           </Countdown>
 
@@ -209,19 +213,19 @@ export default function VisualNovel (props: Props): JSX.Element {
           <Countdown date={releaseDate} renderer={countdownRenderer}>
             <>
               <a href='https://drive.google.com/file/d/1wIT_jutfLV1GHa3CuNBekytnpx6p8OnW/view?usp=share_link' download>
-                <button className='project-download-button lazulight-border'>Download for Windows</button>
+                <button className={`${classesP['download-button']} lazulight-border`}>Download for Windows</button>
               </a>
 
               <a href='https://drive.google.com/file/d/1A_BYcCXLZ1M7yGaB_TG65p02LYvf8Yzi/view?usp=share_link' download>
-                <button className='project-download-button lazulight-border'>Download for Mac</button>
+                <button className={`${classesP['download-button']} lazulight-border`}>Download for Mac</button>
               </a>
               <div>
                 <a href='/downloads/LazulightVN-1.0-pc.zip' download>
-                  <button className='project-download-button lazulight-border'>Download for Windows (Mirror)</button>
+                  <button className={`${classesP['download-button']} lazulight-border`}>Download for Windows (Mirror)</button>
                 </a>
 
                 <a href='/downloads/LazulightVN-1.0-mac.zip' download>
-                  <button className='project-download-button lazulight-border'>Download for Mac (Mirror)</button>
+                  <button className={`${classesP['download-button']} lazulight-border`}>Download for Mac (Mirror)</button>
                 </a>
               </div>
             </>
@@ -243,13 +247,13 @@ export default function VisualNovel (props: Props): JSX.Element {
 
       {/* Character Profiles */}
       {characters.map((character: Character, idx: number) => (
-        <div className='vn-profile-container' key={idx}>
+        <div className={classesVn['profile-container']} key={idx}>
           <div
-            className={`vn-picture-box vn-picture-box-${character.firstNameLower}`}
+            className={`${classesVn['picture-box']} ${classesVn[`picture-box-${character.firstNameLower}`]}`}
           >
             <Image src={character.portrait} enableZoom />
           </div>
-          <div className='vn-info-container'>
+          <div className={classesVn['info-container']}>
             <FramedTextbox corner={character.frame} border={character.firstNameLower}>
               <h2>{character.name}</h2>
               {character.info.map((paragraph, idx2) => (
@@ -283,12 +287,12 @@ Formatting from Kiro's Credits document
     Links with parentheses to
       </a>{' '}&nbsp;(Keyboard sounds)
     ul for "Special Thanks To"
-      <ul className='credits-text-special-final'>
+      <ul className={classesCredits['text-special-final']}>
 */
 
 function VisualNovelCredits (): JSX.Element {
   return (
-    <div className='credits-text'>
+    <div className={classesCredits.text}>
       <h3>Management Team</h3>
       <h4>Organizer &amp; Producer</h4>
       <ul>
@@ -549,7 +553,7 @@ function VisualNovelCredits (): JSX.Element {
         <li><p><a href='https://twitter.com/Feet_man69'>Feetman69</a></p></li>
       </ul>
       <h3>Special Thanks To</h3>
-      <ul className='credits-text-special-final'>
+      <ul className={classesCredits['text-special-final']}>
         <li><p>LazuLight 1st Anniversary Website Team</p></li>
         <li><p>Nijisanji EN Fan Discord Server</p></li>
         <li><p>Elicord Discord Server</p></li>
