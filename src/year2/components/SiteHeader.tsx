@@ -91,7 +91,7 @@ export default function SiteHeader (): JSX.Element {
   return (
     <SiteHeaderLayout
       menuData={menuData}
-      classNameNav={classes.nav}
+      classes={classes}
     />
   )
 }

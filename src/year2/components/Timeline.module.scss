@@ -1,0 +1,242 @@
+.timeline-root {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  position: relative;
+
+  --trunk-width: 8px;
+  --dot-diameter: 16px;
+  --date-width: 8rem;
+  --stem-height: 4px;
+  --max-content-width: 600px;
+  --mobile-padding: 10px;
+  --stem-color: grey;
+}
+
+.timeline-root::before {
+  content: " ";
+  width: var(--trunk-width);
+  background: grey;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  // Appear below all other content
+  z-index: -100;
+}
+
+.timeline-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: calc(min(var(--max-content-width) + var(--date-width), 50%));
+}
+
+// Item overlap
+// This isn't safe if we have very short one-line messages, but that probably won't happen?
+// We can revisit it when we have the finalized timeline content.
+// ==============================================================
+
+/*
+.item {
+  min-height: 8rem;
+}
+
+.item + .item {
+  margin-top: -5rem !important;
+}
+*/
+
+// ==============================================================
+
+.item-title {
+  max-width: calc(
+    min(var(--max-content-width) - 0.5rem, 100% - var(--date-width))
+  );
+  margin-bottom: 0.3rem;
+}
+
+.message-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .item-date {
+    flex-shrink: 0;
+    text-align: center;
+    width: var(--date-width);
+    display: flex;
+    flex-direction: column;
+    height: calc(2rem + 4px);
+    margin-top: calc(-2rem + 0.5 * var(--stem-height));
+
+    .date {
+      height: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    &::after {
+      content: " ";
+      height: var(--stem-height);
+
+      // Needs a bit of overlap with the circle for a clean connection
+      width: calc(100% + 4px);
+      background: var(--stem-color);
+    }
+  }
+
+  .content-box {
+    border: var(--stem-height) solid var(--stem-color);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    max-width: calc(min(var(--max-content-width), 100% - var(--date-width)));
+    overflow: auto;
+  }
+}
+
+// YouTube videos don't have an inherent width (they'll default to the minimum possible width).
+// Similar for Twitter embeds. So for those items we'll give a hint to be as wide as possible
+.item.with-embed .content-box {
+  width: var(--max-content-width);
+}
+
+.message-row::before {
+  // Timeline dot
+  content: " ";
+  flex-shrink: 0;
+  border-radius: 100%;
+  background: white;
+  border: 4px solid var(--stem-color);
+  width: var(--dot-diameter);
+  height: var(--dot-diameter);
+  align-self: center;
+}
+
+@media (width <= 1200px) {
+  .timeline-root {
+    padding: var(--mobile-padding);
+  }
+
+  // Left-align trunk
+  .timeline-root::before {
+    left: calc(var(--mobile-padding) - var(--trunk-width) / 2);
+  }
+
+  .timeline-items {
+    align-items: flex-start;
+  }
+
+  // All items point right
+  .item {
+    max-width: 100%;
+
+    .message-row {
+      flex-direction: row;
+
+      &::before {
+        margin-left: calc(-0.5 * var(--dot-diameter));
+      }
+
+      .item-date::after {
+        margin-left: -4px;
+      }
+    }
+
+    .item-title {
+      text-align: right;
+      margin-left: calc(
+        var(--date-width) + (0.5 * var(--trunk-width)) + 0.5rem
+      );
+      word-break: break-word;
+      hyphens: auto;
+    }
+  }
+
+  .item + .item {
+    // Make this !important to override the vertical overlap being set in JS for 2-column mode
+    margin-top: 2rem !important;
+  }
+}
+
+@media (width >= 1200px) {
+  // Center trunk
+  .timeline-root::before {
+    left: calc(50% - var(--trunk-width) / 2);
+  }
+
+  // Make alternating timeline items point left/right
+  .item:nth-child(2n) {
+    // Items pointing right
+    transform: translateX(50%);
+
+    .message-row {
+      flex-direction: row;
+
+      &::before {
+        margin-left: calc(-0.5 * var(--dot-diameter));
+      }
+
+      .item-date::after {
+        margin-left: -4px;
+      }
+    }
+
+    .item-title {
+      text-align: right;
+      margin-left: var(--date-width);
+      margin-right: 0.5rem;
+    }
+  }
+
+  .item:nth-child(2n + 1) {
+    // Items pointing left
+    transform: translateX(-50%);
+
+    .message-row {
+      flex-direction: row-reverse;
+
+      &::before {
+        margin-right: calc(-0.5 * var(--dot-diameter));
+      }
+    }
+
+    .item-title {
+      margin-right: var(--date-width);
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+/*
+================
+Embedded content
+================
+*/
+
+// If we end up going with embedded HTML for tweets, use this for styling
+// https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/css-for-embedded-tweets
+
+.youtube-container {
+  position: relative;
+  min-width: 300px;
+  width: 100%;
+  max-width: var(--max-content-width);
+  aspect-ratio: 16 / 9;
+}
+
+.youtube-embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

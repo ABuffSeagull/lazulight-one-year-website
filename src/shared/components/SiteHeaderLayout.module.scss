@@ -1,4 +1,30 @@
+/* The SiteHeaderLayout files are intended to be used as follows
+
+Create an scss file for the menu implementation "SiteHeader.modules.scss"
+Have it call this file and overwrite the default variables with
+```
+@use "pathToThisFile" as * with (
+  $header-text-hover: ,
+  $header-background: ,
+  $header-background-item-hover: 
+);
+```
+The .nav media queries also need to be added corresponding to the number of menu entries.
+
+Then create a tsx file for the menu implementation and feed the classes to the layout with
+```
+import classes from 'pathTo/SiteHeader.module.scss'
+<SiteHeaderLayout
+  classes={classes}
+/>
+````
+*/
 @use "../../year1/variables.scss" as *;
+
+// These variables are intended to be overwritten
+$header-text-hover: white !default;
+$header-background: black !default;
+$header-background-item-hover: grey !default;
 
 .open-header {
   display: none;
@@ -6,7 +32,7 @@
   top: 1rem;
   right: 1rem;
   z-index: 100;
-  background: $background-grey-solid;
+  background: $header-background;
   border: none;
   width: 3rem;
   height: 3rem;
@@ -34,7 +60,7 @@
   position: relative;
   z-index: 99;
   padding: 1rem 2rem;
-  background-color: $background-grey-solid;
+  background-color: $header-background;
 
   // border-bottom-left-radius: 1rem;
   // border-bottom-right-radius: 1rem;
@@ -56,7 +82,7 @@
   width: 8rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (width <= 768px) {
   .open-header {
     display: flex;
   }
@@ -134,17 +160,17 @@
   }
 
   &:hover span {
-    color: #c9a36b;
+    color: $header-text-hover;
   }
 
   &:hover .icon-wrapper {
-    background: $lazulight-primary-color;
+    background: $header-background-item-hover;
   }
 
   &-mobile-only {
     display: none;
 
-    @media (max-width: 768px) {
+    @media (width <= 768px) {
       display: flex;
     }
   }
@@ -152,7 +178,7 @@
   &-desktop-only {
     display: flex;
 
-    @media (max-width: 768px) {
+    @media (width <= 768px) {
       display: none;
     }
   }
@@ -187,15 +213,11 @@
     position: absolute;
     transform: translateX(-2rem) translateY(4rem);
     z-index: 101;
-
-    // padding: 1rem 2rem;
-    background-color: $background-grey-solid;
+    background-color: $header-background;
     border-radius: 0.5rem;
     padding: 0.5rem 0;
 
-    // box-shadow: 0 0 19px 0 rgb(123 113 130 / 8%);
-
-    @media (max-width: 768px) {
+    @media (width <= 768px) {
       display: none;
     }
   }

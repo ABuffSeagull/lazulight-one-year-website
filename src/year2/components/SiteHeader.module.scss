@@ -1,4 +1,11 @@
-@media screen and (max-width: 768px) {
+@use "../variables.scss" as *;
+@use "../../shared/components/SiteHeaderLayout.module.scss" as * with (
+  $header-text-hover: #a566aa,
+  $header-background: $box-background-solid,
+  $header-background-item-hover: $lazulight-primary-color
+);
+
+@media screen and (width <= 768px) {
   .nav {
     grid-template-columns: 1fr 1fr 1fr;
 
@@ -14,7 +21,7 @@
       grid-column: 1;
     }
 
-    @media (max-height: 450px) {
+    @media (height <= 450px) {
       grid-template-columns: 1fr 1fr 1fr 1fr;
 
       & div:first-child,
