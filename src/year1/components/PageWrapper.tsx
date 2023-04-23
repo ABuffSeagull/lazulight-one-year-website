@@ -29,19 +29,25 @@ export function PageWrapper ({
       <SiteHeader />
 
       {/* Background */}
-      <div
-        className={`${pw[`page-bg-animation-${pageTheme}-container`]} ${
-          AnimationOn
-            ? `${pw[`page-bg-animation-${pageTheme}-container-on`]}`
-            : `${pw[`page-bg-animation-${pageTheme}-container-off`]}`
-        }`}
-      >
-        {pageTheme === 'pomu' && <BgAnimationPomu />}
-        {pageTheme === 'elira' && <BgAnimationElira />}
-        {pageTheme === 'finana' && <BgAnimationFinana />}
-        {pageTheme === 'vn' && <BgAnimationVn />}
-        {pageTheme === 'dcl' && <BgAnimationDcl />}
-      </div>
+      {(
+        pageTheme === 'pomu' ||
+        pageTheme === 'elira' ||
+        pageTheme === 'finana' ||
+        pageTheme === 'vn' ||
+        pageTheme === 'dcl') &&
+          <div
+            className={`${pw[`page-bg-animation-${pageTheme}-container`]} ${
+            AnimationOn
+              ? `${pw[`page-bg-animation-${pageTheme}-container-on`]}`
+              : `${pw[`page-bg-animation-${pageTheme}-container-off`]}`
+          }`}
+          >
+            {pageTheme === 'pomu' && <BgAnimationPomu />}
+            {pageTheme === 'elira' && <BgAnimationElira />}
+            {pageTheme === 'finana' && <BgAnimationFinana />}
+            {pageTheme === 'vn' && <BgAnimationVn />}
+            {pageTheme === 'dcl' && <BgAnimationDcl />}
+          </div>}
 
       {pageTheme === 'home' && (
         <div className={pw['home-collage']}>

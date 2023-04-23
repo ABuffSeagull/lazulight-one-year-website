@@ -18,7 +18,7 @@ export default function MessageBoxesWithCorners ({
               {message.social_url === '' ? (message.name) : (<a href={message.social_url}>{message.name}</a>)}
             </h4>
             {message.msg !== '' && <p>{message.msg}</p>}
-            {message.art !== '' && (<Image className='fan-submissions-fanarti' src={message.art} alt='' enableZoom />)}
+            {message.art !== '' && (<Image src={message.art} alt='' enableZoom />)}
           </div>
         </div>
       ))}

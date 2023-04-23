@@ -249,7 +249,7 @@ export default function VisualNovel (props: Props): JSX.Element {
       {characters.map((character: Character, idx: number) => (
         <div className={classesVn['profile-container']} key={idx}>
           <div
-            className={`${classesVn['picture-box']} ${classesVn[`picture-box-${character.firstNameLower}`]}`}
+            className={`${classesVn['picture-box']} ${character.firstNameLower === 'elira' ? classesVn['picture-box-elira'] : ''}`}
           >
             <Image src={character.portrait} enableZoom />
           </div>
