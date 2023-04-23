@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'wouter'
 import Image from '../../year1/components/Image'
-import classes from './SiteHeaderLayout.module.scss'
 
 import Bars from '../../year1/assets/Menu/Menu-Mobile-Open.svg'
 import Cross from '../../year1/assets/Menu/Menu-Mobile-Close.svg'
@@ -31,10 +30,10 @@ export interface MenuData extends SubMenuData {
 
 export default function SiteHeaderLayout ({
   menuData,
-  classNameNav = ''
+  classes
 }: {
   menuData: MenuData[]
-  classNameNav?: string
+  classes: CSSModuleClasses
 }): JSX.Element {
   const [headerOpen, setHeaderOpen] = useState(false)
 
@@ -70,7 +69,7 @@ export default function SiteHeaderLayout ({
         className={[classes.header, headerOpen ? classes.open : ''].join(' ')}
       >
 
-        <nav className={`${classes.nav} ${classNameNav}`}>
+        <nav className={`${classes.nav}`}>
           {menuData.map((linkData, idx) => (
             // Explicit '=true' because 'nullable boolean'
             <div className={`${classes['menu-item']} ${linkData.mobileOnly === true ? classes['nav-link-mobile-only'] : ''} ${linkData.desktopOnly === true ? classes['nav-link-desktop-only'] : ''}`} key={idx}>
