@@ -38,11 +38,11 @@ export function Timeline ({ memories }: TimelineProps): JSX.Element {
     [key: number]: number
   }>({})
 
-  const observers = React.useRef(new Map<number, ResizeObserver>());
+  const observers = React.useRef(new Map<number, ResizeObserver>())
 
   React.useEffect(() => {
     return () => {
-      observers.current?.forEach((observer) => observer.disconnect());
+      observers.current?.forEach((observer) => observer.disconnect())
     }
   })
 
@@ -68,9 +68,9 @@ export function Timeline ({ memories }: TimelineProps): JSX.Element {
                       return itemHeights
                     }
                   })
-                });
-                observer.observe(node);
-                observers.current?.set(i, observer);
+                })
+                observer.observe(node)
+                observers.current?.set(i, observer)
               }
             }}
             verticalOffset={(itemHeights[i - 1] ?? 0) / 3}
