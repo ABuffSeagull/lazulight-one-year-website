@@ -38,6 +38,14 @@ export function Timeline ({ memories }: TimelineProps): JSX.Element {
     [key: number]: number
   }>({})
 
+  const observers = React.useRef(new Map<number, ResizeObserver>())
+
+  React.useEffect(() => {
+    return () => {
+      observers.current?.forEach((observer) => observer.disconnect())
+    }
+  })
+
   return (
     <div className={classes['timeline-root']}>
       <ul className={classes['timeline-items']}>
@@ -46,11 +54,11 @@ export function Timeline ({ memories }: TimelineProps): JSX.Element {
             key={i}
             ref={(node) => {
               if (node != null) {
-                new ResizeObserver(([entry]) => {
-                  // console.log('resize')
+                const observer = new ResizeObserver(([entry]) => {
                   setItemHeights((itemHeights) => {
-                    // console.log(entry.borderBoxSize)
                     const newHeight = entry.borderBoxSize[0].blockSize
+                    // Only dispatch an update if the height changed.
+                    // This prevents an infinite loop of setState calls
                     if (newHeight !== itemHeights[i]) {
                       return {
                         ...itemHeights,
@@ -60,7 +68,9 @@ export function Timeline ({ memories }: TimelineProps): JSX.Element {
                       return itemHeights
                     }
                   })
-                }).observe(node)
+                })
+                observer.observe(node)
+                observers.current?.set(i, observer)
               }
             }}
             verticalOffset={(itemHeights[i - 1] ?? 0) / 3}
