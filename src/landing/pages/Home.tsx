@@ -6,7 +6,8 @@ import classes from './Home.module.scss'
 
 import logo from '../assets/LazuLightLogo-FansiteEdit.webp'
 import peek from '../assets/PeekAll.webp'
-import bannerYear1 from '../assets/banner.svg'
+import bannerYear1 from '../assets/banner-year1.svg'
+import bannerYear2 from '../assets/banner-year2.svg'
 
 export default function Home (): JSX.Element {
   return (
@@ -22,7 +23,7 @@ export default function Home (): JSX.Element {
       </a>
       </Link>
       <Link to='/anniversary2'><a>
-        <Image className={classes['main-links']} src={bannerYear1} />
+        <Image className={classes['main-links']} src={bannerYear2} />
       </a>
       </Link>
       <Image className={classes.peek} src={peek} />
