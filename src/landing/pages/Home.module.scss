@@ -1,0 +1,38 @@
+@use "../../year1/variables.scss" as *;
+
+.page-bg {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow-y: hidden;
+  position: fixed;
+  background-image: url("../assets/LazuVN-BG-Forest-BlurSat.webp");
+  background-color: #258e70; // Backup in case the image doesn't load
+  background-size: cover;
+  background-position: 90% 10%;
+}
+
+.logo {
+  margin-top: 3%;
+  object-fit: contain;
+  height: 35%;
+  filter: drop-shadow(0 0 0.5rem rgb(57 147 58));
+}
+
+.peek {
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  max-height: 15%;
+  max-width: 90%;
+}
+
+.main-links {
+  object-fit: contain;
+  width: 100%;
+  filter: drop-shadow(0 0 0.5rem rgb(57 147 58));
+}
