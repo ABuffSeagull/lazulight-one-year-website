@@ -18,12 +18,12 @@ export default function Home (): JSX.Element {
     // </div>
     <div className={classes['page-bg']}>
       <Image className={classes.logo} src={logo} />
-      <Link to='/anniversary1'><a>
-        <Image className={classes['main-links']} src={bannerYear1} />
+      <Link to='/anniversary1'><a className={classes['main-links']}>
+        <Image src={bannerYear1} />
       </a>
       </Link>
-      <Link to='/anniversary2'><a>
-        <Image className={classes['main-links']} src={bannerYear2} />
+      <Link to='/anniversary2'><a className={classes['main-links']}>
+        <Image src={bannerYear2} />
       </a>
       </Link>
       <Image className={classes.peek} src={peek} />
