@@ -1,0 +1,30 @@
+@use "../../year1/variables.scss" as *;
+
+$bg: linear-gradient(300deg, rgb(204 212 230 / 90%), rgb(229 229 229 / 90%));
+
+// This class must not have it's name mangled by scss modules!
+// The name that is input into the <Popup> component is altered by reactjs-popup to append the string '-content'
+
+// !important is because we're conflicting with the class that is automatically applied by reactjs-popup
+
+// reactjs-popup seems to be rather poorly designed for custom styling T_T
+
+.landing-page-info-box-content {
+  width: 80% !important;
+  max-height: 90%;
+  padding: 2rem !important;
+  background: $bg !important;
+  border: 3px solid black !important;
+
+  @media (max-width: $bp-mobile) {
+    width: 88% !important;
+    height: 93%;
+    max-height: unset;
+    padding: 1rem !important;
+  }
+  @media (max-height: $bp-mobile) {
+    width: 93% !important;
+    height: 87%;
+    padding: 1rem !important;
+  }
+}
