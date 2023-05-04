@@ -15,6 +15,7 @@ $bg: linear-gradient(300deg, rgb(204 212 230 / 95%), rgb(229 229 229 / 95%));
   padding: 2rem !important;
   background: $bg !important;
   border: 3px solid black !important;
+  border-radius: 1rem;
 
   @media (max-width: $bp-mobile) {
     width: 88% !important;
