@@ -1,0 +1,27 @@
+.type-a {
+  display: inline-flex;
+  gap: 0.25rem;
+
+  &-icon {
+    height: 0.6rem;
+    width: 0.6rem;
+    fill: currentcolor;
+    opacity: 0.8;
+    display: block;
+  }
+}
+
+.type-b {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  text-decoration: none;
+
+  &-icon {
+    height: 1rem;
+    width: 1rem;
+    fill: currentcolor;
+    opacity: 0.8;
+    display: block;
+  }
+}
