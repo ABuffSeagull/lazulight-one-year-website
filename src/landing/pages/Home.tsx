@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'wouter'
 import Image from '../../year1/components/Image'
+import ExLink from '../../shared/components/ExLink'
 
 import classes from './Home.module.scss'
 import './Home.scss'
@@ -53,26 +54,27 @@ export default function Home (): JSX.Element {
         </button>
         <div className={classes['info-box-inner']}>
           <h3>About this website</h3>
-          <p>This fan website showcases our thanks and congratulations to LazuLight of Nijisanji EN.</p>
+          <p>This fan website showcases our thanks and congratulations to Elira, Pomu, and Finana (LazuLight) of Nijisanji EN. Fans of LazuLight from across the world joined together to create these expressions of thanks at the times of LazuLight's 1st and 2nd anniversaries. Every showcased work was created specifically for this purpose. Thank you to the LazuLight fan discords, contributors, and all the fans for your hard work and support.</p>
+          <p>Fan Discord Links: <ExLink href='https://discord.gg/2434club'>Nijisanji EN Fanserver</ExLink>, <ExLink href='https://discord.gg/pomu'>Pomucord</ExLink>, <ExLink href='https://discord.gg/gWUFJS2JtF'>Elicord</ExLink>, <ExLink href='https://discord.gg/425bxuSsff'>Finana Finclub</ExLink></p>
 
           <h3>Disclaimer:</h3>
-          <p>This is a fan website, made by fans. We aimed to create this website in compliance with the <a className='external-link-text' href='https://event.nijisanji.app/guidelines/en/'>ANYCOLOR - Guidelines for Secondary Creation</a>.<br />If there are any concerns or enquiries, please contact us by email at <a href='mailto:lazuprojectsteam@gmail.com'>lazuprojectsteam@gmail.com</a>.</p>
+          <p>This is a fan website, made by fans. We aimed to create this website in compliance with the <ExLink href='https://event.nijisanji.app/guidelines/en/'>ANYCOLOR - Guidelines for Secondary Creation</ExLink>.<br />If there are any concerns or enquiries, please contact us by email at <ExLink href='mailto:lazuprojectsteam@gmail.com'>lazuprojectsteam@gmail.com</ExLink>.</p>
 
           <h3>Credits (Landing Page)</h3>
           <table>
-            <tr><td><a href='https://twitter.com/HirokawaKiro'>Kiro</a></td><td>Organiser, Design</td></tr>
-            <tr><td><a href='https://twitter.com/BrandonJohns96'>Brandon Johns</a></td><td>Design, Art Assets, Programming</td></tr>
-            <tr><td><a href='https://twitter.com/wildnexus'>wildnexus</a></td><td>Art Assets</td></tr>
-            <tr><td><a href='https://twitter.com/thundercookie15'>thundercookie15</a></td><td>Domain Owner, Server Hosting</td></tr>
+            <tr><td><ExLink href='https://twitter.com/HirokawaKiro'>Kiro</ExLink></td><td>Organiser, Design</td></tr>
+            <tr><td><ExLink href='https://twitter.com/BrandonJohns96'>Brandon Johns</ExLink></td><td>Design, Art Assets, Programming</td></tr>
+            <tr><td><ExLink href='https://twitter.com/wildnexus'>wildnexus</ExLink></td><td>Art Assets</td></tr>
+            <tr><td><ExLink href='https://twitter.com/thundercookie15'>thundercookie15</ExLink></td><td>Domain Owner, Server Hosting</td></tr>
           </table>
           <br />
-          <p>The following assets were used with permission and modified by the website team.</p>
+          <p><span>Externally sourced assets&nbsp;</span><span>(modified by the website team):</span></p>
           <table>
-            <tr><td><a href='https://twitter.com/snowharasho'>Squish</a></td><td>Forest Background</td></tr>
+            <tr><td><ExLink href='https://twitter.com/snowharasho'>Squish</ExLink></td><td>Forest Background</td></tr>
             <tr><td>ANYCOLOR INC.</td><td>LazuLight Logo</td></tr>
-            <tr><td><a href='https://twitter.com/MelonbreadFBP'>Melonbread</a></td><td>Ryuguard</td></tr>
-            <tr><td>Pomu</td><td>Pomudachi</td></tr>
-            <tr><td>Elira</td><td>Weewa</td></tr>
+            <tr><td><ExLink href='https://twitter.com/MelonbreadFBP'>Melonbread</ExLink></td><td>Ryuguard</td></tr>
+            <tr><td><ExLink href='https://youtu.be/dS-0a-sVxck?t=2161'>Pomu</ExLink></td><td>Pomudachi</td></tr>
+            <tr><td><ExLink href='https://youtu.be/C-C0nfMuBfA?t=7542'>Elira</ExLink></td><td>Weewa</td></tr>
           </table>
         </div>
       </Popup>

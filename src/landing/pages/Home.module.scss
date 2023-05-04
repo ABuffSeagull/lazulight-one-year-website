@@ -1,6 +1,6 @@
 @use "../../year1/variables.scss" as *;
 
-$glow: drop-shadow(0 0 0.5rem rgb(57 147 58));
+$glow: drop-shadow(0 0 1rem rgb(255 247 201));
 
 .page-bg {
   display: flex;
@@ -22,7 +22,7 @@ $glow: drop-shadow(0 0 0.5rem rgb(57 147 58));
   margin-top: 3vh;
   object-fit: contain;
   height: 35vh;
-  filter: $glow $glow;
+  filter: $glow $glow $glow;
 }
 
 .peek {
@@ -61,10 +61,12 @@ $glow: drop-shadow(0 0 0.5rem rgb(57 147 58));
   max-height: 10%;
   max-width: 10%;
   filter: $glow;
+  cursor: pointer;
 }
 
 .info-button-close {
   display: contents;
+  cursor: pointer;
 
   img {
     position: absolute;
@@ -92,6 +94,10 @@ $glow: drop-shadow(0 0 0.5rem rgb(57 147 58));
     max-height: 90vh;
   }
 
+  span {
+    display: inline-block;
+  }
+
   p,
   table td {
     // These should match 'p' in index.scss, but I override them anyway in case things are changed in the future
@@ -101,5 +107,18 @@ $glow: drop-shadow(0 0 0.5rem rgb(57 147 58));
 
   table td:first-child {
     padding-right: 2rem;
+  }
+
+  @media (max-width: $bp-mobile) {
+    table td {
+      width: 100%;
+      display: inline-block;
+    }
+
+    table td:first-child {
+      padding-right: 0;
+      padding-top: 0.5rem;
+      font-weight: bolder;
+    }
   }
 }
