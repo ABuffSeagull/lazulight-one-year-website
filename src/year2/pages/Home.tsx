@@ -5,6 +5,7 @@ import { Timeline } from '../components/Timeline'
 export default function Home (): JSX.Element {
   return (
     <div>
+
       <Timeline
         memories={[
           {

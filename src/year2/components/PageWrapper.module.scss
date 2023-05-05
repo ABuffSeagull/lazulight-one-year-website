@@ -1,0 +1,60 @@
+/* stylelint-disable keyframes-name-pattern */
+// See https://github.com/stylelint/stylelint/issues/5997
+@use "../variables" as *;
+@use "sass:math";
+
+.page-bg-static {
+  &-elira {
+    background-image: url("../assets/background/18.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &-finana {
+    background-image: url("../assets/background/18.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &-pomu {
+    background-image: url("../assets/background/18.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &-home {
+    background-image: url("../assets/background/18.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.page-bg-image {
+  &-pomu {
+    background-image: url("../assets/background/Space-Pomu.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20%;
+  }
+
+  &-finana {
+    background-image: url("../assets/background/Space-Finana.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20%;
+  }
+
+  &-elira {
+    background-image: url("../assets/background/Space-Elira.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20%;
+  }
+}

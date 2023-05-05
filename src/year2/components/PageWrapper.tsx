@@ -1,6 +1,7 @@
 import React from 'react'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
+import pw from './PageWrapper.module.scss'
 
 export function PageWrapper ({
   children,
@@ -10,15 +11,19 @@ export function PageWrapper ({
   pageTheme: string
 }): JSX.Element {
   return (
-    <>
-      <SiteHeader />
 
-      {/* This is the body of the page */}
-      <div>
-        {children}
+    <div className={`  ${pw[`page-bg-static-${pageTheme}`]} `}>
+      <div className={`  ${pw[`page-bg-image-${pageTheme}`]} `}>
+
+        <SiteHeader />
+
+        {/* This is the body of the page */}
+        <div>
+          {children}
+        </div>
+
+        <SiteFooter theme='lazulight' />
       </div>
-
-      <SiteFooter theme='lazulight' />
-    </>
+    </div>
   )
 }
