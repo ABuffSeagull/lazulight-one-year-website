@@ -14,6 +14,7 @@ export default function Elira (): JSX.Element {
   // </div>
 
     <>
+      {/* Messages */}
       <MessageBoxesLayout
         titleType={firstNameLower}
         heading={`Messages To ${firstName}`}
@@ -21,6 +22,16 @@ export default function Elira (): JSX.Element {
         enableFolding
       >
         <MessageBoxesWithFlags messages={ImportMessages({ enableElira: true })} />
+      </MessageBoxesLayout>
+
+      {/* Art */}
+      <MessageBoxesLayout
+        titleType={firstNameLower}
+        heading={`Art To ${firstName}`}
+        page={firstNameLower}
+        enableFolding
+      >
+        <MessageBoxesWithFlags messages={ImportMessages({ enableElira: true, enableArt: true })} />
       </MessageBoxesLayout>
 
     </>
