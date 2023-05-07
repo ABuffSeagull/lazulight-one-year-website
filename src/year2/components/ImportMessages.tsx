@@ -35,7 +35,7 @@ export interface MessageForCornerBoxes extends Message {
 }
 
 export interface MessageForFlags extends MessageForCornerBoxes {
-  countryFlag?: string
+  countryFlag: string
 }
 
 // Shuffle algorithm: https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
@@ -91,7 +91,7 @@ export default function ImportMessages ({
   enableFinana?: boolean
   enableDcl?: boolean
   enableArt?: boolean
-}): MessageForCornerBoxes[] {
+}): MessageForFlags[] {
   const messageListRaw = messageListImport.all as MessageRaw[]
 
   const Messages: MessageForFlags[] = []

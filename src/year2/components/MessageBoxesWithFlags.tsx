@@ -12,7 +12,7 @@ export default function MessageBoxesWithFlags ({
     <>
       {messages.map((message, idx) => (
         <div key={'msg' + idx.toString()} className='fan-submissions-submission'>
-          <Image className='fan-submissions-poststamp' src={message.countryFlag!} />
+          <Image className='fan-submissions-poststamp' src={message.countryFlag} />
           <div className={`fan-submissions-message ${message.border}-border`}>
             <h4 className='text-lg'>
               {message.social_url === '' ? (message.name) : (<a href={message.social_url}>{message.name}</a>)}

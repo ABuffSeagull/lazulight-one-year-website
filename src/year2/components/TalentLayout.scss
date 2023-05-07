@@ -1,4 +1,4 @@
-//@use "../variables" as *;
+// @use "../variables" as *;
 @use "../../year1/variables" as *;
 
 // (Brandon) I re-exported the corners to all require the same spacing (relative to equal hight)
@@ -124,7 +124,7 @@ $talent-corner-padding-top: 33px;
     transform: translate(
       calc($talent-corner-padding-right - $msg-corner-padding-right),
       -$talent-corner-padding-top
-      );
+    );
     z-index: 2;
   }
 }
@@ -172,16 +172,16 @@ $talent-corner-padding-top: 33px;
         currentcolor 20%,
         currentcolor 80%,
         rgb(0 0 0 / 0%)
-        )
-         1;
+      )
+      1;
     border-style: solid;
     background: linear-gradient(
       to right,
-        rgb(0 0 0 / 0%),
-        $background-grey 20%,
-        $background-grey 80%,
-        rgb(0 0 0 / 0%)
-        );
+      rgb(0 0 0 / 0%),
+      $background-grey 20%,
+      $background-grey 80%,
+      rgb(0 0 0 / 0%)
+    );
   }
 
   &-box {
@@ -215,9 +215,9 @@ $talent-corner-padding-top: 33px;
       max-height: $truncate-after;
       mask-image: linear-gradient(
         to bottom,
-          black $fade-after,
-          transparent $truncate-after
-          );
+        black $fade-after,
+        transparent $truncate-after
+      );
     }
   }
 
@@ -234,12 +234,12 @@ $talent-corner-padding-top: 33px;
     width: 100%;
     padding: 1rem;
     background: $background-gradient;
-    border-radius: 0rem 0rem 0rem 0rem;
+    border-radius: 0;
 
     h4 {
       margin-bottom: 0.75rem;
       word-wrap: break-word;
-      margin-top: -4px; //5px;
+      margin-top: -4px; // 5px;
       margin-right: 10px;
     }
 
@@ -266,9 +266,10 @@ $talent-corner-padding-top: 33px;
 
   &-poststamp {
     position: absolute;
+
     // top: 26px;
     margin-top: 5px;
-    right: 32px; //28px;
+    right: 32px; // 28px;
     object-fit: scale-down;
     height: 60px;
     width: 60px;
