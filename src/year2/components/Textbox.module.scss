@@ -1,14 +1,5 @@
 @use "../variables" as *;
 
-.text-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding-right: 1rem;
-  padding-left: 1rem;
-}
-
 .text-inner {
   padding: 2.5rem;
   width: 100%;
