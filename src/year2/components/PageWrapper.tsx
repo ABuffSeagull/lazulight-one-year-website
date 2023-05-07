@@ -1,7 +1,7 @@
 import React from 'react'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
-import styles from "./PageWrapper.module.scss";
+import classes from "./PageWrapper.module.scss";
 
 export function PageWrapper ({
   children,
@@ -15,7 +15,7 @@ export function PageWrapper ({
       <SiteHeader />
 
       {/* This is the body of the page */}
-      <div className={styles.container}>
+      <div className={classes.container}>
         {children}
       </div>
 
