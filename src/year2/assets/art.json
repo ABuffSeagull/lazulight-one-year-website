@@ -1,0 +1,113 @@
+{
+  "all":
+  [
+    {
+      "name": "Cieluscian",
+      "social": "https://twitter.com/Cieluscian",
+      "flag": "/anniversary2/stamps/Stamp-Singapore.webp",
+      "lazulight": "/anniversary2/fanart/lazulight_04.png",
+      "elira": "/anniversary2/fanart/elira_03.png",
+      "pomu": "/anniversary2/fanart/pomu_01.png",
+      "finana": "/anniversary2/fanart/finana_01.png"
+    },
+    {
+      "name": "brainporain",
+      "social": "https://twitter.com/brainporain",
+      "flag": "",
+      "lazulight": "/anniversary2/fanart/lazulight_05.png",
+      "elira": "",
+      "pomu": "",
+      "finana": ""
+    },
+    {
+      "name": "lyriasshin",
+      "social": "https://twitter.com/lyriasshin",
+      "flag": "",
+      "lazulight": "/anniversary2/fanart/lazulight_03.png",
+      "elira": "",
+      "pomu": "",
+      "finana": ""
+    },
+    {
+      "name": "Exvnir",
+      "social": "",
+      "flag": "/anniversary2/stamps/Stamp-Australia.webp",
+      "lazulight": "",
+      "elira": "",
+      "pomu": "/anniversary2/fanart/pomu_06.jpg",
+      "finana": ""
+    },
+    {
+      "name": "SwiftShot",
+      "social": "https://twitter.com/SwiftShot07",
+      "flag": "",
+      "lazulight": "/anniversary2/fanart/lazulight_06.jpg",
+      "elira": "/anniversary2/fanart/elira_02.jpg",
+      "pomu": "/anniversary2/fanart/pomu_02.jpg",
+      "finana": "/anniversary2/fanart/finana_02.jpg"
+    },
+    {
+      "name": "Neko",
+      "social": "https://twitter.com/NekoD17",
+      "flag": "/anniversary2/stamps/Stamp-US.webp",
+      "lazulight": "",
+      "elira": "",
+      "pomu": "/anniversary2/fanart/pomu_04.png",
+      "finana": ""
+    },
+    {
+      "name": "Neko",
+      "social": "https://twitter.com/NekoD17",
+      "flag": "/anniversary2/stamps/Stamp-US.webp",
+      "lazulight": "",
+      "elira": "",
+      "pomu": "/anniversary2/fanart/pomu_05.png",
+      "finana": ""
+    },
+    {
+      "name": "TheAndOnlyToast ",
+      "social": "https://twitter.com/Yanagi_Kowareta",
+      "flag": "",
+      "lazulight": "",
+      "elira": "/anniversary2/fanart/elira_04.jpg",
+      "pomu": "",
+      "finana": ""
+    },
+    {
+      "name": "pixykz",
+      "social": "https://twitter.com/pixykzz",
+      "flag": "",
+      "lazulight": "",
+      "elira": "/anniversary2/fanart/elira_01.png",
+      "pomu": "",
+      "finana": ""
+    },
+    {
+      "name": "custard",
+      "social": "https://twitter.com/custardbuns",
+      "flag": "/anniversary2/stamps/Stamp-Canada.webp",
+      "lazulight": "/anniversary2/fanart/lazulight_01.png",
+      "elira": "",
+      "pomu": "",
+      "finana": ""
+    },
+    {
+      "name": "Yuki Baskerville",
+      "social": "https://twitter.com/YukiBaskervill1",
+      "flag": "",
+      "lazulight": "",
+      "elira": "",
+      "pomu": "/anniversary2/fanart/pomu_03.png",
+      "finana": ""
+    },
+    {
+      "name": "AtomB",
+      "social": "https://twitter.com/AtomBlazer",
+      "flag": "/anniversary2/stamps/Stamp-US.webp",
+      "lazulight": "/anniversary2/fanart/lazulight_02.jpg",
+      "elira": "",
+      "pomu": "",
+      "finana": ""
+    }
+  ]
+}
