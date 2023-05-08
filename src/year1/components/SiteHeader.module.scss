@@ -1,3 +1,10 @@
+@use "../variables.scss" as *;
+@use "../../shared/components/SiteHeaderLayout.module.scss" as * with (
+  $header-text-hover: #c9a36b,
+  $header-background: $background-grey-solid,
+  $header-background-item-hover: $lazulight-primary-color
+);
+
 @media screen and (width <= 768px) {
   .nav {
     grid-template-columns: 1fr 1fr 1fr;

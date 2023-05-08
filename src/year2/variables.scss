@@ -1,0 +1,14 @@
+// Colours for borders - not yet changed from first year site
+$pomu-primary-color: #459aa4;
+$finana-primary-color: #1c374a;
+$elira-primary-color: #2b3166;
+$lazulight-primary-color: #294b71;
+
+// Background of header, footer, message boxes, etc.
+$box-background: rgb(181 212 241 / 80%);
+$box-background-solid: rgb(181 212 241 / 100%);
+$box-background-gradient: linear-gradient(
+  300deg,
+  rgb(181 212 241 / 80%),
+  rgb(181 182 241 / 80%)
+);

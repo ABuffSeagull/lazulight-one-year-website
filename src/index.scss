@@ -56,6 +56,7 @@ a {
 }
 
 a.external-link-text {
+  // TODO: This should be removed its uses replaced with <ExLinkA> because it doesn't display properly on ios (thanks Apple...)
   // Append external link indicator symbol
   &::after {
     content: "";
@@ -68,6 +69,15 @@ a.external-link-text {
     mask-position: top;
     mask-repeat: no-repeat;
   }
+}
+
+.external-link-icon {
+  // TODO: This should be removed its uses replaced with <ExLinkB> for consistency. But it's use in ArtBoardLayout does display properly on ios, so not really a big issue to just leave it
+  height: 1rem;
+  width: 1rem;
+  fill: currentcolor;
+  opacity: 0.8;
+  display: block;
 }
 
 code {

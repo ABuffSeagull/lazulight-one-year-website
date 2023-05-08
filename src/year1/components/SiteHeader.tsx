@@ -1,7 +1,8 @@
 import SiteHeaderLayout, { MenuData } from '../../shared/components/SiteHeaderLayout'
 import classes from './SiteHeader.module.scss'
 
-import landingIconDefault from '../../shared/assets/menu/Menu-Logo.png'
+import landingIconDefault from '../../shared/assets/menu/Menu-Logo-Black.webp'
+import landingIconActive from '../../shared/assets/menu/Menu-Logo-White.webp'
 
 import homeIconDefault from '../assets/Menu/Menu-Diamond-Default.webp'
 import homeIconActive from '../assets/Menu/Menu-DiamondRainbow-Active_250px.gif'
@@ -38,7 +39,7 @@ export default function SiteHeader (): JSX.Element {
     {
       name: 'Main',
       icon: landingIconDefault,
-      iconActive: landingIconDefault,
+      iconActive: landingIconActive,
       path: '/',
       children: []
     },
@@ -180,7 +181,7 @@ export default function SiteHeader (): JSX.Element {
   return (
     <SiteHeaderLayout
       menuData={menuData}
-      classNameNav={classes.nav}
+      classes={classes}
     />
   )
 }
