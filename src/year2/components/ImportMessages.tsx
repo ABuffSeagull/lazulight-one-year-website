@@ -98,7 +98,7 @@ export default function ImportMessages ({
   messageListRaw.forEach((msg: MessageRaw): void => {
     // (Brandon): ForEach loop didn't work for some reason
     if (msg.social_url === undefined) { msg.social_url = '' }
-    if (msg.country === undefined) { msg.country = '/stamps/Stamp-Unknown.webp' }
+    if (msg.country === undefined) { msg.country = '/anniversary2/stamps/Stamp-Unknown.webp' }
     if (msg.art_lazulight === undefined) { msg.art_lazulight = '' }
     if (msg.art_elira === undefined) { msg.art_elira = '' }
     if (msg.art_pomu === undefined) { msg.art_pomu = '' }
