@@ -1,4 +1,6 @@
-import * as messageListImport from '../../year1/assets/messageList.json'
+// import * as messageListImport from '../../year1/assets/messageList.json'
+import * as messageListImport from '../assets/messages.json'
+import * as artListImport from '../assets/art.json'
 import EliraCorner from '../../year1/assets/Corners/Elira-MsgCorner.webp'
 import FinanaCorner from '../../year1/assets/Corners/Finana-MsgCorner.webp'
 import LazulightCorner from '../../year1/assets/Corners/LazuLight-Corner.webp'
@@ -7,7 +9,7 @@ import PomuCorner from '../../year1/assets/Corners/Pomu-MsgCorner.webp'
 interface MessageRaw {
   name: string
   social_url?: string
-  country?: string
+  flag?: string
   art_lazulight?: string
   art_elira?: string
   art_pomu?: string
@@ -35,7 +37,7 @@ export interface MessageForCornerBoxes extends Message {
 }
 
 export interface MessageForFlags extends MessageForCornerBoxes {
-  countryFlag: string
+  flag: string
 }
 
 // Shuffle algorithm: https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
@@ -94,11 +96,13 @@ export default function ImportMessages ({
 }): MessageForFlags[] {
   const messageListRaw = messageListImport.all as MessageRaw[]
 
+  console.log(messageListRaw);
+
   const Messages: MessageForFlags[] = []
   messageListRaw.forEach((msg: MessageRaw): void => {
     // (Brandon): ForEach loop didn't work for some reason
     if (msg.social_url === undefined) { msg.social_url = '' }
-    if (msg.country === undefined) { msg.country = '/anniversary2/stamps/Stamp-Unknown.webp' }
+    if (msg.flag === undefined) { msg.flag = '/anniversary2/stamps/Stamp-Unknown.webp' }
     if (msg.art_lazulight === undefined) { msg.art_lazulight = '' }
     if (msg.art_elira === undefined) { msg.art_elira = '' }
     if (msg.art_pomu === undefined) { msg.art_pomu = '' }
@@ -123,7 +127,7 @@ export default function ImportMessages ({
     ) {
       Messages.push({
         name: msg.name,
-        countryFlag: msg.country,
+        flag: msg.flag,
         social_url: msg.social_url,
         msg: msg.msg_lazulight,
         art: enableArt ? msg.art_lazulight : '',
@@ -140,9 +144,10 @@ export default function ImportMessages ({
         msg.art_weewa
       )
     ) {
+      console.log("true")
       Messages.push({
         name: msg.name,
-        countryFlag: msg.country,
+        flag: msg.flag,
         social_url: msg.social_url,
         msg: msg.msg_elira,
         art: chooseArt(enableArt, msg.art_elira, msg.art_weewa),
@@ -150,6 +155,7 @@ export default function ImportMessages ({
         border: 'elira'
       })
     }
+    else {console.log("false")}
     if (
       filterMessage(
         enablePomu,
@@ -161,7 +167,7 @@ export default function ImportMessages ({
     ) {
       Messages.push({
         name: msg.name,
-        countryFlag: msg.country,
+        flag: msg.flag,
         social_url: msg.social_url,
         msg: msg.msg_pomu,
         art: chooseArt(enableArt, msg.art_pomu, msg.art_pomudachi),
@@ -180,7 +186,7 @@ export default function ImportMessages ({
     ) {
       Messages.push({
         name: msg.name,
-        countryFlag: msg.country,
+        flag: msg.flag,
         social_url: msg.social_url,
         msg: msg.msg_finana,
         art: chooseArt(enableArt, msg.art_finana, msg.art_ryuguard),
@@ -193,7 +199,7 @@ export default function ImportMessages ({
     ) {
       Messages.push({
         name: msg.name,
-        countryFlag: msg.country,
+        flag: msg.flag,
         social_url: msg.social_url,
         msg: msg.msg_dcl,
         art: '',
@@ -203,5 +209,8 @@ export default function ImportMessages ({
     }
   })
   shuffleMessages(Messages)
+
+  console.log("messages");
+  console.log(Messages);
   return Messages
 }
