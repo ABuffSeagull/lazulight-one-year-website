@@ -1,0 +1,69 @@
+@use "../variables" as *;
+// @use "../../year1/variables" as *;
+
+// (Brandon) I re-exported the corners to all require the same spacing (relative to equal hight)
+$msg-corner-padding-right: 17px;
+$msg-corner-padding-top: 17px;
+
+.fan-submissions {
+  // Message/Art column organisation loosely based off
+  //	https://codepen.io/slooo/pen/yLYZNKw
+  //	https://www.w3schools.com/css/css3_flexbox_responsive.asp
+
+  &-submission {
+    position: relative;
+    break-inside: avoid;
+    padding-top: $msg-corner-padding-top;
+    padding-right: $msg-corner-padding-right;
+    margin-bottom: 0.5rem;
+  }
+
+  &-message {
+    position: relative;
+    width: 100%;
+    padding: 1rem;
+    background: $box-background-gradient;//$background-gradient;
+    border-radius: 0;
+
+    h4 {
+      margin-bottom: 0.75rem;
+      word-wrap: break-word;
+      margin-top: -4px; // 5px;
+      margin-right: 10px;
+    }
+
+    p {
+      word-wrap: break-word;
+      font-family: cursive;
+    }
+
+  }
+
+  &-poststamp {
+    position: absolute;
+
+    // top: 26px;
+    margin-top: 5px;
+    right: 32px; // 28px;
+    object-fit: scale-down;
+    height: 60px;
+    width: 60px;
+    z-index: 2;
+  }
+}
+
+.pomu-border {
+  border: 3px solid $pomu-primary-color;
+}
+
+.finana-border {
+  border: 3px solid $finana-primary-color;
+}
+
+.elira-border {
+  border: 3px solid $elira-primary-color;
+}
+
+.lazulight-border {
+  border: 3px solid $lazulight-primary-color;
+}
