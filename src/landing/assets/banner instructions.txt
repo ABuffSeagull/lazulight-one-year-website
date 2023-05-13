@@ -1,0 +1,10 @@
+To edit the banner
+
+Using Inkscape:
+	Open the editable version
+	Edit as desired
+	Select both the shape and text
+	From the menu choose: Path > Exclusion
+		NOTE: This converts the text to a path. Do not save the file after running this
+	Save as a copy with filetype "Plain svg"
+	Close without saving
