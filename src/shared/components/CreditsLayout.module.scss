@@ -1,0 +1,135 @@
+/* The CreditsLayout file is intended to be used as follows
+
+Create an scss file for the menu implementation "CreditsLayout.modules.scss"
+Have it call this file and overwrite the default variables with
+```
+@use "pathToThisFile" as * with (
+  $credits-text: ,
+  $credits-background-item: 
+);
+```
+*/
+@use "../variables" as *;
+
+// These variables are intended to be overwritten
+$credits-text: black !default;
+$credits-background-item: grey !default;
+
+.text {
+  // Grid control based off
+  // https://css-irl.info/controlling-leftover-grid-items/
+
+  h3 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  h4 {
+    font-size: clamp(1rem, 2.3vw, 1.5rem);
+    text-align: center;
+  }
+
+  ul {
+    // Remove bullets
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+    flex: 1 1 auto;
+    padding: 1rem;
+    counter-reset: grid;
+  }
+
+  &-special-final li {
+    // Important to override the high specificity
+    grid-column: span 12 !important;
+  }
+
+  ul li {
+    grid-column: span 4;
+
+    // Dealing with 2 orphan items
+    &:last-child:nth-child(3n - 1) {
+      grid-column-end: -3;
+    }
+
+    &:nth-last-child(2):nth-child(3n + 1) {
+      grid-column-end: 7;
+    }
+
+    // Dealing with single orphan
+    &:last-child:nth-child(3n - 2) {
+      grid-column-end: 9;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a::after {
+      // Thanks to this dude or I'd be dead getting this to work
+      // https://medium.com/front-end-weekly/text-wrapping-inline-pseudo-elements-8a12a9ba7498
+      content: "";
+      padding-left: 1em;
+      background-color: currentcolor;
+
+      /* tslint:disable-next-line:scss/double-slash-comment-whitespace-inside */
+      mask-image: url("/shared/externalLink.svg");
+      mask-size: 0.4em;
+      mask-position: top;
+      mask-repeat: no-repeat;
+    }
+  }
+
+  @media (max-width: $bp-tablet) {
+    ul li {
+      grid-column: span 6;
+
+      // Undo desktop selectors
+      &:last-child:nth-child(3n - 1) {
+        grid-column-end: auto;
+      }
+
+      &:nth-last-child(2):nth-child(3n + 1) {
+        grid-column-end: auto;
+      }
+
+      &:last-child:nth-child(3n - 2) {
+        grid-column-end: auto;
+      }
+
+      // Dealing with single orphan
+      &:last-child:nth-child(2n - 1) {
+        grid-column-end: 10;
+      }
+    }
+  }
+
+  @media (max-width: $bp-mobile) {
+    ul li {
+      grid-column: span 12;
+
+      // Undo tablet selector
+      &:last-child:nth-child(2n - 1) {
+        grid-column-end: auto;
+      }
+    }
+  }
+
+  ul li p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: clamp(1rem, 2.3vw, 1.25rem);
+    color: $credits-text;
+    background: $credits-background-item;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    height: 100%;
+  }
+}

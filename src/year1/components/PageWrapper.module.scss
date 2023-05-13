@@ -25,6 +25,14 @@
   position: relative;
 }
 
+.home,
+.fnf,
+.dcl,
+.vn {
+  // This does nothing for now... but it was causing the creation of the 'undefined' class
+  color: black;
+}
+
 .elira {
   color: $elira-text-color;
 }
@@ -107,15 +115,23 @@
   //   animation-duration: Would be better to use JS to adjust based on screen dimension...
   //   For each element, specify 'width' or 'height', then 'object-fit' will scale the other dim
 
+  &-home,
+  &-elira,
+  &-pomu,
+  &-finana,
+  &-vn,
+  &-dcl,
+  &-fnf {
+    // Container properties
+    position: relative;
+    overflow: hidden;
+  }
+
   &-elira,
   &-pomu,
   &-finana,
   &-vn,
   &-dcl {
-    // Container properties
-    position: relative;
-    overflow: hidden;
-
     // Properties common to all animations
     &-container img {
       position: absolute;

@@ -11,7 +11,10 @@ import ImportMessages from '../components/ImportMessages'
 import MessageBoxesLayout from '../components/MessageBoxesLayout'
 import MessageBoxesWithCorners from '../components/MessageBoxesWithCorners'
 import tp from '../components/TalentProfile.module.scss'
-import '../components/ProjectPages.scss'
+import classesCredits from '../components/Credits.module.scss'
+import classesVideo from '../components/Video.module.scss'
+import classesDcl from '../components/ProjectDcl.module.scss'
+import classesP from '../components/ProjectPages.module.scss'
 import '../components/TalentLayout.scss'
 
 interface Props {
@@ -22,7 +25,7 @@ export default function DiamondCityLights (props: Props): JSX.Element {
   return (
     <>
       {/* Heading */}
-      <div className='project-heading-container-imagetext'>
+      <div className={classesP['heading-container-imagetext']}>
         <Image src={PomuImage} enableZoom />
         <h1 className={`${tp['talent-title']} ${tp['talent-title-pomu']}`}>
           Diamond City
@@ -32,7 +35,7 @@ export default function DiamondCityLights (props: Props): JSX.Element {
       </div>
 
       <FramedTextbox corner={LazulightCorner} border={props.page}>
-        <div className='video-container'>
+        <div className={classesVideo.container}>
           <iframe
             src='https://www.youtube.com/embed/QTHJ8jwKgQg'
             title='YouTube video player'
@@ -42,7 +45,7 @@ export default function DiamondCityLights (props: Props): JSX.Element {
           />
         </div>
         {/* Description */}
-        <div className='project-description-container'>
+        <div className={classesP['description-container']}>
           <h3>A Fan Cover Song</h3>
           <p>
             In celebration of Lazulight's first anniversary, fans from the
@@ -95,7 +98,7 @@ export default function DiamondCityLights (props: Props): JSX.Element {
 
 function DiamondCityLightsCredits (): JSX.Element {
   return (
-    <div className='credits-text'>
+    <div className={classesCredits.text}>
       <h3>Organizer &amp; Leader</h3>
       <ul>
         <li><p><a href='https://twitter.com/HirokawaKiro'>Kiro</a></p></li>
@@ -116,7 +119,7 @@ function DiamondCityLightsCredits (): JSX.Element {
       <ul>
         <li><p><a href='https://twitter.com/PomuPowerCenter'>Pomu Power Distribution Center</a></p></li>
         <li><p><a href='https://twitter.com/peeboggs'>Pendora’s Box</a></p>
-          <div className='dcl-twerk-container'><Image className='dcl-twerk-gif' src={SusElira} /></div>
+          <div className={classesDcl['twerk-container']}><Image className={classesDcl['twerk-gif']} src={SusElira} /></div>
         </li>
         <li><p><a href='https://twitter.com/Rexhernan22'>Rexhernan 22</a></p></li>
       </ul>
@@ -203,13 +206,13 @@ function DiamondCityLightsCredits (): JSX.Element {
         <li><p><a href='https://twitter.com/NoxShadow24904'>NoxShadow</a></p></li>
         <li><p><a href='https://twitter.com/HirokawaKiro'>Kiro</a></p></li>
         <li><p><a href='https://twitter.com/BrandonJohns96'>Brandon Johns</a></p>
-          <div className='dcl-twerk-container'><Image className='dcl-twerk-gif' src={TwerkPomu} /></div>
+          <div className={classesDcl['twerk-container']}><Image className={classesDcl['twerk-gif']} src={TwerkPomu} /></div>
         </li>
         <li><p><a href='https://twitter.com/_arisamisaki_'>jessica</a></p></li>
         <li><p><a href='https://twitter.com/KeZunjian'>Kei_ZJ (Hanashi)</a></p></li>
         <li><p><a href='https://twitter.com/third12_'>third12</a></p></li>
         <li><p><a href='https://twitter.com/wildnexus'>wildnexus</a></p>
-          <div className='dcl-twerk-container'><Image className='dcl-twerk-gif' src={TwerkElira} /></div>
+          <div className={classesDcl['twerk-container']}><Image className={classesDcl['twerk-gif']} src={TwerkElira} /></div>
         </li>
         <li><p><a href='https://twitter.com/aletheia024'>Aletheia</a></p></li>
         <li><p><a href='https://twitter.com/Ghirocks_Log'>Ghirocks_Log</a></p></li>
@@ -230,7 +233,7 @@ function DiamondCityLightsCredits (): JSX.Element {
         <li><p><a href='https://twitter.com/rockyyy_dp'>rocky.</a></p></li>
       </ul>
       <h3>Special Thanks to</h3>
-      <ul className='credits-text-special-final'>
+      <ul className={classesCredits['text-special-final']}>
         <li><p><a href='https://twitter.com/NoxShadow24904'>NoxShadow</a></p></li>
         <li><p>KB</p></li>
         <li><p>LazuLight 1st Anniversary Website Team</p></li>
@@ -240,8 +243,8 @@ function DiamondCityLightsCredits (): JSX.Element {
         <li><p>Finanacord Discord Server</p></li>
         <li><p>And every member of the NijiEN community who helped us out, or showed their support for our project!</p></li>
       </ul>
-      <div className='dcl-twerk-container'>
-        <Image className='dcl-twerk-gif' src={TwerkFinana} />
+      <div className={classesDcl['twerk-container']}>
+        <Image className={classesDcl['twerk-gif']} src={TwerkFinana} />
       </div>
     </div>
   )

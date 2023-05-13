@@ -1,0 +1,115 @@
+@use "../variables" as *;
+
+.heading {
+  // (Brandon)
+  // Image styles (when using 'enableZoom')
+  // * Apply styles indirectly through the container, not on 'img' or 'picture'
+  // * Otherwise the style affects the zoomed condition
+  // 'height' styles
+  // *  Subtracts height of the menu elements to fill 1 full screen
+  &-container-logo {
+    display: flex;
+    align-items: center;
+    width: auto;
+    margin: auto;
+    object-fit: contain;
+    max-width: 80%;
+    height: calc(100vh - 14rem);
+
+    @media (max-width: $bp-tablet) {
+      height: calc(100vh - 6rem);
+    }
+
+    @media (aspect-ratio <= 4/5) {
+      height: auto;
+    }
+
+    div,
+    img {
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &-container-imagetext {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 14rem);
+
+    @media (max-width: $bp-tablet) {
+      height: calc(100vh - 6rem);
+    }
+
+    @media (max-width: $bp-mobile) {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    h1 {
+      width: auto;
+      margin: 0 0 0 2rem;
+
+      @media (max-width: $bp-mobile) {
+        margin: 1rem 0 0;
+        font-size: clamp(1.5rem, 12vw, 5rem);
+      }
+    }
+
+    img,
+    picture {
+      width: auto;
+      margin: auto;
+      object-fit: contain;
+      max-width: 100%;
+      height: calc(100vh - 14rem);
+
+      @media (max-width: $bp-tablet) {
+        height: calc(100vh - 6rem);
+      }
+
+      @media (max-width: $bp-mobile) {
+        height: calc((100vh - 6rem) * 0.7);
+      }
+    }
+  }
+}
+
+.description-container {
+  padding-top: 3rem;
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+    text-decoration: underline;
+  }
+
+  code {
+    font-weight: inherit;
+  }
+}
+
+.download-button {
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding: 0.25rem 0.5rem;
+  background: $background-gradient;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  color: inherit;
+  transition: color 75ms ease-out;
+
+  @media (width <= 600px) {
+    margin-right: 0;
+  }
+
+  &:hover {
+    color: white;
+  }
+}
