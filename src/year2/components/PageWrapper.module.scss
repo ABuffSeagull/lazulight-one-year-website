@@ -3,67 +3,73 @@
 @use "../variables" as *;
 @use "sass:math";
 
-.page-container{
-  
-}
-
-.page-box{
-  height: 760px;
-  aspect-ratio: auto;
-  border-radius: 10px;
-  font-family: 'Open Sans';
-  padding: 5px;
+.page-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  max-width: 100vw;
   position: relative;
-  overflow: visible;
-
 }
 
 .page-bg-static {
-  &-elira {
-    
-    background-image: url("../assets/background/18.png");
+  &-elira,
+  &-finana,
+  &-pomu,
+  &-doujin,
+  &-song,
+  &-about,
+  &-home {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
+  }
+
+  &-elira {
+    background-image: url("../assets/background/18.png");
+    background-color: #274454; // Backup in case the image doesn't load
   }
 
   &-finana {
     background-image: url("../assets/background/18.png");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: #274454; // Backup in case the image doesn't load
   }
 
   &-pomu {
     background-image: url("../assets/background/18.png");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: #274454; // Backup in case the image doesn't load
   }
 
   &-home {
-    z-index: -200;
     background-image: url("../assets/background/18.png");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: #274454; // Backup in case the image doesn't load
   }
 }
 
-
-
-
 .page-bg-image {
   height: 30%;
-  margin-left: 42.5%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   position: fixed;
 }
 
-.page-bg-imagebg {
-  height: 30%;
-  margin-left: 42.5%;
+.page-bg-filter {
   position: fixed;
-  filter: blur(2px) brightness(40%) saturate(50%);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -100;
+
+  &-top {
+    filter: none;
+  }
+
+  &-scrolled {
+    filter: blur(2px) brightness(40%) saturate(50%);
+  }
 }
-
-
