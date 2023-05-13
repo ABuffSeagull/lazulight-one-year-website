@@ -11,7 +11,7 @@ export default function Home (): JSX.Element {
   const firstNameLower = firstName.toLowerCase()
 
   return (
-    <div>
+    <>
 
       <Timeline
         memories={[
@@ -83,28 +83,25 @@ export default function Home (): JSX.Element {
         ]}
       />
 
-      <div>
-        {/* Messages */}
-        <MessageBoxesLayout
-          titleType={firstNameLower}
-          heading={`Messages To ${firstName}`}
-          page={firstNameLower}
-          enableFolding
-        >
-          <MessageBoxesWithFlags messages={ImportMessages({ enableLazulight: true })} />
-        </MessageBoxesLayout>
+      {/* Messages */}
+      <MessageBoxesLayout
+        titleType={firstNameLower}
+        heading={`Messages To ${firstName}`}
+        page={firstNameLower}
+        enableFolding
+      >
+        <MessageBoxesWithFlags messages={ImportMessages({ enableLazulight: true })} />
+      </MessageBoxesLayout>
 
-        {/* Art */}
-        <MessageBoxesLayout
-          titleType={firstNameLower}
-          heading={`Art To ${firstName}`}
-          page={firstNameLower}
-          enableFolding
-        >
-          <MessageBoxesWithFlags messages={ImportMessages({ enableLazulight: true, enableArt: true })} />
-        </MessageBoxesLayout>
-      </div>
-    </div>
-
+      {/* Art */}
+      <MessageBoxesLayout
+        titleType={firstNameLower}
+        heading={`Art To ${firstName}`}
+        page={firstNameLower}
+        enableFolding
+      >
+        <MessageBoxesWithFlags messages={ImportMessages({ enableLazulight: true, enableArt: true })} />
+      </MessageBoxesLayout>
+    </>
   )
 }

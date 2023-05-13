@@ -50,7 +50,7 @@ export function PageWrapper ({
         </div>
 
         {/* This is the body of the page */}
-        <div className={pw.container}>
+        <div className={`${pw.container} ${pw[`container-${pageTheme}`]}`}>
           {children}
         </div>
 
