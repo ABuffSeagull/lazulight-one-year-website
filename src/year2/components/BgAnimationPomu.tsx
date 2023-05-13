@@ -6,7 +6,7 @@ import spacePomu from '../assets/background/Space-Pomu.webp'
 export default function BgAnimationPomu (): JSX.Element {
   return (
     <>
-      <Image src={spacePomu} className={pw['page-bg-image']} />
+      <Image src={spacePomu} className={pw['page-bg-animation-liver']} />
     </>
   )
 }

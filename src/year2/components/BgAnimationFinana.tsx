@@ -6,7 +6,7 @@ import spaceFinana from '../assets/background/Space-Finana.webp'
 export default function BgAnimationFinana (): JSX.Element {
   return (
     <>
-      <Image src={spaceFinana} className={pw['page-bg-image']} />
+      <Image src={spaceFinana} className={pw['page-bg-animation-liver']} />
     </>
   )
 }

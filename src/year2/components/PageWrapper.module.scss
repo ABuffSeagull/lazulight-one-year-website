@@ -71,5 +71,100 @@
 
   &-scrolled {
     filter: blur(2px) brightness(40%) saturate(50%);
+    opacity: 0.5;
+  }
+}
+
+@mixin animation-core {
+  position: fixed;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+@mixin animation-standard {
+  @include animation-core;
+
+  animation-direction: normal;
+  animation-timing-function: linear;
+}
+
+.page-bg-animation {
+  &-liver {
+    @include animation-core;
+
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-name: liver;
+    animation-delay: 0s;
+    animation-duration: 5s;
+    height: 30%;
+    left: 50%;
+    top: 50%;
+  }
+
+  @keyframes liver {
+    // (Brandon) The order of transforms matters, relating to the coordinate system origin.
+    // translate-before-rotate to ensure that the rotation is with respect the the centre of the translated image
+    0% {
+      transform: translate(-50%, -55%) rotate(-5deg);
+    }
+
+    50% {
+      transform: translate(-50%, -45%) rotate(0deg);
+    }
+
+    100% {
+      transform: translate(-50%, -55%) rotate(5deg);
+    }
+  }
+
+  &-elira-a {
+    @include animation-standard;
+
+    animation-name: elira-a;
+    animation-delay: 0s;
+    animation-duration: 10s;
+    height: 30%;
+  }
+
+  @keyframes elira-a {
+    0%,
+    80% {
+      transform: rotate(0);
+      left: 100%;
+      top: 50%;
+    }
+
+    100% {
+      display: none;
+      transform: rotate(360deg);
+      left: -50%;
+      top: -20%;
+    }
+  }
+
+  &-elira-b {
+    @include animation-standard;
+
+    animation-name: elira-b;
+    animation-delay: -5s;
+    animation-duration: 10s;
+    height: 30%;
+  }
+
+  @keyframes elira-b {
+    0%,
+    80% {
+      transform: rotate(0);
+      left: 70%;
+      top: 100%;
+    }
+
+    100% {
+      display: none;
+      transform: rotate(360deg);
+      left: 30%;
+      top: -50%;
+    }
   }
 }
