@@ -37,12 +37,14 @@ export default function Elira (): JSX.Element {
           videoId: 'YBLI4Q-Zpl8'
         },
         {
-          type: 'message',
+          type: 'twitter',
           submitterName: 'CrimsonSilver4',
           member: 'elira',
           date: new Date(2022, 10, 5),
           title: 'Elira reaches 500K subscribers',
-          message: 'https://twitter.com/EliraPendora/status/1577788509771137025'
+          messagepart1: 'Elira',
+          messagepart2: 'reached 500K subscribers',
+          tweetUrl: 'https://twitter.com/EliraPendora/status/1577788509771137025'
         },
         {
           type: 'youtube',
