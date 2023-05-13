@@ -3,6 +3,10 @@
 @use "../variables" as *;
 @use "sass:math";
 
+.container {
+  width: 100%;
+}
+
 .page-container {
   height: 100%;
   width: 100%;
