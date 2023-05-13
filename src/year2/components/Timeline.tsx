@@ -95,7 +95,7 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
           elira: '#fd83f2',
           finana: '#a8f7f4',
           pomu: '#ffd889',
-          lazulight: ''
+          lazulight: '#b5d4f1'
         }[memory.member]
       }`,
       marginTop: `-${verticalOffset}px`
