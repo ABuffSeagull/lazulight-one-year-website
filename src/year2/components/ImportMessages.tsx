@@ -65,7 +65,6 @@ export default function ImportMessages ({
   enableDcl?: boolean
   enableArt?: boolean
 }): MessageForFlags[] {
-
   const messageListRaw = !enableArt
     ? messageListImport.all as MessageRaw[]
     : artListImport.all as MessageRaw[]
