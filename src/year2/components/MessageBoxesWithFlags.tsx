@@ -19,7 +19,7 @@ export default function MessageBoxesWithFlags ({
               {message.social_url === '' ? (message.name) : (<a href={message.social_url}>{message.name}</a>)}
             </h4>
             {(message.msg !== '' && message.art === '') && <p>{message.msg}</p>}
-            {message.art !== '' && (<Image className={`${classes['fan-submissions-fanarti']}`} src={message.art} alt={message.msg} enableZoom />)}
+            {message.art !== '' && (<Image className={`${classes['fan-submissions-fanart']}`} src={message.art} alt={message.msg} enableZoom />)}
           </div>
         </div>
       ))}
