@@ -43,9 +43,10 @@ function filterMessage (
   cardMsg: string
 ): boolean {
   const fanCardAvailable: boolean = cardMsg !== ''
+  const msgOrArtAvailable: boolean = msg !== ''
   return (
     enable &&
-    ((msg !== '' && !fanCardAvailable) || (fanCardAvailable))
+    (msgOrArtAvailable || fanCardAvailable)
   )
 }
 
@@ -55,7 +56,6 @@ export default function ImportMessages ({
   enableElira = false,
   enablePomu = false,
   enableFinana = false,
-  enableDcl = false,
   enableArt = false
 }: {
   enableLazulight?: boolean
@@ -65,20 +65,16 @@ export default function ImportMessages ({
   enableDcl?: boolean
   enableArt?: boolean
 }): MessageForFlags[] {
-  // let messageListRaw; //= messageListImport.all as MessageRaw[]
 
   const messageListRaw = !enableArt
     ? messageListImport.all as MessageRaw[]
     : artListImport.all as MessageRaw[]
-  // messageListRaw = messageListImport.all as MessageRaw[];
-
-  console.log(messageListRaw)
 
   const Messages: MessageForFlags[] = []
   messageListRaw.forEach((msg: MessageRaw): void => {
     // (Brandon): ForEach loop didn't work for some reason
     if (msg.social === undefined) { msg.social = '' }
-    if (msg.flag === undefined) { msg.flag = '/anniversary2/stamps/Stamp-Unknown.webp' }
+    if (msg.flag === undefined) { msg.flag = '' }
     if (msg.lazulight === undefined) { msg.lazulight = '' }
     if (msg.elira === undefined) { msg.elira = '' }
     if (msg.pomu === undefined) { msg.pomu = '' }
@@ -149,7 +145,5 @@ export default function ImportMessages ({
   })
   shuffleMessages(Messages)
 
-  console.log('messages')
-  console.log(Messages)
   return Messages
 }
