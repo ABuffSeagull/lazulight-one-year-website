@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import pw from './PageWrapper.module.scss'
+import backgrounds  from "../assets/background/Space-Pomu.png"
 
 export function PageWrapper ({
   children,
@@ -10,20 +11,36 @@ export function PageWrapper ({
   children: React.ReactNode
   pageTheme: string
 }): JSX.Element {
-  return (
+  const [background, setBackground] = useState("page-bg-image");
+  var opt = 1;
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 300){
+      pageTheme = "pomu"
+      
+      console.log(pageTheme)
+    } else{
+      opt = 1;
+    }
+  })
+  
+  
 
-    <div className={`  ${pw[`page-bg-static-${pageTheme}`]} `}>
-      <div className={`  ${pw[`page-bg-image-${pageTheme}`]} `}>
+  
+  return (
+    <div className={`  ${pw[`page-container}`]} `} >
+    
 
         <SiteHeader />
-
+        <img src = {backgrounds} className={ `  ${pw[background]} `}/> 
+        <div className ={ `  ${pw[`page-box`]} ` }> </div> 
         {/* This is the body of the page */}
         <div>
           {children}
         </div>
 
         <SiteFooter theme='lazulight' />
-      </div>
-    </div>
+        </div>
+    
   )
 }
+

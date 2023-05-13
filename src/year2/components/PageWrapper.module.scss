@@ -3,8 +3,24 @@
 @use "../variables" as *;
 @use "sass:math";
 
+.page-container{
+  
+}
+
+.page-box{
+  height: 760px;
+  aspect-ratio: auto;
+  border-radius: 10px;
+  font-family: 'Open Sans';
+  padding: 5px;
+  position: relative;
+  overflow: visible;
+
+}
+
 .page-bg-static {
   &-elira {
+    
     background-image: url("../assets/background/18.png");
     background-attachment: fixed;
     background-position: center;
@@ -26,6 +42,7 @@
   }
 
   &-home {
+    z-index: -200;
     background-image: url("../assets/background/18.png");
     background-attachment: fixed;
     background-position: center;
@@ -33,28 +50,20 @@
   }
 }
 
+
+
+
 .page-bg-image {
-  &-pomu {
-    background-image: url("../assets/background/Space-Pomu.png");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 20%;
-  }
-
-  &-finana {
-    background-image: url("../assets/background/Space-Finana.png");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 20%;
-  }
-
-  &-elira {
-    background-image: url("../assets/background/Space-Elira.png");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 20%;
-  }
+  height: 30%;
+  margin-left: 42.5%;
+  position: fixed;
 }
+
+.page-bg-imagebg {
+  height: 30%;
+  margin-left: 42.5%;
+  position: fixed;
+  filter: blur(2px) brightness(50%);
+}
+
+
