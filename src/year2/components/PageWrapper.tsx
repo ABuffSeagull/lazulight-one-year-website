@@ -15,11 +15,11 @@ export function PageWrapper ({
   var opt = 1;
   window.addEventListener('scroll', () => {
     if(window.scrollY > 300){
-      pageTheme = "pomu"
       
-      console.log(pageTheme)
+      setBackground("page-bg-imagebg")
+      
     } else{
-      opt = 1;
+      setBackground("page-bg-image")
     }
   })
   
