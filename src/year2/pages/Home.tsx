@@ -2,7 +2,14 @@ import React from 'react'
 
 import { Timeline } from '../components/Timeline'
 
+import MessageBoxesLayout from '../../year1/components/MessageBoxesLayout' // '../components/MessageBoxesLayout'
+import ImportMessages from '../../year2/components/ImportMessages' // '../components/ImportMessages'
+import MessageBoxesWithFlags from '../components/MessageBoxesWithFlags'
+
 export default function Home (): JSX.Element {
+  const firstName = 'Lazulight'
+  const firstNameLower = firstName.toLowerCase()
+
   return (
     <div>
 
@@ -75,6 +82,29 @@ export default function Home (): JSX.Element {
           }
         ]}
       />
+
+      <div>
+        {/* Messages */}
+        <MessageBoxesLayout
+          titleType={firstNameLower}
+          heading={`Messages To ${firstName}`}
+          page={firstNameLower}
+          enableFolding
+        >
+          <MessageBoxesWithFlags messages={ImportMessages({ enableLazulight: true })} />
+        </MessageBoxesLayout>
+
+        {/* Art */}
+        <MessageBoxesLayout
+          titleType={firstNameLower}
+          heading={`Art To ${firstName}`}
+          page={firstNameLower}
+          enableFolding
+        >
+          <MessageBoxesWithFlags messages={ImportMessages({ enableLazulight: true, enableArt: true })} />
+        </MessageBoxesLayout>
+      </div>
     </div>
+
   )
 }
