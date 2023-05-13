@@ -41,7 +41,7 @@ export function PageWrapper ({
           className={`${pw['page-bg-filter']}`}
           style={{
             opacity: bgFilterOpacity,
-            filter: 'blur(' + bgFilterBlur + 'px) brightness(' + bgFilterBright + ') saturate(' + bgFilterSat + ')'
+            filter: 'blur(' + String(bgFilterBlur) + 'px) brightness(' + String(bgFilterBright) + ') saturate(' + String(bgFilterSat) + ')'
           }}
         >
           {pageTheme === 'pomu' && <BgAnimationPomu />}

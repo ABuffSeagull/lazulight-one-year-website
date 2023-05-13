@@ -55,14 +55,6 @@
   }
 }
 
-.page-bg-image {
-  height: 30%;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  position: fixed;
-}
-
 .page-bg-filter {
   position: fixed;
   top: 0;
@@ -83,6 +75,7 @@
 
   animation-direction: normal;
   animation-timing-function: linear;
+  animation-duration: 40s;
 }
 
 .page-bg-animation {
@@ -94,7 +87,7 @@
     animation-name: liver;
     animation-delay: 0s;
     animation-duration: 5s;
-    height: 30%;
+    height: 50%;
     left: 50%;
     top: 50%;
   }
@@ -119,9 +112,8 @@
     @include animation-standard;
 
     animation-name: elira-a;
-    animation-delay: 0s;
-    animation-duration: 10s;
-    height: 30%;
+    animation-delay: -10s;
+    height: 20%;
   }
 
   @keyframes elira-a {
@@ -133,8 +125,7 @@
     }
 
     100% {
-      display: none;
-      transform: rotate(360deg);
+      transform: rotate(720deg);
       left: -50%;
       top: -20%;
     }
@@ -144,24 +135,125 @@
     @include animation-standard;
 
     animation-name: elira-b;
-    animation-delay: -5s;
-    animation-duration: 10s;
-    height: 30%;
+    animation-delay: -27s;
+    height: 15%;
   }
 
   @keyframes elira-b {
     0%,
-    80% {
+    70% {
       transform: rotate(0);
-      left: 70%;
+      left: 60%;
       top: 100%;
     }
 
     100% {
-      display: none;
       transform: rotate(360deg);
-      left: 30%;
+      left: 100%;
       top: -50%;
     }
+  }
+
+  &-elira-c {
+    @include animation-standard;
+
+    animation-name: elira-c;
+    animation-delay: 0s;
+    height: 20%;
+  }
+
+  @keyframes elira-c {
+    0%,
+    85% {
+      transform: rotate(0);
+      left: -10%;
+      bottom: 150%;
+    }
+
+    99% {
+      transform: rotate(90deg);
+      left: 10%;
+      bottom: 0%;
+    }
+
+    100% {
+      transform: rotate(90deg);
+      left: -30%;
+      bottom: 0%;
+    }
+  }
+
+  &-elira-d {
+    @include animation-standard;
+
+    animation-name: elira-d;
+    animation-delay: 0s;
+    height: 20%;
+    top: 80%;
+  }
+
+  @keyframes elira-d {
+    0%,
+    97% {
+      left: 100%;
+    }
+
+    100% {
+      left: -20%;
+    }
+  }
+
+  &-elira-e {
+    @include animation-standard;
+
+    animation-name: elira-e;
+    animation-delay: -25s;
+    top: 20%;
+  }
+
+  @keyframes elira-e {
+    0%,
+    85% {
+      transform: translateX(-100%) rotate(0);
+      left: 0%;
+      height: 50%;
+    }
+
+    100% {
+      transform: translateX(-100%) rotate(1000deg);
+      left: 30%;
+      height: 1%;
+    }
+  }
+
+  &-pomu-a {
+    @include animation-standard;
+
+    animation-name: pomu-a;
+    animation-delay: 0s;
+    animation-timing-function: ease-out;
+  }
+
+  @keyframes pomu-a {
+    0% {
+      transform: rotate(0);
+      bottom: 0%;
+      left: 10%;
+      height: 50%;
+    }
+
+    100% {
+      transform: rotate(20deg);
+      bottom: 80%;
+      left: 0%;
+      height: 3%;
+    }
+  }
+
+  &-pomu-b {
+    height: 30%;
+    right: 2%;
+    bottom: 0%;
+    position: fixed;
   }
 }
