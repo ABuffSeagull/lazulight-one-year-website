@@ -14,12 +14,14 @@ export function PageWrapper ({
   pageTheme: string
 }): JSX.Element {
   const [background, setBackground] = useState("page-bg-image");
-  var spacesuit = pomu
+  var spacesuit
 
   if(pageTheme == "elira"){
     spacesuit = elira
   } else if( pageTheme == "finana"){
     spacesuit = finana
+  } else if(pageTheme == "pomu"){
+    spacesuit = pomu
   }
 
   window.addEventListener('scroll', () => {
