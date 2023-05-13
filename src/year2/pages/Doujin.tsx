@@ -1,9 +1,16 @@
 import React from 'react'
 
-export default function Doujin (): JSX.Element {
+import DoujinViewer from '../components/DoujinViewer'
+
+export default function Doujin(): JSX.Element {
   return (
-    <div>
-      test
-    </div>
+    <>
+      <DoujinViewer></DoujinViewer>
+    
+      <h1>
+        Credits
+      </h1>
+    
+    </>
   )
 }
