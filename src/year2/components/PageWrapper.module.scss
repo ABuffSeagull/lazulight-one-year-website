@@ -13,6 +13,7 @@
   min-height: 100vh;
   max-width: 100vw;
   position: relative;
+  z-index: 0;
 }
 
 .page-bg-static {
@@ -26,6 +27,11 @@
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    filter: blur(2px) brightness(70%) saturate(70%);
+    z-index: -200;
   }
 
   &-elira {

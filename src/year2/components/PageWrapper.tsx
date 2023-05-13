@@ -24,24 +24,26 @@ export function PageWrapper ({
   })
 
   return (
-    // <div className={`${pw['page-container']} ${pw[`page-bg-static-${pageTheme}`]}`}>
-    <div className={`${pw['page-container']}`}>
-      <SiteHeader />
+    <>
+      {/* Background image on a separate div so that we can apply filters to it */}
+      <div className={`${pw[`page-bg-static-${pageTheme}`]}`} />
+      <div className={`${pw['page-container']}`}>
+        <SiteHeader />
 
-      {/* Background Animations */}
-      <div className={`${pw['page-bg-filter']} ${pw[background]}`}>
-        {pageTheme === 'pomu' && <BgAnimationPomu />}
-        {pageTheme === 'elira' && <BgAnimationElira />}
-        {pageTheme === 'finana' && <BgAnimationFinana />}
+        {/* Background Animations */}
+        <div className={`${pw['page-bg-filter']} ${pw[background]}`}>
+          {pageTheme === 'pomu' && <BgAnimationPomu />}
+          {pageTheme === 'elira' && <BgAnimationElira />}
+          {pageTheme === 'finana' && <BgAnimationFinana />}
+        </div>
+
+        {/* This is the body of the page */}
+        <div>
+          {children}
+        </div>
+
+        <SiteFooter theme='lazulight' />
       </div>
-
-      {/* This is the body of the page */}
-      <div>
-        {children}
-      </div>
-
-      <SiteFooter theme='lazulight' />
-    </div>
-
+    </>
   )
 }
