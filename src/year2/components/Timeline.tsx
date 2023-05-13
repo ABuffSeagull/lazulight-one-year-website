@@ -4,7 +4,7 @@ import classes from './Timeline.module.scss'
 
 interface MemoryCommon {
   title: string
-  member: 'elira' | 'finana' | 'pomu'
+  member: 'elira' | 'finana' | 'pomu' | 'lazulight'
   date: Date
   submitterName: string
   submitterSocialUrl?: string
@@ -94,7 +94,8 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
         {
           elira: '#fd83f2',
           finana: '#a8f7f4',
-          pomu: '#ffd889'
+          pomu: '#ffd889',
+          lazulight: ''
         }[memory.member]
       }`,
       marginTop: `-${verticalOffset}px`
