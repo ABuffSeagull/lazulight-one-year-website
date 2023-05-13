@@ -36,24 +36,21 @@
   flex-direction: column;
   justify-content: center;
   max-width: calc(min(var(--max-content-width) + var(--date-width), 50%));
+  min-height: 8rem;
 }
 
 // Item overlap
 // This isn't safe if we have very short one-line messages, but that probably won't happen?
 // We can revisit it when we have the finalized timeline content.
 // ==============================================================
-
-
-.item {
-  min-height: 8rem;
-}
+// Added this part to the above item
+// .item {
+//   min-height: 8rem;
+// }
 
 .item + .item {
   margin-top: -3rem !important;
 }
-
-
-// ==============================================================
 
 .item-title {
   max-width: calc(
