@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import pw from './PageWrapper.module.scss'
-import backgrounds  from "../assets/background/Space-Pomu.png"
+import pomu  from "../assets/background/Space-Pomu.png"
+import elira from "../assets/background/Space-Elira.png"
+import finana from '../assets/background/Space-Finana.png'
 
 export function PageWrapper ({
   children,
@@ -12,9 +14,16 @@ export function PageWrapper ({
   pageTheme: string
 }): JSX.Element {
   const [background, setBackground] = useState("page-bg-image");
-  var opt = 1;
+  var spacesuit = pomu
+
+  if(pageTheme == "elira"){
+    spacesuit = elira
+  } else if( pageTheme == "finana"){
+    spacesuit = finana
+  }
+
   window.addEventListener('scroll', () => {
-    if(window.scrollY > 300){
+    if(window.scrollY > 250){
       
       setBackground("page-bg-imagebg")
       
@@ -22,16 +31,16 @@ export function PageWrapper ({
       setBackground("page-bg-image")
     }
   })
+
+
   
   
 
   
   return (
     <div className={`  ${pw[`page-container}`]} `} >
-    
-
         <SiteHeader />
-        <img src = {backgrounds} className={ `  ${pw[background]} `}/> 
+        <img src = {spacesuit} className={ `  ${pw[background]} `}/> 
         <div className ={ `  ${pw[`page-box`]} ` }> </div> 
         {/* This is the body of the page */}
         <div>
