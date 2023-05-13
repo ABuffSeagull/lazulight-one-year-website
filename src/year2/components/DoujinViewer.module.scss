@@ -1,0 +1,15 @@
+.doujin-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.doujin-size-detect {
+  width: 100%;
+  aspect-ratio: 8.5/11;
+  max-height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  pointer-events: none;
+}
