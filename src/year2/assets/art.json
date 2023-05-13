@@ -5,16 +5,16 @@
       "name": "Cieluscian",
       "social": "https://twitter.com/Cieluscian",
       "flag": "/anniversary2/stamps/Stamp-Singapore.webp",
-      "lazulight": "/anniversary2/fanart/lazulight_04.png",
-      "elira": "/anniversary2/fanart/elira_03.png",
-      "pomu": "/anniversary2/fanart/pomu_01.png",
-      "finana": "/anniversary2/fanart/finana_01.png"
+      "lazulight": "/anniversary2/fanart/lazulight_04.webp",
+      "elira": "/anniversary2/fanart/elira_03.webp",
+      "pomu": "/anniversary2/fanart/pomu_01.webp",
+      "finana": "/anniversary2/fanart/finana_01.webp"
     },
     {
       "name": "brainporain",
       "social": "https://twitter.com/brainporain",
       "flag": "",
-      "lazulight": "/anniversary2/fanart/lazulight_05.png",
+      "lazulight": "/anniversary2/fanart/lazulight_05.webp",
       "elira": "",
       "pomu": "",
       "finana": ""
@@ -23,7 +23,7 @@
       "name": "lyriasshin",
       "social": "https://twitter.com/lyriasshin",
       "flag": "",
-      "lazulight": "/anniversary2/fanart/lazulight_03.png",
+      "lazulight": "/anniversary2/fanart/lazulight_03.webp",
       "elira": "",
       "pomu": "",
       "finana": ""
@@ -34,17 +34,17 @@
       "flag": "/anniversary2/stamps/Stamp-Australia.webp",
       "lazulight": "",
       "elira": "",
-      "pomu": "/anniversary2/fanart/pomu_06.jpg",
+      "pomu": "/anniversary2/fanart/pomu_06.webp",
       "finana": ""
     },
     {
       "name": "SwiftShot",
       "social": "https://twitter.com/SwiftShot07",
       "flag": "",
-      "lazulight": "/anniversary2/fanart/lazulight_06.jpg",
-      "elira": "/anniversary2/fanart/elira_02.jpg",
-      "pomu": "/anniversary2/fanart/pomu_02.jpg",
-      "finana": "/anniversary2/fanart/finana_02.jpg"
+      "lazulight": "/anniversary2/fanart/lazulight_06.webp",
+      "elira": "/anniversary2/fanart/elira_02.webp",
+      "pomu": "/anniversary2/fanart/pomu_02.webp",
+      "finana": "/anniversary2/fanart/finana_02.webp"
     },
     {
       "name": "Neko",
@@ -52,7 +52,7 @@
       "flag": "/anniversary2/stamps/Stamp-US.webp",
       "lazulight": "",
       "elira": "",
-      "pomu": "/anniversary2/fanart/pomu_04.png",
+      "pomu": "/anniversary2/fanart/pomu_04.webp",
       "finana": ""
     },
     {
@@ -61,7 +61,7 @@
       "flag": "/anniversary2/stamps/Stamp-US.webp",
       "lazulight": "",
       "elira": "",
-      "pomu": "/anniversary2/fanart/pomu_05.png",
+      "pomu": "/anniversary2/fanart/pomu_05.webp",
       "finana": ""
     },
     {
@@ -69,7 +69,7 @@
       "social": "https://twitter.com/Yanagi_Kowareta",
       "flag": "",
       "lazulight": "",
-      "elira": "/anniversary2/fanart/elira_04.jpg",
+      "elira": "/anniversary2/fanart/elira_04.webp",
       "pomu": "",
       "finana": ""
     },
@@ -78,7 +78,7 @@
       "social": "https://twitter.com/pixykzz",
       "flag": "",
       "lazulight": "",
-      "elira": "/anniversary2/fanart/elira_01.png",
+      "elira": "/anniversary2/fanart/elira_01.webp",
       "pomu": "",
       "finana": ""
     },
@@ -86,7 +86,7 @@
       "name": "custard",
       "social": "https://twitter.com/custardbuns",
       "flag": "/anniversary2/stamps/Stamp-Canada.webp",
-      "lazulight": "/anniversary2/fanart/lazulight_01.png",
+      "lazulight": "/anniversary2/fanart/lazulight_01.webp",
       "elira": "",
       "pomu": "",
       "finana": ""
@@ -97,14 +97,14 @@
       "flag": "",
       "lazulight": "",
       "elira": "",
-      "pomu": "/anniversary2/fanart/pomu_03.png",
+      "pomu": "/anniversary2/fanart/pomu_03.webp",
       "finana": ""
     },
     {
       "name": "AtomB",
       "social": "https://twitter.com/AtomBlazer",
       "flag": "/anniversary2/stamps/Stamp-US.webp",
-      "lazulight": "/anniversary2/fanart/lazulight_02.jpg",
+      "lazulight": "/anniversary2/fanart/lazulight_02.webp",
       "elira": "",
       "pomu": "",
       "finana": ""

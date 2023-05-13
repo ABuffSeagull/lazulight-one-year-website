@@ -1,4 +1,5 @@
 @use "../variables" as *;
+
 // @use "../../year1/variables" as *;
 
 // (Brandon) I re-exported the corners to all require the same spacing (relative to equal hight)
@@ -22,7 +23,7 @@ $msg-corner-padding-top: 17px;
     position: relative;
     width: 100%;
     padding: 1rem;
-    background: $box-background-gradient;//$background-gradient;
+    background: $box-background-gradient; // $background-gradient;
     border-radius: 0;
 
     h4 {
@@ -36,7 +37,6 @@ $msg-corner-padding-top: 17px;
       word-wrap: break-word;
       font-family: cursive;
     }
-
   }
 
   &-poststamp {
