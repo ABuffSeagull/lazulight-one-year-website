@@ -14,7 +14,7 @@ const countdownRenderer = ({
   // Render countdown
   return (
 
-    <span> {hours + (days *24)}:{minutes}:{seconds}</span>
+    <span> {hours + (days * 24)}:{minutes}:{seconds}</span>
 
   )
 }
