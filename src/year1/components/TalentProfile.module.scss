@@ -23,6 +23,11 @@
     filter: drop-shadow(0 0 0.5rem #eb60df);
   }
 
+  &-all {
+    // This does nothing for now... but it was causing the creation of the 'undefined' class
+    color: hsl(207deg 42% 80%);
+  }
+
   &-contrast {
     filter: drop-shadow(0 0 0.5rem #552c52);
   }

@@ -3,6 +3,30 @@
 @use "../variables" as *;
 @use "sass:math";
 
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  width: 100%;
+  max-width: 80rem;
+  height: 100%;
+  padding: 0 1rem 6rem;
+  position: relative;
+
+  &-elira,
+  &-finana,
+  &-pomu,
+  &-home {
+    padding-top: 100vh;
+  }
+
+  &-doujin,
+  &-song,
+  &-about {
+    padding-top: 5vh;
+  }
+}
+
 .page-container {
   height: 100%;
   width: 100%;

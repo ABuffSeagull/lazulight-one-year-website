@@ -1,6 +1,5 @@
 import React from 'react'
-import '../components/TalentLayout.scss'
-import '../components/ProjectPages.scss'
+import classesCredits from '../components/Credits.module.scss'
 import FramedTextbox from '../components/FramedTextbox'
 import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp'
 
@@ -38,7 +37,7 @@ export default function About (props: Props): JSX.Element {
 }
 function WebTeamCredits (): JSX.Element {
   return (
-    <div className='credits-text'>
+    <div className={classesCredits.text}>
       <h3>Management Team</h3>
       <h4>Organiser</h4>
       <ul>
@@ -111,7 +110,7 @@ function WebTeamCredits (): JSX.Element {
         <li><p><a href='https://grabcad.com/library/diamond-round-brilliant-cut-2'>Edgar Gidoni (Diamond 3D model)</a></p></li>
       </ul>
       <h3>Special Thanks</h3>
-      <ul className='credits-text-special-final'>
+      <ul className={classesCredits['text-special-final']}>
         <li><p>Nijisanji EN Fan Discord Server</p></li>
         <li><p>Elicord Discord Server</p></li>
         <li><p>Pomucord Discord Server</p></li>

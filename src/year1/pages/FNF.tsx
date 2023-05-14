@@ -9,7 +9,11 @@ import FNFLogo from '../assets/FNF/Lazunight Thumbnail.webp'
 import PomuSlide from '../assets/FNF/Pomu Collage_cf50.webp'
 
 import Image from '../components/Image'
-import '../components/ProjectPages.scss'
+import classesCredits from '../components/Credits.module.scss'
+import classesSlideShow from '../components/SlideShow.module.scss'
+import classesVideo from '../components/Video.module.scss'
+import classesP from '../components/ProjectPages.module.scss'
+
 import '../components/TalentLayout.scss'
 
 interface Props {
@@ -20,15 +24,15 @@ export default function Fnf (props: Props): JSX.Element {
   return (
     <>
       {/* Heading */}
-      <div className='project-heading-container-logo'>
+      <div className={classesP['heading-container-logo']}>
         <Image src={FNFLogo} enableZoom />
       </div>
 
       {/* Slide Show */}
       <FramedTextbox corner={LazulightCorner} border={props.page}>
         <SlideShow>
-          <div className='slideshow-slide'>
-            <div className='video-container'>
+          <div className={classesSlideShow.slide}>
+            <div className={classesVideo.container}>
               <iframe
                 src='https://www.youtube.com/embed/ffP4dpdmK18'
                 title='YouTube video player'
@@ -39,18 +43,18 @@ export default function Fnf (props: Props): JSX.Element {
             </div>
           </div>
           <div>
-            <Image src={EliraSlide} className='slideshow-slide' enableZoom />
+            <Image src={EliraSlide} className={classesSlideShow.slide} enableZoom />
           </div>
           <div>
-            <Image src={PomuSlide} className='slideshow-slide' enableZoom />
+            <Image src={PomuSlide} className={classesSlideShow.slide} enableZoom />
           </div>
           <div>
-            <Image src={FinanaSlide} className='slideshow-slide' enableZoom />
+            <Image src={FinanaSlide} className={classesSlideShow.slide} enableZoom />
           </div>
         </SlideShow>
 
         {/* Description & Download */}
-        <div className='project-description-container'>
+        <div className={classesP['description-container']}>
           <h3>A LazuLight Friday Night Funkin' Mod</h3>
           <p>
             Step into the shoes of Pomu, who, in celebration of LazuLight's
@@ -93,13 +97,13 @@ export default function Fnf (props: Props): JSX.Element {
 
           <h3>Download for Windows (220MB)</h3>
           <a href='/downloads/LazuFunk-5013a39.zip' download>
-            <button className='project-download-button lazulight-border'>Download Game</button>
+            <button className={`${classesP['download-button']} lazulight-border`}>Download Game</button>
           </a>
           <a href='https://gamebanana.com/mods/382213'>
-            <button className='project-download-button lazulight-border'>Mirror Download at GameBanana</button>
+            <button className={`${classesP['download-button']} lazulight-border`}>Mirror Download at GameBanana</button>
           </a>
           <a href=' https://gamejolt.com/games/lazunight/723472'>
-            <button className='project-download-button lazulight-border'>Mirror Download at GameJolt</button>
+            <button className={`${classesP['download-button']} lazulight-border`}>Mirror Download at GameJolt</button>
           </a>
         </div>
       </FramedTextbox>
@@ -113,7 +117,7 @@ export default function Fnf (props: Props): JSX.Element {
 }
 function LazunightFunkinCredits (): JSX.Element {
   return (
-    <div className='credits-text'>
+    <div className={classesCredits.text}>
       <h3>Director, UI Artist</h3>
       <ul>
         <li><p><a href='https://www.youtube.com/c/CoZm0Plays'>CoZm0</a></p></li>

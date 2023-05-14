@@ -4,7 +4,7 @@ import classes from './Timeline.module.scss'
 
 interface MemoryCommon {
   title: string
-  member: 'elira' | 'finana' | 'pomu'
+  member: 'elira' | 'finana' | 'pomu' | 'lazulight'
   date: Date
   submitterName: string
   submitterSocialUrl?: string
@@ -18,6 +18,8 @@ type YouTubeMemoryType = MemoryCommon & {
 type TwitterMemoryType = MemoryCommon & {
   type: 'twitter'
   tweetUrl: string
+  messagepart1: string
+  messagepart2: string
 }
 
 type MessageMemoryType = MemoryCommon & {
@@ -94,7 +96,8 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
         {
           elira: '#fd83f2',
           finana: '#a8f7f4',
-          pomu: '#ffd889'
+          pomu: '#ffd889',
+          lazulight: '#b5d4f1'
         }[memory.member]
       }`,
       marginTop: `-${verticalOffset}px`
@@ -200,9 +203,17 @@ function YouTubeMemory ({ memory }: { memory: YouTubeMemoryType }): JSX.Element 
 
 function TwitterMemory ({ memory }: { memory: TwitterMemoryType }): JSX.Element {
   // Defaults to approximately min width (250px) because there's no preview content.
+  if (memory.title === 'Pomu becomes Jellymu') {
+    return (
+      <blockquote className='twitter-tweet'>
+        Jellymu's <a href='https://twitter.com/PomuRainpuff/status/1643421808132259840'>konjac jelly</a> addiction gets out of hand as her jelly content composition increases from <a href='https://twitter.com/PomuRainpuff/status/1593959250283274242'>50% jelly</a>, to <a href='https://twitter.com/PomuRainpuff/status/1595961417584500736'>87% jelly</a>, and then finally Jellymu becomes <a href='https://twitter.com/PomuRainpuff/status/1599691208389177350'>100%</a> jelly!
+      </blockquote>
+    )
+  }
+
   return (
     <blockquote className='twitter-tweet'>
-      <a href={memory.tweetUrl} />
+      {memory.messagepart1}  <a href={memory.tweetUrl}> {memory.messagepart2}</a>
     </blockquote>
   )
 }

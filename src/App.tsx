@@ -45,10 +45,6 @@ export default function App (): JSX.Element {
         <Route path='/all-messages'> <Redirect to='/anniversary1/all-messages' /> </Route>
         <Route path='/about'> <Redirect to='/anniversary1/about' /> </Route>
 
-        {/*
-          TODO: Some uses of the page variable for (fnf,dcl,vn,home) refer to non-existent classes
-          e.g. fnf-border does not exist resulting in the element missing the border
-        */}
         <Route path='/anniversary1/elira'>
           <Year1PageWrapper pageTheme='elira' animatedBackground>
             <Year1Elira />
