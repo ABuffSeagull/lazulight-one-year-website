@@ -1,15 +1,17 @@
 import React from 'react'
 
 import DoujinViewer from '../components/DoujinViewer'
+import DoujinCredits from '../components/DoujinCredits'
+import { Textbox } from '../components/Textbox'
 
 export default function Doujin(): JSX.Element {
   return (
     <>
       <DoujinViewer></DoujinViewer>
-    
-      <h1>
-        Credits
-      </h1>
+  
+    <Textbox>   
+      <DoujinCredits></DoujinCredits>
+    </Textbox>
     
     </>
   )
