@@ -85,7 +85,7 @@ export default function DoujinCredits (): JSX.Element {
 
         <h3>Scenario 2: Lazulight's Last Day Together</h3>
         <ul>
-          <li><h4>Artist, Manga Artist, Writer Cover</h4></li>
+          <li><h4>Cover Artist, Manga Artist, Writer</h4></li>
           <li><h4>Writer</h4></li>
         </ul>
         <ul>
