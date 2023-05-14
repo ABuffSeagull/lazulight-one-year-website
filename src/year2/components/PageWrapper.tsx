@@ -35,7 +35,7 @@ export function PageWrapper ({
       <div className={`${pw[`page-bg-static-${pageTheme}`]}`} />
       <div className={`${pw['page-container']}`}>
         <SiteHeader />
-
+        
         {/* Background Animations */}
         <div
           className={`${pw['page-bg-filter']}`}

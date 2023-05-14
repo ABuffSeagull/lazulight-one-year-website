@@ -30,7 +30,7 @@
     height: 100%;
     width: 100%;
     position: fixed;
-    filter: blur(2px) brightness(70%) saturate(70%);
+    filter:  brightness(90%) saturate(70%);
     z-index: -200;
   }
 
@@ -50,7 +50,8 @@
   }
 
   &-home {
-    background-image: url("../assets/background/18.png");
+    background-image: url("../assets/background/LZL-Background.png");
+    background-size: 100%;
     background-color: #274454; // Backup in case the image doesn't load
   }
 }
