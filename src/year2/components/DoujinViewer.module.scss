@@ -1,0 +1,82 @@
+.doujin-reader {
+  position: relative;
+}
+
+.doujin-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+}
+
+.doujin-size-detect {
+  width: 100%;
+  aspect-ratio: 8.5/11;
+  max-height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.prev-page,
+.next-page {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  border: none;
+  background: none;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.prev-page[disabled],
+.next-page[disabled] {
+  cursor: default;
+}
+
+.prev-page {
+  left: 50%;
+  right: 0;
+}
+
+.next-page {
+  left: 0;
+  right: 50%;
+}
+
+.hidden-page {
+  display: none;
+}
+
+.bottom-nav {
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity ease-in-out 0.2s;
+  z-index: 2;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgb(0 0 0 / 70%);
+  padding: 1rem 3rem;
+}
+
+.bottom-nav:hover {
+  opacity: 1;
+}
+
+.page-count {
+  text-align: center;
+  color: white;
+  cursor: default;
+}
+
+.change-mode {
+  margin-top: 0.5rem;
+  border-radius: 2px;
+  background: white;
+  cursor: pointer;
+  padding: 0.3rem 1rem;
+  border-style: solid;
+}
