@@ -14,12 +14,12 @@ const countdownRenderer = ({
   // Render countdown
   return (
 
-    <span> {hours}:{minutes}:{seconds}</span>
+    <span> {hours + (days *24)}:{minutes}:{seconds}</span>
 
   )
 }
 
-const releaseDate = '2023-05-16T12:12:00+09:00'
+const releaseDate = '2023-05-16T12:12:00+21:00'
 
 export default function Song (): JSX.Element {
   return (
