@@ -51,6 +51,7 @@
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     height: 100%;
     width: 100%;
     position: fixed;
@@ -59,22 +60,22 @@
   }
 
   &-elira {
-    background-image: url("../assets/background/15.png");
+    background-image: url("../assets/background/15.webp");
     background-color: #274454; // Backup in case the image doesn't load
   }
 
   &-finana {
-    background-image: url("../assets/background/15.png");
+    background-image: url("../assets/background/15.webp");
     background-color: #274454; // Backup in case the image doesn't load
   }
 
   &-pomu {
-    background-image: url("../assets/background/15.png");
+    background-image: url("../assets/background/15.webp");
     background-color: #274454; // Backup in case the image doesn't load
   }
 
   &-home {
-    background-image: url("../assets/background/LZL-Background.png");
+    background-image: url("../assets/background/LZL-Background.webp");
     background-size: 100%;
     background-color: #274454; // Backup in case the image doesn't load
   }
