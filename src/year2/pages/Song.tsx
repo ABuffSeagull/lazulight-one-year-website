@@ -9,13 +9,11 @@ const countdownRenderer = ({
   completed
 }: CountdownRenderProps): JSX.Element => {
   if (completed) {
-    return <>Done</>
+    return <>Coming Soon</>
   }
   // Render countdown
   return (
-
-    <span> {hours + (days * 24)}:{minutes}:{seconds}</span>
-
+    <>{hours + (days * 24)}h:{minutes}m:{seconds}s</>
   )
 }
 
@@ -23,8 +21,14 @@ const releaseDate = '2023-05-16T12:12:00+21:00'
 
 export default function Song (): JSX.Element {
   return (
-    <div style={{ fontSize: '300px', color: 'white' }}>
+    <p style={{
+      fontSize: '10vw',
+      color: 'white',
+      textAlign: 'center',
+      paddingTop: '10vh'
+    }}
+    >
       <Countdown date={releaseDate} renderer={countdownRenderer} />
-    </div>
+    </p>
   )
 }
