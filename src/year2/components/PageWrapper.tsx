@@ -5,6 +5,7 @@ import pw from './PageWrapper.module.scss'
 import BgAnimationPomu from './BgAnimationPomu'
 import BgAnimationElira from './BgAnimationElira'
 import BgAnimationFinana from './BgAnimationFinana'
+import BgAnimationHome from './BgAnimationHome'
 
 export function PageWrapper ({
   children,
@@ -35,7 +36,7 @@ export function PageWrapper ({
       <div className={`${pw[`page-bg-static-${pageTheme}`]}`} />
       <div className={`${pw['page-container']}`}>
         <SiteHeader />
-        
+
         {/* Background Animations */}
         <div
           className={`${pw['page-bg-filter']}`}
@@ -47,6 +48,7 @@ export function PageWrapper ({
           {pageTheme === 'pomu' && <BgAnimationPomu />}
           {pageTheme === 'elira' && <BgAnimationElira />}
           {pageTheme === 'finana' && <BgAnimationFinana />}
+          {pageTheme === 'home' && <BgAnimationHome />}
         </div>
 
         {/* This is the body of the page */}

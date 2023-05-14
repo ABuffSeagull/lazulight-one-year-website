@@ -54,22 +54,22 @@
     height: 100%;
     width: 100%;
     position: fixed;
-    filter:  brightness(90%) saturate(70%);
+    filter: brightness(90%) saturate(70%);
     z-index: -200;
   }
 
   &-elira {
-    background-image: url("../assets/background/18.png");
+    background-image: url("../assets/background/15.png");
     background-color: #274454; // Backup in case the image doesn't load
   }
 
   &-finana {
-    background-image: url("../assets/background/18.png");
+    background-image: url("../assets/background/15.png");
     background-color: #274454; // Backup in case the image doesn't load
   }
 
   &-pomu {
-    background-image: url("../assets/background/18.png");
+    background-image: url("../assets/background/15.png");
     background-color: #274454; // Backup in case the image doesn't load
   }
 
@@ -115,6 +115,33 @@
     height: 50%;
     left: 50%;
     top: 50%;
+  }
+
+  &-pomu {
+    @include animation-core;
+
+    height: 110%;
+    left: 55%;
+    top: 20%;
+    z-index: 2;
+  }
+
+  &-elira {
+    @include animation-core;
+
+    height: 120%;
+    left: -10%;
+    top: 20%;
+    z-index: 3;
+  }
+
+  &-finana {
+    @include animation-core;
+
+    height: 110%;
+    left: 30%;
+    top: -10%;
+    z-index: 1;
   }
 
   @keyframes liver {
