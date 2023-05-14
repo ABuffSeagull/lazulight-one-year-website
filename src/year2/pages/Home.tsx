@@ -16,69 +16,124 @@ export default function Home (): JSX.Element {
       <Timeline
         memories={[
           {
-            type: 'message',
-            submitterName: 'Jay',
-            member: 'finana',
-            date: new Date(2021, 4, 15),
-            title: 'Lazulight debut!!',
-            message: 'Wow!!'
-          },
-          {
-            type: 'message',
-            submitterName: 'Jay',
-            submitterSocialUrl: 'speculative.tech',
-            member: 'pomu',
-            date: new Date(2021, 6, 1),
-            title:
-              'What if I became Pomu but I had a really really really really really really really long title that wrapped around to a second line',
-            message:
-              "I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu!  I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu! I'm Pomu!"
-          },
-          {
-            type: 'message',
-            submitterName: 'Jay',
-            member: 'pomu',
-            date: new Date(2021, 6, 14),
-            title: 'minecraft with elira',
-            imgUrl:
-              'https://cdn.donmai.us/sample/b1/b0/__elira_pendora_and_pomu_rainpuff_nijisanji_and_1_more_drawn_by_walfie__sample-b1b07283875ba1f9f639794e2b1c93be.jpg',
-            message:
-              "hey elira i'm begging you i'm on my knees here pleading please play minecraft with me tonight i am seriously begging here I am going to pass away please help minecraft is the only cure please elira"
+            type: 'youtube',
+            submitterName: 'Brandon Johns',
+            videoId: 'YS4hXn41ns8',
+            title: 'LazuLight go to space',
+            member: 'lazulight',
+            date: new Date(
+              2022,
+              5,
+              16
+            )
           },
           {
             type: 'youtube',
-            submitterName: 'Jay',
-            member: 'finana',
-            date: new Date(2022, 0, 29),
-            title: 'tsu-na-na-na-na-na-na-na-na-mi',
-            videoId: '3i_TLQsaAgU'
+            submitterName: 'CrimsonSilver4',
+            videoId: 'LD3JjOzO8a4',
+            title: "Lazulight's 2nd Lunch Lady Collab",
+            member: 'lazulight',
+            date: new Date(
+              2022,
+              6,
+              2
+            )
           },
           {
             type: 'youtube',
-            submitterName: 'Jay',
-            member: 'elira',
-            date: new Date(2022, 4, 15),
-            title: "Elira's life-changing Shoujo Rei cover",
-            videoId: 'DSSAL2b1VR4'
+            submitterName: 'CrimsonSilver4',
+            videoId: 'ZnP0cKNPE04',
+            title: 'Diamond City Lights reaches 5M views',
+            member: 'lazulight',
+            date: new Date(
+              2022,
+              7,
+              14
+            )
           },
           {
-            type: 'twitter',
-            submitterName: 'Luca',
-            member: 'elira',
-            date: new Date(2022, 5, 15),
-            title: 'awesome',
-            tweetUrl:
-              'https://twitter.com/luca_kaneshiro/status/1536874758729437184'
+            type: 'youtube',
+            submitterName: 'CrimsonSilver4',
+            videoId: 'bagZl3g_jF0',
+            title: "Lazulight's 1st offline collab",
+            member: 'lazulight',
+            date: new Date(
+              2022,
+              11,
+              21
+            )
           },
           {
-            type: 'twitter',
-            submitterName: 'oimo',
-            submitterSocialUrl: 'https://twitter.com/oimo_0imo/',
-            member: 'elira',
-            date: new Date(2023, 3, 15),
-            title: 'UWOOOOOOOOOOOOOGGGGGHHHHH',
-            tweetUrl:
-              'https://twitter.com/oimo_0imo/status/1647099060082597888'
+            type: 'youtube',
+            submitterName: 'CrimsonSilver4',
+            videoId: 'Fzeb0S-OoGs',
+            title: "Lazulight's 1st offline karaoke",
+            member: 'lazulight',
+            date: new Date(
+              2022,
+              11,
+              25
+            )
+          },
+          {
+            type: 'youtube',
+            submitterName: 'CrimsonSilver4',
+            videoId: 'Cb9GzZW7WVY',
+            title: "Lazulight plays 'Lazulight: By Your Side'",
+            member: 'lazulight',
+            date: new Date(
+              2023,
+              1,
+              6
+            )
+          },
+          {
+            type: 'youtube',
+            submitterName: 'Brandon Johns',
+            videoId: 'zmSlfVTUUUY?t=1066',
+            title: 'LazuLight play beach Trivia',
+            member: 'lazulight',
+            date: new Date(
+              2023,
+              3,
+              30
+            )
+          },
+          {
+            type: 'youtube',
+            submitterName: 'Brandon Johns',
+            videoId: 'btCTJTjS6i8',
+            title: 'Higan: Eruthyll release their original song Cage of Desire',
+            member: 'lazulight',
+            date: new Date(
+              2023,
+              4,
+              3
+            )
+          },
+          {
+            type: 'youtube',
+            submitterName: 'Brandon Johns',
+            videoId: 'vvQVVTe-D2o?t=1192',
+            title: 'Lazulight (ft. Finanasaur) play the board game of doom in 3D',
+            member: 'lazulight',
+            date: new Date(
+              2023,
+              4,
+              5
+            )
+          },
+          {
+            type: 'youtube',
+            submitterName: 'Brandon Johns',
+            videoId: 'O-mJralH_OY',
+            title: 'Elipomu cover Turing Love',
+            member: 'lazulight',
+            date: new Date(
+              2023,
+              5,
+              2
+            )
           }
         ]}
       />
