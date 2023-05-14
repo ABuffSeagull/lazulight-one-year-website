@@ -1,9 +1,7 @@
 import React from 'react'
 import classesCredits from '../../year1/components/Credits.module.scss'// '../components/Credits.module.scss'
 
-export default function DoujinCredits ({
-}: {
-}): JSX.Element {
+export default function DoujinCredits (): JSX.Element {
   return (
     <>
       <h2>
@@ -87,7 +85,7 @@ export default function DoujinCredits ({
 
         <h3>Scenario 2: Lazulight's Last Day Together</h3>
         <ul>
-          <li><h4>Writer, Cover Artist, Manga Artist</h4></li>
+          <li><h4>Artist, Manga Artist, Writer Cover</h4></li>
           <li><h4>Writer</h4></li>
         </ul>
         <ul>
