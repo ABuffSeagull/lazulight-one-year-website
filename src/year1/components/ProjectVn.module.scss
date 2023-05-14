@@ -1,0 +1,56 @@
+@use "../variables" as *;
+@use "sass:math";
+
+.profile-container {
+  position: relative;
+  width: 100%;
+}
+
+.picture-box {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 20%;
+  overflow-y: hidden;
+
+  @media (max-width: $bp-tablet) {
+    position: relative;
+    width: auto;
+    height: 40vh;
+  }
+
+  &-elira {
+    $elira-scale: 2.2;
+
+    overflow: hidden;
+    width: 20% * $elira-scale;
+    max-width: none;
+    height: auto;
+    transform: translateX(math.div(50%, $elira-scale) - 50%);
+
+    @media (max-width: $bp-tablet) {
+      width: 100% * $elira-scale;
+      height: 40vh;
+    }
+  }
+}
+
+.info-container {
+  width: 80%;
+  margin-left: 20%;
+
+  @media (max-width: $bp-tablet) {
+    margin: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+.route-list-item {
+  margin-left: 1.5rem;
+}

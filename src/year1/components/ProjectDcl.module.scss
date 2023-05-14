@@ -1,0 +1,16 @@
+@use "../variables" as *;
+@use "sass:math";
+
+.twerk {
+  &-container {
+    position: relative;
+  }
+
+  &-gif {
+    position: absolute;
+    width: 3rem;
+    object-fit: contain;
+    bottom: 0;
+    right: 0;
+  }
+}

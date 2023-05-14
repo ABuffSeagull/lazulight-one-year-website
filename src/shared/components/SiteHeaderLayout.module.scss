@@ -19,8 +19,6 @@ import classes from 'pathTo/SiteHeader.module.scss'
 />
 ````
 */
-@use "../../year1/variables.scss" as *;
-
 // These variables are intended to be overwritten
 $header-text-hover: white !default;
 $header-background: black !default;
