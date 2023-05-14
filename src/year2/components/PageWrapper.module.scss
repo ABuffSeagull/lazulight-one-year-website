@@ -82,6 +82,10 @@
     background-image: url("../assets/background/18.png");
     background-color: #274454; // Backup in case the image doesn't load
   }
+
+  &-song {
+    background-color: black;
+  }
 }
 
 .page-bg-filter {
