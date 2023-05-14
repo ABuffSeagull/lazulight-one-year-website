@@ -1,5 +1,5 @@
 import React from 'react'
-import classesCredits from '../../year1/components/Credits.module.scss'// '../components/Credits.module.scss'
+import classesCredits from '../components/Credits.module.scss'
 
 export default function DoujinCredits (): JSX.Element {
   return (
