@@ -1,3 +1,7 @@
+.doujin-reader {
+  position: relative;
+}
+
 .doujin-container {
   display: flex;
   flex-direction: row;
@@ -44,4 +48,34 @@
 
 .hidden-page {
   display: none;
+}
+
+.bottom-nav {
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity ease-in-out 0.2s;
+  z-index: 2;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1rem 3rem;
+}
+
+.bottom-nav:hover {
+  opacity: 1;
+}
+
+.page-count {
+  text-align: center;
+  color: white;
+  cursor: default;
+}
+
+.change-mode {
+  margin-top: 0.5rem;
+  border-radius: 2px;
+  background: white;
+  cursor: pointer;
+  padding: 0.3rem 1rem;
 }

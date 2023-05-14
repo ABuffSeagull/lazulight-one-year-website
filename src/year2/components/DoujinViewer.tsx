@@ -24,7 +24,8 @@ export default function DoujinViewer ({
       <h1>
         Lazulight Manga Anthology
       </h1>
-      <button onClick={() => displayMode === 'fit-height' ? setDisplayMode('fit-width') : setDisplayMode('fit-height')}>Fit {displayMode === 'fit-width' ? <>Width</> : <>Height</>}</button>
+    <div className={classes['doujin-reader']}>
+
     <div className={classes['doujin-container']} style={
         displayMode === 'fit-width' ? {
             height: doujinContainerSize.width * (3 / 2)
@@ -71,6 +72,11 @@ export default function DoujinViewer ({
                 }} /> : null
             )
         }
+    </div>
+    <div className={classes['bottom-nav']}>
+        <div className={classes['page-count']}>{currentPage + 1} / {TOTAL_PAGES}</div>
+        <button className={classes['change-mode']} onClick={() => displayMode === 'fit-height' ? setDisplayMode('fit-width') : setDisplayMode('fit-height')}>Fit {displayMode === 'fit-width' ? <>Width</> : <>Height</>}</button>
+    </div>
     </div>
     </>
   )
