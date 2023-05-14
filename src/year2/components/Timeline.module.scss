@@ -1,7 +1,7 @@
 .timeline-root {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  
   position: relative;
 
   --trunk-width: 8px;
@@ -96,6 +96,7 @@
     padding: 1rem;
     max-width: calc(min(var(--max-content-width), 100% - var(--date-width)));
     overflow: auto;
+    background: var(--stem-color);
   }
 }
 
