@@ -3,7 +3,7 @@ import classesCredits from '../../year1/components/Credits.module.scss'// '../co
 
 
 
-export default function DoujinCredits({
+export default function DoujinCredits ({
 }: {
     }): JSX.Element {
     return (

@@ -2,7 +2,7 @@
 	"name": "lazulight-one-year-website",
 	"version": "0.0.0",
 	"scripts": {
-		"dev": "vite",
+		"dev": "vite --host",
 		"build": "tsc && vite build",
 		"preview": "vite preview",
 		"lint": "ts-standard --fix src && tsc --noEmit && prettier --no-config --write src/**/*.{css,scss,sass} && stylelint --fix src/**/*.{css,scss,sass}",
@@ -15,6 +15,7 @@
 		"react-countdown": "^2.3.2",
 		"react-dom": "^17.0.2",
 		"react-medium-image-zoom": "^4.4.3",
+		"react-pdf": "^6.2.2",
 		"react-slick": "^0.29.0",
 		"reactjs-popup": "^2.0.5",
 		"sass": "^1.49.7",
@@ -24,6 +25,7 @@
 	"devDependencies": {
 		"@types/react": "^17.0.58",
 		"@types/react-dom": "^17.0.19",
+		"@types/react-pdf": "^6.2.0",
 		"@types/react-slick": "^0.23.8",
 		"@vitejs/plugin-react": "^3.1.0",
 		"autoprefixer": "^10.4.4",

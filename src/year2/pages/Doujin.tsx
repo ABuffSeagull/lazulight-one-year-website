@@ -7,12 +7,12 @@ import { Textbox } from '../components/Textbox'
 export default function Doujin(): JSX.Element {
   return (
     <>
-      <DoujinViewer></DoujinViewer>
-  
-    <Textbox>   
-      <DoujinCredits></DoujinCredits>
-    </Textbox>
-    
+      <DoujinViewer />
+
+      <Textbox>
+        <DoujinCredits></DoujinCredits>
+      </Textbox>
+
     </>
   )
 }
