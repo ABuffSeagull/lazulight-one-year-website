@@ -13,6 +13,20 @@ export default function DoujinViewer ({
 
   const [currentPage, setCurrentPage] = React.useState(0);
 
+  const tryNextPage = React.useCallback(() => {
+    if (currentPage < TOTAL_PAGES - 1) {
+        setCurrentPage(currentPage + 1);
+        doujinContainer.current?.scrollIntoView({ block: displayMode === "fit-height" ? "center" : "start" });
+    }
+  }, [currentPage, setCurrentPage, doujinContainer.current]);
+
+  const tryPrevPage = React.useCallback(() => {
+    if (currentPage > 0) {
+        setCurrentPage(currentPage - 1);
+        doujinContainer.current?.scrollIntoView({ block: displayMode === "fit-height" ? "center" : "start" });
+    }
+  }, [currentPage, setCurrentPage, doujinContainer.current])
+
   React.useEffect(() => {
     return () => {
       doujinObserver.current?.disconnect()
@@ -26,15 +40,9 @@ export default function DoujinViewer ({
       </h1>
     <div className={classes['doujin-reader']} onKeyDown={(e) => {
         if (e.key === "ArrowLeft") {
-            if (currentPage < TOTAL_PAGES - 1) {
-                setCurrentPage(currentPage + 1);
-                doujinContainer.current?.scrollIntoView({ block: "center"});
-            }
+            tryNextPage()
         } else if (e.key === "ArrowRight") {
-            if (currentPage > 0) {
-                setCurrentPage(currentPage - 1);
-                doujinContainer.current?.scrollIntoView({ block: "center"});
-            }
+            tryPrevPage()
         }
     }}>
 
@@ -70,8 +78,8 @@ export default function DoujinViewer ({
             }}
         >
         </div>
-        <button className={classes['prev-page']} onClick={() => { setCurrentPage(currentPage + 1); doujinContainer.current?.scrollIntoView({ block: "center"})}} disabled={currentPage === TOTAL_PAGES - 1}></button>
-        <button className={classes['next-page']} onClick={() => { setCurrentPage(currentPage - 1); doujinContainer.current?.scrollIntoView({ block: "center"})}} disabled={currentPage === 0}></button>
+        <button className={classes['next-page']} onClick={tryNextPage} disabled={currentPage === TOTAL_PAGES - 1}></button>
+        <button className={classes['prev-page']} onClick={tryPrevPage} disabled={currentPage === 0}></button>
         {
             [...Array(TOTAL_PAGES).keys()].map((page) => 
             (Math.abs(page - currentPage) <= 1) ?  <img
