@@ -87,7 +87,7 @@ export default function DoujinViewer (): JSX.Element {
               (Math.abs(page - currentPage) <= 1)
                 ? <img
                     key={page}
-                    src={`/anniversary2/doujin/pages/${(page + 1).toString().padStart(2, '0')}.jpg`}
+                    src={`/anniversary2/doujin/pages/${(page + 1).toString().padStart(2, '0')}.webp`}
                     className={page === currentPage ? classes['current-page'] : classes['hidden-page']}
                     style={{
                       width: displayMode === 'fit-width' ? doujinContainerSize.width : undefined,
