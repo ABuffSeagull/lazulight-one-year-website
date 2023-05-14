@@ -4,13 +4,13 @@ import DoujinViewer from '../components/DoujinViewer'
 import DoujinCredits from '../components/DoujinCredits'
 import { Textbox } from '../components/Textbox'
 
-export default function Doujin(): JSX.Element {
+export default function Doujin (): JSX.Element {
   return (
     <>
       <DoujinViewer />
 
       <Textbox>
-        <DoujinCredits></DoujinCredits>
+        <DoujinCredits />
       </Textbox>
 
     </>
