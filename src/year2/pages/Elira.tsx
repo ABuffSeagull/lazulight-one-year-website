@@ -12,7 +12,7 @@ export default function Elira (): JSX.Element {
   return (
     <>
 
-<Timeline memories={[
+      <Timeline memories={[
         {
           type: 'youtube',
           submitterName: 'CrimsonSilver4',
@@ -135,7 +135,8 @@ export default function Elira (): JSX.Element {
           videoId: '4tjdKW5vJd0'
         }
 
-      ]} />
+      ]}
+      />
 
       {/* Messages */}
       <MessageBoxesLayout

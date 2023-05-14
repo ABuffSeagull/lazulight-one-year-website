@@ -11,7 +11,7 @@ export default function Pomu (): JSX.Element {
 
   return (
     <>
-    <Timeline memories={[
+      <Timeline memories={[
         {
           type: 'youtube',
           submitterName: 'CrimsonSilver4',
