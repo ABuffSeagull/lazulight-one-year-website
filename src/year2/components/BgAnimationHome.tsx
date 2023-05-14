@@ -1,9 +1,9 @@
 import Image from '../../year1/components/Image'
 import pw from './PageWrapper.module.scss'
 
-import lazuElira from '../assets/background/LZL-Elira.png'
-import lazuPomu from '../assets/background/LZL-Pomu.png'
-import lazuFinana from '../assets/background/LZL-Finana.png'
+import lazuElira from '../assets/background/LZL-Elira.webp'
+import lazuPomu from '../assets/background/LZL-Pomu.webp'
+import lazuFinana from '../assets/background/LZL-Finana.webp'
 
 export default function BgAnimationFinana (): JSX.Element {
   return (
