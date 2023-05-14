@@ -1,7 +1,7 @@
 import React from 'react'
 import classes from './DoujinViewer.module.scss'
 
-const TOTAL_PAGES = 63
+const TOTAL_PAGES = 64
 
 export default function DoujinViewer (): JSX.Element {
   const [doujinContainerSize, setDoujinContainerSize] = React.useState({ width: window.innerWidth, height: window.innerHeight })
@@ -33,7 +33,7 @@ export default function DoujinViewer (): JSX.Element {
 
   return (
     <>
-      <h1>
+      <h1 className={classes.title}>
         Lazulight Manga Anthology
       </h1>
       <div
@@ -61,7 +61,6 @@ export default function DoujinViewer (): JSX.Element {
             className={classes['doujin-size-detect']} ref={(node) => {
               if (doujinObserver.current === undefined) {
                 doujinObserver.current = new ResizeObserver(([entry]) => {
-                  console.log('Got width update', entry)
                   setDoujinContainerSize((currentDoujinContainerSize) => {
                     const newWidth = entry.borderBoxSize[0].inlineSize
                     const newHeight = entry.borderBoxSize[0].blockSize
@@ -88,8 +87,8 @@ export default function DoujinViewer (): JSX.Element {
               (Math.abs(page - currentPage) <= 1)
                 ? <img
                     key={page}
-                    src={`/anniversary2/doujin/image-${page.toString().padStart(3, '0')}.jpg`}
-                    className={page === currentPage ? undefined : classes['hidden-page']}
+                    src={`/anniversary2/doujin/pages/${(page + 1).toString().padStart(2, '0')}.jpg`}
+                    className={page === currentPage ? classes['current-page'] : classes['hidden-page']}
                     style={{
                       width: displayMode === 'fit-width' ? doujinContainerSize.width : undefined,
                       height: displayMode === 'fit-height' ? doujinContainerSize.height : undefined
