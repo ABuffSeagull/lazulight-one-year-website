@@ -24,7 +24,19 @@ export default function DoujinViewer ({
       <h1>
         Lazulight Manga Anthology
       </h1>
-    <div className={classes['doujin-reader']}>
+    <div className={classes['doujin-reader']} onKeyDown={(e) => {
+        if (e.key === "ArrowLeft") {
+            if (currentPage < TOTAL_PAGES - 1) {
+                setCurrentPage(currentPage + 1);
+                doujinContainer.current?.scrollIntoView({ block: "center"});
+            }
+        } else if (e.key === "ArrowRight") {
+            if (currentPage > 0) {
+                setCurrentPage(currentPage - 1);
+                doujinContainer.current?.scrollIntoView({ block: "center"});
+            }
+        }
+    }}>
 
     <div className={classes['doujin-container']} style={
         displayMode === 'fit-width' ? {
