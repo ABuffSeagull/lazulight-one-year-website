@@ -13,8 +13,7 @@ export default function BgAnimationFinana (): JSX.Element {
       <Image src={animate1} className={pw['page-bg-animation-finana-a']} />
       <Image src={animate2} className={pw['page-bg-animation-finana-b']} />
       <Image src={animate3} className={pw['page-bg-animation-finana-c']} />
-      
-      
+
     </>
   )
 }
