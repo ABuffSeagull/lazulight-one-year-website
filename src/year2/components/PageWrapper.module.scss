@@ -80,17 +80,18 @@
   }
 
   &-about {
-    background-image: url("../assets/background/18.png");
+    background-image: url("../assets/background/15.webp");
     background-color: #274454; // Backup in case the image doesn't load
   }
 
   &-doujin {
-    background-image: url("../assets/background/18.png");
+    background-image: url("../assets/background/15.webp");
     background-color: #274454; // Backup in case the image doesn't load
   }
 
   &-song {
-    background-color: black;
+    background-image: url("../assets/background/15.webp");
+    background-color: #274454; // Backup in case the image doesn't load
   }
 }
 

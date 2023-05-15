@@ -1,5 +1,7 @@
 import React from 'react'
 import Countdown, { CountdownRenderProps } from 'react-countdown'
+import { Textbox } from '../components/Textbox'
+import classesVideo from '../../year1/components/Video.module.scss'
 
 const countdownRenderer = ({
   days,
@@ -9,26 +11,46 @@ const countdownRenderer = ({
   completed
 }: CountdownRenderProps): JSX.Element => {
   if (completed) {
-    return <>Coming Soon</>
+    return <>Soon</>
   }
   // Render countdown
   return (
-    <>{hours + (days * 24)}h:{minutes}m:{seconds}s</>
+    <>{days} days, {hours}h:{minutes}m:{seconds}s</>
   )
 }
 
-const releaseDate = '2023-05-16T12:12:00+21:00'
+const releaseDate = '2023-06-16T03:00:00+09:00'
 
 export default function Song (): JSX.Element {
   return (
-    <p style={{
-      fontSize: '10vw',
-      color: 'white',
-      textAlign: 'center',
-      paddingTop: '10vh'
-    }}
-    >
-      <Countdown date={releaseDate} renderer={countdownRenderer} />
-    </p>
+    <>
+      <Textbox>
+        <div className={classesVideo.container}>
+          <iframe
+            src='https://www.youtube.com/embed/2w9x1dfV9lA'
+            title='YouTube video player'
+            frameBorder='0'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+            allowFullScreen
+          />
+        </div>
+        <p style={{
+          marginTop: '2rem',
+          fontSize: '4.5vw',
+          textAlign: 'center'
+        }}
+        >
+          Release: <Countdown date={releaseDate} renderer={countdownRenderer} />
+        </p>
+        <p style={{
+          fontSize: '2.5vw',
+          textAlign: 'center'
+        }}
+        >
+          (16th June 2023)
+        </p>
+
+      </Textbox>
+    </>
   )
 }

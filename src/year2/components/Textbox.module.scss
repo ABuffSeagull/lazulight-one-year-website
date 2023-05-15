@@ -5,11 +5,7 @@
   width: 100%;
   height: 100%;
   border-radius: 1rem;
-  background: linear-gradient(
-    300deg,
-    rgb(204 212 230 / 80%),
-    rgb(229 229 229 / 80%)
-  );
+  background: $box-background-gradient;
 
   h2 {
     font-size: 4rem;
