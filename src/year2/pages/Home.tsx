@@ -5,6 +5,7 @@ import { Timeline } from '../components/Timeline'
 import MessageBoxesLayout from '../../year1/components/MessageBoxesLayout' // '../components/MessageBoxesLayout'
 import ImportMessages from '../../year2/components/ImportMessages' // '../components/ImportMessages'
 import MessageBoxesWithFlags from '../components/MessageBoxesWithFlags'
+import hp from '../../year1/components/HomePage.module.scss'
 
 export default function Home (): JSX.Element {
   const firstName = 'Lazulight'
@@ -12,6 +13,13 @@ export default function Home (): JSX.Element {
 
   return (
     <>
+
+      <div>
+        <h1 className={hp['home-heading']}>
+          <span>Happy</span>
+          <span> 2nd</span> <span>Anniversary</span> <span>Lazulight!</span>
+        </h1>
+      </div>
 
       <Timeline
         memories={[
