@@ -61,6 +61,11 @@
     min(var(--max-content-width) - 0.5rem, 100% - var(--date-width))
   );
   margin-bottom: 0.3rem;
+  background: var(--stem-color);
+  border-radius: 1rem;
+  border: 3px solid $lazulight-primary-color;
+  padding: 5px;
+  text-align: center;
 }
 
 .message-row {
@@ -166,7 +171,6 @@
     }
 
     .item-title {
-      text-align: right;
       margin-left: calc(
         var(--date-width) + (0.5 * var(--trunk-width)) + 0.5rem
       );
@@ -205,9 +209,7 @@
     }
 
     .item-title {
-      text-align: right;
-      margin-left: var(--date-width);
-      margin-right: 0.5rem;
+      margin-left: calc(var(--date-width) + var(--dot-diameter) / 2);
     }
   }
 
@@ -224,8 +226,7 @@
     }
 
     .item-title {
-      margin-right: var(--date-width);
-      margin-left: 0.5rem;
+      margin-right: calc(var(--date-width) + var(--dot-diameter) / 2);
     }
   }
 }

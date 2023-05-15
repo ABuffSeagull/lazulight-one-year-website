@@ -114,15 +114,12 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
         style={itemStyle}
       >
         <div className={classes['item-title']}>
-          {memory.title} &bull;{' '}
+          {memory.title}
+          {/* {memory.title} &bull;{' '}
           {memory.submitterSocialUrl !== undefined &&
           memory.submitterSocialUrl !== ''
-            ? (
-              <a href={memory.submitterSocialUrl}>{memory.submitterName}</a>
-              )
-            : (
-                memory.submitterName
-              )}
+            ? (<a href={memory.submitterSocialUrl}>{memory.submitterName}</a>)
+            : (memory.submitterName)} */}
         </div>
         <div className={classes['message-row']}>
           <div className={classes['item-date']}>
