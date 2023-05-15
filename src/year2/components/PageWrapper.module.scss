@@ -368,8 +368,8 @@
 }
 
 .home-bg-animation {
-  $ar-wide: math.div(2, 1);
-  $ar-narrow: math.div(1, 2);
+  $ar-wide: 2/1;
+  $ar-narrow: 1/2;
 
   &-elira {
     @include animation-core;
