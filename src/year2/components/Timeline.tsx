@@ -114,19 +114,17 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
         style={itemStyle}
       >
         <div className={classes['item-title']}>
-          {memory.title} &bull;{' '}
+          {memory.title}
+          {/* {memory.title} &bull;{' '}
           {memory.submitterSocialUrl !== undefined &&
           memory.submitterSocialUrl !== ''
-            ? (
-              <a href={memory.submitterSocialUrl}>{memory.submitterName}</a>
-              )
-            : (
-                memory.submitterName
-              )}
+            ? (<a href={memory.submitterSocialUrl}>{memory.submitterName}</a>)
+            : (memory.submitterName)} */}
         </div>
         <div className={classes['message-row']}>
           <div className={classes['item-date']}>
-            <div className={classes.date}>{formatDate(memory.date)}</div>
+            {formatDate(memory.date)}
+            {/* <div className={classes.date}>{formatDate(memory.date)}</div> */}
           </div>
           <div className={classes['content-box']}>
             {memory.type === 'youtube'
@@ -148,22 +146,53 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
 )
 
 function formatDate (date: Date): string {
-  return `${
-    [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'May',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dec'
-    ][date.getMonth()]
-  } ${date.getFullYear()}`
+
+    switch (date.getMonth() + 1) {
+      case 1:
+        return `Dec ${date.getFullYear() - 1}`;
+      case 2:
+        return `Jan ${date.getFullYear()}`;
+      case 3:
+        return `Feb ${date.getFullYear()}`;
+      case 4:
+        return `Mar ${date.getFullYear()}`;
+      case 5:
+        return `Apr ${date.getFullYear()}`;
+      case 6:
+        return `May ${date.getFullYear()}`;
+      case 7:
+        return `Jun ${date.getFullYear()}`;
+      case 8:
+        return `Jul ${date.getFullYear()}`;
+      case 9:
+        return `Aug ${date.getFullYear()}`;
+      case 10:
+        return `Sep ${date.getFullYear()}`;
+      case 11:
+        return `Oct ${date.getFullYear()}`;
+      case 12:
+        return `Nov ${date.getFullYear()}`;
+      default:
+        return `Dec ${date.getFullYear() -1 }`;
+  }
+  // console.log(date.getMonth())
+  // return `${
+  //   [
+  //     'Dec',
+  //     'Jan',
+  //     'Feb',
+  //     'Mar',
+  //     'Apr',
+  //     'May',
+  //     'Jun',
+  //     'Jul',
+  //     'Aug',
+  //     'Sep',
+  //     'Oct',
+  //     'Nov',
+  //
+  //   ][date.getMonth()]
+  // } ${date.getFullYear()}`
 }
 
 /*

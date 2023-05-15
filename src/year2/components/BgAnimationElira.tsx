@@ -2,11 +2,11 @@ import Image from '../../year1/components/Image'
 import pw from './PageWrapper.module.scss'
 
 import spaceElira from '../assets/background/Space-Elira.webp'
-import animate1 from '../assets/background/Elira-KagamineLen1.png'
-import animate2 from '../assets/background/Elira-KagamineLen2.png'
-import animate3 from '../assets/background/Elira-SpaceWeewa.png'
-import animate4 from '../assets/background/Elira-AgitatedPikl.png'
-import animate5 from '../assets/background/Elira-LabEquipment.png'
+import animate1 from '../assets/background/Elira-KagamineLen1.webp'
+import animate2 from '../assets/background/Elira-KagamineLen2.webp'
+import animate3 from '../assets/background/Elira-SpaceWeewa.webp'
+import animate4 from '../assets/background/Elira-AgitatedPikl.webp'
+import animate5 from '../assets/background/Elira-LabEquipment.webp'
 
 export default function BgAnimationElira (): JSX.Element {
   return (

@@ -2,8 +2,8 @@ import Image from '../../year1/components/Image'
 import pw from './PageWrapper.module.scss'
 
 import spacePomu from '../assets/background/Space-Pomu.webp'
-import animate1 from '../assets/background/Pomu-Balloon1.png'
-import animate2 from '../assets/background/Pomu-Balloon2.png'
+import animate1 from '../assets/background/Pomu-Balloon1.webp'
+import animate2 from '../assets/background/Pomu-Balloon2.webp'
 
 export default function BgAnimationPomu (): JSX.Element {
   return (

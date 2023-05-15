@@ -51,40 +51,47 @@
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     height: 100%;
     width: 100%;
     position: fixed;
-    filter: blur(2px) brightness(70%) saturate(70%);
+    filter: brightness(90%) saturate(70%);
     z-index: -200;
   }
 
   &-elira {
-    background-image: url("../assets/background/18.png");
+    background-image: url("../assets/background/15.webp");
     background-color: #274454; // Backup in case the image doesn't load
   }
 
   &-finana {
-    background-image: url("../assets/background/18.png");
+    background-image: url("../assets/background/15.webp");
     background-color: #274454; // Backup in case the image doesn't load
   }
 
   &-pomu {
-    background-image: url("../assets/background/18.png");
+    background-image: url("../assets/background/15.webp");
     background-color: #274454; // Backup in case the image doesn't load
   }
 
   &-home {
-    background-image: url("../assets/background/18.png");
+    background-image: url("../assets/background/LZL-Background.webp");
+    background-color: #274454; // Backup in case the image doesn't load
+  }
+
+  &-about {
+    background-image: url("../assets/background/15.webp");
     background-color: #274454; // Backup in case the image doesn't load
   }
 
   &-doujin {
-    background-image: url("../assets/background/18.png");
+    background-image: url("../assets/background/15.webp");
     background-color: #274454; // Backup in case the image doesn't load
   }
 
   &-song {
-    background-color: black;
+    background-image: url("../assets/background/15.webp");
+    background-color: #274454; // Backup in case the image doesn't load
   }
 }
 
@@ -288,5 +295,182 @@
     right: 2%;
     bottom: 0%;
     position: fixed;
+  }
+
+  &-finana-a {
+    @include animation-standard;
+
+    animation-name: finana-a;
+    animation-delay: -10s;
+    height: 20%;
+  }
+
+  @keyframes finana-a {
+    0%,
+    80% {
+      transform: rotate(0);
+      left: 100%;
+      top: 50%;
+    }
+
+    100% {
+      transform: rotate(720deg);
+      left: -50%;
+      top: -20%;
+    }
+  }
+
+  &-finana-b {
+    @include animation-standard;
+
+    animation-name: finana-b;
+    animation-delay: -27s;
+    height: 15%;
+  }
+
+  @keyframes finana-b {
+    0%,
+    70% {
+      transform: rotate(0);
+      left: 60%;
+      top: 100%;
+    }
+
+    100% {
+      transform: rotate(360deg);
+      left: 100%;
+      top: -50%;
+    }
+  }
+
+  &-finana-c {
+    @include animation-standard;
+
+    animation-name: finana-c;
+    animation-delay: 0s;
+    height: 20%;
+  }
+
+  @keyframes finana-c {
+    0%,
+    85% {
+      transform: rotate(0);
+      left: 0%;
+      bottom: 150%;
+    }
+
+    100% {
+      transform: rotate(90deg);
+      left: 100%;
+      bottom: 0%;
+    }
+  }
+}
+
+.home-bg-animation {
+  $ar-wide: 2/1;
+  $ar-narrow: 1/2;
+
+  &-elira {
+    @include animation-core;
+
+    z-index: 3;
+    height: 120%;
+    object-fit: contain;
+    left: 0;
+    top: 20%;
+    transform: translateX(-10%);
+
+    @media (aspect-ratio <= $ar-wide) {
+      height: 100%;
+      transform: translateX(-10%) translateY(10%);
+
+      @media (max-width: $bp-tablet) {
+        // Mobile menu below this width => more space
+        transform: translateX(-10%) translateY(15%);
+      }
+    }
+  }
+
+  &-finana {
+    @include animation-core;
+
+    z-index: 1;
+    height: 110%;
+    object-fit: contain;
+    left: 50%;
+    top: -10%;
+    transform: translateX(-50%);
+
+    @media (aspect-ratio <= $ar-wide) {
+      transform: translateX(-50%) translateY(-5%);
+
+      @media (max-width: $bp-tablet) {
+        // Mobile menu below this width => more space
+        transform: translateX(-50%) translateY(-15%);
+      }
+    }
+
+    @media (aspect-ratio <= $ar-narrow) {
+      transform: translateX(-50%) translateY(-25%);
+    }
+  }
+
+  &-pomu {
+    @include animation-core;
+
+    z-index: 2;
+    height: 110%;
+    object-fit: contain;
+    right: 0;
+    top: 20%;
+    transform: translateX(20%);
+
+    @media (aspect-ratio <= $ar-wide) {
+      transform: translateX(20%) translateY(-10%);
+
+      @media (max-width: $bp-tablet) {
+        // Mobile menu below this width => more space
+        transform: translateX(30%) translateY(-15%);
+      }
+    }
+
+    @media (aspect-ratio <= $ar-narrow) {
+      transform: translateX(30%) translateY(-15%) scale(1.2);
+    }
+  }
+
+  &-pomudachi-b,
+  &-weewa-b {
+    @include animation-core;
+
+    animation-name: mascot-balloon;
+    animation-direction: normal;
+    animation-timing-function: linear;
+    animation-duration: 17s;
+    object-fit: contain;
+  }
+
+  &-pomudachi-b {
+    animation-delay: -15s;
+    right: 25%;
+    transform: translate(50%, 100%);
+  }
+
+  &-weewa-b {
+    animation-delay: -5s;
+    left: 30%;
+    transform: translate(-50%, 100%);
+  }
+
+  @keyframes mascot-balloon {
+    0%,
+    20% {
+      bottom: 0;
+    }
+
+    100% {
+      bottom: 500%;
+    }
   }
 }
