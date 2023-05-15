@@ -9,7 +9,7 @@ import './Home.scss'
 import Popup from 'reactjs-popup'
 import 'reactjs-popup/dist/index.css'
 
-import logo from '../assets/LazuLightLogo-FansiteEdit.webp'
+import logo from '../assets/LazuLightFanLogo-Layout3.webp'
 import peek from '../assets/PeekAll.webp'
 import info from '../assets/info.svg'
 import infoClose from '../assets/info-close.svg'

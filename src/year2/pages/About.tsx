@@ -40,11 +40,11 @@ export default function About (): JSX.Element {
           <h3>Programming</h3>
           <ul>
             <li><p>Austinx88</p></li>
-            <li><p><a href='https://www.twitter.com/jtao_' />Jay Tau</p></li>
+            <li><p><a href='https://www.twitter.com/jtao_'>Jay Tau</a></p></li>
             <li><p><a href='https://twitter.com/_tecnd'>tecnd</a></p></li>
             <li><p><a href='https://twitter.com/av8tor8988'>Ava</a></p></li>
             <li><p><a href='https://twitter.com/BrandonJohns96'>Brandon Johns</a></p></li>
-            {/* <li><p><a href='' />Pyros?</p></li> */}
+            <li><p><a href='https://youtube.com/@Pyrospower'>Pyrospower</a></p></li>
           </ul>
 
           <h3>Design</h3>
@@ -55,11 +55,23 @@ export default function About (): JSX.Element {
 
           <h3>Art Assets</h3>
           <ul>
-            <li><p><a href='https://twitter.com/wildnexus' />wildnexus</p></li>
+            <li><p><a href='https://twitter.com/wildnexus'>wildnexus</a></p></li>
             <li><p><a href='https://twitter.com/ACatKat'>A.Cat</a></p></li>
             <li><p><a href='https://twitter.com/BPikmin11'>BluePikmin11</a></p></li>
             <li><p>ShittyDrawer’s Den</p></li>
             <li><p><a href='https://twitter.com/BrandonJohns96'>Brandon Johns</a></p></li>
+          </ul>
+
+          <h3>Milestone Submissions</h3>
+          <ul>
+            <li><p>CrimsonSilver4</p></li>
+            <li><p>WildestDuck</p></li>
+            <li><p>Blu-chan</p></li>
+            <li><p>Faculity</p></li>
+            <li><p>shurilampio</p></li>
+            <li><p>Pyrospower</p></li>
+            <li><p>Jackson</p></li>
+            <li><p>Brandon Johns</p></li>
           </ul>
 
           <h3>Additional Credits</h3>
