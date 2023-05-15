@@ -66,7 +66,7 @@ export default function Pomu (): JSX.Element {
           submitterName: 'Sparkleaf',
           messagepart1: 'Pomu Subscriber Milestone',
           messagepart2: '500k Subscribers!',
-          title: 'Finana reaches 500K subscribers',
+          title: 'Pomu reaches 500K subscribers',
           tweetUrl: 'https://twitter.com/24EN_notifybot/status/1578609041667915776',
           member: 'pomu',
           date: new Date(
