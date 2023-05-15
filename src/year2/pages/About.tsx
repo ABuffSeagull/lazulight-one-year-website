@@ -1,11 +1,10 @@
 import React from 'react'
 import { Textbox } from '../components/Textbox'
-import classes from './AboutLayout.module.scss'
 import classesCredits from '../components/Credits.module.scss'
 
-export default function About(): JSX.Element {
+export default function About (): JSX.Element {
   return (
-    <div className={`${classes['about-container']}`}>
+    <>
       <Textbox>
         <h2>About</h2>
         <p>This fan website showcases our thanks and congratulations to Elira, Pomu, and Finana (LazuLight) of Nijisanji EN for all their content from 2 years of streaming.</p>
@@ -102,8 +101,6 @@ export default function About(): JSX.Element {
           </ul>
         </div>
       </Textbox>
-    </div>
+    </>
   )
 }
-
-
