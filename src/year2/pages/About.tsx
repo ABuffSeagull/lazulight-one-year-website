@@ -40,7 +40,7 @@ export default function About (): JSX.Element {
           <h3>Programming</h3>
           <ul>
             <li><p>Austinx88</p></li>
-            <li><p><a href='https://www.twitter.com/jtao_' />Jay Tau</p></li>
+            <li><p><a href='https://www.twitter.com/jtao_'>Jay Tau</a></p></li>
             <li><p><a href='https://twitter.com/_tecnd'>tecnd</a></p></li>
             <li><p><a href='https://twitter.com/av8tor8988'>Ava</a></p></li>
             <li><p><a href='https://twitter.com/BrandonJohns96'>Brandon Johns</a></p></li>

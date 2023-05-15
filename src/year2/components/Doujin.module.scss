@@ -1,0 +1,22 @@
+@use "../variables" as *;
+
+.doujin-download-button {
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    background: $box-background;
+    transition: color 75ms ease-out;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
