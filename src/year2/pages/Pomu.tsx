@@ -51,7 +51,7 @@ export default function Pomu (): JSX.Element {
         {
           type: 'youtube',
           submitterName: 'Brandon Johns',
-          videoId: 'D7uqzCmhihQ&t=3045s',
+          videoId: 'D7uqzCmhihQ?start=3045',
           title: 'Pomu plays her theme song on trombone',
           member: 'pomu',
           date: new Date(
@@ -75,7 +75,7 @@ export default function Pomu (): JSX.Element {
         {
           type: 'youtube',
           submitterName: 'WildestDuck',
-          videoId: 'ZDn3o-3RI38&t=3584s',
+          videoId: 'ZDn3o-3RI38?start=3584',
           title: 'Pomu solos the Ender Dragon',
           member: 'pomu',
           date: new Date(
@@ -138,7 +138,7 @@ export default function Pomu (): JSX.Element {
         {
           type: 'youtube',
           submitterName: 'Brandon Johns',
-          videoId: 'V3aNifC_bzg?t=8891',
+          videoId: 'V3aNifC_bzg?start=8891',
           title: "Bromu 'the legend' does a flip",
           member: 'pomu',
           date: new Date(
@@ -162,7 +162,7 @@ export default function Pomu (): JSX.Element {
         {
           type: 'youtube',
           submitterName: 'Brandon Johns',
-          videoId: 'Cc-Czf_q7Ts?t=5262',
+          videoId: 'Cc-Czf_q7Ts?start=5262',
           title: 'Pomu learns to compose 3D rotations',
           member: 'pomu',
           date: new Date(
@@ -186,7 +186,7 @@ export default function Pomu (): JSX.Element {
         {
           type: 'youtube',
           submitterName: 'CrimsonSilver4',
-          videoId: 'YYvYVT5UA5s&t=12122s',
+          videoId: 'YYvYVT5UA5s?start=12122',
           title: 'Final collab with Pikamee',
           member: 'pomu',
           date: new Date(

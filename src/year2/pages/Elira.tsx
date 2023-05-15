@@ -60,7 +60,7 @@ export default function Elira (): JSX.Element {
           member: 'elira',
           date: new Date(2022, 10, 13),
           title: 'Elira plays her theme song on trombone',
-          videoId: 'gfcraa806v4&t=1075s'
+          videoId: 'gfcraa806v4?start=1075'
         },
         {
           type: 'youtube',
@@ -108,7 +108,7 @@ export default function Elira (): JSX.Element {
           member: 'elira',
           date: new Date(2023, 3, 8),
           title: 'Elira gets a girlfriend (in Persona 5)',
-          videoId: '3MKpRbqHXjU&t=3662'
+          videoId: '3MKpRbqHXjU?start=3662'
         },
         {
           type: 'youtube',
@@ -124,7 +124,7 @@ export default function Elira (): JSX.Element {
           member: 'elira',
           date: new Date(2023, 4, 8),
           title: "Elira's third outfit reveal",
-          videoId: 'QkFvN4Hm6K0'
+          videoId: 'Sq-2CNx4UWU'
         },
         {
           type: 'youtube',

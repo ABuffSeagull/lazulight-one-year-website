@@ -41,7 +41,7 @@ export default function Finana (): JSX.Element {
         {
           type: 'youtube',
           submitterName: 'CrimsonSilver4',
-          videoId: 'VIloFfh5PRM&t=21237',
+          videoId: 'VIloFfh5PRM?start=21237',
           title: 'Finana loses her V-card (in Cyberpunk 2077)',
           member: 'finana',
           date: new Date(
@@ -74,7 +74,7 @@ export default function Finana (): JSX.Element {
         {
           type: 'youtube',
           submitterName: 'Brandon Johns',
-          videoId: '8BNo-BFpUzg&t=900s',
+          videoId: '8BNo-BFpUzg?start=900',
           title: 'Finana plays her theme song on trombone',
           member: 'finana',
           date: new Date(
@@ -109,7 +109,7 @@ export default function Finana (): JSX.Element {
         {
           type: 'youtube',
           submitterName: 'CrimsonSilver4',
-          videoId: 'ssvVf8vDzzQ&t=12536',
+          videoId: 'ssvVf8vDzzQ?start=12536',
           title: 'Finana gets married (in Genshin Impact)',
           member: 'finana',
           date: new Date(

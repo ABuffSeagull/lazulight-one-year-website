@@ -5,6 +5,7 @@ import { Timeline } from '../components/Timeline'
 import MessageBoxesLayout from '../../year1/components/MessageBoxesLayout' // '../components/MessageBoxesLayout'
 import ImportMessages from '../../year2/components/ImportMessages' // '../components/ImportMessages'
 import MessageBoxesWithFlags from '../components/MessageBoxesWithFlags'
+import hp from '../../year1/components/HomePage.module.scss'
 
 export default function Home (): JSX.Element {
   const firstName = 'Lazulight'
@@ -12,6 +13,13 @@ export default function Home (): JSX.Element {
 
   return (
     <>
+
+      <div>
+        <h1 className={hp['home-heading']}>
+          <span>Happy</span>
+          <span> 2nd</span> <span>Anniversary</span> <span>Lazulight!</span>
+        </h1>
+      </div>
 
       <Timeline
         memories={[
@@ -90,7 +98,7 @@ export default function Home (): JSX.Element {
           {
             type: 'youtube',
             submitterName: 'Brandon Johns',
-            videoId: 'zmSlfVTUUUY?t=1066',
+            videoId: 'zmSlfVTUUUY?start=1066',
             title: 'LazuLight play beach Trivia',
             member: 'lazulight',
             date: new Date(
@@ -114,7 +122,7 @@ export default function Home (): JSX.Element {
           {
             type: 'youtube',
             submitterName: 'Brandon Johns',
-            videoId: 'vvQVVTe-D2o?t=1192',
+            videoId: 'vvQVVTe-D2o?start=1192',
             title: 'Lazulight (ft. Finanasaur) play the board game of doom in 3D',
             member: 'lazulight',
             date: new Date(
