@@ -317,4 +317,78 @@
     bottom: 0%;
     position: fixed;
   }
+
+  &-finana-a {
+    @include animation-standard;
+
+    animation-name: finana-a;
+    animation-delay: -10s;
+    height: 20%;
+  }
+
+  @keyframes finana-a {
+    0%,
+    80% {
+      transform: rotate(0);
+      left: 100%;
+      top: 50%;
+    }
+
+    100% {
+      transform: rotate(720deg);
+      left: -50%;
+      top: -20%;
+    }
+  }
+
+  &-finana-b {
+    @include animation-standard;
+
+    animation-name: finana-b;
+    animation-delay: -27s;
+    height: 15%;
+  }
+
+  @keyframes finana-b {
+    0%,
+    70% {
+      transform: rotate(0);
+      left: 60%;
+      top: 100%;
+    }
+
+    100% {
+      transform: rotate(360deg);
+      left: 100%;
+      top: -50%;
+    }
+  }
+
+  &-finana-c {
+    @include animation-standard;
+
+    animation-name: finana-c;
+    animation-delay: 0s;
+    height: 20%;
+  }
+
+  @keyframes finana-c {
+    0%,
+  
+    85% {
+      transform: rotate(0);
+      left: 0%;
+      bottom: 150%;
+    }
+
+    
+
+    100% {
+      transform: rotate(90deg);
+      left: 100%;
+      bottom: 0%;
+    }
+  }
+
+
 }
