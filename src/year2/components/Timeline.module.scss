@@ -1,3 +1,5 @@
+@use "../variables" as *;
+
 .timeline-root {
   display: flex;
   flex-direction: column;
@@ -5,17 +7,21 @@
 
   --trunk-width: 8px;
   --dot-diameter: 16px;
-  --date-width: 8rem;
+  --date-width: 6rem;
   --stem-height: 4px;
   --max-content-width: 600px;
   --mobile-padding: 10px;
   --stem-color: grey;
+
+  @media (max-width: $bp-mobile) {
+    --date-width: 4rem;
+  }
 }
 
 .timeline-root::before {
   content: " ";
   width: var(--trunk-width);
-  background: grey;
+  background: $lazulight-primary-color;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -68,33 +74,45 @@
     width: var(--date-width);
     display: flex;
     flex-direction: column;
-    height: calc(2rem + 4px);
-    margin-top: calc(-2rem + 0.5 * var(--stem-height));
+    height: calc(2rem + 4px + 10px);
 
-    .date {
-      height: 2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
+    // margin-top: calc(-2rem + 0.5 * var(--stem-height));
+    justify-content: center;
+    background: var(--stem-color);
+    border-radius: 1rem;
+    border: 3px solid $lazulight-primary-color;
+    padding: 5px;
+
+    @media (max-width: $bp-mobile) {
+      border-radius: 0.5rem;
     }
 
-    &::after {
-      content: " ";
-      height: var(--stem-height);
+    // .date {
+    //  background-color: var(--stem-color);
+    //  border-radius: 1rem 1rem 0 0;
+    //  height: 2rem;
+    //  display: flex;
+    //  flex-direction: column;
+    //  justify-content: center;
+    // }
 
-      // Needs a bit of overlap with the circle for a clean connection
-      width: calc(100% + 4px);
-      background: var(--stem-color);
-    }
+    // &::after {
+    //  content: " ";
+    //  height: var(--stem-height);
+
+    //  // Needs a bit of overlap with the circle for a clean connection
+    //  width: calc(100% + 4px);
+    //  background: var(--stem-color);
+    // }
   }
 
   .content-box {
-    border: var(--stem-height) solid var(--stem-color);
     border-radius: 0.5rem;
     padding: 1rem;
     max-width: calc(min(var(--max-content-width), 100% - var(--date-width)));
     overflow: auto;
     background: var(--stem-color);
+    border: 3px solid $lazulight-primary-color;
   }
 }
 
@@ -114,6 +132,7 @@
   width: var(--dot-diameter);
   height: var(--dot-diameter);
   align-self: center;
+  z-index: 1;
 }
 
 @media (width <= 1200px) {
@@ -222,7 +241,6 @@ Embedded content
 
 .youtube-container {
   position: relative;
-  min-width: 300px;
   width: 100%;
   max-width: var(--max-content-width);
   aspect-ratio: 16 / 9;
