@@ -146,34 +146,33 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
 )
 
 function formatDate (date: Date): string {
-
-    switch (date.getMonth() + 1) {
-      case 1:
-        return `Dec ${date.getFullYear() - 1}`;
-      case 2:
-        return `Jan ${date.getFullYear()}`;
-      case 3:
-        return `Feb ${date.getFullYear()}`;
-      case 4:
-        return `Mar ${date.getFullYear()}`;
-      case 5:
-        return `Apr ${date.getFullYear()}`;
-      case 6:
-        return `May ${date.getFullYear()}`;
-      case 7:
-        return `Jun ${date.getFullYear()}`;
-      case 8:
-        return `Jul ${date.getFullYear()}`;
-      case 9:
-        return `Aug ${date.getFullYear()}`;
-      case 10:
-        return `Sep ${date.getFullYear()}`;
-      case 11:
-        return `Oct ${date.getFullYear()}`;
-      case 12:
-        return `Nov ${date.getFullYear()}`;
-      default:
-        return `Dec ${date.getFullYear() -1 }`;
+  switch (date.getMonth() + 1) {
+    case 1:
+      return `Dec ${date.getFullYear() - 1}`
+    case 2:
+      return `Jan ${date.getFullYear()}`
+    case 3:
+      return `Feb ${date.getFullYear()}`
+    case 4:
+      return `Mar ${date.getFullYear()}`
+    case 5:
+      return `Apr ${date.getFullYear()}`
+    case 6:
+      return `May ${date.getFullYear()}`
+    case 7:
+      return `Jun ${date.getFullYear()}`
+    case 8:
+      return `Jul ${date.getFullYear()}`
+    case 9:
+      return `Aug ${date.getFullYear()}`
+    case 10:
+      return `Sep ${date.getFullYear()}`
+    case 11:
+      return `Oct ${date.getFullYear()}`
+    case 12:
+      return `Nov ${date.getFullYear()}`
+    default:
+      return `Dec ${date.getFullYear() - 1}`
   }
   // console.log(date.getMonth())
   // return `${
