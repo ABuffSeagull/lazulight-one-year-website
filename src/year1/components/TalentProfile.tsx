@@ -1,3 +1,4 @@
+import ExLinkA from '../../shared/components/ExLinkA'
 import Image from '../components/Image'
 import FramedTextbox from './FramedTextbox'
 import RowOfGifs from './RowOfGifs'
@@ -33,9 +34,9 @@ export default function TalentProfile ({ name, portrait, animation, frame, youtu
           {children}
 
           <div className='talent-links-container'>
-            <a className='external-link-text' href={youtube}>{firstName}'s Youtube</a>
-            <a className='external-link-text' href={twitter}>{firstName}'s Twitter</a>
-            <a className='external-link-text' href={discord}> Fan Discord</a>
+            <ExLinkA href={youtube}>{firstName}'s Youtube</ExLinkA>
+            <ExLinkA href={twitter}>{firstName}'s Twitter</ExLinkA>
+            <ExLinkA href={discord}> Fan Discord</ExLinkA>
           </div>
         </FramedTextbox>
         <RowOfGifs

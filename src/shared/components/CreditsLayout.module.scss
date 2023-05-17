@@ -69,20 +69,6 @@ $credits-background-item: grey !default;
     a:hover {
       text-decoration: underline;
     }
-
-    a::after {
-      // Thanks to this dude or I'd be dead getting this to work
-      // https://medium.com/front-end-weekly/text-wrapping-inline-pseudo-elements-8a12a9ba7498
-      content: "";
-      padding-left: 1em;
-      background-color: currentcolor;
-
-      /* tslint:disable-next-line:scss/double-slash-comment-whitespace-inside */
-      mask-image: url("/shared/externalLink.svg");
-      mask-size: 0.4em;
-      mask-position: top;
-      mask-repeat: no-repeat;
-    }
   }
 
   @media (max-width: $bp-tablet) {

@@ -2,6 +2,7 @@ import React from 'react'
 import Image from './Image'
 import { MessageForCornerBoxes } from './ImportMessages'
 import './TalentLayout.scss'
+import ExLink from '../../shared/components/ExLink'
 
 export default function MessageBoxesWithCorners ({
   messages
@@ -15,7 +16,7 @@ export default function MessageBoxesWithCorners ({
           <Image className='fan-submissions-corner' src={message.corner} />
           <div className={`fan-submissions-message ${message.border}-border`}>
             <h4 className='text-lg'>
-              {message.social_url === '' ? (message.name) : (<a href={message.social_url}>{message.name}</a>)}
+              {message.social_url === '' ? (message.name) : (<ExLink href={message.social_url}>{message.name}</ExLink>)}
             </h4>
             {message.msg !== '' && <p>{message.msg}</p>}
             {message.art !== '' && (<Image src={message.art} alt='' enableZoom />)}

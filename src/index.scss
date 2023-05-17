@@ -55,31 +55,6 @@ a {
   }
 }
 
-a.external-link-text {
-  // TODO: This should be removed its uses replaced with <ExLinkA> because it doesn't display properly on ios (thanks Apple...)
-  // Append external link indicator symbol
-  &::after {
-    content: "";
-    padding-left: 1em;
-    background-color: currentcolor;
-
-    /* tslint:disable-next-line:scss/double-slash-comment-whitespace-inside */
-    mask-image: url("/shared/externalLink.svg");
-    mask-size: 0.6em;
-    mask-position: top;
-    mask-repeat: no-repeat;
-  }
-}
-
-.external-link-icon {
-  // TODO: This should be removed its uses replaced with <ExLinkB> for consistency. But it's use in ArtBoardLayout does display properly on ios, so not really a big issue to just leave it
-  height: 1rem;
-  width: 1rem;
-  fill: currentcolor;
-  opacity: 0.8;
-  display: block;
-}
-
 code {
   display: inline-block;
   font-family: monospace;

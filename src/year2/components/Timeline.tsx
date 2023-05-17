@@ -1,6 +1,7 @@
 import React from 'react'
 
 import classes from './Timeline.module.scss'
+import ExLinkA from '../../shared/components/ExLinkA'
 
 interface MemoryCommon {
   title: string
@@ -118,7 +119,7 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
           {/* {memory.title} &bull;{' '}
           {memory.submitterSocialUrl !== undefined &&
           memory.submitterSocialUrl !== ''
-            ? (<a href={memory.submitterSocialUrl}>{memory.submitterName}</a>)
+            ? (<ExLinkA href={memory.submitterSocialUrl}>{memory.submitterName}</ExLinkA>)
             : (memory.submitterName)} */}
         </div>
         <div className={classes['message-row']}>
@@ -234,14 +235,14 @@ function TwitterMemory ({ memory }: { memory: TwitterMemoryType }): JSX.Element 
   if (memory.title === 'Pomu becomes Jellymu') {
     return (
       <blockquote className='twitter-tweet'>
-        Jellymu's <a href='https://twitter.com/PomuRainpuff/status/1643421808132259840'>konjac jelly</a> addiction gets out of hand as her jelly content composition increases from <a href='https://twitter.com/PomuRainpuff/status/1593959250283274242'>50% jelly</a>, to <a href='https://twitter.com/PomuRainpuff/status/1595961417584500736'>87% jelly</a>, and then finally Jellymu becomes <a href='https://twitter.com/PomuRainpuff/status/1599691208389177350'>100%</a> jelly!
+        Jellymu's <ExLinkA href='https://twitter.com/PomuRainpuff/status/1643421808132259840'>konjac jelly</ExLinkA> addiction gets out of hand as her jelly content composition increases from <ExLinkA href='https://twitter.com/PomuRainpuff/status/1593959250283274242'>50% jelly,</ExLinkA> to <ExLinkA href='https://twitter.com/PomuRainpuff/status/1595961417584500736'>87% jelly,</ExLinkA> and then finally Jellymu becomes <ExLinkA href='https://twitter.com/PomuRainpuff/status/1599691208389177350'>100% jelly!</ExLinkA>
       </blockquote>
     )
   }
 
   return (
     <blockquote className='twitter-tweet'>
-      {memory.messagepart1}  <a href={memory.tweetUrl}> {memory.messagepart2}</a>
+      {memory.messagepart1}  <ExLinkA href={memory.tweetUrl}> {memory.messagepart2}</ExLinkA>
     </blockquote>
   )
 }

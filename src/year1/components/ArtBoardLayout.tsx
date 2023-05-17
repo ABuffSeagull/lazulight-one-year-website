@@ -15,6 +15,7 @@ import LazulightArtBoard from '../assets/ArtBoards/Group Collage 2160 x 1920 Tra
 
 import * as messageListImport from '../assets/messageList.json'
 import { Y1LazuType, Y1LiverType } from './PageTypes'
+import ExLinkB from '../../shared/components/ExLinkB'
 
 interface MessageRaw {
   name: string
@@ -116,24 +117,7 @@ export default function ArtBoardLayout ({
       <ul className={`${ab['artboard-credits']} ${ab[`artboard-credits-${artBoard}`]}`}>
         {renderMascotArtistCredits().map((artist, idx) => (
           <li key={idx}>
-            {artist.social_url === ''
-              ? (
-                <span>{artist.name}</span>
-                )
-              : (
-                <a href={artist.social_url}>
-                  {artist.name} {/* Twitter Icon */}
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    width='24'
-                    height='24'
-                    viewBox='0 0 24 24'
-                    className='external-link-icon'
-                  >
-                    <path d='M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z' />
-                  </svg>
-                </a>
-                )}
+            {artist.social_url === '' ? (<span>{artist.name}</span>) : (<ExLinkB href={artist.social_url}>{artist.name}</ExLinkB>)}
           </li>
         ))}
       </ul>

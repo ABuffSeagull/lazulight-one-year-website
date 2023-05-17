@@ -1,3 +1,4 @@
+import ExLinkA from '../../shared/components/ExLinkA'
 import { Y2LazuType } from './PageTypes'
 import classes from './SiteFooter.module.scss'
 
@@ -16,7 +17,7 @@ export default function SiteFooter ({
         <p>We thank the community for supporting the livers and each other.</p>
         <p>Finally, thank you to everyone who assisted in bringing these fan projects to life. Every contribution made this work even more special.</p>
         <h4>Disclaimer:</h4>
-        <p>This is a fan website, made by fans. We aimed to create this website in compliance with the <a className='external-link-text' href='https://event.nijisanji.app/guidelines/en/'>ANYCOLOR - Guidelines for Secondary Creation</a>. If there are any concerns or enquiries, please contact us by email at <a href='mailto:lazuprojectsteam@gmail.com'>lazuprojectsteam@gmail.com</a>.</p>
+        <p>This is a fan website, made by fans. We aimed to create this website in compliance with the <ExLinkA href='https://event.nijisanji.app/guidelines/en/'>ANYCOLOR - Guidelines for Secondary Creation</ExLinkA>. If there are any concerns or enquiries, please contact us by email at <a href='mailto:lazuprojectsteam@gmail.com'>lazuprojectsteam@gmail.com</a>.</p>
       </footer>
     </>
   )

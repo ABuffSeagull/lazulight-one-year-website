@@ -2,6 +2,7 @@ import React from 'react'
 import classesCredits from '../components/Credits.module.scss'
 import FramedTextbox from '../components/FramedTextbox'
 import LazulightCorner from '../assets/Corners/LazuLight-Corner.webp'
+import ExLinkA from '../../shared/components/ExLinkA'
 
 interface Props {
   page: string
@@ -22,10 +23,10 @@ export default function About (props: Props): JSX.Element {
         <p>Fans of LazuLight from across the world and from all walks of life joined together to create this expression of thanks. Every showcased message, art, music, game, and this website itself was created specifically for this purpose. This project is the culmination of over 4 months of efforts from artists, programmers, writers, and many others.</p>
         <p>The fruits of this labor include artwork, a cover of Diamond City Lights, a mod for Friday Night Funkin, and an entire visual novel. Thank you to the LazuLight fan discords, contributors, and all the fans for your hard work and support.</p>
         <h3>Fan Discord Links</h3>
-        <p><a className='external-link-text' href='https://discord.gg/2434club'>Nijisanji EN Fanserver</a></p>
-        <p><a className='external-link-text' href='https://discord.gg/pomu'>Pomucord</a></p>
-        <p><a className='external-link-text' href='https://discord.gg/gWUFJS2JtF'>Elicord</a></p>
-        <p><a className='external-link-text' href='https://discord.gg/425bxuSsff'>Finana Finclub</a></p>
+        <p><ExLinkA href='https://discord.gg/2434club'>Nijisanji EN Fanserver</ExLinkA></p>
+        <p><ExLinkA href='https://discord.gg/pomu'>Pomucord</ExLinkA></p>
+        <p><ExLinkA href='https://discord.gg/gWUFJS2JtF'>Elicord</ExLinkA></p>
+        <p><ExLinkA href='https://discord.gg/425bxuSsff'>Finana Finclub</ExLinkA></p>
       </FramedTextbox>
 
       <FramedTextbox corner={LazulightCorner} border={props.page}>
@@ -41,14 +42,14 @@ function WebTeamCredits (): JSX.Element {
       <h3>Management Team</h3>
       <h4>Organiser</h4>
       <ul>
-        <li><p><a href='https://twitter.com/HirokawaKiro'>Kiro</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/HirokawaKiro'>Kiro</ExLinkA></p></li>
       </ul>
       <h4>Leaders</h4>
       <ul>
-        <li><p><a href='https://twitter.com/kfpcalendar'>Sant268</a></p></li>
-        <li><p><a href='https://twitter.com/NoxShadow24904'>NoxShadow</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/kfpcalendar'>Sant268</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/NoxShadow24904'>NoxShadow</ExLinkA></p></li>
         <li><p>ABuffSeagull</p></li>
-        <li><p><a href='https://twitter.com/BrandonJohns96'>Brandon Johns</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/BrandonJohns96'>Brandon Johns</ExLinkA></p></li>
       </ul>
 
       <h3>Domain Owner</h3>
@@ -58,56 +59,56 @@ function WebTeamCredits (): JSX.Element {
 
       <h3>Server Hosting</h3>
       <ul>
-        <li><p><a href='https://twitter.com/thundercookie15'>thundercookie15</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/thundercookie15'>thundercookie15</ExLinkA></p></li>
       </ul>
 
       <h3>Programming</h3>
       <ul>
         <li><p>Matthew Tao</p></li>
-        <li><p><a href='https://twitter.com/monkey2821920'>Austinx88</a></p></li>
-        <li><p><a href='https://twitter.com/_tecnd'>tecnd</a></p></li>
-        <li><p><a href='https://twitter.com/kawaru_2601'>Yuki</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/monkey2821920'>Austinx88</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/_tecnd'>tecnd</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/kawaru_2601'>Yuki</ExLinkA></p></li>
         <li><p>Kalesvol</p></li>
-        <li><p><a href='https://twitter.com/Yahiko_Daichi'>YahikoDaichi</a></p></li>
-        <li><p><a href='https://twitter.com/BrandonJohns96'>Brandon Johns</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/Yahiko_Daichi'>YahikoDaichi</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/BrandonJohns96'>Brandon Johns</ExLinkA></p></li>
       </ul>
 
       <h3>Design</h3>
       <ul>
         <li><p>Matthew Tao</p></li>
-        <li><p><a href='https://twitter.com/NobleNoisii'>NobleNoisii</a></p></li>
-        <li><p><a href='https://twitter.com/BrandonJohns96'>Brandon Johns</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/NobleNoisii'>NobleNoisii</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/BrandonJohns96'>Brandon Johns</ExLinkA></p></li>
       </ul>
 
       <h3>Art Assets</h3>
       <ul>
-        <li><p><a href='https://twitter.com/wildnexus'>wildnexus</a></p></li>
-        <li><p><a href='https://twitter.com/BrandonJohns96'>Brandon Johns</a></p></li>
-        <li><p><a href='https://twitter.com/ann_teasocial'>Ann_TeaSocial</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/wildnexus'>wildnexus</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/BrandonJohns96'>Brandon Johns</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/ann_teasocial'>Ann_TeaSocial</ExLinkA></p></li>
       </ul>
 
       <h3>Text Content</h3>
       <ul>
-        <li><p><a href='https://twitter.com/wildnexus'>wildnexus</a></p></li>
-        <li><p><a href='https://twitter.com/coldace_24'>Zephyr Monochrome</a></p></li>
-        <li><p><a href='https://twitter.com/ZephyrKitten'>Zephyr Kitten</a></p></li>
-        <li><p><a href='https://twitter.com/JF__ND'>JFND</a></p></li>
-        <li><p><a href='https://twitter.com/Yahiko_Daichi'>YahikoDaichi</a></p></li>
-        <li><p><a href='https://twitter.com/BrandonJohns96'>Brandon Johns</a></p></li>
-        <li><p><a href='https://www.instagram.com/brainstorm_13201'>ShittyWriter’s Den</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/wildnexus'>wildnexus</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/coldace_24'>Zephyr Monochrome</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/ZephyrKitten'>Zephyr Kitten</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/JF__ND'>JFND</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/Yahiko_Daichi'>YahikoDaichi</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/BrandonJohns96'>Brandon Johns</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://www.instagram.com/brainstorm_13201'>ShittyWriter’s Den</ExLinkA></p></li>
       </ul>
 
       <h3>Feedback</h3>
       <ul>
-        <li><p><a href='https://twitter.com/HirokawaKiro'>Kiro</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/HirokawaKiro'>Kiro</ExLinkA></p></li>
       </ul>
 
       <h3>Additional Credits</h3>
       <ul>
-        <li><p><a href='https://twitter.com/AliceVu134'>Alice Vu (Ryuguard Design A)</a></p></li>
-        <li><p><a href='https://twitter.com/MelonbreadFBP'>Melonbread (Ryuguard Design B)</a></p></li>
-        <li><p><a href='https://twitter.com/suminoja'>Suminoja (Twerking LazuLight Gifs)</a></p></li>
-        <li><p><a href='https://grabcad.com/library/diamond-round-brilliant-cut-2'>Edgar Gidoni (Diamond 3D model)</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/AliceVu134'>Alice Vu (Ryuguard Design A)</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/MelonbreadFBP'>Melonbread (Ryuguard Design B)</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/suminoja'>Suminoja (Twerking LazuLight Gifs)</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://grabcad.com/library/diamond-round-brilliant-cut-2'>Edgar Gidoni (Diamond 3D model)</ExLinkA></p></li>
       </ul>
       <h3>Special Thanks</h3>
       <ul className={classesCredits['text-special-final']}>
