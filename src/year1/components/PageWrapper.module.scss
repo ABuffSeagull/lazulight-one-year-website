@@ -368,7 +368,7 @@
     background-color: #bfdfd7;
   }
 
-  @media (width <= 768px) {
+  @media (max-width: 768px) {
     margin-top: 1.5rem;
   }
 }

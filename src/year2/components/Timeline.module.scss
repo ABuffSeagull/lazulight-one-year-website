@@ -140,7 +140,7 @@
   z-index: 1;
 }
 
-@media (width <= 1200px) {
+@media (max-width: 1200px) {
   .timeline-root {
     padding: var(--mobile-padding);
   }
@@ -185,7 +185,7 @@
   }
 }
 
-@media (width >= 1200px) {
+@media (min-width: 1201px) {
   // Center trunk
   .timeline-root::before {
     left: calc(50% - var(--trunk-width) / 2);

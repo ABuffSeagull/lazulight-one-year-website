@@ -381,7 +381,7 @@
     top: 20%;
     transform: translateX(-10%);
 
-    @media (aspect-ratio <= $ar-wide) {
+    @media (max-aspect-ratio: $ar-wide) {
       height: 100%;
       transform: translateX(-10%) translateY(10%);
 
@@ -402,7 +402,7 @@
     top: -10%;
     transform: translateX(-50%);
 
-    @media (aspect-ratio <= $ar-wide) {
+    @media (max-aspect-ratio: $ar-wide) {
       transform: translateX(-50%) translateY(-5%);
 
       @media (max-width: $bp-tablet) {
@@ -411,7 +411,7 @@
       }
     }
 
-    @media (aspect-ratio <= $ar-narrow) {
+    @media (max-aspect-ratio: $ar-narrow) {
       transform: translateX(-50%) translateY(-25%);
     }
   }
@@ -426,7 +426,7 @@
     top: 20%;
     transform: translateX(20%);
 
-    @media (aspect-ratio <= $ar-wide) {
+    @media (max-aspect-ratio: $ar-wide) {
       transform: translateX(20%) translateY(-10%);
 
       @media (max-width: $bp-tablet) {
@@ -435,7 +435,7 @@
       }
     }
 
-    @media (aspect-ratio <= $ar-narrow) {
+    @media (max-aspect-ratio: $ar-narrow) {
       transform: translateX(30%) translateY(-15%) scale(1.2);
     }
   }

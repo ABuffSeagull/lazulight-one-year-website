@@ -80,7 +80,7 @@ $header-background-item-hover: grey !default;
   width: 8rem;
 }
 
-@media screen and (width <= 768px) {
+@media (max-width: 768px) {
   .open-header {
     display: flex;
   }
@@ -168,7 +168,7 @@ $header-background-item-hover: grey !default;
   &-mobile-only {
     display: none;
 
-    @media (width <= 768px) {
+    @media (max-width: 768px) {
       display: flex;
     }
   }
@@ -176,7 +176,7 @@ $header-background-item-hover: grey !default;
   &-desktop-only {
     display: flex;
 
-    @media (width <= 768px) {
+    @media (max-width: 768px) {
       display: none;
     }
   }
@@ -215,7 +215,7 @@ $header-background-item-hover: grey !default;
     border-radius: 0.5rem;
     padding: 0.5rem 0;
 
-    @media (width <= 768px) {
+    @media (max-width: 768px) {
       display: none;
     }
   }
