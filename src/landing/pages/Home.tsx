@@ -40,8 +40,8 @@ export default function Home (): JSX.Element {
       </Link>
       <Image className={classes.peek} src={peek} />
 
-      <button onClick={() => setOpen(open => !open)}>
-        <Image className={classes['info-button']} src={info} />
+      <button onClick={() => setOpen(open => !open)} className={classes['info-button']}>
+        <Image src={info} />
       </button>
       <Popup
         open={open}

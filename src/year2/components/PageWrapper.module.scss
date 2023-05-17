@@ -48,7 +48,7 @@
   &-song,
   &-about,
   &-home {
-    background-attachment: fixed;
+    background-attachment: local; // Must be 'local', not 'fixed' to work on ios
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
