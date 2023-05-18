@@ -60,8 +60,8 @@ export default function Pomu (): JSX.Element {
             4
           )
         },
-              
-         {
+
+        {
           type: 'twitter',
           submitterName: 'Sparkleaf',
           messagepart1: 'Pomu Subscriber Milestone',
@@ -73,8 +73,8 @@ export default function Pomu (): JSX.Element {
             2022,
             10,
             8)
-        },     
-              
+        },
+
         {
           type: 'youtube',
           submitterName: 'Faculity',

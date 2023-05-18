@@ -8,7 +8,8 @@ $glow: drop-shadow(0 0 1rem rgb(255 247 201));
   align-items: center;
   height: 100%;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100vh; // Fallback for old devices
+  min-height: 100dvh; // Fixes ios bug where items using "position:absolute; bottom:0%" are hidden behind the UI
   max-width: 100vw;
   overflow-y: hidden;
   position: fixed;
@@ -54,14 +55,18 @@ $glow: drop-shadow(0 0 1rem rgb(255 247 201));
 }
 
 .info-button {
-  position: absolute;
-  top: 5%;
-  right: 5%;
-  width: 3em;
-  max-height: 10%;
-  max-width: 10%;
-  filter: $glow;
-  cursor: pointer;
+  background: none;
+
+  img {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 3em;
+    max-height: 10%;
+    max-width: 10%;
+    filter: $glow;
+    cursor: pointer;
+  }
 }
 
 .info-button-close {

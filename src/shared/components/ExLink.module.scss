@@ -2,6 +2,10 @@
   display: inline-flex;
   gap: 0.25rem;
 
+  a:hover {
+    text-decoration: underline;
+  }
+
   &-icon {
     height: 0.6rem;
     width: 0.6rem;
@@ -16,6 +20,10 @@
   align-items: center;
   gap: 0.25rem;
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 
   &-icon {
     height: 1rem;

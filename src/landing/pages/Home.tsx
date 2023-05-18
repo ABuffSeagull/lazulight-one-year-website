@@ -40,8 +40,8 @@ export default function Home (): JSX.Element {
       </Link>
       <Image className={classes.peek} src={peek} />
 
-      <button onClick={() => setOpen(open => !open)}>
-        <Image className={classes['info-button']} src={info} />
+      <button onClick={() => setOpen(open => !open)} className={classes['info-button']}>
+        <Image src={info} />
       </button>
       <Popup
         open={open}
@@ -56,6 +56,9 @@ export default function Home (): JSX.Element {
           <h3>About this website</h3>
           <p>This fan website showcases our thanks and congratulations to Elira, Pomu, and Finana (LazuLight) of Nijisanji EN. Fans of LazuLight from across the world joined together to create these expressions of thanks at the times of LazuLight's 1st and 2nd anniversaries. Every showcased work was created specifically for this purpose. Thank you to the LazuLight fan discords, contributors, and all the fans for your hard work and support.</p>
           <p>Fan Discord Links: <ExLink href='https://discord.gg/2434club'>Nijisanji EN Fanserver</ExLink>, <ExLink href='https://discord.gg/pomu'>Pomucord</ExLink>, <ExLink href='https://discord.gg/gWUFJS2JtF'>Elicord</ExLink>, <ExLink href='https://discord.gg/425bxuSsff'>Finana Finclub</ExLink></p>
+
+          <h3>Copyright &amp; Permissions:</h3>
+          <p>We give permission to all Nijisanji Livers to monetize viewing this website by any means, including livestream and video publication. We declare that any copyright material on this website is used with permission and, where applicable, used within the terms of its license. We declare that this website does not contain any material that violates the YouTube Community Guidelines.</p>
 
           <h3>Disclaimer:</h3>
           <p>This is a fan website, made by fans. We aimed to create this website in compliance with the <ExLink href='https://event.nijisanji.app/guidelines/en/'>ANYCOLOR - Guidelines for Secondary Creation</ExLink>.<br />If there are any concerns or enquiries, please contact us by email at <ExLink href='mailto:lazuprojectsteam@gmail.com'>lazuprojectsteam@gmail.com</ExLink>.</p>

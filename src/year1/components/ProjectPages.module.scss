@@ -20,7 +20,7 @@
       height: calc(100vh - 6rem);
     }
 
-    @media (aspect-ratio <= 4/5) {
+    @media (max-aspect-ratio: 4/5) {
       height: auto;
     }
 
@@ -105,7 +105,7 @@
   color: inherit;
   transition: color 75ms ease-out;
 
-  @media (width <= 600px) {
+  @media (max-width: 600px) {
     margin-right: 0;
   }
 

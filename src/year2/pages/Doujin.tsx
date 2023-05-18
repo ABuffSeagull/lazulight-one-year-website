@@ -5,6 +5,7 @@ import DoujinCredits from '../components/DoujinCredits'
 import { Textbox } from '../components/Textbox'
 
 import classes from '../components/Doujin.module.scss'
+import ExLink from '../../shared/components/ExLink'
 
 export default function Doujin (): JSX.Element {
   return (
@@ -12,9 +13,9 @@ export default function Doujin (): JSX.Element {
       <DoujinViewer />
 
       <div className={`${classes['doujin-download-button']}`}>
-        <a href='https://drive.google.com/drive/folders/1AwmZmrWzmqs6wryZh0omL0qNOAUhPCs8' download>
+        <ExLink href='https://drive.google.com/drive/folders/1AwmZmrWzmqs6wryZh0omL0qNOAUhPCs8'>
           <button className='lazulight-border'>Download pdf</button>
-        </a>
+        </ExLink>
       </div>
 
       <Textbox>

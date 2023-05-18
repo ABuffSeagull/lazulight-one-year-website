@@ -28,6 +28,8 @@ import classesVn from '../components/ProjectVn.module.scss'
 import classesP from '../components/ProjectPages.module.scss'
 import '../components/TalentLayout.scss'
 import FramedTextbox from '../components/FramedTextbox'
+import ExLinkA from '../../shared/components/ExLinkA'
+import ExLink from '../../shared/components/ExLink'
 
 interface Props {
   page: string
@@ -212,13 +214,13 @@ export default function VisualNovel (props: Props): JSX.Element {
           <h3>Download (1GB Approx)</h3>
           <Countdown date={releaseDate} renderer={countdownRenderer}>
             <>
-              <a href='https://drive.google.com/file/d/1wIT_jutfLV1GHa3CuNBekytnpx6p8OnW/view?usp=share_link' download>
+              <ExLink href='https://drive.google.com/file/d/1wIT_jutfLV1GHa3CuNBekytnpx6p8OnW/view?usp=share_link'>
                 <button className={`${classesP['download-button']} lazulight-border`}>Download for Windows</button>
-              </a>
+              </ExLink>
 
-              <a href='https://drive.google.com/file/d/1A_BYcCXLZ1M7yGaB_TG65p02LYvf8Yzi/view?usp=share_link' download>
+              <ExLink href='https://drive.google.com/file/d/1A_BYcCXLZ1M7yGaB_TG65p02LYvf8Yzi/view?usp=share_link'>
                 <button className={`${classesP['download-button']} lazulight-border`}>Download for Mac</button>
-              </a>
+              </ExLink>
               <div>
                 <a href='/downloads/LazulightVN-1.0-pc.zip' download>
                   <button className={`${classesP['download-button']} lazulight-border`}>Download for Windows (Mirror)</button>
@@ -278,14 +280,14 @@ Formatting from Kiro's Credits document
   Regex the line spacing and the colons for headings and ul
   Regex twitter links, then non-linked
     ^([^<\n].+) \| @(.+) on Twitter$
-    <li><p><a href='https://twitter.com/$2'>$1</a></p></li>
+    <li><p><ExLinkA href='https://twitter.com/$2'>$1</ExLinkA></p></li>
   Manual edits
     Non-Twitter links
       .. | ..
       freesound.org
     & to &amp;
     Links with parentheses to
-      </a>{' '}&nbsp;(Keyboard sounds)
+      </ExLinkA>{' '}&nbsp;(Keyboard sounds)
     ul for "Special Thanks To"
       <ul className={classesCredits['text-special-final']}>
 */
@@ -296,11 +298,11 @@ function VisualNovelCredits (): JSX.Element {
       <h3>Management Team</h3>
       <h4>Organizer &amp; Producer</h4>
       <ul>
-        <li><p><a href='https://twitter.com/HirokawaKiro'>Kiro</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/HirokawaKiro'>Kiro</ExLinkA></p></li>
       </ul>
       <h4>VN Team Leader &amp; Producer</h4>
       <ul>
-        <li><p><a href='https://twitter.com/Treebobber1'>SinSin</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/Treebobber1'>SinSin</ExLinkA></p></li>
       </ul>
       <h4>VN Team Assistant Leader</h4>
       <ul>
@@ -310,28 +312,28 @@ function VisualNovelCredits (): JSX.Element {
       <h3>Writing Team</h3>
       <h4>Writing Team Leader</h4>
       <ul>
-        <li><p><a href='https://twitter.com/coldace_24'>Zephyr Monochrome</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/coldace_24'>Zephyr Monochrome</ExLinkA></p></li>
       </ul>
       <h4>Scenario</h4>
       <ul>
-        <li><p><a href='https://twitter.com/coldace_24'>Zephyr Monochrome</a></p></li>
-        <li><p><a href='https://twitter.com/aikatsukin'>Akatsukin</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/coldace_24'>Zephyr Monochrome</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/aikatsukin'>Akatsukin</ExLinkA></p></li>
       </ul>
       <h4>Common Route Writer</h4>
       <ul>
-        <li><p><a href='https://twitter.com/coldace_24'>Zephyr Monochrome</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/coldace_24'>Zephyr Monochrome</ExLinkA></p></li>
       </ul>
       <h4>Elira Route Writer</h4>
       <ul>
-        <li><p><a href='https://www.instagram.com/brainstorm_13201/'>ShittyDrawer’s Den</a></p></li>
+        <li><p><ExLinkA href='https://www.instagram.com/brainstorm_13201/'>ShittyDrawer’s Den</ExLinkA></p></li>
       </ul>
       <h4>Pomu Route Writer</h4>
       <ul>
-        <li><p><a href='https://twitter.com/aikatsukin'>Akatsukin</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/aikatsukin'>Akatsukin</ExLinkA></p></li>
       </ul>
       <h4>Finana Route Writer</h4>
       <ul>
-        <li><p><a href='https://twitter.com/keekispecial'>Keektang</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/keekispecial'>Keektang</ExLinkA></p></li>
       </ul>
       <h4>Finana Route Assistant Writer</h4>
       <ul>
@@ -339,21 +341,21 @@ function VisualNovelCredits (): JSX.Element {
       </ul>
       <h4>??? Route Writer</h4>
       <ul>
-        <li><p><a href='https://twitter.com/aikatsukin'>Akatsukin</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/aikatsukin'>Akatsukin</ExLinkA></p></li>
       </ul>
       <h4>Proofreading Lead</h4>
       <ul>
-        <li><p><a href='https://twitter.com/JF__ND'>JFND</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/JF__ND'>JFND</ExLinkA></p></li>
       </ul>
       <h4>Proofreaders</h4>
       <ul>
         <li><p>Johnny Lacone</p></li>
-        <li><p><a href='https://twitter.com/wildnexus'>wildnexus</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/wildnexus'>wildnexus</ExLinkA></p></li>
         <li><p>Zephyr Kitten</p></li>
-        <li><p><a href='https://twitter.com/JF__ND'>JFND</a></p></li>
-        <li><p><a href='https://twitter.com/reiykhuu'>Saeren</a></p></li>
-        <li><p><a href='https://twitter.com/citrusblush'>Calix</a></p></li>
-        <li><p><a href='https://twitter.com/erawanLH'>Erawan</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/JF__ND'>JFND</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/reiykhuu'>Saeren</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/citrusblush'>Calix</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/erawanLH'>Erawan</ExLinkA></p></li>
       </ul>
 
       <h3>Art Team</h3>
@@ -363,144 +365,144 @@ function VisualNovelCredits (): JSX.Element {
       </ul>
       <h4>Art Team Leader (Art QC &amp; Feedback)</h4>
       <ul>
-        <li><p><a href='https://twitter.com/ann_teasocial'>Ann_TeaSocial</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/ann_teasocial'>Ann_TeaSocial</ExLinkA></p></li>
       </ul>
       <h3>Sprite Artists</h3>
       <h4>Elira Sprites</h4>
       <ul>
-        <li><p><a href='https://twitter.com/ann_teasocial'>Ann_TeaSocial</a></p></li>
-        <li><p><a href='https://twitter.com/Lost_B_unny'>Lost B'unny</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/ann_teasocial'>Ann_TeaSocial</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/Lost_B_unny'>Lost B'unny</ExLinkA></p></li>
       </ul>
       <h4>Pomu Sprites</h4>
       <ul>
-        <li><p><a href='https://twitter.com/MizMillificent'>MizMillificent</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/MizMillificent'>MizMillificent</ExLinkA></p></li>
       </ul>
       <h4>Finana Sprites</h4>
       <ul>
-        <li><p><span><a href='https://twitter.com/amechi_doki'>Amechi</a>{' '}&nbsp;(Lineart)</span></p></li>
-        <li><p><span><a href='https://twitter.com/Vitaminechan'>Vitaminechan</a>{' '}&nbsp;(Colouring)</span></p></li>
+        <li><p><span><ExLinkA href='https://twitter.com/amechi_doki'>Amechi</ExLinkA>{' '}&nbsp;(Lineart)</span></p></li>
+        <li><p><span><ExLinkA href='https://twitter.com/Vitaminechan'>Vitaminechan</ExLinkA>{' '}&nbsp;(Colouring)</span></p></li>
       </ul>
       <h4>Selen Sprites</h4>
       <ul>
-        <li><p><a href='https://twitter.com/SkullGrimoire'>Grim</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/SkullGrimoire'>Grim</ExLinkA></p></li>
       </ul>
       <h4>Rosemi Sprites</h4>
       <ul>
-        <li><p><a href='https://twitter.com/YukiBaskerville'>Yuki Baskerville</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/YukiBaskerville'>Yuki Baskerville</ExLinkA></p></li>
         <li><p>Arien</p></li>
       </ul>
       <h4>Petra Sprites</h4>
       <ul>
-        <li><p><a href='https://twitter.com/amechi_doki'>Amechi</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/amechi_doki'>Amechi</ExLinkA></p></li>
       </ul>
       <h4>Oliver-sensei Sprites</h4>
       <ul>
-        <li><p><a href='https://twitter.com/flakesnpie'>Bee</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/flakesnpie'>Bee</ExLinkA></p></li>
       </ul>
       <h4>Pikl Sprites</h4>
       <ul>
-        <li><p><a href='https://www.instagram.com/brainstorm_13201/'>ShittyDrawer’s Den</a></p></li>
+        <li><p><ExLinkA href='https://www.instagram.com/brainstorm_13201/'>ShittyDrawer’s Den</ExLinkA></p></li>
       </ul>
       <h4>CG Artists</h4>
       <ul>
-        <li><p><a href='https://twitter.com/anatom_orange'>Anatom</a></p></li>
-        <li><p><a href='https://twitter.com/gudanco'>Guda</a></p></li>
-        <li><p><a href='https://twitter.com/yexinR5'>R5</a></p></li>
-        <li><p><a href='https://twitter.com/snowharasho'>Squish</a></p></li>
-        <li><p><a href='https://twitter.com/SyxhSevenEight'>Syxh</a></p></li>
-        <li><p><a href='https://twitter.com/sejvon'>VonB</a></p></li>
-        <li><p><a href='https://twitter.com/natttsume'>Nattsume</a></p></li>
-        <li><p><a href='https://twitter.com/aelis_k5'>Aeri</a></p></li>
-        <li><p><a href='https://twitter.com/tsukinaga_b'>tsukinaga</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/anatom_orange'>Anatom</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/gudanco'>Guda</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/yexinR5'>R5</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/snowharasho'>Squish</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/SyxhSevenEight'>Syxh</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/sejvon'>VonB</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/natttsume'>Nattsume</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/aelis_k5'>Aeri</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/tsukinaga_b'>tsukinaga</ExLinkA></p></li>
         <li><p>Dokuro_DX</p></li>
-        <li><p><a href='https://twitter.com/ginga_elyka'>naokomama</a></p></li>
-        <li><p><a href='https://twitter.com/art_pixelnoodle'>sleepy</a></p></li>
-        <li><p><a href='https://twitter.com/TakezoMitsurugi'>Takezo</a></p></li>
-        <li><p><a href='https://twitter.com/ACatKat'>A.Cat</a></p></li>
-        <li><p><a href='https://twitter.com/sheep_tamura'>ひつじ</a></p></li>
-        <li><p><a href='https://twitter.com/_namestaken_'>Name Taken</a></p></li>
-        <li><p><a href='https://twitter.com/AliceVu134'>Alice Vu</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/ginga_elyka'>naokomama</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/art_pixelnoodle'>sleepy</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/TakezoMitsurugi'>Takezo</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/ACatKat'>A.Cat</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/sheep_tamura'>ひつじ</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/_namestaken_'>Name Taken</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/AliceVu134'>Alice Vu</ExLinkA></p></li>
         <li><p>Arien</p></li>
         <li><p>FragileQ</p></li>
         <li><p>Neroshi</p></li>
-        <li><p><a href='https://twitter.com/Jeamteerasakul'>RockyBirdy</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/Jeamteerasakul'>RockyBirdy</ExLinkA></p></li>
       </ul>
       <h4>Backgrounds</h4>
       <ul>
-        <li><p><a href='https://twitter.com/ajaniiiiiii'>Ajani Akasakaspicy</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/ajaniiiiiii'>Ajani Akasakaspicy</ExLinkA></p></li>
         <li><p>Arien</p></li>
-        <li><p><a href='https://twitter.com/Arqodeon'>arqo</a></p></li>
-        <li><p><a href='https://twitter.com/flakesnpie'>Bee</a></p></li>
-        <li><p><a href='https://twitter.com/rem26_art'>fyretruck</a></p></li>
-        <li><p><a href='https://twitter.com/Lost_B_unny'>Lost B'unny</a></p></li>
-        <li><p><a href='https://twitter.com/miuzhik_'>Michi</a></p></li>
-        <li><p><a href='https://twitter.com/snowharasho'>Squish</a></p></li>
-        <li><p><a href='https://twitter.com/wizwaaz'>wizwaaz</a></p></li>
-        <li><p><a href='https://www.instagram.com/bianneart'>Bianne</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/Arqodeon'>arqo</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/flakesnpie'>Bee</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/rem26_art'>fyretruck</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/Lost_B_unny'>Lost B'unny</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/miuzhik_'>Michi</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/snowharasho'>Squish</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/wizwaaz'>wizwaaz</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://www.instagram.com/bianneart'>Bianne</ExLinkA></p></li>
       </ul>
       <h4>UI/Assets</h4>
       <ul>
-        <li><p><a href='https://twitter.com/ACatKat'>A.Cat</a></p></li>
-        <li><p><a href='https://twitter.com/juiceinkf'>juice</a></p></li>
-        <li><p><a href='https://twitter.com/miuzhik_'>Michi</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/ACatKat'>A.Cat</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/juiceinkf'>juice</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/miuzhik_'>Michi</ExLinkA></p></li>
         <li><p>mrj</p></li>
-        <li><p><a href='https://twitter.com/TakezoMitsurugi'>Takezo</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/TakezoMitsurugi'>Takezo</ExLinkA></p></li>
         <li><p>The Holy Wooomy with 69 Nuggets of Toasted Squidies</p></li>
-        <li><p><a href='https://twitter.com/questipher'>questipher</a></p></li>
-        <li><p><a href='https://twitter.com/coldace_24'>Zephyr Monochrome</a></p></li>
-        <li><p><a href='https://twitter.com/tsukinaga_b'>tsukinaga</a></p></li>
-        <li><p><a href='https://www.youtube.com/crisuskeer'>Crisu</a></p></li>
-        <li><p><a href='https://twitter.com/kanasquared'>kana²</a></p></li>
-        <li><p><a href='https://twitter.com/Treebobber1'>SinSin</a></p></li>
-        <li><p><a href='https://twitter.com/_tecnd'>tecnd</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/questipher'>questipher</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/coldace_24'>Zephyr Monochrome</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/tsukinaga_b'>tsukinaga</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://www.youtube.com/crisuskeer'>Crisu</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/kanasquared'>kana²</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/Treebobber1'>SinSin</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/_tecnd'>tecnd</ExLinkA></p></li>
       </ul>
 
       <h3>Programming Team</h3>
       <h4>Programming Team Leaders</h4>
       <ul>
-        <li><p><a href='https://twitter.com/_tecnd'>tecnd</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/_tecnd'>tecnd</ExLinkA></p></li>
         <li><p>Usaruru</p></li>
       </ul>
       <h4>Animation Director</h4>
       <ul>
-        <li><p><a href='https://twitter.com/kanasquared'>kana²</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/kanasquared'>kana²</ExLinkA></p></li>
       </ul>
       <h4>Programmers</h4>
       <ul>
-        <li><p><a href='https://twitter.com/_tecnd'>tecnd</a></p></li>
-        <li><p><a href='https://twitter.com/kanasquared'>kana²</a></p></li>
-        <li><p><a href='https://twitter.com/BadScribbler'>BadScribbler</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/_tecnd'>tecnd</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/kanasquared'>kana²</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/BadScribbler'>BadScribbler</ExLinkA></p></li>
         <li><p>mrj</p></li>
-        <li><p><a href='https://twitter.com/Treebobber1'>SinSin</a></p></li>
-        <li><p><a href='https://twitter.com/tsukinaga_b'>tsukinaga</a></p></li>
-        <li><p><a href='https://twitter.com/monkey2821920'>Austinx88</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/Treebobber1'>SinSin</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/tsukinaga_b'>tsukinaga</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/monkey2821920'>Austinx88</ExLinkA></p></li>
       </ul>
       <h4>Visual Novel Engine</h4>
       <ul>
-        <li><p><a href='https://www.renpy.org/'>Ren’Py</a></p></li>
+        <li><p><ExLinkA href='https://www.renpy.org/'>Ren’Py</ExLinkA></p></li>
       </ul>
 
       <h3>BGM Team</h3>
       <h4>BGM Team Leaders</h4>
       <ul>
-        <li><p><a href='https://twitter.com/HirokawaKiro'>Kiro</a></p></li>
-        <li><p><a href='https://twitter.com/itsbreeziness'>breeziness</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/HirokawaKiro'>Kiro</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/itsbreeziness'>breeziness</ExLinkA></p></li>
       </ul>
       <h4>Composers</h4>
       <ul>
-        <li><p><a href='https://www.youtube.com/channel/UCV1NmC2vTGSLPegKcp83k4A'>Nikolai Levnekov</a></p></li>
-        <li><p><a href='https://twitter.com/itsbreeziness'>breeziness</a></p></li>
-        <li><p><a href='https://twitter.com/SonicFan53alt'>SonicFan53</a></p></li>
+        <li><p><ExLinkA href='https://www.youtube.com/channel/UCV1NmC2vTGSLPegKcp83k4A'>Nikolai Levnekov</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/itsbreeziness'>breeziness</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/SonicFan53alt'>SonicFan53</ExLinkA></p></li>
       </ul>
       <h4>Instrumentalists</h4>
       <ul>
-        <li><p><span><a href='https://twitter.com/peeboggs'>Pendora’s Box</a>{' '}&nbsp;(Guitar)</span></p></li>
-        <li><p><span><a href='https://twitter.com/HiiragiEmuri'>Hiiragi Emuri</a>{' '}&nbsp;(Violin)</span></p></li>
+        <li><p><span><ExLinkA href='https://twitter.com/peeboggs'>Pendora’s Box</ExLinkA>{' '}&nbsp;(Guitar)</span></p></li>
+        <li><p><span><ExLinkA href='https://twitter.com/HiiragiEmuri'>Hiiragi Emuri</ExLinkA>{' '}&nbsp;(Violin)</span></p></li>
       </ul>
       <h4>Sound Effects</h4>
       <ul>
-        <li><p><a href='https://freesound.org'>freesound.org under the CC0 license</a></p></li>
-        <li><p><span><a href='https://twitter.com/Tophrii'>Tophrii</a>{' '}&nbsp;(Keyboard sounds)</span></p></li>
+        <li><p><ExLinkA href='https://freesound.org'>freesound.org under the CC0 license</ExLinkA></p></li>
+        <li><p><span><ExLinkA href='https://twitter.com/Tophrii'>Tophrii</ExLinkA>{' '}&nbsp;(Keyboard sounds)</span></p></li>
       </ul>
       <h4>Diamond City Lights (Song)</h4>
       <ul>
@@ -509,48 +511,48 @@ function VisualNovelCredits (): JSX.Element {
       </ul>
       <h4>Diamond City Lights (Fan Instrumental)</h4>
       <ul>
-        <li><p><a href='https://twitter.com/utalivepro'>Daryl Barnes of UTALIVE</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/utalivepro'>Daryl Barnes of UTALIVE</ExLinkA></p></li>
       </ul>
       <h3>Video Team</h3>
       <h4>Video Team Leaders</h4>
       <ul>
-        <li><p><a href='https://twitter.com/HirokawaKiro'>Kiro</a></p></li>
-        <li><p><a href='https://twitter.com/kanasquared'>kana²</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/HirokawaKiro'>Kiro</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/kanasquared'>kana²</ExLinkA></p></li>
       </ul>
       <h4>Video Editors</h4>
       <ul>
-        <li><p><span><a href='https://twitter.com/PomuPowerCenter'>PomuPower Distribution Center</a>{' '}&nbsp;(Opening Video)</span></p></li>
-        <li><p><span><a href='https://twitter.com/peeboggs'>Pendora’s Box</a>{' '}&nbsp;(Credits)</span></p></li>
+        <li><p><span><ExLinkA href='https://twitter.com/PomuPowerCenter'>PomuPower Distribution Center</ExLinkA>{' '}&nbsp;(Opening Video)</span></p></li>
+        <li><p><span><ExLinkA href='https://twitter.com/peeboggs'>Pendora’s Box</ExLinkA>{' '}&nbsp;(Credits)</span></p></li>
       </ul>
       <h3>QA Team</h3>
       <ul>
-        <li><p><a href='https://www.youtube.com/crisuskeer'>Crisu</a></p></li>
-        <li><p><a href='https://twitter.com/HirokawaKiro'>Kiro</a></p></li>
-        <li><p><a href='https://www.facebook.com/TPYMSYCSTE'>Thexty</a></p></li>
-        <li><p><a href='https://twitter.com/aikatsukin'>Akatsukin</a></p></li>
+        <li><p><ExLinkA href='https://www.youtube.com/crisuskeer'>Crisu</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/HirokawaKiro'>Kiro</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://www.facebook.com/TPYMSYCSTE'>Thexty</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/aikatsukin'>Akatsukin</ExLinkA></p></li>
         <li><p>Rundas9000</p></li>
       </ul>
 
       <h3>Community Feedback</h3>
       <h4>Initial Scenario Ideas</h4>
       <ul>
-        <li><p><a href='https://twitter.com/coldace_24'>Zephyr Monochrome</a></p></li>
-        <li><p><a href='https://twitter.com/suminoja'>suminoja</a></p></li>
-        <li><p><a href='https://twitter.com/aikatsukin'>Akatsukin</a></p></li>
-        <li><p><a href='https://www.instagram.com/brainstorm_13201/'>ShittyDrawer’s Den</a></p></li>
-        <li><p><a href='https://twitter.com/Kei_Shiromiya'>Kei Shiromiya</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/coldace_24'>Zephyr Monochrome</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/suminoja'>suminoja</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/aikatsukin'>Akatsukin</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://www.instagram.com/brainstorm_13201/'>ShittyDrawer’s Den</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/Kei_Shiromiya'>Kei Shiromiya</ExLinkA></p></li>
       </ul>
       <h4>Additional Feedback</h4>
       <ul>
-        <li><p><a href='https://twitter.com/gonxale0'>Gonxaleo</a></p></li>
-        <li><p><a href='https://twitter.com/Feet_man69'>Feetman69</a></p></li>
-        <li><p><a href='https://twitter.com/JF__ND'>JFND</a></p></li>
-        <li><p><a href='https://twitter.com/kanasquared'>kana²</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/gonxale0'>Gonxaleo</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/Feet_man69'>Feetman69</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/JF__ND'>JFND</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://twitter.com/kanasquared'>kana²</ExLinkA></p></li>
         <li><p>All VN Team Members</p></li>
       </ul>
       <h4>Feet Quality Inspector</h4>
       <ul>
-        <li><p><a href='https://twitter.com/Feet_man69'>Feetman69</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/Feet_man69'>Feetman69</ExLinkA></p></li>
       </ul>
       <h3>Special Thanks To</h3>
       <ul className={classesCredits['text-special-final']}>

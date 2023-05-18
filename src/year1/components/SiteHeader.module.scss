@@ -5,7 +5,7 @@
   $header-background-item-hover: $lazulight-primary-color
 );
 
-@media screen and (width <= 768px) {
+@media screen and (max-width: 768px) {
   .nav {
     grid-template-columns: 1fr 1fr 1fr;
 
@@ -21,7 +21,7 @@
       grid-column: 1;
     }
 
-    @media (height <= 450px) {
+    @media (max-height: 450px) {
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 
       & div:first-child,

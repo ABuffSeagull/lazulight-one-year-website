@@ -25,18 +25,6 @@
       border: 1px solid $pomu-primary-color;
       border-radius: 0.5rem;
       background: hsl(125deg 0% 100%);
-
-      span,
-      a {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.25rem;
-        text-decoration: none;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
     }
 
     &-pomu li {

@@ -1,10 +1,14 @@
+/*
+NOTES:
+  Mobile ver: Trunk to left
+  Desktop ver: Centred trunk with items on either side
+
+  This file is styled mobile-first, and then the @media applies desktop styles
+  Doing this helps to reduce edge cases where styles from both version get mixed together
+*/
 @use "../variables" as *;
 
 .timeline-root {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-
   --trunk-width: 8px;
   --dot-diameter: 16px;
   --date-width: 6rem;
@@ -16,6 +20,13 @@
   @media (max-width: $bp-mobile) {
     --date-width: 4rem;
   }
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  // Mobile ver
+  padding: var(--mobile-padding);
 }
 
 .timeline-root::before {
@@ -26,34 +37,16 @@
   top: 0;
   bottom: 0;
 
-  // Appear below all other content
+  // Mobile ver
+  left: calc(var(--mobile-padding) - var(--trunk-width) / 2);
 }
 
 .timeline-items {
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
 
-.item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: calc(min(var(--max-content-width) + var(--date-width), 50%));
-  min-height: 8rem;
-}
-
-// Item overlap
-// This isn't safe if we have very short one-line messages, but that probably won't happen?
-// We can revisit it when we have the finalized timeline content.
-// ==============================================================
-// Added this part to the above item
-// .item {
-//   min-height: 8rem;
-// }
-
-.item + .item {
-  margin-top: -3rem !important;
+  // Mobile ver
+  align-items: flex-start;
 }
 
 .item-title {
@@ -80,8 +73,6 @@
     display: flex;
     flex-direction: column;
     height: calc(2rem + 4px + 10px);
-
-    // margin-top: calc(-2rem + 0.5 * var(--stem-height));
     justify-content: center;
     background: var(--stem-color);
     border-radius: 1rem;
@@ -91,24 +82,6 @@
     @media (max-width: $bp-mobile) {
       border-radius: 0.5rem;
     }
-
-    // .date {
-    //  background-color: var(--stem-color);
-    //  border-radius: 1rem 1rem 0 0;
-    //  height: 2rem;
-    //  display: flex;
-    //  flex-direction: column;
-    //  justify-content: center;
-    // }
-
-    // &::after {
-    //  content: " ";
-    //  height: var(--stem-height);
-
-    //  // Needs a bit of overlap with the circle for a clean connection
-    //  width: calc(100% + 4px);
-    //  background: var(--stem-color);
-    // }
   }
 
   .content-box {
@@ -140,55 +113,56 @@
   z-index: 1;
 }
 
-@media (width <= 1200px) {
-  .timeline-root {
-    padding: var(--mobile-padding);
-  }
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 8rem;
 
-  // Left-align trunk
-  .timeline-root::before {
-    left: calc(var(--mobile-padding) - var(--trunk-width) / 2);
-  }
+  // Mobile Ver
+  max-width: 100%;
 
-  .timeline-items {
-    align-items: flex-start;
-  }
+  .message-row {
+    flex-direction: row;
 
-  // All items point right
-  .item {
-    max-width: 100%;
-
-    .message-row {
-      flex-direction: row;
-
-      &::before {
-        margin-left: calc(-0.5 * var(--dot-diameter));
-      }
-
-      .item-date::after {
-        margin-left: -4px;
-      }
+    &::before {
+      margin-left: calc(-0.5 * var(--dot-diameter));
     }
 
-    .item-title {
-      margin-left: calc(
-        var(--date-width) + (0.5 * var(--trunk-width)) + 0.5rem
-      );
-      word-break: break-word;
-      hyphens: auto;
+    .item-date::after {
+      margin-left: -4px;
     }
   }
 
-  .item + .item {
-    // Make this !important to override the vertical overlap being set in JS for 2-column mode
-    margin-top: 2rem !important;
+  .item-title {
+    margin-left: calc(var(--date-width) + (0.5 * var(--trunk-width)) + 0.5rem);
   }
 }
 
-@media (width >= 1200px) {
+.item + .item {
+  margin-top: 2rem !important;
+}
+
+@media (min-width: 1200px) {
+  .timeline-root {
+    padding: unset;
+  }
+
   // Center trunk
   .timeline-root::before {
     left: calc(50% - var(--trunk-width) / 2);
+  }
+
+  .timeline-items {
+    align-items: center;
+  }
+
+  .item {
+    max-width: calc(min(var(--max-content-width) + var(--date-width), 50%));
+  }
+
+  .item + .item {
+    margin-top: -3rem !important;
   }
 
   // Make alternating timeline items point left/right
@@ -221,11 +195,13 @@
       flex-direction: row-reverse;
 
       &::before {
+        margin-left: 0;
         margin-right: calc(-0.5 * var(--dot-diameter));
       }
     }
 
     .item-title {
+      margin-left: 0;
       margin-right: calc(var(--date-width) + var(--dot-diameter) / 2);
     }
   }

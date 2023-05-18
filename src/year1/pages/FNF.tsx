@@ -15,6 +15,8 @@ import classesVideo from '../components/Video.module.scss'
 import classesP from '../components/ProjectPages.module.scss'
 
 import '../components/TalentLayout.scss'
+import ExLinkA from '../../shared/components/ExLinkA'
+import ExLink from '../../shared/components/ExLink'
 
 interface Props {
   page: string
@@ -99,12 +101,12 @@ export default function Fnf (props: Props): JSX.Element {
           <a href='/downloads/LazuFunk-5013a39.zip' download>
             <button className={`${classesP['download-button']} lazulight-border`}>Download Game</button>
           </a>
-          <a href='https://gamebanana.com/mods/382213'>
+          <ExLink href='https://gamebanana.com/mods/382213'>
             <button className={`${classesP['download-button']} lazulight-border`}>Mirror Download at GameBanana</button>
-          </a>
-          <a href=' https://gamejolt.com/games/lazunight/723472'>
+          </ExLink>
+          <ExLink href='https://gamejolt.com/games/lazunight/723472'>
             <button className={`${classesP['download-button']} lazulight-border`}>Mirror Download at GameJolt</button>
-          </a>
+          </ExLink>
         </div>
       </FramedTextbox>
 
@@ -120,27 +122,27 @@ function LazunightFunkinCredits (): JSX.Element {
     <div className={classesCredits.text}>
       <h3>Director, UI Artist</h3>
       <ul>
-        <li><p><a href='https://www.youtube.com/c/CoZm0Plays'>CoZm0</a></p></li>
+        <li><p><ExLinkA href='https://www.youtube.com/c/CoZm0Plays'>CoZm0</ExLinkA></p></li>
       </ul>
       <h3>Lead Programmer</h3>
       <ul>
-        <li><p><a href='https://twitter.com/binpuki_'>Binpuki</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/binpuki_'>Binpuki</ExLinkA></p></li>
       </ul>
       <h3>Animator, Programmer</h3>
       <ul>
-        <li><p><a href='https://www.youtube.com/c/KVNK3VIN'>KVN</a></p></li>
+        <li><p><ExLinkA href='https://www.youtube.com/c/KVNK3VIN'>KVN</ExLinkA></p></li>
       </ul>
       <h3>Character Sprite Artist, Main Menu Asset Artist, Animator Supervisor</h3>
       <ul>
-        <li><p><a href='https://twitter.com/That1PlantGuy'>Plant Guy</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/That1PlantGuy'>Plant Guy</ExLinkA></p></li>
       </ul>
       <h3>Main Menu BG Artist</h3>
       <ul>
-        <li><p><a href='https://twitter.com/flimsytipsy'>TIP</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/flimsytipsy'>TIP</ExLinkA></p></li>
       </ul>
       <h3>Character Portrait Artist</h3>
       <ul>
-        <li><p><a href='https://cooperisswagyoushuldfollow.carrd.co/'>cooper</a></p></li>
+        <li><p><ExLinkA href='https://cooperisswagyoushuldfollow.carrd.co/'>cooper</ExLinkA></p></li>
       </ul>
       <h3>Character Portrait Designer</h3>
       <ul>
@@ -152,24 +154,24 @@ function LazunightFunkinCredits (): JSX.Element {
       </ul>
       <h3>Background Art Designer</h3>
       <ul>
-        <li><p><a href='https://twitter.com/nobu_okt'>Professor Nobu</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/nobu_okt'>Professor Nobu</ExLinkA></p></li>
       </ul>
       <h3>Musician</h3>
       <ul>
-        <li><p><a href='https://www.youtube.com/channel/UCTmBhasnypdfoBUe3bpSb5g'>Maarbble</a></p></li>
+        <li><p><ExLinkA href='https://www.youtube.com/channel/UCTmBhasnypdfoBUe3bpSb5g'>Maarbble</ExLinkA></p></li>
       </ul>
       <h3>Musician</h3>
       <ul>
-        <li><p><a href='https://www.youtube.com/c/eivesohn'>Eivesohn</a></p></li>
+        <li><p><ExLinkA href='https://www.youtube.com/c/eivesohn'>Eivesohn</ExLinkA></p></li>
       </ul>
       <h3>Charter</h3>
       <ul>
-        <li><p><a href='https://twitter.com/TheCoolStalker'>CoolStalker</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/TheCoolStalker'>CoolStalker</ExLinkA></p></li>
       </ul>
       <h3>Special Thanks</h3>
       <h3>Improving Chromatics</h3>
       <ul>
-        <li><p><a href='https://twitter.com/GGalactigal'>GGalactigal</a></p></li>
+        <li><p><ExLinkA href='https://twitter.com/GGalactigal'>GGalactigal</ExLinkA></p></li>
       </ul>
     </div>
   )

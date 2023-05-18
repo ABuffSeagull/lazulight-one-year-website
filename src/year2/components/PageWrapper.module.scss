@@ -48,7 +48,7 @@
   &-song,
   &-about,
   &-home {
-    background-attachment: fixed;
+    background-attachment: local; // Must be 'local', not 'fixed' to work on ios
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -368,9 +368,6 @@
 }
 
 .home-bg-animation {
-  $ar-wide: 2/1;
-  $ar-narrow: 1/2;
-
   &-elira {
     @include animation-core;
 
@@ -381,7 +378,7 @@
     top: 20%;
     transform: translateX(-10%);
 
-    @media (aspect-ratio <= $ar-wide) {
+    @media (max-aspect-ratio: 2/1) {
       height: 100%;
       transform: translateX(-10%) translateY(10%);
 
@@ -402,7 +399,7 @@
     top: -10%;
     transform: translateX(-50%);
 
-    @media (aspect-ratio <= $ar-wide) {
+    @media (max-aspect-ratio: 2/1) {
       transform: translateX(-50%) translateY(-5%);
 
       @media (max-width: $bp-tablet) {
@@ -411,7 +408,7 @@
       }
     }
 
-    @media (aspect-ratio <= $ar-narrow) {
+    @media (max-aspect-ratio: 1/2) {
       transform: translateX(-50%) translateY(-25%);
     }
   }
@@ -426,7 +423,7 @@
     top: 20%;
     transform: translateX(20%);
 
-    @media (aspect-ratio <= $ar-wide) {
+    @media (max-aspect-ratio: 2/1) {
       transform: translateX(20%) translateY(-10%);
 
       @media (max-width: $bp-tablet) {
@@ -435,7 +432,7 @@
       }
     }
 
-    @media (aspect-ratio <= $ar-narrow) {
+    @media (max-aspect-ratio: 1/2) {
       transform: translateX(30%) translateY(-15%) scale(1.2);
     }
   }
