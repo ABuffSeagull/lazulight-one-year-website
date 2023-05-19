@@ -71,13 +71,15 @@ export default function Home (): JSX.Element {
             <tr><td><ExLink href='https://twitter.com/thundercookie15'>thundercookie15</ExLink></td><td>Domain Owner, Server Hosting</td></tr>
           </table>
           <br />
-          <p><span>Externally sourced assets&nbsp;</span><span>(modified by the website team):</span></p>
+          <p><span>Externally sourced assets&nbsp;</span><span>(*modified by the website team):</span></p>
           <table>
-            <tr><td><ExLink href='https://twitter.com/snowharasho'>Squish</ExLink></td><td>Forest Background</td></tr>
-            <tr><td>ANYCOLOR INC.</td><td>LazuLight Logo</td></tr>
-            <tr><td><ExLink href='https://twitter.com/MelonbreadFBP'>Melonbread</ExLink></td><td>Ryuguard</td></tr>
-            <tr><td><ExLink href='https://youtu.be/dS-0a-sVxck?t=2161'>Pomu</ExLink></td><td>Pomudachi</td></tr>
-            <tr><td><ExLink href='https://youtu.be/C-C0nfMuBfA?t=7542'>Elira</ExLink></td><td>Weewa</td></tr>
+            <tr><td><ExLink href='https://twitter.com/snowharasho'>Squish</ExLink></td><td>Forest Background*</td></tr>
+            <tr><td>ANYCOLOR INC.</td><td>LazuLight Logo*</td></tr>
+            <tr><td><ExLink href='https://twitter.com/MelonbreadFBP'>Melonbread</ExLink></td><td>Ryuguard*</td></tr>
+            <tr><td><ExLink href='https://youtu.be/dS-0a-sVxck?t=2161'>Pomu</ExLink></td><td>Pomudachi*</td></tr>
+            <tr><td><ExLink href='https://youtu.be/C-C0nfMuBfA?t=7542'>Elira</ExLink></td><td>Weewa*</td></tr>
+            <tr><td><ExLink href='https://kolcsarzsolt.gumroad.com/l/lARyW'>kolcsarzsolt</ExLink></td><td>Erial Font</td></tr>
+            <tr><td><ExLink href='https://github.com/googlefonts/nunito/blob/main/OFL.txt'>The Nunito Project</ExLink></td><td>Nunito Font</td></tr>
           </table>
         </div>
       </Popup>
