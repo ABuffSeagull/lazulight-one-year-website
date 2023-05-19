@@ -1,3 +1,5 @@
+@use "../variables" as *;
+
 .title {
   color: white;
 }
@@ -23,31 +25,73 @@
   pointer-events: none;
 }
 
-.prev-page,
+.prev-page {
+  right: 0;
+
+  &-arrow {
+    right: 10%;
+
+    @media (max-aspect-ratio: 7/8) {
+      right: calc(-0.5 * $body-padding-lr);
+    }
+  }
+}
+
 .next-page {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 50%;
-  border: none;
-  background: none;
-  z-index: 1;
-  cursor: pointer;
+  left: 0;
+
+  &-arrow {
+    left: 10%;
+
+    @media (max-aspect-ratio: 7/8) {
+      left: calc(-0.5 * $body-padding-lr);
+    }
+  }
 }
 
 .prev-page[disabled],
 .next-page[disabled] {
   cursor: default;
+  display: none;
 }
 
-.prev-page {
-  left: 50%;
-  right: 0;
-}
-
+.prev-page,
 .next-page {
-  left: 0;
-  right: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 30%;
+  border: none;
+  background: none;
+  z-index: 1;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity ease-in-out 0.4s;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  &-arrow {
+    $shadow: 10px;
+
+    position: absolute;
+    width: 50px;
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    filter: drop-shadow(0 0 $shadow #fff) drop-shadow(0 0 $shadow #fff);
+
+    @media (max-aspect-ratio: 7/8) {
+      // Set the width so that the edge exactly touches the edge of the pdf (for most pages)
+      // 2039/2894 is the aspect ratio of most pages. The only wider pages have large margins, so the slight overlap is ok
+      width: calc(0.5 * $body-padding-lr + 50% * (1 - 2039 / 2894));
+    }
+  }
+}
+
+.page-arrow-show {
+  opacity: 0.75 !important;
 }
 
 .hidden-page {
@@ -62,7 +106,7 @@
   position: absolute;
   bottom: 0;
   opacity: 0;
-  transition: opacity ease-in-out 0.2s;
+  transition: opacity ease-in-out 0.4s;
   z-index: 2;
   left: 50%;
   transform: translateX(-50%);
