@@ -21,19 +21,14 @@ export default function Home (): JSX.Element {
   const closeModal = (): void => { setOpen(false) }
 
   return (
-    // Temporary menu so we can navigate easier
-    // <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', margin: 'auto', gap: '2rem', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', width: '100%', backgroundColor: '#e5e5e5', padding: '1rem 2rem' }}>
-    //  <Link to='/anniversary1'>1st Anniversary</Link>
-    //  <Link to='/anniversary2'>2nd Anniversary</Link>
-    // </div>
     <div className={classes['page-bg']}>
       <Image className={classes.logo} src={logo} />
-      <Link to='/anniversary2'>
+      <Link to='/anniversary2/home'>
         <a className={classes['main-links']}>
           <Image src={bannerYear2} />
         </a>
       </Link>
-      <Link to='/anniversary1'>
+      <Link to='/anniversary1/home'>
         <a className={`${classes['main-links']} ${classes['main-links-smaller']}`}>
           <Image src={bannerYear1} />
         </a>
