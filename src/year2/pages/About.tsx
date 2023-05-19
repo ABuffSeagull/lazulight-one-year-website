@@ -80,6 +80,8 @@ export default function About (): JSX.Element {
             <li><p><ExLinkA href='https://twitter.com/MelonbreadFBP'>Melonbread (Ryuguard)</ExLinkA></p></li>
             <li><p><ExLinkA href='https://twitter.com/tsukinaga_b'>tsukinaga_b (Base of Doujin Icon)</ExLinkA></p></li>
             <li><p><ExLinkA href='https://www.vecteezy.com/free-png/postage-stamp'>Vecteezy (Postage Stamp Overlay)</ExLinkA></p></li>
+            <li><p><ExLinkA href='https://kolcsarzsolt.gumroad.com/l/lARyW'>kolcsarzsolt (Erial Font)</ExLinkA></p></li>
+            <li><p><ExLinkA href='https://github.com/googlefonts/nunito/blob/main/OFL.txt'>The Nunito Project (Nunito Font)</ExLinkA></p></li>
           </ul>
           <h3>Special Thanks</h3>
           <ul className={classesCredits['text-special-final']}>

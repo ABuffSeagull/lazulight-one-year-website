@@ -34,7 +34,7 @@ export default function SiteHeader (): JSX.Element {
       name: 'Home',
       icon: Home,
       iconActive: HomeActive,
-      path: '/anniversary2',
+      path: '/anniversary2/home',
       children: []
     },
     {

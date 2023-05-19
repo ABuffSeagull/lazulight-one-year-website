@@ -1,5 +1,9 @@
 import React from 'react'
 import classes from './DoujinViewer.module.scss'
+import Image from '../../year1/components/Image'
+
+import ArrowLeft from '../../shared/assets/arrows/arrow-left.svg'
+import ArrowRight from '../../shared/assets/arrows/arrow-right.svg'
 
 const TOTAL_PAGES = 64
 
@@ -80,8 +84,12 @@ export default function DoujinViewer (): JSX.Element {
               }
             }}
           />
-          <button className={classes['next-page']} onClick={tryNextPage} disabled={currentPage === TOTAL_PAGES - 1} />
-          <button className={classes['prev-page']} onClick={tryPrevPage} disabled={currentPage === 0} />
+          <button className={`${classes['next-page']} ${currentPage === 0 ? classes['page-arrow-show'] : ''}`} onClick={tryNextPage} disabled={currentPage === TOTAL_PAGES - 1}>
+            <Image src={ArrowLeft} className={classes['next-page-arrow']} />
+          </button>
+          <button className={`${classes['prev-page']} ${currentPage === TOTAL_PAGES - 1 ? classes['page-arrow-show'] : ''}`} onClick={tryPrevPage} disabled={currentPage === 0}>
+            <Image src={ArrowRight} className={classes['prev-page-arrow']} />
+          </button>
           {
             [...Array(TOTAL_PAGES).keys()].map((page) =>
               (Math.abs(page - currentPage) <= 1)

@@ -109,6 +109,8 @@ function WebTeamCredits (): JSX.Element {
         <li><p><ExLinkA href='https://twitter.com/MelonbreadFBP'>Melonbread (Ryuguard Design B)</ExLinkA></p></li>
         <li><p><ExLinkA href='https://twitter.com/suminoja'>Suminoja (Twerking LazuLight Gifs)</ExLinkA></p></li>
         <li><p><ExLinkA href='https://grabcad.com/library/diamond-round-brilliant-cut-2'>Edgar Gidoni (Diamond 3D model)</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://kolcsarzsolt.gumroad.com/l/lARyW'>kolcsarzsolt (Erial Font)</ExLinkA></p></li>
+        <li><p><ExLinkA href='https://github.com/googlefonts/nunito/blob/main/OFL.txt'>The Nunito Project (Nunito Font)</ExLinkA></p></li>
       </ul>
       <h3>Special Thanks</h3>
       <ul className={classesCredits['text-special-final']}>

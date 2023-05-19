@@ -45,6 +45,10 @@ export default function App (): JSX.Element {
         <Route path='/all-messages'> <Redirect to='/anniversary1/all-messages' /> </Route>
         <Route path='/about'> <Redirect to='/anniversary1/about' /> </Route>
 
+        {/* Redirect the pages of the 2nd anniversary release version of the site */}
+        <Route path='/anniversary1'> <Redirect to='/anniversary1/home' /> </Route>
+        <Route path='/anniversary2'> <Redirect to='/anniversary2/home' /> </Route>
+
         <Route path='/anniversary1/elira'>
           <Year1PageWrapper pageTheme='elira' animatedBackground>
             <Year1Elira />
@@ -95,7 +99,7 @@ export default function App (): JSX.Element {
             <Year1About page='pomu' />
           </Year1PageWrapper>
         </Route>
-        <Route path='/anniversary1'>
+        <Route path='/anniversary1/home'>
           <Year1PageWrapper pageTheme='home'>
             <Year1Home />
           </Year1PageWrapper>
@@ -131,7 +135,7 @@ export default function App (): JSX.Element {
             <Year2About />
           </Year2PageWrapper>
         </Route>
-        <Route path='/anniversary2'>
+        <Route path='/anniversary2/home'>
           <Year2PageWrapper pageTheme='home'>
             <Year2Home />
           </Year2PageWrapper>
