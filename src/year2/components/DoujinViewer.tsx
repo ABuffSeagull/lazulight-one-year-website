@@ -29,7 +29,7 @@ export default function DoujinViewer (): JSX.Element {
     }
   }, [currentPage, setCurrentPage, doujinContainer.current])
 
-  const [showTutorial, setShowTutorial] = React.useState(true);
+  const [showTutorial, setShowTutorial] = React.useState(true)
 
   React.useEffect(() => {
     return () => {
