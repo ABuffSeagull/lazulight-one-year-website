@@ -29,6 +29,8 @@ export default function DoujinViewer (): JSX.Element {
     }
   }, [currentPage, setCurrentPage, doujinContainer.current])
 
+  const [showTutorial, setShowTutorial] = React.useState(true);
+
   React.useEffect(() => {
     return () => {
       doujinObserver.current?.disconnect()
@@ -48,6 +50,7 @@ export default function DoujinViewer (): JSX.Element {
             tryPrevPage()
           }
         }}
+        onClick={() => setShowTutorial(false)}
       >
 
         <div
@@ -84,11 +87,11 @@ export default function DoujinViewer (): JSX.Element {
               }
             }}
           />
-          <button className={`${classes['next-page']} ${currentPage === 0 ? classes['page-arrow-show'] : ''}`} onClick={tryNextPage} disabled={currentPage === TOTAL_PAGES - 1}>
-            <Image src={ArrowLeft} className={classes['next-page-arrow']} />
+          <button className={`${classes['next-page']}`} onClick={tryNextPage} disabled={currentPage === TOTAL_PAGES - 1}>
+            <Image src={ArrowLeft} className={`${classes['next-page-arrow']}  ${currentPage !== TOTAL_PAGES - 1 ? classes['page-arrow-show'] : ''} ${showTutorial ? classes['show-tutorial'] : ''}`} />
           </button>
-          <button className={`${classes['prev-page']} ${currentPage === TOTAL_PAGES - 1 ? classes['page-arrow-show'] : ''}`} onClick={tryPrevPage} disabled={currentPage === 0}>
-            <Image src={ArrowRight} className={classes['prev-page-arrow']} />
+          <button className={`${classes['prev-page']}`} onClick={tryPrevPage} disabled={currentPage === 0}>
+            <Image src={ArrowRight} className={`${classes['prev-page-arrow']} ${currentPage !== 0 ? classes['page-arrow-show'] : ''}`} />
           </button>
           {
             [...Array(TOTAL_PAGES).keys()].map((page) =>
@@ -106,9 +109,11 @@ export default function DoujinViewer (): JSX.Element {
             )
         }
         </div>
-        <div className={classes['bottom-nav']}>
-          <div className={classes['page-count']}>{currentPage + 1} / {TOTAL_PAGES}</div>
-          <button className={classes['change-mode']} onClick={() => displayMode === 'fit-height' ? setDisplayMode('fit-width') : setDisplayMode('fit-height')}>Fit {displayMode === 'fit-width' ? <>Width</> : <>Height</>}</button>
+        <div className={classes['bottom-nav-hover']}>
+          <div className={`${classes['bottom-nav']} ${showTutorial ? classes['show-tutorial'] : ''}`}>
+            <div className={classes['page-count']}>{currentPage + 1} / {TOTAL_PAGES}</div>
+            <button className={classes['change-mode']} onClick={() => displayMode === 'fit-height' ? setDisplayMode('fit-width') : setDisplayMode('fit-height')}>Fit {displayMode === 'fit-width' ? <>Width</> : <>Height</>}</button>
+          </div>
         </div>
       </div>
     </>
